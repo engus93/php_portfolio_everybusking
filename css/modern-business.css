@@ -3,7 +3,7 @@
  * Copyright 2013-2017 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-logomodern-business-nav/blob/master/LICENSE)
  */
- 
+
 
 body {
   padding-top: 54px;
@@ -45,4 +45,9 @@ body {
 
 .mystyle {
   float: right!important;
+}
+
+.my_font {
+  font-family: 'Nanum Pen Script', cursive;
+  
 }
