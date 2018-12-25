@@ -4,6 +4,8 @@
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-logomodern-business-nav/blob/master/LICENSE)
  */
 
+/* 글씨체 */
+ @import url('https://fonts.googleapis.com/css?family=Nanum+Pen+Script|Monoton|Comfortaa|Do+Hyeon');
 
 body {
   padding-top: 54px;
@@ -35,10 +37,30 @@ body {
   float: right!important;
 }
 
-.my_font {
-  font-family: 'Nanum Pen Script', cursive;
+.my_font_logo {
+
+  font-family: 'Monoton', cursive !important;
   
 }
+
+.my_font_start {
+
+  font-family: 'Nanum Pen Script', cursive !important;
+  
+}
+
+.my_font_index {
+
+  font-family: 'Comfortaa', cursive !important;
+  
+}
+
+.my_font_main {
+
+  font-family: 'Do Hyeon', sans-serif !important;
+  
+}
+
 
 .my_video{ 
   position: absolute;
