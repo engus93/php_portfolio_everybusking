@@ -46,12 +46,14 @@ body {
 .my_font_start {
 
   font-family: 'Nanum Pen Script', cursive !important;
+  color: #FF6666
   
 }
 
 .my_font_index {
 
   font-family: 'Comfortaa', cursive !important;
+  color: #CE6D33
   
 }
 
