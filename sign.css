@@ -1,13 +1,13 @@
 /* Made with love by Mutiullah Samim*/
 
-@import url('https://fonts.googleapis.com/css?family=Numans');
+/* 글씨체 */
+@import url('https://fonts.googleapis.com/css?family=Nanum+Pen+Script|Monoton|Comfortaa|Do+Hyeon|Numans');
 
 html,body{
 background-image: url('img/login_background_02.jpg');
 background-size: cover;
 background-repeat: no-repeat;
 height: 100%;
-font-family: 'Numans', sans-serif;
 }
 
 .container{
@@ -15,8 +15,16 @@ height: 100%;
 align-content: center;
 }
 
-.card{
-height: 370px;
+.sign_in_card{
+height: 350px;
+margin-top: auto;
+margin-bottom: auto;
+width: 400px;
+background-color: rgba(0,0,0,0.5) !important;
+}
+
+.sign_up_card{
+height: 420px;
 margin-top: auto;
 margin-bottom: auto;
 width: 400px;
@@ -24,7 +32,7 @@ background-color: rgba(0,0,0,0.5) !important;
 }
 
 .social_icon span{
-font-size: 60px;
+font-size: 20px;
 margin-left: 10px;
 color: #FFC312;
 }
@@ -61,8 +69,7 @@ box-shadow: 0 0 0 0 !important;
 color: white;
 }
 
-.remember input
-{
+.remember input{
 width: 20px;
 height: 20px;
 margin-left: 15px;
@@ -87,3 +94,27 @@ color: white;
 .links a{
 margin-left: 4px;
 }
+
+.my_font_logo {
+
+    font-family: 'Monoton', cursive !important;
+    
+  }
+  
+  .my_font_start {
+  
+    font-family: 'Nanum Pen Script', cursive !important;
+    
+  }
+  
+  .my_font_index {
+  
+    font-family: 'Comfortaa', cursive !important;
+    
+  }
+  
+  .my_font_main {
+  
+    font-family: 'Do Hyeon', sans-serif !important;
+    
+  }

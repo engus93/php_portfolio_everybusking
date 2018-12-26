@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 
 <head>
 
@@ -16,9 +16,6 @@
   <!-- Custom styles for this template -->
   <link href="css/modern-business.css" rel="stylesheet">
 
-  <!-- 글씨체 -->
-  <link href="https://fonts.googleapis.com/css?family=Nanum+Pen+Script" rel="stylesheet">
-
   <!--Bootsrap 4 CDN-->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
     crossorigin="anonymous">
@@ -28,7 +25,7 @@
     crossorigin="anonymous">
 
   <!--Custom styles-->
-  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="stylesheet" type="text/css" href="sign.css">
 
 </head>
 
@@ -36,41 +33,41 @@
 
   <!-- 네비게이션 -->
   <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <div class="container">
-      <a class="navbar-brand" href="index.html" style="font-family: 'Monoton', cursive; font-size: 1.5em">Every Busking</a>
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive"
-        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive" style="font-size: 0.9em">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="Login.html">Login</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="portfolio-2-col.html">Busking Team</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="contact.html">Busking Zone</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="Streaming.html">Streaming</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="services.html">Community</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="about.html">Concert</a>
-          </li>
-        </ul>
+      <div class="container">
+        <a class="navbar-brand" href="index.html" style="font-family: 'Monoton', cursive; font-size: 20px">Every Busking</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+          aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="sign_in.html">Sign in</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="portfolio-2-col.html">Busking Team</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Busking Zone</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Streaming.html">Streaming</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="services.html">Community</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">Concert</a>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </nav>
+    </nav>
 
   <!-- 로그인 UI -->
-  <div class="container">
+  <div class="container" style="font-family: 'Numans', sans-serif">
     <div class="d-flex justify-content-center h-100">
-      <div class="card">
+      <div class="sign_in_card">
         <div class="card-header">
           <h3>Sign In</h3>
           <div class="d-flex justify-content-end social_icon">
@@ -98,7 +95,7 @@
               <input type="checkbox">Remember Me
             </div>
             <div class="form-group">
-              <input type="submit" value="Login" class="btn float-right login_btn">
+              <input type="submit" value="Sign In" class="btn float-right login_btn">
             </div>
           </form>
         </div>
