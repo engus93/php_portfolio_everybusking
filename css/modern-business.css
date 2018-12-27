@@ -53,7 +53,7 @@ body {
 .my_font_index {
 
   font-family: 'Comfortaa', cursive !important;
-  color: #CE6D33
+  color: #FBAA48
   
 }
 
@@ -75,5 +75,4 @@ body {
   height: auto;
   z-index: -1000;
   overflow: hidden;
-  autoplay
 }
