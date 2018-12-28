@@ -35,6 +35,7 @@ if($result->num_rows==1)
     exit();
 }
 
+$password = mad5($password);
 $sql = "insert into user_info_tb (user_id, password, name, phone, sex) VALUES('$id','$password','$name','$phone','$sex')";
 
 echo $sql;
