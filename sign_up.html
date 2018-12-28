@@ -67,7 +67,7 @@
         </div>
       </nav>
 
-    <!-- 로그인 UI -->
+    <!-- 회원가입 UI -->
     <div class="container">
         <div class="d-flex justify-content-center h-100">
             <div class="sign_up_card">
@@ -80,65 +80,103 @@
                     </div> -->
                 </div>
                 <div class="card-body">
-                    <form>
+                    <form method="post" action="sign_up_result.php">
 
-                        <!-- 이메일 아이디 -->
-                        <div class="input-group form-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"><i class="fas fa-user"></i></span>
-                            </div>
-                            <input type="text" class="form-control" placeholder="Email ID">
-                        </div>
+                        <b>ID</b><input type="text" size=10 maxlength=10 name="id"><br />
+                        <b>name</b><input type="text" size=10 maxlength=10 name="yourname"><br />
+                        <b>password</b><input type="password" size=10 maxlength=10 name="pwd"><br />
+                        <b>confirm password</b><input type="password" size=10 maxlength=10 name="pwd2"><br />
+                        <b>cell phone number</b>
 
-                        <!-- 패스워드 -->
-                        <div class="input-group form-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text"><i class="fas fa-key"></i></span>
-                                </div>
-                                <input type="password" class="form-control" placeholder="Password">
-                            </div>
+                        <select name="m1">
+                            <option value=" ">select</option>
+                            <option value="010">010</option>
+                            <option value="011">011</option>
+                            <option value="016">016</option>
+                            <option value="017">017</option>
+                            <option value="018">018</option>
+                            <option value="019">019</option>
+                        </select>
+                        -
+                        <input type="text" size=4 name="m2" maxlength=4>
+                        -
+                        <input type="text" size=4 name="m3" maxlength=4><br />
 
-                        <!-- 패스워드 확인 -->
-                        <div class="input-group form-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"><i class="fas fa-key"></i></span>
-                            </div>
-                            <input type="password" class="form-control" placeholder="Confirm Password">
-                        </div>
+                        <b>sex</b>
+                        <input type="radio" name="sex" value="man" checked>man
+                        <input type="radio" name="sex" value="woman">woman <br />
 
-                        <!-- 이름 -->
-                        <div class="input-group form-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"><i class="fas fa-user"></i></span>
-                            </div>
-                            <input type="text" class="form-control" placeholder="User Name">
-                        </div>
+                        <b>address</b><input type="text" size=60 name="addr"><br />
 
-                        <!-- 핸드폰 번호 -->
-                        <div class="input-group form-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"><i class="fas fa-user"></i></span>
-                            </div>
-                            <input type="text" class="form-control" placeholder="Mobile No">
-                        </div>
+                        <b>your hobby</b>
+                        <input type="checkbox" name="com" value="yes" checked> computer
+                        <input type="checkbox" name="sports" value="yes"> sports
+                        <input type="checkbox" name="shop" value="yes"> shopping
+                        <input type="checkbox" name="mov" value="yes"> movie <br />
 
-                        <div class="input-group form-group" style="color: white">
-                            <label class=""> Gender : </label>
-                            <label class="radio-inline" style="margin-left: 25px"><input type="radio" name="optradio">Male</label>
-                            <label class="radio-inline" style="margin-left: 25px"><input type="radio" name="optradio">Female</label>
-                            <label class="radio-inline" style="margin-left: 25px"><input type="radio" name="optradio">Other</label>
-                        </div>
-                        
-                        <!-- 회원가입 버튼 -->
-                        <div class="form-group">
-                            <a href="sign_in.html" class="btn float-right login_btn">Sign Up</a>
-                        </div>
+
+                        <input type="submit" value="submit" value="join">
+                        <input type="reset" value="rewrite">
+
+                        <!--&lt;!&ndash; 아이디 &ndash;&gt;-->
+                        <!--<div class="input-group form-group">-->
+                            <!--<div class="input-group-prepend">-->
+                                <!--<span class="input-group-text"><i class="fas fa-user"></i></span>-->
+                            <!--</div>-->
+                            <!--<input type="text" class="form-control" maxlength=10 placeholder="ID (max 10)" name="ID">-->
+                        <!--</div>-->
+
+                        <!--&lt;!&ndash; 패스워드 &ndash;&gt;-->
+                        <!--<div class="input-group form-group">-->
+                                <!--<div class="input-group-prepend">-->
+                                    <!--<span class="input-group-text"><i class="fas fa-key"></i></span>-->
+                                <!--</div>-->
+                                <!--<input type="password" class="form-control" maxlength=16  placeholder="Password (max 16)" name="password">-->
+                            <!--</div>-->
+
+                        <!--&lt;!&ndash; 패스워드 확인 &ndash;&gt;-->
+                        <!--<div class="input-group form-group">-->
+                            <!--<div class="input-group-prepend">-->
+                                <!--<span class="input-group-text"><i class="fas fa-key"></i></span>-->
+                            <!--</div>-->
+                            <!--<input type="password" class="form-control" maxlength=16  placeholder="Confirm Password">-->
+                        <!--</div>-->
+
+                        <!--&lt;!&ndash; 이름 &ndash;&gt;-->
+                        <!--<div class="input-group form-group">-->
+                            <!--<div class="input-group-prepend">-->
+                                <!--<span class="input-group-text"><i class="fas fa-user"></i></span>-->
+                            <!--</div>-->
+                            <!--<input type="text" class="form-control" maxlength=5  placeholder="User Name (max 5)" name="name">-->
+                        <!--</div>-->
+
+                        <!--&lt;!&ndash; 핸드폰 번호 &ndash;&gt;-->
+                        <!--<div class="input-group form-group">-->
+                            <!--<div class="input-group-prepend">-->
+                                <!--<span class="input-group-text"><i class="fas fa-user"></i></span>-->
+                            <!--</div>-->
+                            <!--<input type="text" class="form-control" maxlength=11  placeholder="Mobile No" name="phone">-->
+                        <!--</div>-->
+
+                        <!--<div class="input-group form-group" style="color: white">-->
+                            <!--<label class=""> Gender : </label>-->
+                            <!--<label class="radio-inline" style="margin-left: 25px"><input type="radio" name="sex">Male</label>-->
+                            <!--<label class="radio-inline" style="margin-left: 25px"><input type="radio" name="sex">Female</label>-->
+                            <!--&lt;!&ndash;<label class="radio-inline" style="margin-left: 25px"><input type="radio" name="optradio">Other</label>&ndash;&gt;-->
+                        <!--</div>-->
+
+                        <!--<input type="submit" class="btn float-right login_btn" value="Sign Up">-->
+
+                        <!--&lt;!&ndash; 회원가입 버튼 &ndash;&gt;-->
+                        <!--&lt;!&ndash;<div class="form-group">&ndash;&gt;-->
+                            <!--&lt;!&ndash;<a href="sign_in.html" class="btn float-right login_btn">Sign Up</a>&ndash;&gt;-->
+                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
                     </form>
                 </div>
 
                 <!-- <div class="card-footer">
                     <div class="d-flex justify-content-center links">
-                        Don't have an account?<a href="sign_up.html">Sign Up</a>
+                        Don't have an account?<a href="sign_up.php">Sign Up</a>
                     </div>
                     <div class="d-flex justify-content-center">
                         <a href="#">Forgot your password?</a>
