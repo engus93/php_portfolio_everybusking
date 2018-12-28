@@ -10,6 +10,20 @@
 
     <title>Let's Every Busking!</title>
 
+    <script>
+        function checkid(){
+            var userid = document.getElementById("user_id").value;
+            if(userid)
+            {
+                url = "check.php?userid="+userid;
+                window.open(url,"chkid","width=300,height=100");
+            }else{
+                alert("아이디를 입력하세요");
+            }
+        }
+
+    </script>
+
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -85,9 +99,10 @@
                         <!-- 아이디 -->
                         <div class="input-group form-group">
                             <div class="input-group-prepend">
-                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                <span class="input-group-text"><i class="fas fa-user" id="user_id"></i></span>
                             </div>
                             <input type="text" class="form-control" maxlength=10 placeholder="ID (max 10)" name="ID">
+
                         </div>
 
                         <!-- 패스워드 -->
@@ -103,7 +118,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-key"></i></span>
                             </div>
-                            <input type="password" class="form-control" maxlength=16  placeholder="Confirm Password">
+                            <input type="password" class="form-control" maxlength=16  placeholder="Confirm Password" name="password_re">
                         </div>
 
                         <!-- 이름 -->
