@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,136 +20,169 @@
     <link href="https://fonts.googleapis.com/css?family=Nanum+Pen+Script" rel="stylesheet">
 
     <!--Bootsrap 4 CDN-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+          crossorigin="anonymous">
 
     <!--Fontawesome CDN-->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
-        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+          integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+          crossorigin="anonymous">
 
     <!--Custom styles-->
     <link rel="stylesheet" type="text/css" href="../css/sign.css">
+
+    <script>
+        function checkid() {
+            var userid = document.getElementById("user_id").value;
+            console.log(userid);
+            if (userid) {
+                url = "check.php?userid=" + userid;
+
+                var popupX = (window.screen.width / 2) - (300 / 2);
+                // 만들 팝업창 좌우 크기의 1/2 만큼 보정값으로 빼주었음
+
+                var popupY = (window.screen.height / 2) - (100 * 2);
+                // 만들 팝업창 상하 크기의 1/2 만큼 보정값으로 빼주었음
+
+                window.open(url, "chkid", 'status=no, height=100, width=300, screenX=' + popupX + ', screenY= ' + popupY);
+
+
+
+            } else {
+                alert("아이디를 입력하세요");
+            }
+        }
+
+    </script>
 
 </head>
 
 <body>
 
-  <!-- 네비게이션 -->
-  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <div class="container">
-          <a class="navbar-brand" href="../index.html" style="font-family: 'Monoton', cursive; font-size: 20px">Every Busking</a>
-          <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive"
-            aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item">
-                <a class="nav-link" href="sign_in.html">Sign in</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="portfolio-2-col.html">Busking Team</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="contact.html">Busking Zone</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="../streaming.html">Streaming</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="services.html">Community</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="about.html">Concert</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-
-    <!-- 회원가입 UI -->
+<!-- 네비게이션 -->
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-        <div class="d-flex justify-content-center h-100">
-            <div class="sign_up_card">
-                <div class="card-header">
-                    <h3>Sign Up</h3>
-                    <!-- <div class="d-flex justify-content-end social_icon">
-                        <span><i class="fab fa-facebook-square"></i></span>
-                        <span><i class="fab fa-google-plus-square"></i></span>
-                        <span><i class="fab fa-twitter-square"></i></span>
-                    </div> -->
-                </div>
-                <div class="card-body">
-                    <form method="post" action="sign_up_result.php">
-
-                        <!-- 아이디 -->
-                        <div class="input-group form-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"><i class="fas fa-user" id="user_id"></i></span>
-                            </div>
-                            <input type="text" class="form-control" maxlength=10 placeholder="ID (max 10)" name="ID">
-
-                        </div>
-
-                        <!-- 패스워드 -->
-                        <div class="input-group form-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text"><i class="fas fa-key"></i></span>
-                                </div>
-                                <input type="password" class="form-control" maxlength=16  placeholder="Password (max 16)" name="password">
-                            </div>
-
-                        <!-- 패스워드 확인 -->
-                        <div class="input-group form-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"><i class="fas fa-key"></i></span>
-                            </div>
-                            <input type="password" class="form-control" maxlength=16  placeholder="Confirm Password" name="password_re">
-                        </div>
-
-                        <!-- 이름 -->
-                        <div class="input-group form-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"><i class="fas fa-user"></i></span>
-                            </div>
-                            <input type="text" class="form-control" maxlength=5  placeholder="User Name (max 5)" name="name">
-                        </div>
-
-                        <!-- 핸드폰 번호 -->
-                        <div class="input-group form-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"><i class="fas fa-user"></i></span>
-                            </div>
-                            <input type="text" class="form-control" maxlength=11  placeholder="Mobile No" name="phone">
-                        </div>
-
-                        <div class="input-group form-group" style="color: white">
-                            <label class=""> Gender : </label>
-                            <label class="radio-inline" style="margin-left: 25px"><input type="radio" value="Male" name="sex">Male</label>
-                            <label class="radio-inline" style="margin-left: 25px"><input type="radio" value="Female" name="sex">Female</label>
-                            <!--<label class="radio-inline" style="margin-left: 25px"><input type="radio" name="optradio">Other</label>-->
-                        </div>
-
-                        <input type="submit" class="btn float-right login_btn" value="Sign Up">
-
-                        <!-- 회원가입 버튼 -->
-                        <!--<div class="form-group">-->
-                            <!--<a href="sign_in.html" class="btn float-right login_btn">Sign Up</a>-->
-                        <!--</div>-->
-                    </form>
-                </div>
-
-                <!-- <div class="card-footer">
-                    <div class="d-flex justify-content-center links">
-                        Don't have an account?<a href="sign_up.php">Sign Up</a>
-                    </div>
-                    <div class="d-flex justify-content-center">
-                        <a href="#">Forgot your password?</a>
-                    </div>
-                </div> -->
-            </div>
+        <a class="navbar-brand" href="../index.html" style="font-family: 'Monoton', cursive; font-size: 20px">Every
+            Busking</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="sign_in.html">Sign in</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="portfolio-2-col.html">Busking Team</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Busking Zone</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../streaming.html">Streaming</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="services.html">Community</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">Concert</a>
+                </li>
+            </ul>
         </div>
     </div>
+</nav>
+
+<!-- 회원가입 UI -->
+<div class="container">
+    <div class="d-flex justify-content-center h-100">
+        <div class="sign_up_card">
+            <div class="card-header">
+                <h3>Sign Up</h3>
+                <!-- <div class="d-flex justify-content-end social_icon">
+                    <span><i class="fab fa-facebook-square"></i></span>
+                    <span><i class="fab fa-google-plus-square"></i></span>
+                    <span><i class="fab fa-twitter-square"></i></span>
+                </div> -->
+            </div>
+            <div class="card-body">
+                <form method="post" action="sign_up_result.php">
+
+                    <!-- 아이디 -->
+                    <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-user"></i></span>
+                        </div>
+                        <input type="text" class="form-control" maxlength=10 placeholder="ID (max 10)" name="ID"
+                               id="user_id">
+                        <input type="button" class="btn float-right login_btn my_font_main" onclick="checkid()" value="중복체크">
+                    </div>
+
+                    <!-- 패스워드 -->
+                    <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-key"></i></span>
+                        </div>
+                        <input type="password" class="form-control" maxlength=16 placeholder="Password (max 16)"
+                               name="password">
+                    </div>
+
+                    <!-- 패스워드 확인 -->
+                    <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-key"></i></span>
+                        </div>
+                        <input type="password" class="form-control" maxlength=16 placeholder="Confirm Password"
+                               name="password_re">
+                    </div>
+
+                    <!-- 이름 -->
+                    <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-user"></i></span>
+                        </div>
+                        <input type="text" class="form-control" maxlength=5 placeholder="User Name (max 5)" name="name">
+                    </div>
+
+                    <!-- 핸드폰 번호 -->
+                    <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-user"></i></span>
+                        </div>
+                        <input type="text" class="form-control" maxlength=11 placeholder="Mobile No" name="phone">
+                    </div>
+
+                    <div class="input-group form-group" style="color: white">
+                        <label class=""> Gender : </label>
+                        <label class="radio-inline" style="margin-left: 25px"><input type="radio" value="Male"
+                                                                                     name="sex">Male</label>
+                        <label class="radio-inline" style="margin-left: 25px"><input type="radio" value="Female"
+                                                                                     name="sex">Female</label>
+                        <!--<label class="radio-inline" style="margin-left: 25px"><input type="radio" name="optradio">Other</label>-->
+                    </div>
+
+                    <input type="submit" class="btn float-right login_btn" value="Sign Up">
+
+                    <!-- 회원가입 버튼 -->
+                    <!--<div class="form-group">-->
+                    <!--<a href="sign_in.html" class="btn float-right login_btn">Sign Up</a>-->
+                    <!--</div>-->
+                </form>
+            </div>
+
+            <!-- <div class="card-footer">
+                <div class="d-flex justify-content-center links">
+                    Don't have an account?<a href="sign_up.php">Sign Up</a>
+                </div>
+                <div class="d-flex justify-content-center">
+                    <a href="#">Forgot your password?</a>
+                </div>
+            </div> -->
+        </div>
+    </div>
+</div>
 
 
 </body>
