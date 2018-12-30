@@ -32,29 +32,6 @@
     <!--Custom styles-->
     <link rel="stylesheet" type="text/css" href="../css/sign.css">
 
-    <!--<script>-->
-    <!--function checkid() {-->
-    <!--var userid = document.getElementById("user_id").value;-->
-
-    <!--if (userid) {-->
-    <!--// url = "check.php?userid=" + userid;-->
-    <!--//-->
-    <!--// var popupX = (window.screen.width / 2) - (300 / 2);-->
-    <!--// // 만들 팝업창 좌우 크기의 1/2 만큼 보정값으로 빼주었음-->
-    <!--//-->
-    <!--// var popupY = (window.screen.height / 2) - (100 * 2);-->
-    <!--// // 만들 팝업창 상하 크기의 1/2 만큼 보정값으로 빼주었음-->
-
-    <!--ifrm1.location.href="check.php?userid=" + userid;-->
-    <!--// window.open(url, "chkid", 'status=no, height=100, width=300, screenX=' + popupX + ', screenY= ' + popupY);-->
-
-    <!--} else {-->
-    <!--alert("아이디를 입력하세요");-->
-    <!--}-->
-    <!--}-->
-
-    <!--</script>-->
-
     <script>
 
         var check = false;
@@ -104,7 +81,7 @@
             if (userid.length == 0) {
                 alert("아이디를 입력해 주세요");
                 $("#user_id").focus();
-                return false;
+                exit();
             }
 
             if (!regExpPassword.test(userpwd)) {
@@ -114,7 +91,7 @@
 
             }
 
-            if (!regExName.test(name)) {
+            if (!regExName.test(username)) {
                 alert("이름은 한글만 가능합니다.");
                 $("#user_id").focus();
                 return false;
@@ -157,10 +134,9 @@
             }
 
             if (confirm("회원가입을 하시겠습니까?")) {
-                alert("회원가입을 축하합니다");
+                document.myform.submit();
                 return true;
             }
-
 
         }
 
@@ -211,14 +187,14 @@
         <div class="sign_up_card">
             <div class="card-header">
                 <h3>Sign Up</h3>
-                <!-- <div class="d-flex justify-content-end social_icon">
-                    <span><i class="fab fa-facebook-square"></i></span>
-                    <span><i class="fab fa-google-plus-square"></i></span>
-                    <span><i class="fab fa-twitter-square"></i></span>
-                </div> -->
+                <!--<div class="d-flex justify-content-end social_icon">-->
+                    <!--<span><i class="fab fa-facebook-square"></i></span>-->
+                    <!--<span><i class="fab fa-google-plus-square"></i></span>-->
+                    <!--<span><i class="fab fa-twitter-square"></i></span>-->
+                <!--</div>-->
             </div>
             <div class="card-body">
-                <form method="post" action="sign_up_result.php">
+                <form name="myform" method="post" action="sign_up_result.php">
 
                     <!-- 아이디 -->
                     <div class="input-group form-group">
@@ -263,7 +239,7 @@
                     <!-- 핸드폰 번호 -->
                     <div class="input-group form-group">
                         <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="fas fa-user"></i></span>
+                            <span class="input-group-text"><i class="fas fa-phone"></i></span>
                         </div>
                         <input type="tel" class="form-control" maxlength=11 placeholder="Mobile No" name="phone"
                                id="phone">
@@ -281,12 +257,14 @@
                     <input type="button" class="btn float-right login_btn" value="Sign Up" onclick="DosignUp()">
 
                 </form>
+
             </div>
 
         </div>
-        <iframe src="" id="check_page" scrolling=no frameborder=no width=0 height=0 name="check_page"></iframe>
+
 
     </div>
+    <iframe src="" id="check_page" scrolling=no frameborder=no width=0 height=0 name="check_page"></iframe>
 
 </div>
 
