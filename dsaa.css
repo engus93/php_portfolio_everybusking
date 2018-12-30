@@ -94,3 +94,8 @@ body {
 .side-nav li {
     border-bottom: 1px solid #50575d;
 }
+
+.zz{
+    width: 30px !important;
+    margin-right: 30px !important;
+}
