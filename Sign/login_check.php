@@ -26,7 +26,7 @@ $row = mysqli_fetch_assoc($result);
         history.back();
     } else if (login_pass == user_pass) {
         alert("로그인");
-        location.href = '../index.html';
+        location.href = '../main.html';
     } else {
         alert("비밀번호가 일치하지 않습니다.");
         history.back();
