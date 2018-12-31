@@ -42,6 +42,44 @@
 
     <script>
 
+        var id_chaeck = false;
+        var pass_chaeck = false;
+        var pass_re_chaeck = false;
+        var name_chaeck = false;
+        var phone_chaeck = false;
+
+        $(document).ready(function (e) {
+            $(".id_check").on("keyup", function () { //check라는 클래스에 입력을 감지
+                var self = $(this);
+                var userid;
+
+                if (self.attr("id") === "user_id") {
+                    userid = self.val();
+                }
+
+                $.post( //post방식으로 id_check.php에 입력한 userid값을 넘깁니다
+                    "asd.php",
+                    //ID - 이름 , userid - 값
+                    {ID: userid},
+                    function (data) {
+                        if (data) { //만약 data값이 전송되면
+                            if (data == "true") {
+                                self.parent().parent().find("#user_id").css("background-color", "#fc3c3c"); //div 태그를 찾아 css효과로 빨간색을 설정합니다
+                                id_chaeck = false;
+                            } else if (data == "false") {
+                                self.parent().parent().find("#user_id").css("background-color", "#FFB863"); //div 태그를 찾아 css효과로 빨간색을 설정합니다
+                                id_chaeck = true;
+                            } else {
+                                self.parent().parent().find("#user_id").css("background-color", "#FFFFFF"); //div 태그를 찾아 css효과로 빨간색을 설정합니다
+                                id_chaeck = false;
+                            }
+
+                        }
+                    }
+                );
+            });
+        });
+
         $(document).ready(function (e) {
             $(".id_check").on("keyup", function () { //check라는 클래스에 입력을 감지
                 var self = $(this);
@@ -56,41 +94,50 @@
                     {ID: userid},
                     function (data) {
                         if (data) { //만약 data값이 전송되면
-                            self.parent().parent().find("#divvie").html(data); //div태그를 찾아 html방식으로 data를 뿌려줍니다.
-                            // self.parent().parent().find(#user_id).css("background-color", "#F00"); //div 태그를 찾아 css효과로 빨간색을 설정합니다
+                            if (data == "true") {
+                                self.parent().parent().find("#user_id").css("background-color", "#fc3c3c"); //div 태그를 찾아 css효과로 빨간색을 설정합니다
+                                id_chaeck = false;
+                            } else if (data == "false") {
+                                self.parent().parent().find("#user_id").css("background-color", "#FFB863"); //div 태그를 찾아 css효과로 빨간색을 설정합니다
+                                id_chaeck = true;
+                            } else {
+                                self.parent().parent().find("#user_id").css("background-color", "#FFFFFF"); //div 태그를 찾아 css효과로 빨간색을 설정합니다
+                                id_chaeck = false;
+                            }
+
                         }
                     }
                 );
             });
         });
 
-        var check = false;
-
-        function checkid() {
-
-            // 아이디 체크 정규식
-            var regExpId = /^[a-z0-9_-]\w{5,10}$/;
-
-            var id = document.getElementById("user_id").value;
-
-            if (id == "") {
-                alert("아이디를 입력하세요");
-                check = false;
-                return false;
-
-            } else if (!regExpId.test(id)) {
-                alert("아이디는 5글자 이상 영문, 숫자 조합만 가능합니다.");
-                $("#user_id").focus();
-                return false;
-
-            } else {
-                check_page.location.href = "check.php?userid=" + id;
-                check = true;
-                return true;
-
-            }
-
-        }
+        // var check = false;
+        //
+        // function checkid() {
+        //
+        //     // 아이디 체크 정규식
+        //     var regExpId = /^[a-z0-9_-]\w{5,10}$/;
+        //
+        //     var id = document.getElementById("user_id").value;
+        //
+        //     if (id == "") {
+        //         alert("아이디를 입력하세요");
+        //         check = false;
+        //         return false;
+        //
+        //     } else if (!regExpId.test(id)) {
+        //         alert("아이디는 5글자 이상 영문, 숫자 조합만 가능합니다.");
+        //         $("#user_id").focus();
+        //         return false;
+        //
+        //     } else {
+        //         check_page.location.href = "check.php?userid=" + id;
+        //         check = true;
+        //         return true;
+        //
+        //     }
+        //
+        // }
 
         function DosignUp() {
 
@@ -249,20 +296,23 @@
                 <form name="myform" method="post" action="sign_up_result.php">
 
                     <!-- 아이디 -->
-                    <div class="input-group form-group">
+                    <div class="input-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fas fa-user"></i></span>
                         </div>
-                        <input type="text" class="form-control id_check" maxlength=10 placeholder="ID (max 10)" name="ID"
+                        <input type="text" class="form-control id_check" maxlength=10 placeholder="ID (max 10)"
+                               name="ID"
                                id="user_id">
-                        <input type="button" class="btn float-right login_btn my_font_main" onclick="checkid()"
-                               value="중복체크">
-                        <input type=hidden id="user_id_ck" name=user_id_ck value="0">
-                        <div id="divvie"></div>
+                        <!--<input type="button" class="btn float-right login_btn my_font_main" onclick="checkid()"-->
+                        <!--value="중복체크">-->
+
+
                     </div>
+                    <!--<input type=hidden id="user_id_ck" name=user_id_ck value="0">-->
+                    <div id="divvie" style="color: white">　</div>
 
                     <!-- 패스워드 -->
-                    <div class="input-group form-group">
+                    <div class="input-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fas fa-key"></i></span>
                         </div>
@@ -270,8 +320,10 @@
                                name="password" id="password">
                     </div>
 
+                    <div style="color: white">　</div>
+
                     <!-- 패스워드 확인 -->
-                    <div class="input-group form-group">
+                    <div class="input-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fas fa-key"></i></span>
                         </div>
@@ -279,8 +331,10 @@
                                name="password_re" id="password_re">
                     </div>
 
+                    <div style="color: white">　</div>
+
                     <!-- 이름 -->
-                    <div class="input-group form-group">
+                    <div class="input-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fas fa-user"></i></span>
                         </div>
@@ -288,8 +342,10 @@
                                id="name">
                     </div>
 
+                    <div style="color: white">　</div>
+
                     <!-- 핸드폰 번호 -->
-                    <div class="input-group form-group">
+                    <div class="input-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fas fa-phone"></i></span>
                         </div>
@@ -297,7 +353,9 @@
                                id="phone">
                     </div>
 
-                    <div class="input-group form-group" style="color: white">
+                    <div style="color: white">　</div>
+
+                    <div class="input-group" style="color: white">
                         <label class=""> Gender : </label>
                         <label class="radio-inline" style="margin-left: 25px"><input type="radio" value="Male"
                                                                                      name="sex" id="male">Male</label>
@@ -306,8 +364,10 @@
                                                                                      id="female">Female</label>
                     </div>
 
+                    <div style="color: white">　</div>
+
                     <input type="button" class="btn float-left login_btn" value="Back" onclick="history.back()">
-                    <input type="button" class="btn float-right login_btn" value="Sign Up" onclick="DosignUp()">
+                    <input type="button" class="btn float-right login_btn" value="Sign Up" onclick="DosignUp()" disabled="disabled">
 
                 </form>
 

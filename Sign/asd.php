@@ -10,9 +10,13 @@ if ($_POST['ID'] != NULL) {
     $row = mysqli_fetch_assoc($result);
 
     if ($row >= 1) {
-        echo "존재하는 아이디입니다.";
+        echo "true";
+//        echo "<script>parent.find(#user_id).css('background-color', '#F00');</script>";
     } else {
-        echo "존재하지 않는 아이디입니다.";
+        echo "false";
+//        echo "<script>parent.find(#user_id).css('background-color', '#F90');</script>";
     }
+}else{
+    echo "　";
 };
 ?>
