@@ -18,6 +18,7 @@ $row = mysqli_fetch_assoc($result);
 <script>
     var user_id = "<?= $row['user_id']?>";
     var user_pass = "<?= $row['password']?>";
+    var user_name = "<?= $row['name']?>";
 
     var login_pass = "<?= $password?>";
 
@@ -25,7 +26,7 @@ $row = mysqli_fetch_assoc($result);
         alert("아이디가 일치하지 않습니다.");
         history.back();
     } else if (login_pass == user_pass) {
-        alert("로그인");
+        alert(user_name + "님 환영합니다.");
         location.href = '../main.html';
     } else {
         alert("비밀번호가 일치하지 않습니다.");
