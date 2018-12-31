@@ -30,7 +30,7 @@
           crossorigin="anonymous">
 
     <!--Custom styles-->
-    <link rel="stylesheet" type="text/css" href="../css/sign.css">
+    <link rel="stylesheet" type="text/css" href="../css/forgot_pass.css">
     <link href="../css/public.css" rel="stylesheet">
 
     <link href="../side_bar.css" rel="stylesheet">
@@ -42,38 +42,7 @@
 
     <script>
 
-        var check = false;
-
-        function checkid() {
-
-            // 아이디 체크 정규식
-            var regExpId = /^[a-z0-9_-]\w{5,10}$/;
-
-            var id = document.getElementById("user_id").value;
-
-            if (id == "") {
-                alert("아이디를 입력하세요");
-                check = false;
-                return false;
-
-            } else if (!regExpId.test(id)) {
-                alert("아이디는 5글자 이상 영문, 숫자 조합만 가능합니다.");
-                $("#user_id").focus();
-                return false;
-
-            } else {
-                check_page.location.href = "check.php?userid=" + id;
-                check = true;
-                return true;
-
-            }
-
-        }
-
-        function DosignUp() {
-
-            // 비밀번호 조합(영문, 숫자) 및 길이 체크 정규식
-            var regExpPassword = /^(?=.*[a-zA-Z])(?=.*[0-9]).{6,16}$/;
+        function my_pass() {
 
             // 휴대폰번호 정규식
             var regExpMobile = /^01([016789]?)-?([0-9]{3,4})-?([0-9]{4})$/;
@@ -81,8 +50,6 @@
             var regExName = /^[가-힣]+$/;
 
             var userid = document.getElementById("user_id").value;
-            var userpwd = document.getElementById("password").value;
-            var inputPwdCfm = document.getElementById("password_re").value;
             var username = document.getElementById("name").value;
             var phone = document.getElementById("phone").value;
 
@@ -92,41 +59,11 @@
                 exit();
             }
 
-            if (!regExpPassword.test(userpwd)) {
-                alert("비밀번호는 6 ~ 16 글자의 영문, 숫자 조합을 해주세요.");
-                $("#user_id").focus();
-                return false;
-
-            }
-
             if (!regExName.test(username)) {
                 alert("이름은 한글만 가능합니다.");
                 $("#user_id").focus();
                 return false;
 
-            }
-
-            if (!check) {
-                alert("중복체크를 해주세요");
-                return false;
-            }
-
-            if (userpwd.length == 0) {
-                alert("비밀번호를 입력해 주세요");
-                $("#password").focus();
-                return false;
-            }
-
-            if (inputPwdCfm.length == 0) {
-                alert("비밀번호를 입력해 주세요");
-                $("#password").focus();
-                return false;
-            }
-
-            if (userpwd != inputPwdCfm) {
-                alert("비밀번호가 서로 다릅니다. 비밀번호를 확인해 주세요.");
-                $("#password_re").focus();
-                return false;
             }
 
             if (username.length == 0) {
@@ -139,16 +76,13 @@
                 alert("정확한 전화번호를 입력해주세요");
                 $("#phone").focus();
                 return false;
-            }
 
-            if (confirm("회원가입을 하시겠습니까?")) {
-
-                form = document.myform;
+            } else {
+                form = document.forgot_form;
                 form.target = "check_page";
                 form.submit();
-
-                // document.myform.submit();
                 return true;
+
             }
 
         }
@@ -216,15 +150,10 @@
     <div class="d-flex justify-content-center h-100">
         <div class="sign_up_card">
             <div class="card-header">
-                <h3>Sign Up</h3>
-                <!--<div class="d-flex justify-content-end social_icon">-->
-                <!--<span><i class="fab fa-facebook-square"></i></span>-->
-                <!--<span><i class="fab fa-google-plus-square"></i></span>-->
-                <!--<span><i class="fab fa-twitter-square"></i></span>-->
-                <!--</div>-->
+                <h3>Forgot your password</h3>
             </div>
             <div class="card-body">
-                <form name="myform" method="post" action="sign_up_result.php">
+                <form name="forgot_form" method="post" action="forgot_pass.php">
 
                     <!-- 아이디 -->
                     <div class="input-group form-group">
@@ -233,28 +162,8 @@
                         </div>
                         <input type="text" class="form-control" maxlength=10 placeholder="ID (max 10)" name="ID"
                                id="user_id">
-                        <input type="button" class="btn float-right login_btn my_font_main" onclick="checkid()"
-                               value="중복체크">
                         <input type=hidden id="user_id_ck" name=user_id_ck value="0">
 
-                    </div>
-
-                    <!-- 패스워드 -->
-                    <div class="input-group form-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="fas fa-key"></i></span>
-                        </div>
-                        <input type="password" class="form-control" maxlength=16 placeholder="Password (max 16)"
-                               name="password" id="password">
-                    </div>
-
-                    <!-- 패스워드 확인 -->
-                    <div class="input-group form-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="fas fa-key"></i></span>
-                        </div>
-                        <input type="password" class="form-control" maxlength=16 placeholder="Confirm Password"
-                               name="password_re" id="password_re">
                     </div>
 
                     <!-- 이름 -->
@@ -275,23 +184,15 @@
                                id="phone">
                     </div>
 
-                    <div class="input-group form-group" style="color: white">
-                        <label class=""> Gender : </label>
-                        <label class="radio-inline" style="margin-left: 25px"><input type="radio" value="Male"
-                                                                                     name="sex" id="male">Male</label>
-                        <label class="radio-inline" style="margin-left: 25px"><input type="radio" value="Female"
-                                                                                     name="sex"
-                                                                                     id="female">Female</label>
-                    </div>
-
-                    <input type="button" class="btn float-right login_btn" value="Sign Up" onclick="DosignUp()">
+                    <input type="button" class="btn float-right login_btn" value="Submit" onclick="my_pass()">
 
                 </form>
 
             </div>
 
         </div>
-        <iframe src="" id="check_page" scrolling=no frameborder=no width=0 height=0 name="check_page"></iframe>
+
+        <iframe src="forgot_pass.php" id="check_page" scrolling=no frameborder=no width=0 height=0 name="check_page"></iframe>
 
     </div>
 
