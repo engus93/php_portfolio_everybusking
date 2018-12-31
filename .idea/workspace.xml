@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="315b7d6c-43dd-4b04-a2b3-17ad3cc59c77" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sign/asd.php" beforeDir="false" afterPath="$PROJECT_DIR$/Sign/asd.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Sign/sign_up.html" beforeDir="false" afterPath="$PROJECT_DIR$/Sign/sign_up.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/sign.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/sign.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,8 +16,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Sign/sign_up.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="454">
-              <caret line="370" lean-forward="true" selection-start-line="370" selection-end-line="370" />
+            <state relative-caret-position="407">
+              <caret line="164" column="52" selection-start-line="164" selection-start-column="52" selection-end-line="164" selection-end-column="52" />
               <folding>
                 <element signature="n#style#0;n#a#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#form#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -56,7 +54,7 @@
         <entry file="file://$PROJECT_DIR$/Sign/login_check.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="221">
-              <caret line="18" column="12" lean-forward="true" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
+              <caret line="18" column="8" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -237,7 +235,7 @@
       <workItem from="1546092858911" duration="12577000" />
       <workItem from="1546154749278" duration="18262000" />
       <workItem from="1546229369416" duration="17887000" />
-      <workItem from="1546274366957" duration="5241000" />
+      <workItem from="1546274366957" duration="7218000" />
     </task>
     <task id="LOCAL-00001" summary="18.12.26&#10;&#10;PHP_Storm으로 옮김">
       <created>1545830389066</created>
@@ -400,11 +398,18 @@
       <option name="project" value="LOCAL" />
       <updated>1546247919981</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="18.12.31&#10;&#10;아이디 실시간 중복체크 1차 완료">
+      <created>1546280206533</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1546280206533</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="98299000" />
+    <option name="totallyTimeSpent" value="100276000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -419,7 +424,7 @@
     <frame x="-9" y="-9" width="1620" height="1068" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18934532" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18934532" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -431,8 +436,8 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32939914" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
-      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49841067" visible="true" weight="0.2300216" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49904642" weight="0.32725322" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="9" sideWeight="0.49841067" visible="true" weight="0.2300216" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49904642" weight="0.32721382" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5015893" side_tool="true" weight="0.17918456" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -495,7 +500,8 @@
     <MESSAGE value="18.12.30&#10;&#10;사이드 바 완료" />
     <MESSAGE value="18.12.31&#10;&#10;아이디 실시간 중복체크 하기" />
     <MESSAGE value="18.12.31&#10;&#10;아이디 실시간 중복체크 시작" />
-    <option name="LAST_COMMIT_MESSAGE" value="18.12.31&#10;&#10;아이디 실시간 중복체크 시작" />
+    <MESSAGE value="18.12.31&#10;&#10;아이디 실시간 중복체크 1차 완료" />
+    <option name="LAST_COMMIT_MESSAGE" value="18.12.31&#10;&#10;아이디 실시간 중복체크 1차 완료" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/css/application.css">
@@ -857,13 +863,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Sign/login_check.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="18" column="12" lean-forward="true" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Sign/asd.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="228">
@@ -888,10 +887,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Sign/login_check.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="18" column="8" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Sign/sign_up.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="454">
-          <caret line="370" lean-forward="true" selection-start-line="370" selection-end-line="370" />
+        <state relative-caret-position="407">
+          <caret line="164" column="52" selection-start-line="164" selection-start-column="52" selection-end-line="164" selection-end-column="52" />
           <folding>
             <element signature="n#style#0;n#a#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#form#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
