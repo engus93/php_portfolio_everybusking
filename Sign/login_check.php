@@ -2,7 +2,7 @@
 require_once "../db.php";
 
 $uid = $_POST['ID'];
-$password = md5($_POST['password']);
+$password = base64_encode($_POST['password']);
 
 // 쿼리 만들기
 $sql = "SELECT * FROM user_info_tb WHERE user_id='$uid'";

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
+<head>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -15,176 +15,209 @@
 
     <!-- Custom styles for this template -->
     <link href="css/modern-business.css" rel="stylesheet">
+    <link href="css/public.css" rel="stylesheet">
 
-  </head>
+    <link href="side_bar.css" rel="stylesheet">
 
-  <body>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-  <!-- 네비게이션 -->
-  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <div class="container">
-      <a class="navbar-brand" href="main.html" style="font-family: 'Monoton', cursive; font-size: 20px">Every Busking</a>
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive"
-        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="Sign/sign_in.html">Sign in</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="buskingteam.html" style="color: #CE6D39">Busking Team</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="busking_zone.html">Busking Zone</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="streaming.html">Streaming</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="community.html">Community</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="concert.html">Concert</a>
-          </li>
-        </ul>
-      </div>
+
+</head>
+
+<body>
+
+<!--사이드바-->
+<div id="wrapper" class="animate">
+    <nav class="navbar header-top fixed-top navbar-expand-lg navbar-dark bg-dark">
+        <span class="navbar-toggler-icon leftmenutrigger"></span>
+        <a class="navbar-brand" href="main.html"
+           style="font-family: 'Monoton', cursive; margin-left: 10px; font-size: 20px;">Every
+            Busking</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+                aria-controls="navbarText"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav animate side-nav">
+                <li class="nav-item">
+                    <a class="nav-link color_main" href="buskingteam.html" title="Dashboard"><i
+                            class="fas fa-users side_bar_img"></i>Busking Team<i
+                            class="fas fa-cube shortmenu animate"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="busking_zone.html" title="Cart"><i
+                            class="fas fa-map-marker-alt side_bar_img"></i>Busking Zone<i
+                            class="fas fa-cart-plus shortmenu animate"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="streaming.html" title="Comment"><i class="fas fa-video side_bar_img"></i>Streaming<i
+                            class="fas fa-comment shortmenu animate"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="community.html" title="Comment"><i class="fas fa-star side_bar_img"></i>Community<i
+                            class="fas fa-comment shortmenu animate"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="concert.html" title="Comment"><i
+                            class="fas fa-compact-disc side_bar_img"></i>Concert<i
+                            class="fas fa-comment shortmenu animate"></i></a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-md-auto d-md-flex">
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fas fa-user"></i> Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Sign/sign_in.html"><i class="fas fa-key"></i> Sign in</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
+<!-- Page Content -->
+<div class="container">
+
+    <!-- Page Heading/Breadcrumbs -->
+    <h1 class="mt-4 mb-3 my_font_index" style="margin-top: 30px">Busking Team - Song List
+        <p class="my_font_start" style="margin-top: 30px; margin-bottom: 30px; color: black">곽진언</p>
+    </h1>
+
+    <!-- 1번 -->
+    <div class="row">
+        <div class="col-md-7">
+            <a href="#">
+                <iframe width="100%" height="350px" src="https://www.youtube.com/embed/aZFaorIYGO8" frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                </iframe>
+            </a>
+        </div>
+        <div class="col-md-5">
+            <h3 class="my_font_start" style="font-size: 2.5em">그대가 들어줬으면</h3>
+            <div class="my_font_main" style="margin-top: 30px; font-size: 20px; position: relative;">
+                <p>이 곡은 그대가 들어줬으면 하는 마음으로 만든 곡입니다.</p>
+                <p>감사합니다.</p>
+            </div>
+        </div>
     </div>
-  </nav>
 
-    <!-- Page Content -->
+    <!-- 경계선 -->
+    <hr>
+
+    <!-- 2번 -->
+    <div class="row">
+        <div class="col-md-7">
+            <a href="#">
+                <iframe width="100%" height="350px" src="https://www.youtube.com/embed/RIG4iuCwq2w" frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                </iframe>
+            </a>
+        </div>
+        <div class="col-md-5">
+            <h3 class="my_font_start" style="font-size: 2.5em">후회</h3>
+            <div class="my_font_main" style="margin-top: 30px; font-size: 20px; position: relative;">
+                <p>이 곡은 후회 하는 마음으로 만든 곡입니다.</p>
+                <p>감사합니다.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 경계선 -->
+    <hr>
+
+    <!-- 3번 -->
+    <div class="row">
+        <div class="col-md-7">
+            <a href="#">
+                <iframe width="100%" height="350px" src="https://www.youtube.com/embed/D30XoATQYUo" frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                </iframe>
+            </a>
+        </div>
+        <div class="col-md-5">
+            <h3 class="my_font_start" style="font-size: 2.5em">나랑 갈래</h3>
+            <div class="my_font_main" style="margin-top: 30px; font-size: 20px; position: relative;">
+                <p>이 곡은 나랑 가자는 마음으로 만든 곡입니다.</p>
+                <p>감사합니다.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 경계선 -->
+    <hr>
+
+    <!-- 4번 -->
+    <div class="row">
+        <div class="col-md-7">
+            <a href="#">
+                <iframe width="100%" height="350px" src="https://www.youtube.com/embed/_ApJXITll7c" frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                </iframe>
+            </a>
+        </div>
+        <div class="col-md-5">
+            <h3 class="my_font_start" style="font-size: 2.5em">백허그</h3>
+            <div class="my_font_main" style="margin-top: 30px; font-size: 20px; position: relative;">
+                <p>이 곡은 백허그 하는 마음으로 만든 곡입니다.</p>
+                <p>감사합니다.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 경계선 -->
+    <hr>
+
+    <!-- Pagination -->
+    <ul class="pagination justify-content-center">
+        <li class="page-item">
+            <a class="page-link" href="#" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+                <span class="sr-only">Previous</span>
+            </a>
+        </li>
+        <li class="page-item">
+            <a class="page-link" href="#">1</a>
+        </li>
+        <li class="page-item">
+            <a class="page-link" href="#">2</a>
+        </li>
+        <li class="page-item">
+            <a class="page-link" href="#">3</a>
+        </li>
+        <li class="page-item">
+            <a class="page-link" href="#" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+                <span class="sr-only">Next</span>
+            </a>
+        </li>
+    </ul>
+
+</div>
+<!-- /.container -->
+
+<!-- Footer -->
+<footer class="py-5 bg-dark">
     <div class="container">
-
-      <!-- Page Heading/Breadcrumbs -->
-      <h1 class="mt-4 mb-3 my_font_index" style="margin-top: 30px">Busking Team - Song List
-        <p class="my_font_start" style="margin-top: 30px; margin-bottom: 30px; color: black" >곽진언</p>
-      </h1>
-
-      <!-- 1번 -->
-      <div class="row">
-        <div class="col-md-7">
-          <a href="#">
-              <iframe width="100%" height="350px" src="https://www.youtube.com/embed/aZFaorIYGO8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen>
-            </iframe>
-          </a>
-        </div>
-        <div class="col-md-5">
-          <h3 class="my_font_start" style="font-size: 2.5em">그대가 들어줬으면</h3>
-          <div class="my_font_main" style="margin-top: 30px; font-size: 20px; position: relative;">
-            <p>이 곡은 그대가 들어줬으면 하는 마음으로 만든 곡입니다.</p>
-            <p>감사합니다.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- 경계선 -->
-      <hr>
-
-      <!-- 2번 -->
-      <div class="row">
-        <div class="col-md-7">
-          <a href="#">
-              <iframe width="100%" height="350px" src="https://www.youtube.com/embed/RIG4iuCwq2w" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen>
-            </iframe>
-          </a>
-        </div>
-        <div class="col-md-5">
-          <h3 class="my_font_start" style="font-size: 2.5em">후회</h3>
-          <div class="my_font_main" style="margin-top: 30px; font-size: 20px; position: relative;">
-            <p>이 곡은 후회 하는 마음으로 만든 곡입니다.</p>
-            <p>감사합니다.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- 경계선 -->
-      <hr>
-
-      <!-- 3번 -->
-      <div class="row">
-        <div class="col-md-7">
-          <a href="#">
-              <iframe width="100%" height="350px" src="https://www.youtube.com/embed/D30XoATQYUo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen>
-            </iframe>
-          </a>
-        </div>
-        <div class="col-md-5">
-          <h3 class="my_font_start" style="font-size: 2.5em">나랑 갈래</h3>
-          <div class="my_font_main" style="margin-top: 30px; font-size: 20px; position: relative;">
-            <p>이 곡은 나랑 가자는 마음으로 만든 곡입니다.</p>
-            <p>감사합니다.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- 경계선 -->
-      <hr>
-
-      <!-- 4번 -->
-      <div class="row">
-        <div class="col-md-7">
-          <a href="#">
-              <iframe width="100%" height="350px" src="https://www.youtube.com/embed/_ApJXITll7c" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen>
-            </iframe>
-          </a>
-        </div>
-        <div class="col-md-5">
-          <h3 class="my_font_start" style="font-size: 2.5em">백허그</h3>
-          <div class="my_font_main" style="margin-top: 30px; font-size: 20px; position: relative;">
-            <p>이 곡은 백허그 하는 마음으로 만든 곡입니다.</p>
-            <p>감사합니다.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- 경계선 -->
-      <hr>
-
-      <!-- Pagination -->
-      <ul class="pagination justify-content-center">
-        <li class="page-item">
-          <a class="page-link" href="#" aria-label="Previous">
-            <span aria-hidden="true">&laquo;</span>
-            <span class="sr-only">Previous</span>
-          </a>
-        </li>
-        <li class="page-item">
-          <a class="page-link" href="#">1</a>
-        </li>
-        <li class="page-item">
-          <a class="page-link" href="#">2</a>
-        </li>
-        <li class="page-item">
-          <a class="page-link" href="#">3</a>
-        </li>
-        <li class="page-item">
-          <a class="page-link" href="#" aria-label="Next">
-            <span aria-hidden="true">&raquo;</span>
-            <span class="sr-only">Next</span>
-          </a>
-        </li>
-      </ul>
-
+        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2018</p>
     </div>
     <!-- /.container -->
+</footer>
 
-    <!-- Footer -->
-    <footer class="py-5 bg-dark">
-      <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2018</p>
-      </div>
-      <!-- /.container -->
-    </footer>
+<!-- Bootstrap core JavaScript -->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js"></script>
+<script src="side_bar.js"></script>
 
-  </body>
+
+</body>
 
 </html>

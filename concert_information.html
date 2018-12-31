@@ -17,44 +17,61 @@
     <link href="css/concert_information.css" rel="stylesheet">
     <link href="css/public.css" rel="stylesheet">
 
+    <link href="side_bar.css" rel="stylesheet">
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
 </head>
 
 <body>
 
-<!-- 네비게이션 -->
-<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <div class="container">
-        <a class="navbar-brand" href="main.html" style="font-family: 'Monoton', cursive; font-size: 20px">Every
+<!--사이드바-->
+<div id="wrapper" class="animate">
+    <nav class="navbar header-top fixed-top navbar-expand-lg navbar-dark bg-dark">
+        <span class="navbar-toggler-icon leftmenutrigger"></span>
+        <a class="navbar-brand" href="main.html" style="font-family: 'Monoton', cursive; margin-left: 10px; font-size: 20px;">Every
             Busking</a>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
-                data-target="#navbarResponsive"
-                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+                aria-controls="navbarText"
+                aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav animate side-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="Sign/sign_in.html">Sign in</a>
+                    <a class="nav-link" href="buskingteam.html" title="Dashboard" ><i class="fas fa-users side_bar_img"></i>Busking Team<i
+                            class="fas fa-cube shortmenu animate"></i></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="buskingteam.html">Busking Team</a>
+                    <a class="nav-link" href="busking_zone.html" title="Cart"><i class="fas fa-map-marker-alt side_bar_img"></i>Busking Zone<i
+                            class="fas fa-cart-plus shortmenu animate"></i></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="busking_zone.html">Busking Zone</a>
+                    <a class="nav-link" href="streaming.html" title="Comment" ><i class="fas fa-video side_bar_img"></i>Streaming<i
+                            class="fas fa-comment shortmenu animate"></i></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="streaming.html">Streaming</a>
+                    <a class="nav-link" href="community.html" title="Comment" ><i class="fas fa-star side_bar_img"></i>Community<i
+                            class="fas fa-comment shortmenu animate"></i></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="community.html">Community</a>
+                    <a class="nav-link color_main" href="concert.html" title="Comment" ><i class="fas fa-compact-disc side_bar_img"></i>Concert<i
+                            class="fas fa-comment shortmenu animate"></i></a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-md-auto d-md-flex">
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fas fa-user"></i> Profile</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link color_main" href="concert.html">Concert</a>
+                    <a class="nav-link" href="Sign/sign_in.html"><i class="fas fa-key"></i> Sign in</a>
                 </li>
             </ul>
         </div>
-    </div>
-</nav>
+    </nav>
+</div>
 
 <!-- Page Content -->
 <div class="container" style="margin-top: 30px; margin-bottom: 50px">
@@ -234,6 +251,9 @@
 <!-- Bootstrap core JavaScript -->
 <script src="vendor/jquery/jquery.min.js"></script>
 <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js"></script>
+<script src="side_bar.js"></script>
 
 </body>
 
