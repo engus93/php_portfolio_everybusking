@@ -89,6 +89,8 @@ body {
 
 }
 
-#zzzz:hover{
-    background-color: #005cbf !important;
+#support:hover{
+    background-color: transparent !important;
+    color: #FBAA48 !important;
+    border: #FBAA48 2px solid;
 }
