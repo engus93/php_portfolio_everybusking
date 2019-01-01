@@ -47,6 +47,7 @@
         var pass_re_chaeck = false;
         var name_chaeck = false;
         var phone_chaeck = false;
+        var sex_chaeck = false;
 
         //아이디 중복체크
         $(document).ready(function (e) {
@@ -75,6 +76,8 @@
                                 id_chaeck = false;
                             }
 
+                            sign_up_check();
+
                         }
                     }
                 );
@@ -93,16 +96,18 @@
 
                 user_pwd = document.getElementById("password").value;
 
-                if(user_pwd.length == 0) {
+                if (user_pwd.length == 0) {
                     $(this).parent().parent().find("#password").css("background-color", "#FFFFFF");
                     pass_chaeck = false;
-                }else if (!regExpPassword.test(user_pwd)) {
+                } else if (!regExpPassword.test(user_pwd)) {
                     $(this).parent().parent().find("#password").css("background-color", "#fc3c3c");
                     pass_chaeck = false;
                 } else if (regExpPassword.test(user_pwd)) {
                     $(this).parent().parent().find("#password").css("background-color", "#FFB863");
                     pass_chaeck = true;
                 }
+
+                sign_up_check();
 
             });
 
@@ -116,13 +121,18 @@
                 user_pwd = document.getElementById("password").value;
                 user_pwd_re = document.getElementById("password_re").value;
 
-                if(user_pwd_re.length == 0) {
+                if (user_pwd_re.length == 0) {
                     $(this).parent().parent().find("#password_re").css("background-color", "#FFFFFF");
-                }else if (user_pwd != user_pwd_re) {
+                    pass_re_chaeck = false;
+                } else if (user_pwd != user_pwd_re) {
                     $(this).parent().parent().find("#password_re").css("background-color", "#fc3c3c");
+                    pass_re_chaeck = false;
                 } else if (user_pwd == user_pwd_re) {
                     $(this).parent().parent().find("#password_re").css("background-color", "#FFB863");
+                    pass_re_chaeck = true;
                 }
+
+                sign_up_check();
 
             });
 
@@ -138,13 +148,18 @@
 
                 var user_name = document.getElementById("name").value;
 
-                if(user_name.length == 0) {
+                if (user_name.length == 0) {
                     $(this).parent().parent().find("#name").css("background-color", "#FFFFFF");
-                }else if (!regExName.test(user_name)) {
+                    name_chaeck = false;
+                } else if (!regExName.test(user_name)) {
                     $(this).parent().parent().find("#name").css("background-color", "#fc3c3c");
+                    name_chaeck = false;
                 } else if (regExName.test(user_name)) {
                     $(this).parent().parent().find("#name").css("background-color", "#FFB863");
+                    name_chaeck = true;
                 }
+
+                sign_up_check();
 
             });
 
@@ -160,101 +175,131 @@
 
                 var user_phone = document.getElementById("phone").value;
 
-                if(user_phone.length == 0) {
+                if (user_phone.length == 0) {
                     $(this).parent().parent().find("#phone").css("background-color", "#FFFFFF");
-                }else if (user_phone.length < 11 && !regExpMobile.test(user_phone)) {
+                    phone_chaeck = false;
+                } else if (user_phone.length < 11 || !regExpMobile.test(user_phone)) {
                     $(this).parent().parent().find("#phone").css("background-color", "#fc3c3c");
+                    phone_chaeck = false;
                 } else if (regExpMobile.test(user_phone) && user_phone.length == 11) {
                     $(this).parent().parent().find("#phone").css("background-color", "#FFB863");
+                    phone_chaeck = true;
                 }
+
+                sign_up_check();
 
             });
 
         });
 
+        //성별
+        function sex_check() {
 
-        function DosignUp() {
+            var st = $(":input:radio[name=sex]:checked").val();
 
-            // 비밀번호 조합(영문, 숫자) 및 길이 체크 정규식
-            var regExpPassword = /^(?=.*[a-zA-Z])(?=.*[0-9]).{6,16}$/;
-
-            // 휴대폰번호 정규식
-            var regExpMobile = /^01([016789]?)-?([0-9]{3,4})-?([0-9]{4})$/;
-
-            //이름 한글
-            var regExName = /^[가-힣]+$/;
-
-            var userid = document.getElementById("user_id").value;
-            var userpwd = document.getElementById("password").value;
-            var inputPwdCfm = document.getElementById("password_re").value;
-            var username = document.getElementById("name").value;
-            var phone = document.getElementById("phone").value;
-
-            if (userid.length == 0) {
-                alert("아이디를 입력해 주세요");
-                $("#user_id").focus();
-                exit();
+            if(st == "Male" || st == "Female"){
+                sex_chaeck = true;
+            }else{
+                sex_chaeck = false;
             }
 
-            if (!regExpPassword.test(userpwd)) {
-                alert("비밀번호는 6 ~ 16 글자의 영문, 숫자 조합을 해주세요.");
-                $("#user_id").focus();
-                return false;
+            sign_up_check();
 
-            }
+        }
 
-            if (!regExName.test(username)) {
-                alert("이름은 한글만 가능합니다.");
-                $("#user_id").focus();
-                return false;
-            }
-
-            if (!check) {
-                alert("중복체크를 해주세요");
-                return false;
-            }
-
-            if (userpwd.length == 0) {
-                alert("비밀번호를 입력해 주세요");
-                $("#password").focus();
-                return false;
-            }
-
-            if (inputPwdCfm.length == 0) {
-                alert("비밀번호를 입력해 주세요");
-                $("#password").focus();
-                return false;
-            }
-
-            if (userpwd != inputPwdCfm) {
-                alert("비밀번호가 서로 다릅니다. 비밀번호를 확인해 주세요.");
-                $("#password_re").focus();
-                return false;
-            }
-
-            if (username.length == 0) {
-                alert("이름을 입력해주세요");
-                $("#name").focus();
-                return false;
-            }
-
-            if (phone.length == 0 | !regExpMobile.test(phone)) {
-                alert("정확한 전화번호를 입력해주세요");
-                $("#phone").focus();
-                return false;
-            }
-
-            if (confirm("회원가입을 하시겠습니까?")) {
-
-                form = document.myform;
-                form.target = "check_page";
-                form.submit();
-
-                // document.myform.submit();
-                return true;
+        //가입 버튼 활성화
+        function sign_up_check() {
+            if (name_chaeck && pass_chaeck && pass_re_chaeck && name_chaeck && phone_chaeck && sex_chaeck) {
+                $("#sign_up_button").prop("disabled", false);
+            } else {
+                $("#sign_up_button").prop("disabled", true);
             }
 
         }
+        $("#sign_up_button").prop("disabled", true);
+
+        // function DosignUp() {
+        //
+        //     // 비밀번호 조합(영문, 숫자) 및 길이 체크 정규식
+        //     var regExpPassword = /^(?=.*[a-zA-Z])(?=.*[0-9]).{6,16}$/;
+        //
+        //     // 휴대폰번호 정규식
+        //     var regExpMobile = /^01([016789]?)-?([0-9]{3,4})-?([0-9]{4})$/;
+        //
+        //     //이름 한글
+        //     var regExName = /^[가-힣]+$/;
+        //
+        //     var userid = document.getElementById("user_id").value;
+        //     var userpwd = document.getElementById("password").value;
+        //     var inputPwdCfm = document.getElementById("password_re").value;
+        //     var username = document.getElementById("name").value;
+        //     var phone = document.getElementById("phone").value;
+        //
+        //     if (userid.length == 0) {
+        //         alert("아이디를 입력해 주세요");
+        //         $("#user_id").focus();
+        //         exit();
+        //     }
+        //
+        //     if (!regExpPassword.test(userpwd)) {
+        //         alert("비밀번호는 6 ~ 16 글자의 영문, 숫자 조합을 해주세요.");
+        //         $("#user_id").focus();
+        //         return false;
+        //
+        //     }
+        //
+        //     if (!regExName.test(username)) {
+        //         alert("이름은 한글만 가능합니다.");
+        //         $("#user_id").focus();
+        //         return false;
+        //     }
+        //
+        //     if (!check) {
+        //         alert("중복체크를 해주세요");
+        //         return false;
+        //     }
+        //
+        //     if (userpwd.length == 0) {
+        //         alert("비밀번호를 입력해 주세요");
+        //         $("#password").focus();
+        //         return false;
+        //     }
+        //
+        //     if (inputPwdCfm.length == 0) {
+        //         alert("비밀번호를 입력해 주세요");
+        //         $("#password").focus();
+        //         return false;
+        //     }
+        //
+        //     if (userpwd != inputPwdCfm) {
+        //         alert("비밀번호가 서로 다릅니다. 비밀번호를 확인해 주세요.");
+        //         $("#password_re").focus();
+        //         return false;
+        //     }
+        //
+        //     if (username.length == 0) {
+        //         alert("이름을 입력해주세요");
+        //         $("#name").focus();
+        //         return false;
+        //     }
+        //
+        //     if (phone.length == 0 | !regExpMobile.test(phone)) {
+        //         alert("정확한 전화번호를 입력해주세요");
+        //         $("#phone").focus();
+        //         return false;
+        //     }
+        //
+        //     if (confirm("회원가입을 하시겠습니까?")) {
+        //
+        //         form = document.myform;
+        //         form.target = "check_page";
+        //         form.submit();
+        //
+        //         // document.myform.submit();
+        //         return true;
+        //     }
+        //
+        // }
 
     </script>
 
@@ -349,7 +394,8 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fas fa-key"></i></span>
                         </div>
-                        <input type="password" class="form-control pass_check" maxlength=16 placeholder="Password (max 16)"
+                        <input type="password" class="form-control pass_check" maxlength=16
+                               placeholder="Password (max 16)"
                                name="password" id="password">
                     </div>
 
@@ -360,7 +406,8 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fas fa-key"></i></span>
                         </div>
-                        <input type="password" class="form-control pass_re_check" maxlength=16 placeholder="Confirm Password"
+                        <input type="password" class="form-control pass_re_check" maxlength=16
+                               placeholder="Confirm Password"
                                name="password_re" id="password_re">
                     </div>
 
@@ -371,7 +418,8 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fas fa-user"></i></span>
                         </div>
-                        <input type="text" class="form-control user_name" maxlength=5 placeholder="User Name (max 5)" name="name"
+                        <input type="text" class="form-control user_name" maxlength=5 placeholder="User Name (max 5)"
+                               name="name"
                                id="name">
                     </div>
 
@@ -382,26 +430,27 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fas fa-phone"></i></span>
                         </div>
-                        <input type="tel" class="form-control user_phone" maxlength=11 placeholder="Mobile No" name="phone"
+                        <input type="tel" class="form-control user_phone" maxlength=11 placeholder="Mobile No"
+                               name="phone"
                                id="phone">
                     </div>
 
                     <div style="color: white">　</div>
 
-                    <div class="input-group" style="color: white">
+                    <div class="input-group" style="color: white" id="sex_group">
                         <label class=""> Gender : </label>
                         <label class="radio-inline" style="margin-left: 25px"><input type="radio" value="Male"
-                                                                                     name="sex" id="male">Male</label>
+                                                                                     name="sex" id="male" onclick="sex_check()">Male</label>
                         <label class="radio-inline" style="margin-left: 25px"><input type="radio" value="Female"
                                                                                      name="sex"
-                                                                                     id="female">Female</label>
+                                                                                     id="female" onclick="sex_check()">Female</label>
                     </div>
 
                     <div style="color: white">　</div>
 
                     <input type="button" class="btn float-left login_btn" value="Back" onclick="history.back()">
                     <input type="button" class="btn float-right login_btn" value="Sign Up" onclick="DosignUp()"
-                           disabled="disabled">
+                           disabled="disabled" id="sign_up_button">
 
                 </form>
 
