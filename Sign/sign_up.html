@@ -218,88 +218,83 @@
         }
         $("#sign_up_button").prop("disabled", true);
 
-        // function DosignUp() {
-        //
-        //     // 비밀번호 조합(영문, 숫자) 및 길이 체크 정규식
-        //     var regExpPassword = /^(?=.*[a-zA-Z])(?=.*[0-9]).{6,16}$/;
-        //
-        //     // 휴대폰번호 정규식
-        //     var regExpMobile = /^01([016789]?)-?([0-9]{3,4})-?([0-9]{4})$/;
-        //
-        //     //이름 한글
-        //     var regExName = /^[가-힣]+$/;
-        //
-        //     var userid = document.getElementById("user_id").value;
-        //     var userpwd = document.getElementById("password").value;
-        //     var inputPwdCfm = document.getElementById("password_re").value;
-        //     var username = document.getElementById("name").value;
-        //     var phone = document.getElementById("phone").value;
-        //
-        //     if (userid.length == 0) {
-        //         alert("아이디를 입력해 주세요");
-        //         $("#user_id").focus();
-        //         exit();
-        //     }
-        //
-        //     if (!regExpPassword.test(userpwd)) {
-        //         alert("비밀번호는 6 ~ 16 글자의 영문, 숫자 조합을 해주세요.");
-        //         $("#user_id").focus();
-        //         return false;
-        //
-        //     }
-        //
-        //     if (!regExName.test(username)) {
-        //         alert("이름은 한글만 가능합니다.");
-        //         $("#user_id").focus();
-        //         return false;
-        //     }
-        //
-        //     if (!check) {
-        //         alert("중복체크를 해주세요");
-        //         return false;
-        //     }
-        //
-        //     if (userpwd.length == 0) {
-        //         alert("비밀번호를 입력해 주세요");
-        //         $("#password").focus();
-        //         return false;
-        //     }
-        //
-        //     if (inputPwdCfm.length == 0) {
-        //         alert("비밀번호를 입력해 주세요");
-        //         $("#password").focus();
-        //         return false;
-        //     }
-        //
-        //     if (userpwd != inputPwdCfm) {
-        //         alert("비밀번호가 서로 다릅니다. 비밀번호를 확인해 주세요.");
-        //         $("#password_re").focus();
-        //         return false;
-        //     }
-        //
-        //     if (username.length == 0) {
-        //         alert("이름을 입력해주세요");
-        //         $("#name").focus();
-        //         return false;
-        //     }
-        //
-        //     if (phone.length == 0 | !regExpMobile.test(phone)) {
-        //         alert("정확한 전화번호를 입력해주세요");
-        //         $("#phone").focus();
-        //         return false;
-        //     }
-        //
-        //     if (confirm("회원가입을 하시겠습니까?")) {
-        //
-        //         form = document.myform;
-        //         form.target = "check_page";
-        //         form.submit();
-        //
-        //         // document.myform.submit();
-        //         return true;
-        //     }
-        //
-        // }
+        function DosignUp() {
+
+            // 비밀번호 조합(영문, 숫자) 및 길이 체크 정규식
+            var regExpPassword = /^(?=.*[a-zA-Z])(?=.*[0-9]).{6,16}$/;
+
+            // 휴대폰번호 정규식
+            var regExpMobile = /^01([016789]?)-?([0-9]{3,4})-?([0-9]{4})$/;
+
+            //이름 한글
+            var regExName = /^[가-힣]+$/;
+
+            var userid = document.getElementById("user_id").value;
+            var userpwd = document.getElementById("password").value;
+            var inputPwdCfm = document.getElementById("password_re").value;
+            var username = document.getElementById("name").value;
+            var phone = document.getElementById("phone").value;
+
+            if (userid.length == 0) {
+                alert("아이디를 입력해 주세요");
+                $("#user_id").focus();
+                exit();
+            }
+
+            if (!regExpPassword.test(userpwd)) {
+                alert("비밀번호는 6 ~ 16 글자의 영문, 숫자 조합을 해주세요.");
+                $("#user_id").focus();
+                return false;
+
+            }
+
+            if (!regExName.test(username)) {
+                alert("이름은 한글만 가능합니다.");
+                $("#user_id").focus();
+                return false;
+            }
+
+            if (userpwd.length == 0) {
+                alert("비밀번호를 입력해 주세요");
+                $("#password").focus();
+                return false;
+            }
+
+            if (inputPwdCfm.length == 0) {
+                alert("비밀번호를 입력해 주세요");
+                $("#password").focus();
+                return false;
+            }
+
+            if (userpwd != inputPwdCfm) {
+                alert("비밀번호가 서로 다릅니다. 비밀번호를 확인해 주세요.");
+                $("#password_re").focus();
+                return false;
+            }
+
+            if (username.length == 0) {
+                alert("이름을 입력해주세요");
+                $("#name").focus();
+                return false;
+            }
+
+            if (phone.length == 0 | !regExpMobile.test(phone)) {
+                alert("정확한 전화번호를 입력해주세요");
+                $("#phone").focus();
+                return false;
+            }
+
+            if (confirm("회원가입을 하시겠습니까?")) {
+
+                form = document.myform;
+                form.target = "check_page";
+                form.submit();
+
+                // document.myform.submit();
+                return true;
+            }
+
+        }
 
     </script>
 
