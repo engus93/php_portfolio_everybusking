@@ -11,7 +11,7 @@
     <title>Every Busking - Community</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="../css/modern-business.css" rel="stylesheet">
@@ -31,7 +31,7 @@
 <div id="wrapper" class="animate">
     <nav class="navbar header-top fixed-top navbar-expand-lg navbar-dark bg-dark">
         <span class="navbar-toggler-icon leftmenutrigger"></span>
-        <a class="navbar-brand" href="main.php"
+        <a class="navbar-brand" href="../main.php"
            style="font-family: 'Monoton', cursive; margin-left: 10px; font-size: 20px;">Every
             Busking</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
@@ -42,26 +42,27 @@
         <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav animate side-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="buskingteam.html" title="Dashboard"><i
+                    <a class="nav-link" href="../buskingteam.html" title="Dashboard"><i
                                 class="fas fa-users side_bar_img"></i>Busking Team<i
                                 class="fas fa-cube shortmenu animate"></i></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="busking_zone.html" title="Cart"><i
+                    <a class="nav-link" href="../busking_zone.html" title="Cart"><i
                                 class="fas fa-map-marker-alt side_bar_img"></i>Busking Zone<i
                                 class="fas fa-cart-plus shortmenu animate"></i></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="streaming.html" title="Comment"><i class="fas fa-video side_bar_img"></i>Streaming<i
+                    <a class="nav-link" href="../streaming.html" title="Comment"><i
+                                class="fas fa-video side_bar_img"></i>Streaming<i
                                 class="fas fa-comment shortmenu animate"></i></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link color_main" href="community.html" title="Comment"><i
+                    <a class="nav-link color_main" href="community.php" title="Comment"><i
                                 class="fas fa-star side_bar_img"></i>Community<i
                                 class="fas fa-comment shortmenu animate"></i></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="concert.html" title="Comment"><i
+                    <a class="nav-link" href="../concert.html" title="Comment"><i
                                 class="fas fa-compact-disc side_bar_img"></i>Concert<i
                                 class="fas fa-comment shortmenu animate"></i></a>
                 </li>
@@ -71,7 +72,7 @@
                     <a class="nav-link" href="#"><i class="fas fa-user"></i> Profile</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="Sign/sign_in.html"><i class="fas fa-key"></i> Sign in</a>
+                    <a class="nav-link" href="../Sign/sign_in.html"><i class="fas fa-key"></i> Sign in</a>
                 </li>
             </ul>
         </div>
@@ -83,50 +84,37 @@
         <h2>Pinterest Responsive Grid</h2>
 
         <hr>
+
+
         <section id="pinBoot">
 
-            <article class="white-panel"><img src="http://i.imgur.com/sDLIAZD.png" alt="">
-                <h4><a href="#">Title 1</a></h4>
-                <p>runt mollit anim id est laborum.</p>
-            </article>
+            <?php
+            require_once "../db.php";
 
-            <article class="white-panel"><img src="http://i.imgur.com/8lhFhc1.gif" alt="">
-                <h4><a href="#">Title 2</a></h4>
-                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-                    laborum.</p>
-            </article>
+            // 쿼리 만들기
+            $sql = "SELECT * FROM community_tb order by idx desc limit 0,5";
 
-            <article class="white-panel"><img src="http://i.imgur.com/xOIMvAe.jpg" alt="">
-                <h4><a href="#">Title 3</a></h4>
-                <p>ore eu fugiat nulla pariatur.</p>
-            </article>
+            // DB 에 쿼리 날리기
+            $result = mysqli_query($conn, $sql);
 
+            // 쿼리 결과를 PHP 에서 사용할 수 있도록 변경
+            $row = mysqli_fetch_assoc($result);
 
-            <article class="white-panel"><img src="http://i.imgur.com/3gXW3L3.jpg" alt="">
-                <h4><a href="#">Title 4</a></h4>
-                <p>Loreelit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                    sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            </article>
+            while ($board = mysqli_fetch_array($result)) {
+                $title = $board["title"];
 
-            <article class="white-panel"><img src="http://i.imgur.com/o2RVMqm.jpg" alt="">
-                <h4><a href="#">Title 5</a></h4>
-                <p>Duis auten proid mollit anim id est laborum.</p>
-            </article>
-
-            <article class="white-panel"><img src="http://i.imgur.com/kFFpuKA.jpg" alt="">
-                <h4><a href="#">Title 6</a></h4>
-                <p>Lorem ipsum dolit esse cillum dolore eu fugiat nulla pariatur.</p>
-            </article>
+                //title이 30을 넘어서면 ...표시
+                if (strlen($title) > 30) {
+                    $title = str_replace($board["title"], mb_substr($board["title"], 0, 30, "utf-8") . "...", $board["title"]);
+                }
+            }
+            ?>
 
 
-            <article class="white-panel"><img src="http://i.imgur.com/E9RmLPA.jpg" alt="">
-                <h4><a href="#">Title 7</a></h4>
-                <p>Lorem ipsum dolovolu mollit anim id est laborum.</p>
-            </article>
-
-            <article class="white-panel"><img src="http://i.imgur.com/8lhFhc1.gif" alt="">
-                <h4><a href="#">Title 8</a></h4>
-                <p>Excepteur sint laborum.</p>
+            <article class="white-panel">
+<!--                <img src="http://i.imgur.com/sDLIAZD.png" alt="">-->
+                <h4><a href="#"><?php echo $board['title'];?></a></h4>
+                <p><?php echo $board['content'];?></p>
             </article>
 
         </section>
@@ -144,8 +132,8 @@
 </footer>
 
 <!-- Bootstrap core JavaScript -->
-<script src="vendor/jquery/jquery.min.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../vendor/jquery/jquery.min.js"></script>
+<script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js"></script>
 <script src="../side_bar.js"></script>

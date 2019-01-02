@@ -60,7 +60,7 @@ session_start();
                                 class="fas fa-comment shortmenu animate"></i></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="community.html" title="Comment"><i class="fas fa-star side_bar_img"></i>Community<i
+                    <a class="nav-link" href="community/community.php" title="Comment"><i class="fas fa-star side_bar_img"></i>Community<i
                                 class="fas fa-comment shortmenu animate"></i></a>
                 </li>
                 <li class="nav-item">
