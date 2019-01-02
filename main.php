@@ -74,7 +74,7 @@ session_start();
                     <?php if ($_SESSION == null) {
                         echo '<a class="nav-link"></a>';
                     } else {
-                        echo '<a class="nav-link">'.$_SESSION['user_name'] . " 님" . '</a>';
+                        echo '<a class="nav-link">'.$_SESSION['name'] . " 님" . '</a>';
                     } ?>
 
                 </li>

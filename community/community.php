@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 
 <head>
 
@@ -80,8 +80,12 @@
 </div>
 
 <div class="container">
-    <div class="row">
-        <h2>Pinterest Responsive Grid</h2>
+
+    <h1 class="mt-4 mb-3 my_font_index">Community</h1>
+
+    <h6 class="my_font_main">※ 깨끗한 인터넷 문화를 만들어갑시다. :)</h6>
+
+    <div class="row" style="margin-top: 50px">
 
         <hr>
         <section id="pinBoot">
@@ -89,7 +93,7 @@
         <?php
         require_once "../db.php";
 
-        $sql = mq("select * from community_tb order by idx desc limit 0,5"); // board테이블에있는 idx를 기준으로 내림차순해서 5개까지 표시
+        $sql = mq("select * from community_tb order by idx desc limit 0,12"); // board테이블에있는 idx를 기준으로 내림차순해서 5개까지 표시
 
         $ss = "../img/busking_defualt.jpg";
 
@@ -98,23 +102,31 @@
             $title = $board["title"];
             $content = $board["content"];
 
-            //title이 30을 넘어서면 ...표시
-            if (strlen($title) > 30) {
-                $title = str_replace($board["title"], mb_substr($board["title"], 0, 30, "utf-8") . "...", $board["title"]);
-            } else if (strlen($content) > 50) {
-                $content = str_replace($board["content"], mb_substr($board["content"], 0, 50, "utf-8") . "...", $board["content"]);
+            //한글이랑 영어랑 용량이 다름 일단 넘김
+            if (strlen($board["title"]) > 40) {
+                $title = str_replace($board["title"], iconv_substr($board["title"], 0, 14, "utf-8"). "...", $board["title"]);
             }
 
-            echo '<article class="white-panel"><img src="' . $board["picture"] . '"alt="">';
-            echo '<h4><a href="#">' . $title . '</a></h4>';
-            echo '<p>' . $board["content"] . '</p>';
+            if (strlen($content) > 60) {
+                $content = str_replace($content, iconv_substr($board["content"], 0, 30, "utf-8") . "...", $board["content"]);
+            }
+
+            echo '<article class="white-panel" onclick=""><img src="' . $board["picture"] . '"alt="">';
+            echo '<h4 class="my_font_start">' . $title . '</h4>';
+            echo '<p class="my_font_main">' . $content . '</p>';
             echo '</article>';
         }
 
         ?>
 
         </section>
-
+        <div style="position: relative">
+            <div id="write_btn" style="position:absolute; right: 0px; bottom: 0px; width: 70px;">
+                <a href="/community/community_wright.php">
+                    <button>글쓰기</button>
+                </a>
+            </div>
+        </div>
     </div>
 
 </div>

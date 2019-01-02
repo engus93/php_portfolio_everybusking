@@ -31,7 +31,10 @@ $row = mysqli_fetch_assoc($result);
     } else if (login_pass == user_pass) {
 
         "<?php $_SESSION['user_id'] = $row['user_id']?>"
-        "<?php $_SESSION['user_name'] = $row['name']?>"
+        "<?php $_SESSION['password'] = $row['password']?>"
+        "<?php $_SESSION['name'] = $row['name']?>"
+        "<?php $_SESSION['phone'] = $row['phone']?>"
+        "<?php $_SESSION['sex'] = $row['sex']?>"
 
         alert(user_name + "님 환영합니다.");
         location.href = '../main.php';
