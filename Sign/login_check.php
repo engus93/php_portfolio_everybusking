@@ -30,10 +30,11 @@ $row = mysqli_fetch_assoc($result);
         history.back();
     } else if (login_pass == user_pass) {
 
-        <?php $_SESSION['user_id'] = $row['user_id']?>
+        "<?php $_SESSION['user_id'] = $row['user_id']?>"
+        "<?php $_SESSION['user_name'] = $row['name']?>"
 
         alert(user_name + "님 환영합니다.");
-        location.href = '../main.html';
+        location.href = '../main.php';
     } else {
         alert("비밀번호가 일치하지 않습니다.");
         history.back();

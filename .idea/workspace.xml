@@ -2,11 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="315b7d6c-43dd-4b04-a2b3-17ad3cc59c77" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Sign/sign_out.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sign/asd.php" beforeDir="false" afterPath="$PROJECT_DIR$/Sign/sign_up_check.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/404.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sign/forgot_pass.html" beforeDir="false" afterPath="$PROJECT_DIR$/Sign/forgot_pass.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Sign/login_check.php" beforeDir="false" afterPath="$PROJECT_DIR$/Sign/login_check.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sign/sign_in.html" beforeDir="false" afterPath="$PROJECT_DIR$/Sign/sign_in.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Sign/sign_up.html" beforeDir="false" afterPath="$PROJECT_DIR$/Sign/sign_up.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aplication.html" beforeDir="false" afterPath="$PROJECT_DIR$/aplication.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/busking_zone.html" beforeDir="false" afterPath="$PROJECT_DIR$/busking_zone.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/buskingteam.html" beforeDir="false" afterPath="$PROJECT_DIR$/buskingteam.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/buskingteam_songlist.html" beforeDir="false" afterPath="$PROJECT_DIR$/buskingteam_songlist.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/community.html" beforeDir="false" afterPath="$PROJECT_DIR$/community.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concert.html" beforeDir="false" afterPath="$PROJECT_DIR$/concert.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concert_information.html" beforeDir="false" afterPath="$PROJECT_DIR$/concert_information.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concert_ticket.html" beforeDir="false" afterPath="$PROJECT_DIR$/concert_ticket.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/main.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/streaming.html" beforeDir="false" afterPath="$PROJECT_DIR$/streaming.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,32 +29,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Sign/sign_up.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="83">
-              <caret line="116" column="8" lean-forward="true" selection-start-line="116" selection-start-column="8" selection-end-line="141" selection-end-column="11" />
-              <folding>
-                <element signature="n#style#0;n#a#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#form#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#3;n#form#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#5;n#form#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#7;n#form#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#9;n#form#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#11;n#form#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/main.html">
+        <entry file="file://$PROJECT_DIR$/main.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="254">
-              <caret line="27" column="31" selection-start-line="27" selection-start-column="31" selection-end-line="34" selection-end-column="14" />
+            <state relative-caret-position="420">
+              <caret line="73" selection-end-line="369" selection-end-column="7" />
               <folding>
                 <element signature="n#style#0;n#a#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <marker date="1546408124562" expanded="true" signature="3811:5183" ph="..." />
+                <element signature="n#style#0;n#a#0;n#div#1;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -50,29 +45,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Sign/login_check.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="32" column="54" lean-forward="true" selection-start-line="32" selection-start-column="54" selection-end-line="32" selection-end-column="54" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/db.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="10" column="2" lean-forward="true" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="2" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Sign/sign_in.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
-              <caret line="46" column="34" selection-start-line="46" selection-start-column="34" selection-end-line="46" selection-end-column="34" />
-              <folding>
-                <element signature="n#style#0;n#a#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="521">
+              <caret line="30" column="41" lean-forward="true" selection-start-line="30" selection-start-column="41" selection-end-line="30" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -103,7 +77,6 @@
       <find>15</find>
       <find>right</find>
       <find>back</find>
-      <find>sign</find>
       <find>Sign up</find>
       <find>check</find>
       <find>forgot</find>
@@ -111,6 +84,8 @@
       <find>user_id_ck</find>
       <find>Sign in</find>
       <find>asd</find>
+      <find>sign_in_button</find>
+      <find>sign</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -158,8 +133,10 @@
         <option value="$PROJECT_DIR$/Sign/sign_in.html" />
         <option value="$PROJECT_DIR$/Sign/sign_up_check.php" />
         <option value="$PROJECT_DIR$/Sign/sign_up.html" />
-        <option value="$PROJECT_DIR$/Sign/login_check.php" />
         <option value="$PROJECT_DIR$/main.html" />
+        <option value="$PROJECT_DIR$/Sign/sign_out.php" />
+        <option value="$PROJECT_DIR$/Sign/login_check.php" />
+        <option value="$PROJECT_DIR$/main.php" />
       </list>
     </option>
   </component>
@@ -180,6 +157,11 @@
             <path>
               <item name="EveryBusking" type="b2602c69:ProjectViewProjectNode" />
               <item name="EveryBusking" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EveryBusking" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EveryBusking" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="EveryBusking" type="b2602c69:ProjectViewProjectNode" />
@@ -240,7 +222,7 @@
       <workItem from="1546274366957" duration="10837000" />
       <workItem from="1546305575242" duration="673000" />
       <workItem from="1546317711448" duration="1974000" />
-      <workItem from="1546403881541" duration="3843000" />
+      <workItem from="1546403881541" duration="8743000" />
     </task>
     <task id="LOCAL-00001" summary="18.12.26&#10;&#10;PHP_Storm으로 옮김">
       <created>1545830389066</created>
@@ -445,11 +427,18 @@
       <option name="project" value="LOCAL" />
       <updated>1546319092371</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="19.01.02&#10;&#10;로그인">
+      <created>1546408153981</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1546408153981</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="110385000" />
+    <option name="totallyTimeSpent" value="115285000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -476,8 +465,8 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32939914" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
-      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49841067" visible="true" weight="0.18991417" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49904642" weight="0.3248227" />
+      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49841067" weight="0.18991417" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49904642" weight="0.32403433" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5015893" side_tool="true" weight="0.17918456" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -544,19 +533,10 @@
     <MESSAGE value="19.01.01&#10;&#10;아이디 실시간 중복체크 1차 완료 전화번호 하는중" />
     <MESSAGE value="19.01.01&#10;&#10;아이디 실시간 중복체크 완료" />
     <MESSAGE value="19.01.01&#10;&#10;수업 준비 끝" />
-    <option name="LAST_COMMIT_MESSAGE" value="19.01.01&#10;&#10;수업 준비 끝" />
+    <MESSAGE value="19.01.02&#10;&#10;로그인" />
+    <option name="LAST_COMMIT_MESSAGE" value="19.01.02&#10;&#10;로그인" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/css/application.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/concert.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="43" column="1" lean-forward="true" selection-end-line="76" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/bootstrap/css/bootstrap.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="298">
@@ -853,13 +833,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/concert_information.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="517">
-          <caret line="67" column="16" selection-start-line="67" selection-start-column="16" selection-end-line="67" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/phpinfo.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
@@ -874,36 +847,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Sign/sign_in.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="46" column="34" selection-start-line="46" selection-start-column="34" selection-end-line="46" selection-end-column="34" />
-          <folding>
-            <element signature="n#style#0;n#a#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Sign/sign_up_result.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="266">
           <caret line="14" column="125" selection-start-line="14" selection-start-column="125" selection-end-line="14" selection-end-column="125" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Sign/sign_up.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="83">
-          <caret line="116" column="8" lean-forward="true" selection-start-line="116" selection-start-column="8" selection-end-line="141" selection-end-column="11" />
-          <folding>
-            <element signature="n#style#0;n#a#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#form#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#3;n#form#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#5;n#form#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#7;n#form#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#9;n#form#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#11;n#form#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -921,20 +868,67 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Sign/login_check.php">
+    <entry file="file://$PROJECT_DIR$/vendor/jquery/jquery.slim.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="32" column="54" lean-forward="true" selection-start-line="32" selection-start-column="54" selection-end-line="32" selection-end-column="54" />
+        <state relative-caret-position="302">
+          <caret line="3861" column="4" selection-start-line="3861" selection-start-column="4" selection-end-line="3861" selection-end-column="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.html">
+    <entry file="file://$PROJECT_DIR$/css/concert_information.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="27" column="31" selection-start-line="27" selection-start-column="31" selection-end-line="34" selection-end-column="14" />
+        <state relative-caret-position="270">
+          <caret line="54" column="38" lean-forward="true" selection-start-line="54" selection-start-column="38" selection-end-line="54" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Sign/sign_up.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-107">
+          <caret line="190" lean-forward="true" selection-start-line="190" selection-end-line="190" />
           <folding>
             <element signature="n#style#0;n#a#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1546408124562" expanded="true" signature="3811:5183" ph="..." />
+            <element signature="n#style#0;n#div#1;n#form#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#3;n#form#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#5;n#form#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#7;n#form#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#9;n#form#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#11;n#form#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Sign/sign_out.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" column="8" lean-forward="true" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Sign/sign_in.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="46" column="34" selection-start-line="46" selection-start-column="34" selection-end-line="46" selection-end-column="34" />
+          <folding>
+            <element signature="n#style#0;n#a#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Sign/login_check.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="521">
+          <caret line="30" column="41" lean-forward="true" selection-start-line="30" selection-start-column="41" selection-end-line="30" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="73" selection-end-line="369" selection-end-column="7" />
+          <folding>
+            <element signature="n#style#0;n#a#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#div#1;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
