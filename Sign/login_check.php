@@ -1,6 +1,8 @@
 <?php
 require_once "../db.php";
 
+session_start();
+
 $uid = $_POST['ID'];
 $password = base64_encode($_POST['password']);
 
@@ -16,6 +18,7 @@ $row = mysqli_fetch_assoc($result);
 ?>
 
 <script>
+
     var user_id = "<?= $row['user_id']?>";
     var user_pass = "<?= $row['password']?>";
     var user_name = "<?= $row['name']?>";
@@ -26,6 +29,9 @@ $row = mysqli_fetch_assoc($result);
         alert("아이디가 일치하지 않습니다.");
         history.back();
     } else if (login_pass == user_pass) {
+
+        <?php $_SESSION['user_id'] = $row['user_id']?>
+
         alert(user_name + "님 환영합니다.");
         location.href = '../main.html';
     } else {

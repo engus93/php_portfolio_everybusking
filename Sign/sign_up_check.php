@@ -11,10 +11,8 @@ if ($_POST['ID'] != NULL) {
 
     if ($row >= 1) {
         echo "true";
-//        echo "<script>parent.find(#user_id).css('background-color', '#F00');</script>";
     } else {
         echo "false";
-//        echo "<script>parent.find(#user_id).css('background-color', '#F90');</script>";
     }
 }else{
     echo "　";

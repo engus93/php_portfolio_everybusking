@@ -60,7 +60,7 @@
                 }
 
                 $.post( //post방식으로 id_check.php에 입력한 userid값을 넘깁니다
-                    "asd.php",
+                    "sign_up_check.php",
                     //ID - 이름 , userid - 값
                     {ID: userid},
                     function (data) {
@@ -118,16 +118,19 @@
 
             $(".pass_re_check").on("keyup", function () {
 
-                user_pwd = document.getElementById("password").value;
-                user_pwd_re = document.getElementById("password_re").value;
+                // 비밀번호 조합(영문, 숫자) 및 길이 체크 정규식
+                var regExpPassword = /^(?=.*[a-zA-Z])(?=.*[0-9]).{6,16}$/;
+
+                var user_pwd = document.getElementById("password").value;
+                var user_pwd_re = document.getElementById("password_re").value;
 
                 if (user_pwd_re.length == 0) {
                     $(this).parent().parent().find("#password_re").css("background-color", "#FFFFFF");
                     pass_re_chaeck = false;
-                } else if (user_pwd != user_pwd_re) {
+                } else if (user_pwd != user_pwd_re || !regExpPassword.test(user_pwd_re)) {
                     $(this).parent().parent().find("#password_re").css("background-color", "#fc3c3c");
                     pass_re_chaeck = false;
-                } else if (user_pwd == user_pwd_re) {
+                } else if (user_pwd == user_pwd_re && regExpPassword.test(user_pwd_re)) {
                     $(this).parent().parent().find("#password_re").css("background-color", "#FFB863");
                     pass_re_chaeck = true;
                 }
