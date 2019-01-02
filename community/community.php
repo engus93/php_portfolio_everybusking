@@ -84,44 +84,64 @@
         <h2>Pinterest Responsive Grid</h2>
 
         <hr>
-
-
         <section id="pinBoot">
 
-            <?php
-            require_once "../db.php";
+        <?php
+        require_once "../db.php";
 
-            // 쿼리 만들기
-            $sql = "SELECT * FROM community_tb order by idx desc limit 0,5";
+        $sql = mq("select * from community_tb order by idx desc limit 0,5"); // board테이블에있는 idx를 기준으로 내림차순해서 5개까지 표시
 
-            // DB 에 쿼리 날리기
-            $result = mysqli_query($conn, $sql);
+        $ss = "../img/busking_defualt.jpg";
 
-            // 쿼리 결과를 PHP 에서 사용할 수 있도록 변경
-            $row = mysqli_fetch_assoc($result);
+        while ($board = $sql->fetch_array()) {
 
-            while ($board = mysqli_fetch_array($result)) {
-                $title = $board["title"];
+            $title = $board["title"];
+            $content = $board["content"];
 
-                //title이 30을 넘어서면 ...표시
-                if (strlen($title) > 30) {
-                    $title = str_replace($board["title"], mb_substr($board["title"], 0, 30, "utf-8") . "...", $board["title"]);
-                }
+            //title이 30을 넘어서면 ...표시
+            if (strlen($title) > 30) {
+                $title = str_replace($board["title"], mb_substr($board["title"], 0, 30, "utf-8") . "...", $board["title"]);
+            } else if (strlen($content) > 50) {
+                $content = str_replace($board["content"], mb_substr($board["content"], 0, 50, "utf-8") . "...", $board["content"]);
             }
-            ?>
 
+            echo '<article class="white-panel"><img src="' . $board["picture"] . '"alt="">';
+            echo '<h4><a href="#">' . $title . '</a></h4>';
+            echo '<p>' . $board["content"] . '</p>';
+            echo '</article>';
+        }
 
-            <article class="white-panel">
-<!--                <img src="http://i.imgur.com/sDLIAZD.png" alt="">-->
-                <h4><a href="#"><?php echo $board['title'];?></a></h4>
-                <p><?php echo $board['content'];?></p>
-            </article>
+        ?>
 
         </section>
 
     </div>
 
 </div>
+
+<ul class="pagination justify-content-center">
+    <li class="page-item">
+        <a class="page-link" href="#" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+            <span class="sr-only">Previous</span>
+        </a>
+    </li>
+    <li class="page-item">
+        <a class="page-link" href="#">1</a>
+    </li>
+    <li class="page-item">
+        <a class="page-link" href="#">2</a>
+    </li>
+    <li class="page-item">
+        <a class="page-link" href="#">3</a>
+    </li>
+    <li class="page-item">
+        <a class="page-link" href="#" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+            <span class="sr-only">Next</span>
+        </a>
+    </li>
+</ul>
 
 <!-- Footer -->
 <footer class="py-5 bg-dark">
