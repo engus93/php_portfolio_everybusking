@@ -124,7 +124,7 @@ session_start();
                                      style="position: absolute; transform: translate3d(-136px, 28px, 0px); top: 0px; left: 0px; will-change: transform;">
                                     <a class="dropdown-item" href="community.php">목록으로</a>
                                     <a class="dropdown-item" href="community_write.php?idx=<?php echo $board['idx']; ?>">수정</a>
-                                    <a class="dropdown-item" href="delete.php?idx=<?php echo $board['idx']; ?>">삭제</a>
+                                    <a class="dropdown-item" href="community_delete_p.php?idx=<?php echo $board['idx']; ?>">삭제</a>
                                 </div>
                             </div><!--/ dropdown -->
                             <div class="media m-0">
