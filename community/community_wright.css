@@ -1,8 +1,8 @@
 /* 게시판 글쓰기 */
 #board_write {
-    width:900px;
+    width:1200px;
     position:relative;
-    margin:0 auto;
+    margin: auto auto 100px auto;
 }
 #write_area {
     margin-top:70px;
@@ -37,14 +37,12 @@
     margin-top:10px;
 }
 #in_content textarea {
-    font:14px;
     color:#333;
     width: 900px;
-    height: 400px;
+    height: 500px;
     resize: none;
 }
 #in_pw input {
-    font:14px;
     margin-top:10px;
 }
 .bt_se {

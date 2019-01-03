@@ -9,3 +9,8 @@
     color: #fc3c3c !important;
 
 }
+.center {
+    display: flex ;
+    align-items: center ;
+    justify-content: center ;
+}
