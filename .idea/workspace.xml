@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="315b7d6c-43dd-4b04-a2b3-17ad3cc59c77" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/community/community_update_p.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community/community_delete.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/community/community_read.php" beforeDir="false" afterPath="$PROJECT_DIR$/community/community_read.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/community/community_wright.php" beforeDir="false" afterPath="$PROJECT_DIR$/community/community_wright.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/community/community_wright_p.php" beforeDir="false" afterPath="$PROJECT_DIR$/community/community_wright_p.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,8 +29,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/community/community_wright.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="110" column="42" lean-forward="true" selection-start-line="110" selection-start-column="42" selection-end-line="110" selection-end-column="42" />
+            <state relative-caret-position="1995">
+              <caret line="105" column="9" lean-forward="true" selection-start-line="105" selection-start-column="9" selection-end-line="105" selection-end-column="9" />
               <folding>
                 <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#2;n#form#0;n#!!top" expanded="true" />
@@ -43,10 +40,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/community/community_update_p.php">
+        <entry file="file://$PROJECT_DIR$/community/community_delete.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="114">
-              <caret line="6" selection-start-line="6" selection-end-line="6" />
+              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/community/community_update_p.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="266">
+              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
             </state>
           </provider>
         </entry>
@@ -102,7 +108,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/sign_up.html" />
         <option value="$PROJECT_DIR$/Sign/sign_up.php" />
         <option value="$PROJECT_DIR$/ㅁㄴㅇ.html" />
         <option value="$PROJECT_DIR$/dwqe.js" />
@@ -153,6 +158,7 @@
         <option value="$PROJECT_DIR$/community/community_wright.php" />
         <option value="$PROJECT_DIR$/community/community_update_p.php" />
         <option value="$PROJECT_DIR$/community/community_wright_p.php" />
+        <option value="$PROJECT_DIR$/community/community_delete.php" />
       </list>
     </option>
   </component>
@@ -246,7 +252,7 @@
       <workItem from="1546305575242" duration="673000" />
       <workItem from="1546317711448" duration="1974000" />
       <workItem from="1546403881541" duration="26034000" />
-      <workItem from="1546488570799" duration="27553000" />
+      <workItem from="1546488570799" duration="27904000" />
     </task>
     <task id="LOCAL-00001" summary="18.12.26&#10;&#10;PHP_Storm으로 옮김">
       <created>1545830389066</created>
@@ -535,11 +541,18 @@
       <option name="project" value="LOCAL" />
       <updated>1546516196748</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="19.01.02&#10;&#10;커뮤니티 읽는 페이지 수정 완료">
+      <created>1546520075865</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1546520075865</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="160129000" />
+    <option name="totallyTimeSpent" value="160480000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -552,6 +565,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1629" height="1068" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20804085" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -640,16 +654,10 @@
     <MESSAGE value="19.01.02&#10;&#10;커뮤니티 뷰 만듬" />
     <MESSAGE value="19.01.02&#10;&#10;커뮤니티 읽는 페이지" />
     <MESSAGE value="19.01.02&#10;&#10;커뮤니티 읽는 페이지 디자인 완료" />
-    <option name="LAST_COMMIT_MESSAGE" value="19.01.02&#10;&#10;커뮤니티 읽는 페이지 디자인 완료" />
+    <MESSAGE value="19.01.02&#10;&#10;커뮤니티 읽는 페이지 수정 완료" />
+    <option name="LAST_COMMIT_MESSAGE" value="19.01.02&#10;&#10;커뮤니티 읽는 페이지 수정 완료" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/css/forgot_pass.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="33" column="18" lean-forward="true" selection-start-line="33" selection-start-column="18" selection-end-line="33" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Sign/forgot_pass.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="228">
@@ -1012,17 +1020,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/community/community_wright.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="110" column="42" lean-forward="true" selection-start-line="110" selection-start-column="42" selection-end-line="110" selection-end-column="42" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#form#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/community/read_view.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-532">
@@ -1046,8 +1043,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/community/community_update_p.php">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/community/community_wright.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1995">
+          <caret line="105" column="9" lean-forward="true" selection-start-line="105" selection-start-column="9" selection-end-line="105" selection-end-column="9" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#form#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/community/community_delete.php">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
         </state>
       </provider>
     </entry>
