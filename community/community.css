@@ -7,6 +7,7 @@ body {
     max-width: 100%;
     width: 100%;
 }
+
 img {
     width: 100%;
     max-width: 100%;
@@ -25,6 +26,7 @@ img {
 .white-panel h1 a {
     color: #A92733;
 }
+
 .white-panel:hover {
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
     margin-top: -5px;
@@ -32,4 +34,14 @@ img {
     -moz-transition: all 0.3s ease-in-out;
     -o-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
+}
+
+#wright:hover{
+    background-color: transparent !important;
+    color: #FBAA48 !important;
+    border: #FBAA48 2px solid;
+}
+
+#a_tag{
+    !important;
 }

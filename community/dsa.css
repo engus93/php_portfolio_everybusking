@@ -19,7 +19,8 @@
 /* Cardbox Heading
 ---------------------------------- */
 .cardbox .cardbox-heading {
-    padding: 16px;
+    height: 100px;
+    padding: 20px;
     margin: 0;
 }
 .cardbox .btn-flat.btn-flat-icon {

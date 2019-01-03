@@ -35,6 +35,7 @@ $row = mysqli_fetch_assoc($result);
         "<?php $_SESSION['name'] = $row['name']?>"
         "<?php $_SESSION['phone'] = $row['phone']?>"
         "<?php $_SESSION['sex'] = $row['sex']?>"
+        "<?php $_SESSION['profile'] = $row['profile']?>"
 
         alert(user_name + "님 환영합니다.");
         location.href = '../main.php';

@@ -111,9 +111,9 @@
                 $content = str_replace($content, iconv_substr($board["content"], 0, 30, "utf-8") . "...", $board["content"]);
             }
 
-            echo '<a href="community_read.php?idx='.$board["idx"].'"><article class="white-panel"><img src="' . $board["picture"] . '"/></a>';
+            echo '<article class="white-panel"><a style="text-decoration: none" href="dsa.php?idx='.$board["idx"].'"><img src="' . $board["picture"] . '"/>';
             echo '<h4 class="my_font_start">' . $title . '</h4>';
-            echo '<p class="my_font_main">' . $content . '</p>';
+            echo '<p class=" my_font_main" style="color: black">' . $content . '</p></a>';
             echo '</article>';
         }
 
@@ -123,7 +123,7 @@
         <div style="position: relative">
             <div id="write_btn" style="position:absolute; right: 0px; bottom: 0px; width: 70px;">
                 <a href="/community/community_wright.php">
-                    <button>글쓰기</button>
+                    <button class="btn my_font_main" id="wright" style="background-color: #FBAA48; color: white">글쓰기</button>
                 </a>
             </div>
         </div>

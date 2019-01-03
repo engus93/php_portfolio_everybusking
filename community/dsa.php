@@ -1,5 +1,6 @@
 <?php
 include "../db.php"; /* db load */
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -132,9 +133,9 @@ include "../db.php"; /* db load */
                                 <!--</div>-->
                                 <div class="media-body">
                                     <p class="m-0"><?php echo $board['title']; ?></p>
-                                    <small><span><i class="icon ion-md-pin"></i> <?php echo $board['name']; ?></span>
+                                    <small><span class="float-right" style="position: relative;left: 50px; top: 20px"><i class="icon ion-md-time"></i> <?php echo $board['date']; ?></span>
                                     </small>
-                                    <small><span><i class="icon ion-md-time"></i> <?php echo $board['date']; ?></span>
+                                    <small><span class="float-right" style="position: relative;left: 50px; top: 20px"><i class="icon ion-md-pin"></i> <?php echo $board['name']; ?></span>
                                     </small>
                                 </div>
                             </div><!--/ media -->
@@ -168,19 +169,19 @@ include "../db.php"; /* db load */
                                 <!--<li><a><i class="fa fa-share-alt"></i></a></li>-->
                                 <!--<li><a><em class="mr-3">03</em></a></li>-->
 <!--                            </ul>-->
-                            <ul>
-                                <li><a><i class="fa fa-thumbs-up"></i></a></li>
-                                <li><a href="#"><img src="../img/main_cover_01.jpg" class="img-fluid rounded-circle" alt="User"></a></li>
-                                <li><a href="#"><img src="../img/main_cover_02.jpg" class="img-fluid rounded-circle" alt="User"></a></li>
-                                <li><a href="#"><img src="../img/main_cover_03.jpg" class="img-fluid rounded-circle" alt="User"></a></li>
-                                <li><a href="#"><img src="../img/login_background.jpg" class="img-fluid rounded-circle" alt="User"></a></li>
-                                <li><a><span>10 Likes</span></a></li>
-                            </ul>
+<!--                            <ul>-->
+<!--                                <li><a><i class="fa fa-thumbs-up"></i></a></li>-->
+<!--                                <li><a href="#"><img src="../img/main_cover_01.jpg" class="img-fluid rounded-circle" alt="User"></a></li>-->
+<!--                                <li><a href="#"><img src="../img/main_cover_02.jpg" class="img-fluid rounded-circle" alt="User"></a></li>-->
+<!--                                <li><a href="#"><img src="../img/main_cover_03.jpg" class="img-fluid rounded-circle" alt="User"></a></li>-->
+<!--                                <li><a href="#"><img src="../img/login_background.jpg" class="img-fluid rounded-circle" alt="User"></a></li>-->
+<!--                                <li><a><span>10 Likes</span></a></li>-->
+<!--                            </ul>-->
                         </ul><!--/ cardbox-base -->
                         <div class="cardbox-comments">
 			  <span class="comment-avatar float-left">
 			   <a href=""><img class="rounded-circle"
-                               src="http://www.themashabrand.com/templates/bootsnipp/post/assets/img/users/6.jpg"
+                               src=<?php echo $_SESSION['profile'] ?>
                                alt="..." style="margin-top: 5px"></a></span>
 
                             <div class="input-group input-group-sm mb-3 my_font_main"
