@@ -46,28 +46,28 @@ include "../db.php"; /* db load */
             <ul class="navbar-nav animate side-nav">
                 <li class="nav-item">
                     <a class="nav-link" href="../buskingteam.html" title="Dashboard"><i
-                            class="fas fa-users side_bar_img"></i>Busking Team<i
-                            class="fas fa-cube shortmenu animate"></i></a>
+                                class="fas fa-users side_bar_img"></i>Busking Team<i
+                                class="fas fa-cube shortmenu animate"></i></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="../busking_zone.html" title="Cart"><i
-                            class="fas fa-map-marker-alt side_bar_img"></i>Busking Zone<i
-                            class="fas fa-cart-plus shortmenu animate"></i></a>
+                                class="fas fa-map-marker-alt side_bar_img"></i>Busking Zone<i
+                                class="fas fa-cart-plus shortmenu animate"></i></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="../streaming.html" title="Comment"><i
-                            class="fas fa-video side_bar_img"></i>Streaming<i
-                            class="fas fa-comment shortmenu animate"></i></a>
+                                class="fas fa-video side_bar_img"></i>Streaming<i
+                                class="fas fa-comment shortmenu animate"></i></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link color_main" href="community.php" title="Comment"><i
-                            class="fas fa-star side_bar_img"></i>Community<i
-                            class="fas fa-comment shortmenu animate"></i></a>
+                                class="fas fa-star side_bar_img"></i>Community<i
+                                class="fas fa-comment shortmenu animate"></i></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="../concert.html" title="Comment"><i
-                            class="fas fa-compact-disc side_bar_img"></i>Concert<i
-                            class="fas fa-comment shortmenu animate"></i></a>
+                                class="fas fa-compact-disc side_bar_img"></i>Concert<i
+                                class="fas fa-comment shortmenu animate"></i></a>
                 </li>
             </ul>
             <ul class="navbar-nav ml-md-auto d-md-flex">
@@ -86,10 +86,10 @@ include "../db.php"; /* db load */
 
     <?php
     $bno = $_GET['idx']; /* bno함수에 idx값을 받아와 넣음*/
-    $hit = mysqli_fetch_array(mq("select * from community_tb where idx ='".$bno."'"));
+    $hit = mysqli_fetch_array(mq("select * from community_tb where idx ='" . $bno . "'"));
     $hit = $hit['hit'] + 1;
-    $fet = mq("update community_tb set hit = '".$hit."' where idx = '".$bno."'");
-    $sql = mq("select * from community_tb where idx='".$bno."'"); /* 받아온 idx값을 선택 */
+    $fet = mq("update community_tb set hit = '" . $hit . "' where idx = '" . $bno . "'");
+    $sql = mq("select * from community_tb where idx='" . $bno . "'"); /* 받아온 idx값을 선택 */
     $board = $sql->fetch_array();
     ?>
     <!-- 글 불러오기 -->
@@ -112,13 +112,13 @@ include "../db.php"; /* db load */
         </div>
     </div>
 
-<!-- Bootstrap core JavaScript -->
-<script src="../vendor/jquery/jquery.min.js"></script>
-<script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script src="../vendor/jquery/jquery.min.js"></script>
+    <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-<script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js"></script>
-<script src="../side_bar.js"></script>
-<script src="community.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js"></script>
+    <script src="../side_bar.js"></script>
+    <script src="community.js"></script>
 
 </body>
 
