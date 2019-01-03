@@ -111,7 +111,7 @@
                 $content = str_replace($content, iconv_substr($board["content"], 0, 30, "utf-8") . "...", $board["content"]);
             }
 
-            echo '<article class="white-panel" onclick=""><img src="' . $board["picture"] . '"alt="">';
+            echo '<a href="community_read.php?idx='.$board["idx"].'"><article class="white-panel"><img src="' . $board["picture"] . '"/></a>';
             echo '<h4 class="my_font_start">' . $title . '</h4>';
             echo '<p class="my_font_main">' . $content . '</p>';
             echo '</article>';
