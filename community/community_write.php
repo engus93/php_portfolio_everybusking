@@ -5,12 +5,32 @@ session_start();
 
 if ($_SESSION == null) {
     echo '<script>alert("로그인 후 이용바랍니다.");history.back()</script>';
-} else {
 }
+
 if (isset($_GET['idx'])) {
+
     $bno = $_GET['idx'];
-    $sql = mq("select * from community_tb where idx='$bno';");
-    $board = $sql->fetch_array();
+
+    // 쿼리 만들기
+    $sql = "SELECT * FROM community_tb WHERE idx='$bno'";
+
+    // DB 에 쿼리 날리기
+    $result = mysqli_query($conn, $sql);
+
+    // 쿼리 결과를 PHP 에서 사용할 수 있도록 변경
+    $row = mysqli_fetch_assoc($result);
+
+    if ($row['pw'] == $_SESSION['user_id']) {
+
+        $bno = $_GET['idx'];
+        $sql = mq("select * from community_tb where idx='$bno';");
+        $board = $sql->fetch_array();
+
+    }else{
+        echo '<script type="text/javascript">alert("자신의 게시물만 수정이 가능합니다.");
+           location.href = "/community/community_read.php?idx=' . $bno . '";
+           </script>';
+    }
 }
 ?>
 
@@ -107,7 +127,7 @@ if (isset($_GET['idx'])) {
 
     if (isset($board)) {
         echo '<form action="community_update_p.php/' . $board['idx'] . '" method="post">
-        <input type="hidden" name="idx" value="'.$board['idx'].'" />
+        <input type="hidden" name="idx" value="' . $board['idx'] . '" />
         <div id="in_title" class="center">
                 <textarea name="title" id="utitle" rows="1" cols="55" placeholder="제목" maxlength="20"
                           required>' . $board['title'] . '</textarea>

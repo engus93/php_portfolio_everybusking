@@ -122,9 +122,14 @@ session_start();
                                 </button>
                                 <div class="dropdown-menu dropdown-scale dropdown-menu-right" role="menu"
                                      style="position: absolute; transform: translate3d(-136px, 28px, 0px); top: 0px; left: 0px; will-change: transform;">
-                                    <a class="dropdown-item" href="community.php">목록으로</a>
-                                    <a class="dropdown-item" href="community_write.php?idx=<?php echo $board['idx']; ?>">수정</a>
-                                    <a class="dropdown-item" href="community_delete_p.php?idx=<?php echo $board['idx']; ?>">삭제</a>
+                                <?php if($_SESSION != null){
+                                    echo '<a class="dropdown-item" href="community.php">목록으로</a>
+                                    <a class="dropdown-item" href="community_write.php?idx='. $board['idx'].'">수정</a>
+                                    <a class="dropdown-item" href="community_delete_p.php?idx='. $board['idx'].'">삭제</a>
+                                ';
+                                }else{
+                                    echo '<a class="dropdown-item" href="/Sign/sign_in.html">로그인하기</a>';
+                                } ?>
                                 </div>
                             </div><!--/ dropdown -->
                             <div class="media m-0">
@@ -155,14 +160,13 @@ session_start();
                                      src=<?php echo $board['picture']; ?> alt="Another alt text">
                             </a>
                         </div><!--/ cardbox-item -->
-                        <div class="cardbox-item">
-
+                        <div class="cardbox-item" style="padding-bottom: 20px">
                             <p class="media-body my_font_main"
-                               style="margin-top: 10px; margin-left: 10px; margin-right: 10px"><?php echo nl2br("$board[content]"); ?></p>
+                               style="margin-top: 10px; margin-left: 10px; margin-right: 10px;"><?php echo nl2br("$board[content]"); ?></p>
 
                         </div>
 
-                        <ul class="cardbox-base">
+<!--                        <ul class="cardbox-base">-->
 
                             <!--                            <ul class="float-right">-->
                             <!--아이콘 없어짐-->
@@ -179,11 +183,12 @@ session_start();
                             <!--                                <li><a href="#"><img src="../img/login_background.jpg" class="img-fluid rounded-circle" alt="User"></a></li>-->
                             <!--                                <li><a><span>10 Likes</span></a></li>-->
                             <!--                            </ul>-->
-                        </ul><!--/ cardbox-base -->
-                        <div class="cardbox-comments">
+<!--                        </ul>-->
+                        <?php if($_SESSION != null){
+                            echo ' <div class="cardbox-comments">
 			  <span class="comment-avatar float-left">
-			   <a href=""><img class="rounded-circle"
-                               src=<?php echo $_SESSION['profile'] ?>
+                  <a href=""><img class="rounded-circle"
+                               src='.$_SESSION['profile'].'
                                alt="..." style="margin-top: 5px"></a></span>
 
                             <div class="input-group input-group-sm mb-3 my_font_main"
@@ -193,9 +198,11 @@ session_start();
                                 <input type="button" class="col-sm-2 btn"
                                        style="left: 10px; background-color: #FBAA48; color: white" id="support_1"
                                        value="댓글 달기">
-                                <!--                                <input type="button" class="btn btn-block col-sm-2" style="background-color: #FBAA48; color: white" value="댓글 달기">-->
 
-                            </div>
+                            </div>';
+                        }else{
+                        } ?>
+
 
                         </div><!--/ cardbox-like -->
 
