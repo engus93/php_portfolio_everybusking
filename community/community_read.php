@@ -123,7 +123,7 @@ session_start();
                                 <div class="dropdown-menu dropdown-scale dropdown-menu-right" role="menu"
                                      style="position: absolute; transform: translate3d(-136px, 28px, 0px); top: 0px; left: 0px; will-change: transform;">
                                     <a class="dropdown-item" href="community.php">목록으로</a>
-                                    <a class="dropdown-item" href="modify.php?idx=<?php echo $board['idx']; ?>">수정</a>
+                                    <a class="dropdown-item" href="community_wright.php?idx=<?php echo $board['idx']; ?>">수정</a>
                                     <a class="dropdown-item" href="delete.php?idx=<?php echo $board['idx']; ?>">삭제</a>
                                 </div>
                             </div><!--/ dropdown -->
@@ -133,9 +133,11 @@ session_start();
                                 <!--</div>-->
                                 <div class="media-body">
                                     <p class="m-0"><?php echo $board['title']; ?></p>
-                                    <small><span class="float-right" style="position: relative;left: 50px; top: 20px"><i class="icon ion-md-time"></i> <?php echo $board['date']; ?></span>
+                                    <small><span class="float-right" style="position: relative;left: 50px; top: 20px"><i
+                                                    class="icon ion-md-time"></i> <?php echo $board['date']; ?></span>
                                     </small>
-                                    <small><span class="float-right" style="position: relative;left: 50px; top: 20px"><i class="icon ion-md-pin"></i> <?php echo $board['name']; ?></span>
+                                    <small><span class="float-right" style="position: relative;left: 50px; top: 20px"><i
+                                                    class="icon ion-md-pin"></i> <?php echo $board['name']; ?></span>
                                     </small>
                                 </div>
                             </div><!--/ media -->
@@ -188,7 +190,9 @@ session_start();
                                  style="width: 90%;height: 40px; margin-top: 5px; left: 15px">
                                 <input type="text" class="form-control col-sm-10" aria-label="Sizing example input"
                                        aria-describedby="inputGroup-sizing-sm" placeholder="댓글을 작성해주세요 :)">
-                                <input type="button" class="col-sm-2 btn" style="left: 10px; background-color: #FBAA48; color: white" id="support_1" value="댓글 달기">
+                                <input type="button" class="col-sm-2 btn"
+                                       style="left: 10px; background-color: #FBAA48; color: white" id="support_1"
+                                       value="댓글 달기">
                                 <!--                                <input type="button" class="btn btn-block col-sm-2" style="background-color: #FBAA48; color: white" value="댓글 달기">-->
 
                             </div>
@@ -220,6 +224,14 @@ session_start();
         </div>
     </div>
 </div>
+
+<!-- Footer -->
+<footer class="py-5 bg-dark">
+    <div class="container">
+        <p class="m-0 text-center text-white my_font_logo">Every Busking</p>
+    </div>
+    <!-- /.container -->
+</footer>
 
 <!-- Bootstrap core JavaScript -->
 <script src="../vendor/jquery/jquery.min.js"></script>

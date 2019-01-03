@@ -7,11 +7,12 @@ if ($_SESSION == null) {
     echo '<script>alert("로그인 후 이용바랍니다.");history.back()</script>';
 } else {
 }
-
-
-
+if (isset($_GET['idx'])) {
+    $bno = $_GET['idx'];
+    $sql = mq("select * from community_tb where idx='$bno';");
+    $board = $sql->fetch_array();
+}
 ?>
-
 
 
 <!DOCTYPE html>
@@ -102,18 +103,39 @@ if ($_SESSION == null) {
 
     <h6 class="my_font_main">※ 깨끗한 인터넷 문화를 만들어갑시다. :)</h6>
 
-        <form action="community_wright_p.php" method="post">
-            <div id="in_title" class="center">
+    <?php
+
+    if (isset($board)) {
+        echo '<form action="community_update_p.php/' . $board['idx'] . '" method="post">
+        <input type="hidden" name="idx" value="'.$board['idx'].'" />
+        <div id="in_title" class="center">
+                <textarea name="title" id="utitle" rows="1" cols="55" placeholder="제목" maxlength="20"
+                          required>' . $board['title'] . '</textarea>
+        </div>
+        <div id="in_content" class="center">
+            <textarea name="content" id="ucontent" placeholder="내용" required>' . $board['content'] . '</textarea>
+        </div>
+        <div class="center" style="margin-top: 50px">
+            <button class="btn" type="submit">글 수정</button>
+        </div>
+    </form>';
+    } else {
+        echo '<form action="community_wright_p.php" method="post">
+        <div id="in_title" class="center">
                 <textarea name="title" id="utitle" rows="1" cols="55" placeholder="제목" maxlength="20"
                           required></textarea>
-            </div>
-            <div id="in_content" class="center">
-                <textarea name="content" id="ucontent" placeholder="내용" required></textarea>
-            </div>
-            <div class="center" style="margin-top: 50px">
-                <button class="btn" type="submit">글 작성</button>
-            </div>
-        </form>
+        </div>
+        <div id="in_content" class="center">
+            <textarea name="content" id="ucontent" placeholder="내용" required></textarea>
+        </div>
+        <div class="center" style="margin-top: 50px">
+            <button class="btn" type="submit">글 작성</button>
+        </div>
+    </form>';
+    }
+
+    ?>
+
 </div>
 
 <!-- Footer -->
