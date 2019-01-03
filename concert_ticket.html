@@ -20,44 +20,24 @@
     <!-- 글씨체 -->
     <link href="https://fonts.googleapis.com/css?family=Nanum+Pen+Script" rel="stylesheet">
 
+    <style>
+        .menu_concert{
+            color: #FBAA48 !important;
+        }
+
+    </style>
+
 </head>
 
 <body>
 
-<!-- 네비게이션 -->
-<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <div class="container">
-        <a class="navbar-brand" href="main.php" style="font-family: 'Monoton', cursive; font-size: 20px">Every
-            Busking</a>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
-                data-target="#navbarResponsive"
-                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="Sign/sign_in.html">Sign in</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="buskingteam.html">Busking Team</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="busking_zone.html">Busking Zone</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="streaming.html">Streaming</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="community/community.php">Community</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link color_main" href="concert.html">Concert</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
+<!--header 로드-->
+<div class="main_nav"></div>
+<script>$(".main_nav").load("/public/main_nav.php");</script>
+
+<!--footer 로드-->
+<div class="main_footer"></div>
+<script>$(".main_footer").load("/public/main_footer.html");</script>
 
 </body>
 
