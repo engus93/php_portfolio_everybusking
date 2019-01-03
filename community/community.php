@@ -88,7 +88,7 @@
     <div class="row" style="margin-top: 50px">
 
         <hr>
-        <section id="pinBoot">
+        <section id="pinBoot" style="margin-bottom: 30px">
 
         <?php
         require_once "../db.php";
@@ -123,7 +123,7 @@
         <div style="position: relative">
             <div id="write_btn" style="position:absolute; right: 0px; bottom: 0px; width: 70px;">
                 <a href="/community/community_write.php">
-                    <button class="btn my_font_main" id="wright" style="background-color: #FBAA48; color: white">글쓰기</button>
+                    <button class="btn my_font_main" id="wright" style="background-color: #FBAA48; color: white;">글쓰기</button>
                 </a>
             </div>
         </div>
@@ -131,7 +131,7 @@
 
 </div>
 
-<ul class="pagination justify-content-center">
+<ul class="pagination justify-content-center" style="margin-top: 20px; margin-bottom: 20px">
     <li class="page-item">
         <a class="page-link" href="#" aria-label="Previous">
             <span aria-hidden="true">&laquo;</span>

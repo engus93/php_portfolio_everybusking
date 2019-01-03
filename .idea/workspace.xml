@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="315b7d6c-43dd-4b04-a2b3-17ad3cc59c77" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/community/community_delete_p.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/community/community_delete.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/community/community_read.php" beforeDir="false" afterPath="$PROJECT_DIR$/community/community_read.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/community/community.php" beforeDir="false" afterPath="$PROJECT_DIR$/community/community.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,14 +12,18 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/community/community.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="92" column="13" lean-forward="true" selection-start-line="92" selection-start-column="13" selection-end-line="92" selection-end-column="13" />
+            <state relative-caret-position="551">
+              <caret line="145" column="9" lean-forward="true" selection-start-line="145" selection-start-column="9" selection-end-line="145" selection-end-column="9" />
               <folding>
+                <element signature="n#style#0;n#section#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#a#0;n#article#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#button#0;n#a#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#ul#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -50,11 +51,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/community/community_read.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="481">
-              <caret line="133" column="56" lean-forward="true" selection-start-line="133" selection-start-column="56" selection-end-line="133" selection-end-column="56" />
+            <state relative-caret-position="234">
+              <caret line="191" column="94" selection-start-line="191" selection-start-column="94" selection-end-line="191" selection-end-column="94" />
             </state>
           </provider>
         </entry>
@@ -81,7 +82,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>image-gallery</find>
       <find>Hid</find>
       <find>cardbox-comments</find>
       <find>input</find>
@@ -111,6 +111,7 @@
       <find>community_update_p</find>
       <find>pic</find>
       <find>삭제</find>
+      <find>글쓰기</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -162,7 +163,6 @@
         <option value="$PROJECT_DIR$/community/dsa.css" />
         <option value="$PROJECT_DIR$/community/dsa.php" />
         <option value="$PROJECT_DIR$/community/community_read.css" />
-        <option value="$PROJECT_DIR$/community/community.php" />
         <option value="$PROJECT_DIR$/css/public.css" />
         <option value="$PROJECT_DIR$/community/community_wright.css" />
         <option value="$PROJECT_DIR$/community/community_wright.php" />
@@ -170,6 +170,7 @@
         <option value="$PROJECT_DIR$/community/community_wright_p.php" />
         <option value="$PROJECT_DIR$/community/community_delete.php" />
         <option value="$PROJECT_DIR$/community/community_read.php" />
+        <option value="$PROJECT_DIR$/community/community.php" />
       </list>
     </option>
   </component>
@@ -263,7 +264,7 @@
       <workItem from="1546305575242" duration="673000" />
       <workItem from="1546317711448" duration="1974000" />
       <workItem from="1546403881541" duration="26034000" />
-      <workItem from="1546488570799" duration="28283000" />
+      <workItem from="1546488570799" duration="28472000" />
     </task>
     <task id="LOCAL-00001" summary="18.12.26&#10;&#10;PHP_Storm으로 옮김">
       <created>1545830389066</created>
@@ -573,11 +574,18 @@
       <option name="project" value="LOCAL" />
       <updated>1546520469919</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="19.01.02&#10;&#10;커뮤니티 읽는 페이지 삭제 완료">
+      <created>1546520809528</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1546520809528</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="160859000" />
+    <option name="totallyTimeSpent" value="161048000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -592,7 +600,7 @@
     <frame x="-9" y="-9" width="1629" height="1068" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20804085" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20804085" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -604,7 +612,7 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32939914" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
-      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49841067" visible="true" weight="0.25701943" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="9" sideWeight="0.49841067" visible="true" weight="0.25701943" />
       <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49904642" weight="0.32397407" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5015893" side_tool="true" weight="0.17918456" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -680,7 +688,8 @@
     <MESSAGE value="19.01.02&#10;&#10;커뮤니티 읽는 페이지" />
     <MESSAGE value="19.01.02&#10;&#10;커뮤니티 읽는 페이지 디자인 완료" />
     <MESSAGE value="19.01.02&#10;&#10;커뮤니티 읽는 페이지 수정 완료" />
-    <option name="LAST_COMMIT_MESSAGE" value="19.01.02&#10;&#10;커뮤니티 읽는 페이지 수정 완료" />
+    <MESSAGE value="19.01.02&#10;&#10;커뮤니티 읽는 페이지 삭제 완료" />
+    <option name="LAST_COMMIT_MESSAGE" value="19.01.02&#10;&#10;커뮤니티 읽는 페이지 삭제 완료" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Sign/forgot_pass.html">
@@ -1059,17 +1068,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/community/community.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="92" column="13" lean-forward="true" selection-start-line="92" selection-start-column="13" selection-end-line="92" selection-end-column="13" />
-          <folding>
-            <element signature="n#style#0;n#a#0;n#article#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/community/community_update_p.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="247">
@@ -1086,8 +1084,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/community/community_read.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="481">
-          <caret line="133" column="56" lean-forward="true" selection-start-line="133" selection-start-column="56" selection-end-line="133" selection-end-column="56" />
+        <state relative-caret-position="234">
+          <caret line="191" column="94" selection-start-line="191" selection-start-column="94" selection-end-line="191" selection-end-column="94" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/community/community.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="551">
+          <caret line="145" column="9" lean-forward="true" selection-start-line="145" selection-start-column="9" selection-end-line="145" selection-end-column="9" />
+          <folding>
+            <element signature="n#style#0;n#section#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#article#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#a#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ul#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
