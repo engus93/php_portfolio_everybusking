@@ -35,7 +35,7 @@ if (isset($_GET['idx'])) {
     <link href="../side_bar.css" rel="stylesheet">
     <link href="../css/public.css" rel="stylesheet">
     <link href="community.css" rel="stylesheet">
-    <link href="community_wright.css" rel="stylesheet">
+    <link href="community_write.css" rel="stylesheet">
 
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
@@ -120,7 +120,7 @@ if (isset($_GET['idx'])) {
         </div>
     </form>';
     } else {
-        echo '<form action="community_wright_p.php" method="post">
+        echo '<form action="community_write_p.php" method="post">
         <div id="in_title" class="center">
                 <textarea name="title" id="utitle" rows="1" cols="55" placeholder="제목" maxlength="20"
                           required></textarea>

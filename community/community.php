@@ -122,7 +122,7 @@
         </section>
         <div style="position: relative">
             <div id="write_btn" style="position:absolute; right: 0px; bottom: 0px; width: 70px;">
-                <a href="/community/community_wright.php">
+                <a href="/community/community_write.php">
                     <button class="btn my_font_main" id="wright" style="background-color: #FBAA48; color: white">글쓰기</button>
                 </a>
             </div>
