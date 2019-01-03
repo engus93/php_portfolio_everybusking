@@ -111,7 +111,7 @@
                 $content = str_replace($content, iconv_substr($board["content"], 0, 30, "utf-8") . "...", $board["content"]);
             }
 
-            echo '<article class="white-panel"><a style="text-decoration: none" href="dsa.php?idx='.$board["idx"].'"><img src="' . $board["picture"] . '"/>';
+            echo '<article class="white-panel"><a style="text-decoration: none" href="community_read.php?idx='.$board["idx"].'"><img src="' . $board["picture"] . '"/>';
             echo '<h4 class="my_font_start">' . $title . '</h4>';
             echo '<p class=" my_font_main" style="color: black">' . $content . '</p></a>';
             echo '</article>';
