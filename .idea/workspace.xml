@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="315b7d6c-43dd-4b04-a2b3-17ad3cc59c77" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/community/community_read.css" beforeDir="false" afterPath="$PROJECT_DIR$/community/community_read.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/community/community_read.php" beforeDir="false" afterPath="$PROJECT_DIR$/community/community_read.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/community/reply_write.js" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,8 +16,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/community/community_read.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="395">
-              <caret line="186" column="34" lean-forward="true" selection-start-line="186" selection-start-column="34" selection-end-line="186" selection-end-column="34" />
+            <state relative-caret-position="-322">
+              <caret line="238" selection-start-line="238" selection-end-line="238" />
               <folding>
                 <element signature="n#style#0;n#h6#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
@@ -39,8 +38,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/community/community_read.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="268">
-              <caret line="195" column="41" lean-forward="true" selection-start-line="195" selection-start-column="41" selection-end-line="195" selection-end-column="41" />
+            <state relative-caret-position="419">
+              <caret line="271" lean-forward="true" selection-start-line="271" selection-end-line="271" />
             </state>
           </provider>
         </entry>
@@ -58,9 +57,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>comments</find>
-      <find>&lt;input type=&quot;button&quot;&gt;</find>
-      <find>control</find>
       <find>후원</find>
       <find>cardbox</find>
       <find>img</find>
@@ -88,6 +84,9 @@
       <find>re_bt</find>
       <find>$board</find>
       <find>reply_bno</find>
+      <find>dap_lo</find>
+      <find>dat_edit</find>
+      <find>dat_edit_bt</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -142,10 +141,10 @@
         <option value="$PROJECT_DIR$/Sign/forgot_pass.html" />
         <option value="$PROJECT_DIR$/Sign/sign_in.html" />
         <option value="$PROJECT_DIR$/Sign/sign_up.html" />
-        <option value="$PROJECT_DIR$/community/community_read.css" />
         <option value="$PROJECT_DIR$/community/dsad.php" />
         <option value="$PROJECT_DIR$/community/commu_reply_p.php" />
         <option value="$PROJECT_DIR$/community/reply_write.js" />
+        <option value="$PROJECT_DIR$/community/community_read.css" />
         <option value="$PROJECT_DIR$/community/community_read.php" />
       </list>
     </option>
@@ -237,14 +236,7 @@
       <workItem from="1546317711448" duration="1974000" />
       <workItem from="1546403881541" duration="26034000" />
       <workItem from="1546488570799" duration="31325000" />
-      <workItem from="1546531571926" duration="15865000" />
-    </task>
-    <task id="LOCAL-00006" summary="18.12.26&#10;&#10;concert 티켓팅">
-      <created>1545905579252</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1545905579252</updated>
+      <workItem from="1546531571926" duration="19086000" />
     </task>
     <task id="LOCAL-00007" summary="18.12.26&#10;&#10;concert 티켓팅">
       <created>1545907759433</created>
@@ -582,11 +574,18 @@
       <option name="project" value="LOCAL" />
       <updated>1546581630733</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="19.01.04&#10;&#10;커뮤니티 댓글 추가 완료">
+      <created>1546582370244</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1546582370244</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="179766000" />
+    <option name="totallyTimeSpent" value="182987000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -601,7 +600,7 @@
     <frame x="-9" y="-9" width="1633" height="1068" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21069382" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21069382" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -613,7 +612,7 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32939914" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
-      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49841067" visible="true" weight="0.22678186" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="9" sideWeight="0.49841067" visible="true" weight="0.22678186" />
       <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49904642" weight="0.32397407" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5015893" side_tool="true" weight="0.17918456" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -694,13 +693,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="19.01.04&#10;&#10;커뮤니티 댓글 추가 완료" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Sign/check.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="21" column="4" lean-forward="true" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/mbstring/mbstring.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -780,13 +772,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="361">
           <caret line="19" column="1" lean-forward="true" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/community/read_view.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-532">
-          <caret line="14" column="47" lean-forward="true" selection-start-line="14" selection-start-column="47" selection-end-line="14" selection-end-column="47" />
         </state>
       </provider>
     </entry>
@@ -1048,17 +1033,31 @@
     <entry file="file://$PROJECT_DIR$/community/reply_write.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/community/read_view.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="14" column="47" lean-forward="true" selection-start-line="14" selection-start-column="47" selection-end-line="14" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/platform-impl.jar!/resources/html5-schema/html5/common.rnc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="195" column="18" selection-start-line="195" selection-start-column="18" selection-end-line="195" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/community/community_read.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="195" column="41" lean-forward="true" selection-start-line="195" selection-start-column="41" selection-end-line="195" selection-end-column="41" />
+        <state relative-caret-position="419">
+          <caret line="271" lean-forward="true" selection-start-line="271" selection-end-line="271" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/community/community_read.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="395">
-          <caret line="186" column="34" lean-forward="true" selection-start-line="186" selection-start-column="34" selection-end-line="186" selection-end-column="34" />
+        <state relative-caret-position="-322">
+          <caret line="238" selection-start-line="238" selection-end-line="238" />
           <folding>
             <element signature="n#style#0;n#h6#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />

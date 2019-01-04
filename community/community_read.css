@@ -269,3 +269,11 @@
     color: #FBAA48 !important;
     border: #FBAA48 2px solid;
 }
+
+/* 댓글 */
+.dat_delete {
+    display: none;
+}
+.dat_edit {
+    display:none;
+}

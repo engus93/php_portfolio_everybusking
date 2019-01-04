@@ -44,6 +44,7 @@ session_start();
     <script>
 
         $(document).ready(function(){
+
             $(".re_bt").click(function(){
                 var params = $("form").serialize();
                 var index = document.getElementById("reply_bno").value;
@@ -57,6 +58,19 @@ session_start();
                         $(".reply_content").val('');
                     }
                 });
+            });
+
+            $(".dat_edit_bt").click(function(){
+                var jbResult = prompt( '댓글 수정하기', '' );
+                alert(jbResult);
+            });
+
+            $(".dat_delete_bt").click(function(){
+                var obj = $(this).closest(".dap_lo").find(".dat_delete");
+                obj.dialog({
+                    modal:true,
+                    width:400,
+                    title:"댓글 삭제확인"});
             });
 
         });
@@ -170,7 +184,6 @@ session_start();
                         <!--                            </ul>-->
                         <!--                        </ul>-->
 
-
                         <!-- 댓글 시작 -->
                         <hr>
 
@@ -204,6 +217,7 @@ session_start();
                             $write_user = mysqli_fetch_assoc($result);
 
                             ?>
+
                             <!--댓글-->
                             <div class="cardbox-comments_re reply_view"><span class="comment-avatar float-left">
                                 <a href=""><img class="rounded-circle"
@@ -217,10 +231,11 @@ session_start();
                                     <?php echo $reply['date']; ?></span>
                                 </div>
                                 <div class="rep_me rep_menu my_font_main" style="height: 15px">
-                                    <a class="dat_edit_bt color_main" href="#" style="font-size: 10px; margin-left: 10px">수정</a>
+                                    <a class="dat_edit_bt color_main" id="dat_edit_bt" href="#" style="font-size: 10px; margin-left: 10px">수정</a>
                                     <a class="dat_delete_bt color_main" href="#" style="font-size: 10px">삭제</a>
                                 </div>
                             </div>
+
                         <?php } ?>
                         </div>
 
@@ -287,6 +302,5 @@ session_start();
 <script src="../side_bar.js"></script>
 <script src="community.js"></script>
 <script src="read_view.js"></script>
-<script src="reply_write.js"></script>
 
 </body>
