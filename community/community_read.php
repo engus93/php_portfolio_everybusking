@@ -127,23 +127,42 @@ session_start();
                         </div>
 
 <!--                        <ul class="cardbox-base">-->
-
-                            <!--                            <ul class="float-right">-->
-                            <!--아이콘 없어짐-->
-                            <!--                                <li><a><i class="far fa-comment"></i></a></li>-->
-                            <!--                                <li><a><em class="mr-5"> 12</em></a></li>-->
-                            <!--<li><a><i class="fa fa-share-alt"></i></a></li>-->
-                            <!--<li><a><em class="mr-3">03</em></a></li>-->
-                            <!--                            </ul>-->
-                            <!--                            <ul>-->
-                            <!--                                <li><a><i class="fa fa-thumbs-up"></i></a></li>-->
-                            <!--                                <li><a href="#"><img src="../img/main_cover_01.jpg" class="img-fluid rounded-circle" alt="User"></a></li>-->
-                            <!--                                <li><a href="#"><img src="../img/main_cover_02.jpg" class="img-fluid rounded-circle" alt="User"></a></li>-->
-                            <!--                                <li><a href="#"><img src="../img/main_cover_03.jpg" class="img-fluid rounded-circle" alt="User"></a></li>-->
-                            <!--                                <li><a href="#"><img src="../img/login_background.jpg" class="img-fluid rounded-circle" alt="User"></a></li>-->
-                            <!--                                <li><a><span>10 Likes</span></a></li>-->
-                            <!--                            </ul>-->
+<!---->
+<!--                            <ul class="float-right">-->
+<!--                                <li><a><i class="far fa-comment"></i></a></li>-->
+<!--                                <li><a><em class="mr-5"> 12</em></a></li>-->
+<!--                                <li><a><i class="fa fa-share-alt"></i></a></li>-->
+<!--                                <li><a><em class="mr-3">03</em></a></li>-->
+<!--                            </ul>-->
+<!--                            <ul>-->
+<!--                                <li><a><i class="fa fa-thumbs-up"></i></a></li>-->
+<!--                                <li><a href="#"><img src="../img/main_cover_01.jpg" class="img-fluid rounded-circle"-->
+<!--                                                     alt="User"></a></li>-->
+<!--                                <li><a href="#"><img src="../img/main_cover_02.jpg" class="img-fluid rounded-circle"-->
+<!--                                                     alt="User"></a></li>-->
+<!--                                <li><a href="#"><img src="../img/main_cover_03.jpg" class="img-fluid rounded-circle"-->
+<!--                                                     alt="User"></a></li>-->
+<!--                                <li><a href="#"><img src="../img/login_background.jpg" class="img-fluid rounded-circle"-->
+<!--                                                     alt="User"></a></li>-->
+<!--                                <li><a><span>10 Likes</span></a></li>-->
+<!--                            </ul>-->
 <!--                        </ul>-->
+
+                        <hr>
+                        <h6 class="my_font_main" style="margin-left: 10px">댓글</h6>
+
+<!--                        댓글-->
+                        <div class="cardbox-comments_re"><span class="comment-avatar float-left">
+                                <a href=""><img class="rounded-circle" src='/img/login_background.jpg' alt="..." style="margin-top: 5px; width: 30px; height: 30px"></a></span>
+                            <div class="input-group  my_font_main"
+                                 style="width: 90%; margin-top: 10px; left: 15px">
+                                <span>팀노바 :　</span>
+                                <span>안녕</span>
+                                <span style="font-size: 10px; color: #4e555b; position: absolute; right: 0px; margin-top: 5px">
+                                    2019.10.10 12:15:23</span>
+                            </div>
+                        </div>
+
                         <?php if($_SESSION != null){
                             echo ' <div class="cardbox-comments">
 			  <span class="comment-avatar float-left">
@@ -158,7 +177,6 @@ session_start();
                                 <input type="button" class="col-sm-2 btn"
                                        style="left: 10px; background-color: #FBAA48; color: white" id="support_1"
                                        value="댓글 달기">
-
                             </div>';
                         }else{
                         } ?>
