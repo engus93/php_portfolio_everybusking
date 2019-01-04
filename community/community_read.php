@@ -60,24 +60,23 @@ session_start();
                 });
             });
 
-            $(function () {
-                $("#dat_edit").dialog({
-                    autoOpen: false,
-                });
-                $("#dat_edit_bt").on("click", function () {
-                    alert("zxc");
+            $(".dat_edit_bt").click(function () {
+                // $("#dat_edit").dialog({
+                //     autoOpen: false,
+                // });
+                //     alert("수정");
                     $("#dat_edit").dialog("open");
-                });
             });
 
-            $(function () {
-                $("#dat_delete").dialog({
-                    autoOpen: false,
-                });
-                $("#dat_delete_bt").on("click", function () {
-                    $("#dat_delete").dialog("open");
-                });
-            });
+            // $(function () {
+            //     $("#dat_delete").dialog({
+            //         autoOpen: false,
+            //     });
+            //     $("#dat_delete_bt").on("click", function () {
+            //         // alert("삭제");
+            //         $("#dat_delete").dialog("open");
+            //     });
+            // });
 
         });
 
@@ -199,15 +198,15 @@ session_start();
 
                         <h6 class="my_font_main" style="margin-left: 10px">댓글</h6>
 
-                            <?php
+                        <?php
 
-                            if($_SESSION != null){
-                                echo '<div>';
-                            }else{
-                                echo '<div style="padding-bottom: 30px!important;">';
-                            }
+                        if($_SESSION != null){
+                            echo '<div>';
+                        }else{
+                            echo '<div style="padding-bottom: 30px!important;">';
+                        }
 
-                            ?>
+                        ?>
 
                         <!--- 댓글 불러오기 -->
                         <?php
@@ -233,11 +232,11 @@ session_start();
                             </div>
 
                             <!-- 댓글 수정 폼 dialog -->
-                            <div class="dat_delete" id="dat_delete" title="댓글 삭제하기">
-                                <form method="post" style="margin-top: 16px;" action="commu_reply_delete_p.php?idx=<?php echo $reply['idx'];?>&now_idx=<?php echo $bno;?>">
-                                    <input type="submit" id="support_hover" value="삭제하기" class="re_mo_bt btn float-left" style="background-color: #FBAA48; color: white; width: 100%">
-                                </form>
-                            </div>
+<!--                            <div class="dat_delete" id="dat_delete" title="댓글 삭제하기">-->
+<!--                                <form method="post" style="margin-top: 16px;" action="commu_reply_delete_p.php?idx=--><?php //echo $reply['idx'];?><!--&now_idx=--><?php //echo $bno;?><!--">-->
+<!--                                    <input type="submit" id="support_hover" value="삭제하기" class="re_mo_bt btn float-left" style="background-color: #FBAA48; color: white; width: 100%">-->
+<!--                                </form>-->
+<!--                            </div>-->
 
                             <!--댓글-->
                             <div class="cardbox-comments_re reply_view"><span class="comment-avatar float-left">
@@ -252,25 +251,27 @@ session_start();
                                     <?php echo $reply['date']; ?></span>
                                 </div>
                                 <?php
+                                if($_SESSION != null){
                                 if($_SESSION['user_id'] == $reply['pw']){
 
-                                ?>
-                                <div class="rep_me rep_menu my_font_main" style="height: 15px">
-                                    <a class="dat_edit_bt color_main btn" id="dat_edit_bt" style="font-size: 10px; margin-left: 10px; background-color: transparent">수정</a>
-                                    <a class="dat_delete_bt color_main btn" id="dat_delete_bt" style="font-size: 10px; background-color: transparent;">삭제</a>
-                                </div>
-                                <?php
+                                    ?>
+                                    <div class="rep_me rep_menu my_font_main" style="height: 15px">
+                                        <a class="dat_edit_bt color_main btn dat_edit_bt" id="dat_edit_bt" style="font-size: 10px; margin-left: 10px; background-color: transparent">수정</a>
+                                        <a class="dat_delete_bt color_main btn dat_delete_bt" id="dat_delete_bt" style="font-size: 10px; background-color: transparent;">삭제</a>
+                                    </div>
+                                    <?php
+                                    }
                                 }
                                 ?>
                             </div>
 
                         <?php } ?>
-                        </div>
+                    </div>
 
-                        <?php } ?>
+                    <?php } ?>
 
-                        <?php if ($_SESSION != null) {
-                            echo ' <div class="cardbox-comments"><span class="comment-avatar float-left"><a href=""><img class="rounded-circle"
+                    <?php if ($_SESSION != null) {
+                        echo ' <div class="cardbox-comments"><span class="comment-avatar float-left"><a href=""><img class="rounded-circle"
                                src=' . $_SESSION['profile'] . '
                                alt="..." style="margin-top: 5px"></a></span>
                         
@@ -285,17 +286,17 @@ session_start();
                                             </div>
                                         </form>    
                                  </div>';
-                        } else {
+                    } else {
 
-                        } ?>
+                    } ?>
 
 
-                    </div><!--/ cardbox-like -->
+                </div><!--/ cardbox-like -->
 
-                </div>
+            </div>
 
-            </div><!--/ col-lg-6 -->
-        </div><!--/ row -->
+        </div><!--/ col-lg-6 -->
+</div><!--/ row -->
 </div><!--/ container -->
 </section>
 </div>
