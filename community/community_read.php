@@ -44,12 +44,21 @@ session_start();
 
     <script>
 
-        function tlqkf(z) {
+        function modify_reply(idx) {
             $(".dat_edit").dialog({
                 autoOpen: false,
             });
-            $("#dat_edit_bt"+z).on("click", function () {
-                $("#dat_edit"+z).dialog("open");
+            $("#dat_edit_bt" + idx).on("click", function () {
+                $("#dat_edit" + idx).dialog("open");
+            });
+        };
+
+        function delete_reply(idx) {
+            $(".dat_delete").dialog({
+                autoOpen: false,
+            });
+            $("#dat_delete_bt" + idx).on("click", function () {
+                $("#dat_delete" + idx).dialog("open");
             });
         };
 
@@ -67,16 +76,6 @@ session_start();
                         $(".reply_view").html(data);
                         $(".reply_content").val('');
                     }
-                });
-            });
-
-            $(function () {
-                $(".dat_delete").dialog({
-                    autoOpen: false,
-                });
-                $(".dat_delete_bt").on("click", function () {
-                    // alert("삭제");
-                    $("#dat_delete").dialog("open");
                 });
             });
 
@@ -236,7 +235,7 @@ session_start();
                             </tlqkf>
 
                             <!-- 댓글 삭제 폼 dialog -->
-                            <div class="dat_delete" id="dat_delete" title="댓글 삭제하기">
+                            <div class="dat_delete" id="dat_delete<?php echo $reply['idx'];?>" title="댓글 삭제하기">
                                 <form method="post" style="margin-top: 16px;" action="commu_reply_delete_p.php?idx=<?php echo $reply['idx'];?>&now_idx=<?php echo $bno;?>">
                                     <input type="submit" id="support_hover" value="삭제하기" class="re_mo_bt btn float-left" style="background-color: #FBAA48; color: white; width: 100%">
                                 </form>
@@ -261,8 +260,9 @@ session_start();
                                     ?>
                                     <div class="rep_me rep_menu my_font_main" style="height: 15px">
                                         <a class="dat_edit_bt color_main btn dat_edit_bt"
-                                           id="dat_edit_bt<?php echo $reply['idx'];?>" style="font-size: 10px; margin-left: 10px; background-color: transparent" onclick="tlqkf(<?php echo $reply['idx'];?>)">수정</a>
-                                        <a class="dat_delete_bt color_main btn dat_delete_bt" id="dat_delete_bt" style="font-size: 10px; background-color: transparent;">삭제</a>
+                                           id="dat_edit_bt<?php echo $reply['idx'];?>" style="font-size: 10px; margin-left: 10px; background-color: transparent" onclick="modify_reply(<?php echo $reply['idx'];?>)">수정</a>
+                                        <a class="dat_delete_bt color_main btn dat_delete_bt"
+                                           id="dat_delete_bt<?php echo $reply['idx'];?>" style="font-size: 10px; background-color: transparent;" onclick="delete_reply(<?php echo $reply['idx'];?>)">삭제</a>
                                     </div>
                                     <?php
                                     }

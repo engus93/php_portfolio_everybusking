@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="315b7d6c-43dd-4b04-a2b3-17ad3cc59c77" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/community/community_read.css" beforeDir="false" afterPath="$PROJECT_DIR$/community/community_read.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/community/community_read.php" beforeDir="false" afterPath="$PROJECT_DIR$/community/community_read.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,13 +16,14 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/community/community_read.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="558">
-              <caret line="66" column="52" lean-forward="true" selection-start-line="66" selection-start-column="52" selection-end-line="66" selection-end-column="52" />
+            <state relative-caret-position="511">
+              <caret line="268" column="33" lean-forward="true" selection-start-line="268" selection-start-column="33" selection-end-line="268" selection-end-column="33" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#form#0;n#div#3;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#input#0;n#form#0;n#div#3;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#a#0;n#div#1;n#div#4;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#1;n#div#1;n#div#4;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -76,7 +76,6 @@
       <find>댓글</find>
       <find>sup</find>
       <find>action</find>
-      <find>dat_delete_bt</find>
       <find>댓글 삭제하기</find>
       <find>수정</find>
       <find>asdasd</find>
@@ -85,6 +84,7 @@
       <find>tlqkf</find>
       <find>sex_check</find>
       <find>dat_edit_bt</find>
+      <find>dat_delete_bt</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -241,14 +241,7 @@
       <workItem from="1546403881541" duration="26034000" />
       <workItem from="1546488570799" duration="31325000" />
       <workItem from="1546531571926" duration="28473000" />
-      <workItem from="1546599878014" duration="6892000" />
-    </task>
-    <task id="LOCAL-00013" summary="18.12.30&#10;&#10;회원가입">
-      <created>1546158342301</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1546158342301</updated>
+      <workItem from="1546599878014" duration="7456000" />
     </task>
     <task id="LOCAL-00014" summary="18.12.30&#10;&#10;사이드 바">
       <created>1546171152834</created>
@@ -586,11 +579,18 @@
       <option name="project" value="LOCAL" />
       <updated>1546599539161</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="19.01.04&#10;&#10;커뮤니티 댓글 삭제 하는중">
+      <created>1546606973951</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1546606973952</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="199266000" />
+    <option name="totallyTimeSpent" value="199830000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -605,7 +605,7 @@
     <frame x="-8" y="-8" width="1631" height="1066" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21323997" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21323997" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -617,8 +617,8 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32939914" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
-      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49777213" visible="true" weight="0.22639485" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49840865" weight="0.32397407" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="9" sideWeight="0.49777213" visible="true" weight="0.22639485" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49840865" weight="0.32296136" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5022279" side_tool="true" weight="0.22678186" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -1034,13 +1034,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/community/community_read.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="558">
-          <caret line="66" column="52" lean-forward="true" selection-start-line="66" selection-start-column="52" selection-end-line="66" selection-end-column="52" />
+        <state relative-caret-position="511">
+          <caret line="268" column="33" lean-forward="true" selection-start-line="268" selection-start-column="33" selection-end-line="268" selection-end-column="33" />
           <folding>
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#form#0;n#div#3;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#input#0;n#form#0;n#div#3;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#a#0;n#div#1;n#div#4;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#1;n#div#1;n#div#4;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
