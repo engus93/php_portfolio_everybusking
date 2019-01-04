@@ -65,17 +65,17 @@ session_start();
                     autoOpen: false,
                 });
                 $("#dat_edit_bt").on("click", function () {
+                    alert("zxc");
                     $("#dat_edit").dialog("open");
                 });
             });
 
-            $(".dat_delete_bt").click(function () {
-                var obj = $(this).closest(".dap_lo").find(".dat_delete");
-                var index = document.getElementById("reply_bno").value;
-                obj.dialog({
-                    modal: true,
-                    width: 400,
-                    title: "댓글 삭제확인"
+            $(function () {
+                $("#dat_delete").dialog({
+                    autoOpen: false,
+                });
+                $("#dat_delete_bt").on("click", function () {
+                    $("#dat_delete").dialog("open");
                 });
             });
 
@@ -227,8 +227,15 @@ session_start();
                             <!-- 댓글 수정 폼 dialog -->
                             <div class="dat_edit" id="dat_edit" title="댓글 수정하기">
                                 <form method="post" action="commu_reply_update_p.php?idx=<?php echo $reply['idx'];?>&now_idx=<?php echo $bno;?>">
-                                    <textarea name="content" class="dap_edit_t" style="width: 100%"><?php echo $reply['content']; ?></textarea>
-                                    <input type="submit" id="support_hover" value="수정하기" class="re_mo_bt btn float-right" style="background-color: #FBAA48; color: white">
+                                    <textarea name="content" class="dap_edit_t form-control" style="width: 100%"><?php echo $reply['content']; ?></textarea>
+                                    <input type="submit" id="support_hover" value="수정하기" class="re_mo_bt btn float-right" style="background-color: #FBAA48; color: white; margin-top: 10px">
+                                </form>
+                            </div>
+
+                            <!-- 댓글 수정 폼 dialog -->
+                            <div class="dat_delete" id="dat_delete" title="댓글 삭제하기">
+                                <form method="post" style="margin-top: 16px;" action="commu_reply_delete_p.php?idx=<?php echo $reply['idx'];?>&now_idx=<?php echo $bno;?>">
+                                    <input type="submit" id="support_hover" value="삭제하기" class="re_mo_bt btn float-left" style="background-color: #FBAA48; color: white; width: 100%">
                                 </form>
                             </div>
 
@@ -244,10 +251,17 @@ session_start();
                                     <span style="font-size: 10px; color: #4e555b; position: absolute; right: 0px; margin-top: 5px;">
                                     <?php echo $reply['date']; ?></span>
                                 </div>
+                                <?php
+                                if($_SESSION['user_id'] == $reply['pw']){
+
+                                ?>
                                 <div class="rep_me rep_menu my_font_main" style="height: 15px">
                                     <a class="dat_edit_bt color_main btn" id="dat_edit_bt" style="font-size: 10px; margin-left: 10px; background-color: transparent">수정</a>
-                                    <a class="dat_delete_bt color_main btn" style="font-size: 10px; background-color: transparent;">삭제</a>
+                                    <a class="dat_delete_bt color_main btn" id="dat_delete_bt" style="font-size: 10px; background-color: transparent;">삭제</a>
                                 </div>
+                                <?php
+                                }
+                                ?>
                             </div>
 
                         <?php } ?>
