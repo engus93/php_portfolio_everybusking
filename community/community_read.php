@@ -35,7 +35,7 @@ session_start();
           integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 
     <style>
-        .menu_community{
+        .menu_community {
             color: #FBAA48 !important;
         }
 
@@ -49,7 +49,6 @@ session_start();
     <h1 class="mt-4 mb-3 my_font_index">Community</h1>
 
     <h6 class="my_font_main">※ 깨끗한 인터넷 문화를 만들어갑시다. :)</h6>
-
 
 
     <!--header 로드-->
@@ -82,14 +81,14 @@ session_start();
                                 </button>
                                 <div class="dropdown-menu dropdown-scale dropdown-menu-right" role="menu"
                                      style="position: absolute; transform: translate3d(-136px, 28px, 0px); top: 0px; left: 0px; will-change: transform;">
-                                <?php if($_SESSION != null){
-                                    echo '<a class="dropdown-item" href="community.php">목록으로</a>
-                                    <a class="dropdown-item" href="community_write.php?idx='. $board['idx'].'">수정</a>
-                                    <a class="dropdown-item" href="community_delete_p.php?idx='. $board['idx'].'">삭제</a>
+                                    <?php if ($_SESSION != null) {
+                                        echo '<a class="dropdown-item" href="community.php">목록으로</a>
+                                    <a class="dropdown-item" href="community_write.php?idx=' . $board['idx'] . '">수정</a>
+                                    <a class="dropdown-item" href="community_delete_p.php?idx=' . $board['idx'] . '">삭제</a>
                                 ';
-                                }else{
-                                    echo '<a class="dropdown-item" href="/Sign/sign_in.html">로그인하기</a>';
-                                } ?>
+                                    } else {
+                                        echo '<a class="dropdown-item" href="/Sign/sign_in.html">로그인하기</a>';
+                                    } ?>
                                 </div>
                             </div><!--/ dropdown -->
                             <div class="media m-0">
@@ -126,70 +125,96 @@ session_start();
 
                         </div>
 
-<!--                        <ul class="cardbox-base">-->
-<!---->
-<!--                            <ul class="float-right">-->
-<!--                                <li><a><i class="far fa-comment"></i></a></li>-->
-<!--                                <li><a><em class="mr-5"> 12</em></a></li>-->
-<!--                                <li><a><i class="fa fa-share-alt"></i></a></li>-->
-<!--                                <li><a><em class="mr-3">03</em></a></li>-->
-<!--                            </ul>-->
-<!--                            <ul>-->
-<!--                                <li><a><i class="fa fa-thumbs-up"></i></a></li>-->
-<!--                                <li><a href="#"><img src="../img/main_cover_01.jpg" class="img-fluid rounded-circle"-->
-<!--                                                     alt="User"></a></li>-->
-<!--                                <li><a href="#"><img src="../img/main_cover_02.jpg" class="img-fluid rounded-circle"-->
-<!--                                                     alt="User"></a></li>-->
-<!--                                <li><a href="#"><img src="../img/main_cover_03.jpg" class="img-fluid rounded-circle"-->
-<!--                                                     alt="User"></a></li>-->
-<!--                                <li><a href="#"><img src="../img/login_background.jpg" class="img-fluid rounded-circle"-->
-<!--                                                     alt="User"></a></li>-->
-<!--                                <li><a><span>10 Likes</span></a></li>-->
-<!--                            </ul>-->
-<!--                        </ul>-->
+                        <!--                        좋아용-->
+                        <!--                        <ul class="cardbox-base">-->
+                        <!---->
+                        <!--                            <ul class="float-right">-->
+                        <!--                                <li><a><i class="far fa-comment"></i></a></li>-->
+                        <!--                                <li><a><em class="mr-5"> 12</em></a></li>-->
+                        <!--                                <li><a><i class="fa fa-share-alt"></i></a></li>-->
+                        <!--                                <li><a><em class="mr-3">03</em></a></li>-->
+                        <!--                            </ul>-->
+                        <!--                            <ul>-->
+                        <!--                                <li><a><i class="fa fa-thumbs-up"></i></a></li>-->
+                        <!--                                <li><a href="#"><img src="../img/main_cover_01.jpg" class="img-fluid rounded-circle"-->
+                        <!--                                                     alt="User"></a></li>-->
+                        <!--                                <li><a href="#"><img src="../img/main_cover_02.jpg" class="img-fluid rounded-circle"-->
+                        <!--                                                     alt="User"></a></li>-->
+                        <!--                                <li><a href="#"><img src="../img/main_cover_03.jpg" class="img-fluid rounded-circle"-->
+                        <!--                                                     alt="User"></a></li>-->
+                        <!--                                <li><a href="#"><img src="../img/login_background.jpg" class="img-fluid rounded-circle"-->
+                        <!--                                                     alt="User"></a></li>-->
+                        <!--                                <li><a><span>10 Likes</span></a></li>-->
+                        <!--                            </ul>-->
+                        <!--                        </ul>-->
 
+
+                        <!-- 댓글 시작 -->
                         <hr>
                         <h6 class="my_font_main" style="margin-left: 10px">댓글</h6>
 
-<!--                        댓글-->
-                        <div class="cardbox-comments_re"><span class="comment-avatar float-left">
-                                <a href=""><img class="rounded-circle" src='/img/login_background.jpg' alt="..." style="margin-top: 5px; width: 30px; height: 30px"></a></span>
-                            <div class="input-group  my_font_main"
-                                 style="width: 90%; margin-top: 10px; left: 15px">
-                                <span>팀노바 :　</span>
-                                <span>안녕</span>
-                                <span style="font-size: 10px; color: #4e555b; position: absolute; right: 0px; margin-top: 5px">
-                                    2019.10.10 12:15:23</span>
+                        <!--- 댓글 불러오기 -->
+                        <?php
+                        $sql3 = mq("select * from commu_reply_tb where con_num='" . $bno . "' order by idx ASC");
+                        while ($reply = $sql3->fetch_array()) {
+                            // 쿼리 만들기
+                            $sql = 'SELECT * FROM user_info_tb WHERE user_id=\'' . $reply['pw'] . '\'';
+
+                            // DB 에 쿼리 날리기
+                            $result = mysqli_query($conn, $sql);
+
+                            // 쿼리 결과를 PHP 에서 사용할 수 있도록 변경
+                            $write_user = mysqli_fetch_assoc($result);
+
+                            ?>
+                            <!--댓글-->
+                            <div class="cardbox-comments_re reply_view"><span class="comment-avatar float-left">
+                                <a href=""><img class="rounded-circle"
+                                                src=<?php echo $write_user['profile']; ?> alt="..."
+                                                style="margin-top: 5px; width: 30px; height: 30px"></a></span>
+                                <div class="input-group  my_font_main"
+                                     style="width: 90%; margin-top: 10px; left: 15px">
+                                    <span><?php echo $reply['name']; ?>　</span>
+                                    <span><?php echo nl2br("$reply[content]"); ?></span>
+                                    <span style="font-size: 10px; color: #4e555b; position: absolute; right: 0px; margin-top: 5px;">
+                                    <?php echo $reply['date']; ?></span>
+                                </div>
+                                <div class="rep_me rep_menu my_font_main" style="height: 15px">
+                                    <a class="dat_edit_bt color_main" href="#" style="font-size: 10px; margin-left: 10px">수정</a>
+                                    <a class="dat_delete_bt color_main" href="#" style="font-size: 10px">삭제</a>
+                                </div>
                             </div>
-                        </div>
+                        <?php } ?>
 
-                        <?php if($_SESSION != null){
-                            echo ' <div class="cardbox-comments">
-			  <span class="comment-avatar float-left">
-                  <a href=""><img class="rounded-circle"
-                               src='.$_SESSION['profile'].'
+                        <?php if ($_SESSION != null) {
+                            echo ' <div class="cardbox-comments"><span class="comment-avatar float-left"><a href=""><img class="rounded-circle"
+                               src=' . $_SESSION['profile'] . '
                                alt="..." style="margin-top: 5px"></a></span>
+                        
+                                        <form method="post" class="reply_form">
+                                            <div class="input-group input-group-sm mb-3 my_font_main"
+                                                 style="width: 90%;height: 40px; margin-top: 5px; left: 15px">
+                                    			<input type="hidden" name="bno" value="'.$bno.'">
+                                                <input type="text" class="form-control col-sm-10 reply_content" aria-label="Sizing example input"
+                                                       aria-describedby="inputGroup-sizing-sm" placeholder="댓글을 작성해주세요 :)">
+                                                <button type="suid="rep_bt class="col-sm-2 btn re_bt"
+                                                       style="left: 10px; background-color: #FBAA48; color: white" id="support_1">댓글 달기</button>
+                                            </div>
+                                        </form>    
+                                 </div>';
+                        } else {
 
-                            <div class="input-group input-group-sm mb-3 my_font_main"
-                                 style="width: 90%;height: 40px; margin-top: 5px; left: 15px">
-                                <input type="text" class="form-control col-sm-10" aria-label="Sizing example input"
-                                       aria-describedby="inputGroup-sizing-sm" placeholder="댓글을 작성해주세요 :)">
-                                <input type="button" class="col-sm-2 btn"
-                                       style="left: 10px; background-color: #FBAA48; color: white" id="support_1"
-                                       value="댓글 달기">
-                            </div>';
-                        }else{
                         } ?>
 
 
-                        </div><!--/ cardbox-like -->
+                    </div><!--/ cardbox-like -->
 
-                    </div>
+                </div>
 
-                </div><!--/ col-lg-6 -->
-            </div><!--/ row -->
-        </div><!--/ container -->
-    </section>
+            </div><!--/ col-lg-6 -->
+        </div><!--/ row -->
+</div><!--/ container -->
+</section>
 </div>
 
 <div class="modal fade" id="image-gallery" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
@@ -222,5 +247,6 @@ session_start();
 <script src="../side_bar.js"></script>
 <script src="community.js"></script>
 <script src="read_view.js"></script>
+<script src="reply_write.js"></script>
 
 </body>
