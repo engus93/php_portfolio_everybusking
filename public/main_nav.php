@@ -6,7 +6,7 @@ session_start();
 <div id="wrapper" class="animate">
     <nav class="navbar header-top fixed-top navbar-expand-lg navbar-dark bg-dark">
         <span class="navbar-toggler-icon leftmenutrigger"></span>
-        <a class="navbar-brand" href="main.php"
+        <a class="navbar-brand" href="/main.php"
            style="font-family: 'Monoton', cursive; margin-left: 10px; font-size: 20px;">Every
             Busking</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
@@ -49,11 +49,11 @@ session_start();
                     } ?>
 
                 </li>
-                <li class="nav-item" style="color: #FBAA48 !important;">
+                <li class="nav-item">
                     <?php if ($_SESSION == null) {
-                        echo '<a class="nav-link" href="/Sign/sign_in.html"><i class="fas fa-key"></i> Sign In</a>';
+                        echo '<a class="nav-link main_nav_sign" href="/Sign/sign_in.html"><i class="fas fa-key"></i> Sign In</a>';
                     } else {
-                        echo '<a class="nav-link" href="/Sign/sign_out.php"><i class="fas fa-key"></i> Sign Out</a>';
+                        echo '<a class="nav-link main_nav_sign" href="/Sign/sign_out.php"><i class="fas fa-key"></i> Sign Out</a>';
                     } ?>
                 </li>
                 <li class="nav-item">
