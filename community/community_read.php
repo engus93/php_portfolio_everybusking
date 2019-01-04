@@ -31,11 +31,6 @@ session_start();
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="community_read.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="/resources/demos/style.css">
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
           integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 
@@ -83,7 +78,6 @@ session_start();
                     title: "댓글 삭제확인"
                 });
             });
-
 
         });
 
@@ -215,14 +209,6 @@ session_start();
 
                             ?>
 
-                        <!-- 댓글 수정 폼 dialog -->
-                        <div class="dat_edit" id="dat_edit" title="Basic dialog">
-                            <form method="post" action="">
-                                <textarea name="content" class="dap_edit_t"><?php echo $reply['content']; ?></textarea>
-                                <input type="submit" value="수정하기" class="re_mo_bt">
-                            </form>
-                        </div>
-
                         <!--- 댓글 불러오기 -->
                         <?php
                         $sql3 = mq("select * from commu_reply_tb where con_num='" . $bno . "' order by idx ASC");
@@ -238,6 +224,14 @@ session_start();
 
                             ?>
 
+                            <!-- 댓글 수정 폼 dialog -->
+                            <div class="dat_edit" id="dat_edit" title="댓글 수정하기">
+                                <form method="post" action="commu_reply_update_p.php?idx=<?php echo $reply['idx'];?>&now_idx=<?php echo $bno;?>">
+                                    <textarea name="content" class="dap_edit_t" style="width: 100%"><?php echo $reply['content']; ?></textarea>
+                                    <input type="submit" id="support_hover" value="수정하기" class="re_mo_bt btn float-right" style="background-color: #FBAA48; color: white">
+                                </form>
+                            </div>
+
                             <!--댓글-->
                             <div class="cardbox-comments_re reply_view"><span class="comment-avatar float-left">
                                 <a href=""><img class="rounded-circle"
@@ -251,8 +245,8 @@ session_start();
                                     <?php echo $reply['date']; ?></span>
                                 </div>
                                 <div class="rep_me rep_menu my_font_main" style="height: 15px">
-                                    <button class="dat_edit_bt color_main" id="dat_edit_bt" style="font-size: 10px; margin-left: 10px">수정</button>
-                                    <a class="dat_delete_bt color_main" href="#" style="font-size: 10px">삭제</a>
+                                    <a class="dat_edit_bt color_main btn" id="dat_edit_bt" style="font-size: 10px; margin-left: 10px; background-color: transparent">수정</a>
+                                    <a class="dat_delete_bt color_main btn" style="font-size: 10px; background-color: transparent;">삭제</a>
                                 </div>
                             </div>
 
@@ -315,10 +309,15 @@ session_start();
 <script>$(".main_footer").load("/public/main_footer.html");</script>
 
 <!-- Bootstrap core JavaScript -->
-<!--<script src="../vendor/jquery/jquery.min.js"></script>-->
+<script src="../vendor/jquery/jquery.min.js"></script>
 <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-<script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js"></script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<!--<script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js"></script>-->
 <script src="../side_bar.js"></script>
 <script src="community.js"></script>
 <script src="read_view.js"></script>

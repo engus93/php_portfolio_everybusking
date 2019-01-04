@@ -14,3 +14,9 @@
     align-items: center ;
     justify-content: center ;
 }
+
+#support_hover:hover{
+    background-color: transparent !important;
+    color: #FBAA48 !important;
+    border: #FBAA48 2px solid;
+}
