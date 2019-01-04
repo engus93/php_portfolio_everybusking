@@ -41,6 +41,28 @@ session_start();
 
     </style>
 
+    <script>
+
+        $(document).ready(function(){
+            $(".re_bt").click(function(){
+                var params = $("form").serialize();
+                var index = document.getElementById("reply_bno").value;
+                $.ajax({
+                    type: 'post',
+                    url: '/community/commu_reply_p.php?idx='+ index +'',
+                    data : params,
+                    dataType : 'html',
+                    success: function(data){
+                        $(".reply_view").html(data);
+                        $(".reply_content").val('');
+                    }
+                });
+            });
+
+        });
+
+    </script>
+
 </head>
 <body>
 
@@ -194,7 +216,7 @@ session_start();
                                         <form method="post" class="reply_form">
                                             <div class="input-group input-group-sm mb-3 my_font_main"
                                                  style="width: 90%;height: 40px; margin-top: 5px; left: 15px">
-                                    			<input type="hidden" name="bno" value="'.$bno.'">
+                                    			<input type="hidden" id="reply_bno" name="bno" value="'.$bno.'">
                                                 <input type="text" name="reply_content" class="form-control col-sm-10 reply_content" aria-label="Sizing example input"
                                                        aria-describedby="inputGroup-sizing-sm" placeholder="댓글을 작성해주세요 :)">
                                                 <button type="suid="rep_bt class="col-sm-2 btn re_bt"
