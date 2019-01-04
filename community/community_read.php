@@ -31,6 +31,11 @@ session_start();
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="community_read.css" rel="stylesheet">
 
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
           integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 
@@ -43,35 +48,42 @@ session_start();
 
     <script>
 
-        $(document).ready(function(){
+        $(document).ready(function () {
 
-            $(".re_bt").click(function(){
+            $(".re_bt").click(function () {
                 var params = $("form").serialize();
                 var index = document.getElementById("reply_bno").value;
                 $.ajax({
                     type: 'post',
-                    url: '/community/commu_reply_p.php?idx='+ index +'',
-                    data : params,
-                    dataType : 'html',
-                    success: function(data){
+                    url: '/community/commu_reply_p.php?idx=' + index + '',
+                    data: params,
+                    dataType: 'html',
+                    success: function (data) {
                         $(".reply_view").html(data);
                         $(".reply_content").val('');
                     }
                 });
             });
 
-            $(".dat_edit_bt").click(function(){
-                var jbResult = prompt( '댓글 수정하기', '' );
-                alert(jbResult);
+            $(function () {
+                $("#dat_edit").dialog({
+                    autoOpen: false,
+                });
+                $("#dat_edit_bt").on("click", function () {
+                    $("#dat_edit").dialog("open");
+                });
             });
 
-            $(".dat_delete_bt").click(function(){
+            $(".dat_delete_bt").click(function () {
                 var obj = $(this).closest(".dap_lo").find(".dat_delete");
+                var index = document.getElementById("reply_bno").value;
                 obj.dialog({
-                    modal:true,
-                    width:400,
-                    title:"댓글 삭제확인"});
+                    modal: true,
+                    width: 400,
+                    title: "댓글 삭제확인"
+                });
             });
+
 
         });
 
@@ -203,6 +215,14 @@ session_start();
 
                             ?>
 
+                        <!-- 댓글 수정 폼 dialog -->
+                        <div class="dat_edit" id="dat_edit" title="Basic dialog">
+                            <form method="post" action="">
+                                <textarea name="content" class="dap_edit_t"><?php echo $reply['content']; ?></textarea>
+                                <input type="submit" value="수정하기" class="re_mo_bt">
+                            </form>
+                        </div>
+
                         <!--- 댓글 불러오기 -->
                         <?php
                         $sql3 = mq("select * from commu_reply_tb where con_num='" . $bno . "' order by idx ASC");
@@ -231,7 +251,7 @@ session_start();
                                     <?php echo $reply['date']; ?></span>
                                 </div>
                                 <div class="rep_me rep_menu my_font_main" style="height: 15px">
-                                    <a class="dat_edit_bt color_main" id="dat_edit_bt" href="#" style="font-size: 10px; margin-left: 10px">수정</a>
+                                    <button class="dat_edit_bt color_main" id="dat_edit_bt" style="font-size: 10px; margin-left: 10px">수정</button>
                                     <a class="dat_delete_bt color_main" href="#" style="font-size: 10px">삭제</a>
                                 </div>
                             </div>
@@ -295,7 +315,7 @@ session_start();
 <script>$(".main_footer").load("/public/main_footer.html");</script>
 
 <!-- Bootstrap core JavaScript -->
-<script src="../vendor/jquery/jquery.min.js"></script>
+<!--<script src="../vendor/jquery/jquery.min.js"></script>-->
 <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js"></script>
