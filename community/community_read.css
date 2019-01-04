@@ -277,3 +277,8 @@
 .dat_edit {
     display:none;
 }
+.dap_lo {
+    font-size: 14px;
+    padding:10px 0 15px 0;
+    border-bottom: solid 1px gray;
+}

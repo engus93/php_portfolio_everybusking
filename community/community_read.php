@@ -26,6 +26,7 @@ session_start();
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
     <!------ Include the above in your HEAD tag ---------->
     <link href="https://fonts.googleapis.com/css?family=Rokkitt" rel="stylesheet">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -42,6 +43,15 @@ session_start();
     </style>
 
     <script>
+
+        function tlqkf(z) {
+            $(".dat_edit").dialog({
+                autoOpen: false,
+            });
+            $("#dat_edit_bt"+z).on("click", function () {
+                $("#dat_edit"+z).dialog("open");
+            });
+        };
 
         $(document).ready(function () {
 
@@ -60,23 +70,15 @@ session_start();
                 });
             });
 
-            $(".dat_edit_bt").click(function () {
-                // $("#dat_edit").dialog({
-                //     autoOpen: false,
-                // });
-                //     alert("수정");
-                    $("#dat_edit").dialog("open");
+            $(function () {
+                $(".dat_delete").dialog({
+                    autoOpen: false,
+                });
+                $(".dat_delete_bt").on("click", function () {
+                    // alert("삭제");
+                    $("#dat_delete").dialog("open");
+                });
             });
-
-            // $(function () {
-            //     $("#dat_delete").dialog({
-            //         autoOpen: false,
-            //     });
-            //     $("#dat_delete_bt").on("click", function () {
-            //         // alert("삭제");
-            //         $("#dat_delete").dialog("open");
-            //     });
-            // });
 
         });
 
@@ -201,9 +203,9 @@ session_start();
                         <?php
 
                         if($_SESSION != null){
-                            echo '<div>';
+                            echo '<div class="tlqkf">';
                         }else{
-                            echo '<div style="padding-bottom: 30px!important;">';
+                            echo '<div class="tlqkf" style="padding-bottom: 30px!important;">';
                         }
 
                         ?>
@@ -224,19 +226,21 @@ session_start();
                             ?>
 
                             <!-- 댓글 수정 폼 dialog -->
-                            <div class="dat_edit" id="dat_edit" title="댓글 수정하기">
+                            <tlqkf>
+                            <div class="dat_edit" id="dat_edit<?php echo $reply['idx'];?>" title="댓글 수정하기">
                                 <form method="post" action="commu_reply_update_p.php?idx=<?php echo $reply['idx'];?>&now_idx=<?php echo $bno;?>">
                                     <textarea name="content" class="dap_edit_t form-control" style="width: 100%"><?php echo $reply['content']; ?></textarea>
                                     <input type="submit" id="support_hover" value="수정하기" class="re_mo_bt btn float-right" style="background-color: #FBAA48; color: white; margin-top: 10px">
                                 </form>
                             </div>
+                            </tlqkf>
 
-                            <!-- 댓글 수정 폼 dialog -->
-<!--                            <div class="dat_delete" id="dat_delete" title="댓글 삭제하기">-->
-<!--                                <form method="post" style="margin-top: 16px;" action="commu_reply_delete_p.php?idx=--><?php //echo $reply['idx'];?><!--&now_idx=--><?php //echo $bno;?><!--">-->
-<!--                                    <input type="submit" id="support_hover" value="삭제하기" class="re_mo_bt btn float-left" style="background-color: #FBAA48; color: white; width: 100%">-->
-<!--                                </form>-->
-<!--                            </div>-->
+                            <!-- 댓글 삭제 폼 dialog -->
+                            <div class="dat_delete" id="dat_delete" title="댓글 삭제하기">
+                                <form method="post" style="margin-top: 16px;" action="commu_reply_delete_p.php?idx=<?php echo $reply['idx'];?>&now_idx=<?php echo $bno;?>">
+                                    <input type="submit" id="support_hover" value="삭제하기" class="re_mo_bt btn float-left" style="background-color: #FBAA48; color: white; width: 100%">
+                                </form>
+                            </div>
 
                             <!--댓글-->
                             <div class="cardbox-comments_re reply_view"><span class="comment-avatar float-left">
@@ -256,7 +260,8 @@ session_start();
 
                                     ?>
                                     <div class="rep_me rep_menu my_font_main" style="height: 15px">
-                                        <a class="dat_edit_bt color_main btn dat_edit_bt" id="dat_edit_bt" style="font-size: 10px; margin-left: 10px; background-color: transparent">수정</a>
+                                        <a class="dat_edit_bt color_main btn dat_edit_bt"
+                                           id="dat_edit_bt<?php echo $reply['idx'];?>" style="font-size: 10px; margin-left: 10px; background-color: transparent" onclick="tlqkf(<?php echo $reply['idx'];?>)">수정</a>
                                         <a class="dat_delete_bt color_main btn dat_delete_bt" id="dat_delete_bt" style="font-size: 10px; background-color: transparent;">삭제</a>
                                     </div>
                                     <?php
