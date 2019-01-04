@@ -173,7 +173,22 @@ session_start();
 
                         <!-- 댓글 시작 -->
                         <hr>
+
+                        <?php
+                        $sql3 = mq("select * from commu_reply_tb where con_num='" . $bno . "' order by idx ASC");
+                        if($reply = $sql3->fetch_array()){ ?>
+
                         <h6 class="my_font_main" style="margin-left: 10px">댓글</h6>
+
+                            <?php
+
+                            if($_SESSION != null){
+                                echo '<div>';
+                            }else{
+                                echo '<div style="padding-bottom: 30px!important;">';
+                            }
+
+                            ?>
 
                         <!--- 댓글 불러오기 -->
                         <?php
@@ -206,6 +221,9 @@ session_start();
                                     <a class="dat_delete_bt color_main" href="#" style="font-size: 10px">삭제</a>
                                 </div>
                             </div>
+                        <?php } ?>
+                        </div>
+
                         <?php } ?>
 
                         <?php if ($_SESSION != null) {
