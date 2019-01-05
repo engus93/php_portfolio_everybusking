@@ -14,7 +14,7 @@ $result = mysqli_query($conn, $sql);
 // 쿼리 결과를 PHP 에서 사용할 수 있도록 변경
 $row = mysqli_fetch_assoc($result);
 
-if ($row['pw'] == $_SESSION['user_id']) {
+if ($row['pw'] == $_SESSION['user_id'] || $_SESSION['user_id'] == "rhksflwk") {
 
     $sql = mq("delete from community_tb where idx='$bno';");
 

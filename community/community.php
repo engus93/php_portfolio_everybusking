@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
 
@@ -30,22 +30,6 @@
 
     </style>
     
-    <script>
-        
-        function start_page() {
-
-            alert("첫 페이지 입니다.")
-            
-        }
-
-        function last_page() {
-
-            alert("마지막 페이지 입니다.")
-
-        }
-        
-    </script>
-
 </head>
 
 <body>
@@ -77,7 +61,7 @@
         }
         $sql = mq("select * from community_tb");
         $row_num = mysqli_num_rows($sql); //게시판 총 레코드 수
-        $list = 4; //한 페이지에 보여줄 개수
+        $list = 8; //한 페이지에 보여줄 개수
         $block_ct = 5; //블록당 보여줄 페이지 개수
 
         $block_num = ceil($page/$block_ct); // 현재 페이지 블록 구하기
@@ -92,8 +76,6 @@
         $sql = mq("select * from community_tb order by idx desc limit $start_num, $list");
 
 //        끝
-
-        $ss = "../img/busking_defualt.jpg";
 
         while ($board = $sql->fetch_array()) {
 
@@ -213,6 +195,7 @@
 <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js"></script>
 <script src="../side_bar.js"></script>
 <script src="community.js"></script>
+<script src="/public/page.js"></script>
 
 </body>
 

@@ -17,7 +17,7 @@ session_start();
         <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav animate side-nav">
                 <li class="nav-item">
-                    <a class="nav-link menu_buskingteam" href="/buskingteam/buskingteam.html" title="Dashboard"><i
+                    <a class="nav-link menu_buskingteam" href="/buskingteam/buskingteam.php" title="Dashboard"><i
                             class="fas fa-users side_bar_img"></i>Busking Team<i
                             class="fas fa-cube shortmenu animate"></i></a>
                 </li>

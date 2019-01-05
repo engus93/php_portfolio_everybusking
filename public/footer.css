@@ -1,0 +1,26 @@
+div.m_footer {
+    position: fixed;
+    z-index: 100000;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+}
+
+#m_footer_icon {
+    width: 520px;
+    margin: 0 auto 0;
+    list-style: none;
+    padding: 0;
+}
+
+#m_footer_icon li {
+    height: 53px;
+    float: left;
+    margin: 0;
+    padding: 0;
+}
+
+#m_footer_icon li a {
+    display: block;
+}

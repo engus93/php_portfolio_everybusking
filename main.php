@@ -152,7 +152,7 @@ session_start();
                 </div>
                 <div class="card-body">
                     <h4 class="card-title text-center my_font_start" style="font-size: 1.7em">
-                        <a href="buskingteam/buskingteam_songlist.html" class="color_point">곽진언 - 그대가 들어줬으면</a>
+                        <a href="buskingteam/buskingteam_songlist.php" class="color_point">곽진언 - 그대가 들어줬으면</a>
                     </h4>
                     <h6 class="card-text my_font_main" style="margin-top: 1.5em">
                         <p>안녕하세요.</p> 곽진언이라고 합니다.
