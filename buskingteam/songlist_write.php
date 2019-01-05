@@ -113,6 +113,7 @@ if (isset($_GET['idx'])) {
         <form action="songlist_write_p.php" method="post" enctype="multipart/form-data">
         
             <input type="hidden" name="con_num" value="' . $_GET['idx'] . '" />
+            <input type="hidden" name="team_name" value="' . $_GET['team_name'] . '" />
             
             <div id="in_title" class="center my_font_main">
                     <textarea name="title" id="utitle" rows="1" cols="55" placeholder="곡 제목" maxlength="20"required style="padding-top: 10px"></textarea>

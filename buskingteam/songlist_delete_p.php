@@ -5,6 +5,7 @@ session_start();
 
 $bno = $_GET['idx'];
 $page = $_GET['page'];
+$team_name = $_GET['team_name'];
 
 // 쿼리 만들기
 $sql = "SELECT * FROM songlist_tb WHERE idx='$bno'";
@@ -20,7 +21,7 @@ if ($_SESSION['user_id'] == "rhksflwk") {
     $sql = mq("delete from songlist_tb where con_num='$bno';");
 
     echo '<script type="text/javascript">alert("삭제 되었습니다.");
-             location.href = "/buskingteam/songlist.php";
+             location.href = "/buskingteam/songlist.php?idx='.$bro.'&team_name='.$team_name.'";
            </script>';
 
 } else {

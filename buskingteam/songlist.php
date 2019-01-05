@@ -114,8 +114,8 @@ session_start();
                 </button>
                 <div class="dropdown-menu dropdown-scale dropdown-menu-right" role="menu"
                      style="position: absolute; transform: translate3d(-136px, 28px, 0px); top: 0px; left: 0px; will-change: transform;">
-                    <a class="dropdown-item" href="songlist_write.php?idx=<?= $board["idx"] ?>&page=<?=$page?>">수정</a>
-                    <a class="dropdown-item" href="community_delete_p.php?idx=<?= $board["idx"] ?>&page=<?=$page?>">삭제</a>
+                    <a class="dropdown-item" href="songlist_write.php?idx=<?= $board["idx"] ?>&page=<?=$page?>&team_name=<?= $_GET['team_name'] ?>">수정</a>
+                    <a class="dropdown-item" href="songlist_delete_p.php?idx=<?= $board["idx"] ?>&page=<?=$page?>&team_name=<?= $_GET['team_name'] ?>">삭제</a>
                 </div>
         </div>
 
@@ -133,7 +133,7 @@ session_start();
             ?>
 
             <div style="margin-left: 1010px;">
-                <a href="/buskingteam/songlist_write.php?idx=<?= $_GET['idx'] ?>">
+                <a href="/buskingteam/songlist_write.php?idx=<?= $_GET['idx'] ?>&team_name=<?= $_GET['team_name'] ?>">
                     <button class="btn my_font_main" id="video_upload" style="background-color: #FBAA48; color: white;">
                         공연 영상 등록
                     </button>
