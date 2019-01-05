@@ -168,13 +168,28 @@
         }
 
         //다음
-        if($page > $total_block) { //만약 현재 블록이 블록 총개수보다 크거나 같다면 빈 값
-            echo "<li class='page-item'>
-                    <a class='page-link' aria-label='Next' onclick='last_page()'>
+        if($block_num >= $total_block) { //만약 현재 블록이 블록 총개수보다 크거나 같다면 빈 값
+
+            if($page >= $total_page){ //만약 page가 페이지수보다 크거나 같다면
+
+                echo "<li class='page-item'>
+                        <a class='page-link' aria-label='Next' onclick='last_page()'>
+                            <span aria-hidden='true'>&raquo;</span>
+                            <span class='sr-only'>Next</span>
+                        </a>
+                       </li>";
+
+             }else {
+
+                $next = $page + 1; //next변수에 page + 1을 해준다.
+                echo "<li class='page-item'>
+                    <a class='page-link' href='?page=$next' aria-label='Next' style='color: black'>
                         <span aria-hidden='true'>&raquo;</span>
-                        <span class='sr-only'>Next</span>
+                        <span class='sr-only'>Next</span>                    
                     </a>
                    </li>";
+
+            }
         }else{
             $next = $page + 1; //next변수에 page + 1을 해준다.
             echo "<li class='page-item'>

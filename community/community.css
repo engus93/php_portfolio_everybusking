@@ -9,9 +9,11 @@ body {
 }
 
 img {
-    width: 100%;
+    width: auto;
     max-width: 100%;
-    height: auto;
+    height: 200px;
+    display: block;
+    margin: 0px auto;
 }
 .white-panel {
     position: absolute;

@@ -68,6 +68,7 @@ if (isset($_GET['idx'])) {
 
     </style>
 
+
 </head>
 
 <body>
@@ -82,14 +83,13 @@ if (isset($_GET['idx'])) {
 
     <h6 class="my_font_main">※ 깨끗한 인터넷 문화를 만들어갑시다. :)</h6>
 
-    <?php
+        <?php
 
     if (isset($board)) {
-        echo '<form action="community_update_p.php/' . $board['idx'] . '" method="post">
+        echo '<form action="community_update_p.php/' . $board['idx'] . '" method="post" enctype="multipart/form-data>
         <input type="hidden" name="idx" value="' . $board['idx'] . '" />
         <div id="in_title" class="center">
-                <textarea name="title" id="utitle" rows="1" cols="55" placeholder="제목" maxlength="20"
-                          required>' . $board['title'] . '</textarea>
+                <textarea name="title" id="utitle" rows="1" cols="55" placeholder="제목" maxlength="20" required>' . $board['title'] . '</textarea>
         </div>
         <div id="in_content" class="center">
             <textarea name="content" id="ucontent" placeholder="내용" required>' . $board['content'] . '</textarea>
@@ -99,15 +99,19 @@ if (isset($_GET['idx'])) {
         </div>
     </form>';
     } else {
-        echo '<form action="community_write_p.php" method="post">
-        <div id="in_title" class="center">
-                <textarea name="title" id="utitle" rows="1" cols="55" placeholder="제목" maxlength="20"
-                          required></textarea>
+        echo '<form action="community_write_p.php" method="post" enctype="multipart/form-data">
+        <div id="in_title" class="center my_font_main">
+                <textarea name="title" id="utitle" rows="1" cols="55" placeholder="제목" maxlength="20"required style="padding-top: 10px"></textarea>
         </div>
-        <div id="in_content" class="center">
+        <div id="in_content" class="center my_font_main ">
             <textarea name="content" id="ucontent" placeholder="내용" required></textarea>
         </div>
-        <div class="center" style="margin-top: 50px">
+        
+        <div id="in_file" class="my_font_main" style="margin-left: 104px; margin-top: 20px">
+            <input type="file" value="1" name="b_file" />
+        </div>
+        
+        <div class="center my_font_main" style="margin-top: 50px">
             <button class="btn" type="submit">글 작성</button>
         </div>
     </form>';
