@@ -20,3 +20,9 @@
     color: #FBAA48 !important;
     border: #FBAA48 2px solid;
 }
+
+#video_upload:hover{
+    background-color: transparent !important;
+    color: #FBAA48 !important;
+    border: #FBAA48 2px solid;
+}
