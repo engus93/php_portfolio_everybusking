@@ -29,6 +29,22 @@
         }
 
     </style>
+    
+    <script>
+        
+        function start_page() {
+
+            alert("첫 페이지 입니다.")
+            
+        }
+
+        function last_page() {
+
+            alert("마지막 페이지 입니다.")
+
+        }
+        
+    </script>
 
 </head>
 
@@ -76,7 +92,6 @@
         $sql = mq("select * from community_tb order by idx desc limit $start_num, $list");
 
 //        끝
-//        $sql = mq("select * from community_tb order by idx desc limit 0,12"); // board테이블에있는 idx를 기준으로 내림차순해서 5개까지 표시
 
         $ss = "../img/busking_defualt.jpg";
 
@@ -94,9 +109,12 @@
                 $content = str_replace($content, iconv_substr($board["content"], 0, 30, "utf-8") . "...", $board["content"]);
             }
 
-            echo '<article class="white-panel"><a style="text-decoration: none" href="community_read.php?idx='.$board["idx"].'"><img src="' . $board["picture"] . '"/>';
+            echo '<article class="white-panel">
+                   <a style="text-decoration: none" href="community_read.php?idx='.$board["idx"].'"><img src="' . $board["picture"] . '"/>';
             echo '<h4 class="my_font_start">' . $title . '</h4>';
-            echo '<p class=" my_font_main" style="color: black">' . $content . '</p></a>';
+            echo '<p class=" my_font_main" style="color: black">' . $content . '</p></a>
+                    <p class="float-right" style="font-size: 10px">작성자 : '.$board["name"].'</p>
+                    <p style="font-size: 10px; position: absolute; margin-top: 20px; margin-left: 160px">'.$board["date"].'</p>';
             echo '</article>';
         }
 
@@ -123,7 +141,7 @@
         //이전
         if($page <= 1) { //만약 page가 1보다 크거나 같다면 빈값
             echo "<li class='page-item'>
-                    <a class='page-link' href='?page=$page' aria-label='Previous'>
+                    <a class='page-link' aria-label='Previous' onclick='start_page()'>
                         <span aria-hidden='true'>&laquo;</span>
                         <span class='sr-only'>Previous</span>                    
                     </a>
@@ -131,7 +149,7 @@
         }else{
             $pre = $page-1; //pre변수에 page-1을 해준다 만약 현재 페이지가 3인데 이전버튼을 누르면 2번페이지로 갈 수 있게 함
             echo "<li class='page-item'>
-                    <a class='page-link' href='?page=$pre' aria-label='Previous'>
+                    <a class='page-link' href='?page=$pre' aria-label='Previous' style='color: black'>
                         <span aria-hidden='true'>&laquo;</span>
                         <span class='sr-only'>Previous</span>                    
                     </a>
@@ -143,16 +161,16 @@
             //for문 반복문을 사용하여, 초기값을 블록의 시작번호를 조건으로 블록시작번호가 마지박블록보다 작거나 같을 때까지 $i를 반복시킨다
             if($page == $i){ //만약 page가 $i와 같다면
                 echo "<li class='page-item'><a class='page-link' href='?page=$i'
-                style='color: #FBAA48; font-weight: bold'>$i</a></li>"; //현재 페이지에 해당하는 번호에 굵은 빨간색을 적용한다
+                style='color: #FBAA48; font-weight: bold;'>$i</a></li>"; //현재 페이지에 해당하는 번호에 굵은 빨간색을 적용한다
             }else{
-                echo "<li class='page-item'><a class='page-link' href='?page=$i'>$i</a></li>";
+                echo "<li class='page-item'><a class='page-link' href='?page=$i' style='color: black'>$i</a></li>";
             }
         }
 
         //다음
         if($page > $total_block) { //만약 현재 블록이 블록 총개수보다 크거나 같다면 빈 값
             echo "<li class='page-item'>
-                    <a class='page-link' href='?page=$page' aria-label='Next'>
+                    <a class='page-link' aria-label='Next' onclick='last_page()'>
                         <span aria-hidden='true'>&raquo;</span>
                         <span class='sr-only'>Next</span>
                     </a>
@@ -160,7 +178,7 @@
         }else{
             $next = $page + 1; //next변수에 page + 1을 해준다.
             echo "<li class='page-item'>
-                    <a class='page-link' href='?page=$next' aria-label='Next'>
+                    <a class='page-link' href='?page=$next' aria-label='Next' style='color: black'>
                         <span aria-hidden='true'>&raquo;</span>
                         <span class='sr-only'>Next</span>                    
                     </a>

@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="315b7d6c-43dd-4b04-a2b3-17ad3cc59c77" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/community/community.css" beforeDir="false" afterPath="$PROJECT_DIR$/community/community.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/community/community.php" beforeDir="false" afterPath="$PROJECT_DIR$/community/community.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/community/community_read.php" beforeDir="false" afterPath="$PROJECT_DIR$/community/community_read.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,29 +14,35 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/community/community.php">
+        <entry file="file://$PROJECT_DIR$/community/community_read.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="446">
-              <caret line="136" column="24" lean-forward="true" selection-start-line="136" selection-start-column="24" selection-end-line="136" selection-end-column="24" />
+            <state relative-caret-position="359">
+              <caret line="143" column="44" lean-forward="true" selection-start-line="143" selection-start-column="44" selection-end-line="143" selection-end-column="44" />
               <folding>
-                <element signature="n#style#0;n#a#0;n#article#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#ul#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="e#157#164#1" expanded="true" />
-                <element signature="e#157#164#1" expanded="true" />
-                <element signature="n#style#0;n#a#0;n#li#0;n#!!top" expanded="true" />
-                <element signature="e#154#161#1" expanded="true" />
-                <element signature="e#154#161#1" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#small#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/community/community.css">
+        <entry file="file://$PROJECT_DIR$/community/community.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="557">
-              <caret line="50" column="33" lean-forward="true" selection-start-line="50" selection-start-column="33" selection-end-line="50" selection-end-column="33" />
+            <state relative-caret-position="228">
+              <caret line="97" column="46" lean-forward="true" selection-start-line="97" selection-start-column="46" selection-end-line="97" selection-end-column="46" />
+              <folding>
+                <element signature="n#style#0;n#a#0;n#article#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#ul#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#li#0;n#!!top" expanded="true" />
+                <element signature="e#154#161#1" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#li#0;n#!!top" expanded="true" />
+                <element signature="e#154#161#1" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -55,9 +60,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>dsa</find>
-      <find>modit</find>
-      <find>community_wright_p</find>
       <find>community_update_p</find>
       <find>pic</find>
       <find>삭제</find>
@@ -85,6 +87,9 @@
       <find>dat_delete_bt</find>
       <find>re_bt</find>
       <find>support_1</find>
+      <find>alert</find>
+      <find>title</find>
+      <find>my_font</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -141,9 +146,9 @@
         <option value="$PROJECT_DIR$/community/commu_reply_update_p.php" />
         <option value="$PROJECT_DIR$/community/commu_reply_delete_p.php" />
         <option value="$PROJECT_DIR$/community/community_read.css" />
-        <option value="$PROJECT_DIR$/community/community_read.php" />
         <option value="$PROJECT_DIR$/community/community.css" />
         <option value="$PROJECT_DIR$/community/community.php" />
+        <option value="$PROJECT_DIR$/community/community_read.php" />
       </list>
     </option>
   </component>
@@ -194,16 +199,16 @@
     <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\내꺼\IT\기초 단계\03. PHP\EveryBusking\community" />
+      <recent name="C:\내꺼\IT\기초 단계\03. PHP\example\Sign" />
+      <recent name="C:\내꺼\IT\기초 단계\03. PHP\example\css" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\내꺼\IT\기초 단계\03. PHP\EveryBusking\js" />
       <recent name="C:\내꺼\IT\기초 단계\03. PHP\EveryBusking\public" />
       <recent name="C:\내꺼\IT\기초 단계\03. PHP\EveryBusking\community" />
       <recent name="C:\내꺼\IT\기초 단계\03. PHP\example\Sign" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\내꺼\IT\기초 단계\03. PHP\EveryBusking\community" />
-      <recent name="C:\내꺼\IT\기초 단계\03. PHP\example\Sign" />
-      <recent name="C:\내꺼\IT\기초 단계\03. PHP\example\css" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -242,14 +247,7 @@
       <workItem from="1546488570799" duration="31325000" />
       <workItem from="1546531571926" duration="28473000" />
       <workItem from="1546599878014" duration="7836000" />
-      <workItem from="1546620506172" duration="4499000" />
-    </task>
-    <task id="LOCAL-00015" summary="18.12.30&#10;&#10;사이드 바 완료">
-      <created>1546174062259</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1546174062259</updated>
+      <workItem from="1546620506172" duration="6257000" />
     </task>
     <task id="LOCAL-00016" summary="18.12.30&#10;&#10;사이드 바 완료">
       <created>1546174450164</created>
@@ -587,11 +585,18 @@
       <option name="project" value="LOCAL" />
       <updated>1546607355715</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="19.01.05&#10;&#10;커뮤니티 페이징 완료">
+      <created>1546667278431</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1546667278432</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="204709000" />
+    <option name="totallyTimeSpent" value="206467000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -677,7 +682,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="18.12.30&#10;&#10;사이드 바 완료" />
     <MESSAGE value="18.12.31&#10;&#10;아이디 실시간 중복체크 하기" />
     <MESSAGE value="18.12.31&#10;&#10;아이디 실시간 중복체크 시작" />
     <MESSAGE value="18.12.31&#10;&#10;아이디 실시간 중복체크 1차 완료" />
@@ -702,7 +706,8 @@
     <MESSAGE value="19.01.04&#10;&#10;커뮤니티 댓글 수정 완료" />
     <MESSAGE value="19.01.04&#10;&#10;커뮤니티 댓글 삭제 하는중" />
     <MESSAGE value="19.01.04&#10;&#10;커뮤니티 댓글 삭제 완료" />
-    <option name="LAST_COMMIT_MESSAGE" value="19.01.04&#10;&#10;커뮤니티 댓글 삭제 완료" />
+    <MESSAGE value="19.01.05&#10;&#10;커뮤니티 페이징 완료" />
+    <option name="LAST_COMMIT_MESSAGE" value="19.01.05&#10;&#10;커뮤니티 페이징 완료" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Sign/sign_up_check.php">
@@ -967,13 +972,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/public.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="11" column="1" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/community/community_delete_p.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="291">
@@ -995,10 +993,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/community/commu_reply_p.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" column="2" lean-forward="true" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/community/community.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="557">
+          <caret line="50" column="33" lean-forward="true" selection-start-line="50" selection-start-column="33" selection-end-line="50" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Sign/sign_up.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="399" column="124" selection-start-line="399" selection-start-column="115" selection-end-line="399" selection-end-column="124" />
+        <state relative-caret-position="416">
+          <caret line="241" column="21" selection-start-line="241" selection-start-column="16" selection-end-line="241" selection-end-column="21" />
           <folding>
             <element signature="n#style#0;n#div#1;n#form#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#3;n#form#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -1010,44 +1022,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/community/commu_reply_p.php">
+    <entry file="file://$PROJECT_DIR$/css/public.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" column="2" lean-forward="true" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/community/community_read.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="307" lean-forward="true" selection-start-line="307" selection-end-line="307" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#div#0;n#form#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/community/community.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="557">
-          <caret line="50" column="33" lean-forward="true" selection-start-line="50" selection-start-column="33" selection-end-line="50" selection-end-column="33" />
+        <state relative-caret-position="152">
+          <caret line="8" column="18" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/community/community.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="446">
-          <caret line="136" column="24" lean-forward="true" selection-start-line="136" selection-start-column="24" selection-end-line="136" selection-end-column="24" />
+        <state relative-caret-position="228">
+          <caret line="97" column="46" lean-forward="true" selection-start-line="97" selection-start-column="46" selection-end-line="97" selection-end-column="46" />
           <folding>
             <element signature="n#style#0;n#a#0;n#article#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#ul#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#157#164#1" expanded="true" />
-            <element signature="e#157#164#1" expanded="true" />
             <element signature="n#style#0;n#a#0;n#li#0;n#!!top" expanded="true" />
             <element signature="e#154#161#1" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#li#0;n#!!top" expanded="true" />
             <element signature="e#154#161#1" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/community/community_read.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="359">
+          <caret line="143" column="44" lean-forward="true" selection-start-line="143" selection-start-column="44" selection-end-line="143" selection-end-column="44" />
+          <folding>
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#small#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

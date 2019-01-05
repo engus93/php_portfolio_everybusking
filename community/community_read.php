@@ -138,7 +138,7 @@ session_start();
                                 <!--<a href=""><img class="img-fluid rounded-circle" src="http://www.themashabrand.com/templates/bootsnipp/post/assets/img/users/4.jpg" alt="User"></a>-->
                                 <!--</div>-->
                                 <div class="media-body">
-                                    <p class="m-0"><?php echo $board['title']; ?></p>
+                                    <p class="m-0 color_point my_font_start" style="font-size: 24px"><?php echo $board['title']; ?></p>
                                     <small><span class="float-right" style="position: relative;left: 50px; top: 20px"><i
                                                     class="icon ion-md-time"></i> <?php echo $board['date']; ?></span>
                                     </small>
