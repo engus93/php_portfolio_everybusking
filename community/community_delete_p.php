@@ -17,6 +17,7 @@ $row = mysqli_fetch_assoc($result);
 if ($row['pw'] == $_SESSION['user_id'] || $_SESSION['user_id'] == "rhksflwk") {
 
     $sql = mq("delete from community_tb where idx='$bno';");
+    $sql = mq("delete from commu_reply_tb where con_num='$bno';");
 
     echo '<script type="text/javascript">alert("삭제 되었습니다.");
            location.href = "/community/community.php";

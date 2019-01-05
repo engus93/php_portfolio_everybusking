@@ -86,12 +86,12 @@ session_start();
             <!-- 1번 -->
             <div class="col-lg-6 portfolio-item">
                 <div class="card h-100">
-                    <a href="buskingteam_songlist.php"><img class="card-img-top" src="<?= $board["team_profile"] ?>"
-                                                            style="background-size:100% 100%; height: 350px"></a>
+                    <a href="songlist.php?team_name=<?= $board["name"] ?>"><img class="card-img-top" src="<?= $board["team_profile"] ?>"
+                                                                                            style="background-size:100% 100%; height: 350px"></a>
                     <div class="card-body my_font_main">
                         <h4 class="card-title  text-center">
-                            <a href="buskingteam_songlist.php" class="my_font_start"
-                               style="font-size: 35px; color: #ff6666"><?= $board["name"] ?></a>
+                            <a href="songlist.php?team_name=<?= $board["name"] ?>" class="my_font_start"
+                               style="text-decoration: none; font-size: 35px; color: #ff6666"><?= $board["name"] ?></a>
                         </h4>
                         <div style="position: absolute; top: 0px; right: 0px;">
                             <button class="btn btn-flat btn-flat-icon" type="button" data-toggle="dropdown"

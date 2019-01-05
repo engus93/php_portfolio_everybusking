@@ -1,5 +1,9 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
 
@@ -32,7 +36,7 @@
 
 </head>
 
-<body >
+<body>
 
 <!--header 로드-->
 <div class="main_nav"></div>
@@ -43,23 +47,57 @@
 
     <!-- Page Heading/Breadcrumbs -->
     <h1 class="mt-4 mb-3 my_font_index" style="margin-top: 30px">Busking Team - Song List
-        <p class="my_font_start" style="margin-top: 30px; margin-bottom: 30px; color: black">곽진언</p>
+        <p class="my_font_start"
+           style="margin-top: 30px; margin-bottom: 30px; color: black"><?= $_GET['team_name'] ?></p>
     </h1>
 
-<!--여기에 넣기-->
+    <!--여기에 넣기-->
 
     <!-- 1번 -->
     <div class="row center my_font_main" align="center" style="min-height: 500px">
-        <p >등록된 영상이 없습니다.</p>
+        <p>등록된 영상이 없습니다.</p>
     </div>
+
     <!-- 경계선 -->
     <hr>
 
-    <div style="margin-left: 1010px;">
-        <a href="/buskingteam/buskingteam_write.php">
-            <button class="btn my_font_main" id="video_upload" style="background-color: #FBAA48; color: white;">공연 영상 등록</button>
-        </a>
+    <!--            자체 플레이어-->
+    <!-- 1번 -->
+    <div class="row">
+        <div class="col-md-7">
+            <video controls>
+                <source src="/mp4/video/main_loding.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="col-md-5">
+            <h3 class="my_font_start" style="font-size: 2.5em">제목</h3>
+            <div class="my_font_main" style="margin-top: 30px; font-size: 20px; position: relative;">
+                <p>내용</p>
+            </div>
+        </div>
     </div>
+
+    <!-- 경계선 -->
+    <hr>
+
+
+    <?php
+    if ($_SESSION != null) {
+        if ($_SESSION['user_id'] == "rhksflwk") {
+            ?>
+
+            <div style="margin-left: 1010px;">
+                <a href="/buskingteam/songlist_write.php">
+                    <button class="btn my_font_main" id="video_upload" style="background-color: #FBAA48; color: white;">
+                        공연 영상 등록
+                    </button>
+                </a>
+            </div>
+
+            <?php
+        }
+    }
+    ?>
 
 
     <!-- Pagination -->
@@ -89,7 +127,6 @@
 
 
 </div>
-
 
 
 <!-- /.container -->

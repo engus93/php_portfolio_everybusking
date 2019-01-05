@@ -3,8 +3,8 @@ require_once "../db.php";
 
 session_start();
 
-if ($_SESSION == null) {
-    echo '<script>alert("로그인 후 이용바랍니다.");history.back()</script>';
+if ($_SESSION['user_id'] != "rhksflwk") {
+    echo '<script>alert("관리자만 접근이 가능합니다.");history.back()</script>';
 }
 
 if (isset($_GET['idx'])) {
@@ -12,7 +12,7 @@ if (isset($_GET['idx'])) {
     $bno = $_GET['idx'];
 
     // 쿼리 만들기
-    $sql = "SELECT * FROM community_tb WHERE idx='$bno'";
+    $sql = "SELECT * FROM buskingteam_tb WHERE idx='$bno'";
 
     // DB 에 쿼리 날리기
     $result = mysqli_query($conn, $sql);
@@ -20,23 +20,22 @@ if (isset($_GET['idx'])) {
     // 쿼리 결과를 PHP 에서 사용할 수 있도록 변경
     $row = mysqli_fetch_assoc($result);
 
-    if ($row['pw'] == $_SESSION['user_id']) {
+    if ($_SESSION['user_id'] == "rhksflwk") {
 
         $bno = $_GET['idx'];
-        $sql = mq("select * from community_tb where idx='$bno';");
+        $sql = mq("select * from buskingteam_tb where idx='$bno';");
         $board = $sql->fetch_array();
 
     }else{
-        echo '<script type="text/javascript">alert("자신의 게시물만 수정이 가능합니다.");
-           location.href = "/community/community_read.php?idx=' . $bno . '";
+        echo '<script type="text/javascript">alert("관리자의 권한이 필요합니다.");
+           history.back();
            </script>';
     }
 }
 ?>
 
-
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
 
@@ -85,35 +84,46 @@ if (isset($_GET['idx'])) {
         <?php
 
     if (isset($board)) {
-        echo '<form action="community_update_p.php/' . $board['idx'] . '" method="post" enctype="multipart/form-data>
-        <input type="hidden" name="idx" value="' . $board['idx'] . '" />
-        <div id="in_title" class="center">
-                <textarea name="title" id="utitle" rows="1" cols="55" placeholder="제목" maxlength="20" required>' . $board['title'] . '</textarea>
-        </div>
-        <div id="in_content" class="center">
-            <textarea name="content" id="ucontent" placeholder="내용" required>' . $board['content'] . '</textarea>
-        </div>
-        <div class="center" style="margin-top: 50px">
-            <button class="btn" type="submit">글 수정</button>
-        </div>
-    </form>';
+//        echo '
+//        <form action="buskingteam_update_p.php/' . $board['idx'] . '" method="post" enctype="multipart/form-data">
+//
+//            <input type="hidden" name="idx" value="' . $board['idx'] . '" />
+//            <input type="hidden" name="page" value="' . $_GET['page'] . '" />
+//            <input type="hidden" name="team_profile" value="' . $board['team_profile'] . '" />
+//
+//                <div id="in_title" class="center">
+//                        <textarea name="team_name" id="utitle" rows="1" cols="55" placeholder="가수 이름" maxlength="20" required>' . $board['name'] . '</textarea>
+//                </div>
+//
+//                <div id="in_file" class="my_font_main" style="margin-left: 104px; margin-top: 20px">
+//                    <input type="file" value="1" name="b_file" />
+//                </div>
+//
+//                <div class="center" style="margin-top: 50px">
+//                    <button class="btn" type="submit">수정하기</button>
+//                </div>
+//        </form>';
+
     } else {
-        echo '<form action="community_write_p.php" method="post" enctype="multipart/form-data">
-        <div id="in_title" class="center my_font_main">
-                <textarea name="title" id="utitle" rows="1" cols="55" placeholder="제목" maxlength="20"required style="padding-top: 10px"></textarea>
-        </div>
-        <div id="in_content" class="center my_font_main ">
-            <textarea name="content" id="ucontent" placeholder="내용" required></textarea>
-        </div>
-        
-        <div id="in_file" class="my_font_main" style="margin-left: 104px; margin-top: 20px">
-            <input type="file" value="1" name="b_file" />
-        </div>
-        
-        <div class="center my_font_main" style="margin-top: 50px">
-            <button class="btn" type="submit">글 작성</button>
-        </div>
-    </form>';
+        echo '
+        <form action="buskingteam_write_p.php" method="post" enctype="multipart/form-data">
+            <div id="in_title" class="center my_font_main">
+                    <textarea name="team_name" id="utitle" rows="1" cols="55" placeholder="곡 제목" maxlength="20"required style="padding-top: 10px"></textarea>
+            </div>
+            
+            <div id="in_content" class="center my_font_main ">
+                <textarea name="content" id="ucontent" placeholder="곡 소개" required></textarea>
+            </div>
+            
+            <div id="in_file" class="my_font_main" style="margin-left: 104px; margin-top: 20px">
+                <input type="file" value="1" name="b_file" />
+            </div>
+            
+            <div class="center my_font_main" style="margin-top: 50px">
+                <button class="btn" type="submit">등록하기</button>
+            </div>
+        </form>
+    ';
     }
 
     ?>
