@@ -43,7 +43,7 @@ session_start();
 <script>$(".main_nav").load("/public/main_nav.php");</script>
 
 <!-- Page Content -->
-<div class="container">
+<div class="container" style="position: relative">
 
     <!-- Page Heading/Breadcrumbs -->
     <h1 class="mt-4 mb-3 my_font_index" style="margin-top: 30px">Busking Team - Song List
@@ -61,24 +61,70 @@ session_start();
     <!-- 경계선 -->
     <hr>
 
-    <!--            자체 플레이어-->
-    <!-- 1번 -->
-    <div class="row">
-        <div class="col-md-7">
-            <video controls>
-                <source src="/mp4/video/main_loding.mp4" type="video/mp4">
-            </video>
-        </div>
-        <div class="col-md-5">
-            <h3 class="my_font_start" style="font-size: 2.5em">제목</h3>
-            <div class="my_font_main" style="margin-top: 30px; font-size: 20px; position: relative;">
-                <p>내용</p>
-            </div>
-        </div>
-    </div>
+    <?php
+    require_once "../db.php";
 
-    <!-- 경계선 -->
-    <hr>
+    //        페이징
+    if (isset($_GET['page'])) {
+        $page = $_GET['page'];
+    } else {
+        $page = 1;
+    }
+    $sql = mq("select * from songlist_tb");
+    $row_num = mysqli_num_rows($sql); //게시판 총 레코드 수
+    $list = 4; //한 페이지에 보여줄 개수
+    $block_ct = 5; //블록당 보여줄 페이지 개수
+
+    $block_num = ceil($page / $block_ct); // 현재 페이지 블록 구하기
+    $block_start = (($block_num - 1) * $block_ct) + 1; // 블록의 시작번호
+    $block_end = $block_start + $block_ct - 1; //블록 마지막 번호
+
+    $total_page = ceil($row_num / $list); // 페이징한 페이지 수 구하기
+    if ($block_end > $total_page) $block_end = $total_page; //만약 블록의 마지박 번호가 페이지수보다 많다면 마지박번호는 페이지 수
+    $total_block = ceil($total_page / $block_ct); //블럭 총 개수
+    $start_num = ($page - 1) * $list; //시작번호 (page-1)에서 $list를 곱한다.
+
+    $sql = mq("select * from songlist_tb where con_num='" . $_GET['idx'] . "' order by idx desc limit $start_num, $list");
+//    $sql_re = mq("select * from songlist_tb where con_num='" . $bno . "' order by idx DESC");
+
+    //페이징 끝
+
+    while ($board = $sql->fetch_array()) {
+
+        ?>
+
+        <!--            자체 플레이어-->
+        <!-- 1번 -->
+        <div class="row">
+            <div class="col-md-7">
+                <video controls>
+                    <source src="/mp4/video/main_loding.mp4" type="video/mp4">
+<!--                    <source src="--><?//= $board['video_path'] ?><!--" type="video/mp4">-->
+                </video>
+            </div>
+            <div class="col-md-5">
+                <h3 class="my_font_start" style="font-size: 2.5em"><?= $board['title'] ?></h3>
+                <div class="my_font_main" style="margin-top: 30px; font-size: 20px; position: relative;">
+                    <p><?= $board['content'] ?></p>
+                </div>
+            </div>
+                <button class="btn btn-flat btn-flat-icon" type="button" data-toggle="dropdown"
+                        aria-expanded="false" style="background-color: transparent; position: absolute; right: 0px">
+                    <em class="fa fa-plus color_point"></em>
+                </button>
+                <div class="dropdown-menu dropdown-scale dropdown-menu-right" role="menu"
+                     style="position: absolute; transform: translate3d(-136px, 28px, 0px); top: 0px; left: 0px; will-change: transform;">
+                    <a class="dropdown-item" href="songlist_write.php?idx=<?= $board["idx"] ?>&page=<?=$page?>">수정</a>
+                    <a class="dropdown-item" href="community_delete_p.php?idx=<?= $board["idx"] ?>&page=<?=$page?>">삭제</a>
+                </div>
+        </div>
+
+        <!-- 경계선 -->
+        <hr>
+
+        <?php
+    }
+    ?>
 
 
     <?php
@@ -87,7 +133,7 @@ session_start();
             ?>
 
             <div style="margin-left: 1010px;">
-                <a href="/buskingteam/songlist_write.php">
+                <a href="/buskingteam/songlist_write.php?idx=<?= $_GET['idx'] ?>">
                     <button class="btn my_font_main" id="video_upload" style="background-color: #FBAA48; color: white;">
                         공연 영상 등록
                     </button>

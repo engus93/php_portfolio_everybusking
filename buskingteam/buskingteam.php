@@ -86,7 +86,7 @@ session_start();
             <!-- 1번 -->
             <div class="col-lg-6 portfolio-item">
                 <div class="card h-100">
-                    <a href="songlist.php?team_name=<?= $board["name"] ?>"><img class="card-img-top" src="<?= $board["team_profile"] ?>"
+                    <a href="songlist.php?idx=<?= $board["idx"] ?>&team_name=<?= $board["name"] ?>"><img class="card-img-top" src="<?= $board["team_profile"] ?>"
                                                                                             style="background-size:100% 100%; height: 350px"></a>
                     <div class="card-body my_font_main">
                         <h4 class="card-title  text-center">
@@ -101,7 +101,7 @@ session_start();
                             <div class="dropdown-menu dropdown-scale dropdown-menu-right" role="menu"
                                  style="position: absolute; transform: translate3d(-136px, 28px, 0px); top: 0px; left: 0px; will-change: transform;">
                                 <a class="dropdown-item" href="buskingteam_write.php?idx=<?= $board["idx"] ?>&page=<?=$page?>">수정</a>
-                                <a class="dropdown-item" href="community_delete_p.php?idx=<?= $board["idx"] ?>">삭제</a>
+                                <a class="dropdown-item" href="buskingteam_delete_p.php?idx=<?= $board["idx"] ?>&page=<?= $page ?>">삭제</a>
                             </div>
                         </div>
                     </div>

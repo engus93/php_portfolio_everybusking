@@ -12,7 +12,7 @@ if (isset($_GET['idx'])) {
     $bno = $_GET['idx'];
 
     // 쿼리 만들기
-    $sql = "SELECT * FROM buskingteam_tb WHERE idx='$bno'";
+    $sql = "SELECT * FROM songlist_tb WHERE idx='$bno'";
 
     // DB 에 쿼리 날리기
     $result = mysqli_query($conn, $sql);
@@ -23,7 +23,7 @@ if (isset($_GET['idx'])) {
     if ($_SESSION['user_id'] == "rhksflwk") {
 
         $bno = $_GET['idx'];
-        $sql = mq("select * from buskingteam_tb where idx='$bno';");
+        $sql = mq("select * from songlist_tb where idx='$bno';");
         $board = $sql->fetch_array();
 
     }else{
@@ -84,31 +84,38 @@ if (isset($_GET['idx'])) {
         <?php
 
     if (isset($board)) {
-//        echo '
-//        <form action="buskingteam_update_p.php/' . $board['idx'] . '" method="post" enctype="multipart/form-data">
-//
-//            <input type="hidden" name="idx" value="' . $board['idx'] . '" />
-//            <input type="hidden" name="page" value="' . $_GET['page'] . '" />
-//            <input type="hidden" name="team_profile" value="' . $board['team_profile'] . '" />
-//
-//                <div id="in_title" class="center">
-//                        <textarea name="team_name" id="utitle" rows="1" cols="55" placeholder="가수 이름" maxlength="20" required>' . $board['name'] . '</textarea>
-//                </div>
-//
-//                <div id="in_file" class="my_font_main" style="margin-left: 104px; margin-top: 20px">
-//                    <input type="file" value="1" name="b_file" />
-//                </div>
-//
-//                <div class="center" style="margin-top: 50px">
-//                    <button class="btn" type="submit">수정하기</button>
-//                </div>
-//        </form>';
+        echo '
+        <form action="buskingteam_update_p.php/' . $board['idx'] . '" method="post" enctype="multipart/form-data">
+
+            <input type="hidden" name="idx" value="' . $board['idx'] . '" />
+            <input type="hidden" name="page" value="' . $_GET['page'] . '" />
+            <input type="hidden" name="team_profile" value="' . $board['video_path'] . '" />
+
+                <div id="in_title" class="center">
+                        <textarea name="team_name" id="utitle" rows="1" cols="55" placeholder="곡 제목" maxlength="20" required>' . $board['title'] . '</textarea>
+                </div>
+                
+                <div id="in_content" class="center my_font_main ">
+                    <textarea name="content" id="ucontent" placeholder="곡 소개" required>' . $board['content'] . '</textarea>
+                </div>
+
+                <div id="in_file" class="my_font_main" style="margin-left: 104px; margin-top: 20px">
+                    <input type="file" value="1" name="b_file" />
+                </div>
+
+                <div class="center" style="margin-top: 50px">
+                    <button class="btn" type="submit">수정하기</button>
+                </div>
+        </form>';
 
     } else {
         echo '
-        <form action="buskingteam_write_p.php" method="post" enctype="multipart/form-data">
+        <form action="songlist_write_p.php" method="post" enctype="multipart/form-data">
+        
+            <input type="hidden" name="con_num" value="' . $_GET['idx'] . '" />
+            
             <div id="in_title" class="center my_font_main">
-                    <textarea name="team_name" id="utitle" rows="1" cols="55" placeholder="곡 제목" maxlength="20"required style="padding-top: 10px"></textarea>
+                    <textarea name="title" id="utitle" rows="1" cols="55" placeholder="곡 제목" maxlength="20"required style="padding-top: 10px"></textarea>
             </div>
             
             <div id="in_content" class="center my_font_main ">
