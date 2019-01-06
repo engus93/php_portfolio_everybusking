@@ -94,7 +94,7 @@ if (isset($_GET['page'])) {
             <input type="hidden" name="video_path" value="' . $board['video_path'] . '" />
 
                 <div id="in_title" class="center">
-                        <textarea name="title" id="utitle" rows="1" cols="55" placeholder="곡 제목" maxlength="20" required>' . $board['title'] . '</textarea>
+                        <textarea name="title" id="utitle" rows="1" cols="55" placeholder="곡 제목" maxlength="30" required>' . $board['title'] . '</textarea>
                 </div>
                 
                 <div id="in_content" class="center my_font_main ">
@@ -118,7 +118,7 @@ if (isset($_GET['page'])) {
             <input type="hidden" name="team_name" value="' . $_GET['team_name'] . '" />
             
             <div id="in_title" class="center my_font_main">
-                    <textarea name="title" id="utitle" rows="1" cols="55" placeholder="곡 제목" maxlength="20"required style="padding-top: 10px"></textarea>
+                    <textarea name="title" id="utitle" rows="1" cols="55" placeholder="곡 제목" maxlength="30"required style="padding-top: 10px"></textarea>
             </div>
             
             <div id="in_content" class="center my_font_main ">

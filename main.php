@@ -141,130 +141,41 @@ session_start();
     <h2 class="my_font_index color_main">Public Relations </h2>
 
     <div class="row" style="margin-top: 30px">
+
+    <?php
+    require_once "db.php";
+
+    $sql = mq("select * from songlist_tb order by rand() limit 6;");
+
+    //페이징 끝
+
+    while ($board = $sql->fetch_array()) {
+
+    ?>
+
         <!-- 1번 -->
         <div class="col-lg-4 col-sm-6 portfolio-item">
             <div class="card h-100">
-                <div class="embed-responsive embed-responsive-16by9">
-                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/aZFaorIYGO8" frameborder="0"
-                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen>
-                    </iframe>
-                </div>
+                <video controls style="width: auto; height: 200px">
+                    <source src="<?= $board['video_path'] ?>" type="video/mp4">
+                </video>
                 <div class="card-body">
                     <h4 class="card-title text-center my_font_start" style="font-size: 1.7em">
-                        <a href="buskingteam/songlist.php" class="color_point">곽진언 - 그대가 들어줬으면</a>
+<!--                        <a href="buskingteam/songlist.php" class="color_point">-->
+                            <?= $board['team_name'] ?> - <?= $board['title'] ?>
+<!--                        </a>-->
                     </h4>
                     <h6 class="card-text my_font_main" style="margin-top: 1.5em">
-                        <p>안녕하세요.</p> 곽진언이라고 합니다.
+                        <?= $board['content'] ?>
                     </h6>
                 </div>
             </div>
         </div>
 
-        <!-- 2번 -->
-        <div class="col-lg-4 col-sm-6 portfolio-item">
-            <div class="card h-100">
-                <div class="embed-responsive embed-responsive-16by9">
-                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/pW94Vey7rWc" frameborder="0"
-                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen>
-                    </iframe>
-                </div>
+        <?php
+        }
+        ?>
 
-                <div class="card-body">
-                    <h4 class="card-title text-center my_font_start" style="font-size: 1.7em">
-                        <a href="" class="color_point">Mind U - 몰라 너 싫어</a>
-                    </h4>
-                    <h6 class="card-text my_font_main" style="margin-top: 1.5em">
-                        <p>안녕하세요.</p> Mind U 입니다.
-                    </h6>
-                </div>
-            </div>
-        </div>
-
-        <!-- 3번 -->
-        <div class="col-lg-4 col-sm-6 portfolio-item">
-            <div class="card h-100">
-                <div class="embed-responsive embed-responsive-16by9">
-                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/tk1-H0cQi5Y" frameborder="0"
-                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen>
-                    </iframe>
-                </div>
-
-                <div class="card-body">
-                    <h4 class="card-title text-center my_font_start" style="font-size: 1.7em">
-                        <a href="" class="color_point">공기남X고닥 - 그대의 편이 돼 줄게</a>
-                    </h4>
-                    <h6 class="card-text my_font_main" style="margin-top: 1.5em">
-                        <p>안녕하세요.</p> 공기남X고닥 입니다.
-                    </h6>
-                </div>
-            </div>
-        </div>
-
-        <!-- 4번 -->
-        <div class="col-lg-4 col-sm-6 portfolio-item">
-            <div class="card h-100">
-                <div class="embed-responsive embed-responsive-16by9">
-                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/lzZkAay0maQ" frameborder="0"
-                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen>
-                    </iframe>
-                </div>
-
-                <div class="card-body">
-                    <h4 class="card-title text-center my_font_start" style="font-size: 1.7em">
-                        <a href="" class="color_point">폴킴 - Who you are</a>
-                    </h4>
-                    <h6 class="card-text my_font_main" style="margin-top: 1.5em">
-                        <p>안녕하세요.</p> 폴킴입니다.
-                    </h6>
-                </div>
-            </div>
-        </div>
-
-        <!-- 5번 -->
-        <div class="col-lg-4 col-sm-6 portfolio-item">
-            <div class="card h-100">
-                <div class="embed-responsive embed-responsive-16by9">
-                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/5KcQANgNIYE" frameborder="0"
-                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen>
-                    </iframe>
-                </div>
-
-                <div class="card-body">
-                    <h4 class="card-title text-center my_font_start" style="font-size: 1.7em">
-                        <a href="" class="color_point">Dave beck - Busan</a>
-                    </h4>
-                    <h6 class="card-text my_font_main" style="margin-top: 1.5em">
-                        <p>Hi</p> Hi I'm Dave beckd
-                    </h6>
-                </div>
-            </div>
-        </div>
-
-        <!-- 6번 -->
-        <div class="col-lg-4 col-sm-6 portfolio-item">
-            <div class="card h-100">
-                <div class="embed-responsive embed-responsive-16by9">
-                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/dzfujNv2IYU" frameborder="0"
-                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen>
-                    </iframe>
-                </div>
-
-                <div class="card-body">
-                    <h4 class="card-title text-center my_font_start" style="font-size: 1.5em">
-                        <a href="" class="color_point">Cyrilia Lopez - Love Me Like You Do</a>
-                    </h4>
-                    <h6 class="card-text my_font_main" style="margin-top: 1.5em">
-                        <p>Hi</p> I'm Cyrilia Lopez
-                    </h6>
-                </div>
-            </div>
-        </div>
 
     </div>
 
@@ -284,11 +195,9 @@ session_start();
             </ul>
         </div>
         <div class="col-lg-6">
-            <!-- <img class="img-fluid rounded" src="http://placehold.it/700x450" alt=""> -->
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/ghWhdLci_1Y" frameborder="0"
-                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen>
-            </iframe>
+            <video controls muted autoplay style="width: 600px; height: 300px">
+                <source src="/mp4/main/소개%20영상.mp4" type="video/mp4">
+            </video>
         </div>
     </div>
 </div>

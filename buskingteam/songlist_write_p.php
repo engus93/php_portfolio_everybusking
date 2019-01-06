@@ -12,8 +12,14 @@ $team_name = $_POST['team_name'];
 if (isset($_FILES['c_file']['tmp_name'])) {
     $tmpfile = $_FILES['c_file']['tmp_name'];
     $o_name = $_FILES['c_file']['name'];
-    $folder = "../mp4/songlist/";
+    $folder = "../mp4/songlist/".$team_name;
     $path = "$folder/$o_name";
+
+    //폴더 체크 후 생성
+    if(!is_dir( $folder)){
+        mkdir( $folder );
+    }
+
     move_uploaded_file($_FILES['c_file']['tmp_name'], "$folder/$o_name");
     $sql = mq("insert into songlist_tb(con_num,title,content,video_path) values('" . $_POST['con_num'] . "','" . $_POST['title'] . "','" . $_POST['content'] . "','" . $path . "')");
     echo '<script>alert("등록이 완료되었습니다.");</script>';

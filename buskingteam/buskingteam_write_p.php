@@ -10,7 +10,7 @@ $date = date('Y-m-d H:i:s');
 
 $tmpfile = $_FILES['b_file']['tmp_name'];
 $o_name = $_FILES['b_file']['name'];
-var_dump($_FILES);
+
 if ($o_name != "") {
     $folder = "../img/buskingteam/";
     $path = "$folder/$o_name";
