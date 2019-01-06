@@ -2,16 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="315b7d6c-43dd-4b04-a2b3-17ad3cc59c77" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/mp4/main/소개 영상.mp4" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/buskingteam/buskingteam_write_p.php" beforeDir="false" afterPath="$PROJECT_DIR$/buskingteam/buskingteam_write_p.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/buskingteam/songlist.php" beforeDir="false" afterPath="$PROJECT_DIR$/buskingteam/songlist.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/buskingteam/songlist_update_p.php" beforeDir="false" afterPath="$PROJECT_DIR$/buskingteam/songlist_update_p.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/buskingteam/songlist_write.php" beforeDir="false" afterPath="$PROJECT_DIR$/buskingteam/songlist_write.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/buskingteam/songlist_write_p.php" beforeDir="false" afterPath="$PROJECT_DIR$/buskingteam/songlist_write_p.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/concert/adjk.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/main.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mp4/songlist/kwon1.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sign/login_check.php" beforeDir="false" afterPath="$PROJECT_DIR$/Sign/login_check.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sign/sign_in.html" beforeDir="false" afterPath="$PROJECT_DIR$/Sign/sign_in.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sign/sign_out.php" beforeDir="false" afterPath="$PROJECT_DIR$/Sign/sign_out.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sign/sign_up_result.php" beforeDir="false" afterPath="$PROJECT_DIR$/Sign/sign_up_result.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/community/community_read.php" beforeDir="false" afterPath="$PROJECT_DIR$/community/community_read.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/main_nav.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/main_nav.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,15 +18,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/main.php">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Sign/login_check.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="196" column="30" lean-forward="true" selection-start-line="196" selection-start-column="30" selection-end-line="196" selection-end-column="30" />
-              <folding>
-                <element signature="n#style#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#video#0;n#div#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="152">
+              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Sign/sign_in.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="19">
+              <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Sign/sign_out.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="190">
+              <caret line="10" column="32" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -85,15 +96,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/aplication.html" />
-        <option value="$PROJECT_DIR$/busking_zone.html" />
-        <option value="$PROJECT_DIR$/buskingteam.html" />
         <option value="$PROJECT_DIR$/concert.html" />
         <option value="$PROJECT_DIR$/concert_ticket.html" />
         <option value="$PROJECT_DIR$/streaming.html" />
         <option value="$PROJECT_DIR$/public/main_nav.php" />
         <option value="$PROJECT_DIR$/Sign/forgot_pass.html" />
-        <option value="$PROJECT_DIR$/Sign/sign_in.html" />
         <option value="$PROJECT_DIR$/Sign/sign_up.html" />
         <option value="$PROJECT_DIR$/community/dsad.php" />
         <option value="$PROJECT_DIR$/community/commu_reply_p.php" />
@@ -136,6 +143,10 @@
         <option value="$PROJECT_DIR$/buskingteam/songlist_write.php" />
         <option value="$PROJECT_DIR$/buskingteam/songlist.php" />
         <option value="$PROJECT_DIR$/main.php" />
+        <option value="$PROJECT_DIR$/Sign/sign_in.html" />
+        <option value="$PROJECT_DIR$/Sign/login_check.php" />
+        <option value="$PROJECT_DIR$/Sign/sign_in.php" />
+        <option value="$PROJECT_DIR$/Sign/sign_out.php" />
       </list>
     </option>
   </component>
@@ -165,6 +176,11 @@
               <item name="EveryBusking" type="b2602c69:ProjectViewProjectNode" />
               <item name="EveryBusking" type="462c0819:PsiDirectoryNode" />
               <item name="mp4" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EveryBusking" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EveryBusking" type="462c0819:PsiDirectoryNode" />
+              <item name="Sign" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -234,21 +250,7 @@
       <workItem from="1546620506172" duration="28614000" />
       <workItem from="1546701910345" duration="13008000" />
       <workItem from="1546748952632" duration="1214000" />
-      <workItem from="1546763953907" duration="11429000" />
-    </task>
-    <task id="LOCAL-00027" summary="19.01.01&#10;&#10;아이디 실시간 중복체크 완료">
-      <created>1546302866496</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1546302866496</updated>
-    </task>
-    <task id="LOCAL-00028" summary="19.01.01&#10;&#10;수업 준비 끝">
-      <created>1546305330069</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1546305330069</updated>
+      <workItem from="1546763953907" duration="12666000" />
     </task>
     <task id="LOCAL-00029" summary="19.01.01&#10;&#10;수업 준비 끝">
       <created>1546319092371</created>
@@ -579,11 +581,25 @@
       <option name="project" value="LOCAL" />
       <updated>1546772913712</updated>
     </task>
-    <option name="localTasksCounter" value="76" />
+    <task id="LOCAL-00076" summary="19.01.06&#10;&#10;메인 완료">
+      <created>1546779210368</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1546779210368</updated>
+    </task>
+    <task id="LOCAL-00077" summary="19.01.06&#10;&#10;메인 완료">
+      <created>1546779242342</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1546779242342</updated>
+    </task>
+    <option name="localTasksCounter" value="78" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="254475000" />
+    <option name="totallyTimeSpent" value="255712000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -602,7 +618,7 @@
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32721382" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32618025" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -610,7 +626,7 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32939914" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
-      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49777213" visible="true" weight="0.2274678" />
+      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49777213" weight="0.2274678" />
       <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49840865" weight="0.32296136" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5022279" side_tool="true" weight="0.22678186" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -669,7 +685,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="19.01.01&#10;&#10;수업 준비 끝" />
     <MESSAGE value="19.01.02&#10;&#10;로그인" />
     <MESSAGE value="19.01.02&#10;&#10;로그인 완료" />
     <MESSAGE value="19.01.02&#10;&#10;게시판 시작" />
@@ -694,16 +709,10 @@
     <MESSAGE value="19.01.05&#10;&#10;버스킹 송리스트 추가" />
     <MESSAGE value="19.01.06&#10;&#10;버스킹 비디오 업로드 해야함" />
     <MESSAGE value="19.01.06&#10;&#10;송리스트 페이징 하고 검색하기" />
-    <option name="LAST_COMMIT_MESSAGE" value="19.01.06&#10;&#10;송리스트 페이징 하고 검색하기" />
+    <MESSAGE value="19.01.06&#10;&#10;메인 완료" />
+    <option name="LAST_COMMIT_MESSAGE" value="19.01.06&#10;&#10;메인 완료" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/BNZ.5c2f0b7137bba257/reply_ok.php" />
-    <entry file="file://$USER_HOME$/Downloads/181011_board/page/board/read.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-37" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/common.js" />
     <entry file="file://$PROJECT_DIR$/community/da.html" />
     <entry file="file://$PROJECT_DIR$/css/concert_information.css">
       <provider selected="true" editor-type-id="text-editor">
@@ -1018,12 +1027,33 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="196" column="30" lean-forward="true" selection-start-line="196" selection-start-column="30" selection-end-line="196" selection-end-column="30" />
+        <state relative-caret-position="3254">
+          <caret line="188" column="61" lean-forward="true" selection-start-line="188" selection-start-column="61" selection-end-line="188" selection-end-column="61" />
           <folding>
             <element signature="n#style#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#video#0;n#div#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Sign/login_check.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Sign/sign_in.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Sign/sign_out.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" column="32" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
         </state>
       </provider>
     </entry>

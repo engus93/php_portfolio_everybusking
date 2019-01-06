@@ -15,7 +15,7 @@ $sex = $_POST['sex'];
 $sql = "insert into user_info_tb (user_id, password, name, phone, sex) VALUES('$id','$password_re','$name','$phone','$sex')";
 
 if ($mysqli->query($sql)) {
-    echo "<script>alert('가입을 축하드립니다!');parent.location.href='sign_in.html'</script>";
+    echo "<script>alert('가입을 축하드립니다!');parent.location.href=sign_in.php/script>";
 
 } else {
     echo "<script>alert('가입에 실패했습니다.');history.back()</script>";

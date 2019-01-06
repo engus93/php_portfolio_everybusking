@@ -51,7 +51,7 @@ session_start();
                 </li>
                 <li class="nav-item">
                     <?php if ($_SESSION == null) {
-                        echo '<a class="nav-link main_nav_sign" href="/Sign/sign_in.html"><i class="fas fa-key"></i> Sign In</a>';
+                        echo '<a class="nav-link main_nav_sign" href="/Sign/sign_in.php"><i class="fas fa-key"></i> Sign In</a>';
                     } else {
                         echo '<a class="nav-link main_nav_sign" href="/Sign/sign_out.php"><i class="fas fa-key"></i> Sign Out</a>';
                     } ?>

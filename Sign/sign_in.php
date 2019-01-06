@@ -1,5 +1,15 @@
+<?php
+
+session_start();
+
+if (isset($_COOKIE[session_name()])) {
+    setcookie(session_name(), '', time()-1800, '/');
+}
+
+?>
+
 <!DOCTYPE html>
-<html lang="ko">
+<html>
 
 <head>
 
@@ -105,7 +115,7 @@
                         <input type="password" class="form-control" placeholder="password" name="password" id="login_password">
                     </div>
                     <div class="row align-items-center remember">
-                        <input type="checkbox">Remember Me
+                        <input type="checkbox" id="rememberme">Remember Me
                     </div>
                     <div class="form-group">
                         <input type="button" value="Sign In" class="btn float-right login_btn" onclick="login()">

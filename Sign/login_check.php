@@ -1,6 +1,12 @@
 <?php
 require_once "../db.php";
 
+if(isset($_POST["rememberme"])){
+    $duration = 7 * 24 * 60 * 60;
+    ini_set('session.gc_maxlifetime', $duration);
+    session_set_cookie_params($duration);
+}
+
 session_start();
 
 $uid = $_POST['ID'];

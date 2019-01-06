@@ -128,7 +128,7 @@ session_start();
                                     <a class="dropdown-item" href="community_write.php?idx=' . $board['idx'] . '">수정</a>
                                     <a class="dropdown-item" href="community_delete_p.php?idx=' . $board['idx'] . '">삭제</a>';
                                     } else {
-                                        echo '<a class="dropdown-item" href="/Sign/sign_in.html">로그인하기</a>';
+                                        echo '<a class="dropdown-item" href="/Sign/sign_in.php">로그인하기</a>';
                                     } ?>
                                 </div>
                             </div><!--/ dropdown -->
