@@ -102,10 +102,10 @@ if (isset($_GET['page'])) {
                 </div>
 
                 <div id="in_file" class="my_font_main" style="margin-left: 104px; margin-top: 20px">
-                    <input type="file" value="1" name="c_file" />
+                    <input type="file" value="1" name="d_file" />
                 </div>
 
-                <div class="center" style="margin-top: 50px">
+                <div class="center my_font_main" style="margin-top: 50px">
                     <button class="btn" type="submit">수정하기</button>
                 </div>
         </form>';

@@ -105,8 +105,7 @@ session_start();
         <!-- 1번 -->
         <div class="row">
             <div class="col-md-7">
-                <video controls>
-<!--                    <source src="/mp4/video/main_loding.mp4" type="video/mp4">-->
+                <video controls style="width: 600px; height: 300px">
                     <source src="<?= $board['video_path'] ?>" type="video/mp4">
                 </video>
             </div>
