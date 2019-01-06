@@ -2,10 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="315b7d6c-43dd-4b04-a2b3-17ad3cc59c77" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/buskingteam/songlist.php" beforeDir="false" afterPath="$PROJECT_DIR$/buskingteam/songlist.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/buskingteam/songlist_delete_p.php" beforeDir="false" afterPath="$PROJECT_DIR$/buskingteam/songlist_delete_p.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/buskingteam/songlist_update_p.php" beforeDir="false" afterPath="$PROJECT_DIR$/buskingteam/songlist_update_p.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/buskingteam/songlist_write.php" beforeDir="false" afterPath="$PROJECT_DIR$/buskingteam/songlist_write.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/buskingteam/songlist_write_p.php" beforeDir="false" afterPath="$PROJECT_DIR$/buskingteam/songlist_write_p.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/community/community_read.php" beforeDir="false" afterPath="$PROJECT_DIR$/community/community_read.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/community/community_write.php" beforeDir="false" afterPath="$PROJECT_DIR$/community/community_write.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,20 +18,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/buskingteam/songlist.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="337">
-              <caret line="122" column="12" lean-forward="true" selection-start-line="122" selection-start-column="12" selection-end-line="122" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/buskingteam/songlist_write_p.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="22" selection-start-line="22" selection-start-column="2" selection-end-line="25" selection-end-column="13" />
+            <state relative-caret-position="309">
+              <caret line="88" column="14" lean-forward="true" selection-start-line="88" selection-start-column="14" selection-end-line="88" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -46,7 +40,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>cardbox-comments</find>
       <find>$_</find>
       <find>$_SESSION</find>
       <find>$board</find>
@@ -76,6 +69,7 @@
       <find>flo</find>
       <find>$ss</find>
       <find>body</find>
+      <find>team_name</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -109,16 +103,13 @@
         <option value="$PROJECT_DIR$/vendor/bootstrap/css/bootstrap.css" />
         <option value="$PROJECT_DIR$/community/community_write.css" />
         <option value="$PROJECT_DIR$/community/fds.html" />
-        <option value="$PROJECT_DIR$/community/community_write.php" />
         <option value="$PROJECT_DIR$/community/community.css" />
         <option value="$PROJECT_DIR$/buskingteam_songlist.html" />
         <option value="$PROJECT_DIR$/buskingteam/buskingteam.html" />
-        <option value="$PROJECT_DIR$/community/community_read.php" />
         <option value="$PROJECT_DIR$/css/public.css" />
         <option value="$PROJECT_DIR$/community/community_write_p.php" />
         <option value="$PROJECT_DIR$/public/page.js" />
         <option value="$PROJECT_DIR$/buskingteam/buskingteam_write_p.php" />
-        <option value="$PROJECT_DIR$/buskingteam/buskingteam_write.php" />
         <option value="$PROJECT_DIR$/buskingteam/buskingteam_update_p.php" />
         <option value="$PROJECT_DIR$/buskingteam/buskingteam_songlist.html" />
         <option value="$PROJECT_DIR$/community/community.php" />
@@ -128,13 +119,16 @@
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/buskingteam/buskingteam_songlist.php" />
         <option value="$PROJECT_DIR$/community/community_delete_p.php" />
-        <option value="$PROJECT_DIR$/buskingteam/songlist_update_p.php" />
         <option value="$PROJECT_DIR$/buskingteam/buskingteam_delete_p.php" />
         <option value="$PROJECT_DIR$/buskingteam/buskingteam.php" />
+        <option value="$PROJECT_DIR$/buskingteam/songlist_write_p.php" />
+        <option value="$PROJECT_DIR$/buskingteam/buskingteam_write.php" />
         <option value="$PROJECT_DIR$/buskingteam/songlist_delete_p.php" />
         <option value="$PROJECT_DIR$/buskingteam/songlist_write.php" />
+        <option value="$PROJECT_DIR$/buskingteam/songlist_update_p.php" />
         <option value="$PROJECT_DIR$/buskingteam/songlist.php" />
-        <option value="$PROJECT_DIR$/buskingteam/songlist_write_p.php" />
+        <option value="$PROJECT_DIR$/community/community_read.php" />
+        <option value="$PROJECT_DIR$/community/community_write.php" />
       </list>
     </option>
   </component>
@@ -241,14 +235,7 @@
       <workItem from="1546531571926" duration="28473000" />
       <workItem from="1546599878014" duration="7836000" />
       <workItem from="1546620506172" duration="28614000" />
-      <workItem from="1546701910345" duration="9208000" />
-    </task>
-    <task id="LOCAL-00022" summary="18.12.31&#10;&#10;아이디 실시간 중복체크 시작">
-      <created>1546244478119</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1546244478119</updated>
+      <workItem from="1546701910345" duration="12184000" />
     </task>
     <task id="LOCAL-00023" summary="18.12.31&#10;&#10;아이디 실시간 중복체크 시작">
       <created>1546247919981</created>
@@ -586,11 +573,18 @@
       <option name="project" value="LOCAL" />
       <updated>1546710521770</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="19.01.06&#10;&#10;버스킹 비디오 업로드 해야함">
+      <created>1546712003269</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1546712003269</updated>
+    </task>
+    <option name="localTasksCounter" value="72" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="238032000" />
+    <option name="totallyTimeSpent" value="241008000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -723,13 +717,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="424">
           <caret line="87" column="34" lean-forward="true" selection-start-line="87" selection-start-column="34" selection-end-line="87" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/community/commu_reply_update_p.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="15" column="2" lean-forward="true" selection-start-line="15" selection-start-column="2" selection-end-line="15" selection-end-column="2" />
         </state>
       </provider>
     </entry>
@@ -878,13 +865,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/community/community_write.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="105" selection-start-line="105" selection-end-line="107" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/community/community.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="361">
@@ -940,20 +920,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/buskingteam/buskingteam_write.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="90" column="77" lean-forward="true" selection-start-line="90" selection-start-column="77" selection-end-line="91" selection-end-column="94" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/community/community_read.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="212" column="110" selection-start-line="212" selection-start-column="65" selection-end-line="212" selection-end-column="110" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/community/commu_reply_delete_p.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
@@ -968,23 +934,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/community/community_delete_p.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="22" column="54" lean-forward="true" selection-start-line="22" selection-start-column="54" selection-end-line="22" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/buskingteam/buskingteam.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="109" lean-forward="true" selection-start-line="109" selection-end-line="109" />
-          <folding>
-            <element signature="n#style#0;n#a#0;n#li#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/buskingteam/buskingteam_delete_p.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
@@ -992,38 +941,95 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/buskingteam/songlist_write_p.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="22" selection-start-line="22" selection-start-column="2" selection-end-line="25" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/buskingteam/buskingteam_write.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="87" column="8" lean-forward="true" selection-start-line="87" selection-start-column="8" selection-end-line="104" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/buskingteam/buskingteam.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="618">
+          <caret line="109" lean-forward="true" selection-start-line="109" selection-end-line="109" />
+          <folding>
+            <element signature="n#style#0;n#a#0;n#li#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/buskingteam/songlist_update_p.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="12" column="49" selection-start-line="12" selection-start-column="49" selection-end-line="12" selection-end-column="49" />
+        <state relative-caret-position="456">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/buskingteam/songlist_delete_p.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="20" column="63" lean-forward="true" selection-start-line="20" selection-start-column="63" selection-end-line="20" selection-end-column="63" />
+        <state relative-caret-position="328">
+          <caret line="24" column="93" selection-start-line="24" selection-start-column="30" selection-end-line="24" selection-end-column="93" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/buskingteam/songlist_write.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="556">
-          <caret line="116" column="12" lean-forward="true" selection-start-line="116" selection-start-column="12" selection-end-line="116" selection-end-column="12" />
+        <state relative-caret-position="594">
+          <caret line="84" lean-forward="true" selection-start-line="84" selection-end-line="84" />
+          <folding>
+            <element signature="n#style#0;n#div#2;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#3;n#form#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/community/commu_reply_update_p.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="15" column="2" lean-forward="true" selection-start-line="15" selection-start-column="2" selection-end-line="15" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/community/community_write.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="22" column="80" selection-start-line="22" selection-start-column="43" selection-end-line="22" selection-end-column="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/community/community_delete_p.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="11" column="36" lean-forward="true" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/community/community_read.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="333">
+          <caret line="128" column="78" selection-start-line="128" selection-start-column="78" selection-end-line="128" selection-end-column="78" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#div#1;n#div#4;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#1;n#div#1;n#div#4;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#span#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#form#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#div#0;n#form#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/buskingteam/songlist.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
-          <caret line="122" column="12" lean-forward="true" selection-start-line="122" selection-start-column="12" selection-end-line="122" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/buskingteam/songlist_write_p.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="22" selection-start-line="22" selection-start-column="2" selection-end-line="25" selection-end-column="13" />
+        <state relative-caret-position="309">
+          <caret line="88" column="14" lean-forward="true" selection-start-line="88" selection-start-column="14" selection-end-line="88" selection-end-column="14" />
         </state>
       </provider>
     </entry>

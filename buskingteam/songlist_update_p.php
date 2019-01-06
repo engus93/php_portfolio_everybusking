@@ -14,12 +14,10 @@ if ($o_name != "") {
 } else {
     $path = $_POST['video_path'];
 }
-$sql = mq("insert into songlist_tb(con_num,title,content,video_path) values('" . $_POST['con_num'] . "','" . $_POST['title'] . "','" . $_POST['content'] . "','" . $path . "')");
-
-$sql = mq("update buskingteam_tb set title = '".$_POST['title']."', content = '".$_POST['content']."', video_path = '".$path."' where idx = '".$_POST['idx']."'");
+$sql = mq("update songlist_tb set title = '".$_POST['title']."', content = '".$_POST['content']."', video_path = '".$path."' where idx = '".$_POST['idx']."'");
 
 echo '<script type="text/javascript">alert("수정 되었습니다.");
-location.href="/buskingteam/buskingteam.php?page='.$_POST['page'].'";
+location.href="/buskingteam/songlist.php?idx='.$_POST['con_num'].'&team_name='.$_POST['team_name'].'&page='.$_POST['page'].'"; 
 </script>';
 
 ?>

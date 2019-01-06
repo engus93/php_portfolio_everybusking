@@ -51,16 +51,6 @@ session_start();
            style="margin-top: 30px; margin-bottom: 30px; color: black"><?= $_GET['team_name'] ?></p>
     </h1>
 
-    <!--여기에 넣기-->
-
-    <!-- 1번 -->
-    <div class="row center my_font_main" align="center" style="min-height: 500px">
-        <p>등록된 영상이 없습니다.</p>
-    </div>
-
-    <!-- 경계선 -->
-    <hr>
-
     <?php
     require_once "../db.php";
 
@@ -85,13 +75,33 @@ session_start();
     $start_num = ($page - 1) * $list; //시작번호 (page-1)에서 $list를 곱한다.
 
     $sql = mq("select * from songlist_tb where con_num='" . $_GET['idx'] . "' order by idx desc limit $start_num, $list");
-//    $sql_re = mq("select * from songlist_tb where con_num='" . $bno . "' order by idx DESC");
 
     //페이징 끝
+
+    if($sql->fetch_row() == null) {
+        ?>
+
+        <!--여기에 넣기-->
+
+        <!-- 1번 -->
+        <div class="row center my_font_main" align="center" style="min-height: 500px">
+            <p>등록된 영상이 없습니다.</p>
+        </div>
+
+        <!-- 경계선 -->
+        <hr>
+
+        <?php
+
+    }
+
+    $sql = mq("select * from songlist_tb where con_num='" . $_GET['idx'] . "' order by idx desc limit $start_num, $list");
 
     while ($board = $sql->fetch_array()) {
 
         ?>
+
+
 
         <!--            자체 플레이어-->
         <!-- 1번 -->
@@ -114,8 +124,8 @@ session_start();
                 </button>
                 <div class="dropdown-menu dropdown-scale dropdown-menu-right" role="menu"
                      style="position: absolute; transform: translate3d(-136px, 28px, 0px); top: 0px; left: 0px; will-change: transform;">
-                    <a class="dropdown-item" href="songlist_write.php?idx=<?= $board["idx"] ?>&page=<?=$page?>&team_name=<?= $_GET['team_name'] ?>">수정</a>
-                    <a class="dropdown-item" href="songlist_delete_p.php?idx=<?= $board["idx"] ?>&page=<?=$page?>&team_name=<?= $_GET['team_name'] ?>">삭제</a>
+                    <a class="dropdown-item" href="songlist_write.php?con_num=<?= $_GET["idx"] ?>&idx=<?=$board['idx']?>&page=<?=$page?>&team_name=<?= $_GET['team_name'] ?>">수정</a>
+                    <a class="dropdown-item" href="songlist_delete_p.php?idx=<?= $_GET["idx"] ?>&con_num=<?=$board['idx']?>&page=<?=$page?>&team_name=<?= $_GET['team_name'] ?>">삭제</a>
                 </div>
         </div>
 

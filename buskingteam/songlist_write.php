@@ -85,14 +85,16 @@ if (isset($_GET['idx'])) {
 
     if (isset($board)) {
         echo '
-        <form action="buskingteam_update_p.php/' . $board['idx'] . '" method="post" enctype="multipart/form-data">
+        <form action="songlist_update_p.php" method="post" enctype="multipart/form-data">
 
+            <input type="hidden" name="con_num" value="' . $_GET['con_num'] . '" />
             <input type="hidden" name="idx" value="' . $board['idx'] . '" />
             <input type="hidden" name="page" value="' . $_GET['page'] . '" />
-            <input type="hidden" name="team_profile" value="' . $board['video_path'] . '" />
+            <input type="hidden" name="team_name" value="' . $_GET['team_name'] . '" />
+            <input type="hidden" name="video_path" value="' . $board['video_path'] . '" />
 
                 <div id="in_title" class="center">
-                        <textarea name="team_name" id="utitle" rows="1" cols="55" placeholder="곡 제목" maxlength="20" required>' . $board['title'] . '</textarea>
+                        <textarea name="title" id="utitle" rows="1" cols="55" placeholder="곡 제목" maxlength="20" required>' . $board['title'] . '</textarea>
                 </div>
                 
                 <div id="in_content" class="center my_font_main ">
