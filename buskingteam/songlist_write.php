@@ -7,7 +7,7 @@ if ($_SESSION['user_id'] != "rhksflwk") {
     echo '<script>alert("관리자만 접근이 가능합니다.");history.back()</script>';
 }
 
-if (isset($_GET['idx'])) {
+if (isset($_GET['page'])) {
 
     $bno = $_GET['idx'];
 
@@ -102,7 +102,7 @@ if (isset($_GET['idx'])) {
                 </div>
 
                 <div id="in_file" class="my_font_main" style="margin-left: 104px; margin-top: 20px">
-                    <input type="file" value="1" name="b_file" />
+                    <input type="file" value="1" name="c_file" />
                 </div>
 
                 <div class="center" style="margin-top: 50px">
@@ -126,7 +126,7 @@ if (isset($_GET['idx'])) {
             </div>
             
             <div id="in_file" class="my_font_main" style="margin-left: 104px; margin-top: 20px">
-                <input type="file" value="1" name="b_file" />
+                <input type="file" value="1" name="c_file" />
             </div>
             
             <div class="center my_font_main" style="margin-top: 50px">

@@ -3,9 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="315b7d6c-43dd-4b04-a2b3-17ad3cc59c77" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/community/community.css" beforeDir="false" afterPath="$PROJECT_DIR$/community/community.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/community/community.php" beforeDir="false" afterPath="$PROJECT_DIR$/community/community.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concert_information.html" beforeDir="false" afterPath="$PROJECT_DIR$/concert_information.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/buskingteam/songlist.php" beforeDir="false" afterPath="$PROJECT_DIR$/buskingteam/songlist.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/buskingteam/songlist_write.php" beforeDir="false" afterPath="$PROJECT_DIR$/buskingteam/songlist_write.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/buskingteam/songlist_write_p.php" beforeDir="false" afterPath="$PROJECT_DIR$/buskingteam/songlist_write_p.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,28 +15,32 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/community/community.php">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/buskingteam/songlist.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="511">
-              <caret line="58" lean-forward="true" selection-start-line="58" selection-end-line="58" />
+            <state relative-caret-position="-261">
+              <caret line="102" lean-forward="true" selection-start-line="102" selection-end-line="102" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/buskingteam/songlist_write.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="228">
+              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
               <folding>
-                <element signature="n#style#0;n#a#0;n#article#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#h4#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#2;n#!!top" expanded="true" />
-                <element signature="e#159#166#1" expanded="true" />
-                <element signature="n#style#0;n#a#0;n#li#0;n#!!top" expanded="true" />
-                <element signature="e#178#185#1" expanded="true" />
-                <element signature="n#style#0;n#a#0;n#li#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#0;n#li#0;n#!!top" expanded="true" />
-                <element signature="e#162#169#1" expanded="true" />
-                <element signature="n#style#0;n#a#0;n#li#0;n#!!top" expanded="true" />
-                <element signature="e#175#182#1" expanded="true" />
-                <element signature="n#style#0;n#a#0;n#li#0;n#!!top" expanded="true" />
-                <element signature="e#175#182#1" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#form#0;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/buskingteam/songlist_write_p.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="342">
+              <caret line="18" column="8" lean-forward="true" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -132,17 +136,17 @@
         <option value="$PROJECT_DIR$/community/community_delete_p.php" />
         <option value="$PROJECT_DIR$/buskingteam/buskingteam_delete_p.php" />
         <option value="$PROJECT_DIR$/buskingteam/buskingteam.php" />
-        <option value="$PROJECT_DIR$/buskingteam/songlist_write_p.php" />
         <option value="$PROJECT_DIR$/buskingteam/buskingteam_write.php" />
         <option value="$PROJECT_DIR$/buskingteam/songlist_delete_p.php" />
-        <option value="$PROJECT_DIR$/buskingteam/songlist_write.php" />
         <option value="$PROJECT_DIR$/buskingteam/songlist_update_p.php" />
-        <option value="$PROJECT_DIR$/buskingteam/songlist.php" />
         <option value="$PROJECT_DIR$/community/community_read.php" />
         <option value="$PROJECT_DIR$/community/community_write.php" />
         <option value="$PROJECT_DIR$/concert_information.html" />
         <option value="$PROJECT_DIR$/community/community.css" />
         <option value="$PROJECT_DIR$/community/community.php" />
+        <option value="$PROJECT_DIR$/buskingteam/songlist_write_p.php" />
+        <option value="$PROJECT_DIR$/buskingteam/songlist.php" />
+        <option value="$PROJECT_DIR$/buskingteam/songlist_write.php" />
       </list>
     </option>
   </component>
@@ -157,7 +161,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -175,10 +178,33 @@
               <item name="EveryBusking" type="462c0819:PsiDirectoryNode" />
               <item name="community" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="EveryBusking" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EveryBusking" type="462c0819:PsiDirectoryNode" />
+              <item name="img" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EveryBusking" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EveryBusking" type="462c0819:PsiDirectoryNode" />
+              <item name="img" type="462c0819:PsiDirectoryNode" />
+              <item name="buskingteam" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EveryBusking" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EveryBusking" type="462c0819:PsiDirectoryNode" />
+              <item name="mp4" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EveryBusking" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EveryBusking" type="462c0819:PsiDirectoryNode" />
+              <item name="mp4" type="462c0819:PsiDirectoryNode" />
+              <item name="video" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -240,14 +266,8 @@
       <workItem from="1546599878014" duration="7836000" />
       <workItem from="1546620506172" duration="28614000" />
       <workItem from="1546701910345" duration="13008000" />
-      <workItem from="1546748952632" duration="1177000" />
-    </task>
-    <task id="LOCAL-00024" summary="18.12.31&#10;&#10;아이디 실시간 중복체크 1차 완료">
-      <created>1546280206533</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1546280206533</updated>
+      <workItem from="1546748952632" duration="1214000" />
+      <workItem from="1546763953907" duration="1795000" />
     </task>
     <task id="LOCAL-00025" summary="19.01.01&#10;&#10;아이디 실시간 중복체크 1차 완료 전화번호 하는중">
       <created>1546282193907</created>
@@ -585,11 +605,18 @@
       <option name="project" value="LOCAL" />
       <updated>1546735700333</updated>
     </task>
-    <option name="localTasksCounter" value="73" />
+    <task id="LOCAL-00073" summary="19.01.06&#10;&#10;버스킹 비디오 업로드 해야함">
+      <created>1546750140551</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1546750140551</updated>
+    </task>
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="243009000" />
+    <option name="totallyTimeSpent" value="244841000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -604,7 +631,7 @@
     <frame x="-8" y="-8" width="1631" height="1066" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22087842" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22342457" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -913,13 +940,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/buskingteam/songlist_write_p.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="22" selection-start-line="22" selection-start-column="2" selection-end-line="25" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/buskingteam/buskingteam_write.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
@@ -948,17 +968,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="328">
           <caret line="24" column="93" selection-start-line="24" selection-start-column="30" selection-end-line="24" selection-end-column="93" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/buskingteam/songlist_write.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="84" lean-forward="true" selection-start-line="84" selection-end-line="84" />
-          <folding>
-            <element signature="n#style#0;n#div#2;n#form#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#3;n#form#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1005,13 +1014,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/buskingteam/songlist.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="404">
-          <caret line="93" column="13" selection-start-line="93" selection-start-column="13" selection-end-line="93" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/community/community.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1259">
@@ -1021,25 +1023,37 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/community/community.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="511">
-          <caret line="58" lean-forward="true" selection-start-line="58" selection-end-line="58" />
+        <state relative-caret-position="131">
+          <caret line="155" column="57" lean-forward="true" selection-start-line="155" selection-start-column="57" selection-end-line="155" selection-end-column="57" />
           <folding>
-            <element signature="n#style#0;n#a#0;n#article#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#h4#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#2;n#!!top" expanded="true" />
-            <element signature="e#159#166#1" expanded="true" />
             <element signature="n#style#0;n#a#0;n#li#0;n#!!top" expanded="true" />
-            <element signature="e#178#185#1" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#li#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#li#0;n#!!top" expanded="true" />
-            <element signature="e#162#169#1" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#li#0;n#!!top" expanded="true" />
-            <element signature="e#175#182#1" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#li#0;n#!!top" expanded="true" />
-            <element signature="e#175#182#1" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/buskingteam/songlist.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-261">
+          <caret line="102" lean-forward="true" selection-start-line="102" selection-end-line="102" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/buskingteam/songlist_write.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+          <folding>
+            <element signature="n#style#0;n#div#2;n#form#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/buskingteam/songlist_write_p.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="18" column="8" lean-forward="true" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
         </state>
       </provider>
     </entry>

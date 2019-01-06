@@ -101,15 +101,13 @@ session_start();
 
         ?>
 
-
-
         <!--            자체 플레이어-->
         <!-- 1번 -->
         <div class="row">
             <div class="col-md-7">
                 <video controls>
-                    <source src="/mp4/video/main_loding.mp4" type="video/mp4">
-<!--                    <source src="--><?//= $board['video_path'] ?><!--" type="video/mp4">-->
+<!--                    <source src="/mp4/video/main_loding.mp4" type="video/mp4">-->
+                    <source src="<?= $board['video_path'] ?>" type="video/mp4">
                 </video>
             </div>
             <div class="col-md-5">
