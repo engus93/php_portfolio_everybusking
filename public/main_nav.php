@@ -56,9 +56,31 @@ session_start();
                         echo '<a class="nav-link main_nav_sign" href="/Sign/sign_out.php"><i class="fas fa-key"></i> Sign Out</a>';
                     } ?>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link menu_profile" href="/my_page/my_page_modify.php"><i class="fas fa-user"></i> My Page</a>
-                </li>
+
+                <?php
+                if ($_SESSION['user_id'] == "rhksflwk") {
+
+                    ?>
+
+                    <li class="nav-item">
+                        <a class="nav-link menu_profile" href="/my_page/my_page_modify.php"><i class="fas fa-crown"></i> Manager Page</a>
+                    </li>
+
+                    <?php
+
+                } else {
+
+                    ?>
+
+                    <li class="nav-item">
+                        <a class="nav-link menu_profile" href="/my_page/my_page_modify.php"><i class="fas fa-user"></i> My Page</a>
+                    </li>
+
+                    <?php
+
+                }
+                ?>
+
             </ul>
         </div>
     </nav>

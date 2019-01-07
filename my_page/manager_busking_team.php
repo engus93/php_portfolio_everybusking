@@ -258,7 +258,7 @@ if ($_SESSION == null) {
 <script>$(".main_nav").load("/public/main_nav.php");</script>
 
 <!-- Page Content -->
-<div class="container my_font_main">
+<div class="container my_font_main" style="min-height: 800px">
 
     <?php
     if ($_SESSION["user_id"] != "rhksflwk") {
@@ -282,7 +282,7 @@ if ($_SESSION == null) {
 
     <ol class="breadcrumb">
         <li class="breadcrumb-item">
-            <a class="color_point" href="my_page_modify.php">내 정보 수정</a>
+            <a class="" href="my_page_modify.php" style="color: black">내 정보 수정</a>
             <?php
             if ($_SESSION["user_id"]  != "rhksflwk"){
             ?>
@@ -294,7 +294,7 @@ if ($_SESSION == null) {
             ?>
 
             <li class="breadcrumb-item">
-                <a href="manager_busking_team.php" style="color: black">Busking Team</a>
+                <a href="manager_busking_team.php" style="color: #fc3c3c">Busking Team</a>
             </li>
 
             <li class="breadcrumb-item">
@@ -312,89 +312,11 @@ if ($_SESSION == null) {
             <li class="breadcrumb-item">
                 <a href="manager_concert.php" style="color: black">Concert</a>
             </li>
-
             <?php
         }
         ?>
     </ol>
 
-    <article class="center" style="margin-top: 50px; margin-bottom: 50px">
-        <div class="col-md-6 col-md-offset-3">
-            <form name="myform" method="post" action="my_page_modify_p.php" enctype="multipart/form-data">
-
-                <input type="hidden" name="profile" value="<?= $_SESSION['profile'] ?>"/>
-
-                <input type="hidden" name="origine_pass" value="<?= $_SESSION['password'] ?>"/>
-
-                <div class="img_wrap">
-                    <img class="circle_image" id="img" src="<?= $_SESSION['profile'] ?>"/>
-                </div>
-
-                <div id="in_file" class="my_font_main"
-                     style="margin-left: 130px; margin-top: 20px; margin-bottom: 20px">
-                    <input type="file" id="input_img" value="1" name="d_file"/>
-                </div>
-
-                <div class="form-group">
-                    <label for="InputId">아이디</label>
-                    <input type="text" class="form-control" id="Id" placeholder="<?= $_SESSION['user_id'] ?>" disabled>
-                </div>
-
-                <div class="form-group">
-                    <label for="InputPassword1">비밀번호</label>
-                    <input type="password" class="form-control pass_check" name="password" id="password"
-                           placeholder="비밀번호">
-                </div>
-
-                <div class="form-group">
-                    <label for="InputPassword2">비밀번호 확인</label>
-                    <input type="password" class="form-control pass_re_check" id="password_re" placeholder="비밀번호 확인">
-                    <p class="help-block">※ 비밀번호 확인을 위해 다시 한번 입력 해 주세요</p>
-                </div>
-                <div class="form-group">
-                    <label for="username">이름</label>
-                    <input type="text" class="form-control" id="Name" placeholder="<?= $_SESSION['name'] ?>" disabled>
-                </div>
-
-                <div class="form-group">
-                    <label for="InputEmail">연락처</label>
-                    <input type="text" class="form-control user_phone" name="phone" id="phone"
-                           placeholder="연락처를 입력해 주세요" value="<?= $_SESSION['phone'] ?>">
-                </div>
-
-                <div class="form-group">
-                    <label for="InputEmail">이메일 주소</label>
-                    <input type="email" class="form-control user_e_mail" name="e_mail" id="e_mail"
-                           placeholder="이메일 주소를 입력해 주세요" value="<?= $_SESSION['e_mail'] ?>">
-                </div>
-
-                <div class="form-group">
-                    <label class="" style="display: block">주소</label>
-
-                    <div style="display: block">
-                        <input class="form-control float-lg-none col-4" type="text" size="10" name="wPostCode" id="post"
-                               placeholder="우편번호" disabled style="display: inline">
-                        <input class="btn col-3" type="button" onclick="search_add()" value="우편번호 찾기">
-                    </div>
-
-                    <input class="form-control" type="text" size="30" name="wRoadAddress" id="addr" placeholder="도로명주소"
-                           disabled style="margin-top: 20px">
-                    <span id="guide" style="color:#999;font-size:10px;" style="margin-top: 20px"></span>
-
-                    <input class="form-control" type="text" name="wRestAddress" placeholder="나머지 주소"
-                           style="width: 100%; margin-top: 20px"/>
-                </div>
-
-                <div class="form-group text-center" style="margin-top: 50px">
-                    <button id="sign_up_button" type="submit" class="btn btn-info">수정하기<i
-                                class="fa fa-check spaceLeft"></i></button>
-                    <button class="btn btn-warning" onclick="cencel()">취소하기<i class="fa fa-times spaceLeft"></i>
-                    </button>
-                </div>
-            </form>
-
-
-        </div>
 
     </article>
 
