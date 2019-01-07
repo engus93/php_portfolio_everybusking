@@ -64,8 +64,46 @@ if (isset($_GET['idx'])) {
             color: #FBAA48 !important;
         }
 
+        .img_wrap {
+            width: 300px;
+            margin-top: 50px;
+        }
+        .img_wrap img {
+            width: 540px;
+            height: 350px;
+        }
+
     </style>
 
+    <script>
+
+        var sel_file;
+
+        $(document).ready(function() {
+            $("#input_img").on("change", handleImgFileSelect);
+        });
+
+        function handleImgFileSelect(e) {
+            var files = e.target.files;
+            var filesArr = Array.prototype.slice.call(files);
+
+            filesArr.forEach(function(f) {
+                if(!f.type.match("image.*")) {
+                    alert("확장자는 이미지 확장자만 가능합니다.");
+                    return;
+                }
+
+                sel_file = f;
+
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    $("#img").attr("src", e.target.result);
+                }
+                reader.readAsDataURL(f);
+            });
+        }
+
+    </script>
 
 </head>
 
@@ -90,29 +128,38 @@ if (isset($_GET['idx'])) {
             <input type="hidden" name="idx" value="' . $board['idx'] . '" />
             <input type="hidden" name="page" value="' . $_GET['page'] . '" />
             <input type="hidden" name="team_profile" value="' . $board['team_profile'] . '" />
-                
-                <div id="in_title" class="center">
-                        <textarea name="team_name" id="utitle" rows="1" cols="55" placeholder="가수 이름" maxlength="20" required>' . $board['name'] . '</textarea>
-                </div>
-                
-                <div id="in_file" class="my_font_main" style="margin-left: 104px; margin-top: 20px">
-                    <input type="file" value="1" name="b_file" />
-                </div>
             
-                <div class="center" style="margin-top: 50px">
-                    <button class="btn" type="submit">수정하기</button>
-                </div>
+            <div class="img_wrap" style="margin-left: 285px">
+                <img id="img" src="'.$board['team_profile'].'"/>
+            </div>
+                
+            <div id="in_title" class="center">
+                <textarea name="team_name" id="utitle" rows="1" cols="55" placeholder="가수 이름" maxlength="20" required>' . $board['name'] . '</textarea>
+            </div>
+            
+            <div id="in_file" class="my_font_main" style="margin-left: 104px; margin-top: 20px">
+                <input type="file" id="input_img" value="1" name="b_file" />
+            </div>
+        
+            <div class="center" style="margin-top: 50px">
+                <button class="btn" type="submit">수정하기</button>
+            </div>
         </form>';
 
     } else {
         echo '
         <form action="buskingteam_write_p.php" method="post" enctype="multipart/form-data">
+        
+            <div class="img_wrap" style="margin-left: 285px">
+                <img id="img" src="/img/no_image.gif"/>
+            </div>
+        
             <div id="in_title" class="center my_font_main">
                     <textarea name="team_name" id="utitle" rows="1" cols="55" placeholder="가수 이름" maxlength="20"required style="padding-top: 10px"></textarea>
             </div>
             
             <div id="in_file" class="my_font_main" style="margin-left: 104px; margin-top: 20px">
-                <input type="file" value="1" name="b_file" />
+                <input type="file" id="input_img" value="1" name="b_file" />
             </div>
             
             <div class="center my_font_main" style="margin-top: 50px">
@@ -120,6 +167,10 @@ if (isset($_GET['idx'])) {
             </div>
         </form>
     ';
+        ?>
+
+    <?php
+
     }
 
     ?>
@@ -127,7 +178,7 @@ if (isset($_GET['idx'])) {
 </div>
 
 <!--footer 로드-->
-<div class="main_footer" style="position: absolute; bottom: 0px; width: 100%"></div>
+<div class="main_footer"></div>
 <script>$(".main_footer").load("/public/main_footer.html");</script>
 
 <!-- Bootstrap core JavaScript -->

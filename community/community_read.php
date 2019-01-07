@@ -311,7 +311,13 @@ session_start();
             </div>
 
         </div><!--/ col-lg-6 -->
+
 </div><!--/ row -->
+
+<a href="community.php" style="margin-left: 465px; ">
+    <button class="col-sm-2 btn" style="margin-top: 30px; background-color: #FBAA48; color: white" id="support_1">목록으로</button>
+</a>
+
 </div><!--/ container -->
 </section>
 </div>

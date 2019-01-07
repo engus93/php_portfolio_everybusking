@@ -16,7 +16,7 @@ if ($o_name != "") {
     $path = "$folder/$o_name";
     move_uploaded_file($_FILES['b_file']['tmp_name'], "$folder/$o_name");
 } else {
-    $path = "../img/busking_defualt.jpg";
+    $path = "../img/no_image.gif";
 }
 
 $sql = mq("insert into buskingteam_tb(name,date,team_profile) values('" . $_POST['team_name'] . "','" . $date . "','" . $path . "')"); ?>

@@ -3,7 +3,7 @@ session_start();
 
 $team_name_re;
 
-if(isset($_GET['team_name'])){
+if (isset($_GET['team_name'])) {
     $team_name_re = $_GET['team_name'];
 }
 
@@ -67,7 +67,7 @@ if(isset($_GET['team_name'])){
     } else {
         $page = 1;
     }
-    $sql = mq("select * from songlist_tb where con_num = '".$_GET['idx']."'");
+    $sql = mq("select * from songlist_tb where con_num = '" . $_GET['idx'] . "'");
     $row_num = mysqli_num_rows($sql); //게시판 총 레코드 수
     $list = 4; //한 페이지에 보여줄 개수
     $block_ct = 5; //블록당 보여줄 페이지 개수
@@ -119,20 +119,29 @@ if(isset($_GET['team_name'])){
             <div class="col-md-5">
                 <h3 class="my_font_start" style="font-size: 2.5em"><?= $board['title'] ?></h3>
                 <div class="my_font_main" style="margin-top: 30px; font-size: 20px; position: relative;">
-                    <p><?= $board['content'] ?></p>
+                    <p><?= nl2br($board['content']); ?></p>
                 </div>
             </div>
-            <button class="btn btn-flat btn-flat-icon" type="button" data-toggle="dropdown"
-                    aria-expanded="false" style="background-color: transparent; position: absolute; right: 0px">
-                <em class="fa fa-plus color_point"></em>
-            </button>
-            <div class="dropdown-menu dropdown-scale dropdown-menu-right" role="menu"
-                 style="position: absolute; transform: translate3d(-136px, 28px, 0px); top: 0px; left: 0px; will-change: transform;">
-                <a class="dropdown-item"
-                   href="songlist_write.php?con_num=<?= $_GET["idx"] ?>&idx=<?= $board['idx'] ?>&page=<?= $page ?>&team_name=<?= $_GET['team_name'] ?>">수정</a>
-                <a class="dropdown-item"
-                   href="songlist_delete_p.php?idx=<?= $_GET["idx"] ?>&con_num=<?= $board['idx'] ?>&page=<?= $page ?>&team_name=<?= $_GET['team_name'] ?>">삭제</a>
-            </div>
+            <?php
+            if ($_SESSION != null) {
+                if ($_SESSION['user_id'] == "rhksflwk") {
+                    ?>
+                    ?>
+                    <button class="btn btn-flat btn-flat-icon" type="button" data-toggle="dropdown"
+                            aria-expanded="false" style="background-color: transparent; position: absolute; right: 0px">
+                        <em class="fa fa-plus color_point"></em>
+                    </button>
+                    <div class="dropdown-menu dropdown-scale dropdown-menu-right" role="menu"
+                         style="position: absolute; transform: translate3d(-136px, 28px, 0px); top: 0px; left: 0px; will-change: transform;">
+                        <a class="dropdown-item"
+                           href="songlist_write.php?con_num=<?= $_GET["idx"] ?>&idx=<?= $board['idx'] ?>&page=<?= $page ?>&team_name=<?= $_GET['team_name'] ?>">수정</a>
+                        <a class="dropdown-item"
+                           href="songlist_delete_p.php?idx=<?= $_GET["idx"] ?>&con_num=<?= $board['idx'] ?>&page=<?= $page ?>&team_name=<?= $_GET['team_name'] ?>">삭제</a>
+                    </div>
+                    <?php
+                }
+            }
+            ?>
         </div>
 
         <!-- 경계선 -->
@@ -164,7 +173,7 @@ if(isset($_GET['team_name'])){
 
             <?php
         }
-    }else{
+    } else {
         ?>
 
         <a href="/buskingteam/buskingteam.php">
@@ -173,7 +182,7 @@ if(isset($_GET['team_name'])){
             </button>
         </a>
 
-    <?php
+        <?php
     }
     ?>
 
@@ -193,7 +202,7 @@ if(isset($_GET['team_name'])){
             } else {
                 $pre = $page - 1; //pre변수에 page-1을 해준다 만약 현재 페이지가 3인데 이전버튼을 누르면 2번페이지로 갈 수 있게 함
                 echo '<li class="page-item">
-                    <a class="page-link" href="?page='.$pre.'&idx='.$_GET['idx'].'&team_name='.$_GET['team_name'].'" aria-label="Previous" style="color: black">
+                    <a class="page-link" href="?page=' . $pre . '&idx=' . $_GET['idx'] . '&team_name=' . $_GET['team_name'] . '" aria-label="Previous" style="color: black">
                         <span aria-hidden="true">&laquo;</span>
                         <span class="sr-only">Previous</span>                    
                     </a>
@@ -204,10 +213,10 @@ if(isset($_GET['team_name'])){
             for ($i = $block_start; $i <= $block_end; $i++) {
                 //for문 반복문을 사용하여, 초기값을 블록의 시작번호를 조건으로 블록시작번호가 마지박블록보다 작거나 같을 때까지 $i를 반복시킨다
                 if ($page == $i) { //만약 page가 $i와 같다면
-                    echo '<li class="page-item"><a class="page-link" href="?page='.$i.'&idx='.$_GET['idx'].'&team_name='.$_GET['team_name'].'"
-                style="color: #FBAA48; font-weight: bold;">'.$i.'</a></li>'; //현재 페이지에 해당하는 번호에 굵은 빨간색을 적용한다
+                    echo '<li class="page-item"><a class="page-link" href="?page=' . $i . '&idx=' . $_GET['idx'] . '&team_name=' . $_GET['team_name'] . '"
+                style="color: #FBAA48; font-weight: bold;">' . $i . '</a></li>'; //현재 페이지에 해당하는 번호에 굵은 빨간색을 적용한다
                 } else {
-                    echo '<li class="page-item"><a class="page-link" href="?page='.$i.'&idx='.$_GET['idx'].'&team_name='.$_GET['team_name'].'"style="color: black">'.$i.'</a></li>';
+                    echo '<li class="page-item"><a class="page-link" href="?page=' . $i . '&idx=' . $_GET['idx'] . '&team_name=' . $_GET['team_name'] . '"style="color: black">' . $i . '</a></li>';
                 }
             }
 
@@ -227,7 +236,7 @@ if(isset($_GET['team_name'])){
 
                     $next = $page + 1; //next변수에 page + 1을 해준다.
                     echo '<li class="page-item">
-                    <a class="page-link" href="?page='.$next.'&idx='.$_GET['idx'].'&team_name='.$_GET['team_name'].'" aria-label="Next" style="color: black">';
+                    <a class="page-link" href="?page=' . $next . '&idx=' . $_GET['idx'] . '&team_name=' . $_GET['team_name'] . '" aria-label="Next" style="color: black">';
                     echo "
                         <span aria-hidden='true'>&raquo;</span>
                         <span class='sr-only'>Next</span>                    
@@ -238,7 +247,7 @@ if(isset($_GET['team_name'])){
             } else {
                 $next = $page + 1; //next변수에 page + 1을 해준다.
                 echo '<li class="page-item">
-                    <a class="page-link" href="?page='.$next.'&idx='.$_GET['idx'].'&team_name='.$_GET['team_name'].'" aria-label="Next" style="color: black">';
+                    <a class="page-link" href="?page=' . $next . '&idx=' . $_GET['idx'] . '&team_name=' . $_GET['team_name'] . '" aria-label="Next" style="color: black">';
                 echo "
                         <span aria-hidden='true'>&raquo;</span>
                         <span class='sr-only'>Next</span>                    

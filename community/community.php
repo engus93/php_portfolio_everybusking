@@ -95,7 +95,7 @@
                 $content = $board["content"];
 
                 //한글이랑 영어랑 용량이 다름 일단 넘김
-                if (strlen($board["title"]) > 40) {
+                if (strlen($board["title"]) > 50) {
                     $title = str_replace($board["title"], iconv_substr($board["title"], 0, 14, "utf-8") . "...", $board["title"]);
                 }
 
@@ -106,9 +106,9 @@
                 echo '<article class="white-panel">
                    <a style="text-decoration: none" href="community_read.php?idx=' . $board["idx"] . '"><img src="' . $board["picture"] . '"/>';
                 echo '<h4 class="my_font_start" style="margin-top: 10px">' . $title . '</h4>';
-                echo '<p class=" my_font_main" style="color: black">' . $content . '</p></a>
-                    <p class="float-right" style="font-size: 10px">작성자 : ' . $board["name"] . '</p>
-                    <p style="font-size: 10px; position: absolute; margin-top: 20px; margin-left: 160px">' . $board["date"] . '</p>';
+                echo '
+                    <p class="float-right my_font_main" style=" color: black; font-size: 10px; color: black">작성자 : ' . $board["name"] . '</p>
+                    <p class="my_font_main" style="color: black; font-size: 10px; position: absolute; margin-top: 20px; margin-left: 170px">' . $board["date"] . '</p>';
                 echo '</article>';
             }
 

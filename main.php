@@ -166,7 +166,7 @@ session_start();
 <!--                        </a>-->
                     </h4>
                     <h6 class="card-text my_font_main" style="margin-top: 1.5em">
-                        <?= $board['content'] ?>
+                        <?= nl2br($board['content']); ?>
                     </h6>
                 </div>
             </div>
