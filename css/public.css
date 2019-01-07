@@ -27,3 +27,10 @@
     color: #FBAA48 !important;
     border: #FBAA48 2px solid;
 }
+
+.circle_image{
+    width: 100px; height: 100px;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 50%;
+}

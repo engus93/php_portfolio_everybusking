@@ -8,10 +8,9 @@ date_default_timezone_set("Asia/SEOUL");
 
 $date = date('Y-m-d H:i:s');
 
-$tmpfile = $_FILES['b_file']['tmp_name'];
-$o_name = $_FILES['b_file']['name'];
-
-if ($o_name != "") {
+if (isset($_FILES['b_file']['tmp_name'])) {
+    $tmpfile = $_FILES['b_file']['tmp_name'];
+    $o_name = $_FILES['b_file']['name'];
     $folder = "../img/buskingteam/";
     $path = "$folder/$o_name";
     move_uploaded_file($_FILES['b_file']['tmp_name'], "$folder/$o_name");

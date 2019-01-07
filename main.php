@@ -195,7 +195,7 @@ session_start();
             </ul>
         </div>
         <div class="col-lg-6">
-            <video controls muted autoplay style="width: 600px; height: 300px">
+            <video controls style="width: 600px; height: 300px">
                 <source src="/mp4/main/소개%20영상.mp4" type="video/mp4">
             </video>
         </div>

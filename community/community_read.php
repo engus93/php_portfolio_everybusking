@@ -32,8 +32,8 @@ session_start();
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="community_read.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
-          integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js"></script>
+
 
     <style>
         .menu_community {
@@ -249,7 +249,7 @@ session_start();
 
                             <!--댓글-->
                             <div class="cardbox-comments_re reply_view"><span class="comment-avatar float-left">
-                                <a href=""><img class="rounded-circle"
+                                <a href=""><img class="circle_image"
                                                 src=<?php echo $write_user['profile']; ?> alt="..."
                                                 style="margin-top: 5px; width: 30px; height: 30px"></a></span>
                                 <div class="input-group  my_font_main"

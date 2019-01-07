@@ -2,7 +2,7 @@
 require_once "../db.php";
 session_start();
 
-if($_SESSION == null){
+if ($_SESSION == null) {
     echo '<script>alert("로그인 후 이용바랍니다.");location.href="/Sign/sign_in.php";</script>';
 }
 ?>
@@ -36,8 +36,8 @@ if($_SESSION == null){
 
     <script>
 
-        var pass_chaeck = false;
-        var pass_re_chaeck = false;
+        var pass_chaeck = true;
+        var pass_re_chaeck = true;
         var phone_chaeck = true;
         var e_mail_chaeck = true;
 
@@ -161,12 +161,10 @@ if($_SESSION == null){
                 if (user_mail.length == 0) {
                     $(this).parent().parent().find("#e_mail").css("background-color", "#FFFFFF");
                     e_mail_chaeck = false;
-                } else
-                    if (!regExp.test(user_mail)) {
+                } else if (!regExp.test(user_mail)) {
                     $(this).parent().parent().find("#e_mail").css("background-color", "#fc3c3c");
                     e_mail_chaeck = false;
-                } else
-                    if (regExp.test(user_mail)) {
+                } else if (regExp.test(user_mail)) {
                     $(this).parent().parent().find("#e_mail").css("background-color", "#FFB863");
                     e_mail_chaeck = true;
                 }
@@ -182,9 +180,9 @@ if($_SESSION == null){
 
             var st = $(":input:radio[name=sex]:checked").val();
 
-            if(st == "Male" || st == "Female"){
+            if (st == "Male" || st == "Female") {
                 sex_chaeck = true;
-            }else{
+            } else {
                 sex_chaeck = false;
             }
 
@@ -201,9 +199,54 @@ if($_SESSION == null){
             }
 
         }
+
         $("#sign_up_button").prop("disabled", true);
 
     </script>
+
+    <script>
+
+        var sel_file;
+
+        $(document).ready(function() {
+            $("#input_img").on("change", handleImgFileSelect);
+        });
+
+        function handleImgFileSelect(e) {
+            var files = e.target.files;
+            var filesArr = Array.prototype.slice.call(files);
+
+            filesArr.forEach(function(f) {
+                if(!f.type.match("image.*")) {
+                    alert("확장자는 이미지 확장자만 가능합니다.");
+                    return;
+                }
+
+                sel_file = f;
+
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    $("#img").attr("src", e.target.result);
+                }
+                reader.readAsDataURL(f);
+            });
+        }
+
+    </script>
+
+    <style>
+
+        .img_wrap {
+            width: 500px;
+            height: 400px;
+            text-align: center;
+        }
+        .img_wrap img {
+            width: 400px;
+            height: 400px;
+        }
+
+    </style>
 
 </head>
 
@@ -222,69 +265,102 @@ if($_SESSION == null){
     <ol class="breadcrumb">
         <li class="breadcrumb-item">
             <a class="color_point" href="my_page_modify.php">내 정보 수정</a>
-        </li>
 
         <li class="breadcrumb-item">
             <a href="my_page_application.php" style="color: black">신청 내역 보기</a>
         </li>
-
     </ol>
+
+<!--    <form action="my_page_modify_p.php" method="post" enctype="multipart/form-data">-->
+<!---->
+<!--        <div class="img_wrap" style="margin-left: 285px">-->
+<!--            <img id="img" src="/img/no_image.gif"/>-->
+<!--        </div>-->
+<!---->
+<!--        <div id="in_file" class="my_font_main" style="margin-left: 104px; margin-top: 20px">-->
+<!--            <input type="file" id="input_img" value="1" name="b_file" />-->
+<!--        </div>-->
+<!---->
+<!--        <div class="center my_font_main" style="margin-top: 50px">-->
+<!--            <button class="btn" type="submit">등록하기</button>-->
+<!--        </div>-->
+<!--    </form>-->
 
     <article class="center" style="margin-top: 50px; margin-bottom: 50px">
         <div class="col-md-6 col-md-offset-3">
-            <form name="myform" method="post" action="my_page_modify_p.php">
-            <div class="form-group">
-                <label for="InputId">아이디</label>
-                <input type="text" class="form-control" id="Id" placeholder="<?= $_SESSION['user_id'] ?>" disabled>
-            </div>
+            <form name="myform" method="post" action="my_page_modify_p.php" enctype="multipart/form-data">
 
-            <div class="form-group">
-                <label for="InputPassword1">비밀번호</label>
-                <input type="password" class="form-control pass_check" name="password" id="password" placeholder="비밀번호">
-            </div>
+                <input type="hidden" name="profile" value="<?= $_SESSION['profile']?>"/>
 
-            <div class="form-group">
-                <label for="InputPassword2">비밀번호 확인</label>
-                <input type="password" class="form-control pass_re_check" id="password_re" placeholder="비밀번호 확인">
-                <p class="help-block">※ 비밀번호 확인을 위해 다시 한번 입력 해 주세요</p>
-            </div>
-            <div class="form-group">
-                <label for="username">이름</label>
-                <input type="text" class="form-control" id="Name" placeholder="<?= $_SESSION['name'] ?>" disabled>
-            </div>
+                <input type="hidden" name="origine_pass" value="<?= $_SESSION['password']?>" />
 
-            <div class="form-group">
-                <label for="InputEmail">연락처</label>
-                <input type="text" class="form-control user_phone" name="phone" id="phone" placeholder="연락처를 입력해 주세요" value="<?= $_SESSION['phone'] ?>">
-            </div>
-
-            <div class="form-group">
-                <label for="InputEmail">이메일 주소</label>
-                <input type="email" class="form-control user_e_mail" name="e_mail" id="e_mail" placeholder="이메일 주소를 입력해 주세요" value="<?= $_SESSION['e_mail'] ?>">
-            </div>
-
-            <div class="form-group">
-                <label class="" style="display: block">주소</label>
-
-                <div style="display: block">
-                    <input class="form-control float-lg-none col-4" type="text" size="10" name="wPostCode" id="post"
-                           placeholder="우편번호" disabled style="display: inline">
-                    <input class="btn col-3" type="button" onclick="search_add()" value="우편번호 찾기">
+                <div class="img_wrap">
+                    <img class="circle_image" id="img" src="<?= $_SESSION['profile']?>"/>
                 </div>
 
-                <input class="form-control" type="text" size="30" name="wRoadAddress" id="addr" placeholder="도로명주소"
-                       disabled style="margin-top: 20px">
-                <span id="guide" style="color:#999;font-size:10px;" style="margin-top: 20px"></span>
+                <div id="in_file" class="my_font_main" style="margin-left: 130px; margin-top: 20px; margin-bottom: 20px">
+                    <input type="file" id="input_img" value="1" name="d_file" />
+                </div>
 
-                <input class="form-control" type="text" name="wRestAddress" placeholder="나머지 주소"
-                       style="width: 100%; margin-top: 20px"/>
-            </div>
+                <div class="form-group">
+                    <label for="InputId">아이디</label>
+                    <input type="text" class="form-control" id="Id" placeholder="<?= $_SESSION['user_id'] ?>" disabled>
+                </div>
 
-            <div class="form-group text-center" style="margin-top: 50px">
-                <button id="sign_up_button" type="submit" class="btn btn-info" disabled>수정하기<i class="fa fa-check spaceLeft"></i></button>
-                <button class="btn btn-warning" onclick="cencel()">취소하기<i class="fa fa-times spaceLeft"></i></button>
-            </div>
+                <div class="form-group">
+                    <label for="InputPassword1">비밀번호</label>
+                    <input type="password" class="form-control pass_check" name="password" id="password"
+                           placeholder="비밀번호">
+                </div>
+
+                <div class="form-group">
+                    <label for="InputPassword2">비밀번호 확인</label>
+                    <input type="password" class="form-control pass_re_check" id="password_re" placeholder="비밀번호 확인">
+                    <p class="help-block">※ 비밀번호 확인을 위해 다시 한번 입력 해 주세요</p>
+                </div>
+                <div class="form-group">
+                    <label for="username">이름</label>
+                    <input type="text" class="form-control" id="Name" placeholder="<?= $_SESSION['name'] ?>" disabled>
+                </div>
+
+                <div class="form-group">
+                    <label for="InputEmail">연락처</label>
+                    <input type="text" class="form-control user_phone" name="phone" id="phone"
+                           placeholder="연락처를 입력해 주세요" value="<?= $_SESSION['phone'] ?>">
+                </div>
+
+                <div class="form-group">
+                    <label for="InputEmail">이메일 주소</label>
+                    <input type="email" class="form-control user_e_mail" name="e_mail" id="e_mail"
+                           placeholder="이메일 주소를 입력해 주세요" value="<?= $_SESSION['e_mail'] ?>">
+                </div>
+
+                <div class="form-group">
+                    <label class="" style="display: block">주소</label>
+
+                    <div style="display: block">
+                        <input class="form-control float-lg-none col-4" type="text" size="10" name="wPostCode" id="post"
+                               placeholder="우편번호" disabled style="display: inline">
+                        <input class="btn col-3" type="button" onclick="search_add()" value="우편번호 찾기">
+                    </div>
+
+                    <input class="form-control" type="text" size="30" name="wRoadAddress" id="addr" placeholder="도로명주소"
+                           disabled style="margin-top: 20px">
+                    <span id="guide" style="color:#999;font-size:10px;" style="margin-top: 20px"></span>
+
+                    <input class="form-control" type="text" name="wRestAddress" placeholder="나머지 주소"
+                           style="width: 100%; margin-top: 20px"/>
+                </div>
+
+                <div class="form-group text-center" style="margin-top: 50px">
+                    <button id="sign_up_button" type="submit" class="btn btn-info" >수정하기<i
+                                class="fa fa-check spaceLeft"></i></button>
+                    <button class="btn btn-warning" onclick="cencel()">취소하기<i class="fa fa-times spaceLeft"></i>
+                    </button>
+                </div>
             </form>
+
+
         </div>
 
     </article>
