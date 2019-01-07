@@ -23,8 +23,10 @@
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+          integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 
     <style>
         .menu_community {
@@ -32,6 +34,14 @@
         }
 
     </style>
+
+    <script>
+        function search_search(){
+            form = document.search_go;
+            form.submit();
+
+        }
+    </script>
 
 </head>
 
@@ -50,10 +60,12 @@
 
     <div class="h-100">
         <div class="d-flex h-100 justify-content-xl-end">
-            <div class="searchbar">
-                <input class="search_input" type="text" name="" placeholder="제목 or 내용">
-                <a href="#" class="search_icon"><i class="fas fa-search"></i></a>
-            </div>
+            <form action="/community/search_result.php" method="get" name="search_go">
+                <div class="searchbar">
+                    <input class="search_input" type="text" name="search" style="color: black; font-weight: bold" placeholder="제목 or 내용">
+                    <a type="submit" class="search_icon" onclick="search_search()"><i class="fas fa-search"></i></a>
+                </div>
+            </form>
         </div>
     </div>
 
@@ -118,7 +130,7 @@
 
         <div style="position: relative">
             <div id="write_btn" style="position:absolute; right: 0px; bottom: 0px; width: 70px;">
-                <a href="/community/community_write.php">
+                <a href="/community/community_write.php" id="search_tag">
                     <button class="btn my_font_main" id="wright" style="background-color: #FBAA48; color: white;">글쓰기
                     </button>
                 </a>
