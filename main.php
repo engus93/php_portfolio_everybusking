@@ -21,7 +21,7 @@ session_start();
     <link href="css/modern-business.css" rel="stylesheet">
     <link href="css/public.css" rel="stylesheet">
 
-    <link href="side_bar.css" rel="stylesheet">
+    <link href="public/side_bar.css" rel="stylesheet">
 
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
@@ -211,7 +211,7 @@ session_start();
 <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js"></script>
-<script src="side_bar.js"></script>
+<script src="public/side_bar.js"></script>
 
 </body>
 

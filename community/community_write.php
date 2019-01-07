@@ -52,7 +52,7 @@ if (isset($_GET['idx'])) {
 
     <!-- Custom styles for this template -->
     <link href="../css/modern-business.css" rel="stylesheet">
-    <link href="../side_bar.css" rel="stylesheet">
+    <link href="../public/side_bar.css" rel="stylesheet">
     <link href="../css/public.css" rel="stylesheet">
     <link href="community.css" rel="stylesheet">
     <link href="community_write.css" rel="stylesheet">
@@ -189,7 +189,7 @@ if (isset($_GET['idx'])) {
 <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js"></script>
-<script src="../side_bar.js"></script>
+<script src="../public/side_bar.js"></script>
 <script src="community.js"></script>
 
 </body>

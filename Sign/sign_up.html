@@ -33,7 +33,7 @@
     <link rel="stylesheet" type="text/css" href="../css/sign.css">
     <link href="../css/public.css" rel="stylesheet">
 
-    <link href="../side_bar.css" rel="stylesheet">
+    <link href="../public/side_bar.css" rel="stylesheet">
 
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
@@ -47,6 +47,7 @@
         var pass_re_chaeck = false;
         var name_chaeck = false;
         var phone_chaeck = false;
+        var e_mail_chaeck = false;
         var sex_chaeck = false;
 
         //아이디 중복체크
@@ -195,6 +196,33 @@
 
         });
 
+        //이메일
+        $(document).ready(function (e) {
+
+            //이름 한글
+            var regExp = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*\.[a-zA-Z]{3}$/i;
+
+            $(".user_e_mail").on("keyup", function () {
+
+                var user_mail = document.getElementById("e_mail").value;
+
+                if (user_mail.length == 0) {
+                    $(this).parent().parent().find("#e_mail").css("background-color", "#FFFFFF");
+                    e_mail_chaeck = false;
+                } else if (!regExp.test(user_mail)) {
+                    $(this).parent().parent().find("#e_mail").css("background-color", "#fc3c3c");
+                    e_mail_chaeck = false;
+                } else if (regExp.test(user_mail)) {
+                    $(this).parent().parent().find("#e_mail").css("background-color", "#FFB863");
+                    e_mail_chaeck = true;
+                }
+
+                sign_up_check();
+
+            });
+
+        });
+
         //성별
         function sex_check() {
 
@@ -212,7 +240,7 @@
 
         //가입 버튼 활성화
         function sign_up_check() {
-            if (name_chaeck && pass_chaeck && pass_re_chaeck && name_chaeck && phone_chaeck && sex_chaeck) {
+            if (name_chaeck && pass_chaeck && pass_re_chaeck && name_chaeck && phone_chaeck && sex_chaeck && e_mail_chaeck) {
                 $("#sign_up_button").prop("disabled", false);
             } else {
                 $("#sign_up_button").prop("disabled", true);
@@ -382,7 +410,7 @@
 
                     <div style="color: white">　</div>
 
-                    <!-- 핸드폰 번호 -->
+                    <!-- 휴대폰 -->
                     <div class="input-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fas fa-phone"></i></span>
@@ -390,6 +418,18 @@
                         <input type="tel" class="form-control user_phone" maxlength=11 placeholder="Mobile No"
                                name="phone"
                                id="phone">
+                    </div>
+
+                    <div style="color: white">　</div>
+
+                    <!-- 이메일 -->
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                        </div>
+                        <input type="email" class="form-control user_e_mail" maxlength=30 placeholder="E-mail"
+                               name="e_mail"
+                               id="e_mail">
                     </div>
 
                     <div style="color: white">　</div>
@@ -421,7 +461,7 @@
 </div>
 
 <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js"></script>
-<script src="../side_bar.js"></script>
+<script src="../public/side_bar.js"></script>
 
 </body>
 

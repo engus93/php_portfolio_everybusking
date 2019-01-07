@@ -42,7 +42,7 @@ if (isset($_COOKIE[session_name()])) {
     <link rel="stylesheet" type="text/css" href="../css/sign.css">
     <link href="../css/public.css" rel="stylesheet">
 
-    <link href="../side_bar.css" rel="stylesheet">
+    <link href="../public/side_bar.css" rel="stylesheet">
 
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
@@ -105,12 +105,12 @@ if (isset($_COOKIE[session_name()])) {
                                 class="fas fa-cube shortmenu animate"></i></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link menu_busking_zone" href="/busking_zone.html" title="Cart"><i
+                    <a class="nav-link menu_busking_zone" href="/busking_zone/busking_zone.html" title="Cart"><i
                                 class="fas fa-map-marker-alt side_bar_img"></i>Busking Zone<i
                                 class="fas fa-cart-plus shortmenu animate"></i></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link menu_streaming" href="/streaming.html" title="Comment"><i
+                    <a class="nav-link menu_streaming" href="/streaming/streaming.html" title="Comment"><i
                                 class="fas fa-video side_bar_img"></i>Streaming<i
                                 class="fas fa-comment shortmenu animate"></i></a>
                 </li>
@@ -120,7 +120,7 @@ if (isset($_COOKIE[session_name()])) {
                                 class="fas fa-comment shortmenu animate"></i></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link menu_concert" href="/concert.html" title="Comment"><i
+                    <a class="nav-link menu_concert" href="/concert/concert.html" title="Comment"><i
                                 class="fas fa-compact-disc side_bar_img"></i>Concert<i
                                 class="fas fa-comment shortmenu animate"></i></a>
                 </li>
@@ -191,7 +191,7 @@ if (isset($_COOKIE[session_name()])) {
 </div>
 
 <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js"></script>
-<script src="../side_bar.js"></script>
+<script src="../public/side_bar.js"></script>
 
 </body>
 

@@ -19,7 +19,7 @@ session_start();
 
     <!-- Custom styles for this template -->
     <link href="../css/modern-business.css" rel="stylesheet">
-    <link href="../side_bar.css" rel="stylesheet">
+    <link href="../public/side_bar.css" rel="stylesheet">
     <link href="../css/public.css" rel="stylesheet">
     <link href="community_read.css" rel="stylesheet">
 
@@ -124,7 +124,7 @@ session_start();
                                 <div class="dropdown-menu dropdown-scale dropdown-menu-right" role="menu"
                                      style="position: absolute; transform: translate3d(-136px, 28px, 0px); top: 0px; left: 0px; will-change: transform;">
                                     <?php if ($_SESSION != null) {
-                                        echo '<a class="dropdown-item" href="community.php">목록으로</a>
+                                        echo '
                                     <a class="dropdown-item" href="community_write.php?idx=' . $board['idx'] . '">수정</a>
                                     <a class="dropdown-item" href="community_delete_p.php?idx=' . $board['idx'] . '">삭제</a>';
                                     } else {
@@ -354,7 +354,7 @@ session_start();
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 <!--<script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js"></script>-->
-<script src="../side_bar.js"></script>
+<script src="../public/side_bar.js"></script>
 <script src="community.js"></script>
 <script src="read_view.js"></script>
 

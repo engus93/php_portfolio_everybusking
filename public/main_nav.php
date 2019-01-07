@@ -22,12 +22,12 @@ session_start();
                             class="fas fa-cube shortmenu animate"></i></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link menu_busking_zone" href="/busking_zone.html" title="Cart"><i
+                    <a class="nav-link menu_busking_zone" href="/busking_zone/busking_zone.html" title="Cart"><i
                             class="fas fa-map-marker-alt side_bar_img"></i>Busking Zone<i
                             class="fas fa-cart-plus shortmenu animate"></i></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link menu_streaming" href="/streaming.html" title="Comment"><i class="fas fa-video side_bar_img"></i>Streaming<i
+                    <a class="nav-link menu_streaming" href="/streaming/streaming.html" title="Comment"><i class="fas fa-video side_bar_img"></i>Streaming<i
                             class="fas fa-comment shortmenu animate"></i></a>
                 </li>
                 <li class="nav-item">
@@ -35,7 +35,7 @@ session_start();
                             class="fas fa-comment shortmenu animate"></i></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link menu_concert" href="/concert.html" title="Comment"><i
+                    <a class="nav-link menu_concert" href="/concert/concert.html" title="Comment"><i
                             class="fas fa-compact-disc side_bar_img"></i>Concert<i
                             class="fas fa-comment shortmenu animate"></i></a>
                 </li>
@@ -57,7 +57,7 @@ session_start();
                     } ?>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link menu_profile" href="#"><i class="fas fa-user"></i> Profile</a>
+                    <a class="nav-link menu_profile" href="/my_page/my_page_modify.php"><i class="fas fa-user"></i> My Page</a>
                 </li>
             </ul>
         </div>
