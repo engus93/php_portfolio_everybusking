@@ -1,10 +1,12 @@
 <?php
 require_once "../db.php";
 
-if(isset($_POST["rememberme"])){
+if (isset($_POST["auto_sign_in"])) {
+
     $duration = 7 * 24 * 60 * 60;
-    ini_set('session.gc_maxlifetime', $duration);
+    ini_set("session.gc_maxlifetime", $duration);
     session_set_cookie_params($duration);
+
 }
 
 session_start();
@@ -36,12 +38,12 @@ $row = mysqli_fetch_assoc($result);
         history.back();
     } else if (login_pass == user_pass) {
 
-        "<?php $_SESSION['user_id'] = $row['user_id']?>"
-        "<?php $_SESSION['password'] = $row['password']?>"
-        "<?php $_SESSION['name'] = $row['name']?>"
-        "<?php $_SESSION['phone'] = $row['phone']?>"
-        "<?php $_SESSION['sex'] = $row['sex']?>"
-        "<?php $_SESSION['profile'] = $row['profile']?>"
+        "<?php $_SESSION['user_id'] = $row['user_id']?>";
+        "<?php $_SESSION['password'] = $row['password']?>";
+        "<?php $_SESSION['name'] = $row['name']?>";
+        "<?php $_SESSION['phone'] = $row['phone']?>";
+        "<?php $_SESSION['sex'] = $row['sex']?>";
+        "<?php $_SESSION['profile'] = $row['profile']?>";
 
         alert(user_name + "님 환영합니다.");
         location.href = '../main.php';

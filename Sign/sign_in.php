@@ -3,7 +3,9 @@
 session_start();
 
 if (isset($_COOKIE[session_name()])) {
-    setcookie(session_name(), '', time()-1800, '/');
+
+    setcookie(session_name(), '', time() - 42000, '/');
+
 }
 
 ?>
@@ -57,7 +59,7 @@ if (isset($_COOKIE[session_name()])) {
                 alert("아이디를 입력하세요");
                 return false;
 
-            }else if(password.length == 0){
+            } else if (password.length == 0) {
 
                 alert("비밀번호를 입력하세요");
                 return false;
@@ -73,7 +75,7 @@ if (isset($_COOKIE[session_name()])) {
     </script>
 
     <style>
-        .main_nav_sign{
+        .main_nav_sign {
             color: #FBAA48 !important;
         }
 
@@ -84,8 +86,60 @@ if (isset($_COOKIE[session_name()])) {
 <body>
 
 <!--메인 상단바-->
-<div class="main_nav"></div>
-<script>$(".main_nav").load("/public/main_nav.php");</script>
+<div id="wrapper" class="animate">
+    <nav class="navbar header-top fixed-top navbar-expand-lg navbar-dark bg-dark">
+        <span class="navbar-toggler-icon leftmenutrigger"></span>
+        <a class="navbar-brand" href="/main.php"
+           style="font-family: 'Monoton', cursive; margin-left: 10px; font-size: 20px;">Every
+            Busking</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+                aria-controls="navbarText"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav animate side-nav">
+                <li class="nav-item">
+                    <a class="nav-link menu_buskingteam" href="/buskingteam/buskingteam.php" title="Dashboard"><i
+                                class="fas fa-users side_bar_img"></i>Busking Team<i
+                                class="fas fa-cube shortmenu animate"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link menu_busking_zone" href="/busking_zone.html" title="Cart"><i
+                                class="fas fa-map-marker-alt side_bar_img"></i>Busking Zone<i
+                                class="fas fa-cart-plus shortmenu animate"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link menu_streaming" href="/streaming.html" title="Comment"><i
+                                class="fas fa-video side_bar_img"></i>Streaming<i
+                                class="fas fa-comment shortmenu animate"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link menu_community" href="/community/community.php" title="Comment"><i
+                                class="fas fa-star side_bar_img"></i>Community<i
+                                class="fas fa-comment shortmenu animate"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link menu_concert" href="/concert.html" title="Comment"><i
+                                class="fas fa-compact-disc side_bar_img"></i>Concert<i
+                                class="fas fa-comment shortmenu animate"></i></a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-md-auto d-md-flex">
+                <li class="nav-item">
+                    <a class="nav-link"></a>
+
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link main_nav_sign" href="/Sign/sign_in.php"><i class="fas fa-key"></i> Sign In</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link menu_profile" href="#"><i class="fas fa-user"></i> Profile</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
 
 <!-- 로그인 UI -->
 <div class="container" style="font-family: 'Numans', sans-serif">
@@ -112,10 +166,11 @@ if (isset($_COOKIE[session_name()])) {
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fas fa-key"></i></span>
                         </div>
-                        <input type="password" class="form-control" placeholder="password" name="password" id="login_password">
+                        <input type="password" class="form-control" placeholder="password" name="password"
+                               id="login_password">
                     </div>
                     <div class="row align-items-center remember">
-                        <input type="checkbox" id="rememberme">Remember Me
+                        <input type="checkbox" name="auto_sign_in">Remember Me
                     </div>
                     <div class="form-group">
                         <input type="button" value="Sign In" class="btn float-right login_btn" onclick="login()">
