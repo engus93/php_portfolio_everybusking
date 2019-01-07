@@ -87,7 +87,7 @@ session_start();
         <div class="col-lg-4 mb-4">
             <!-- <div class="card h-100"> -->
             <h4 class="card-header my_font_index color_main"
-                style="background: transparent; text-align: center; font-size: 2em"><strong>Place</strong></h4>
+                style="background: transparent; text-align: center; font-size: 2em"><strong>Provide a place</strong></h4>
             <div class="card-body text-center my_font_main">
                 <p class="card-text">
                 <p>당신의 장소가 너무 조용한가요?</p>
@@ -95,7 +95,7 @@ session_start();
                 </p>
             </div>
             <div class="card-footer" style="background: transparent">
-                <a href="aplication.html" class="btn btn-block my_font_main color_main"
+                <a href="aplication.php" class="btn btn-block my_font_main color_main"
                    style="font-size: 1.2em;">신청하기</a>
             </div>
             <!-- </div> -->
@@ -112,7 +112,7 @@ session_start();
                 </p>
             </div>
             <div class="card-footer" style="background: transparent">
-                <a href="aplication.html" class="btn btn-block my_font_main color_main"
+                <a href="aplication.php" class="btn btn-block my_font_main color_main"
                    style="font-size: 1.2em;">신청하기</a>
             </div>
             <!-- </div> -->
@@ -125,11 +125,11 @@ session_start();
             <div class="card-body text-center my_font_main">
                 <p class="card-text">
                 <p>소통 하고 싶으신가요?</p>
-                <p>그렇다면 신청하세요!</p> 우리의 방송으로 당신을 홍보해드릴게요!
+                <p>그렇다면 신청하세요!</p> 라이브 방송으로 당신을 홍보해드릴게요!
                 </p>
             </div>
             <div class="card-footer" style="background: transparent">
-                <a href="aplication.html" class="btn btn-block my_font_main color_main"
+                <a href="aplication.php" class="btn btn-block my_font_main color_main"
                    style="font-size: 1.2em;">신청하기</a>
             </div>
             <!-- </div> -->

@@ -287,8 +287,13 @@ if ($_SESSION == null) {
             if ($_SESSION["user_id"]  != "rhksflwk"){
             ?>
         <li class="breadcrumb-item">
-            <a href="my_page_application.php" style="color: black">신청 내역 보기</a>
+            <a href="my_page_application.php" style="color: black">신청 내역</a>
         </li>
+
+        <li class="breadcrumb-item">
+            <a href="my_page_cloud.php" style="color: black">펀딩 진행 사항</a>
+        </li>
+        
         <?php
         } else {
             ?>

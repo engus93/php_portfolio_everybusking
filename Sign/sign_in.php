@@ -85,7 +85,7 @@ if (isset($_COOKIE[session_name()])) {
 
 <body>
 
-<!--메인 상단바-->
+<!--사이드바-->
 <div id="wrapper" class="animate">
     <nav class="navbar header-top fixed-top navbar-expand-lg navbar-dark bg-dark">
         <span class="navbar-toggler-icon leftmenutrigger"></span>
@@ -127,15 +127,51 @@ if (isset($_COOKIE[session_name()])) {
             </ul>
             <ul class="navbar-nav ml-md-auto d-md-flex">
                 <li class="nav-item">
-                    <a class="nav-link"></a>
+                    <?php if ($_SESSION == null) {
+                        echo '<a class="nav-link"></a>';
+                    } else {
+                        echo '<a class="nav-link">' . $_SESSION['name'] . " 님" . '</a>';
+                    } ?>
 
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link main_nav_sign" href="/Sign/sign_in.php"><i class="fas fa-key"></i> Sign In</a>
+                    <?php if ($_SESSION == null) {
+                        echo '<a class="nav-link main_nav_sign" href="/Sign/sign_in.php"><i class="fas fa-key"></i> Sign In</a>';
+                    } else {
+                        echo '<a class="nav-link main_nav_sign" href="/Sign/sign_out.php"><i class="fas fa-key"></i> Sign Out</a>';
+                    } ?>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link menu_profile" href="#"><i class="fas fa-user"></i> Profile</a>
-                </li>
+
+                <?php
+                if ($_SESSION != null) {
+                    if ($_SESSION['user_id'] == "rhksflwk") {
+
+                        ?>
+
+                        <li class="nav-item">
+                            <a class="nav-link menu_profile" href="/my_page/my_page_modify.php"><i
+                                        class="fas fa-crown"></i> Manager Page</a>
+                        </li>
+
+                        <?php
+
+                    }
+
+                } else {
+
+                    ?>
+
+                    <li class="nav-item">
+                        <a class="nav-link menu_profile" href="/my_page/my_page_modify.php"><i
+                                    class="fas fa-user"></i> My Page</a>
+                    </li>
+
+                    <?php
+
+                }
+
+                ?>
+
             </ul>
         </div>
     </nav>

@@ -73,17 +73,17 @@ session_start();
         </li>
 
         <li class="breadcrumb-item">
-            <a class="color_point" href="my_page_application.php" style="color: black">신청 내역</a>
+            <a  href="my_page_application.php" style="color: black">신청 내역</a>
         </li>
 
         <li class="breadcrumb-item">
-            <a href="my_page_cloud.php" style="color: black">펀딩 진행 사항</a>
+            <a href="my_page_cloud.php" class="color_point">펀딩 진행 사항</a>
         </li>
 
     </ol>
 
     <!-- Page Heading/Breadcrumbs -->
-    <h4 class="my_font_main" style="margin-top: 50px;">팀노바 님의 신청 내역</h4>
+    <h4 class="my_font_main" style="margin-top: 50px;">팀노바 님의 펀딩 진행 사항</h4>
 
     <div style="position: relative;margin-left:45px; margin-top: 50px">
         <!-- /.container -->
