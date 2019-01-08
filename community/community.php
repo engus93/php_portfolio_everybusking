@@ -94,7 +94,7 @@
             }
             $sql = mq("select * from community_tb");
             $row_num = mysqli_num_rows($sql); //게시판 총 레코드 수
-            $list = 4; //한 페이지에 보여줄 개수
+            $list = 1; //한 페이지에 보여줄 개수
             $block_ct = 5; //블록당 보여줄 페이지 개수
 
             $block_num = ceil($page / $block_ct); // 현재 페이지 블록 구하기
