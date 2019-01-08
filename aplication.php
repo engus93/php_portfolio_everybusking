@@ -50,7 +50,7 @@ if ($_SESSION == null) {
 
     <h6 class="my_font_main">※ 깨끗한 인터넷 문화를 만들어갑시다. :)</h6>
 
-    <form action="community_write_p.php" method="post" enctype="multipart/form-data" style="display: inline">
+    <form action="application_write_p.php" method="post" enctype="multipart/form-data">
 
         <div style="margin-left: 105px">
 

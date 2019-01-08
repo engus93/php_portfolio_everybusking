@@ -1,12 +1,5 @@
 <?php
 session_start();
-
-$team_name_re;
-
-if (isset($_GET['team_name'])) {
-    $team_name_re = $_GET['team_name'];
-}
-
 ?>
 
 <!DOCTYPE html>
@@ -42,6 +35,7 @@ if (isset($_GET['team_name'])) {
     </style>
 
     <script>
+
         function search_search() {
 
             var word = document.getElementById("search_check").value;
@@ -56,6 +50,7 @@ if (isset($_GET['team_name'])) {
             }
 
         }
+
     </script>
 
 </head>
@@ -77,7 +72,7 @@ if (isset($_GET['team_name'])) {
 
     <div class="h-100" style="margin-bottom: 50px">
         <div class="d-flex h-100 justify-content-xl-end">
-            <form action='/buskingteam/songlist_search_result.php' method="get" name="search_go">
+            <form action="/community/songlist_search_result.php" method="get" name="search_go">
                 <input type="hidden" name="idx" value="<?=$_GET['idx']?>">
                 <input type="hidden" name="team_name" value="<?=$_GET['team_name']?>">
                 <div class="searchbar">
@@ -97,7 +92,7 @@ if (isset($_GET['team_name'])) {
     } else {
         $page = 1;
     }
-    $sql = mq("select * from songlist_tb where con_num = '" . $_GET['idx'] . "'");
+    $sql = mq("select * from songlist_tb where title like '%" . $_GET["search"] . "%'");
     $row_num = mysqli_num_rows($sql); //게시판 총 레코드 수
     $list = 4; //한 페이지에 보여줄 개수
     $block_ct = 5; //블록당 보여줄 페이지 개수
@@ -111,7 +106,7 @@ if (isset($_GET['team_name'])) {
     $total_block = ceil($total_page / $block_ct); //블럭 총 개수
     $start_num = ($page - 1) * $list; //시작번호 (page-1)에서 $list를 곱한다.
 
-    $sql = mq("select * from songlist_tb where con_num='" . $_GET['idx'] . "' order by idx desc limit $start_num, $list");
+    $sql = mq("select * from songlist_tb where title like '%" . $_GET["search"] . "%' order by idx desc");
 
     //페이징 끝
 
@@ -132,7 +127,7 @@ if (isset($_GET['team_name'])) {
 
     }
 
-    $sql = mq("select * from songlist_tb where con_num='" . $_GET['idx'] . "' order by idx desc limit $start_num, $list");
+    $sql = mq("select * from songlist_tb where title like '%" . $_GET["search"] . "%' order by idx desc limit $start_num, $list");
 
     while ($board = $sql->fetch_array()) {
 

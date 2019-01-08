@@ -36,7 +36,7 @@
     </style>
 
     <script>
-        function search_search(){
+        function search_search() {
 
             var word = document.getElementById("search_check").value;
 
@@ -67,18 +67,22 @@
 
     <h6 class="my_font_main">※ 깨끗한 인터넷 문화를 만들어갑시다. :)</h6>
 
+    <h5 class="my_font_main color_point" style="margin-top: 30px; margin-left: 20px">'<?php echo $_GET["search"]; ?>'의
+        대한 검색 결과</h5>
+
     <div class="h-100">
         <div class="d-flex h-100 justify-content-xl-end">
             <form action="/community/community_search_result.php" method="get" name="search_go">
                 <div class="searchbar">
-                    <input class="search_input" type="text" id="search_check" name="search" style="font-weight: bold" placeholder="제목 or 내용">
+                    <input class="search_input" type="text" id="search_check" name="search"
+                           style="font-weight: bold" placeholder="제목 or 내용">
                     <a type="submit" class="search_icon" onclick="search_search()"><i class="fas fa-search"></i></a>
                 </div>
             </form>
         </div>
     </div>
 
-    <div class="row" style="margin-top: 50px">
+    <div class="row" style="margin-top: 50px; min-height: 500px">
 
         <hr>
         <section id="pinBoot" style="margin-bottom: 30px">
@@ -92,9 +96,13 @@
             } else {
                 $page = 1;
             }
-            $sql = mq("select * from community_tb");
+
+            $search = $_GET["search"];
+
+            $sql = mq("select * from community_tb where title like '%" . $_GET["search"] . "%'");
+
             $row_num = mysqli_num_rows($sql); //게시판 총 레코드 수
-            $list = 4; //한 페이지에 보여줄 개수
+            $list = 1; //한 페이지에 보여줄 개수
             $block_ct = 5; //블록당 보여줄 페이지 개수
 
             $block_num = ceil($page / $block_ct); // 현재 페이지 블록 구하기
@@ -105,10 +113,9 @@
             if ($block_end > $total_page) $block_end = $total_page; //만약 블록의 마지박 번호가 페이지수보다 많다면 마지박번호는 페이지 수
             $total_block = ceil($total_page / $block_ct); //블럭 총 개수
             $start_num = ($page - 1) * $list; //시작번호 (page-1)에서 $list를 곱한다.
-
-            $sql = mq("select * from community_tb order by idx desc limit $start_num, $list");
-
             //        끝
+
+            $sql = mq("select * from community_tb where title like '%" . $_GET["search"] . "%' order by idx desc limit $start_num, $list");
 
             while ($board = $sql->fetch_array()) {
 
@@ -133,12 +140,31 @@
                 echo '</article>';
             }
 
+            $sql = mq("select * from community_tb where title like '%" . $_GET["search"] . "%' order by idx desc");
+
+            if ($sql->fetch_row() == 0) {
+
+                ?>
+
+                <h5 style="margin-left: 432px; margin-top: 200px" class="center my_font_main">검색 결과가 없습니다.</h5>
+
+                <?php
+            }
+
             ?>
 
         </section>
 
-        <div style="position: relative">
-            <div id="write_btn" style="position:absolute; right: 0px; bottom: 0px; width: 70px;">
+        <div style="width: 100%; height: 40px; position: relative;">
+            <div id="write_btn" style="position:relative; left: 0px; bottom: 0px; width: 70px; display: inline">
+                <a href="/community/community.php" id="search_tag">
+                    <button class="btn my_font_main" id="wright" style="background-color: #FBAA48; color: white;">목록으로
+                        돌아가기
+                    </button>
+                </a>
+            </div>
+
+            <div id="write_btn" style="display: inline; position: absolute; right: 0px">
                 <a href="/community/community_write.php" id="search_tag">
                     <button class="btn my_font_main" id="wright" style="background-color: #FBAA48; color: white;">글쓰기
                     </button>
@@ -166,7 +192,7 @@
         } else {
             $pre = $page - 1; //pre변수에 page-1을 해준다 만약 현재 페이지가 3인데 이전버튼을 누르면 2번페이지로 갈 수 있게 함
             echo "<li class='page-item'>
-                    <a class='page-link' href='?page=$pre' aria-label='Previous' style='color: black'>
+                    <a class='page-link' href='?search=$search&page=$pre' aria-label='Previous' style='color: black'>
                         <span aria-hidden='true'>&laquo;</span>
                         <span class='sr-only'>Previous</span>                    
                     </a>
@@ -177,10 +203,10 @@
         for ($i = $block_start; $i <= $block_end; $i++) {
             //for문 반복문을 사용하여, 초기값을 블록의 시작번호를 조건으로 블록시작번호가 마지박블록보다 작거나 같을 때까지 $i를 반복시킨다
             if ($page == $i) { //만약 page가 $i와 같다면
-                echo "<li class='page-item'><a class='page-link' href='?page=$i'
+                echo "<li class='page-item'><a class='page-link' href='?search=$search&page=$i'
                 style='color: #FBAA48; font-weight: bold;'>$i</a></li>"; //현재 페이지에 해당하는 번호에 굵은 빨간색을 적용한다
             } else {
-                echo "<li class='page-item'><a class='page-link' href='?page=$i' style='color: black'>$i</a></li>";
+                echo "<li class='page-item'><a class='page-link' href='?search=$search&page=$i' style='color: black'>$i</a></li>";
             }
         }
 
@@ -200,7 +226,7 @@
 
                 $next = $page + 1; //next변수에 page + 1을 해준다.
                 echo "<li class='page-item'>
-                    <a class='page-link' href='?page=$next' aria-label='Next' style='color: black'>
+                    <a class='page-link' href='?search=$search&page=$next' aria-label='Next' style='color: black'>
                         <span aria-hidden='true'>&raquo;</span>
                         <span class='sr-only'>Next</span>                    
                     </a>
@@ -210,7 +236,7 @@
         } else {
             $next = $page + 1; //next변수에 page + 1을 해준다.
             echo "<li class='page-item'>
-                    <a class='page-link' href='?page=$next' aria-label='Next' style='color: black'>
+                    <a class='page-link' href='?search=$search&page=$next' aria-label='Next' style='color: black'>
                         <span aria-hidden='true'>&raquo;</span>
                         <span class='sr-only'>Next</span>                    
                     </a>
