@@ -72,7 +72,7 @@ session_start();
 
     <div class="h-100" style="margin-bottom: 50px">
         <div class="d-flex h-100 justify-content-xl-end">
-            <form action="/community/songlist_search_result.php" method="get" name="search_go">
+            <form action="/buskingteam/songlist_search_result.php" method="get" name="search_go">
                 <input type="hidden" name="idx" value="<?=$_GET['idx']?>">
                 <input type="hidden" name="team_name" value="<?=$_GET['team_name']?>">
                 <div class="searchbar">

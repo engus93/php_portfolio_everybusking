@@ -69,7 +69,8 @@ session_start();
 
     <div class="h-100">
         <div class="d-flex h-100 justify-content-xl-end">
-            <form action="/community/community_search_result.php" method="get" name="search_go">
+            <form action="/buskingteam/buskingteam_search_result.php" method="get" name="search_go">
+                <input type="hidden" name="idx" value="<?=$_GET['idx']?>">
                 <div class="searchbar">
                     <input class="search_input" type="text" id="search_check" name="search" style="font-weight: bold" placeholder="Team Name">
                     <a type="submit" class="search_icon" onclick="search_search()"><i class="fas fa-search"></i></a>
@@ -214,7 +215,7 @@ session_start();
             for ($i = $block_start; $i <= $block_end; $i++) {
                 //for문 반복문을 사용하여, 초기값을 블록의 시작번호를 조건으로 블록시작번호가 마지박블록보다 작거나 같을 때까지 $i를 반복시킨다
                 if ($page == $i) { //만약 page가 $i와 같다면
-                    echo "<li class='page-item'><a class='page-link' href='?search=$search&page=$i'
+                    echo "<li class='page-item'><a class='page-link' href='?page=$i'
                 style='color: #FBAA48; font-weight: bold;'>$i</a></li>"; //현재 페이지에 해당하는 번호에 굵은 빨간색을 적용한다
                 } else {
                     echo "<li class='page-item'><a class='page-link' href='?search=$search&page=$i' style='color: black'>$i</a></li>";

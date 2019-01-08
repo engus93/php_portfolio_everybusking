@@ -74,8 +74,7 @@
         <div class="d-flex h-100 justify-content-xl-end">
             <form action="/community/community_search_result.php" method="get" name="search_go">
                 <div class="searchbar">
-                    <input class="search_input" type="text" id="search_check" name="search"
-                           style="font-weight: bold" placeholder="제목 or 내용">
+                    <input class="search_input" type="text" id="search_check" name="search" style="font-weight: bold" placeholder="제목 or 내용">
                     <a type="submit" class="search_icon" onclick="search_search()"><i class="fas fa-search"></i></a>
                 </div>
             </form>
