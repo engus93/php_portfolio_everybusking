@@ -79,7 +79,7 @@ if ($_SESSION == null) {
             ?>
 
             <li class="breadcrumb-item">
-                <a href="manager_application.php" style="color: black">Application</a>
+                <a href="manager_application.php" style="color: #fc3c3c">Application</a>
             </li>
 
             <li class="breadcrumb-item">
@@ -87,7 +87,7 @@ if ($_SESSION == null) {
             </li>
 
             <li class="breadcrumb-item">
-                <a href="manager_busking_zone.php" style="color: #fc3c3c">Busking Zone</a>
+                <a href="manager_busking_zone.php" style="color: black">Busking Zone</a>
             </li>
 
             <li class="breadcrumb-item">
@@ -101,6 +101,7 @@ if ($_SESSION == null) {
             <li class="breadcrumb-item">
                 <a href="manager_concert.php" style="color: black">Concert</a>
             </li>
+
             <?php
         }
         ?>

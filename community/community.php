@@ -172,7 +172,7 @@
                     </a>
                    </li>";
         } else {
-            $pre = floor($page/$block_ct)*$block_ct; //pre변수에 page-1을 해준다 만약 현재 페이지가 3인데 이전버튼을 누르면 2번페이지로 갈 수 있게 함
+            $pre = floor(($page-1)/$block_ct)*$block_ct; //pre변수에 page-1을 해준다 만약 현재 페이지가 3인데 이전버튼을 누르면 2번페이지로 갈 수 있게 함
             echo "<li class='page-item'>
                     <a class='page-link' href='?page=$pre' aria-label='Previous' style='color: black'>
                         <span aria-hidden='true'>&laquo;</span>

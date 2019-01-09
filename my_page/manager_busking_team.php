@@ -294,6 +294,10 @@ if ($_SESSION == null) {
             ?>
 
             <li class="breadcrumb-item">
+                <a href="manager_application.php" style="color: black">Application</a>
+            </li>
+
+            <li class="breadcrumb-item">
                 <a href="manager_busking_team.php" style="color: #fc3c3c">Busking Team</a>
             </li>
 
