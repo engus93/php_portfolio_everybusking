@@ -280,6 +280,12 @@
 .dat_reply {
     display:none;
 }
+.dat_reply_edit {
+    display:none;
+}
+.dat_reply_delete {
+    display:none;
+}
 .dap_lo {
     font-size: 14px;
     padding:10px 0 15px 0;
