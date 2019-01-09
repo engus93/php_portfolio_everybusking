@@ -54,17 +54,17 @@ if ($_SESSION == null) {
 
         <div style="margin-left: 105px">
 
-            <select class="custom-select center" style="width: 900px; margin-top: 30px">
+            <select class="custom-select center" name="select_name" style="width: 900px; margin-top: 30px">
                 <option selected>선택해주세요</option>
-                <option value="1">Provide a place (장소 제공 신청)</option>
-                <option value="2">Busking (공연 신청)</option>
-                <option value="3">Streaming (라이브 방송 신척)</option>
+                <option value="Provide a place">Provide a place (장소 제공 신청)</option>
+                <option value="Busking">Busking (공연 신청)</option>
+                <option value="Streaming">Streaming (라이브 방송 신척)</option>
             </select>
 
         </div>
 
         <div id="in_content" class="center my_font_main">
-            <textarea name="content" id="ucontent" placeholder="간단한 내용" required style="height: 300px"></textarea>
+            <textarea name="select_content" id="ucontent" placeholder="간단한 내용" required style="height: 300px"></textarea>
         </div>
 
         <div class="center my_font_main" style="margin-top: 50px">

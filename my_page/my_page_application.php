@@ -101,37 +101,54 @@ session_start();
 
             <tbody>
 
-            <tr>
-                <td width=100">4</td>
-                <td width="550">19년 01월 05일 8시 / 공연 라이브 스트리밍 신청합니다.</a></td>
-                <td width="120">스트리밍 방송</td>
-                <td width="150">2019-01-02</td>
-                <td width="100">대기</td>
-            </tr>
+            <?php
+            require_once "../db.php";
 
-            <tr>
-                <td width=100">3</td>
-                <td width="550">18년 12월 29일 8시 / 공연 라이브 스트리밍 신청합니다.</a></td>
-                <td width="120">스트리밍 방송</td>
-                <td width="150">2018-12-24</td>
-                <td width="100">승인</td>
-            </tr>
+            //        페이징
+            if (isset($_GET['page'])) {
+                $page = $_GET['page'];
+            } else {
+                $page = 1;
+            }
+            $sql = mq("select * from application_tb");
+            $row_num = mysqli_num_rows($sql); //게시판 총 레코드 수
+            $list = 10; //한 페이지에 보여줄 개수
+            $block_ct = 5; //블록당 보여줄 페이지 개수
 
-            <tr>
-                <td width=100">2</td>
-                <td width="550">18년 12월 22일 8시 / 공연 라이브 스트리밍 신청합니다.</a></td>
-                <td width="120">스트리밍 방송</td>
-                <td width="150">2018-12-18</td>
-                <td width="100">승인</td>
-            </tr>
+            $block_num = ceil($page / $block_ct); // 현재 페이지 블록 구하기
+            $block_start = (($block_num - 1) * $block_ct) + 1; // 블록의 시작번호
+            $block_end = $block_start + $block_ct - 1; //블록 마지막 번호
 
-            <tr>
-                <td width=100">1</td>
-                <td width="550">18년 12월 15일 8시 / 공연 라이브 스트리밍 신청합니다.</a></td>
-                <td width="120">스트리밍 방송</td>
-                <td width="150">2018-12-12</td>
-                <td width="100">승인</td>
-            </tr>
+            $total_page = ceil($row_num / $list); // 페이징한 페이지 수 구하기
+            if ($block_end > $total_page) $block_end = $total_page; //만약 블록의 마지박 번호가 페이지수보다 많다면 마지박번호는 페이지 수
+            $total_block = ceil($total_page / $block_ct); //블럭 총 개수
+            $start_num = ($page - 1) * $list; //시작번호 (page-1)에서 $list를 곱한다.
+
+            $sql = mq("select * from application_tb where write_user = '".$_SESSION['user_id']."' order by idx desc limit $start_num, $list");
+
+            //        끝
+
+            $num = 0;
+
+            while ($board = $sql->fetch_array()) {
+
+                $num += 1;
+
+                ?>
+
+                <tr>
+                    <td width=100"><?=$num?></td>
+                    <td width="550"><?=$board['select_content']?> / <?=$board['select_content']?></a></td>
+                    <td width="120"><?=$board['select_name']?></td>
+                    <td width="150"><?=$board['date']?></td>
+                    <td width="100"><?=$board['whether']?></td>
+                </tr>
+
+                <?php
+            }
+
+            ?>
+
             </tbody>
 
         </table>
