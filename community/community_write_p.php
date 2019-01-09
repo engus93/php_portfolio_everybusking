@@ -19,7 +19,11 @@ if ($o_name != "") {
     $path = "../img/no_image.gif";
 }
 
-$sql = mq("insert into community_tb(name,pw,title,content,date,picture) values('" . $_SESSION['name'] . "','" . $_SESSION['user_id'] . "','" . $_POST['title'] . "','" . $_POST['content'] . "','" . $date . "','" . $path . "')"); ?>
+for ($i = 0; $i<=20; $i++) {
+$sql = mq("insert into community_tb(name,pw,title,content,date,picture) values('" . $_SESSION['name'] . "','" . $_SESSION['user_id'] . "','" . $_POST['title'] . "','" . $_POST['content'] . "','" . $date . "','" . $path . "')");
+
+}
+?>
 
 <script type="text/javascript">alert("글쓰기 완료되었습니다.");
     location.href = 'community.php';
