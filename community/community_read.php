@@ -126,9 +126,24 @@ session_start();
 
     <?php
     $bno = $_GET['idx']; /* bno함수에 idx값을 받아와 넣음*/
-    $hit = mysqli_fetch_array(mq("select * from community_tb where idx ='" . $bno . "'"));
-    $hit = $hit['hit'] + 1;
-    $fet = mq("update community_tb set hit = '" . $hit . "' where idx = '" . $bno . "'");
+    if ($_SESSION != null) {
+        if (!isset($_COOKIE['community' . $_SESSION['user_id'] . $bno])) {
+            setcookie('community' . $_SESSION['user_id'] . $bno, TRUE, time() + (60 * 60 * 24), '/');
+
+            $hit = mysqli_fetch_array(mq("select * from community_tb where idx ='" . $bno . "'"));
+            $hit = $hit['hit'] + 1;
+            $fet = mq("update community_tb set hit = '" . $hit . "' where idx = '" . $bno . "'");
+        }
+    } else {
+        if (!isset($_COOKIE['community' ."guest". $bno])) {
+            setcookie('community' ."guest". $bno, TRUE, time() + (60 * 60 * 24), '/');
+
+            $hit = mysqli_fetch_array(mq("select * from community_tb where idx ='" . $bno . "'"));
+            $hit = $hit['hit'] + 1;
+            $fet = mq("update community_tb set hit = '" . $hit . "' where idx = '" . $bno . "'");
+        }
+    }
+
     $sql = mq("select * from community_tb where idx='" . $bno . "'"); /* 받아온 idx값을 선택 */
     $board = $sql->fetch_array();
     ?>

@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="315b7d6c-43dd-4b04-a2b3-17ad3cc59c77" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/community/community.php" beforeDir="false" afterPath="$PROJECT_DIR$/community/community.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/community/community_write_p.php" beforeDir="false" afterPath="$PROJECT_DIR$/community/community_write_p.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/community/community_read.php" beforeDir="false" afterPath="$PROJECT_DIR$/community/community_read.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,30 +28,12 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/community/community.php">
+        <entry file="file://$PROJECT_DIR$/community/community_read.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="494">
-              <caret line="179" column="24" lean-forward="true" selection-start-line="179" selection-start-column="24" selection-end-line="179" selection-end-column="24" />
+            <state relative-caret-position="283">
+              <caret line="137" column="48" selection-start-line="137" selection-start-column="48" selection-end-line="137" selection-end-column="48" />
               <folding>
-                <element signature="n#style#0;n#h4#0;n#!!top" expanded="true" />
-                <element signature="e#159#166#1" expanded="true" />
-                <element signature="n#style#0;n#a#0;n#li#0;n#!!top" expanded="true" />
-                <element signature="e#159#166#1" expanded="true" />
-                <element signature="n#style#0;n#a#0;n#li#0;n#!!top" expanded="true" />
-                <element signature="e#178#185#1" expanded="true" />
-                <element signature="e#159#167#1" expanded="true" />
-                <element signature="e#178#186#1" expanded="true" />
-                <element signature="n#style#0;n#a#0;n#li#0;n#!!top" expanded="true" />
-                <element signature="e#162#170#1" expanded="true" />
-                <element signature="e#175#183#1" expanded="true" />
-                <element signature="e#175#183#1" expanded="true" />
-                <element signature="e#162#169#1" expanded="true" />
-                <element signature="n#style#0;n#a#0;n#li#0;n#!!top" expanded="true" />
-                <element signature="e#162#169#1" expanded="true" />
-                <element signature="n#style#0;n#a#0;n#li#0;n#!!top" expanded="true" />
-                <element signature="e#175#182#1" expanded="true" />
-                <element signature="n#style#0;n#a#0;n#li#0;n#!!top" expanded="true" />
-                <element signature="e#175#182#1" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -71,7 +52,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>alert</find>
       <find>title</find>
       <find>my_font</find>
       <find>글쓰기</find>
@@ -101,6 +81,7 @@
       <find>dat_edit</find>
       <find>dat_edit_bt</find>
       <find>tlqkf</find>
+      <find>session</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -157,9 +138,9 @@
         <option value="$PROJECT_DIR$/community/community_read.css" />
         <option value="$PROJECT_DIR$/community/commu_re_reply_update_p.php" />
         <option value="$PROJECT_DIR$/community/commu_re_reply_delete_p.php" />
-        <option value="$PROJECT_DIR$/community/community_read.php" />
         <option value="$PROJECT_DIR$/community/community_write_p.php" />
         <option value="$PROJECT_DIR$/community/community.php" />
+        <option value="$PROJECT_DIR$/community/community_read.php" />
       </list>
     </option>
   </component>
@@ -265,14 +246,7 @@
       <workItem from="1546876725772" duration="5499000" />
       <workItem from="1546908623106" duration="4000" />
       <workItem from="1546908931492" duration="6983000" />
-      <workItem from="1546923064451" duration="14842000" />
-    </task>
-    <task id="LOCAL-00043" summary="19.01.02&#10;&#10;커뮤니티 읽는 페이지 수정 완료">
-      <created>1546520423325</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1546520423325</updated>
+      <workItem from="1546923064451" duration="17352000" />
     </task>
     <task id="LOCAL-00044" summary="19.01.02&#10;&#10;커뮤니티 읽는 페이지 수정 완료">
       <created>1546520469919</created>
@@ -610,11 +584,18 @@
       <option name="project" value="LOCAL" />
       <updated>1547016585544</updated>
     </task>
-    <option name="localTasksCounter" value="92" />
+    <task id="LOCAL-00092" summary="19.01.08&#10;       &#10;관리자 페이지">
+      <created>1547018647024</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1547018647024</updated>
+    </task>
+    <option name="localTasksCounter" value="93" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="318807000" />
+    <option name="totallyTimeSpent" value="321317000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -642,8 +623,8 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32939914" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="9" sideWeight="0.49777213" visible="true" weight="0.2688985" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49840865" weight="0.32181427" />
+      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49777213" weight="0.2688985" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.49840865" visible="true" weight="0.32181427" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5022279" side_tool="true" weight="0.22678186" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -1150,36 +1131,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/community/community_read.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3479">
-          <caret line="232" lean-forward="true" selection-start-line="232" selection-end-line="232" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#textarea#0;n#form#0;n#div#3;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#form#0;n#div#3;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#div#1;n#div#5;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#1;n#div#1;n#div#5;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#2;n#div#1;n#div#5;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#div#2;n#div#5;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#7;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#textarea#0;n#form#0;n#div#7;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#form#0;n#div#7;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#form#0;n#div#8;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#form#0;n#div#8;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#a#0;n#span#0;n#div#9;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#9;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#2;n#div#0;n#div#9;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#9;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#div#1;n#div#9;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#1;n#div#1;n#div#9;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#a#0;n#span#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#form#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#div#0;n#form#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/community/community_write_p.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="494">
@@ -1189,8 +1140,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/community/community.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="179" column="24" lean-forward="true" selection-start-line="179" selection-start-column="24" selection-end-line="179" selection-end-column="24" />
+        <state relative-caret-position="3249">
+          <caret line="171" column="24" lean-forward="true" selection-start-line="171" selection-start-column="24" selection-end-line="171" selection-end-column="24" />
           <folding>
             <element signature="n#style#0;n#h4#0;n#!!top" expanded="true" />
             <element signature="e#159#166#1" expanded="true" />
@@ -1211,6 +1162,16 @@
             <element signature="e#175#182#1" expanded="true" />
             <element signature="n#style#0;n#a#0;n#li#0;n#!!top" expanded="true" />
             <element signature="e#175#182#1" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/community/community_read.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="137" column="48" selection-start-line="137" selection-start-column="48" selection-end-line="137" selection-end-column="48" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
