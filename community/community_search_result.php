@@ -114,7 +114,7 @@
             $start_num = ($page - 1) * $list; //시작번호 (page-1)에서 $list를 곱한다.
             //        끝
 
-            $sql = mq("select * from community_tb where title like '%" . $_GET["search"] . "%' order by idx desc limit $start_num, $list");
+            $sql = mq("select * from community_tb where title or content like '%" . $_GET["search"] . "%' order by idx desc limit $start_num, $list");
 
             while ($board = $sql->fetch_array()) {
 
@@ -134,12 +134,13 @@
                    <a style="text-decoration: none" href="community_read.php?idx=' . $board["idx"] . '"><img src="' . $board["picture"] . '"/>';
                 echo '<h4 class="my_font_start" style="margin-top: 10px">' . $title . '</h4>';
                 echo '
+                    <p class=" my_font_main" style=" color: black; font-size: 10px; color: black;position: absolute; left: 10px; bottom: 0px">조회수 : ' . $board["hit"] . '</p>
                     <p class="float-right my_font_main" style=" color: black; font-size: 10px; color: black">작성자 : ' . $board["name"] . '</p>
                     <p class="my_font_main" style="color: black; font-size: 10px; position: absolute; margin-top: 20px; margin-left: 170px">' . $board["date"] . '</p>';
                 echo '</article>';
             }
 
-            $sql = mq("select * from community_tb where title like '%" . $_GET["search"] . "%' order by idx desc");
+            $sql = mq("select * from community_tb where title or content like '%" . $_GET["search"] . "%' order by idx desc");
 
             if ($sql->fetch_row() == 0) {
 
