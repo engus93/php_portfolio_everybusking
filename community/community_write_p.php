@@ -21,10 +21,13 @@ if ($o_name != "") {
 
 $sql = mq("insert into community_tb(name,pw,title,content,date,picture) values('" . $_SESSION['name'] . "','" . $_SESSION['user_id'] . "','" . $_POST['title'] . "','" . $_POST['content'] . "','" . $date . "','" . $path . "')");
 
+echo '<script>
+alert("글쓰기 완료되었습니다.");
+    location.href = "/community/community.php";
+</script>';
+
 ?>
 
-<script type="text/javascript">alert("글쓰기 완료되었습니다.");
-    location.href = 'community.php';
-</script>
+
 
 

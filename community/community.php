@@ -125,7 +125,7 @@
                 }
 
                 echo '<article class="white-panel">
-                   <a style="text-decoration: none" href="community_read.php?idx=' . $board["idx"] . '"><img src="' . $board["picture"] . '"/>';
+                   <a style="text-decoration: none" href="community_read.php?idx=' . $board["idx"] . '&page='.$page.'"><img src="' . $board["picture"] . '"/>';
                 echo '<h4 class="my_font_start" style="margin-top: 10px">' . $title . '</h4>';
                 echo '
                     <p class=" my_font_main" style=" color: black; font-size: 10px; color: black;position: absolute; left: 10px; bottom: 0px">조회수 : ' . $board["hit"] . '</p>
