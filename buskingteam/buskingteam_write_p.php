@@ -8,7 +8,7 @@ date_default_timezone_set("Asia/SEOUL");
 
 $date = date('Y-m-d H:i:s');
 
-if (isset($_FILES['b_file']['tmp_name'])) {
+if (!empty($_FILES['b_file']['tmp_name'])) {
     $tmpfile = $_FILES['b_file']['tmp_name'];
     $o_name = $_FILES['b_file']['name'];
     $folder = "../img/buskingteam/";
@@ -17,8 +17,9 @@ if (isset($_FILES['b_file']['tmp_name'])) {
 } else {
     $path = "../img/no_image.gif";
 }
+$sql = mq("insert into buskingteam_tb(name,date,team_profile) values('" . $_POST['team_name'] . "','" . $date . "','" . $path . "')");
 
-$sql = mq("insert into buskingteam_tb(name,date,team_profile) values('" . $_POST['team_name'] . "','" . $date . "','" . $path . "')"); ?>
+?>
 
 <script type="text/javascript">alert("등록이 완료되었습니다.");
     location.href = 'buskingteam.php';

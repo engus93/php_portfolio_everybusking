@@ -78,10 +78,11 @@ if (isset($_GET['team_name'])) {
     <div class="h-100" style="margin-bottom: 50px">
         <div class="d-flex h-100 justify-content-xl-end">
             <form action='/buskingteam/songlist_search_result.php' method="get" name="search_go">
-                <input type="hidden" name="idx" value="<?=$_GET['idx']?>">
-                <input type="hidden" name="team_name" value="<?=$_GET['team_name']?>">
+                <input type="hidden" name="idx" value="<?= $_GET['idx'] ?>">
+                <input type="hidden" name="team_name" value="<?= $_GET['team_name'] ?>">
                 <div class="searchbar">
-                    <input class="search_input" type="text" id="search_check" name="search" style="font-weight: bold" placeholder="Song Name">
+                    <input class="search_input" type="text" id="search_check" name="search" style="font-weight: bold"
+                           placeholder="Song Name">
                     <a type="submit" class="search_icon" onclick="search_search()"><i class="fas fa-search"></i></a>
                 </div>
             </form>
@@ -184,6 +185,28 @@ if (isset($_GET['team_name'])) {
     <?php
     if ($_SESSION != null) {
         if ($_SESSION['user_id'] == "rhksflwk") {
+
+            if (!empty($_GET['manager_page'])) {
+
+                ?>
+
+                <a href="/my_page/manager_busking_team.php?page=<?=$_GET['manager_page']?>" style="float: left">
+                    <button class="btn my_font_main" id="video_upload" style="background-color: #FBAA48; color: white;">
+                        매니저 페이지로 돌아가기
+                    </button>
+                </a>
+
+                <div style="margin-left: 1010px;">
+                    <a href="/buskingteam/songlist_write.php?idx=<?= $_GET['idx'] ?>&team_name=<?= $_GET['team_name'] ?>">
+                        <button class="btn my_font_main" id="video_upload" style="background-color: #FBAA48; color: white;">
+                            공연 영상 등록
+                        </button>
+                    </a>
+                </div>
+
+                <?php
+
+            }else{
             ?>
 
             <a href="/buskingteam/buskingteam.php" style="float: left">
@@ -201,6 +224,8 @@ if (isset($_GET['team_name'])) {
             </div>
 
             <?php
+            }
+
         }
     } else {
         ?>

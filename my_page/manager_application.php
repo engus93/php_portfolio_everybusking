@@ -93,6 +93,7 @@ if ($_SESSION == null) {
     <ol class="breadcrumb">
         <li class="breadcrumb-item">
             <a class="" href="my_page_modify.php" style="color: black">내 정보 수정</a>
+        </li>
             <?php
             if ($_SESSION["user_id"] != "rhksflwk"){
             ?>
@@ -133,7 +134,23 @@ if ($_SESSION == null) {
     </ol>
 
     <!-- Page Heading/Breadcrumbs -->
-    <h4 class="my_font_main" style="margin-top: 50px;">팀노바 님의 신청 내역</h4>
+    <h4 class="my_font_main" style="margin-top: 50px;">신청 내역</h4>
+
+    <ol class="breadcrumb" style="background-color: transparent">
+
+        <li class="breadcrumb-item">
+            <a href="manager_application.php" style="color: #fc3c3c">신청 내역</a>
+        </li>
+
+        <li class="breadcrumb-item">
+            <a href="manager_application_processing.php" style="color: black">처리 내역</a>
+        </li>
+
+        <li class="breadcrumb-item">
+            <a href="manager_application_yet.php" style="color: black">미처리 내역</a>
+        </li>
+
+    </ol>
 
     <div style="position: relative;margin-left:45px; margin-top: 50px">
         <!-- /.container -->
@@ -161,7 +178,7 @@ if ($_SESSION == null) {
             } else {
                 $page = 1;
             }
-            $sql = mq("select * from application_tb ");
+            $sql = mq("select * from application_tb");
             $row_num = mysqli_num_rows($sql); //게시판 총 레코드 수
             $list = 10; //한 페이지에 보여줄 개수
             $block_ct = 5; //블록당 보여줄 페이지 개수
@@ -176,7 +193,7 @@ if ($_SESSION == null) {
             $start_num = ($page - 1) * $list; //시작번호 (page-1)에서 $list를 곱한다.
 
             //        끝
-            $sql = mq("select COUNT(*) from application_tb ");
+            $sql = mq("select COUNT(*) from application_tb");
 
             $num = mysqli_fetch_array($sql);
 
@@ -206,7 +223,7 @@ if ($_SESSION == null) {
                                 <input type="hidden" name="whether" value="승락">
                                 <input type="hidden" name="idx" value="<?=$board['idx']?>">
                                 <input type="hidden" name="page" value="<?=$page?>">
-                                <button type="submit" class="btn hover_class" style="font-size: 12px; padding: 3px 7px 3px 7px">
+                                <button type="submit" id="support_hover" class="btn hover_class" style="font-size: 12px; padding: 3px 7px 3px 7px">
                                     승락
                                 </button>
                             </form>
@@ -215,7 +232,7 @@ if ($_SESSION == null) {
                                 <input type="hidden" name="whether" value="거절">
                                 <input type="hidden" name="idx" value="<?=$board['idx']?>">
                                 <input type="hidden" name="page" value="<?=$page?>">
-                                <button class="btn re_hover_class" style="font-size: 12px; padding: 3px 7px 3px 7px">
+                                <button class="btn hover_class" id="support_hover" style="font-size: 12px; padding: 3px 7px 3px 7px">
                                     거절
                                 </button>
                             </form>

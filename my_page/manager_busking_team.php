@@ -34,218 +34,28 @@ if ($_SESSION == null) {
 
     <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 
-    <script>
-
-        var pass_chaeck = true;
-        var pass_re_chaeck = true;
-        var phone_chaeck = true;
-        var e_mail_chaeck = true;
-
-        function cencel() {
-
-            alert("취소 되었습니다.");
-
-            location.href = "/my_page/my_page_modify.php";
-
-        }
-
-        function search_add() {
-            new daum.Postcode({
-                oncomplete: function (data) {
-                    // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분입니다.
-                    // 예제를 참고하여 다양한 활용법을 확인해 보세요.
-
-                    document.getElementById('post').value = data.zonecode;
-                    document.getElementById('addr').value = data.roadAddress;
-
-                    window.close();
-
-                }
-            }).open();
-        }
-
-        //비밀번호 체크
-        $(document).ready(function (e) {
-
-            var user_pwd;
-
-            // 비밀번호 조합(영문, 숫자) 및 길이 체크 정규식
-            var regExpPassword = /^(?=.*[a-zA-Z])(?=.*[0-9]).{6,16}$/;
-
-            $(".pass_check").on("keyup", function () {
-
-                user_pwd = document.getElementById("password").value;
-
-                if (user_pwd.length == 0) {
-                    $(this).parent().parent().find("#password").css("background-color", "#FFFFFF");
-                    pass_chaeck = false;
-                } else if (!regExpPassword.test(user_pwd)) {
-                    $(this).parent().parent().find("#password").css("background-color", "#fc3c3c");
-                    pass_chaeck = false;
-                } else if (regExpPassword.test(user_pwd)) {
-                    $(this).parent().parent().find("#password").css("background-color", "#FFB863");
-                    pass_chaeck = true;
-                }
-
-                sign_up_check();
-
-            });
-
-        });
-
-        //비밀번호 확인
-        $(document).ready(function (e) {
-
-            $(".pass_re_check").on("keyup", function () {
-
-                // 비밀번호 조합(영문, 숫자) 및 길이 체크 정규식
-                var regExpPassword = /^(?=.*[a-zA-Z])(?=.*[0-9]).{6,16}$/;
-
-                var user_pwd = document.getElementById("password").value;
-                var user_pwd_re = document.getElementById("password_re").value;
-
-                if (user_pwd_re.length == 0) {
-                    $(this).parent().parent().find("#password_re").css("background-color", "#FFFFFF");
-                    pass_re_chaeck = false;
-                } else if (user_pwd != user_pwd_re || !regExpPassword.test(user_pwd_re)) {
-                    $(this).parent().parent().find("#password_re").css("background-color", "#fc3c3c");
-                    pass_re_chaeck = false;
-                } else if (user_pwd == user_pwd_re && regExpPassword.test(user_pwd_re)) {
-                    $(this).parent().parent().find("#password_re").css("background-color", "#FFB863");
-                    pass_re_chaeck = true;
-                }
-
-                sign_up_check();
-
-            });
-
-        });
-
-        //전화번호
-        $(document).ready(function (e) {
-
-            // 휴대폰번호 정규식
-            var regExpMobile = /^01([016789]?)-?([0-9]{3,4})-?([0-9]{4})$/;
-
-            $(".user_phone").on("keyup", function () {
-
-                var user_phone = document.getElementById("phone").value;
-
-                if (user_phone.length == 0) {
-                    $(this).parent().parent().find("#phone").css("background-color", "#FFFFFF");
-                    phone_chaeck = false;
-                } else if (user_phone.length < 11 || !regExpMobile.test(user_phone)) {
-                    $(this).parent().parent().find("#phone").css("background-color", "#fc3c3c");
-                    phone_chaeck = false;
-                } else if (regExpMobile.test(user_phone) && user_phone.length == 11) {
-                    $(this).parent().parent().find("#phone").css("background-color", "#FFB863");
-                    phone_chaeck = true;
-                }
-
-                sign_up_check();
-
-            });
-
-        });
-
-        //이메일
-        $(document).ready(function (e) {
-
-            //이름 한글
-            var regExp = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*\.[a-zA-Z]{3}$/i;
-
-            $(".user_e_mail").on("keyup", function () {
-
-                var user_mail = document.getElementById("e_mail").value;
-
-                if (user_mail.length == 0) {
-                    $(this).parent().parent().find("#e_mail").css("background-color", "#FFFFFF");
-                    e_mail_chaeck = false;
-                } else if (!regExp.test(user_mail)) {
-                    $(this).parent().parent().find("#e_mail").css("background-color", "#fc3c3c");
-                    e_mail_chaeck = false;
-                } else if (regExp.test(user_mail)) {
-                    $(this).parent().parent().find("#e_mail").css("background-color", "#FFB863");
-                    e_mail_chaeck = true;
-                }
-
-                sign_up_check();
-
-            });
-
-        });
-
-        //성별
-        function sex_check() {
-
-            var st = $(":input:radio[name=sex]:checked").val();
-
-            if (st == "Male" || st == "Female") {
-                sex_chaeck = true;
-            } else {
-                sex_chaeck = false;
-            }
-
-            sign_up_check();
-
-        }
-
-        //수정 버튼 활성화
-        function sign_up_check() {
-            if (pass_chaeck && pass_re_chaeck && phone_chaeck && e_mail_chaeck) {
-                $("#sign_up_button").prop("disabled", false);
-            } else {
-                $("#sign_up_button").prop("disabled", true);
-            }
-
-        }
-
-        $("#sign_up_button").prop("disabled", true);
-
-    </script>
-
-    <script>
-
-        var sel_file;
-
-        $(document).ready(function () {
-            $("#input_img").on("change", handleImgFileSelect);
-        });
-
-        function handleImgFileSelect(e) {
-            var files = e.target.files;
-            var filesArr = Array.prototype.slice.call(files);
-
-            filesArr.forEach(function (f) {
-                if (!f.type.match("image.*")) {
-                    alert("확장자는 이미지 확장자만 가능합니다.");
-                    return;
-                }
-
-                sel_file = f;
-
-                var reader = new FileReader();
-                reader.onload = function (e) {
-                    $("#img").attr("src", e.target.result);
-                }
-                reader.readAsDataURL(f);
-            });
-        }
-
-    </script>
-
     <style>
+        .list-table {
+            margin-top: 40px;
+        }
 
-        .img_wrap {
-            width: 500px;
-            height: 400px;
+        .list-table thead th {
+            height: 40px;
+            border-top: 2px solid #FBAA48;
+            border-bottom: 1px solid #CCC;
+            font-weight: bold;
+            font-size: 17px;
             text-align: center;
         }
 
-        .img_wrap img {
-            width: 400px;
-            height: 400px;
+        .list-table tbody td {
+            text-align: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #CCC;
+            height: 20px;
+            font-size: 14px
         }
+
 
     </style>
 
@@ -284,7 +94,7 @@ if ($_SESSION == null) {
         <li class="breadcrumb-item">
             <a class="" href="my_page_modify.php" style="color: black">내 정보 수정</a>
             <?php
-            if ($_SESSION["user_id"]  != "rhksflwk"){
+            if ($_SESSION["user_id"] != "rhksflwk"){
             ?>
         <li class="breadcrumb-item">
             <a href="my_page_application.php" style="color: black">신청 내역 보기</a>
@@ -321,8 +131,248 @@ if ($_SESSION == null) {
         ?>
     </ol>
 
+    <!-- Page Heading/Breadcrumbs -->
+    <h4 class="my_font_main" style="margin-top: 50px;">버스킹 팀</h4>
 
-    </article>
+    <div style="position: relative;margin-left:45px; margin-top: 50px">
+        <!-- /.container -->
+        <table class="list-table">
+
+            <thead>
+            <tr>
+                <th width="100">번호</th>
+                <th width="400">버스킹 팀</th>
+                <th width="150">공연 영상</th>
+                <th width="150">등록일</th>
+                <th width="250">관리</th>
+            </tr>
+            </thead>
+
+            <tbody>
+
+            <?php
+            require_once "../db.php";
+
+            //        페이징
+            if (isset($_GET['page'])) {
+                $page = $_GET['page'];
+            } else {
+                $page = 1;
+            }
+            $sql = mq("select * from buskingteam_tb");
+            $row_num = mysqli_num_rows($sql); //게시판 총 레코드 수
+            $list = 10; //한 페이지에 보여줄 개수
+            $block_ct = 5; //블록당 보여줄 페이지 개수
+
+            $block_num = ceil($page / $block_ct); // 현재 페이지 블록 구하기
+            $block_start = (($block_num - 1) * $block_ct) + 1; // 블록의 시작번호
+            $block_end = $block_start + $block_ct - 1; //블록 마지막 번호
+
+            $total_page = ceil($row_num / $list); // 페이징한 페이지 수 구하기
+            if ($block_end > $total_page) $block_end = $total_page; //만약 블록의 마지박 번호가 페이지수보다 많다면 마지박번호는 페이지 수
+            $total_block = ceil($total_page / $block_ct); //블럭 총 개수
+            $start_num = ($page - 1) * $list; //시작번호 (page-1)에서 $list를 곱한다.
+
+            //        끝
+
+            $sql = mq("select COUNT(*) from buskingteam_tb");
+
+            $num = mysqli_fetch_array($sql);
+
+            $num = ($num[0] + 1) - ($page - 1) * $list;
+
+            $sql = mq("select * from buskingteam_tb order by date desc limit $start_num, $list");
+
+            while ($board = $sql->fetch_array()) {
+
+            $num = $num - 1;
+
+            $sql_re = mq("select COUNT(*) from songlist_tb where team_name = '".$board['name']."'");
+
+            $songlist = mysqli_fetch_array($sql_re);
+
+            ?>
+
+            <tr>
+                <td width=100"><?= $num ?></td>
+                <td width="400"><?= $board['name'] ?></a></td>
+                <td width="150"><?=$songlist[0]?>개</a></td>
+                <td width="150"><?= $board['date'] ?></td>
+                <td width="250">
+                    <form style="display: inline" method="get" action="/buskingteam/songlist.php">
+                        <input type="hidden" name="team_name" value="<?= $board['name'] ?>">
+                        <input type="hidden" name="idx" value="<?= $board['idx'] ?>">
+                        <input type="hidden" name="manager_page" value="<?= $page ?>">
+                        <button type="submit" id="support_hover" class="btn hover_class"
+                                style="font-size: 12px; padding: 3px 7px 3px 7px">
+                            공연 영상 관리
+                        </button>
+                    </form>
+                    <form style="display: inline" method="get" action="/buskingteam/buskingteam_write.php">
+                        <input type="hidden" name="idx" value="<?= $board['idx'] ?>">
+                        <input type="hidden" name="manager_page" value="<?= $page ?>">
+                        <button type="submit" id="support_hover" class="btn hover_class"
+                                style="font-size: 12px; padding: 3px 7px 3px 7px">
+                            수정
+                        </button>
+                    </form>
+                    <form style="display: inline" method="get" action="/buskingteam/buskingteam_delete_p.php">
+                        <input type="hidden" name="idx" value="<?= $board['idx'] ?>">
+                        <input type="hidden" name="manager_page" value="<?= $page ?>">
+                        <button type="submit" id="support_hover" class="btn hover_class"
+                                style="font-size: 12px; padding: 3px 7px 3px 7px">
+                            삭제
+                        </button>
+                    </form>
+                </td>
+
+                <?php
+                }
+                ?>
+
+            </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+    <div id="page_num" style="padding-bottom: 50px;">
+        <ul class="pagination justify-content-center" style="margin-top: 20px;">
+            <?php
+
+            //이전 블록
+            if ($page <= 1) {
+                echo "<li class='page-item'>
+                    <a class='page-link' aria-label='Previous' onclick='start_page()'>
+                        <span aria-hidden='true'>&laquo;</span>
+                        <span class='sr-only'>Previous</span>                    
+                    </a>
+                   </li>";
+            } else if ($page - 5 <= 0) { //만약 page가 1보다 크거나 같다면 빈값
+                echo "<li class='page-item'>
+                    <a class='page-link' href='?page=1' aria-label='Previous' style='color: black'>
+                        <span aria-hidden='true'>&laquo;</span>
+                        <span class='sr-only'>Previous</span>                    
+                    </a>
+                   </li>";
+            } else {
+                $pre = floor(($page - 1) / $block_ct) * $block_ct;
+                echo "<li class='page-item'>
+                    <a class='page-link' href='?page=$pre' aria-label='Previous' style='color: black'>
+                        <span aria-hidden='true'>&laquo;</span>
+                        <span class='sr-only'>Previous</span>                    
+                    </a>
+                   </li>";
+            }
+
+            //이전
+            if ($page <= 1) { //만약 page가 1보다 크거나 같다면 빈값
+                echo "<li class='page-item'>
+                    <a class='page-link' aria-label='Previous' onclick='start_page()'>
+                        <span aria-hidden='true'>&lsaquo;</span>
+                        <span class='sr-only'>Previous</span>                    
+                    </a>
+                   </li>";
+            } else {
+                $pre = $page - 1; //pre변수에 page-1을 해준다 만약 현재 페이지가 3인데 이전버튼을 누르면 2번페이지로 갈 수 있게 함
+                echo "<li class='page-item'>
+                    <a class='page-link' href='?page=$pre' aria-label='Previous' style='color: black'>
+                        <span aria-hidden='true'>&lsaquo;</span>
+                        <span class='sr-only'>Previous</span>                    
+                    </a>
+                   </li>";
+            }
+
+            //숫자 표시
+            for ($i = $block_start; $i <= $block_end; $i++) {
+                //for문 반복문을 사용하여, 초기값을 블록의 시작번호를 조건으로 블록시작번호가 마지박블록보다 작거나 같을 때까지 $i를 반복시킨다
+                if ($page == $i) { //만약 page가 $i와 같다면
+                    echo "<li class='page-item'><a class='page-link' href='?page=$i'
+                style='color: #FBAA48; font-weight: bold;'>$i</a></li>"; //현재 페이지에 해당하는 번호에 굵은 빨간색을 적용한다
+                } else {
+                    echo "<li class='page-item'><a class='page-link' href='?page=$i' style='color: black'>$i</a></li>";
+                }
+            }
+
+            //다음
+            if ($block_num >= $total_block) { //만약 현재 블록이 블록 총개수보다 크거나 같다면 빈 값
+
+                if ($page >= $total_page) { //만약 page가 페이지수보다 크거나 같다면
+
+                    echo "<li class='page-item'>
+                        <a class='page-link' aria-label='Next' onclick='last_page()'>
+                            <span aria-hidden='true'>&rsaquo;</span>
+                            <span class='sr-only'>Next</span>
+                        </a>
+                       </li>";
+
+                } else {
+
+                    $next = $page + 1; //next변수에 page + 1을 해준다.
+                    echo "<li class='page-item'>
+                    <a class='page-link' href='?page=$next' aria-label='Next' style='color: black'>
+                        <span aria-hidden='true'>&rsaquo;</span>
+                        <span class='sr-only'>Next</span>                    
+                    </a>
+                   </li>";
+
+                }
+            } else {
+                $next = $page + 1; //next변수에 page + 1을 해준다.
+                echo "<li class='page-item'>
+                    <a class='page-link' href='?page=$next' aria-label='Next' style='color: black'>
+                        <span aria-hidden='true'>&rsaquo;</span>
+                        <span class='sr-only'>Next</span>                    
+                    </a>
+                   </li>";
+            }
+
+            //다음 블록
+            if ($block_num >= $total_block) { //만약 현재 블록이 블록 총개수보다 크거나 같다면 빈 값
+
+                if ($page >= $total_page) { //만약 page가 페이지수보다 크거나 같다면
+
+                    echo "<li class='page-item'>
+                        <a class='page-link' aria-label='Next' onclick='last_page()'>
+                            <span aria-hidden='true'>&raquo;</span>
+                            <span class='sr-only'>Next</span>
+                        </a>
+                       </li>";
+
+                } else if ($page + 5 >= $total_page) { //만약 page가 페이지수보다 크거나 같다면
+
+                    echo "<li class='page-item'>
+                    <a class='page-link' href='?page=$total_page' aria-label='Next' style='color: black'>
+                            <span aria-hidden='true'>&raquo;</span>
+                            <span class='sr-only'>Next</span>
+                        </a>
+                       </li>";
+
+                } else {
+
+                    $next = ceil($page / $block_ct) * $block_ct + 1; //next변수에 page + 1을 해준다.
+                    echo "<li class='page-item'>
+                    <a class='page-link' href='?page=$next' aria-label='Next' style='color: black'>
+                        <span aria-hidden='true'>&raquo;</span>
+                        <span class='sr-only'>Next</span>                    
+                    </a>
+                   </li>";
+
+                }
+            } else {
+                $next = ceil($page / $block_ct) * $block_ct + 1; //next변수에 page + 1을 해준다.
+                echo "<li class='page-item'>
+                    <a class='page-link' href='?page=$next' aria-label='Next' style='color: black'>
+                        <span aria-hidden='true'>&raquo;</span>
+                        <span class='sr-only'>Next</span>                    
+                    </a>
+                   </li>";
+            }
+            ?>
+        </ul>
+    </div>
 
 
 </div>

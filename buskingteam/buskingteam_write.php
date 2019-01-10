@@ -26,7 +26,7 @@ if (isset($_GET['idx'])) {
         $sql = mq("select * from buskingteam_tb where idx='$bno';");
         $board = $sql->fetch_array();
 
-    }else{
+    } else {
         echo '<script type="text/javascript">alert("관리자의 권한이 필요합니다.");
            history.back();
            </script>';
@@ -60,7 +60,7 @@ if (isset($_GET['idx'])) {
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <style>
-        .menu_buskingteam{
+        .menu_buskingteam {
             color: #FBAA48 !important;
         }
 
@@ -68,6 +68,7 @@ if (isset($_GET['idx'])) {
             width: 300px;
             margin-top: 50px;
         }
+
         .img_wrap img {
             width: 540px;
             height: 350px;
@@ -79,7 +80,7 @@ if (isset($_GET['idx'])) {
 
         var sel_file;
 
-        $(document).ready(function() {
+        $(document).ready(function () {
             $("#input_img").on("change", handleImgFileSelect);
         });
 
@@ -87,8 +88,8 @@ if (isset($_GET['idx'])) {
             var files = e.target.files;
             var filesArr = Array.prototype.slice.call(files);
 
-            filesArr.forEach(function(f) {
-                if(!f.type.match("image.*")) {
+            filesArr.forEach(function (f) {
+                if (!f.type.match("image.*")) {
                     alert("확장자는 이미지 확장자만 가능합니다.");
                     return;
                 }
@@ -96,7 +97,7 @@ if (isset($_GET['idx'])) {
                 sel_file = f;
 
                 var reader = new FileReader();
-                reader.onload = function(e) {
+                reader.onload = function (e) {
                     $("#img").attr("src", e.target.result);
                 }
                 reader.readAsDataURL(f);
@@ -119,33 +120,47 @@ if (isset($_GET['idx'])) {
 
     <h6 class="my_font_main">※ 깨끗한 인터넷 문화를 만들어갑시다. :)</h6>
 
-        <?php
+    <?php
 
     if (isset($board)) {
-        echo '
-        <form action="buskingteam_update_p.php/' . $board['idx'] . '" method="post" enctype="multipart/form-data">
-            
-            <input type="hidden" name="idx" value="' . $board['idx'] . '" />
-            <input type="hidden" name="page" value="' . $_GET['page'] . '" />
-            <input type="hidden" name="team_profile" value="' . $board['team_profile'] . '" />
-            
+        ?>
+        <form action="buskingteam_update_p.php/<?= $board['idx'] ?>" method="post" enctype="multipart/form-data">
+
+            <input type="hidden" name="idx" value="<?= $board['idx'] ?>"/>
+            <?php
+            if (!empty($_GET['page'])) {
+                ?>
+                <input type="hidden" name="page" value="<?= $_GET['page'] ?>"/>
+                <?php
+            } else {
+                ?>
+
+                <input type="hidden" name="manager_page" value="<?= $_GET['manager_page'] ?>"/>
+
+                <?php
+            }
+            ?>
+            <input type="hidden" name="team_profile" value="<?= $board['team_profile'] ?>"/>
+
             <div class="img_wrap" style="margin-left: 285px">
-                <img id="img" src="'.$board['team_profile'].'"/>
+                <img id="img" src="<?= $board['team_profile'] ?>"/>
             </div>
-                
+
             <div id="in_title" class="center">
-                <textarea name="team_name" id="utitle" rows="1" cols="55" placeholder="가수 이름" maxlength="20" required>' . $board['name'] . '</textarea>
+                <textarea name="team_name" id="utitle" rows="1" cols="55" placeholder="가수 이름" maxlength="20"
+                          required><?= $board['name'] ?></textarea>
             </div>
-            
+
             <div id="in_file" class="my_font_main" style="margin-left: 104px; margin-top: 20px">
-                <input type="file" id="input_img" value="1" name="b_file" />
+                <input type="file" id="input_img" value="1" name="b_file"/>
             </div>
-        
+
             <div class="center" style="margin-top: 50px">
                 <button class="btn" type="submit">수정하기</button>
             </div>
-        </form>';
+        </form>
 
+        <?php
     } else {
         echo '
         <form action="buskingteam_write_p.php" method="post" enctype="multipart/form-data">
@@ -169,7 +184,7 @@ if (isset($_GET['idx'])) {
     ';
         ?>
 
-    <?php
+        <?php
 
     }
 
