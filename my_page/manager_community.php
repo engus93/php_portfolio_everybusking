@@ -141,9 +141,10 @@ if ($_SESSION == null) {
 
             <thead>
             <tr>
-                <th width="100">번호</th>
-                <th width="150">제목</th>
+                <th width="80">번호</th>
+                <th width="120">제목</th>
                 <th width="450">내용</th>
+                <th width="50">조회수</th>
                 <th width="100">작성자</th>
                 <th width="150">등록일</th>
                 <th width="200">관리</th>
@@ -189,12 +190,25 @@ if ($_SESSION == null) {
 
             $num = $num - 1;
 
+            $title = $board["title"];
+            $content = $board["content"];
+
+            //한글이랑 영어랑 용량이 다름 일단 넘김
+            if (strlen($board["title"]) > 25) {
+                $title = str_replace($board["title"], iconv_substr($board["title"], 0, 10, "utf-8") . "...", $board["title"]);
+            }
+
+            if (strlen($content) > 40) {
+                $content = str_replace($content, iconv_substr($board["content"], 0, 30, "utf-8") . "...", $board["content"]);
+            }
+
             ?>
 
             <tr>
-                <td width=100"><?= $num ?></td>
-                <td width="150"><?= $board['title'] ?></a></td>
-                <td width="450"><?=$board['content']?></a></td>
+                <td width=80"><?= $num ?></td>
+                <td width="120"><?= $title ?></a></td>
+                <td width="450"><?=$content?></a></td>
+                <td width="50"><?= $board['hit'] ?></a></td>
                 <td width="100"><?= $board['name'] ?></a></td>
                 <td width="150"><?= $board['date'] ?></td>
                 <td width="200">

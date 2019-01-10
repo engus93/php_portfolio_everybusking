@@ -26,7 +26,7 @@ if (isset($_GET['idx'])) {
         $sql = mq("select * from community_tb where idx='$bno';");
         $board = $sql->fetch_array();
 
-    }else{
+    } else {
         echo '<script type="text/javascript">alert("자신의 게시물만 수정이 가능합니다.");
            location.href = "/community/community_read.php?idx=' . $bno . '";
            </script>';
@@ -62,7 +62,7 @@ if (isset($_GET['idx'])) {
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <style>
-        .menu_community{
+        .menu_community {
             color: #FBAA48 !important;
         }
 
@@ -72,6 +72,7 @@ if (isset($_GET['idx'])) {
             margin-top: 50px;
             margin-left: 305px;
         }
+
         .img_wrap img {
             width: auto;
             height: 100%;
@@ -83,7 +84,7 @@ if (isset($_GET['idx'])) {
 
         var sel_file;
 
-        $(document).ready(function() {
+        $(document).ready(function () {
             $("#input_img").on("change", handleImgFileSelect);
         });
 
@@ -91,8 +92,8 @@ if (isset($_GET['idx'])) {
             var files = e.target.files;
             var filesArr = Array.prototype.slice.call(files);
 
-            filesArr.forEach(function(f) {
-                if(!f.type.match("image.*")) {
+            filesArr.forEach(function (f) {
+                if (!f.type.match("image.*")) {
                     alert("확장자는 이미지 확장자만 가능합니다.");
                     return;
                 }
@@ -100,7 +101,7 @@ if (isset($_GET['idx'])) {
                 sel_file = f;
 
                 var reader = new FileReader();
-                reader.onload = function(e) {
+                reader.onload = function (e) {
                     $("#img").attr("src", e.target.result);
                 }
                 reader.readAsDataURL(f);
@@ -123,34 +124,51 @@ if (isset($_GET['idx'])) {
 
     <h6 class="my_font_main">※ 깨끗한 인터넷 문화를 만들어갑시다. :)</h6>
 
-        <?php
+    <?php
 
     if (isset($board)) {
         ?>
-        <form action="community_update_p.php/<?=$board['idx']?>" method="post" enctype="multipart/form-data">
-        <input type="hidden" name="idx" value="<?=$board["idx"]?>" />
-        <input type="hidden" name="picture" value="<?=$board["picture"]?>">
-        
-        <div class="img_wrap center">
-            <img id="img" src="<?=$board['picture']?>"/>
-        </div>
-        
-        <div id="in_title" class="center">
-                <textarea name="title" id="utitle" rows="1" cols="55" placeholder="제목" maxlength="20" required><?=$board['title']?></textarea>
-        </div>
-        <div id="in_content" class="center">
-            <textarea name="content" id="ucontent" placeholder="내용" required><?=$board['content']?></textarea>
-        </div>
-        
-        <div id="in_file" class="my_font_main" style="margin-left: 104px; margin-top: 20px">
-            <input type="file" id="input_img" value="1" name="b_file" />
-        </div>
-        
-        <div class="center" style="margin-top: 50px">
-            <button class="btn" type="submit">글 수정</button>
-        </div>
-    </form>
-    <?php
+        <form action="community_update_p.php/<?= $board['idx'] ?>" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="idx" value="<?= $board["idx"] ?>"/>
+            <input type="hidden" name="picture" value="<?= $board["picture"] ?>">
+
+            <?php
+            if (!empty($_GET['manager_page'])) {
+                ?>
+                <input type="hidden" name="manager_page" value="<?= $_GET['manager_page'] ?>">
+
+                <?php
+            } else {
+                ?>
+
+                <input type="hidden" name="page" value="<?= $_GET['page'] ?>">
+
+                <?php
+            }
+            ?>
+
+
+            <div class="img_wrap center">
+                <img id="img" src="<?= $board['picture'] ?>"/>
+            </div>
+
+            <div id="in_title" class="center">
+                <textarea name="title" id="utitle" rows="1" cols="55" placeholder="제목" maxlength="20"
+                          required><?= $board['title'] ?></textarea>
+            </div>
+            <div id="in_content" class="center">
+                <textarea name="content" id="ucontent" placeholder="내용" required><?= $board['content'] ?></textarea>
+            </div>
+
+            <div id="in_file" class="my_font_main" style="margin-left: 104px; margin-top: 20px">
+                <input type="file" id="input_img" value="1" name="b_file"/>
+            </div>
+
+            <div class="center" style="margin-top: 50px">
+                <button class="btn" type="submit">글 수정</button>
+            </div>
+        </form>
+        <?php
     } else {
         echo '<form action="community_write_p.php" method="post" enctype="multipart/form-data">
 

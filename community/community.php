@@ -140,7 +140,7 @@
 
         <div style="position: relative">
             <div id="write_btn" style="position:absolute; right: 0px; bottom: 0px; width: 70px;">
-                <a href="/community/community_write.php" id="search_tag">
+                <a href="/community/community_write.php?page=<?=$page?>" id="search_tag">
                     <button class="btn my_font_main" id="wright" style="background-color: #FBAA48; color: white;">글쓰기
                     </button>
                 </a>
