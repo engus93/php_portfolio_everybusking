@@ -124,6 +124,7 @@ if ($_SESSION != null) {
                         $(".reply_content").val('');
                     }
                 });
+
             });
 
         });

@@ -16,16 +16,33 @@
 
 }
 
+.hover_class{
+    background-color: #FBAA48 !important;
+    color: white !important;
+}
+
+.re_hover_class{
+    background-color: transparent !important;
+    color: #FBAA48 !important;
+    border: #FBAA48 1px solid !important;
+}
+
 #support_hover:hover{
     background-color: transparent !important;
     color: #FBAA48 !important;
-    border: #FBAA48 2px solid;
+    border: #FBAA48 1px solid !important;
+}
+
+#re_support_hover:hover{
+    background-color: #FBAA48 !important;
+    color: white !important;
+    border: white 1px solid !important;
 }
 
 #video_upload:hover{
     background-color: transparent !important;
     color: #FBAA48 !important;
-    border: #FBAA48 2px solid;
+    border: #FBAA48 1px solid;
 }
 
 .circle_image{
