@@ -52,23 +52,63 @@ session_start();
     <h6 class="my_font_main">※ 각 콘서트는 5사무실에서 진행됩니다.</h6>
 
     <div class="row my_font_main" style="margin-top: 50px; margin-bottom: 10px">
-        <div class="col-lg-4 mb-4" onclick="location.href='concert_information.php'">
-            <div class="card h-100 text-center">
-                <img class="card-img-top concert_poster" src="../img/concert/곽진언.jpg" alt="">
-                <div class="card-body">
-                    <h4 class="card-title my_font_start">곽진언</h4>
-                    <div class="progress">
-                        <div class="progress-bar" role="progressbar" style="background-color: #FBAA48; width: 50%"
-                             aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                    <div style="font-size: 15px; margin-top: 20px">
-                        <span style="position: absolute; left: 10%">50%</span>
-                        <span>1,500,000원 달성</span>
-                        <span style="position: absolute; right: 10%">7일 남음</span>
+
+
+        <?php
+        require_once "../db.php";
+
+        //        페이징
+        if (isset($_GET['page'])) {
+            $page = $_GET['page'];
+        } else {
+            $page = 1;
+        }
+        $sql = mq("select * from concert_tb");
+        $row_num = mysqli_num_rows($sql); //게시판 총 레코드 수
+        $list = 6; //한 페이지에 보여줄 개수
+        $block_ct = 5; //블록당 보여줄 페이지 개수
+
+        $block_num = ceil($page / $block_ct); // 현재 페이지 블록 구하기
+        $block_start = (($block_num - 1) * $block_ct) + 1; // 블록의 시작번호
+        $block_end = $block_start + $block_ct - 1; //블록 마지막 번호
+
+        $total_page = ceil($row_num / $list); // 페이징한 페이지 수 구하기
+        if ($block_end > $total_page) $block_end = $total_page; //만약 블록의 마지박 번호가 페이지수보다 많다면 마지박번호는 페이지 수
+        $total_block = ceil($total_page / $block_ct); //블럭 총 개수
+        $start_num = ($page - 1) * $list; //시작번호 (page-1)에서 $list를 곱한다.
+
+        $sql = mq("select * from concert_tb order by idx desc limit $start_num, $list");
+
+        //        끝
+
+        while ($board = $sql->fetch_array()) {
+
+            ?>
+
+            <div class="col-lg-4 mb-4" onclick="location.href='concert_information.php'">
+                <div class="card h-100 text-center">
+                    <img class="card-img-top concert_poster" src="<?=$board['picture']?>">
+                    <div class="card-body">
+                        <h4 class="card-title my_font_start"><?=$board['name']?></h4>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="background-color: #FBAA48; width: 50%"
+                                 aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <div style="font-size: 15px; margin-top: 20px">
+                            <span style="position: absolute; left: 10%">50%</span>
+                            <span>1,500,000원 달성</span>
+                            <span style="position: absolute; right: 10%">7일 남음</span>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+
+            <?php
+
+        }
+
+        ?>
+
 
     </div>
 
@@ -78,7 +118,7 @@ session_start();
             ?>
 
             <div style="margin-left: 1010px; padding-bottom: 50px">
-                <a href="/buskingteam/buskingteam_write.php">
+                <a href="/concert/concert_write.php">
                     <button class="btn my_font_main" id="video_upload" style="background-color: #FBAA48; color: white;">
                         버스킹 팀 등록
                     </button>

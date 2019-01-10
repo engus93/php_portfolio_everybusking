@@ -114,8 +114,6 @@
 
                     $sql = mq("select * from songlist_tb where team_name = '곽진언' order by rand() limit 4;");
 
-                    //페이징 끝
-
                     while ($board = $sql->fetch_array()) {
 
                         ?>

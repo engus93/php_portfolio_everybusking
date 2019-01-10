@@ -38,7 +38,7 @@ session_start();
                 </li>
                 <li class="nav-item">
                     <a class="nav-link menu_concert" href="/concert/concert.php" title="Comment"><i
-                                class="fas fa-compact-disc side_bar_img"></i>Concert<i
+                                class="fas fa-compact-disc side_bar_img"></i>Cloud Concert<i
                                 class="fas fa-comment shortmenu animate"></i></a>
                 </li>
             </ul>
