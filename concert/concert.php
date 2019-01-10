@@ -81,7 +81,7 @@ session_start();
         $total_block = ceil($total_page / $block_ct); //블럭 총 개수
         $start_num = ($page - 1) * $list; //시작번호 (page-1)에서 $list를 곱한다.
 
-        $sql = mq("select * from concert_tb order by concert_date desc limit $start_num, $list");
+        $sql = mq("select * from concert_tb order by concert_date asc limit $start_num, $list");
 
         //        끝
 
@@ -89,8 +89,12 @@ session_start();
 
             ?>
 
+
+
             <div class="col-lg-4 mb-4" onclick="location.href='concert_information.php'">
                 <div class="card h-100 text-center">
+                    <input type="hidden" id="date<?=$board['concert_date']?>" value="<?=$board['concert_date']?>">
+                    <input type="hidden" id="today_date" value="<?=$today_date?>">
                     <img class="card-img-top concert_poster" src="<?=$board['picture']?>">
                     <div class="card-body">
                         <h4 class="card-title my_font_start"><?=$board['name']?></h4>
@@ -101,11 +105,31 @@ session_start();
                         <div style="font-size: 15px; margin-top: 20px">
                             <span style="position: absolute; left: 10%">10%</span>
                             <span>1,500,000원 달성</span>
-                            <span style="position: absolute; right: 10%">일 남음</span>
+                            <span class="color_point" id="day_day<?=$board['idx']?>" style="position: absolute; right: 10%">일 남음</span>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <script type="text/javascript">
+
+                var sdd = document.getElementById("today_date").value;
+                var edd = document.getElementById("date<?=$board['concert_date']?>").value;
+                var ar1 = sdd.split('-');
+                var ar2 = edd.split('-');
+                var da1 = new Date(ar1[0], ar1[1], ar1[2]);
+                var da2 = new Date(ar2[0], ar2[1], ar2[2]);
+                var dif = da2 - da1;
+                var cDay = 24 * 60 * 60 * 1000;// 시 * 분 * 초 * 밀리세컨
+
+                if(parseInt(dif / cDay) <= 0){
+                    document.getElementById('day_day<?=$board['idx']?>').innerText = "완료";
+                }else {
+                    document.getElementById('day_day<?=$board['idx']?>').innerText = parseInt(dif / cDay)+"일 전";
+                }
+
+
+            </script>
 
             <?php
 
