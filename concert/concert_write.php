@@ -104,6 +104,7 @@ if (isset($_GET['idx'])) {
             });
         }
 
+
     </script>
 
 </head>
@@ -169,11 +170,15 @@ if (isset($_GET['idx'])) {
                 <img id="img" style="height: 450px; width: 350px;" src="/img/no_image.gif"/>
             </div>
         
-            <div id="in_title" class="center my_font_main">
-                    <textarea name="team_name" id="utitle" rows="1" cols="55" placeholder="가수 이름" maxlength="20"required style="padding-top: 10px"></textarea>
+            <div id="in_title" class="my_font_main" style="width: 600px; margin-left: 255px">
+                <input class="form-control" name="team_name" rows="1" cols="55" placeholder="가수 이름" maxlength="20"required>
             </div>
             
-            <div id="in_file" class="my_font_main" style="margin-left: 104px; margin-top: 20px">
+            <div class="my_font_main" style="width: 600px; margin-left: 100px; margin-top: 20px; margin-left: 255px">
+                <input class="form-control" type="date" name="date" id="datepicker1" placeholder="공연 날짜">
+            </div>
+            
+            <div id="in_file" class="my_font_main" style="margin-left: 255px; margin-top: 20px">
                 <input type="file" id="input_img" value="1" name="b_file" />
             </div>
             

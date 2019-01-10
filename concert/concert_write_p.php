@@ -6,7 +6,9 @@ session_start();
 
 date_default_timezone_set("Asia/SEOUL");
 
-$date = date('Y-m-d');
+//$date = date('Y-m-d');
+
+$date = date($_POST['date']);
 
 if (!empty($_FILES['b_file']['tmp_name'])) {
     $tmpfile = $_FILES['b_file']['tmp_name'];
