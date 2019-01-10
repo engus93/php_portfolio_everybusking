@@ -1,5 +1,19 @@
+<?php
+
+include "../db.php";
+session_start();
+
+$bno = $_GET['idx'];
+
+$today_date = date('Y-m-d');
+
+$sql = mq("select * from concert_tb where idx='" . $bno . "'"); /* 받아온 idx값을 선택 */
+$board = $sql->fetch_array();
+
+?>
+
 <!DOCTYPE html>
-<html lang="ko">
+<html>
 
 <head>
 
@@ -24,7 +38,7 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <style>
-        .menu_concert{
+        .menu_concert {
             color: #FBAA48 !important;
         }
 
@@ -40,33 +54,112 @@
 
 <!-- Page Content -->
 <div class="container" style="margin-top: 30px; margin-bottom: 50px">
+
     <!-- Page Heading/Breadcrumbs -->
     <h1 class="my_font_main text-center" style="margin-top: 5%; margin-bottom: 5%; color: #FBAA48;">곽진언의 콘서트</h1>
     <div class='information_flex_row'>
         <img src="../img/concert/곽진언_프로필.jpg" style="height: 600px; width: auto">
         <div class='information_flex_col my_font_main'>
+            <input type="hidden" id="date<?= $board['concert_date'] ?>" value="<?= $board['concert_date'] ?>">
+            <input type="hidden" id="today_date" value="<?= $today_date ?>">
             <div>
                 <h6 align="left" style="position: relative; right: 20%">모인 금액</h6>
-                <span style="font-size: 2em">1,500,000원 / </span>
-                <span>50%</span>
+                <span style="font-size: 2em"><?= $board['money']?>원 / </span>
+                <span><?= floor($board['money'] / 3000000) ?>%</span>
             </div>
             <div>
                 <h6 align="left" style="position: relative; right: 20%">남은 시간</h6>
-                <h3>14일</h3>
+                <h3 class="color_point" id="countdown"></h3>
             </div>
             <div>
                 <h6 align="left" style="position: relative; right: 20%">공연일자</h6>
-                <h3>18년 12월 29일 7시</h3>
+                <h3><?=$board['concert_date']?> 8시</h3>
             </div>
             <div>
                 <h6 align="left" style="position: relative; right: 20%">후원자</h6>
-                <h3>90명</h3>
+                <h3><?=$board['people']?>명</h3>
             </div>
             <div>
-                <a href="concert_ticket.html" class="btn btn-block my_font_main" style="font-size: 2em; background-color: #FBAA48; color: white" id="support">후원하기</a>
+                <a href="concert_ticket.html" class="btn btn-block my_font_main"
+                   style="font-size: 2em; background-color: #FBAA48; color: white" id="support">후원하기</a>
             </div>
         </div>
     </div>
+
+    <?php echo $board['concert_date']?>
+
+
+    <script type="text/javascript">
+
+        var sdd = document.getElementById("today_date").value;
+        var edd = document.getElementById("date<?=$board['concert_date']?>").value;
+        var ar1 = sdd.split('-');
+        var ar2 = edd.split('-');
+        var da1 = new Date(ar1[0], ar1[1], ar1[2]);
+        var da2 = new Date(ar2[0], ar2[1], ar2[2]);
+        var dif = da2 - da1;
+        var cDay = 24 * 60 * 60 * 1000;// 시 * 분 * 초 * 밀리세컨
+
+        if (parseInt(dif / cDay) <= 0) {
+            document.getElementById('day_day<?=$board['idx']?>').innerText = "종료";
+
+        } else {
+            document.getElementById('day_day<?=$board['idx']?>').innerText = parseInt(dif / cDay) + "일 전";
+
+        }
+
+    </script>
+
+    <div id="countdown"></div>
+
+    <SCRIPT language=JavaScript>
+
+        var sss = document.getElementById("date<?=$board['concert_date']?>").value;
+        var aaa = sss.split('-');
+
+        aaa[1] = aaa[1] - 1;
+
+        var bbbb = new Date(aaa[0], aaa[1], aaa[2]);
+
+        alert(bbbb);
+
+        CountDownTimer(bbbb, 'countdown'); // 2017년 1월 1일까지
+
+        function CountDownTimer(dt, id)
+        {
+            var end = new Date(dt);
+
+            var _second = 1000;
+            var _minute = _second * 60;
+            var _hour = _minute * 60;
+            var _day = _hour * 24;
+            var timer;
+
+            function showRemaining() {
+                var now = new Date();
+                var distance = end - now;
+                if (distance < 0) {
+
+                    clearInterval(timer);
+                    document.getElementById(id).innerHTML = 'EXPIRED!';
+
+                    return;
+                }
+                var days = Math.floor(distance / _day);
+                var hours = Math.floor((distance % _day) / _hour);
+                var minutes = Math.floor((distance % _hour) / _minute);
+                var seconds = Math.floor((distance % _minute) / _second);
+
+                document.getElementById(id).innerHTML = days + '일 ';
+                document.getElementById(id).innerHTML += hours + '시 ';
+                document.getElementById(id).innerHTML += minutes + '분 ';
+                document.getElementById(id).innerHTML += seconds + '초';
+            }
+
+            timer = setInterval(showRemaining, 1000);
+        }
+
+    </SCRIPT>
 
     <hr style="margin-top: 70px">
 
@@ -126,7 +219,7 @@
                                 </video>
                             </div>
                             <div class="col-md-5">
-                                <h3 class="my_font_start" style="font-size: 2.5em"><?=$board['title']?></h3>
+                                <h3 class="my_font_start" style="font-size: 2.5em"><?= $board['title'] ?></h3>
                                 <div class="my_font_main" style="margin-top: 30px; font-size: 20px;">
                                     <?= nl2br($board['content']); ?>
                                 </div>

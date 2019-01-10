@@ -24,12 +24,10 @@ session_start();
     <link href="../css/public.css" rel="stylesheet">
 
     <link href="../public/side_bar.css" rel="stylesheet">
-    <link href="../concert/concert_calender.css" rel="stylesheet">
 
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
 
 
     <style>
@@ -89,23 +87,24 @@ session_start();
 
             ?>
 
-
-
-            <div class="col-lg-4 mb-4" onclick="location.href='concert_information.php'">
+            <div class="col-lg-4 mb-4"
+                 onclick="location.href='concert_information.php?idx=<?= $board["idx"] ?>'">
                 <div class="card h-100 text-center">
-                    <input type="hidden" id="date<?=$board['concert_date']?>" value="<?=$board['concert_date']?>">
-                    <input type="hidden" id="today_date" value="<?=$today_date?>">
-                    <img class="card-img-top concert_poster" src="<?=$board['picture']?>">
+                    <input type="hidden" id="date<?= $board['concert_date'] ?>" value="<?= $board['concert_date'] ?>">
+                    <input type="hidden" id="today_date" value="<?= $today_date ?>">
+                    <img class="card-img-top concert_poster" src="<?= $board['picture'] ?>">
                     <div class="card-body">
-                        <h4 class="card-title my_font_start"><?=$board['name']?></h4>
+                        <h4 class="card-title my_font_start"><?= $board['name'] ?></h4>
                         <div class="progress">
-                            <div class="progress-bar" role="progressbar" style="background-color: #FBAA48; width: 10%"
+                            <div class="progress-bar" role="progressbar"
+                                 style="background-color: #FBAA48; width: <?= floor($board['money'] / 3000000) ?>"
                                  aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
                         <div style="font-size: 15px; margin-top: 20px">
-                            <span style="position: absolute; left: 10%">10%</span>
-                            <span>1,500,000원 달성</span>
-                            <span class="color_point" id="day_day<?=$board['idx']?>" style="position: absolute; right: 10%">일 남음</span>
+                            <span style="position: absolute; left: 10%"><?= floor($board['money'] / 3000000) ?>%</span>
+                            <span><?= $board['money'] ?>원 달성</span>
+                            <span class="color_point" id="day_day<?= $board['idx'] ?>"
+                                  style="position: absolute; right: 10%">일 남음</span>
                         </div>
                     </div>
                 </div>
@@ -122,12 +121,13 @@ session_start();
                 var dif = da2 - da1;
                 var cDay = 24 * 60 * 60 * 1000;// 시 * 분 * 초 * 밀리세컨
 
-                if(parseInt(dif / cDay) <= 0){
-                    document.getElementById('day_day<?=$board['idx']?>').innerText = "완료";
-                }else {
-                    document.getElementById('day_day<?=$board['idx']?>').innerText = parseInt(dif / cDay)+"일 전";
-                }
+                if (parseInt(dif / cDay) <= 0) {
+                    document.getElementById('day_day<?=$board['idx']?>').innerText = "종료";
 
+                } else {
+                    document.getElementById('day_day<?=$board['idx']?>').innerText = parseInt(dif / cDay) + "일 전";
+
+                }
 
             </script>
 
@@ -180,7 +180,7 @@ session_start();
                     </a>
                    </li>";
         } else {
-            $pre = floor(($page-1)/$block_ct)*$block_ct; //pre변수에 page-1을 해준다 만약 현재 페이지가 3인데 이전버튼을 누르면 2번페이지로 갈 수 있게 함
+            $pre = floor(($page - 1) / $block_ct) * $block_ct; //pre변수에 page-1을 해준다 만약 현재 페이지가 3인데 이전버튼을 누르면 2번페이지로 갈 수 있게 함
             echo "<li class='page-item'>
                     <a class='page-link' href='?page=$pre' aria-label='Previous' style='color: black'>
                         <span aria-hidden='true'>&laquo;</span>
@@ -274,7 +274,7 @@ session_start();
 
             } else {
 
-                $next = ceil($page/$block_ct)*$block_ct + 1; //next변수에 page + 1을 해준다.
+                $next = ceil($page / $block_ct) * $block_ct + 1; //next변수에 page + 1을 해준다.
                 echo "<li class='page-item'>
                     <a class='page-link' href='?page=$next' aria-label='Next' style='color: black'>
                         <span aria-hidden='true'>&raquo;</span>
@@ -284,7 +284,7 @@ session_start();
 
             }
         } else {
-            $next = ceil($page/$block_ct)*$block_ct + 1; //next변수에 page + 1을 해준다.
+            $next = ceil($page / $block_ct) * $block_ct + 1; //next변수에 page + 1을 해준다.
             echo "<li class='page-item'>
                     <a class='page-link' href='?page=$next' aria-label='Next' style='color: black'>
                         <span aria-hidden='true'>&raquo;</span>
