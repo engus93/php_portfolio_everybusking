@@ -87,9 +87,8 @@ session_start();
 
             ?>
 
-            <div class="col-lg-4 mb-4"
-                 onclick="location.href='concert_information.php?idx=<?= $board["idx"] ?>'">
-                <div class="card h-100 text-center">
+            <div class="col-lg-4 mb-4">
+                <div class="card h-100 text-center" onclick="location.href='concert_information.php?idx=<?= $board["idx"] ?>'">
                     <input type="hidden" id="date<?= $board['concert_date'] ?>" value="<?= $board['concert_date'] ?>">
                     <input type="hidden" id="today_date" value="<?= $today_date ?>">
                     <img class="card-img-top concert_poster" src="<?= $board['picture'] ?>">
@@ -108,6 +107,28 @@ session_start();
                         </div>
                     </div>
                 </div>
+
+                <?php
+                if ($_SESSION != null) {
+                    if ($_SESSION['user_id'] == "rhksflwk") {
+                        ?>
+                        <div style="position: absolute; top: 4px; right: 17px;">
+                            <button class="btn btn-flat btn-flat-icon" type="button" data-toggle="dropdown"
+                                    aria-expanded="false" style="background-color: transparent;">
+                                <em class="fa fa-plus color_point"></em>
+                            </button>
+                            <div class="dropdown-menu dropdown-scale dropdown-menu-right" role="menu"
+                                 style="position: absolute; transform: translate3d(-136px, 28px, 0px); top: 0px; left: 0px; will-change: transform;">
+                                <a class="dropdown-item"
+                                   href="concert_write.php?idx=<?= $board["idx"] ?>&page=<?= $page ?>">수정</a>
+                                <a class="dropdown-item"
+                                   href="concert_delete_p.php?idx=<?= $board["idx"] ?>&page=<?= $page ?>">삭제</a>
+                            </div>
+                        </div>
+                        <?php
+                    }
+                }
+                ?>
             </div>
 
             <script type="text/javascript">

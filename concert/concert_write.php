@@ -12,7 +12,7 @@ if (isset($_GET['idx'])) {
     $bno = $_GET['idx'];
 
     // 쿼리 만들기
-    $sql = "SELECT * FROM buskingteam_tb WHERE idx='$bno'";
+    $sql = "SELECT * FROM concert_tb WHERE idx='$bno'";
 
     // DB 에 쿼리 날리기
     $result = mysqli_query($conn, $sql);
@@ -23,7 +23,7 @@ if (isset($_GET['idx'])) {
     if ($_SESSION['user_id'] == "rhksflwk") {
 
         $bno = $_GET['idx'];
-        $sql = mq("select * from buskingteam_tb where idx='$bno';");
+        $sql = mq("select * from concert_tb where idx='$bno';");
         $board = $sql->fetch_array();
 
     } else {
@@ -125,39 +125,54 @@ if (isset($_GET['idx'])) {
 
     if (isset($board)) {
         ?>
-        <form action="buskingteam_update_p.php/<?= $board['idx'] ?>" method="post" enctype="multipart/form-data">
+        <form action="/concert/concert_update_p.php" method="post" enctype="multipart/form-data">
 
-            <input type="hidden" name="idx" value="<?= $board['idx'] ?>"/>
-            <?php
-            if (!empty($_GET['page'])) {
-                ?>
-                <input type="hidden" name="page" value="<?= $_GET['page'] ?>"/>
-                <?php
-            } else {
-                ?>
+            <label class="my_font_main" style="margin-left: 235px; margin-top: 50px">공연 정보</label>
 
-                <input type="hidden" name="manager_page" value="<?= $_GET['manager_page'] ?>"/>
-
-                <?php
-            }
-            ?>
-            <input type="hidden" name="team_profile" value="<?= $board['team_profile'] ?>"/>
-
-            <div class="img_wrap" style="margin-left: 285px; height: 450px; width: auto;">
-                <img id="img" src="<?= $board['team_profile'] ?>"/>
+            <div class="img_wrap" style="margin-left: 380px;">
+                <img id="img" style="height: 450px; width: 350px;" src="<?=$board['picture']?>"/>
             </div>
 
-            <div id="in_title" class="center">
-                <textarea name="team_name" id="utitle" rows="1" cols="55" placeholder="가수 이름" maxlength="20"
-                          required><?= $board['name'] ?></textarea>
+            <input type="hidden" name="idx" value="<?=$board['idx']?>">
+            <input type="hidden" name="picture" value="<?=$board['picture']?>">
+            <input type="hidden" name="page" value="<?=$_GET['page']?>">
+
+            <div class="my_font_main" style="width: 600px; margin-left: 100px; margin-top: 20px; margin-left: 255px">
+                <label>공연 날짜</label>
+                <input class="form-control" type="date" name="date" id="datepicker1" placeholder="공연 날짜" value="<?=$board['concert_date']?>">
             </div>
 
-            <div id="in_file" class="my_font_main" style="margin-left: 104px; margin-top: 20px">
-                <input type="file" id="input_img" value="1" name="b_file"/>
+            <hr style="margin-top: 30px; margin-bottom: 30px">
+
+            <label class="my_font_main" style="margin-left: 220px">간단한 프로필</label>
+
+            <div id="in_title" class="my_font_main" style="width: 600px; margin-left: 255px">
+                <label>버스킹 팀 이름</label>
+                <input class="form-control" name="team_name" rows="1" cols="55" placeholder="ex) 곽진언" maxlength="20"required value="<?=$board['name']?>">
             </div>
 
-            <div class="center" style="margin-top: 50px">
-                <button class="btn" type="submit">수정하기</button>
+            <div id="in_title" class="my_font_main" style="width: 600px; margin-left: 255px">
+                <label>생년월일</label>
+                <input class="form-control" type="date" name="birth" rows="1" cols="55" placeholder="ex) 1993/10/10" maxlength="20"required value="<?=$board['birth']?>">
+            </div>
+
+            <div id="in_title" class="my_font_main" style="width: 600px; margin-left: 255px">
+                <label>노래 장르</label>
+                <input class="form-control" name="genre" rows="1" cols="55" placeholder="ex) 어쿠스틱" maxlength="20"required value="<?=$board['genre']?>">
+            </div>
+
+            <div id="in_title" class="my_font_main" style="width: 600px; margin-left:255px;">
+                <label>간단한 자기 소개</label>
+                <textarea class="form-control" name="profile_text" rows="3" cols="55"
+                          style="border: #ced4da 1px solid; width: 600px; font-size: 20px" placeholder="ex) 80자 내외" maxlength="80"required><?=$board['profile_text']?></textarea>
+            </div>
+
+            <div id="in_file" class="my_font_main" style="margin-left: 255px; margin-top: 20px">
+                <input type="file" id="input_img" value="1" name="b_file" />
+            </div>
+
+            <div class="center my_font_main" style="margin-top: 50px">
+                <button class="btn hover_class" id="support_hover" type="submit">콘서트 수정하기</button>
             </div>
         </form>
 
@@ -200,8 +215,6 @@ if (isset($_GET['idx'])) {
                 <label>간단한 자기 소개</label>
                 <textarea class="form-control" name="profile_text" rows="3" cols="55" style="border: #ced4da 1px solid; width: 600px; font-size: 20px" placeholder="ex) 80자 내외" maxlength="80"required></textarea>
             </div>
-            
- 
             
             <div id="in_file" class="my_font_main" style="margin-left: 255px; margin-top: 20px">
                 <input type="file" id="input_img" value="1" name="b_file" />
