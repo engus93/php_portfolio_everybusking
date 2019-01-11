@@ -203,7 +203,7 @@ $board = $sql->fetch_array();
 
                     $team_name = $board['name'];
 
-                    $sql = mq("select * from songlist_tb where team_name = '".$team_name."' order by rand() limit 4;");
+                    $sql = mq("select * from songlist_tb where team_name = '" . $team_name . "' order by rand() limit 4;");
 
                     while ($board_re = $sql->fetch_array()) {
 
@@ -236,8 +236,9 @@ $board = $sql->fetch_array();
                     if ($check) {
                         ?>
 
-                        <div class="right" style="width: 100%; padding-bottom: 10px; padding-right: 10px; display: inline">
-                            <a href="/buskingteam/songlist.php?idx=<?=$position_idx?>&team_name=<?=$team_name?>">
+                        <div class="right"
+                             style="width: 100%; padding-bottom: 10px; padding-right: 10px; display: inline">
+                            <a href="/buskingteam/songlist.php?idx=<?= $position_idx ?>&team_name=<?= $team_name ?>">
                                 <button class="btn my_font_main hover_class" id="support_hover">
                                     더 많은 영상 보러가기
                                 </button>
@@ -253,7 +254,7 @@ $board = $sql->fetch_array();
                         </div>
 
                         <div class="left" style="width: 100%; padding-bottom: 10px; padding-right: 10px">
-                            <a href="/buskingteam/songlist.php?idx=<?=$position_idx?>&team_name=<?=$team_name?>">
+                            <a href="/buskingteam/songlist.php?idx=<?= $position_idx ?>&team_name=<?= $team_name ?>">
                                 <button class="btn my_font_main hover_class" id="support_hover">
                                     더 많은 영상 보러가기
                                 </button>
@@ -287,6 +288,20 @@ $board = $sql->fetch_array();
 
 <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js"></script>
 <script src="../public/side_bar.js"></script>
+
+<script src="/js/jquery.scroll.pack.js"></script>
+<script src="/js/jquery.easing.js"></script>
+<script>
+    //<![CDATA[
+    $(function () {
+        $("#toTop").scrollToTop({speed: 1000, ease: "easeOutBack", start: 400})
+    });
+    //]]>
+</script>
+
+<a id="toTop" style="margin-bottom: 10px; margin-right: 10px">
+    <img src="/img/up-arrow.png" style="width: 50px; height: 50px"/>
+</a>
 
 </body>
 

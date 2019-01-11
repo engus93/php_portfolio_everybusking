@@ -330,6 +330,20 @@ if (isset($_GET['team_name'])) {
 <script src="../public/side_bar.js"></script>
 <script src="/public/page.js"></script>
 
+<script src="/js/jquery.scroll.pack.js"></script>
+<script src="/js/jquery.easing.js"></script>
+<script>
+    //<![CDATA[
+    $(function () {
+        $("#toTop").scrollToTop({speed: 1000, ease: "easeOutBack", start: 400})
+    });
+    //]]>
+</script>
+
+<a id="toTop" style="margin-bottom: 10px; margin-right: 10px">
+    <img src="/img/up-arrow.png" style="width: 50px; height: 50px"/>
+</a>
+
 </body>
 
 </html>
