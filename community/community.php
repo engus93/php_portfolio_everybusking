@@ -116,8 +116,8 @@
                 $content = $board["content"];
 
                 //한글이랑 영어랑 용량이 다름 일단 넘김
-                if (strlen($board["title"]) > 50) {
-                    $title = str_replace($board["title"], iconv_substr($board["title"], 0, 14, "utf-8") . "...", $board["title"]);
+                if (strlen($board["title"]) > 40) {
+                    $title = str_replace($board["title"], iconv_substr($board["title"], 0, 15, "utf-8") . "...", $board["title"]);
                 }
 
                 if (strlen($content) > 60) {

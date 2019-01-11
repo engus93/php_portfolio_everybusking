@@ -18,7 +18,6 @@ if (!empty($_FILES['b_file']['tmp_name'])) {
     $path = "../img/no_image.gif";
 }
 $sql = mq("insert into buskingteam_tb(name,date,team_profile) values('" . $_POST['team_name'] . "','" . $date . "','" . $path . "')");
-
 ?>
 
 <script type="text/javascript">alert("등록이 완료되었습니다.");

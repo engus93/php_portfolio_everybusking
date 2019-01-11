@@ -236,7 +236,7 @@ $board = $sql->fetch_array();
                     if ($check) {
                         ?>
 
-                        <div class="right" style="width: 100%; padding-bottom: 10px; padding-right: 10px">
+                        <div class="right" style="width: 100%; padding-bottom: 10px; padding-right: 10px; display: inline">
                             <a href="/buskingteam/songlist.php?idx=<?=$position_idx?>&team_name=<?=$team_name?>">
                                 <button class="btn my_font_main hover_class" id="support_hover">
                                     더 많은 영상 보러가기
@@ -252,10 +252,10 @@ $board = $sql->fetch_array();
                             <p>등록된 영상이 없습니다.</p>
                         </div>
 
-                        <div class="right" style="width: 100%; padding-bottom: 10px; padding-right: 10px">
+                        <div class="left" style="width: 100%; padding-bottom: 10px; padding-right: 10px">
                             <a href="/buskingteam/songlist.php?idx=<?=$position_idx?>&team_name=<?=$team_name?>">
                                 <button class="btn my_font_main hover_class" id="support_hover">
-                                    영상 등록하러 가기
+                                    더 많은 영상 보러가기
                                 </button>
                             </a>
                         </div>
@@ -274,6 +274,9 @@ $board = $sql->fetch_array();
     </div>
 
 </div>
+
+<a href="#top">Scroll to Top</a>
+
 <!--footer 로드-->
 <div class="main_footer"></div>
 <script>$(".main_footer").load("/public/main_footer.html");</script>
