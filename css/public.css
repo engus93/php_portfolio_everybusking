@@ -33,12 +33,6 @@
     color: white !important;
 }
 
-.re_hover_class{
-    background-color: transparent !important;
-    color: #FBAA48 !important;
-    border: #FBAA48 1px solid !important;
-}
-
 #support_hover:hover{
     background-color: transparent !important;
     color: #FBAA48 !important;
@@ -46,6 +40,24 @@
 }
 
 #re_support_hover:hover{
+    background-color: #FBAA48 !important;
+    color: white !important;
+    border: white 1px solid !important;
+}
+
+#re_support_hover1:hover{
+    background-color: #FBAA48 !important;
+    color: white !important;
+    border: white 1px solid !important;
+}
+
+#re_support_hover2:hover{
+    background-color: #FBAA48 !important;
+    color: white !important;
+    border: white 1px solid !important;
+}
+
+#re_support_hover3:hover{
     background-color: #FBAA48 !important;
     color: white !important;
     border: white 1px solid !important;

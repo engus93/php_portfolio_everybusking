@@ -37,6 +37,55 @@ session_start();
 
     </style>
 
+    <script>
+        function doOpenCheck(chk){
+            var obj = document.getElementsByName("check_box");
+            for(var i=0; i<obj.length; i++){
+                if(obj[i] != chk){
+                    obj[i].checked = false;
+                }
+            }
+        }
+
+        $(document).ready(function(){
+            $("#test-1").change(function(){
+                if($("#test-1").is(":checked")){
+                    $("#re_support_hover1").css("background-color", "#FBAA48");
+                    $("#re_support_hover2").css("background-color", "#FFFFFF");
+                    $("#re_support_hover3").css("background-color", "#FFFFFF");
+                }else{
+                    $("#re_support_hover2").css("background-color", "#FFFFFF");
+                    $("#re_support_hover3").css("background-color", "#FFFFFF");
+                    $("#re_support_hover1").css("background-color", "#FFFFFF");
+                }
+            });
+
+            $("#test-2").change(function(){
+                if($("#test-2").is(":checked")){
+                    $("#re_support_hover2").css("background-color", "#FBAA48");
+                    $("#re_support_hover3").css("background-color", "#FFFFFF");
+                    $("#re_support_hover1").css("background-color", "#FFFFFF");
+                }else{
+                    $("#re_support_hover2").css("background-color", "#FFFFFF");
+                    $("#re_support_hover3").css("background-color", "#FFFFFF");
+                    $("#re_support_hover1").css("background-color", "#FFFFFF");
+                }
+            });
+
+            $("#test-3").change(function(){
+                if($("#test-3").is(":checked")){
+                    $("#re_support_hover3").css("background-color", "#FBAA48");
+                    $("#re_support_hover1").css("background-color", "#FFFFFF");
+                    $("#re_support_hover2").css("background-color", "#FFFFFF");
+                }else{
+                    $("#re_support_hover2").css("background-color", "#FFFFFF");
+                    $("#re_support_hover3").css("background-color", "#FFFFFF");
+                    $("#re_support_hover1").css("background-color", "#FFFFFF");
+                }
+            });
+        });
+    </script>
+
 </head>
 
 <body>
@@ -46,104 +95,37 @@ session_start();
 <script>$(".main_nav").load("/public/main_nav.php");</script>
 
 <!-- Page Content -->
-<div class="container my_font_main" style="min-height: 800px">
-
-    <?php
-    if ($_SESSION["user_id"] != "rhksflwk") {
-
-        ?>
-        <!-- Page Heading/Breadcrumbs -->
-        <h1 class="mt-4 mb-3 my_font_index">My Page</h1>
-
-        <?php
-
-    } else {
-
-        ?>
-
-        <h1 class="mt-4 mb-3 my_font_index">Manager Page</h1>
-
-        <?php
-
-    }
-    ?>
-
-    <ol class="breadcrumb">
-        <li class="breadcrumb-item">
-            <a class="" href="my_page_modify.php" style="color: black">내 정보 수정</a>
-        </li>
-        <?php
-        if ($_SESSION["user_id"] != "rhksflwk") {
-            ?>
-            <li class="breadcrumb-item">
-                <a href="my_page_application.php" style="color: black">신청 내역 보기</a>
-            </li>
-            <?php
-        } else {
-            ?>
-
-            <li class="breadcrumb-item">
-                <a href="manager_application.php" style="color: #fc3c3c">Application</a>
-            </li>
-
-            <li class="breadcrumb-item">
-                <a href="manager_busking_team.php" style="color: black">Busking Team</a>
-            </li>
-
-            <li class="breadcrumb-item">
-                <a href="manager_busking_zone.php" style="color: black">Busking Zone</a>
-            </li>
-
-            <li class="breadcrumb-item">
-                <a href="manager_streaming.php" style="color: black">Streaming</a>
-            </li>
-
-            <li class="breadcrumb-item">
-                <a href="manager_community.php" style="color: black">Community</a>
-            </li>
-
-            <li class="breadcrumb-item">
-                <a href="manager_concert.php" style="color: black">Concert</a>
-            </li>
-
-            <?php
-        }
-        ?>
-    </ol>
+<div class="container my_font_main" style="min-height: 800px; padding-bottom: 200px">
 
     <!-- Page Heading/Breadcrumbs -->
-    <h4 class="my_font_main" style="margin-top: 50px;">신청 내역</h4>
+    <h1 class="mt-4 mb-3 my_font_index" style="padding-bottom: 100px">Payment</h1>
 
-    <ol class="breadcrumb" style="background-color: transparent">
+    <!-- Page Content -->
 
-        <li class="breadcrumb-item">
-            <a href="manager_application.php" style="color: #fc3c3c">신청 내역</a>
-        </li>
+    <div class="row" id="check_group">
 
-        <li class="breadcrumb-item">
-            <a href="manager_application_processing.php" style="color: black">처리 내역</a>
-        </li>
-
-        <li class="breadcrumb-item">
-            <a href="manager_application_yet.php" style="color: black">미처리 내역</a>
-        </li>
-
-    </ol>
-
-</div>
-
-</div>
-
-<!-- Page Content -->
-<div class="container" style="margin-top: 30px; min-height: 800px">
-
-    <div class="input-group mb-3">
-        <div class="input-group-prepend">
-            <div class="input-group-text">
-                <input type="checkbox" aria-label="Checkbox for following text input">
-            </div>
+        <div class="input-group re_hover_class mb-3 col-8 offset-2 center" style="min-height: 150px; border-radius: 10px"
+             id="re_support_hover1" >
+            <input name="check_box" type="checkbox" id="test-1" aria-label="Checkbox for following text input" onclick="doOpenCheck(this)">
+            <label disabled type="text" for="test-1" class="form-control center" aria-label="Text input with checkbox"
+                   style="background-color: transparent; border-color: transparent; height: 100%">선택해라</label>
         </div>
-        <input disabled type="text" class="form-control" aria-label="Text input with checkbox" value="선택해라">
+
+        <div class="input-group re_hover_class mb-3 col-8 offset-2 center" style="min-height: 150px; border-radius: 10px"
+             id="re_support_hover2">
+            <input name="check_box" type="checkbox" id="test-2" aria-label="Checkbox for following text input" onclick="doOpenCheck(this)">
+            <label disabled type="text" for="test-2" class="form-control center" aria-label="Text input with checkbox"
+                   style="background-color: transparent; border-color: transparent; height: 100%">선택해라</label>
+        </div>
+
+
+        <div class="input-group re_hover_class mb-3 col-8 offset-2 center" style="min-height: 150px; border-radius: 10px"
+             id="re_support_hover3" >
+            <input name="check_box" type="checkbox" id="test-3" aria-label="Checkbox for following text input" onclick="doOpenCheck(this)">
+            <label disabled type="text" for="test-3" class="form-control center" aria-label="Text input with checkbox"
+                   style="background-color: transparent; border-color: transparent; height: 100%">선택해라</label>
+        </div>
+
     </div>
 
 </div>
