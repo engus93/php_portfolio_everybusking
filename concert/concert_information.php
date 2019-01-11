@@ -300,7 +300,7 @@ $board = $sql->fetch_array();
 </script>
 
 <a id="toTop" style="margin-bottom: 10px; margin-right: 10px">
-    <img src="/img/up-arrow.png" style="width: 50px; height: 50px"/>
+    <img src="이미지 넣으셈" style="width: 50px; height: 50px"/>
 </a>
 
 </body>
