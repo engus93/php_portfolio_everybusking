@@ -80,7 +80,7 @@ $board = $sql->fetch_array();
                 <h3><?= $board['people'] ?>명</h3>
             </div>
             <div>
-                <a href="concert_ticket.php" class="btn btn-block my_font_main"
+                <a href="concert_ticket.php?idx=<?=$bno?>" class="btn btn-block my_font_main"
                    style="font-size: 2em; background-color: #FBAA48; color: white" id="support">후원하기</a>
             </div>
         </div>
@@ -300,7 +300,7 @@ $board = $sql->fetch_array();
 </script>
 
 <a id="toTop" style="margin-bottom: 10px; margin-right: 10px">
-    <img src="이미지 넣으셈" style="width: 50px; height: 50px"/>
+    <img src="/img/up-arrow.png" style="width: 50px; height: 50px"/>
 </a>
 
 </body>

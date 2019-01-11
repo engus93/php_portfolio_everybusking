@@ -66,6 +66,7 @@ $(document).ready(function(){
             sum.value = parseInt("1") * sell_price;
 
             $("#form_re").css("display", "block");
+            $("#support_hover2").prop("disabled", false);
 
         }else{
             $("#re_text_1").css("color", "black");
@@ -82,6 +83,8 @@ $(document).ready(function(){
             sum.value = parseInt("1") * sell_price;
 
             $("#form_re").css("display", "none");
+
+            $("#support_hover2").prop("disabled", true);
 
         }
     });
@@ -105,6 +108,7 @@ $(document).ready(function(){
             sum.value = parseInt("1") * sell_price;
 
             $("#form_re").css("display", "block");
+            $("#support_hover2").prop("disabled", false);
         }else{
             $("#re_text_2").css("color", "black");
             $("#re_support_hover2").css("background-color", "#FFFFFF");
@@ -121,6 +125,8 @@ $(document).ready(function(){
 
 
             $("#form_re").css("display", "none");
+
+            $("#support_hover2").prop("disabled", true);
         }
     });
 
@@ -142,6 +148,7 @@ $(document).ready(function(){
             sum.value = parseInt("1") * sell_price;
 
             $("#form_re").css("display", "block");
+            $("#support_hover2").prop("disabled", false);
         }else{
             $("#re_text_3").css("color", "black");
             $("#re_support_hover2").css("background-color", "#FFFFFF");
@@ -158,6 +165,8 @@ $(document).ready(function(){
 
 
             $("#form_re").css("display", "none");
+
+            $("#support_hover2").prop("disabled", true);
         }
     });
 });
