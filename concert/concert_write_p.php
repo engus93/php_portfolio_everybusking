@@ -9,6 +9,9 @@ date_default_timezone_set("Asia/SEOUL");
 //$date = date('Y-m-d');
 
 $date = date($_POST['date']);
+$birth = $_POST['birth'];
+$genre = $_POST['genre'];
+$profile_text = $_POST['profile_text'];
 
 if (!empty($_FILES['b_file']['tmp_name'])) {
     $tmpfile = $_FILES['b_file']['tmp_name'];
@@ -22,11 +25,13 @@ if (!empty($_FILES['b_file']['tmp_name'])) {
     }
 
     move_uploaded_file($_FILES['b_file']['tmp_name'], "$folder/$o_name");
+
 } else {
     $path = "../img/no_image.gif";
 }
 
-$sql = mq("insert into concert_tb(name,picture,concert_date) values('" . $_POST['team_name'] . "','" . $path . "','" . $date . "')");
+$sql = mq("insert into concert_tb(name,picture,concert_date,birth,genre,profile_text)
+values('" . $_POST['team_name'] . "','" . $path . "','" . $date . "','" . $birth . "','" . $genre . "','" . $profile_text . "')");
 
 ?>
 

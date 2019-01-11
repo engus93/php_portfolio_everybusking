@@ -9,11 +9,23 @@
     color: #fc3c3c !important;
 
 }
+
+.left {
+    display: flex !important;
+    align-items: start !important;
+    justify-content: start !important;
+}
+
 .center {
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
+}
 
+.right {
+    display: flex !important;
+    align-items: end !important;
+    justify-content: end !important;
 }
 
 .hover_class{

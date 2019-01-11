@@ -64,20 +64,20 @@ $board = $sql->fetch_array();
             <input type="hidden" id="today_date" value="<?= $today_date ?>">
             <div>
                 <h6 align="left" style="position: relative; right: 20%">모인 금액</h6>
-                <span style="font-size: 2em"><?= $board['money']?>원 / </span>
+                <span style="font-size: 2em"><?= $board['money'] ?>원 / </span>
                 <span><?= floor($board['money'] / 3000000) ?>%</span>
             </div>
             <div>
-                <h6 align="left" style="position: relative; right: 20%">남은 시간</h6>
-                <h3 class="color_point" id="countdown"></h3>
+                <h6 align="left" style="position: relative; right: 20%;">남은 시간</h6>
+                <h3 class="color_point" id="countdown" style="min-width: 230px"></h3>
             </div>
             <div>
                 <h6 align="left" style="position: relative; right: 20%">공연일자</h6>
-                <h3><?=$board['concert_date']?> 8시</h3>
+                <h3><?= $board['concert_date'] ?> 8시</h3>
             </div>
             <div>
                 <h6 align="left" style="position: relative; right: 20%">후원자</h6>
-                <h3><?=$board['people']?>명</h3>
+                <h3><?= $board['people'] ?>명</h3>
             </div>
             <div>
                 <a href="concert_ticket.html" class="btn btn-block my_font_main"
@@ -85,9 +85,6 @@ $board = $sql->fetch_array();
             </div>
         </div>
     </div>
-
-    <?php echo $board['concert_date']?>
-
 
     <script type="text/javascript">
 
@@ -119,14 +116,12 @@ $board = $sql->fetch_array();
 
         aaa[1] = aaa[1] - 1;
 
-        var bbbb = new Date(aaa[0], aaa[1], aaa[2]);
+        var time = new Date(aaa[0], aaa[1], aaa[2]);
 
-        alert(bbbb);
+        CountDownTimer(time, 'countdown'); // 2017년 1월 1일까지
 
-        CountDownTimer(bbbb, 'countdown'); // 2017년 1월 1일까지
+        function CountDownTimer(dt, id) {
 
-        function CountDownTimer(dt, id)
-        {
             var end = new Date(dt);
 
             var _second = 1000;
@@ -141,7 +136,7 @@ $board = $sql->fetch_array();
                 if (distance < 0) {
 
                     clearInterval(timer);
-                    document.getElementById(id).innerHTML = 'EXPIRED!';
+                    document.getElementById(id).innerHTML = '종료 된 펀딩';
 
                     return;
                 }
@@ -166,7 +161,7 @@ $board = $sql->fetch_array();
     <div>
 
         <!-- Projects Section -->
-        <section id="projects" class="projects-section bg-light" style="padding-top: 70px; padding-bottom: 50px">
+        <section id="projects" class="projects-section bg-light" style="padding-top: 70px; padding-bottom: 0px">
             <div class="container">
 
                 <h1 class="text-center my_font_main color_main" style="margin-bottom: 70px">프로필</h1>
@@ -176,28 +171,27 @@ $board = $sql->fetch_array();
                     <div class='information_flex_col my_font_main'>
                         <div>
                             <h6 align="left" style="position: relative; right: 20%">이름</h6>
-                            <span style="font-size: 2em">곽진언</span>
+                            <span style="font-size: 2em"><?= $board['name'] ?></span>
                         </div>
                         <div>
                             <h6 align="left" style="position: relative; right: 20%">생년월일</h6>
-                            <h3>1991년 10월 23일 (27세)</h3>
+                            <h3><?= $board['birth'] ?></h3>
                         </div>
                         <div>
                             <h6 align="left" style="position: relative; right: 20%">장르</h6>
-                            <h3>어쿠스틱 발라드</h3>
+                            <h3><?= $board['genre'] ?></h3>
                         </div>
                         <div style="text-align: left">
                             <h6 align="left" style="position: relative; right: 20%;">인사말</h6>
-                            <div style=" font-size: 10px">
-                                <h3>안녕하세요.</h3>
-                                <h3>같이 모여서 재미있게 놀아요.</h3>
-                                <h3>공연 꼭 와주실꺼죠? 하하</h3>
+                            <div style="font-size: 25px">
+                                <?= nl2br($board['profile_text']); ?>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <hr style="padding-bottom: 70px">
+
                 <h1 class="text-center my_font_main color_main" style="margin-bottom: 70px">Song List</h1>
 
                 <div class="row" style="margin-top: 30px">
@@ -205,9 +199,17 @@ $board = $sql->fetch_array();
                     <?php
                     require_once "../db.php";
 
-                    $sql = mq("select * from songlist_tb where team_name = '곽진언' order by rand() limit 4;");
+                    $check = false;
 
-                    while ($board = $sql->fetch_array()) {
+                    $team_name = $board['name'];
+
+                    $sql = mq("select * from songlist_tb where team_name = '".$team_name."' order by rand() limit 4;");
+
+                    while ($board_re = $sql->fetch_array()) {
+
+                        $check = true;
+
+                        $position_idx = $board_re['con_num'];
 
                         ?>
 
@@ -215,13 +217,13 @@ $board = $sql->fetch_array();
                         <div class="row" style="margin-top: 20px; width: 100%;">
                             <div class="col-md-7">
                                 <video controls style="width: 600px; height: 350px">
-                                    <source src="<?= $board['video_path'] ?>" type="video/mp4">
+                                    <source src="<?= $board_re['video_path'] ?>" type="video/mp4">
                                 </video>
                             </div>
                             <div class="col-md-5">
-                                <h3 class="my_font_start" style="font-size: 2.5em"><?= $board['title'] ?></h3>
+                                <h3 class="my_font_start" style="font-size: 2.5em"><?= $board_re['title'] ?></h3>
                                 <div class="my_font_main" style="margin-top: 30px; font-size: 20px;">
-                                    <?= nl2br($board['content']); ?>
+                                    <?= nl2br($board_re['content']); ?>
                                 </div>
                             </div>
                         </div>
@@ -230,15 +232,48 @@ $board = $sql->fetch_array();
 
                         <?php
                     }
+
+                    if ($check) {
+                        ?>
+
+                        <div class="right" style="width: 100%; padding-bottom: 10px; padding-right: 10px">
+                            <a href="/buskingteam/songlist.php?idx=<?=$position_idx?>&team_name=<?=$team_name?>">
+                                <button class="btn my_font_main hover_class" id="support_hover">
+                                    더 많은 영상 보러가기
+                                </button>
+                            </a>
+                        </div>
+
+                        <?php
+                    } else {
+                        ?>
+
+                        <div class="center my_font_main" style="min-height: 300px; width: 100%;">
+                            <p>등록된 영상이 없습니다.</p>
+                        </div>
+
+                        <div class="right" style="width: 100%; padding-bottom: 10px; padding-right: 10px">
+                            <a href="/buskingteam/songlist.php?idx=<?=$position_idx?>&team_name=<?=$team_name?>">
+                                <button class="btn my_font_main hover_class" id="support_hover">
+                                    영상 등록하러 가기
+                                </button>
+                            </a>
+                        </div>
+
+                        <?php
+                    }
+
                     ?>
+
 
                 </div>
 
+
         </section>
+
     </div>
 
 </div>
-
 <!--footer 로드-->
 <div class="main_footer"></div>
 <script>$(".main_footer").load("/public/main_footer.html");</script>

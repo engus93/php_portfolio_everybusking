@@ -166,17 +166,42 @@ if (isset($_GET['idx'])) {
         echo '
         <form action="/concert/concert_write_p.php" method="post" enctype="multipart/form-data">
         
+            <label class="my_font_main" style="margin-left: 235px; margin-top: 50px">공연 정보</label>
+        
             <div class="img_wrap" style="margin-left: 380px;">
                 <img id="img" style="height: 450px; width: 350px;" src="/img/no_image.gif"/>
             </div>
-        
-            <div id="in_title" class="my_font_main" style="width: 600px; margin-left: 255px">
-                <input class="form-control" name="team_name" rows="1" cols="55" placeholder="가수 이름" maxlength="20"required>
-            </div>
             
-            <div class="my_font_main" style="width: 600px; margin-left: 100px; margin-top: 20px; margin-left: 255px">
+           <div class="my_font_main" style="width: 600px; margin-left: 100px; margin-top: 20px; margin-left: 255px">
+                <label>공연 날짜</label>
                 <input class="form-control" type="date" name="date" id="datepicker1" placeholder="공연 날짜">
             </div>
+            
+            <hr style="margin-top: 30px; margin-bottom: 30px">
+            
+            <label class="my_font_main" style="margin-left: 220px">간단한 프로필</label>
+        
+            <div id="in_title" class="my_font_main" style="width: 600px; margin-left: 255px">
+                <label>버스킹 팀 이름</label>
+                <input class="form-control" name="team_name" rows="1" cols="55" placeholder="ex) 곽진언" maxlength="20"required>
+            </div>
+            
+            <div id="in_title" class="my_font_main" style="width: 600px; margin-left: 255px">
+                <label>생년월일</label>
+                <input class="form-control" type="date" name="birth" rows="1" cols="55" placeholder="ex) 1993/10/10" maxlength="20"required>
+            </div>
+            
+            <div id="in_title" class="my_font_main" style="width: 600px; margin-left: 255px">
+                <label>노래 장르</label>
+                <input class="form-control" name="genre" rows="1" cols="55" placeholder="ex) 어쿠스틱" maxlength="20"required>
+            </div>
+            
+            <div id="in_title" class="my_font_main" style="width: 600px; margin-left:255px;">
+                <label>간단한 자기 소개</label>
+                <textarea class="form-control" name="profile_text" rows="3" cols="55" style="border: #ced4da 1px solid; width: 600px; font-size: 20px" placeholder="ex) 80자 내외" maxlength="80"required></textarea>
+            </div>
+            
+ 
             
             <div id="in_file" class="my_font_main" style="margin-left: 255px; margin-top: 20px">
                 <input type="file" id="input_img" value="1" name="b_file" />
