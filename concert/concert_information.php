@@ -65,7 +65,7 @@ $board = $sql->fetch_array();
             <div>
                 <h6 align="left" style="position: relative; right: 20%">모인 금액</h6>
                 <span style="font-size: 2em"><?= $board['money'] ?>원 / </span>
-                <span><?= floor($board['money'] / 3000000) ?>%</span>
+                <span><?= floor($board['money'] / 1500000) ?>%</span>
             </div>
             <div>
                 <h6 align="left" style="position: relative; right: 20%;">남은 시간</h6>
@@ -80,7 +80,7 @@ $board = $sql->fetch_array();
                 <h3><?= $board['people'] ?>명</h3>
             </div>
             <div>
-                <a href="concert_ticket.html" class="btn btn-block my_font_main"
+                <a href="concert_ticket.php" class="btn btn-block my_font_main"
                    style="font-size: 2em; background-color: #FBAA48; color: white" id="support">후원하기</a>
             </div>
         </div>
