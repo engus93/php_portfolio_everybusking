@@ -1,67 +1,38 @@
 <?php
-define ('CONNECT_TIMEOUT', 5);
-define ('READ_TIMEOUT', 15);
 
-class HttpClient
-{
-    var $sock = 0;
-    var $ssl;
-    var $host;
-    var $port;
-    var $path;
-    var $status;
-    var $headers = "";
-    var $body = "";
-    var $reqeust;
-    var $errorcode;
-    var $errormsg;
+include "../db.php";
 
+session_start();
 
-    function test_fsockopen_url($url)
-    {
-        $errno = '';
-        $errstr = '';
+$bno = $_POST['idx'];
+$name = $_SESSION['name'];
+$user_id = $_SESSION['user_id'];
+$e_mail = $_SESSION['e_mail'];
+$phone = $_SESSION['phone'];
+$product = $_POST['product'];
+$price = $_POST['sum'];
+$date = date('Y-m-d H:i:s');
+$post = "";
+$addr = "";
 
-        $url_data = parse_url($url);
-        if ($url_data["scheme"] == "https") {
-            $this->ssl = "ssl://";
-            $this->port = 443;
-        }
+if(!empty($_POST['user_post']) && !empty($_POST['user_addr']) ){
 
-        $this->host = $url_data["host"];
-        $this->path = $url_data["path"];
+    $post = $_POST['user_post'];
+    $addr = $_POST['user_addr']."　/　".$_POST['wRestAddress'];
 
-        if (!$this->sock = fsockopen($this->ssl . $this->host,
-            $this->port, $errno, $errstr, CONNECT_TIMEOUT)) {
+}else{
 
-            switch ($errno) {
-                case -3:
-                    $this->errormsg = 'Socket creation failed (-3)';
-                case -4:
-                    $this->errormsg = 'DNS lookup failure (-4)';
-                case -5:
-                    $this->errormsg = 'Connection refused or timed out (-5)';
-                default:
-                    $this->errormsg = 'Connection failed (' . $errno . ')';
-                    $this->errormsg .= ' ' . $errstr;
-            }
-            return '<font color=red>'.$this->errormsg.'</font>';
-        } else {
-            return '<font color=blue>성공</font>';
-        }
-    }
+    $post = "";
+    $addr = "콘서트 당일 수령";
+
 }
 
-$hc = new HttpClient();
+$sql = mq("insert into payment_tb(name,id,e_mail,phone,product,price,date,post,addr)
+values('" . $name . "','" . $user_id . "','" . $e_mail . "','" . $phone . "','" . $product . "','" . $price . "','" . $date . "','" . $post . "','" . $addr . "')");
 
-echo 'fsockopen() Test Page<br>';
-
-$authUrl = 'https://fcstdpay.inicis.com/api/payAuth';
-$netCancelUrl = 'https://fcstdpay.inicis.com/api/netCancel';
-$checkAckUrl = 'https://fcstdpay.inicis.com/api/checkAck';
-
-echo '$authUrl : ' . $hc->test_fsockopen_url($authUrl) . '<br>';
-echo '$netCancelUrl : ' . $hc->test_fsockopen_url($netCancelUrl) . '<br>';
-echo '$checkAckUrl : ' . $hc->test_fsockopen_url($checkAckUrl) . '<br>';
-echo 'iniweb : ' . $hc->test_fsockopen_url('https://iniweb.inicis.com') . '<br>';
 ?>
+
+<script>
+    alert('결제가 완료되었습니다. 감사합니다.');
+    document.location.href = '/concert/concert_information.php?idx=<?=$bno?>';
+</script>

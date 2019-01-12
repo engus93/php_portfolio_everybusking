@@ -46,15 +46,16 @@ $board = $sql->fetch_array();
 
     <script>
 
-
         function search_add() {
             new daum.Postcode({
                 oncomplete: function (data) {
                     // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분입니다.
                     // 예제를 참고하여 다양한 활용법을 확인해 보세요.
 
-                    document.getElementById('post').value = data.zonecode;
-                    document.getElementById('addr').value = data.roadAddress;
+                    $("#post").val(data.zonecode);
+                    $("#addr").val(data.roadAddress);
+                    $("#user_post").val(data.zonecode);
+                    $("#user_addr").val(data.roadAddress);
 
                     window.close();
 
@@ -63,9 +64,6 @@ $board = $sql->fetch_array();
         }
 
         function payment(name, amount, e_mail, user_name, tel) {
-
-            // forming = document.form;
-            // forming.submit();
 
             var IMP = window.IMP; // 생략가능
             IMP.init('imp49634896'); // 'iamport' 대신 부여받은 "가맹점 식별코드"를 사용
@@ -79,13 +77,12 @@ $board = $sql->fetch_array();
                 buyer_email: e_mail,
                 buyer_name: user_name,
                 buyer_tel: tel,
-                buyer_addr: '서울특별시 강남구 삼성동',
-                buyer_postcode: '123-456',
+                buyer_addr: $("#post").val() + $("#addr").val(),
+                buyer_postcode: $("#adress_etc").val(),
             }, function (rsp) {
                 if (rsp.success) {
-                    var msg = '결제가 완료되었습니다. 감사합니다.';
-                    alert(msg);
-                    document.location.href = '/concert/concert_information.php?idx=<?=$bno?>';
+                    form = document.form;
+                    form.submit();
                 } else {
                     var msg = '결제에 실패하였습니다.';
                     alert(msg);
@@ -195,8 +192,8 @@ $board = $sql->fetch_array();
 
         </form>
 
-        <form id="form_re" class="mb-3 col-8 offset-2" name="form" method="get" action="/concert/concert_payment.php"
-              style="min-height: 200px; border-radius: 10px; width: 100%; margin-top: 50px; padding-top: 25px; border: #FBAA48 1px solid; display: ">
+        <form id="form_re" class="mb-3 col-8 offset-2" name="form" method="post" action="/concert/concert_payment.php"
+              style="min-height: 200px; border-radius: 10px; width: 100%; margin-top: 50px; padding-top: 25px; border: #FBAA48 1px solid; display: noneg">
 
             <input type="hidden" id="user_e_mail" value="<?= $_SESSION['e_mail'] ?>">
             <input type="hidden" id="user_name" value="<?= $_SESSION['name'] ?>">
@@ -205,7 +202,7 @@ $board = $sql->fetch_array();
             <h6 style="margin-bottom: 20px">결제 금액</h6>
             <div class="text-center" style="margin-bottom: 20px">
                 <h6 style="display: inline;">선택 항목 :</h6>
-                <h6 id="genre_text" style="display: inline"></h6>
+                <input class="text-center" name="product" id="genre_text" style="display: inline; border-color: transparent" value="">
             </div>
             <div class="text-center">
                 수량 : <input id="price_re" type=hidden name="sell_price" value="0">
@@ -221,53 +218,55 @@ $board = $sql->fetch_array();
                     <span>원</span>
                 </div>
             </div>
+
+            <div class="offset-3" style="margin-top: 50px; padding-bottom: 30px">
+                <div style="min-height: 150px; border-radius: 10px; width: 100%; display: inline;">
+                    <input name="check_box_re" type="checkbox" id="re_test-1"
+                           aria-label="Checkbox for following text input"
+                           onclick="doOpenCheck_re(this)">
+                    <label disabled type="text" for="re_test-1" class=" "
+                           aria-label="Text input with checkbox"
+                           id="re_text_1"
+                           style="background-color: transparent; border-color: transparent; padding: 10px; font-size: 18px ">당일 날 장소에서 받기</label>
+                </div>
+
+                <div style="min-height: 150px; border-radius: 10px; width: 100%; display: inline; margin-left: 30px"
+                     id="">
+                    <input name="check_box_re" type="checkbox" id="re_test-2"
+                           aria-label="Checkbox for following text input"
+                           onclick="doOpenCheck_re(this)">
+                    <label disabled type="text" for="re_test-2" class=" "
+                           aria-label="Text input with checkbox"
+                           id="re_text_2"
+                           style="background-color: transparent; border-color: transparent; padding: 10px; font-size: 18px">집으로 미리 받기</label>
+                </div>
+
+            </div>
+
+            <div id="address" style="padding: 30px;  display:none;">
+                <label class="" style="display: ">주소</label>
+
+                <div>
+                    <input class="form-control float-lg-none col-6" type="text" size="10" name="wPostCode" id="post"
+                           placeholder="우편번호" disabled style="display: inline" value="">
+                    <input class="btn hover_class" id="support_hover" type="button" onclick="search_add()"
+                           value="우편번호 찾기">
+                </div>
+
+                <input class="form-control" type="text" size="30" name="wRoadAddress" id="addr" placeholder="도로명주소"
+                       disabled style="margin-top: 20px" value="">
+                <span id="guide" style="color:#999;font-size:10px;" style="margin-top: 20px"></span>
+
+                <input class="form-control" type="text" name="wRestAddress" placeholder="나머지 주소" id="adress_etc"
+                       style="width: 100%; margin-top: 20px" value=""/>
+            </div>
+
+            <input type="hidden" id="user_post" name="user_post" value="">
+            <input type="hidden" id="user_addr" name="user_addr" value="">
+            <input type="hidden" name="idx" value="<?=$bno?>">
+
         </form>
 
-        <form class="col-4 offset-4"
-              style="width: 100%; padding-top: 30px; padding-bottom: 30px; position: relative; left: -10px"
-              name="form_content_re">
-
-            <div style="min-height: 150px; border-radius: 10px; width: 100%; display: inline;"
-                 id="">
-                <input name="check_box_re" type="checkbox" id="re_test-1" aria-label="Checkbox for following text input"
-                       onclick="doOpenCheck_re(this)">
-                <label disabled type="text" for="re_test-1" class=" "
-                       aria-label="Text input with checkbox"
-                       id="re_text_1"
-                       style="background-color: transparent; border-color: transparent; padding: 10px; font-size: 18px ">당일
-                    날 장소에서 받기</label>
-            </div>
-
-            <div style="min-height: 150px; border-radius: 10px; width: 100%; display: inline; margin-left: 30px"
-                 id="">
-                <input name="check_box_re" type="checkbox" id="re_test-2" aria-label="Checkbox for following text input"
-                       onclick="doOpenCheck_re(this)">
-                <label disabled type="text" for="re_test-2" class=" "
-                       aria-label="Text input with checkbox"
-                       id="re_text_2"
-                       style="background-color: transparent; border-color: transparent; padding: 10px; font-size: 18px">집으로
-                    받기</label>
-            </div>
-
-        </form>
-
-        <div id="address" class="form-group"
-             style="margin-left: 320px; border: #FBAA48 1px solid; padding: 50px; border-radius: 10px; display:none;">
-            <label class="" style="display: block">주소</label>
-
-            <div style="display: block">
-                <input class="form-control float-lg-none col-4" type="text" size="10" name="wPostCode" id="post"
-                       placeholder="우편번호" disabled style="display: inline">
-                <input class="btn col-3" type="button" onclick="search_add()" value="우편번호 찾기">
-            </div>
-
-            <input class="form-control" type="text" size="30" name="wRoadAddress" id="addr" placeholder="도로명주소"
-                   disabled style="margin-top: 20px">
-            <span id="guide" style="color:#999;font-size:10px;" style="margin-top: 20px"></span>
-
-            <input class="form-control" type="text" name="wRestAddress" placeholder="나머지 주소" id="adress_etc"
-                   style="width: 100%; margin-top: 20px"/>
-        </div>
 
     </div>
 

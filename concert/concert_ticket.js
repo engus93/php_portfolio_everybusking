@@ -90,7 +90,7 @@ $(document).ready(function(){
             sum.value = parseInt("1") * sell_price;
 
             $("#form_re").css("display", "block");
-            $("#genre_text").text("옵션 1 : 그냥 후원하기 : 1000원");
+            $("#genre_text").val("옵션 1 : 그냥 후원하기 : 1000원");
 
             price = true;
 
@@ -139,7 +139,7 @@ $(document).ready(function(){
 
             $("#form_re").css("display", "block");
 
-            $("#genre_text").text("옵션 2 : 콘서트 티켓 : 12,000원");
+            $("#genre_text").val("옵션 2 : 콘서트 티켓 : 12,000원");
 
             price = true;
 
@@ -188,7 +188,7 @@ $(document).ready(function(){
 
             $("#form_re").css("display", "block");
 
-            $("#genre_text").text("옵션 3 : 콘서트 티켓 + 굿즈 : 20,000원");
+            $("#genre_text").val("옵션 3 : 콘서트 티켓 + 굿즈 : 20,000원");
 
             price = true;
 
