@@ -34,6 +34,7 @@ $board = $sql->fetch_array();
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 
 
     <style>
@@ -45,15 +46,55 @@ $board = $sql->fetch_array();
 
     <script>
 
-        function payment(){
 
-            forming = document.form;
-            forming.submit();
+        function search_add() {
+            new daum.Postcode({
+                oncomplete: function (data) {
+                    // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분입니다.
+                    // 예제를 참고하여 다양한 활용법을 확인해 보세요.
+
+                    document.getElementById('post').value = data.zonecode;
+                    document.getElementById('addr').value = data.roadAddress;
+
+                    window.close();
+
+                }
+            }).open();
+        }
+
+        function payment(name, amount, e_mail, user_name, tel) {
+
+            // forming = document.form;
+            // forming.submit();
+
+            var IMP = window.IMP; // 생략가능
+            IMP.init('imp49634896'); // 'iamport' 대신 부여받은 "가맹점 식별코드"를 사용
+
+            IMP.request_pay({
+                pg: 'inicis', // version 1.1.0부터 지원.
+                pay_method: 'card',
+                merchant_uid: 'merchant_' + new Date().getTime(),
+                name: '주문명 : ' + name,
+                amount: amount,
+                buyer_email: e_mail,
+                buyer_name: user_name,
+                buyer_tel: tel,
+                buyer_addr: '서울특별시 강남구 삼성동',
+                buyer_postcode: '123-456',
+            }, function (rsp) {
+                if (rsp.success) {
+                    var msg = '결제가 완료되었습니다. 감사합니다.';
+                    alert(msg);
+                    document.location.href = '/concert/concert_information.php?idx=<?=$bno?>';
+                } else {
+                    var msg = '결제에 실패하였습니다.';
+                    alert(msg);
+                }
+            });
 
         }
 
     </script>
-
 
 </head>
 
@@ -155,27 +196,95 @@ $board = $sql->fetch_array();
         </form>
 
         <form id="form_re" class="mb-3 col-8 offset-2" name="form" method="get" action="/concert/concert_payment.php"
-              style="min-height: 150px; border-radius: 10px; width: 100%; margin-top: 50px; padding-top: 25px; border: #FBAA48 1px solid; display: none">
+              style="min-height: 200px; border-radius: 10px; width: 100%; margin-top: 50px; padding-top: 25px; border: #FBAA48 1px solid; display: ">
+
+            <input type="hidden" id="user_e_mail" value="<?= $_SESSION['e_mail'] ?>">
+            <input type="hidden" id="user_name" value="<?= $_SESSION['name'] ?>">
+            <input type="hidden" id="user_phone" value="<?= $_SESSION['phone'] ?>">
 
             <h6 style="margin-bottom: 20px">결제 금액</h6>
+            <div class="text-center" style="margin-bottom: 20px">
+                <h6 style="display: inline;">선택 항목 :</h6>
+                <h6 id="genre_text" style="display: inline"></h6>
+            </div>
             <div class="text-center">
                 수량 : <input id="price_re" type=hidden name="sell_price" value="0">
                 <input class="text-center" id="count_re" style="margin-left: 5px;" type="text" name="amount" value="1"
                        size="3" onchange="change();">
-                <input style="margin-left: 5px;" class="btn" type="button" value=" + " onclick="add();">
-                <input style="margin-left: 5px;" class="btn" type="button" value=" - " onclick="del();">
+                <input style="margin-left: 5px; border: #FBAA48 1px solid" class="btn re_hover_class"
+                       id="re_support_hover" type="button" value=" - " onclick="del();">
+                <input style="margin-left: 5px; border: #FBAA48 1px solid" class="btn re_hover_class"
+                       id="re_support_hover" type="button" value=" + " onclick="add();">
                 <div style="display: inline; margin-left: 70px">
                     <input class="text-center" type="text" name="sum" size="11" readonly
-                           style="border-color: transparent">
+                           style="border-color: transparent" id="total_price">
                     <span>원</span>
                 </div>
             </div>
         </form>
+
+        <form class="col-4 offset-4"
+              style="width: 100%; padding-top: 30px; padding-bottom: 30px; position: relative; left: -10px"
+              name="form_content_re">
+
+            <div style="min-height: 150px; border-radius: 10px; width: 100%; display: inline;"
+                 id="">
+                <input name="check_box_re" type="checkbox" id="re_test-1" aria-label="Checkbox for following text input"
+                       onclick="doOpenCheck_re(this)">
+                <label disabled type="text" for="re_test-1" class=" "
+                       aria-label="Text input with checkbox"
+                       id="re_text_1"
+                       style="background-color: transparent; border-color: transparent; padding: 10px; font-size: 18px ">당일
+                    날 장소에서 받기</label>
+            </div>
+
+            <div style="min-height: 150px; border-radius: 10px; width: 100%; display: inline; margin-left: 30px"
+                 id="">
+                <input name="check_box_re" type="checkbox" id="re_test-2" aria-label="Checkbox for following text input"
+                       onclick="doOpenCheck_re(this)">
+                <label disabled type="text" for="re_test-2" class=" "
+                       aria-label="Text input with checkbox"
+                       id="re_text_2"
+                       style="background-color: transparent; border-color: transparent; padding: 10px; font-size: 18px">집으로
+                    받기</label>
+            </div>
+
+        </form>
+
+        <div id="address" class="form-group"
+             style="margin-left: 320px; border: #FBAA48 1px solid; padding: 50px; border-radius: 10px; display:none;">
+            <label class="" style="display: block">주소</label>
+
+            <div style="display: block">
+                <input class="form-control float-lg-none col-4" type="text" size="10" name="wPostCode" id="post"
+                       placeholder="우편번호" disabled style="display: inline">
+                <input class="btn col-3" type="button" onclick="search_add()" value="우편번호 찾기">
+            </div>
+
+            <input class="form-control" type="text" size="30" name="wRoadAddress" id="addr" placeholder="도로명주소"
+                   disabled style="margin-top: 20px">
+            <span id="guide" style="color:#999;font-size:10px;" style="margin-top: 20px"></span>
+
+            <input class="form-control" type="text" name="wRestAddress" placeholder="나머지 주소" id="adress_etc"
+                   style="width: 100%; margin-top: 20px"/>
+        </div>
+
     </div>
 
     <div class="text-center" style="margin-top: 50px">
-        <button type="button" class="btn hover_class btn-lg" id="support_hover" style="border: #FBAA48 1px solid; width: 120px; margin-right: 10px" onclick="history.back()">취소하기</button>
-        <button type="button" class="btn hover_class btn-lg" disabled id="support_hover2" style="border: #FBAA48 1px solid; width: 120px; margin-left: 10px" onclick="payment()">펀딩하기</button>
+        <button type="button" class="btn hover_class btn-lg" id="support_hover"
+                style="border: #FBAA48 1px solid; width: 120px; margin-right: 10px" onclick="history.back()">취소하기
+        </button>
+        <button type="button" class="btn hover_class btn-lg" disabled id="support_hover2"
+                style="border: #FBAA48 1px solid; width: 120px; margin-left: 10px"
+                onclick="payment(
+                        document.getElementById('genre_text').innerText, //결제 품목
+                        document.getElementById('total_price').value,//결제 금액
+                        document.getElementById('user_e_mail').value, //이메일
+                        document.getElementById('user_name').value, //이름
+                        document.getElementById('user_phone').value //전화번호
+                        )">펀딩하기
+        </button>
     </div>
 
 </div>
@@ -188,6 +297,9 @@ $board = $sql->fetch_array();
 <!-- Bootstrap core JavaScript -->
 <script src="../vendor/jquery/jquery.min.js"></script>
 <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
 
 <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js"></script>
 <script src="../public/side_bar.js"></script>

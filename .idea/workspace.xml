@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/concert/concert_ticket.js" line="262" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="315b7d6c-43dd-4b04-a2b3-17ad3cc59c77" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/concert/concert_payment.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/concert/concert_information.php" beforeDir="false" afterPath="$PROJECT_DIR$/concert/concert_information.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/concert/concert_ticket.js" beforeDir="false" afterPath="$PROJECT_DIR$/concert/concert_ticket.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/concert/concert_ticket.php" beforeDir="false" afterPath="$PROJECT_DIR$/concert/concert_ticket.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/public.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/public.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,54 +32,30 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/concert/concert_information.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1227">
-              <caret line="297" column="7" lean-forward="true" selection-start-line="297" selection-start-column="7" selection-end-line="297" selection-end-column="7" />
-              <folding>
-                <element signature="n#style#0;n#img#0;n#a#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/concert/concert_ticket.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="429">
-              <caret line="156" column="116" selection-start-line="156" selection-start-column="116" selection-end-line="156" selection-end-column="116" />
+            <state relative-caret-position="304">
+              <caret line="97" lean-forward="true" selection-start-line="97" selection-end-line="97" />
               <folding>
-                <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#h1#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#section#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#h3#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#form#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#label#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#label#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#label#0;n#div#2;n#form#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#form#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#form#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#form#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#form#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#h6#0;n#form#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#1;n#form#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#2;n#div#3;n#form#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#3;n#div#3;n#form#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#3;n#form#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#div#0;n#div#3;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#button#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#button#1;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#0;n#a#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#form#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#h6#0;n#div#0;n#form#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#h6#1;n#div#0;n#form#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#2;n#div#1;n#form#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#3;n#div#1;n#form#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#div#0;n#div#1;n#form#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#form#2;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#form#2;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#label#0;n#div#0;n#form#2;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#form#2;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#label#0;n#div#1;n#form#2;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/concert/concert_payment.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="638">
-              <caret line="66" column="2" selection-start-line="66" selection-start-column="2" selection-end-line="66" selection-end-column="2" />
             </state>
           </provider>
         </entry>
@@ -86,20 +63,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/concert/concert_ticket.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
-              <caret line="68" column="55" selection-start-line="68" selection-start-column="55" selection-end-line="68" selection-end-column="55" />
+            <state relative-caret-position="3507">
+              <caret line="249" column="21" selection-start-line="249" selection-start-column="21" selection-end-line="249" selection-end-column="21" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/community/community_read.php">
+        <entry file="file://$PROJECT_DIR$/Sign/sign_up.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="348" column="82" selection-start-line="348" selection-start-column="47" selection-end-line="348" selection-end-column="82" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="149">
+              <caret line="144" selection-start-line="144" selection-end-line="169" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -117,8 +91,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>re_bt</find>
-      <find>re_reply_p</find>
       <find>pro</find>
       <find>team_name</find>
       <find>page</find>
@@ -147,6 +119,8 @@
       <find>action</find>
       <find>form</find>
       <find>check_box</find>
+      <find>후원</find>
+      <find>support_hover2</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -162,7 +136,6 @@
         <option value="$PROJECT_DIR$/my_page/my_page_application.php" />
         <option value="$PROJECT_DIR$/my_page/manager_busking_zone.php" />
         <option value="$PROJECT_DIR$/my_page/manager_streaming.php" />
-        <option value="$PROJECT_DIR$/my_page/my_page_modify.php" />
         <option value="$PROJECT_DIR$/community/commu_re_reply_p.php" />
         <option value="$PROJECT_DIR$/community/community_read.php" />
         <option value="$PROJECT_DIR$/my_page/manager_application_p.php" />
@@ -201,10 +174,11 @@
         <option value="$PROJECT_DIR$/buskingteam/songlist.php" />
         <option value="$PROJECT_DIR$/concert/concert.php" />
         <option value="$PROJECT_DIR$/Sign/sign_up.html" />
-        <option value="$PROJECT_DIR$/concert/concert_information.php" />
         <option value="$PROJECT_DIR$/css/public.css" />
-        <option value="$PROJECT_DIR$/concert/concert_ticket.js" />
         <option value="$PROJECT_DIR$/concert/concert_payment.php" />
+        <option value="$PROJECT_DIR$/concert/concert_information.php" />
+        <option value="$PROJECT_DIR$/my_page/my_page_modify.php" />
+        <option value="$PROJECT_DIR$/concert/concert_ticket.js" />
         <option value="$PROJECT_DIR$/concert/concert_ticket.php" />
       </list>
     </option>
@@ -219,18 +193,12 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="EveryBusking" type="b2602c69:ProjectViewProjectNode" />
               <item name="EveryBusking" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="EveryBusking" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EveryBusking" type="462c0819:PsiDirectoryNode" />
-              <item name="community" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="EveryBusking" type="b2602c69:ProjectViewProjectNode" />
@@ -242,10 +210,16 @@
               <item name="EveryBusking" type="462c0819:PsiDirectoryNode" />
               <item name="my_page" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="EveryBusking" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EveryBusking" type="462c0819:PsiDirectoryNode" />
+              <item name="Sign" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -256,19 +230,19 @@
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\내꺼\IT\기초 단계\03. PHP\EveryBusking\my_page" />
-      <recent name="C:\내꺼\IT\기초 단계\03. PHP\EveryBusking\public" />
-      <recent name="C:\내꺼\IT\기초 단계\03. PHP\EveryBusking\streaming" />
-      <recent name="C:\내꺼\IT\기초 단계\03. PHP\EveryBusking\busking_zone" />
-      <recent name="C:\내꺼\IT\기초 단계\03. PHP\EveryBusking\concert" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Dudu\PhpstormProjects\everybusking\css" />
       <recent name="C:\Users\Dudu\PhpstormProjects\everybusking\concert" />
       <recent name="C:\Users\Dudu\PhpstormProjects\everybusking\my_page" />
       <recent name="C:\Users\Dudu\PhpstormProjects\everybusking\community" />
       <recent name="C:\Users\Dudu\PhpstormProjects\everybusking\buskingteam" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\내꺼\IT\기초 단계\03. PHP\EveryBusking\my_page" />
+      <recent name="C:\내꺼\IT\기초 단계\03. PHP\EveryBusking\public" />
+      <recent name="C:\내꺼\IT\기초 단계\03. PHP\EveryBusking\streaming" />
+      <recent name="C:\내꺼\IT\기초 단계\03. PHP\EveryBusking\busking_zone" />
+      <recent name="C:\내꺼\IT\기초 단계\03. PHP\EveryBusking\concert" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -318,14 +292,8 @@
       <workItem from="1546923064451" duration="34062000" />
       <workItem from="1547092449511" duration="33182000" />
       <workItem from="1547177937346" duration="13511000" />
-      <workItem from="1547192264301" duration="17760000" />
-    </task>
-    <task id="LOCAL-00063" summary="19.01.04&#10;&#10;커뮤니티 댓글 삭제 완료">
-      <created>1546607355715</created>
-      <option name="number" value="00063" />
-      <option name="presentableId" value="LOCAL-00063" />
-      <option name="project" value="LOCAL" />
-      <updated>1546607355715</updated>
+      <workItem from="1547192264301" duration="18428000" />
+      <workItem from="1547267896170" duration="9430000" />
     </task>
     <task id="LOCAL-00064" summary="19.01.05&#10;&#10;커뮤니티 페이징 완료">
       <created>1546667278431</created>
@@ -663,11 +631,18 @@
       <option name="project" value="LOCAL" />
       <updated>1547210174711</updated>
     </task>
-    <option name="localTasksCounter" value="112" />
+    <task id="LOCAL-00112" summary="19.01.11&#10;       &#10;결제 시작">
+      <created>1547214412936</created>
+      <option name="number" value="00112" />
+      <option name="presentableId" value="LOCAL-00112" />
+      <option name="project" value="LOCAL" />
+      <updated>1547214412936</updated>
+    </task>
+    <option name="localTasksCounter" value="113" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="402480000" />
+    <option name="totallyTimeSpent" value="412578000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -682,7 +657,7 @@
     <frame x="-8" y="-8" width="1631" height="1066" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19096117" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19350731" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -754,7 +729,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="19.01.04&#10;&#10;커뮤니티 댓글 삭제 하는중" />
     <MESSAGE value="19.01.04&#10;&#10;커뮤니티 댓글 삭제 완료" />
     <MESSAGE value="19.01.05&#10;&#10;커뮤니티 페이징 완료" />
     <MESSAGE value="19.01.05&#10;&#10;동영상 업로드" />
@@ -779,26 +753,10 @@
     <MESSAGE value="19.01.11&#10;       &#10;top으로 가는 버튼 완성" />
     <MESSAGE value="19.01.11&#10;       &#10;결제 버튼 오나성" />
     <MESSAGE value="19.01.11&#10;       &#10;결제 창 만든느중" />
-    <option name="LAST_COMMIT_MESSAGE" value="19.01.11&#10;       &#10;결제 창 만든느중" />
+    <MESSAGE value="19.01.11&#10;       &#10;결제 시작" />
+    <option name="LAST_COMMIT_MESSAGE" value="19.01.11&#10;       &#10;결제 시작" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/main_nav.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="588">
-          <caret line="40" column="90" selection-start-line="40" selection-start-column="77" selection-end-line="40" selection-end-column="90" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/concert.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="398">
-          <caret line="65" column="1" selection-start-line="65" selection-start-column="1" selection-end-line="65" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/img/busking_defualt.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/img/no_image.gif">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -1002,27 +960,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/concert/zxczcxz.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="15" column="43" selection-start-line="15" selection-start-column="40" selection-end-line="15" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/garbage/blog-home-1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="16" column="46" lean-forward="true" selection-start-line="16" selection-start-column="46" selection-end-line="16" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/freelancer.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="17" column="28" lean-forward="true" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/concert/zxczcxz.html" />
+    <entry file="file://$PROJECT_DIR$/garbage/blog-home-1.html" />
+    <entry file="file://$PROJECT_DIR$/css/freelancer.css" />
     <entry file="file://$USER_HOME$/Downloads/Scroll_Top/jquery.easing.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-399" />
@@ -1051,16 +991,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/concert/concert.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-825">
-          <caret line="28" column="9" lean-forward="true" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/concert/concert_information.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/concert/concert.html" />
+    <entry file="file://$PROJECT_DIR$/concert/concert_information.html" />
     <entry file="file://$PROJECT_DIR$/concert/concert.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="205">
@@ -1100,13 +1032,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Sign/sign_up.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="353">
-          <caret line="456" column="90" selection-start-line="456" selection-start-column="90" selection-end-line="456" selection-end-column="90" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/jquery.scroll.pack.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1127,16 +1052,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/community/community_read.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="348" column="82" selection-start-line="348" selection-start-column="47" selection-end-line="348" selection-end-column="82" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/my_page/my_page_modify_p.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1147,62 +1062,90 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/my_page/my_page_modify.php">
+    <entry file="file://$PROJECT_DIR$/community/community_read.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="358">
-          <caret line="195" column="61" lean-forward="true" selection-start-line="195" selection-start-column="37" selection-end-line="195" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/concert/concert_ticket.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="68" column="55" selection-start-line="68" selection-start-column="55" selection-end-line="68" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/concert/concert_information.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1227">
-          <caret line="297" column="7" lean-forward="true" selection-start-line="297" selection-start-column="7" selection-end-line="297" selection-end-column="7" />
+        <state relative-caret-position="225">
+          <caret line="348" column="82" selection-start-line="348" selection-start-column="47" selection-end-line="348" selection-end-column="82" />
           <folding>
-            <element signature="n#style#0;n#img#0;n#a#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/concert/concert_payment.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="638">
-          <caret line="66" column="2" selection-start-line="66" selection-start-column="2" selection-end-line="66" selection-end-column="2" />
+        <state relative-caret-position="361">
+          <caret line="19" column="37" lean-forward="true" selection-start-line="19" selection-start-column="37" selection-end-line="19" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es5.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="233">
+          <caret line="40" column="17" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Sign/sign_in.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/concert/concert_information.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-76">
+          <caret line="82" column="18" lean-forward="true" selection-start-line="82" selection-start-column="18" selection-end-line="82" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Sign/login_check.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="33" column="39" lean-forward="true" selection-start-line="33" selection-start-column="39" selection-end-line="33" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Sign/sign_up.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="144" selection-start-line="144" selection-end-line="169" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my_page/my_page_modify.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="50" lean-forward="true" selection-start-line="50" selection-end-line="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/concert/concert_ticket.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3507">
+          <caret line="249" column="21" selection-start-line="249" selection-start-column="21" selection-end-line="249" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/concert/concert_ticket.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="429">
-          <caret line="156" column="116" selection-start-line="156" selection-start-column="116" selection-end-line="156" selection-end-column="116" />
+        <state relative-caret-position="304">
+          <caret line="97" lean-forward="true" selection-start-line="97" selection-end-line="97" />
           <folding>
-            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h1#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#section#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h3#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#form#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#label#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#label#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#label#0;n#div#2;n#form#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#form#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#form#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#form#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#form#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h6#0;n#form#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#1;n#form#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#2;n#div#3;n#form#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#3;n#div#3;n#form#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#3;n#form#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#0;n#div#3;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#1;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#a#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#form#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h6#0;n#div#0;n#form#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h6#1;n#div#0;n#form#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#2;n#div#1;n#form#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#3;n#div#1;n#form#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#div#1;n#form#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#form#2;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#form#2;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#div#0;n#form#2;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#form#2;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#div#1;n#form#2;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

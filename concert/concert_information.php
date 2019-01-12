@@ -44,6 +44,16 @@ $board = $sql->fetch_array();
 
     </style>
 
+    <script>
+
+        function check() {
+
+            alert("로그인 후 이용해주시길 바랍니다.")
+
+        }
+
+    </script>
+
 </head>
 
 <body>
@@ -79,10 +89,29 @@ $board = $sql->fetch_array();
                 <h6 align="left" style="position: relative; right: 20%">후원자</h6>
                 <h3><?= $board['people'] ?>명</h3>
             </div>
-            <div>
-                <a href="concert_ticket.php?idx=<?=$bno?>" class="btn btn-block my_font_main"
-                   style="font-size: 2em; background-color: #FBAA48; color: white" id="support">후원하기</a>
-            </div>
+
+            <?php
+            if ($_SESSION == null) {
+                ?>
+
+                <div>
+                    <a class="btn btn-block my_font_main"
+                       style="font-size: 2em; background-color: #FBAA48; color: white" id="support" onclick="check()">후원하기</a>
+                </div>
+
+                <?php
+            } else {
+                ?>
+
+                <div>
+                    <a href="concert_ticket.php?idx=<?=$bno?>" class="btn btn-block my_font_main"
+                       style="font-size: 2em; background-color: #FBAA48; color: white" id="support">후원하기</a>
+                </div>
+
+                <?php
+            }
+            ?>
+
         </div>
     </div>
 
