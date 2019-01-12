@@ -112,9 +112,9 @@ if ($_SESSION == null) {
                 <a href="manager_busking_team.php" style="color: black">Busking Team</a>
             </li>
 
-            <li class="breadcrumb-item">
-                <a href="manager_busking_zone.php" style="color: black">Busking Zone</a>
-            </li>
+<!--            <li class="breadcrumb-item">-->
+<!--                <a href="manager_busking_zone.php" style="color: black">Busking Zone</a>-->
+<!--            </li>-->
 
             <li class="breadcrumb-item">
                 <a href="manager_streaming.php" style="color: black">Streaming</a>
@@ -223,7 +223,7 @@ if ($_SESSION == null) {
                                 <input type="hidden" name="whether" value="승락">
                                 <input type="hidden" name="idx" value="<?=$board['idx']?>">
                                 <input type="hidden" name="page" value="<?=$page?>">
-                                <button type="submit" class="btn hover_class" style="font-size: 12px; padding: 3px 7px 3px 7px">
+                                <button type="submit" id="support_hover" class="btn hover_class" style="font-size: 12px; padding: 3px 7px 3px 7px">
                                     승락
                                 </button>
                             </form>
@@ -232,7 +232,7 @@ if ($_SESSION == null) {
                                 <input type="hidden" name="whether" value="거절">
                                 <input type="hidden" name="idx" value="<?=$board['idx']?>">
                                 <input type="hidden" name="page" value="<?=$page?>">
-                                <button class="btn re_hover_class" style="font-size: 12px; padding: 3px 7px 3px 7px">
+                                <button class="btn hover_class" id="support_hover" style="font-size: 12px; border: #FBAA48 1px solid;padding: 3px 7px 3px 7px">
                                     거절
                                 </button>
                             </form>

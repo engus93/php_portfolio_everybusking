@@ -111,9 +111,9 @@ if ($_SESSION == null) {
                 <a href="manager_busking_team.php" style="color: black">Busking Team</a>
             </li>
 
-            <li class="breadcrumb-item">
-                <a href="manager_busking_zone.php" style="color: black">Busking Zone</a>
-            </li>
+<!--            <li class="breadcrumb-item">-->
+<!--                <a href="manager_busking_zone.php" style="color: black">Busking Zone</a>-->
+<!--            </li>-->
 
             <li class="breadcrumb-item">
                 <a href="manager_streaming.php" style="color: black">Streaming</a>

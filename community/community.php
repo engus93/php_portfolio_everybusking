@@ -36,7 +36,7 @@
     </style>
 
     <script>
-        function search_search(){
+        function search_search() {
 
             var word = document.getElementById("search_check").value;
 
@@ -61,7 +61,7 @@
 <script>$(".main_nav").load("/public/main_nav.php");</script>
 
 
-<div class="container">
+<div class="container" style="min-height: 800px">
 
     <h1 class="mt-4 mb-3 my_font_index">Community</h1>
 
@@ -71,7 +71,8 @@
         <div class="d-flex h-100 justify-content-xl-end">
             <form action="/community/community_search_result.php" method="get" name="search_go">
                 <div class="searchbar">
-                    <input class="search_input" type="text" id="search_check" name="search" style="font-weight: bold" placeholder="제목 or 내용">
+                    <input class="search_input" type="text" id="search_check" name="search" style="font-weight: bold"
+                           placeholder="제목 or 내용">
                     <a type="submit" class="search_icon" onclick="search_search()"><i class="fas fa-search"></i></a>
                 </div>
             </form>
@@ -125,7 +126,7 @@
                 }
 
                 echo '<article class="white-panel">
-                   <a style="text-decoration: none" href="community_read.php?idx=' . $board["idx"] . '&page='.$page.'"><img src="' . $board["picture"] . '"/>';
+                   <a style="text-decoration: none" href="community_read.php?idx=' . $board["idx"] . '&page=' . $page . '"><img src="' . $board["picture"] . '"/>';
                 echo '<h4 class="my_font_start" style="margin-top: 10px">' . $title . '</h4>';
                 echo '
                     <p class=" my_font_main" style=" color: black; font-size: 10px; color: black;position: absolute; left: 10px; bottom: 0px">조회수 : ' . $board["hit"] . '</p>
@@ -137,18 +138,19 @@
             ?>
 
         </section>
-
-        <div style="position: relative">
-            <div id="write_btn" style="position:absolute; right: 0px; bottom: 0px; width: 70px;">
-                <a href="/community/community_write.php?page=<?=$page?>" id="search_tag">
-                    <button class="btn my_font_main" id="wright" style="background-color: #FBAA48; color: white;">글쓰기
-                    </button>
-                </a>
-            </div>
-        </div>
     </div>
 
 </div>
+
+<div class="col-8 offset-2" style="position: relative">
+    <div id="write_btn" style="position:absolute; right: 0px; bottom: 0px; width: 70px;">
+        <a href="/community/community_write.php?page=<?= $page ?>" id="search_tag">
+            <button class="btn my_font_main" id="wright" style="background-color: #FBAA48; color: white;">글쓰기
+            </button>
+        </a>
+    </div>
+</div>
+
 
 <!--페이징-->
 
@@ -172,7 +174,7 @@
                     </a>
                    </li>";
         } else {
-            $pre = floor(($page-1)/$block_ct)*$block_ct; //pre변수에 page-1을 해준다 만약 현재 페이지가 3인데 이전버튼을 누르면 2번페이지로 갈 수 있게 함
+            $pre = floor(($page - 1) / $block_ct) * $block_ct; //pre변수에 page-1을 해준다 만약 현재 페이지가 3인데 이전버튼을 누르면 2번페이지로 갈 수 있게 함
             echo "<li class='page-item'>
                     <a class='page-link' href='?page=$pre' aria-label='Previous' style='color: black'>
                         <span aria-hidden='true'>&laquo;</span>
@@ -266,7 +268,7 @@
 
             } else {
 
-                $next = ceil($page/$block_ct)*$block_ct + 1; //next변수에 page + 1을 해준다.
+                $next = ceil($page / $block_ct) * $block_ct + 1; //next변수에 page + 1을 해준다.
                 echo "<li class='page-item'>
                     <a class='page-link' href='?page=$next' aria-label='Next' style='color: black'>
                         <span aria-hidden='true'>&raquo;</span>
@@ -276,7 +278,7 @@
 
             }
         } else {
-            $next = ceil($page/$block_ct)*$block_ct + 1; //next변수에 page + 1을 해준다.
+            $next = ceil($page / $block_ct) * $block_ct + 1; //next변수에 page + 1을 해준다.
             echo "<li class='page-item'>
                     <a class='page-link' href='?page=$next' aria-label='Next' style='color: black'>
                         <span aria-hidden='true'>&raquo;</span>

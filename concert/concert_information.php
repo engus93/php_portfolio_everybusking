@@ -75,7 +75,7 @@ $board = $sql->fetch_array();
             <div>
                 <h6 align="left" style="position: relative; right: 20%">모인 금액</h6>
                 <span style="font-size: 2em"><?= $board['money'] ?>원 / </span>
-                <span><?= floor(($board['money']/50000)*100) ?>%</span>
+                <span><?= floor(($board['money'] / 50000) * 100) ?>%</span>
             </div>
             <div>
                 <h6 align="left" style="position: relative; right: 20%;">남은 시간</h6>
@@ -104,7 +104,7 @@ $board = $sql->fetch_array();
                 ?>
 
                 <div>
-                    <a href="concert_ticket.php?idx=<?=$bno?>" class="btn btn-block my_font_main"
+                    <a href="concert_ticket.php?idx=<?= $bno ?>" class="btn btn-block my_font_main"
                        style="font-size: 2em; background-color: #FBAA48; color: white" id="support">후원하기</a>
                 </div>
 
@@ -113,6 +113,7 @@ $board = $sql->fetch_array();
             ?>
 
         </div>
+
     </div>
 
     <script type="text/javascript">
@@ -265,13 +266,20 @@ $board = $sql->fetch_array();
                     if ($check) {
                         ?>
 
-                        <div class="right"
-                             style="width: 100%; padding-bottom: 10px; padding-right: 10px; display: inline">
-                            <a href="/buskingteam/songlist.php?idx=<?= $position_idx ?>&team_name=<?= $team_name ?>">
-                                <button class="btn my_font_main hover_class" id="support_hover">
-                                    더 많은 영상 보러가기
-                                </button>
-                            </a>
+                        <div style="width: 100%; padding-bottom: 10px">
+                            <div style="display: inline; margin-left: 10px">
+                                <a class="btn my_font_main hover_class"
+                                   style="font-size: 1em" id="support"
+                                   href="/concert/concert.php?page=<?= $_GET['page'] ?>">다른 후원 찾기</a>
+                            </div>
+
+                            <div style="margin-left: 820px; padding-bottom: 10px; padding-right: 10px; display: inline">
+                                <a href="/buskingteam/songlist.php?idx=<?= $position_idx ?>&team_name=<?= $team_name ?>">
+                                    <button class="btn my_font_main hover_class" id="support_hover">
+                                        더 많은 영상 보러가기
+                                    </button>
+                                </a>
+                            </div>
                         </div>
 
                         <?php
@@ -282,12 +290,20 @@ $board = $sql->fetch_array();
                             <p>등록된 영상이 없습니다.</p>
                         </div>
 
-                        <div class="left" style="width: 100%; padding-bottom: 10px; padding-right: 10px">
-                            <a href="/buskingteam/songlist.php?idx=<?= $position_idx ?>&team_name=<?= $team_name ?>">
-                                <button class="btn my_font_main hover_class" id="support_hover">
-                                    더 많은 영상 보러가기
-                                </button>
-                            </a>
+                        <div style="width: 100%; padding-bottom: 10px">
+                            <div style="display: inline; margin-left: 10px">
+                                <a class="btn my_font_main hover_class"
+                                   style="font-size: 1em" id="support"
+                                   href="/concert/concert.php?page=<?= $_GET['page'] ?>">다른 후원 찾기</a>
+                            </div>
+
+                            <div style="margin-left: 820px; padding-bottom: 10px; padding-right: 10px; display: inline">
+                                <a href="/buskingteam/songlist.php?idx=<?= $position_idx ?>&team_name=<?= $team_name ?>">
+                                    <button class="btn my_font_main hover_class" id="support_hover">
+                                        더 많은 영상 보러가기
+                                    </button>
+                                </a>
+                            </div>
                         </div>
 
                         <?php
@@ -304,8 +320,6 @@ $board = $sql->fetch_array();
     </div>
 
 </div>
-
-<a href="#top">Scroll to Top</a>
 
 <!--footer 로드-->
 <div class="main_footer"></div>

@@ -203,9 +203,6 @@
     width: 40px;
     height: 40px;
 }
-/*.cardbox-comments .comment-body {*/
-/*overflow: auto;*/
-/*}*/
 .search {
     position: relative;
     right: -60px;
@@ -213,7 +210,6 @@
     margin-bottom: -40px;
     border: 2px solid #f4f4f4;
     width: 100%;
-    /*overflow: hidden;*/
 }
 .search input[type="text"] {
     background-color: #fff;
@@ -224,31 +220,7 @@
     font-size: 16px;
     /*color: #8d8d8d;*/
     height: inherit;
-    /*font-family: 'Rokkitt', serif;*/
-    /*font-weight: 700;*/
 }
-/*.search button {*/
-/*position: absolute;*/
-/*right: 0;*/
-/*top: 0px;*/
-/*border: none;*/
-/*background-color: transparent;*/
-/*color: #bbbbbb;*/
-/*padding: 15px 25px;*/
-/*cursor: pointer;*/
-
-/*display: flex;*/
-/*flex-direction: column;*/
-/*justify-content: center;*/
-/*align-items: center;*/
-/*text-align: center;*/
-/*}*/
-/*.search button i {*/
-/*font-size: 20px;*/
-/*line-height: 30px;*/
-/*display: block;*/
-/*}*/
-
 
 /* ------------------------------- */
 /* Author
@@ -267,7 +239,7 @@
 #support_1:hover{
     background-color: transparent !important;
     color: #FBAA48 !important;
-    border: #FBAA48 2px solid;
+    border: #FBAA48 1px solid;
 }
 
 /* 댓글 */

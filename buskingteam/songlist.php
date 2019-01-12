@@ -67,7 +67,7 @@ if (isset($_GET['team_name'])) {
 <script>$(".main_nav").load("/public/main_nav.php");</script>
 
 <!-- Page Content -->
-<div class="container" style="position: relative">
+<div class="container" style="min-height: 800px; position: relative">
 
     <!-- Page Heading/Breadcrumbs -->
     <h1 class="mt-4 mb-3 my_font_index" style="margin-top: 30px">Busking Team - Song List
@@ -182,6 +182,9 @@ if (isset($_GET['team_name'])) {
 
     ?>
 
+</div>
+
+<div class="col-8 offset-2">
     <?php
     if ($_SESSION != null) {
         if ($_SESSION['user_id'] == "rhksflwk") {
@@ -190,15 +193,16 @@ if (isset($_GET['team_name'])) {
 
                 ?>
 
-                <a href="/my_page/manager_busking_team.php?page=<?=$_GET['manager_page']?>" style="float: left">
+                <a href="/my_page/manager_busking_team.php?page=<?= $_GET['manager_page'] ?>" style="float: left">
                     <button class="btn my_font_main" id="video_upload" style="background-color: #FBAA48; color: white;">
                         매니저 페이지로 돌아가기
                     </button>
                 </a>
 
-                <div style="margin-left: 1010px;">
+                <div class="right">
                     <a href="/buskingteam/songlist_write.php?idx=<?= $_GET['idx'] ?>&team_name=<?= $_GET['team_name'] ?>">
-                        <button class="btn my_font_main" id="video_upload" style="background-color: #FBAA48; color: white;">
+                        <button class="btn my_font_main" id="video_upload"
+                                style="background-color: #FBAA48; color: white;">
                             공연 영상 등록
                         </button>
                     </a>
@@ -206,24 +210,25 @@ if (isset($_GET['team_name'])) {
 
                 <?php
 
-            }else{
-            ?>
+            } else {
+                ?>
 
-            <a href="/buskingteam/buskingteam.php" style="float: left">
-                <button class="btn my_font_main" id="video_upload" style="background-color: #FBAA48; color: white;">
-                    다른 버스킹 팀 보러가기
-                </button>
-            </a>
-
-            <div style="margin-left: 1010px;">
-                <a href="/buskingteam/songlist_write.php?idx=<?= $_GET['idx'] ?>&team_name=<?= $_GET['team_name'] ?>">
+                <a href="/buskingteam/buskingteam.php" style="float: left">
                     <button class="btn my_font_main" id="video_upload" style="background-color: #FBAA48; color: white;">
-                        공연 영상 등록
+                        다른 버스킹 팀 보러가기
                     </button>
                 </a>
-            </div>
 
-            <?php
+                <div class="right">
+                    <a href="/buskingteam/songlist_write.php?idx=<?= $_GET['idx'] ?>&team_name=<?= $_GET['team_name'] ?>">
+                        <button class="btn my_font_main" id="video_upload"
+                                style="background-color: #FBAA48; color: white;">
+                            공연 영상 등록
+                        </button>
+                    </a>
+                </div>
+
+                <?php
             }
 
         }
@@ -240,65 +245,55 @@ if (isset($_GET['team_name'])) {
     }
     ?>
 
+</div>
 
-    <div id="page_num">
-        <ul class="pagination justify-content-center" style="margin-top: 20px; margin-bottom: 20px">
-            <?php
+<div id="page_num">
+    <ul class="pagination justify-content-center" style="margin-top: 20px; margin-bottom: 20px">
+        <?php
 
-            //이전
-            if ($page <= 1) { //만약 page가 1보다 크거나 같다면 빈값
-                echo "<li class='page-item'>
+        //이전
+        if ($page <= 1) { //만약 page가 1보다 크거나 같다면 빈값
+            echo "<li class='page-item'>
                     <a class='page-link' aria-label='Previous' onclick='start_page()'>
                         <span aria-hidden='true'>&laquo;</span>
                         <span class='sr-only'>Previous</span>                    
                     </a>
                    </li>";
-            } else {
-                $pre = $page - 1; //pre변수에 page-1을 해준다 만약 현재 페이지가 3인데 이전버튼을 누르면 2번페이지로 갈 수 있게 함
-                echo '<li class="page-item">
+        } else {
+            $pre = $page - 1; //pre변수에 page-1을 해준다 만약 현재 페이지가 3인데 이전버튼을 누르면 2번페이지로 갈 수 있게 함
+            echo '<li class="page-item">
                     <a class="page-link" href="?page=' . $pre . '&idx=' . $_GET['idx'] . '&team_name=' . $_GET['team_name'] . '" aria-label="Previous" style="color: black">
                         <span aria-hidden="true">&laquo;</span>
                         <span class="sr-only">Previous</span>                    
                     </a>
                    </li>';
-            }
+        }
 
-            //숫자 표시
-            for ($i = $block_start; $i <= $block_end; $i++) {
-                //for문 반복문을 사용하여, 초기값을 블록의 시작번호를 조건으로 블록시작번호가 마지박블록보다 작거나 같을 때까지 $i를 반복시킨다
-                if ($page == $i) { //만약 page가 $i와 같다면
-                    echo '<li class="page-item"><a class="page-link" href="?page=' . $i . '&idx=' . $_GET['idx'] . '&team_name=' . $_GET['team_name'] . '"
+        //숫자 표시
+        for ($i = $block_start; $i <= $block_end; $i++) {
+            //for문 반복문을 사용하여, 초기값을 블록의 시작번호를 조건으로 블록시작번호가 마지박블록보다 작거나 같을 때까지 $i를 반복시킨다
+            if ($page == $i) { //만약 page가 $i와 같다면
+                echo '<li class="page-item"><a class="page-link" href="?page=' . $i . '&idx=' . $_GET['idx'] . '&team_name=' . $_GET['team_name'] . '"
                 style="color: #FBAA48; font-weight: bold;">' . $i . '</a></li>'; //현재 페이지에 해당하는 번호에 굵은 빨간색을 적용한다
-                } else {
-                    echo '<li class="page-item"><a class="page-link" href="?page=' . $i . '&idx=' . $_GET['idx'] . '&team_name=' . $_GET['team_name'] . '"style="color: black">' . $i . '</a></li>';
-                }
+            } else {
+                echo '<li class="page-item"><a class="page-link" href="?page=' . $i . '&idx=' . $_GET['idx'] . '&team_name=' . $_GET['team_name'] . '"style="color: black">' . $i . '</a></li>';
             }
+        }
 
-            //다음
-            if ($block_num >= $total_block) { //만약 현재 블록이 블록 총개수보다 크거나 같다면 빈 값
+        //다음
+        if ($block_num >= $total_block) { //만약 현재 블록이 블록 총개수보다 크거나 같다면 빈 값
 
-                if ($page >= $total_page) { //만약 page가 페이지수보다 크거나 같다면
+            if ($page >= $total_page) { //만약 page가 페이지수보다 크거나 같다면
 
-                    echo "<li class='page-item'>
+                echo "<li class='page-item'>
                         <a class='page-link' aria-label='Next' onclick='last_page()'>
                             <span aria-hidden='true'>&raquo;</span>
                             <span class='sr-only'>Next</span>
                         </a>
                        </li>";
 
-                } else {
-
-                    $next = $page + 1; //next변수에 page + 1을 해준다.
-                    echo '<li class="page-item">
-                    <a class="page-link" href="?page=' . $next . '&idx=' . $_GET['idx'] . '&team_name=' . $_GET['team_name'] . '" aria-label="Next" style="color: black">';
-                    echo "
-                        <span aria-hidden='true'>&raquo;</span>
-                        <span class='sr-only'>Next</span>                    
-                    </a>
-                   </li>";
-
-                }
             } else {
+
                 $next = $page + 1; //next변수에 page + 1을 해준다.
                 echo '<li class="page-item">
                     <a class="page-link" href="?page=' . $next . '&idx=' . $_GET['idx'] . '&team_name=' . $_GET['team_name'] . '" aria-label="Next" style="color: black">';
@@ -307,12 +302,20 @@ if (isset($_GET['team_name'])) {
                         <span class='sr-only'>Next</span>                    
                     </a>
                    </li>";
+
             }
-            ?>
-        </ul>
-    </div>
-
-
+        } else {
+            $next = $page + 1; //next변수에 page + 1을 해준다.
+            echo '<li class="page-item">
+                    <a class="page-link" href="?page=' . $next . '&idx=' . $_GET['idx'] . '&team_name=' . $_GET['team_name'] . '" aria-label="Next" style="color: black">';
+            echo "
+                        <span aria-hidden='true'>&raquo;</span>
+                        <span class='sr-only'>Next</span>                    
+                    </a>
+                   </li>";
+        }
+        ?>
+    </ul>
 </div>
 
 

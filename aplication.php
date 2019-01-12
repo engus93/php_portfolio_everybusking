@@ -9,7 +9,6 @@ if ($_SESSION == null) {
 
 ?>
 
-
 <!DOCTYPE html>
 <html>
 
@@ -44,7 +43,7 @@ if ($_SESSION == null) {
 <div class="main_nav"></div>
 <script>$(".main_nav").load("/public/main_nav.php");</script>
 
-<div class="container" style="margin-bottom: 100px">
+<div class="container" style="min-height: 700px; margin-bottom: 100px">
 
     <h1 class="mt-4 mb-3 my_font_index">Application</h1>
 

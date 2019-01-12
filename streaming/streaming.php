@@ -37,6 +37,11 @@
 
 <body>
 
+<div style="min-height: 800px">
+
+
+</div>
+
 <!--header 로드-->
 <div class="main_nav"></div>
 <script>$(".main_nav").load("/public/main_nav.php");</script>

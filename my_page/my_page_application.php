@@ -110,7 +110,7 @@ session_start();
             } else {
                 $page = 1;
             }
-            $sql = mq("select * from application_tb where write_user = '".$_SESSION['user_id']."'");
+            $sql = mq("select * from application_tb where write_user = '" . $_SESSION['user_id'] . "'");
             $row_num = mysqli_num_rows($sql); //게시판 총 레코드 수
             $list = 10; //한 페이지에 보여줄 개수
             $block_ct = 5; //블록당 보여줄 페이지 개수
@@ -125,13 +125,13 @@ session_start();
             $start_num = ($page - 1) * $list; //시작번호 (page-1)에서 $list를 곱한다.
 
             //        끝
-            $sql = mq("select COUNT(*) from application_tb where write_user = '".$_SESSION['user_id']."'");
+            $sql = mq("select COUNT(*) from application_tb where write_user = '" . $_SESSION['user_id'] . "'");
 
             $num = mysqli_fetch_array($sql);
 
-            $num = ($num[0] + 1) - ($page-1)*$list;
+            $num = ($num[0] + 1) - ($page - 1) * $list;
 
-            $sql = mq("select * from application_tb where write_user = '".$_SESSION['user_id']."' order by idx desc limit $start_num, $list");
+            $sql = mq("select * from application_tb where write_user = '" . $_SESSION['user_id'] . "' order by idx desc limit $start_num, $list");
 
             while ($board = $sql->fetch_array()) {
 
@@ -140,11 +140,11 @@ session_start();
                 ?>
 
                 <tr>
-                    <td width=100"><?=$num?></td>
-                    <td width="550"><?=$board['select_content']?> / <?=$board['select_content']?></a></td>
-                    <td width="120"><?=$board['select_name']?></td>
-                    <td width="150"><?=$board['date']?></td>
-                    <td width="100"><?=$board['whether']?></td>
+                    <td width=100"><?= $num ?></td>
+                    <td width="550"><?= $board['select_content'] ?> / <?= $board['select_content'] ?></a></td>
+                    <td width="120"><?= $board['select_name'] ?></td>
+                    <td width="150"><?= $board['date'] ?></td>
+                    <td width="100"><?= $board['whether'] ?></td>
                 </tr>
 
                 <?php
@@ -157,89 +157,81 @@ session_start();
         </table>
 
     </div>
+</div>
 
-    <div id="page_num">
-        <ul class="pagination justify-content-center" style="margin-top: 20px; margin-bottom: 20px">
-            <?php
 
-            //이전 블록
-            if ($page <= 1) {
-                echo "<li class='page-item'>
+<div id="page_num">
+    <ul class="pagination justify-content-center" style="margin-top: 20px; margin-bottom: 20px">
+        <?php
+
+        //이전 블록
+        if ($page <= 1) {
+            echo "<li class='page-item'>
                     <a class='page-link' aria-label='Previous' onclick='start_page()'>
                         <span aria-hidden='true'>&laquo;</span>
                         <span class='sr-only'>Previous</span>                    
                     </a>
                    </li>";
-            } else if ($page - 5 <= 0) { //만약 page가 1보다 크거나 같다면 빈값
-                echo "<li class='page-item'>
+        } else if ($page - 5 <= 0) { //만약 page가 1보다 크거나 같다면 빈값
+            echo "<li class='page-item'>
                     <a class='page-link' href='?page=1' aria-label='Previous' style='color: black'>
                         <span aria-hidden='true'>&laquo;</span>
                         <span class='sr-only'>Previous</span>                    
                     </a>
                    </li>";
-            } else {
-                $pre = floor(($page-1)/$block_ct)*$block_ct;
-                echo "<li class='page-item'>
+        } else {
+            $pre = floor(($page - 1) / $block_ct) * $block_ct;
+            echo "<li class='page-item'>
                     <a class='page-link' href='?page=$pre' aria-label='Previous' style='color: black'>
                         <span aria-hidden='true'>&laquo;</span>
                         <span class='sr-only'>Previous</span>                    
                     </a>
                    </li>";
-            }
+        }
 
-            //이전
-            if ($page <= 1) { //만약 page가 1보다 크거나 같다면 빈값
-                echo "<li class='page-item'>
+        //이전
+        if ($page <= 1) { //만약 page가 1보다 크거나 같다면 빈값
+            echo "<li class='page-item'>
                     <a class='page-link' aria-label='Previous' onclick='start_page()'>
                         <span aria-hidden='true'>&lsaquo;</span>
                         <span class='sr-only'>Previous</span>                    
                     </a>
                    </li>";
-            } else {
-                $pre = $page - 1; //pre변수에 page-1을 해준다 만약 현재 페이지가 3인데 이전버튼을 누르면 2번페이지로 갈 수 있게 함
-                echo "<li class='page-item'>
+        } else {
+            $pre = $page - 1; //pre변수에 page-1을 해준다 만약 현재 페이지가 3인데 이전버튼을 누르면 2번페이지로 갈 수 있게 함
+            echo "<li class='page-item'>
                     <a class='page-link' href='?page=$pre' aria-label='Previous' style='color: black'>
                         <span aria-hidden='true'>&lsaquo;</span>
                         <span class='sr-only'>Previous</span>                    
                     </a>
                    </li>";
-            }
+        }
 
-            //숫자 표시
-            for ($i = $block_start; $i <= $block_end; $i++) {
-                //for문 반복문을 사용하여, 초기값을 블록의 시작번호를 조건으로 블록시작번호가 마지박블록보다 작거나 같을 때까지 $i를 반복시킨다
-                if ($page == $i) { //만약 page가 $i와 같다면
-                    echo "<li class='page-item'><a class='page-link' href='?page=$i'
+        //숫자 표시
+        for ($i = $block_start; $i <= $block_end; $i++) {
+            //for문 반복문을 사용하여, 초기값을 블록의 시작번호를 조건으로 블록시작번호가 마지박블록보다 작거나 같을 때까지 $i를 반복시킨다
+            if ($page == $i) { //만약 page가 $i와 같다면
+                echo "<li class='page-item'><a class='page-link' href='?page=$i'
                 style='color: #FBAA48; font-weight: bold;'>$i</a></li>"; //현재 페이지에 해당하는 번호에 굵은 빨간색을 적용한다
-                } else {
-                    echo "<li class='page-item'><a class='page-link' href='?page=$i' style='color: black'>$i</a></li>";
-                }
+            } else {
+                echo "<li class='page-item'><a class='page-link' href='?page=$i' style='color: black'>$i</a></li>";
             }
+        }
 
-            //다음
-            if ($block_num >= $total_block) { //만약 현재 블록이 블록 총개수보다 크거나 같다면 빈 값
+        //다음
+        if ($block_num >= $total_block) { //만약 현재 블록이 블록 총개수보다 크거나 같다면 빈 값
 
-                if ($page >= $total_page) { //만약 page가 페이지수보다 크거나 같다면
+            if ($page >= $total_page) { //만약 page가 페이지수보다 크거나 같다면
 
-                    echo "<li class='page-item'>
+                echo "<li class='page-item'>
                         <a class='page-link' aria-label='Next' onclick='last_page()'>
                             <span aria-hidden='true'>&rsaquo;</span>
                             <span class='sr-only'>Next</span>
                         </a>
                        </li>";
 
-                } else {
-
-                    $next = $page + 1; //next변수에 page + 1을 해준다.
-                    echo "<li class='page-item'>
-                    <a class='page-link' href='?page=$next' aria-label='Next' style='color: black'>
-                        <span aria-hidden='true'>&rsaquo;</span>
-                        <span class='sr-only'>Next</span>                    
-                    </a>
-                   </li>";
-
-                }
             } else {
+
                 $next = $page + 1; //next변수에 page + 1을 해준다.
                 echo "<li class='page-item'>
                     <a class='page-link' href='?page=$next' aria-label='Next' style='color: black'>
@@ -247,52 +239,61 @@ session_start();
                         <span class='sr-only'>Next</span>                    
                     </a>
                    </li>";
+
             }
+        } else {
+            $next = $page + 1; //next변수에 page + 1을 해준다.
+            echo "<li class='page-item'>
+                    <a class='page-link' href='?page=$next' aria-label='Next' style='color: black'>
+                        <span aria-hidden='true'>&rsaquo;</span>
+                        <span class='sr-only'>Next</span>                    
+                    </a>
+                   </li>";
+        }
 
-            //다음 블록
-            if ($block_num >= $total_block) { //만약 현재 블록이 블록 총개수보다 크거나 같다면 빈 값
+        //다음 블록
+        if ($block_num >= $total_block) { //만약 현재 블록이 블록 총개수보다 크거나 같다면 빈 값
 
-                if ($page >= $total_page) { //만약 page가 페이지수보다 크거나 같다면
+            if ($page >= $total_page) { //만약 page가 페이지수보다 크거나 같다면
 
-                    echo "<li class='page-item'>
+                echo "<li class='page-item'>
                         <a class='page-link' aria-label='Next' onclick='last_page()'>
                             <span aria-hidden='true'>&raquo;</span>
                             <span class='sr-only'>Next</span>
                         </a>
                        </li>";
 
-                } else if ($page + 5 >= $total_page) { //만약 page가 페이지수보다 크거나 같다면
+            } else if ($page + 5 >= $total_page) { //만약 page가 페이지수보다 크거나 같다면
 
-                    echo "<li class='page-item'>
+                echo "<li class='page-item'>
                     <a class='page-link' href='?page=$total_page' aria-label='Next' style='color: black'>
                             <span aria-hidden='true'>&raquo;</span>
                             <span class='sr-only'>Next</span>
                         </a>
                        </li>";
 
-                } else {
-
-                    $next = ceil($page/$block_ct)*$block_ct + 1; //next변수에 page + 1을 해준다.
-                    echo "<li class='page-item'>
-                    <a class='page-link' href='?page=$next' aria-label='Next' style='color: black'>
-                        <span aria-hidden='true'>&raquo;</span>
-                        <span class='sr-only'>Next</span>                    
-                    </a>
-                   </li>";
-
-                }
             } else {
-                $next = ceil($page/$block_ct)*$block_ct + 1; //next변수에 page + 1을 해준다.
+
+                $next = ceil($page / $block_ct) * $block_ct + 1; //next변수에 page + 1을 해준다.
                 echo "<li class='page-item'>
                     <a class='page-link' href='?page=$next' aria-label='Next' style='color: black'>
                         <span aria-hidden='true'>&raquo;</span>
                         <span class='sr-only'>Next</span>                    
                     </a>
                    </li>";
+
             }
-            ?>
-        </ul>
-    </div>
+        } else {
+            $next = ceil($page / $block_ct) * $block_ct + 1; //next변수에 page + 1을 해준다.
+            echo "<li class='page-item'>
+                    <a class='page-link' href='?page=$next' aria-label='Next' style='color: black'>
+                        <span aria-hidden='true'>&raquo;</span>
+                        <span class='sr-only'>Next</span>                    
+                    </a>
+                   </li>";
+        }
+        ?>
+    </ul>
 
 </div>
 

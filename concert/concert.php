@@ -88,7 +88,7 @@ session_start();
             ?>
 
             <div class="col-lg-4 mb-4">
-                <div class="card h-100 text-center" onclick="location.href='concert_information.php?idx=<?= $board["idx"] ?>'">
+                <div class="card h-100 text-center" onclick="location.href='concert_information.php?idx=<?= $board["idx"] ?>&page=<?=$page?>'">
                     <input type="hidden" id="date<?= $board['concert_date'] ?>" value="<?= $board['concert_date'] ?>">
                     <input type="hidden" id="today_date" value="<?= $today_date ?>">
                     <img class="card-img-top concert_poster" src="<?= $board['picture'] ?>">

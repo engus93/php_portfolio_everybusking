@@ -105,12 +105,12 @@ if (isset($_COOKIE[session_name()])) {
                                 class="fas fa-cube shortmenu animate"></i></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link menu_busking_zone" href="/busking_zone/busking_zone.html" title="Cart"><i
+                    <a class="nav-link menu_busking_zone" href="/busking_zone/busking_zone.php" title="Cart"><i
                                 class="fas fa-map-marker-alt side_bar_img"></i>Busking Zone<i
                                 class="fas fa-cart-plus shortmenu animate"></i></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link menu_streaming" href="/streaming/streaming.html" title="Comment"><i
+                    <a class="nav-link menu_streaming" href="/streaming/streaming.php" title="Comment"><i
                                 class="fas fa-video side_bar_img"></i>Streaming<i
                                 class="fas fa-comment shortmenu animate"></i></a>
                 </li>
