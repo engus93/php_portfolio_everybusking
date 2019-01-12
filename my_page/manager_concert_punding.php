@@ -138,11 +138,11 @@ if ($_SESSION == null) {
     <ol class="breadcrumb" style="background-color: transparent">
 
         <li class="breadcrumb-item">
-            <a href="manager_concert.php" style="color: #fc3c3c">콘서트 진행 내역</a>
+            <a href="manager_concert.php" style="color: black">콘서트 진행 내역</a>
         </li>
 
         <li class="breadcrumb-item">
-            <a href="manager_concert_punding.php" style="color: black">후원자 & 펀딩 진행 내역</a>
+            <a href="manager_concert_punding.php" style="color: #fc3c3c">후원자 & 펀딩 진행 내역</a>
         </li>
 
     </ol>
@@ -153,13 +153,13 @@ if ($_SESSION == null) {
 
             <thead>
             <tr>
-                <th width="80">번호</th>
-                <th width="120">팀명</th>
-                <th width="450">자기소개</th>
-                <th width="50">후원금</th>
-                <th width="100">후원자</th>
-                <th width="150">후원 종료 날</th>
-                <th width="200">관리</th>
+                <th width="50">번호</th>
+                <th width="100">성함</th>
+                <th width="100">후원 내역</th>
+                <th width="230">선택 옵션</th>
+                <th width="120">후원 금액</th>
+                <th width="330">수령 방법 & 배송지</th>
+                <th width="120">관리</th>
             </tr>
             </thead>
 
@@ -189,60 +189,61 @@ if ($_SESSION == null) {
 
             //        끝
 
-            $sql = mq("select COUNT(*) from concert_tb");
+            $sql = mq("select COUNT(*) from payment_tb");
 
             $num = mysqli_fetch_array($sql);
 
             $num = ($num[0] + 1) - ($page - 1) * $list;
 
-            $sql = mq("select * from concert_tb order by concert_date desc limit $start_num, $list");
+            $sql = mq("select * from payment_tb order by idx desc limit $start_num, $list");
 
             while ($board = $sql->fetch_array()) {
 
             $num = $num - 1;
 
-            $title = $board["profile_text"];
-
-            //한글이랑 영어랑 용량이 다름 일단 넘김
-            if (strlen($title) > 80) {
-                $title = str_replace($board["profile_text"], iconv_substr($board["profile_text"], 0, 30, "utf-8") . "...", $board["profile_text"]);
-            }
-
             ?>
             <tr>
-                <td width=80"><?= $num ?></td>
-                <td width="120"><?= $board['name'] ?></a></td>
-                <td width="450"><?= $title ?></a></td>
-                <td width="50"><?= $board['money'] ?>원</a></td>
-                <td width="100"><?= $board['people'] ?>명</a></td>
-                <td width="150"><?= $board['concert_date'] ?></td>
-                <td width="200">
-                    <form style="display: inline" method="get" action="/concert/concert_information.php">
-                        <input type="hidden" name="team_name" value="<?= $board['name'] ?>">
-                        <input type="hidden" name="idx" value="<?= $board['idx'] ?>">
-                        <input type="hidden" name="manager_page" value="<?= $page ?>">
-                        <button type="submit" id="support_hover" class="btn hover_class"
-                                style="font-size: 12px; padding: 3px 7px 3px 7px">
-                            게시물 관리
-                        </button>
-                    </form>
-                    <form style="display: inline" method="get" action="/concert/concert_write.php">
-                        <input type="hidden" name="idx" value="<?= $board['idx'] ?>">
-                        <input type="hidden" name="manager_page" value="<?= $page ?>">
-                        <button type="submit" id="support_hover" class="btn hover_class"
-                                style="font-size: 12px; padding: 3px 7px 3px 7px">
-                            수정
-                        </button>
-                    </form>
-                    <form style="display: inline" method="get" action="/concert/concert_delete_p.php">
-                        <input type="hidden" name="idx" value="<?= $board['idx'] ?>">
-                        <input type="hidden" name="manager_page" value="<?= $page ?>">
-                        <button type="submit" id="support_hover" class="btn hover_class"
-                                style="font-size: 12px; padding: 3px 7px 3px 7px">
-                            삭제
-                        </button>
-                    </form>
-                </td>
+                <td width="50"><?= $num ?></td>
+                <td width="100"><?= $board['name'] ?></td>
+                <td width="100"><?= $board['busking_team'] ?></td>
+                <td width="230"><?= $board['product'] ?></td>
+                <td width="120"><?= $board['price'] ?></td>
+
+                <?php
+
+                if ($board['addr'] == "콘서트 당일 수령") {
+                    ?>
+
+                    <td width="430">콘서트 당일 현장 수령</td>
+                    <td width="120"><?=$board['etc']?></td>
+
+                    <?php
+                } else if ($board['etc'] == "배송 중") {
+                    ?>
+
+                    <td width="430">콘서트 당일 현장 수령</td>
+                    <td width="120"><?=$board['etc']?></td>
+
+                    <?php
+                } else  {
+                    ?>
+
+                    <td width="430"><?= $board['post'] . "　/　" . $board['addr'] ?></td>
+                    <td width="120">
+                        <form style="display: inline" method="post" action="/my_page/manager_concert_punding_p.php">
+                            <input type="hidden" name="idx" value="<?= $board['idx'] ?>">
+                            <input type="hidden" name="page" value="<?= $page ?>">
+                            <button type="submit" id="support_hover" class="btn hover_class"
+                                    style="font-size: 14px; padding: 3px 7px 3px 7px">
+                                배송 시작
+                            </button>
+                        </form>
+                    </td>
+
+                    <?php
+                }
+
+                ?>
 
                 <?php
                 }

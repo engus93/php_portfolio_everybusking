@@ -96,11 +96,11 @@ session_start();
                         <h4 class="card-title my_font_start"><?= $board['name'] ?></h4>
                         <div class="progress">
                             <div class="progress-bar" role="progressbar"
-                                 style="background-color: #FBAA48; width: <?= floor($board['money'] / 1500000) ?>"
+                                 style="background-color: #FBAA48; width: <?= floor(($board['money']/50000)*100) ?>%"
                                  aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
                         <div style="font-size: 15px; margin-top: 20px">
-                            <span style="position: absolute; left: 10%"><?= floor($board['money'] / 1500000) ?>%</span>
+                            <span style="position: absolute; left: 10%"><?= floor(($board['money']/50000)*100) ?>%</span>
                             <span><?= $board['money'] ?>원 달성</span>
                             <span class="color_point" id="day_day<?= $board['idx'] ?>"
                                   style="position: absolute; right: 10%">일 남음</span>

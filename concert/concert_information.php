@@ -75,7 +75,7 @@ $board = $sql->fetch_array();
             <div>
                 <h6 align="left" style="position: relative; right: 20%">모인 금액</h6>
                 <span style="font-size: 2em"><?= $board['money'] ?>원 / </span>
-                <span><?= floor($board['money'] / 1500000) ?>%</span>
+                <span><?= floor(($board['money']/50000)*100) ?>%</span>
             </div>
             <div>
                 <h6 align="left" style="position: relative; right: 20%;">남은 시간</h6>

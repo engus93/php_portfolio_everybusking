@@ -193,7 +193,7 @@ $board = $sql->fetch_array();
         </form>
 
         <form id="form_re" class="mb-3 col-8 offset-2" name="form" method="post" action="/concert/concert_payment.php"
-              style="min-height: 200px; border-radius: 10px; width: 100%; margin-top: 50px; padding-top: 25px; border: #FBAA48 1px solid; display: noneg">
+              style="min-height: 200px; border-radius: 10px; width: 100%; margin-top: 50px; padding-top: 25px; border: #FBAA48 1px solid; display: none">
 
             <input type="hidden" id="user_e_mail" value="<?= $_SESSION['e_mail'] ?>">
             <input type="hidden" id="user_name" value="<?= $_SESSION['name'] ?>">
@@ -264,6 +264,7 @@ $board = $sql->fetch_array();
             <input type="hidden" id="user_post" name="user_post" value="">
             <input type="hidden" id="user_addr" name="user_addr" value="">
             <input type="hidden" name="idx" value="<?=$bno?>">
+            <input type="hidden" name="busking_team" value="<?= $board['name'] ?>">
 
         </form>
 

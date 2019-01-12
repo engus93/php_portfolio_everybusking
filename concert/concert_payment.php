@@ -9,6 +9,7 @@ $name = $_SESSION['name'];
 $user_id = $_SESSION['user_id'];
 $e_mail = $_SESSION['e_mail'];
 $phone = $_SESSION['phone'];
+$busking_team = $_POST['busking_team'];
 $product = $_POST['product'];
 $price = $_POST['sum'];
 $date = date('Y-m-d H:i:s');
@@ -27,8 +28,17 @@ if(!empty($_POST['user_post']) && !empty($_POST['user_addr']) ){
 
 }
 
-$sql = mq("insert into payment_tb(name,id,e_mail,phone,product,price,date,post,addr)
-values('" . $name . "','" . $user_id . "','" . $e_mail . "','" . $phone . "','" . $product . "','" . $price . "','" . $date . "','" . $post . "','" . $addr . "')");
+$sql = mq("insert into payment_tb(name,id,e_mail,phone,busking_team,product,price,date,post,addr)
+values('" . $name . "','" . $user_id . "','" . $e_mail . "','" . $phone . "','" . $busking_team . "','" . $product . "','" . $price . "','" . $date . "','" . $post . "','" . $addr . "')");
+
+$sql = mq("select * from concert_tb where idx='" . $bno . "'"); /* 받아온 idx값을 선택 */
+$board = $sql->fetch_array();
+
+$money = $board['money'] + $price;
+
+$people = $board['people'] + 1;
+
+$sql = mq("update concert_tb set people = '" . $people . "',money = '" . $money . "' where idx = '".$bno."'");
 
 ?>
 
