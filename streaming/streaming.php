@@ -39,6 +39,9 @@
 
 <div style="min-height: 800px">
 
+<a href="chatting.html"><button class="btn btn-block">채팅</button></a>
+
+
 
 </div>
 
