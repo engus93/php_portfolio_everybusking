@@ -33,6 +33,8 @@ $row = mysqli_fetch_assoc($result);
 
     var login_pass = "<?= $password?>";
 
+    const userid = "dfsa";
+
     if (user_id.length == 0) {
         alert("아이디가 일치하지 않습니다.");
         history.back();

@@ -1,5 +1,11 @@
+<?php
+
+session_start();
+
+?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
 
@@ -39,9 +45,7 @@
 
 <div style="min-height: 800px">
 
-<a href="chatting.html"><button class="btn btn-block">채팅</button></a>
-
-
+<a href="http://192.168.253.138:3000"><button class="btn btn-block">채팅</button></a>
 
 </div>
 
