@@ -29,10 +29,8 @@ if (!empty($_FILES['b_file']['tmp_name'])) {
 } else {
     $path = "../img/no_image.gif";
 }
-
-$sql = mq("insert into concert_tb(name,picture,concert_date,birth,genre,profile_text)
+    $sql = mq("insert into concert_tb(name,picture,concert_date,birth,genre,profile_text)
 values('" . $_POST['team_name'] . "','" . $path . "','" . $date . "','" . $birth . "','" . $genre . "','" . $profile_text . "')");
-
 ?>
 
 <script type="text/javascript">alert("등록이 완료되었습니다.");

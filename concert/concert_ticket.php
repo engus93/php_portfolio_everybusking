@@ -114,7 +114,7 @@ $board = $sql->fetch_array();
             <h3 class="mt-4 mb-3 my_font_main" style="padding-bottom: 40px; margin-left: 50px">공연 정보</h3>
 
             <div class='information_flex_row' style="margin-bottom: 100px">
-                <img src="../img/concert/곽진언_프로필.jpg" style="height: 600px; width: auto">
+                <img src="<?= $board['picture'] ?>" style="height: 600px; width: auto">
                 <div class='information_flex_col my_font_main'>
                     <div>
                         <h6 align="left" style="position: relative; right: 20%">공연 날짜</h6>
@@ -134,7 +134,7 @@ $board = $sql->fetch_array();
                     </div>
                     <div style="text-align: left">
                         <h6 align="left" style="position: relative; right: 20%;">인사말</h6>
-                        <div style="font-size: 25px">
+                        <div style="font-size: 25px" class="text-center">
                             <?= nl2br($board['profile_text']); ?>
                         </div>
                     </div>
@@ -278,7 +278,7 @@ $board = $sql->fetch_array();
         <button type="button" class="btn hover_class btn-lg" disabled id="support_hover2"
                 style="border: #FBAA48 1px solid; width: 120px; margin-left: 10px"
                 onclick="payment(
-                        document.getElementById('genre_text').innerText, //결제 품목
+                        document.getElementById('genre_text').value, //결제 품목
                         document.getElementById('total_price').value,//결제 금액
                         document.getElementById('user_e_mail').value, //이메일
                         document.getElementById('user_name').value, //이름

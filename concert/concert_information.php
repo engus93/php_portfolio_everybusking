@@ -66,9 +66,9 @@ $board = $sql->fetch_array();
 <div class="container" style="margin-top: 30px; margin-bottom: 50px">
 
     <!-- Page Heading/Breadcrumbs -->
-    <h1 class="my_font_main text-center" style="margin-top: 5%; margin-bottom: 5%; color: #FBAA48;">곽진언의 콘서트</h1>
+    <h1 class="my_font_main text-center" style="margin-top: 5%; margin-bottom: 5%; color: #FBAA48;"><?= $board['name'] ?> 콘서트</h1>
     <div class='information_flex_row'>
-        <img src="../img/concert/곽진언_프로필.jpg" style="height: 600px; width: auto">
+        <img src="<?= $board['picture'] ?>" style="height: 600px; width: 400px">
         <div class='information_flex_col my_font_main'>
             <input type="hidden" id="date<?= $board['concert_date'] ?>" value="<?= $board['concert_date'] ?>">
             <input type="hidden" id="today_date" value="<?= $today_date ?>">
@@ -197,7 +197,7 @@ $board = $sql->fetch_array();
                 <h1 class="text-center my_font_main color_main" style="margin-bottom: 70px">프로필</h1>
 
                 <div class='information_flex_row' style="margin-bottom: 100px">
-                    <img src="../img/concert/곽진언_프로필.jpg" style="height: 600px; width: auto">
+                    <img src="<?= $board['picture'] ?>" style="height: 600px; width: 400px">
                     <div class='information_flex_col my_font_main'>
                         <div>
                             <h6 align="left" style="position: relative; right: 20%">이름</h6>
@@ -213,7 +213,7 @@ $board = $sql->fetch_array();
                         </div>
                         <div style="text-align: left">
                             <h6 align="left" style="position: relative; right: 20%;">인사말</h6>
-                            <div style="font-size: 25px">
+                            <div style="font-size: 25px" class="text-center">
                                 <?= nl2br($board['profile_text']); ?>
                             </div>
                         </div>

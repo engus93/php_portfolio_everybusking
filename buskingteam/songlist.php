@@ -19,7 +19,7 @@ if (isset($_GET['team_name'])) {
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Modern Business - Start Bootstrap Template</title>
+    <title>Every Busking - Song List</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -247,15 +247,44 @@ if (isset($_GET['team_name'])) {
 
 </div>
 
+<?php
+if ($block_end == 0) {
+    $block_end = 1;
+} ?>
+
 <div id="page_num">
     <ul class="pagination justify-content-center" style="margin-top: 20px; margin-bottom: 20px">
         <?php
+        //이전 블록
+        if ($page <= 1) {
+            echo "<li class='page-item'>
+                    <a class='page-link' aria-label='Previous' onclick='start_page()'>
+                        <span aria-hidden='true'>&laquo;</span>
+                        <span class='sr-only'>Previous</span>                    
+                    </a>
+                   </li>";
+        } else if ($page - 5 <= 0) { //만약 page가 1보다 크거나 같다면 빈값
+            echo "<li class='page-item'>
+                    <a class='page-link' href='?page=1&idx=" . $_GET["idx"] . "&team_name=" . $_GET["team_name"] . "' aria-label='Previous' style='color: black'>
+                        <span aria-hidden='true'>&laquo;</span>
+                        <span class='sr-only'>Previous</span>                    
+                    </a>
+                   </li>";
+        } else {
+            $pre = floor(($page - 1) / $block_ct) * $block_ct;
+            echo "<li class='page-item'>
+                    <a class='page-link' href='?page=" . $pre . "&idx=" . $_GET["idx"] . "&team_name=" . $_GET["team_name"] . "' aria-label='Previous' style='color: black'>
+                        <span aria-hidden='true'>&laquo;</span>
+                        <span class='sr-only'>Previous</span>                    
+                    </a>
+                   </li>";
+        }
 
         //이전
         if ($page <= 1) { //만약 page가 1보다 크거나 같다면 빈값
             echo "<li class='page-item'>
                     <a class='page-link' aria-label='Previous' onclick='start_page()'>
-                        <span aria-hidden='true'>&laquo;</span>
+                        <span aria-hidden='true'>&lsaquo;</span>
                         <span class='sr-only'>Previous</span>                    
                     </a>
                    </li>";
@@ -263,7 +292,7 @@ if (isset($_GET['team_name'])) {
             $pre = $page - 1; //pre변수에 page-1을 해준다 만약 현재 페이지가 3인데 이전버튼을 누르면 2번페이지로 갈 수 있게 함
             echo '<li class="page-item">
                     <a class="page-link" href="?page=' . $pre . '&idx=' . $_GET['idx'] . '&team_name=' . $_GET['team_name'] . '" aria-label="Previous" style="color: black">
-                        <span aria-hidden="true">&laquo;</span>
+                        <span aria-hidden="true">&lsaquo;</span>
                         <span class="sr-only">Previous</span>                    
                     </a>
                    </li>';
@@ -287,7 +316,7 @@ if (isset($_GET['team_name'])) {
 
                 echo "<li class='page-item'>
                         <a class='page-link' aria-label='Next' onclick='last_page()'>
-                            <span aria-hidden='true'>&raquo;</span>
+                            <span aria-hidden='true'>&rsaquo;</span>
                             <span class='sr-only'>Next</span>
                         </a>
                        </li>";
@@ -298,7 +327,7 @@ if (isset($_GET['team_name'])) {
                 echo '<li class="page-item">
                     <a class="page-link" href="?page=' . $next . '&idx=' . $_GET['idx'] . '&team_name=' . $_GET['team_name'] . '" aria-label="Next" style="color: black">';
                 echo "
-                        <span aria-hidden='true'>&raquo;</span>
+                        <span aria-hidden='true'>&rsaquo;</span>
                         <span class='sr-only'>Next</span>                    
                     </a>
                    </li>";
@@ -309,6 +338,47 @@ if (isset($_GET['team_name'])) {
             echo '<li class="page-item">
                     <a class="page-link" href="?page=' . $next . '&idx=' . $_GET['idx'] . '&team_name=' . $_GET['team_name'] . '" aria-label="Next" style="color: black">';
             echo "
+                        <span aria-hidden='true'>&rsaquo;</span>
+                        <span class='sr-only'>Next</span>                    
+                    </a>
+                   </li>";
+        }
+        //다음 블록
+        if ($block_num >= $total_block) { //만약 현재 블록이 블록 총개수보다 크거나 같다면 빈 값
+
+            if ($page >= $total_page) { //만약 page가 페이지수보다 크거나 같다면
+
+                echo "<li class='page-item'>
+                        <a class='page-link' aria-label='Next' onclick='last_page()'>
+                            <span aria-hidden='true'>&raquo;</span>
+                            <span class='sr-only'>Next</span>
+                        </a>
+                       </li>";
+
+            } else if ($page + 5 >= $total_page) { //만약 page가 페이지수보다 크거나 같다면
+
+                echo "<li class='page-item'>
+                    <a class='page-link' href='?page=" . $total_page . "&idx=" . $_GET["idx"] . "&team_name=" . $_GET["team_name"] . "' aria-label='Next' style='color: black'>
+                            <span aria-hidden='true'>&raquo;</span>
+                            <span class='sr-only'>Next</span>
+                        </a>
+                       </li>";
+
+            } else {
+
+                $next = ceil($page / $block_ct) * $block_ct + 1; //next변수에 page + 1을 해준다.
+                echo "<li class='page-item'>
+                    <a class='page-link' href='?page=" . $next . "&idx=" . $_GET["idx"] . "&team_name=" . $_GET["team_name"] . "' aria-label='Next' style='color: black'>
+                        <span aria-hidden='true'>&raquo;</span>
+                        <span class='sr-only'>Next</span>                    
+                    </a>
+                   </li>";
+
+            }
+        } else {
+            $next = ceil($page / $block_ct) * $block_ct + 1; //next변수에 page + 1을 해준다.
+            echo "<li class='page-item'>
+                    <a class='page-link' href='?page=" . $next . "&idx=" . $_GET['idx'] . "&team_name=" . $_GET['team_name'] . "' aria-label='Next' style='color: black'>
                         <span aria-hidden='true'>&raquo;</span>
                         <span class='sr-only'>Next</span>                    
                     </a>
