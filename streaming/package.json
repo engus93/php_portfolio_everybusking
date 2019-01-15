@@ -5,8 +5,10 @@
   "dependencies": {
     "connect-redis": "^3.4.0",
     "cookie-parser": "^1.4.3",
+    "ejs": "^2.6.1",
     "express": "^4.16.4",
     "express-session": "^1.15.6",
+    "php": "0.0.1",
     "session-file-store": "^1.2.0",
     "socket.io": "^2.2.0"
   }

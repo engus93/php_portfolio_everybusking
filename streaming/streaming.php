@@ -45,7 +45,12 @@ session_start();
 
 <div style="min-height: 800px">
 
-<a href="http://192.168.253.138:3000"><button class="btn btn-block">채팅</button></a>
+    <form method="post" action="http://192.168.253.138:3000/chat">
+
+        <input type="hidden" name="user_id" value="<?=$_SESSION['user_id']?>">
+        <input class="btn" type="submit" value="채팅">
+
+    </form>
 
 </div>
 
