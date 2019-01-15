@@ -40,6 +40,7 @@
             var fontColor = 'black';
             var nickName = '';
             var whoIsTyping = [];
+            var newbie;
 
             $('#typeForm').submit(function () {
                 //submit only if it's not empty
@@ -66,7 +67,7 @@
                 nickName = obj.nickName;
                 $('#nickName').attr('placeholder', 'NickName : ' + nickName);
                 //set #nickNameForm placeholder
-
+                $('#user_id_id').text(nickName);
             });
 
             socket.on('setNickName', function (obj) {
@@ -75,21 +76,21 @@
                 var whoIsOn = obj.whoIsOn;
 
                 var msg = `====== ${past} changed nickname to ${current} ======`;
-                $('#messages').append($('<li>').text(msg));
+                $('#messages').append($('<h6>').text(msg));
 
                 editUsers(whoIsOn);
 
             })
 
             socket.on('chat message', function (msg) {
-                $('#messages').append($('<li>').text(msg));
+                $('#messages').append($('<h6>').text(msg));
             });
 
             //채팅방 입장 문구
             socket.on('login', function (nickNameArr) {
-                var newbie = nickNameArr[nickNameArr.length - 1];
+                newbie = nickNameArr[nickNameArr.length - 1];
                 editUsers(nickNameArr);
-                $('#messages').append($('<li>').text(newbie + "님께서 입장하셨습니다."));
+                $('#messages').append($('<h6>').text(newbie + "님께서 입장하셨습니다."));
             })
 
             socket.on('typing', function (nickNameArr) {
@@ -104,7 +105,7 @@
 
             socket.on('mySaying', function (msg) {
 
-                $('#messages').append($('<li>').text(msg));
+                $('#messages').append($('<h6>').text(msg));
             });
 
             socket.on('endTyping', function () {
@@ -197,7 +198,7 @@
             </ul>
             <ul class="navbar-nav ml-md-auto d-md-flex">
                 <li class="nav-item">
-                    <a class="nav-link">관리자 님</a>
+                    <a class="nav-link" id="user_id_id"></a>
 
                 </li>
                 <li class="nav-item">
@@ -217,27 +218,27 @@
 <div class="container my_font_main"
      style="min-height: 800px; border: #FBAA48 1px solid; padding-top: 100px; padding-bottom: 100px">
 
-    <div class="row" style="height: 450px">
+    <div class="row" style="height: 440px">
         <div class="col-lg-8">
-            <video controls style="width: 100%; height: 450px">
+            <video controls style="width: 100%; height: 440px">
                 <source src="http://192.168.253.138/mp4/main/소개%20영상.mp4" type="video/mp4">
             </video>
         </div>
 
         <div class="col-lg-4" style="height: 100%;">
-            <ul id="messages" style="height: 300px; border: #FBAA48 1px solid;"></ul>
+            <div id="messages" style="height: 300px; border: transparent 1px solid; overflow: auto"></div>
 
-            <div id='whoIsInBox' style="border: #FBAA48 1px solid;">
+            <div id='whoIsInBox' style="min-height: 80px; height: 80px; border: transparent 1px solid;overflow: auto">
 
                 <h4>참여자</h4>
 
-                <div id='whoIsIn' style="border: #FBAA48 1px solid;">
+                <div id='whoIsIn' style="border: transparent 1px solid;overflow: auto">
                 </div>
 
             </div>
 
-            <div style="margin-top: 10px">
-                <form id='typeForm' style="border: #FBAA48 1px solid;">
+            <div style="margin-top: 10px;">
+                <form id='typeForm' style="border: transparent 1px solid;">
                     <input class="input-group-text" id="m" autocomplete="off"
                            style="width: 270px; display: inline; background-color: white; text-align: left"/>
                     <button class="btn hover_class" id="support_hover" style="width: 70px;">보내기</button>
