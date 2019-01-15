@@ -3,7 +3,7 @@ var http = require('http').createServer(app);
 var io = require('socket.io')(http);
 var ejs = require('ejs');
 var bodyParser = require('body-parser');
-var nowNickName = "";
+var now_user_id = "";
 
 app.use(bodyParser.urlencoded({
     extended: true
@@ -23,9 +23,9 @@ app.get('/chat', function (req, res) {
 app.post('/chat', function (req, res) {
     console.log('in /chat POST');
 
-    nowNickName = req.body.user_id;
+    now_user_id = req.body.user_id;
 
-    console.log('new user : ' + nowNickName);
+    console.log('new user : ' + now_user_id);
 
     res.render(__dirname + '/chatting.html');
 
@@ -36,7 +36,7 @@ var whoIsOn = [];
 
 io.on('connection', function (socket) {
 
-    var nickName = nowNickName || socket.id;
+    var nickName = now_user_id || socket.id;
     whoIsOn.push(nickName);
     socket.emit('selfData', {nickName: nickName});
 
@@ -74,7 +74,7 @@ io.on('connection', function (socket) {
         //chat message to the others
         //mySaying to the speaker
         socket.broadcast.emit('chat message', nickName + '  :  ' + msg);
-        socket.emit('mySaying', 'ME  :  ' + msg);
+        socket.emit('mySaying', '나  :  ' + msg);
     });
 
 

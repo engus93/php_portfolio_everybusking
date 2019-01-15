@@ -48,6 +48,7 @@ session_start();
     <form method="post" action="http://192.168.253.138:3000/chat">
 
         <input type="hidden" name="user_id" value="<?=$_SESSION['user_id']?>">
+        <input type="hidden" name="user_name" value="<?=$_SESSION['name']?>">
         <input class="btn" type="submit" value="채팅">
 
     </form>

@@ -8,8 +8,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/streaming/chatting.html" beforeDir="false" afterPath="$PROJECT_DIR$/streaming/chatting.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/streaming/chatting.js" beforeDir="false" afterPath="$PROJECT_DIR$/streaming/chatting.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/streaming/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/streaming/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/streaming/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/streaming/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/streaming/streaming.php" beforeDir="false" afterPath="$PROJECT_DIR$/streaming/streaming.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -37,8 +35,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/streaming/chatting.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="83" column="25" selection-start-line="83" selection-start-column="25" selection-end-line="83" selection-end-column="25" />
+            <state relative-caret-position="345">
+              <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
             </state>
           </provider>
         </entry>
@@ -46,17 +44,20 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/streaming/chatting.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="216" column="34" selection-start-line="216" selection-start-column="34" selection-end-line="216" selection-end-column="34" />
+            <state relative-caret-position="648">
+              <caret line="244" column="18" selection-end-line="265" selection-end-column="7" />
               <folding>
                 <element signature="n#style#0;n#a#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#ul#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#ul#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#button#0;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#video#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#ul#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#form#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#form#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#button#0;n#form#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -76,11 +77,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>dat_reply</find>
-      <find>목록</find>
-      <find>page</find>
-      <find>137</find>
-      <find>일</find>
       <find>genre_text</find>
       <find>as</find>
       <find>nodejs</find>
@@ -106,6 +102,11 @@
       <find>LOG</find>
       <find>is typi</find>
       <find>typing</find>
+      <find>ME</find>
+      <find>Me</find>
+      <find>me</find>
+      <find>whoIsIn</find>
+      <find>user_id</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -160,10 +161,10 @@
         <option value="$PROJECT_DIR$/streaming/sessions/O0rnjJab6JhIDpGNg8JuNYECee3cZWwr.json" />
         <option value="$PROJECT_DIR$/streaming/test.js" />
         <option value="$PROJECT_DIR$/streaming/enter.php" />
-        <option value="$PROJECT_DIR$/streaming/streaming.php" />
         <option value="$PROJECT_DIR$/streaming/enter.html" />
         <option value="$PROJECT_DIR$/streaming/chat_real.html" />
         <option value="$PROJECT_DIR$/streaming/my_chat.js" />
+        <option value="$PROJECT_DIR$/streaming/streaming.php" />
         <option value="$PROJECT_DIR$/streaming/chatting.js" />
         <option value="$PROJECT_DIR$/streaming/chatting.html" />
       </list>
@@ -186,16 +187,6 @@
             <path>
               <item name="EveryBusking" type="b2602c69:ProjectViewProjectNode" />
               <item name="EveryBusking" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="EveryBusking" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EveryBusking" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="EveryBusking" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EveryBusking" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="EveryBusking" type="b2602c69:ProjectViewProjectNode" />
@@ -285,14 +276,7 @@
       <workItem from="1547360790129" duration="12007000" />
       <workItem from="1547395028632" duration="454000" />
       <workItem from="1547395569182" duration="23671000" />
-      <workItem from="1547482485497" duration="6267000" />
-    </task>
-    <task id="LOCAL-00072" summary="19.01.06&#10;&#10;버스킹 비디오 업로드 해야함">
-      <created>1546735700333</created>
-      <option name="number" value="00072" />
-      <option name="presentableId" value="LOCAL-00072" />
-      <option name="project" value="LOCAL" />
-      <updated>1546735700333</updated>
+      <workItem from="1547482485497" duration="9673000" />
     </task>
     <task id="LOCAL-00073" summary="19.01.06&#10;&#10;버스킹 비디오 업로드 해야함">
       <created>1546750140551</created>
@@ -630,11 +614,18 @@
       <option name="project" value="LOCAL" />
       <updated>1547473530154</updated>
     </task>
-    <option name="localTasksCounter" value="121" />
+    <task id="LOCAL-00121" summary="19.01.13&#10; &#10;채팅중">
+      <created>1547514489746</created>
+      <option name="number" value="00121" />
+      <option name="presentableId" value="LOCAL-00121" />
+      <option name="project" value="LOCAL" />
+      <updated>1547514489747</updated>
+    </task>
+    <option name="localTasksCounter" value="122" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="484493000" />
+    <option name="totallyTimeSpent" value="487899000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -649,7 +640,7 @@
     <frame x="-8" y="-8" width="1631" height="1066" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20241885" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20241885" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -661,7 +652,7 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32939914" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="9" sideWeight="0.49777213" visible="true" weight="0.21030043" />
+      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49777213" visible="true" weight="0.21030043" />
       <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49840865" weight="0.3197425" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5022279" side_tool="true" weight="0.22678186" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.32937366" />
@@ -721,7 +712,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="19.01.06&#10;&#10;버스킹 비디오 업로드 해야함" />
     <MESSAGE value="19.01.06&#10;&#10;송리스트 페이징 하고 검색하기" />
     <MESSAGE value="19.01.06&#10;&#10;메인 완료" />
     <MESSAGE value="19.01.06&#10;&#10;자동 로그인" />
@@ -746,10 +736,10 @@
     <MESSAGE value="19.01.11&#10;       &#10;스트리밍 시작" />
     <MESSAGE value="19.01.13&#10;&#10;마무리&#10;       &#10;스트리밍 시작" />
     <MESSAGE value="19.01.13&#10;&#10;마무리&#10;       &#10;채팅중" />
-    <option name="LAST_COMMIT_MESSAGE" value="19.01.13&#10;&#10;마무리&#10;       &#10;채팅중" />
+    <MESSAGE value="19.01.13&#10; &#10;채팅중" />
+    <option name="LAST_COMMIT_MESSAGE" value="19.01.13&#10; &#10;채팅중" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web1_html_internet-master/data/JavaScript" />
     <entry file="file://$PROJECT_DIR$/web1_html_internet-master/nodejs/fileread.js" />
     <entry file="file://$PROJECT_DIR$/web1_html_internet-master/data/HTML" />
     <entry file="file://$PROJECT_DIR$/web1_html_internet-master/data/CSS" />
@@ -781,32 +771,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
           <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/buskingteam/songlist.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="249" selection-start-line="249" selection-end-line="252" selection-end-column="4" />
-          <folding>
-            <element signature="e#159#166#1" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#li#0;n#!!top" expanded="true" />
-            <element signature="e#223#230#1" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#li#0;n#!!top" expanded="true" />
-            <element signature="e#230#237#1" expanded="true" />
-            <element signature="e#159#167#1" expanded="true" />
-            <element signature="e#230#238#1" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#li#0;n#!!top" expanded="true" />
-            <element signature="e#162#170#1" expanded="true" />
-            <element signature="e#50#58#1" expanded="true" />
-            <element signature="e#50#58#1" expanded="true" />
-            <element signature="e#162#169#1" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#li#0;n#!!top" expanded="true" />
-            <element signature="e#231#238#1" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#li#0;n#!!top" expanded="true" />
-            <element signature="e#227#234#1" expanded="true" />
-            <element signature="e#227#234#1" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -927,13 +891,6 @@
     <entry file="file://$PROJECT_DIR$/phpinfo.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2415">
-          <caret line="184" column="21" selection-start-line="184" selection-start-column="21" selection-end-line="184" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/buskingteam/buskingteam.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-608">
@@ -983,13 +940,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/streaming/streaming.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="53" lean-forward="true" selection-start-line="53" selection-end-line="53" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/main_footer.html">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -997,36 +947,67 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/public.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="47" column="45" lean-forward="true" selection-start-line="47" selection-start-column="45" selection-end-line="47" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/streaming/my_chat.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/css/public.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="236">
+          <caret line="24" column="1" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="387">
+          <caret line="196" selection-start-line="196" selection-end-line="200" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/buskingteam/songlist.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="684">
+          <caret line="171" column="17" lean-forward="true" selection-start-line="143" selection-start-column="7" selection-end-line="171" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/platform-impl.jar!/resources/html5-schema/html5/block.rnc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="236">
+          <caret line="60" column="16" selection-start-line="60" selection-start-column="16" selection-end-line="60" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/streaming/streaming.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="50" column="70" lean-forward="true" selection-start-line="50" selection-start-column="70" selection-end-line="50" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/streaming/chatting.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="83" column="25" selection-start-line="83" selection-start-column="25" selection-end-line="83" selection-end-column="25" />
+        <state relative-caret-position="345">
+          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/streaming/chatting.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="216" column="34" selection-start-line="216" selection-start-column="34" selection-end-line="216" selection-end-column="34" />
+        <state relative-caret-position="648">
+          <caret line="244" column="18" selection-end-line="265" selection-end-column="7" />
           <folding>
             <element signature="n#style#0;n#a#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ul#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ul#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#video#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ul#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#form#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#form#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#form#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
