@@ -7,6 +7,7 @@
     <list default="true" id="315b7d6c-43dd-4b04-a2b3-17ad3cc59c77" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/streaming/chatting.html" beforeDir="false" afterPath="$PROJECT_DIR$/streaming/chatting.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/streaming/chatting.js" beforeDir="false" afterPath="$PROJECT_DIR$/streaming/chatting.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -33,8 +34,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/streaming/chatting.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="532">
-              <caret line="40" column="47" lean-forward="true" selection-start-line="40" selection-start-column="47" selection-end-line="40" selection-end-column="47" />
+            <state relative-caret-position="198">
+              <caret line="27" column="39" selection-start-line="27" selection-start-column="39" selection-end-line="27" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -42,8 +43,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/streaming/chatting.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="293">
-              <caret line="64" column="50" lean-forward="true" selection-start-line="64" selection-start-column="50" selection-end-line="64" selection-end-column="50" />
+            <state relative-caret-position="247">
+              <caret line="62" column="29" lean-forward="true" selection-start-line="62" selection-start-column="29" selection-end-line="62" selection-end-column="29" />
               <folding>
                 <element signature="n#style#0;n#a#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -73,8 +74,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>80</find>
-      <find>index</find>
       <find>enter</find>
       <find>ejs</find>
       <find>chat</find>
@@ -100,9 +99,11 @@
       <find>user_id</find>
       <find>li</find>
       <find>messages</find>
-      <find>nickName</find>
       <find>emi</find>
       <find>selfData</find>
+      <find>user_ma</find>
+      <find>nickName</find>
+      <find>connection</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -161,8 +162,8 @@
         <option value="$PROJECT_DIR$/streaming/chat_real.html" />
         <option value="$PROJECT_DIR$/streaming/my_chat.js" />
         <option value="$PROJECT_DIR$/streaming/streaming.php" />
-        <option value="$PROJECT_DIR$/streaming/chatting.html" />
         <option value="$PROJECT_DIR$/streaming/chatting.js" />
+        <option value="$PROJECT_DIR$/streaming/chatting.html" />
       </list>
     </option>
   </component>
@@ -273,14 +274,7 @@
       <workItem from="1547395028632" duration="454000" />
       <workItem from="1547395569182" duration="23671000" />
       <workItem from="1547482485497" duration="9969000" />
-      <workItem from="1547525391853" duration="2037000" />
-    </task>
-    <task id="LOCAL-00074" summary="19.01.06&#10;&#10;버스킹 비디오 업로드 해야함">
-      <created>1546765761980</created>
-      <option name="number" value="00074" />
-      <option name="presentableId" value="LOCAL-00074" />
-      <option name="project" value="LOCAL" />
-      <updated>1546765761980</updated>
+      <workItem from="1547525391853" duration="2831000" />
     </task>
     <task id="LOCAL-00075" summary="19.01.06&#10;&#10;송리스트 페이징 하고 검색하기">
       <created>1546772913712</created>
@@ -618,11 +612,18 @@
       <option name="project" value="LOCAL" />
       <updated>1547517916848</updated>
     </task>
-    <option name="localTasksCounter" value="123" />
+    <task id="LOCAL-00123" summary="19.01.13&#10; &#10;채팅중">
+      <created>1547527442143</created>
+      <option name="number" value="00123" />
+      <option name="presentableId" value="LOCAL-00123" />
+      <option name="project" value="LOCAL" />
+      <updated>1547527442143</updated>
+    </task>
+    <option name="localTasksCounter" value="124" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="490232000" />
+    <option name="totallyTimeSpent" value="491026000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -650,7 +651,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info active="true" anchor="bottom" id="Version Control" order="9" sideWeight="0.49777213" visible="true" weight="0.20939597" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49840865" weight="0.3197425" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49840865" weight="0.31946307" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5022279" side_tool="true" weight="0.22678186" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.32937366" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -975,15 +976,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/streaming/chatting.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="40" column="47" lean-forward="true" selection-start-line="40" selection-start-column="47" selection-end-line="40" selection-end-column="47" />
+        <state relative-caret-position="198">
+          <caret line="27" column="39" selection-start-line="27" selection-start-column="39" selection-end-line="27" selection-end-column="39" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/streaming/chatting.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="64" column="50" lean-forward="true" selection-start-line="64" selection-start-column="50" selection-end-line="64" selection-end-column="50" />
+        <state relative-caret-position="247">
+          <caret line="62" column="29" lean-forward="true" selection-start-line="62" selection-start-column="29" selection-end-line="62" selection-end-column="29" />
           <folding>
             <element signature="n#style#0;n#a#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />

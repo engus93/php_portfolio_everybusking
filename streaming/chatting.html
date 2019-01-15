@@ -39,6 +39,7 @@
             var typingNotice = ' 님께서 입력 중';
             var fontColor = 'black';
             var nickName = '';
+            var user_name = '';
             var whoIsTyping = [];
             var newbie;
 
@@ -64,10 +65,12 @@
 
             socket.on('selfData', function (obj) {
                 console.log('getting initial data from server');
+                console.log(obj);
                 nickName = obj.nickName;
+                user_name = obj.user_name;
                 $('#nickName').attr('placeholder', 'NickName : ' + nickName);
                 //set #nickNameForm placeholder
-                $('#user_id_id').text(nickName);
+                $('#user_id_id').text(user_name + " 님");
             });
 
             socket.on('setNickName', function (obj) {

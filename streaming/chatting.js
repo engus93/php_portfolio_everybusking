@@ -4,6 +4,7 @@ var io = require('socket.io')(http);
 var ejs = require('ejs');
 var bodyParser = require('body-parser');
 var now_user_id = "";
+var now_user_name = "";
 
 app.use(bodyParser.urlencoded({
     extended: true
@@ -24,6 +25,7 @@ app.post('/chat', function (req, res) {
     console.log('in /chat POST');
 
     now_user_id = req.body.user_id;
+    now_user_name = req.body.user_name;
 
     console.log('new user : ' + now_user_id);
 
@@ -37,8 +39,9 @@ var whoIsOn = [];
 io.on('connection', function (socket) {
 
     var nickName = now_user_id || socket.id;
+    var user_name = now_user_name || socket.id;
     whoIsOn.push(nickName);
-    socket.emit('selfData', {nickName: nickName});
+    socket.emit('selfData', {nickName: nickName, user_name:user_name});
 
     //someone who has this nickName has logged in
     //original :
