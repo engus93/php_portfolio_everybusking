@@ -73,17 +73,17 @@
                 $('#user_id_id').text(user_name + " 님");
             });
 
-            socket.on('setNickName', function (obj) {
-                var past = obj.past;
-                var current = obj.current;
-                var whoIsOn = obj.whoIsOn;
-
-                var msg = `====== ${past} changed nickname to ${current} ======`;
-                $('#messages').append($('<h6>').text(msg));
-
-                editUsers(whoIsOn);
-
-            })
+            // socket.on('setNickName', function (obj) {
+            //     var past = obj.past;
+            //     var current = obj.current;
+            //     var whoIsOn = obj.whoIsOn;
+            //
+            //     var msg = `====== ${past} changed nickname to ${current} ======`;
+            //     $('#messages').append($('<h6>').text(msg));
+            //
+            //     editUsers(whoIsOn);
+            //
+            // });
 
             socket.on('chat message', function (msg) {
                 $('#messages').append($('<h6>').text(msg));
@@ -94,7 +94,7 @@
                 newbie = nickNameArr[nickNameArr.length - 1];
                 editUsers(nickNameArr);
                 $('#messages').append($('<h6>').text(newbie + "님께서 입장하셨습니다."));
-            })
+            });
 
             socket.on('typing', function (nickNameArr) {
                 var tempMsg = "";
@@ -115,14 +115,19 @@
                 console.log('endTyping');
                 whoIsTyping = [];
                 $('#m').attr('placeholder', "");
-            })
+            });
 
             socket.on('logout', function (received) {
                 var nickNameArr = received.whoIsOn;
                 var disconnected = received.disconnected;
                 $('#messages').append($('<li>').text(`${disconnected} 님께서 나가셨습니다.`));
                 editUsers(nickNameArr);
-            })
+            });
+
+            socket.on('stream', function (image) {
+                var img = document.getElementById("play");
+                img.src = image;
+            });
 
             function editUsers(nickNameArr) {
 
@@ -264,13 +269,6 @@
 <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js"></script>
 <script src="http://192.168.253.138/public/side_bar.js"></script>
 
-<script>
-    var socket = io();
-    socket.on('stream', function (image) {
-        var img = document.getElementById("play");
-        img.src = image;
-    });
-</script>
 
 </body>
 </html>

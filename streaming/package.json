@@ -8,6 +8,7 @@
     "ejs": "^2.6.1",
     "express": "^4.16.4",
     "express-session": "^1.15.6",
+    "html": "^1.0.0",
     "log": "^3.2.0",
     "php": "0.0.1",
     "session-file-store": "^1.2.0",

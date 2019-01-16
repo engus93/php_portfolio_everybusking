@@ -7,13 +7,11 @@ var bodyParser = require('body-parser');
 var now_user_id = "";
 var now_user_name = "";
 
-var log = require('log');
-
 var port = process.env.PORT || 3000;
 
 app.use(express.static(__dirname + "/public"));
 
-app.get('/chat', function (req,res) {
+app.get('/chat', function (req, res) {
     res.redirect('/chatting.html')
 });
 
@@ -23,9 +21,7 @@ io.on('connection', function (socket) {
     });
 });
 
-http.listen(port,function () {
-    console.log('Servidor escuchando a traves del puerto %s', port);
-});
+//----------------------------------------------------------------------------------------------------------------------
 
 app.use(bodyParser.urlencoded({
     extended: true
@@ -33,17 +29,7 @@ app.use(bodyParser.urlencoded({
 
 app.engine('html', ejs.renderFile);
 
-app.get('/', function (req, res) {
-    res.render(__dirname + '/enter.html');
-
-    console.log('in / GET');
-});
-
-app.get('/chat', function (req, res) {
-    res.send('plz connect through "/"');
-});
-
-app.post('/chat', function (req, res) {
+app.post('/stream', function (req, res) {
     console.log('in /chat POST');
 
     now_user_id = req.body.user_id;
@@ -55,15 +41,29 @@ app.post('/chat', function (req, res) {
 
 });
 
+app.post('/streamer', function (req, res) {
+    console.log('in /chat POST');
+
+    now_user_id = req.body.user_id;
+    now_user_name = req.body.user_name;
+
+    console.log('new user : ' + now_user_id);
+
+    res.render(__dirname + '/public/emitir.html');
+
+});
+
 var whoIsTyping = [];
 var whoIsOn = [];
 
 io.on('connection', function (socket) {
 
-    var nickName = now_user_id || socket.id;
-    var user_name = now_user_name || socket.id;
+    check = false;
+
+    var nickName = now_user_id;
+    var user_name = now_user_name;
     whoIsOn.push(nickName);
-    socket.emit('selfData', {nickName: nickName, user_name:user_name});
+    socket.emit('selfData', {nickName: nickName, user_name: user_name});
 
     io.emit('login', whoIsOn);
 
@@ -131,16 +131,16 @@ io.on('connection', function (socket) {
 
             }
 
-
         }
     });
 
-
     //disconnect is in socket
     socket.on('disconnect', function () {
+
         console.log(nickName + ' : DISCONNECTED');
 
         whoIsOn.splice(whoIsOn.indexOf(nickName), 1);
+
         io.emit('logout', {nickNameArr: whoIsOn, disconnected: nickName});
 
         if (whoIsTyping.length == 0) {
@@ -169,4 +169,9 @@ io.on('connection', function (socket) {
         }
     });
 
+
+});
+
+http.listen(3000, function () {
+    console.log('listening on *:3000');
 });

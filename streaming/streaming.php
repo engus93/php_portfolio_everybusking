@@ -45,7 +45,7 @@ session_start();
 
 <div style="min-height: 800px">
 
-    <form method="post" action="http://192.168.253.138:3000/chat">
+    <form method="post" action="http://192.168.253.138:3000/stream">
 
         <input type="hidden" name="user_id" value="<?=$_SESSION['user_id']?>">
         <input type="hidden" name="user_name" value="<?=$_SESSION['name']?>">
@@ -53,7 +53,15 @@ session_start();
 
     </form>
 
-    <a href="http://192.168.253.138:3000/emitir.html"><button>zzz</button></a>
+    <form method="post" action="http://192.168.253.138:3000/streamer">
+
+        <input type="hidden" name="user_id" value="<?=$_SESSION['user_id']?>">
+        <input type="hidden" name="user_name" value="<?=$_SESSION['name']?>">
+        <input class="btn" type="submit" value="방송하기">
+
+    </form>
+
+    <a href="http://192.168.253.138:3000/emitir.html"><button>방송하기</button></a>
 
 </div>
 

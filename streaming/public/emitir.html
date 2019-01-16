@@ -1,21 +1,126 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <title>Emitir video</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Let's Every Busking!</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="http://192.168.253.138/css/modern-business.css" rel="stylesheet">
+    <link href="http://192.168.253.138/css/public.css" rel="stylesheet">
+
+    <link href="http://192.168.253.138/public/side_bar.css" rel="stylesheet">
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"
+          id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <script src="/socket.io/socket.io.js"></script>
     <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
-</head>
 
+</head>
 <body>
 
-<video src="" id="video" style="width: 680px; height: 320px;" autoplay>
+<!--사이드바-->
+<div id="wrapper" class="animate">
+    <nav class="navbar header-top fixed-top navbar-expand-lg navbar-dark bg-dark">
+        <span class="navbar-toggler-icon leftmenutrigger"></span>
+        <a class="navbar-brand" href="http://192.168.253.138/main.php"
+           style="font-family: 'Monoton', cursive; margin-left: 10px; font-size: 20px;">Every
+            Busking</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+                aria-controls="navbarText"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav animate side-nav">
+                <li class="nav-item">
+                    <a class="nav-link menu_buskingteam" href="http://192.168.253.138//buskingteam/buskingteam.php"
+                       title="Dashboard"><i
+                            class="fas fa-users side_bar_img"></i>Busking Team<i
+                            class="fas fa-cube shortmenu animate"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link menu_busking_zone" href="http://192.168.253.138//busking_zone/busking_zone.php"
+                       title="Cart"><i
+                            class="fas fa-map-marker-alt side_bar_img"></i>Busking Zone<i
+                            class="fas fa-cart-plus shortmenu animate"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link menu_streaming" href="http://192.168.253.138//streaming/streaming.php"
+                       title="Comment"><i
+                            class="fas fa-video side_bar_img"></i>Streaming<i
+                            class="fas fa-comment shortmenu animate"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link menu_community" href="http://192.168.253.138//community/community.php"
+                       title="Comment"><i
+                            class="fas fa-star side_bar_img"></i>Community<i
+                            class="fas fa-comment shortmenu animate"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link menu_concert" href="http://192.168.253.138//concert/concert.php" title="Comment"><i
+                            class="fas fa-compact-disc side_bar_img"></i>Cloud Concert<i
+                            class="fas fa-comment shortmenu animate"></i></a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-md-auto d-md-flex">
+                <li class="nav-item">
+                    <a class="nav-link" id="user_id_id"></a>
 
-</video>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link main_nav_sign" href="/Sign/sign_out.php"><i class="fas fa-key"></i> Sign Out</a>
+                </li>
 
-<canvas id="preview" style="display: none"></canvas>
-<div id="logger"></div>
+                <li class="nav-item">
+                    <a class="nav-link menu_profile" href="http://192.168.253.138/my_page/my_page_modify.php"><i
+                            class="fas fa-user"></i> My Page</a>
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+</div>
+
+<div class="container my_font_main"
+     style="min-height: 800px; padding-top: 100px; padding-bottom: 100px">
+
+    <div class="row" style="height: 440px">
+        <video src="" id="video" style="width: 100%; height: 100%;" autoplay controls>
+
+        </video>
+
+        <canvas id="preview" style="display: none"></canvas>
+        <div id="logger"></div>
+
+    </div>
+
+</div>
+
+<!-- Footer -->
+<div data-role="footer" data-position="fixed" class="m_footer">
+    <footer class="py-5 bg-dark">
+        <div class="container">
+            <p class="m-0 text-center text-white my_font_logo">Every Busking</p>
+        </div>
+        <!-- /.container -->
+    </footer>
+</div>
+
+<script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js"></script>
+<script src="http://192.168.253.138/public/side_bar.js"></script>
 
 <script type="text/javascript">
     var canvas = document.getElementById("preview");
@@ -41,13 +146,13 @@
     //     logger('Camara cargada correctamente [OK]');
     // }
 
-    function loadFail(){
+    function loadFail() {
         logger('Camara no conectada, pr favor revise su camara!');
     }
 
-    function viewVideo(video, context){
-        context.drawImage(video,0,0,context.width, context.height);
-        socket.emit('stream',canvas.toDataURL('image/webp'));
+    function viewVideo(video, context) {
+        context.drawImage(video, 0, 0, context.width, context.height);
+        socket.emit('stream', canvas.toDataURL('image/webp'));
     }
 
     $(function () {
@@ -59,23 +164,30 @@
 
         if (navigator.mediaDevices.getUserMedia) {
             navigator.mediaDevices.getUserMedia({video: true})
-                .then(function(stream) {
+                .then(function (stream) {
                     video.srcObject = stream;
                 })
-                .catch(function(err0r) {
+                .catch(function (err0r) {
                     console.log("Something went wrong!");
                 }, 100);
         }
 
         setInterval(function () {
-            viewVideo(video,context)
+            viewVideo(video, context)
         });
 
     });
 
-
+    socket.on('selfData', function (obj) {
+        nickName = obj.nickName;
+        user_name = obj.user_name;
+        $('#nickName').attr('placeholder', 'NickName : ' + nickName);
+        //set #nickNameForm placeholder
+        $('#user_id_id').text(user_name + " 님");
+    });
 
 </script>
+
 
 </body>
 </html>

@@ -5,19 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="315b7d6c-43dd-4b04-a2b3-17ad3cc59c77" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/streaming/app.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/streaming/public/emitir.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/streaming/public/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/streaming/public/visualizar.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/main_nav.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/main_nav.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/streaming/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/streaming/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/streaming/chatting.html" beforeDir="false" afterPath="$PROJECT_DIR$/streaming/chatting.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/streaming/chatting.js" beforeDir="false" afterPath="$PROJECT_DIR$/streaming/chatting.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/streaming/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/streaming/chatting.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/streaming/css/main.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/streaming/js/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/streaming/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/streaming/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/streaming/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/streaming/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/streaming/public/emitir.html" beforeDir="false" afterPath="$PROJECT_DIR$/streaming/public/emitir.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/streaming/streaming.php" beforeDir="false" afterPath="$PROJECT_DIR$/streaming/streaming.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wcam/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/wcam/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wcam/public/emitir.html" beforeDir="false" afterPath="$PROJECT_DIR$/wcam/public/emitir.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wcam/public/visualizar.html" beforeDir="false" afterPath="$PROJECT_DIR$/wcam/public/visualizar.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -41,32 +38,33 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/streaming/chatting.js">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/streaming/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2093">
-              <caret line="16" column="31" lean-forward="true" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
+            <state relative-caret-position="328">
+              <caret line="88" column="53" lean-forward="true" selection-start-line="88" selection-start-column="53" selection-end-line="88" selection-end-column="53" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/streaming/streaming.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="475">
+              <caret line="55" column="70" lean-forward="true" selection-start-line="55" selection-start-column="70" selection-end-line="55" selection-end-column="70" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/streaming/public/emitir.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="244">
-              <caret line="58" lean-forward="true" selection-start-line="58" selection-end-line="58" />
+            <state relative-caret-position="-8">
+              <caret line="132" column="35" lean-forward="true" selection-start-line="132" selection-start-column="35" selection-end-line="132" selection-end-column="35" />
               <folding>
-                <element signature="n#style#0;n#canvas#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#video#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#canvas#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/streaming/public/visualizar.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="13" selection-start-line="13" selection-end-line="21" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -74,8 +72,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/streaming/chatting.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="216" column="14" lean-forward="true" selection-start-line="216" selection-start-column="14" selection-end-line="216" selection-end-column="14" />
+            <state relative-caret-position="1368">
+              <caret line="95" column="68" lean-forward="true" selection-start-line="95" selection-start-column="68" selection-end-line="95" selection-end-column="68" />
               <folding>
                 <element signature="n#style#0;n#a#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -87,24 +85,6 @@
                 <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#2;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/streaming/app.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-687">
-              <caret line="47" lean-forward="true" selection-start-line="47" selection-end-line="47" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/streaming/streaming.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="662">
-              <caret line="58" lean-forward="true" selection-start-line="58" selection-end-line="58" />
             </state>
           </provider>
         </entry>
@@ -124,23 +104,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>page</find>
-      <find>$_GET</find>
-      <find>$_GET['page']</find>
-      <find>page=</find>
-      <find>선택 옵션</find>
-      <find>startButton</find>
-      <find>callButton</find>
-      <find>pc2Local</find>
-      <find>peer</find>
-      <find>chat</find>
-      <find>call</find>
-      <find>server</find>
-      <find>servers</find>
-      <find>rec</find>
-      <find>Received local</find>
-      <find>stream</find>
-      <find>dir</find>
       <find>port</find>
       <find>app.use</find>
       <find>express</find>
@@ -153,7 +116,24 @@
       <find>can</find>
       <find>none</find>
       <find>3000</find>
+      <find>입장</find>
+      <find>login</find>
+      <find>나가셔</find>
+      <find>disconnect1</find>
+      <find>DISCONNECTED</find>
+      <find>disconnect</find>
+      <find>logout</find>
+      <find>emit('log</find>
+      <find>io</find>
+      <find>connect</find>
       <find>/chat</find>
+      <find>connection</find>
+      <find>emit</find>
+      <find>namearr</find>
+      <find>arr</find>
+      <find>[]</find>
+      <find>whoIsOn</find>
+      <find>- 1</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -209,11 +189,11 @@
         <option value="$PROJECT_DIR$/streaming/index.html" />
         <option value="$PROJECT_DIR$/public/main_nav.php" />
         <option value="$PROJECT_DIR$/streaming/chatting.js" />
-        <option value="$PROJECT_DIR$/streaming/app.js" />
-        <option value="$PROJECT_DIR$/streaming/streaming.php" />
         <option value="$PROJECT_DIR$/streaming/public/visualizar.html" />
         <option value="$PROJECT_DIR$/streaming/chatting.html" />
         <option value="$PROJECT_DIR$/streaming/public/emitir.html" />
+        <option value="$PROJECT_DIR$/streaming/streaming.php" />
+        <option value="$PROJECT_DIR$/streaming/app.js" />
       </list>
     </option>
   </component>
@@ -331,14 +311,7 @@
       <workItem from="1547395569182" duration="23671000" />
       <workItem from="1547482485497" duration="9969000" />
       <workItem from="1547525391853" duration="4641000" />
-      <workItem from="1547613783655" duration="18319000" />
-    </task>
-    <task id="LOCAL-00079" summary="19.01.07&#10;&#10;자동 로그인 끝">
-      <created>1546836399666</created>
-      <option name="number" value="00079" />
-      <option name="presentableId" value="LOCAL-00079" />
-      <option name="project" value="LOCAL" />
-      <updated>1546836399666</updated>
+      <workItem from="1547613783655" duration="26242000" />
     </task>
     <task id="LOCAL-00080" summary="19.01.07&#10;&#10;마이 페이지 만들기">
       <created>1546842308379</created>
@@ -676,11 +649,18 @@
       <option name="project" value="LOCAL" />
       <updated>1547628699144</updated>
     </task>
-    <option name="localTasksCounter" value="128" />
+    <task id="LOCAL-00128" summary="19.01.16&#10; &#10;스트리밍 디자인 시작">
+      <created>1547635203065</created>
+      <option name="number" value="00128" />
+      <option name="presentableId" value="LOCAL-00128" />
+      <option name="project" value="LOCAL" />
+      <updated>1547635203065</updated>
+    </task>
+    <option name="localTasksCounter" value="129" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="511155000" />
+    <option name="totallyTimeSpent" value="519078000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -707,7 +687,7 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32939914" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49713558" visible="true" weight="0.16954644" />
+      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49713558" visible="true" weight="0.21598272" />
       <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49713558" weight="0.2300216" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5028644" side_tool="true" weight="0.3174946" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.32937366" />
@@ -767,7 +747,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="19.01.06&#10;&#10;메인 완료" />
     <MESSAGE value="19.01.06&#10;&#10;자동 로그인" />
     <MESSAGE value="19.01.07&#10;&#10;자동 로그인 끝" />
     <MESSAGE value="19.01.07&#10;&#10;마이 페이지 만들기" />
@@ -792,19 +771,10 @@
     <MESSAGE value="19.01.13&#10;&#10;마무리&#10;       &#10;채팅중" />
     <MESSAGE value="19.01.13&#10; &#10;채팅중" />
     <MESSAGE value="19.01.16&#10; &#10;스트리밍 시작" />
-    <option name="LAST_COMMIT_MESSAGE" value="19.01.16&#10; &#10;스트리밍 시작" />
+    <MESSAGE value="19.01.16&#10; &#10;스트리밍 디자인 시작" />
+    <option name="LAST_COMMIT_MESSAGE" value="19.01.16&#10; &#10;스트리밍 디자인 시작" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/buskingteam/songlist_search_result.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
-          <caret line="65" lean-forward="true" selection-start-line="65" selection-end-line="65" />
-          <folding>
-            <element signature="n#style#0;n#a#0;n#li#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/streaming/chat_real.html" />
     <entry file="file://$PROJECT_DIR$/phpinfo.php">
       <provider selected="true" editor-type-id="text-editor" />
@@ -1030,16 +1000,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/streaming/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-321">
-          <caret line="124" column="36" selection-start-line="124" selection-start-column="36" selection-end-line="124" selection-end-column="36" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wcam/public/emitir.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="356">
@@ -1056,9 +1016,6 @@
           <caret line="12" column="7" lean-forward="true" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/streaming/public/index.html">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/wcam/public/visualizar.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -1088,20 +1045,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/streaming/chatting.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2093">
-          <caret line="16" column="31" lean-forward="true" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/streaming/streaming.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="662">
-          <caret line="58" lean-forward="true" selection-start-line="58" selection-end-line="58" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/streaming/public/visualizar.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="247">
@@ -1109,10 +1052,55 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/streaming/chatting.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="16" column="31" lean-forward="true" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/streaming/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1539">
+          <caret line="144" column="1" lean-forward="true" selection-end-line="181" selection-end-column="1" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/streaming/public/index.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/jquery/jquery.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="233">
+          <caret line="1328" column="20" selection-start-line="1328" selection-start-column="20" selection-end-line="1328" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/streaming/streaming.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="55" column="70" lean-forward="true" selection-start-line="55" selection-start-column="70" selection-end-line="55" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/streaming/public/emitir.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-8">
+          <caret line="132" column="35" lean-forward="true" selection-start-line="132" selection-start-column="35" selection-end-line="132" selection-end-column="35" />
+          <folding>
+            <element signature="n#style#0;n#video#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#canvas#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/streaming/chatting.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="216" column="14" lean-forward="true" selection-start-line="216" selection-start-column="14" selection-end-line="216" selection-end-column="14" />
+        <state relative-caret-position="1368">
+          <caret line="95" column="68" lean-forward="true" selection-start-line="95" selection-start-column="68" selection-end-line="95" selection-end-column="68" />
           <folding>
             <element signature="n#style#0;n#a#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -1129,18 +1117,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/streaming/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-687">
-          <caret line="47" lean-forward="true" selection-start-line="47" selection-end-line="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/streaming/public/emitir.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="58" lean-forward="true" selection-start-line="58" selection-end-line="58" />
-          <folding>
-            <element signature="n#style#0;n#canvas#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="328">
+          <caret line="88" column="53" lean-forward="true" selection-start-line="88" selection-start-column="53" selection-end-line="88" selection-end-column="53" />
         </state>
       </provider>
     </entry>
