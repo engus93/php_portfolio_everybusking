@@ -11,7 +11,6 @@
 // }));
 //
 // app.engine('html', ejs.renderFile);
-//
 // app.get('/', function (req, res) {
 //     res.render(__dirname + '/enter.html');
 //

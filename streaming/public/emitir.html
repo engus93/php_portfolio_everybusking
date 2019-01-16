@@ -51,7 +51,7 @@
     }
 
     $(function () {
-        navigator.getUserMedia == (navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetuserMedia || navigator.msgGetUserMedia);
+        navigator.getUserMedia == (navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msgGetUserMedia);
 
         // if(navigator.getUserMedia){
         //     navigator.getUserMedia({video:true},loadCam,loadFail)
@@ -64,12 +64,12 @@
                 })
                 .catch(function(err0r) {
                     console.log("Something went wrong!");
-                });
+                }, 100);
         }
 
         setInterval(function () {
             viewVideo(video,context)
-        }, 100);
+        });
 
     });
 

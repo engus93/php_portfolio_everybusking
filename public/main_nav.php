@@ -31,6 +31,11 @@ session_start();
                                 class="fas fa-video side_bar_img"></i>Streaming<i
                                 class="fas fa-comment shortmenu animate"></i></a>
                 </li>
+<!--                <li class="nav-item">-->
+<!--                    <a class="nav-link menu_streaming" href="http://192.168.253.138:3000" title="Comment"><i-->
+<!--                                class="fas fa-video side_bar_img"></i>Streaming<i-->
+<!--                                class="fas fa-comment shortmenu animate"></i></a>-->
+<!--                </li>-->
                 <li class="nav-item">
                     <a class="nav-link menu_community" href="/community/community.php" title="Comment"><i
                                 class="fas fa-star side_bar_img"></i>Community<i
