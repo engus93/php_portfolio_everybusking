@@ -112,7 +112,7 @@ session_start();
             } else {
                 $page = 1;
             }
-            $sql = mq("select * from payment_tb where name = '".$_SESSION['name']."'");
+            $sql = mq("select * from payment_tb where name = '" . $_SESSION['name'] . "'");
             $row_num = mysqli_num_rows($sql); //게시판 총 레코드 수
             $list = 10; //한 페이지에 보여줄 개수
             $block_ct = 5; //블록당 보여줄 페이지 개수
@@ -128,23 +128,24 @@ session_start();
 
             //        끝
 
-            $sql = mq("select COUNT(*) from payment_tb where name = '".$_SESSION['name']."'");
+            $sql = mq("select COUNT(*) from payment_tb where name = '" . $_SESSION['name'] . "'");
 
             $num = mysqli_fetch_array($sql);
 
             $num = ($num[0] + 1) - ($page - 1) * $list;
 
-            $sql = mq("select * from payment_tb where name = '".$_SESSION['name']."' order by idx desc limit $start_num, $list");
+            $sql = mq("select * from payment_tb where name = '" . $_SESSION['name'] . "' order by idx desc limit $start_num, $list");
 
             while ($board = $sql->fetch_array()) {
 
-            $sql = mq("select * from concert_tb where name = '".$board['busking_team']."'");
+            $sql_re = mq("select * from concert_tb where name = '" . $board['busking_team'] . "'");
 
-            $board_re = $sql -> fetch_array();
+            $board_re = $sql_re->fetch_array();
 
             $num = $num - 1;
 
             ?>
+
             <tr>
                 <td width="50"><?= $num ?></td>
                 <td width="100"><?= $board['name'] ?></td>
@@ -176,10 +177,7 @@ session_start();
                         <form style="display: inline" method="post" action="/my_page/manager_concert_punding_p.php">
                             <input type="hidden" name="idx" value="<?= $board['idx'] ?>">
                             <input type="hidden" name="page" value="<?= $page ?>">
-                            <button type="submit" id="support_hover" class="btn hover_class"
-                                    style="font-size: 14px; padding: 3px 7px 3px 7px">
-                                배송 시작 전
-                            </button>
+                            <h6 style="font-size: 14px; height: 20px; padding: 7px 7px 0px 7px">배송 시작 전</h6>
                         </form>
                     </td>
 
@@ -189,7 +187,8 @@ session_start();
                 ?>
 
                 <td width="50">
-                    <form style="display: inline" method="post" action="/concert/concert_information.php?idx=<?= $board_re['idx'] ?>">
+                    <form style="display: inline" method="post"
+                          action="/concert/concert_information.php?idx=<?= $board_re['idx'] ?>">
                         <input type="hidden" name="page" value="<?= $page ?>">
                         <button type="submit" id="support_hover" class="btn hover_class"
                                 style="font-size: 14px; padding: 3px 7px 3px 7px">

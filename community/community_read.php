@@ -165,6 +165,7 @@ if ($_SESSION != null) {
     <script>$(".main_nav").load("/public/main_nav.php");</script>
 
     <?php
+    $page = $_GET['page'];
     $sql = mq("select * from community_tb where idx='" . $bno . "'"); /* 받아온 idx값을 선택 */
     $board = $sql->fetch_array();
     ?>
@@ -294,7 +295,7 @@ if ($_SESSION != null) {
                             <div class="dat_reply" id="dat_reply<?php echo $reply['idx']; ?>" title="댓글달기">
                                 <form method="post"
                                       action="commu_re_reply_p.php?idx=<?=$reply['idx'];?>&now_idx=<?=$bno?>">
-                                    <input type="hidden" name="page" value="<?= $_GET['page'] ?>">
+                                    <input type="hidden" name="page" value="<?= $page ?>">
                                     <textarea name="re_reply_content" class="dap_edit_t form-control"
                                               style="width: 100%"></textarea>
                                     <input type="submit" id="support_hover" value="댓글달기"
@@ -307,7 +308,7 @@ if ($_SESSION != null) {
                             <div class="dat_edit" id="dat_edit<?php echo $reply['idx']; ?>" title="댓글 수정하기">
                                 <form method="post"
                                       action="commu_reply_update_p.php?idx=<?php echo $reply['idx']; ?>&now_idx=<?php echo $bno; ?>">
-                                    <input type="hidden" name="page" value="<?= $_GET['page'] ?>">
+                                    <input type="hidden" name="page" value="<?= $page ?>">
                                     <textarea name="content" class="dap_edit_t form-control"
                                               style="width: 100%"><?php echo $reply['content']; ?></textarea>
                                     <input type="submit" id="support_hover" value="수정하기"
@@ -320,7 +321,7 @@ if ($_SESSION != null) {
                             <div class="dat_delete" id="dat_delete<?php echo $reply['idx']; ?>" title="댓글 삭제하기">
                                 <form method="post" style="margin-top: 16px;"
                                       action="commu_reply_delete_p.php?idx=<?php echo $reply['idx']; ?>&now_idx=<?php echo $bno; ?>">
-                                    <input type="hidden" name="page" value="<?= $_GET['page'] ?>">
+                                    <input type="hidden" name="page" value="<?= $page ?>">
                                     <input type="submit" id="support_hover" value="삭제하기" class="re_mo_bt btn float-left"
                                            style="background-color: #FBAA48; color: white; width: 100%">
                                 </form>
@@ -402,7 +403,7 @@ if ($_SESSION != null) {
                                               action="commu_re_reply_update_p.php?idx=<?php echo $re_reply['idx']; ?>&now_idx=<?php echo $bno; ?>">
                                         <textarea name="content" class="dap_edit_t form-control"
                                                   style="width: 100%"><?php echo $re_reply['content']; ?></textarea>
-                                            <input type="hidden" name="page" value="<?= $_GET['page'] ?>">
+                                            <input type="hidden" name="page" value="<?= $page ?>">
                                             <input type="submit" id="support_hover" value="수정하기"
                                                    class="re_mo_bt btn float-right"
                                                    style="background-color: #FBAA48; color: white; margin-top: 10px">
@@ -414,7 +415,7 @@ if ($_SESSION != null) {
                                          title="댓글 삭제하기">
                                         <form method="post" style="margin-top: 16px;"
                                               action="commu_re_reply_delete_p.php?idx=<?php echo $re_reply['idx']; ?>&now_idx=<?php echo $bno; ?>">
-                                            <input type="hidden" name="page" value="<?= $_GET['page'] ?>">
+                                            <input type="hidden" name="page" value="<?= $page ?>">
                                             <input type="submit" id="support_hover" value="삭제하기"
                                                    class="re_mo_bt btn float-left"
                                                    style="background-color: #FBAA48; color: white; width: 100%">
@@ -476,7 +477,7 @@ if ($_SESSION != null) {
                                     <div class="input-group input-group-sm my_font_main"
                                          style="width: 90%;height: 40px; margin-top: 5px; left: 15px">
                                         <input type="hidden" id="re_reply_bno" name="bno" value="' . $bno . '">
-                                        <input type="hidden" name="page" value="<?= $_GET['page'] ?>">
+                                        <input type="hidden" name="re_page" value="<?= $page ?>">
                                         <input type="text" name="re_reply_content"
                                                class="form-control col-sm-10 reply_content"
                                                aria-label="Sizing example input"
@@ -528,7 +529,7 @@ if ($_SESSION != null) {
 
 </div><!--/ row -->
 
-<a href="/community/community.php?page=<?= $_GET['page'] ?>" style="margin-left: 465px; ">
+<a href="/community/community.php?page=<?= $page ?>" style="margin-left: 465px; ">
     <button class="col-sm-2 btn my_font_main" style="font-size: 18px; margin-top: 30px; background-color: #FBAA48; color: white"
             id="support_1">목록으로
     </button>
