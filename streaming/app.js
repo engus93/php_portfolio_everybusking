@@ -1,9 +1,35 @@
+//연결 해주기
 var express = require('express');
 var app = new express();
 var http = require('http').createServer(app);
 var io = require("socket.io")(http);
 var ejs = require('ejs');
 var bodyParser = require('body-parser');
+
+//mysql 접속
+var mysql = require('mysql');
+var connection = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: 'Reg016260!!',
+    database: 'everybusking_db'
+});
+
+// //mysql 접속
+// connection.connect();
+//
+// //mysql 구문
+// connection.query('SELECT * from user_info_tb', function (error, results, fields) {
+//     if (error) throw error;
+//
+//     console.log(results);
+//     console.log('The solution is: ', results[0].solution);
+// });
+//
+// //mysql 종료
+// connection.end();
+
+//현재 아이디 접속
 var now_user_id = "";
 var now_user_name = "";
 
@@ -11,37 +37,38 @@ var port = process.env.PORT || 3000;
 
 app.use(express.static(__dirname + "/public"));
 
-app.get('/chat', function (req, res) {
-    res.redirect('/chatting.html')
-});
+// app.get('/chat', function (req, res) {
+//     res.redirect('/chatting.html')
+// });
 
 //----------------------------------------------------------------------------------------------------------------------
-
 app.use(bodyParser.urlencoded({
     extended: true
 }));
 
 app.engine('html', ejs.renderFile);
 
-app.post('/stream', function (req, res) {
-    console.log('in /chat POST');
-
+app.post('/waiting_room', function (req, res) {
     now_user_id = req.body.user_id;
     now_user_name = req.body.user_name;
 
-    console.log('new user : ' + now_user_id);
+    console.log(now_user_name);
+
+    res.render(__dirname + '/waiting_room.html');
+
+});
+
+app.post('/stream', function (req, res) {
+    now_user_id = req.body.user_id;
+    now_user_name = req.body.user_name;
 
     res.render(__dirname + '/chatting.html');
 
 });
 
 app.post('/streamer', function (req, res) {
-    console.log('in /chat POST');
-
     now_user_id = req.body.user_id;
     now_user_name = req.body.user_name;
-
-    console.log('new user : ' + now_user_id);
 
     res.render(__dirname + '/public/emitir.html');
 
@@ -55,6 +82,7 @@ io.on('connection', function (socket) {
     var nickName = now_user_id;
     var user_name = now_user_name;
     whoIsOn.push(nickName);
+
     socket.emit('selfData', {nickName: nickName, user_name: user_name});
 
     socket.join(now_user_id);

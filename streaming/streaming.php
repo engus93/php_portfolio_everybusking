@@ -61,6 +61,18 @@ session_start();
 
     </form>
 
+    <form method="post" action="http://192.168.253.138:3000/waiting_room">
+
+        <input type="hidden" name="user_id" value="<?=$_SESSION['user_id']?>">
+        <input type="hidden" name="user_name" value="<?=$_SESSION['name']?>">
+        <input class="btn" type="submit" value="대기실 입장">
+
+    </form>
+
+    <form method="post" action="community.php">
+        <input class="btn" type="submit" value="대기실 fdsafsdaf">
+    </form>
+
 </div>
 
 <!--header 로드-->
