@@ -73,18 +73,6 @@
                 $('#user_id_id').text(user_name + " 님");
             });
 
-            // socket.on('setNickName', function (obj) {
-            //     var past = obj.past;
-            //     var current = obj.current;
-            //     var whoIsOn = obj.whoIsOn;
-            //
-            //     var msg = `====== ${past} changed nickname to ${current} ======`;
-            //     $('#messages').append($('<h6>').text(msg));
-            //
-            //     editUsers(whoIsOn);
-            //
-            // });
-
             socket.on('chat message', function (msg) {
                 $('#messages').append($('<h6>').text(msg));
             });
@@ -104,6 +92,7 @@
                     $(item).remove();
                     console.log(nickNameArr + "나감 2");
                 });
+
                 for (person in nickNameArr) {
                     $('#whoIsInBox div').append($('<h6>').text(nickNameArr[person]));
                 }

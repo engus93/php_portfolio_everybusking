@@ -15,12 +15,6 @@ app.get('/chat', function (req, res) {
     res.redirect('/chatting.html')
 });
 
-io.on('connection', function (socket) {
-    socket.on('stream', function (image) {
-        socket.broadcast.emit('stream', image);
-    });
-});
-
 //----------------------------------------------------------------------------------------------------------------------
 
 app.use(bodyParser.urlencoded({
@@ -62,6 +56,8 @@ io.on('connection', function (socket) {
     var user_name = now_user_name;
     whoIsOn.push(nickName);
     socket.emit('selfData', {nickName: nickName, user_name: user_name});
+
+    socket.join(now_user_id);
 
     io.emit('login', whoIsOn);
 
@@ -165,6 +161,11 @@ io.on('connection', function (socket) {
             }
 
         }
+    });
+
+    //스트리밍 socket.io -----------------------------------------------------------------------------------------------
+    socket.on('stream', function (image) {
+        socket.broadcast.emit('stream', image);
     });
 
 
