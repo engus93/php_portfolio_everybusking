@@ -53,8 +53,6 @@ app.post('/waiting_room', function (req, res) {
     now_user_id = req.body.user_id;
     now_user_name = req.body.user_name;
 
-    console.log(now_user_name);
-
     res.render(__dirname + '/waiting_room.html');
 
 });

@@ -35,7 +35,7 @@ session_start();
           integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 
     <style>
-        .menu_community {
+        .menu_streaming {
             color: #FBAA48 !important;
         }
 
@@ -119,7 +119,7 @@ session_start();
                 <form id="node_js<?= $board['idx']?>" name="node_js" action="http://192.168.253.138:3000/stream" method="post">
 
                     <a style="text-decoration: none">
-                        <img src="/img/no_image.gif" style="width: 100%; height: 300px"/>
+                        <img src="<?=$board['picture']?>" style="width: 100%; height: 300px"/>
                         <h4 class="my_font_start text-center" style="margin-top: 10px"><?=$board['streamer']?>의 버스킹 공연</h4>
 
                         <p class="my_font_main"
@@ -147,15 +147,7 @@ session_start();
 
     <div class="right" style="margin-top: 100px; margin-bottom:50px">
         <div id="write_btn">
-
-            <form method="post" action="http://192.168.253.138:3000/streamer">
-
-                <input type="hidden" name="user_id" value="<?= $_SESSION['user_id'] ?>">
-                <input type="hidden" name="user_name" value="<?= $_SESSION['name'] ?>">
-                <input class="btn my_font_main hover_class" id="support_hover" type="submit" value="방송하기"
-                       style="width: 120px">
-
-            </form>
+            <a href="waiting_room_write.php"><button class="btn my_font_main hover_class" id="support_hover" style="width: 120px">방송하기</button></a>
         </div>
     </div>
 

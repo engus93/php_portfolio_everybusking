@@ -245,7 +245,6 @@ if (isset($_GET['idx'])) {
 
 <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js"></script>
 <script src="../public/side_bar.js"></script>
-<script src="community.js"></script>
 
 </body>
 
