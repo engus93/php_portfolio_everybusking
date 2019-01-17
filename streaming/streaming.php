@@ -61,8 +61,6 @@ session_start();
 
     </form>
 
-    <a href="http://192.168.253.138:3000/emitir.html"><button>방송하기</button></a>
-
 </div>
 
 <!--header 로드-->

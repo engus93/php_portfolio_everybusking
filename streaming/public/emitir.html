@@ -95,15 +95,36 @@
 </div>
 
 <div class="container my_font_main"
-     style="min-height: 800px; padding-top: 100px; padding-bottom: 100px">
+     style="min-height: 800px; border: #FBAA48 1px solid; padding-top: 100px; padding-bottom: 100px">
 
     <div class="row" style="height: 440px">
-        <video src="" id="video" style="width: 100%; height: 100%;" autoplay controls>
+        <div class="col-lg-8">
+            <video src="" id="video" style="height: 440px; width: 100%" autoplay controls>
+            </video>
+            <canvas id="preview" style="display: none"></canvas>
+            <div id="logger"></div>
+        </div>
 
-        </video>
+        <div class="col-lg-4" style="height: 100%;">
+            <div id="messages" style="height: 300px; border: transparent 1px solid; overflow: auto"></div>
 
-        <canvas id="preview" style="display: none"></canvas>
-        <div id="logger"></div>
+            <div id='whoIsInBox' style="min-height: 80px; height: 80px; border: transparent 1px solid;overflow: auto">
+
+                <h4>참여자</h4>
+
+                <div id='whoIsIn' style="border: transparent 1px solid;overflow: auto">
+                </div>
+
+            </div>
+
+            <div style="margin-top: 10px;">
+                <form id='typeForm' style="border: transparent 1px solid;">
+                    <input class="input-group-text" id="m" autocomplete="off"
+                           style="width: 270px; display: inline; background-color: white; text-align: left"/>
+                    <button class="btn hover_class" id="support_hover" style="width: 70px;">보내기</button>
+                </form>
+            </div>
+        </div>
 
     </div>
 
@@ -123,6 +144,124 @@
 <script src="http://192.168.253.138/public/side_bar.js"></script>
 
 <script type="text/javascript">
+
+
+</script>
+
+<script>
+
+    //when the document is ready.
+    $(function () {
+        //about DOM
+        $('#m').focus();
+
+        //socket io
+        var typingNotice = ' 님께서 입력 중';
+        var fontColor = 'black';
+        var nickName = '';
+        var user_name = '';
+        var whoIsTyping = [];
+        var newbie;
+
+        $('#typeForm').submit(function () {
+            //submit only if it's not empty
+            if ($('#m').val() != "") {
+                socket.emit('say', $('#m').val());
+                //say event means someone transmitted chat
+                $('#m').val('');
+                socket.emit('quitTyping')
+            }
+            return false;
+        });
+
+        $('#nickNameForm').submit(function () {
+            nickName = $('#nickName').val();
+            $('#nickName').attr('placeholder', 'NickName : ' + nickName);
+            socket.emit('setNickName', nickName)
+            $('#nickName').val("");
+            $('#m').focus();
+            return false;
+        })
+
+        socket.on('selfData', function (obj) {
+            console.log('getting initial data from server');
+            console.log(obj);
+            nickName = obj.nickName;
+            user_name = obj.user_name;
+            $('#nickName').attr('placeholder', 'NickName : ' + nickName);
+            //set #nickNameForm placeholder
+            $('#user_id_id').text(user_name + " 님");
+        });
+
+        socket.on('chat message', function (msg) {
+            $('#messages').append($('<h6>').text(msg));
+        });
+
+        //채팅방 입장 문구
+        socket.on('login', function (nickNameArr) {
+            newbie = nickNameArr[nickNameArr.length - 1];
+            editUsers(nickNameArr);
+            $('#messages').append($('<h6>').text(newbie + "님께서 입장하셨습니다."));
+        });
+
+        socket.on('typing', function (nickNameArr) {
+            var tempMsg = "";
+            whoIsTyping = nickNameArr;
+            for (person in nickNameArr) {
+                tempMsg += nickNameArr[person] + ', '
+            }
+            tempMsg = tempMsg.substring(0, tempMsg.length - 2);
+            $('#m').attr('placeholder', tempMsg + typingNotice)
+        });
+
+        socket.on('mySaying', function (msg) {
+
+            $('#messages').append($('<h6>').text(msg));
+        });
+
+        socket.on('endTyping', function () {
+            console.log('endTyping');
+            whoIsTyping = [];
+            $('#m').attr('placeholder', "");
+        });
+
+        socket.on('logout', function (received) {
+            var nickNameArr = received.whoIsOn;
+            var disconnected = received.disconnected;
+            $('#messages').append($('<li>').text(`${disconnected} 님께서 나가셨습니다.`));
+            editUsers(nickNameArr);
+        });
+
+        socket.on('stream', function (image) {
+            var img = document.getElementById("play");
+            img.src = image;
+        });
+
+        function editUsers(nickNameArr) {
+
+            $('#whoIsInBox div').children().each((index, item) => {
+                $(item).remove();
+            });
+            for (person in nickNameArr) {
+                $('#whoIsInBox div').append($('<h6>').text(nickNameArr[person]));
+            }
+        }
+
+        $('#m').keyup(function (event) {
+
+            if ($('#m').val() != "" && !whoIsTyping.includes(nickName)) {
+                socket.emit('typing');
+                console.log('emit typing');
+            } else if ($('#m').val() == "" && whoIsTyping.includes(nickName)) {
+
+                socket.emit('quitTyping');
+                console.log('emit quitTyping');
+
+            }
+        });
+
+    });
+
     var canvas = document.getElementById("preview");
     var context = canvas.getContext("2d");
 
@@ -132,19 +271,13 @@
     context.width = canvas.width;
     context.height = canvas.height;
 
-    var video = document.getElementById("video");
-
     var socket = io();
+
+    var video = document.getElementById("video");
 
     function logger(msg) {
         $("logger").text(msg);
     }
-
-    // function loadCam(stream) {
-    //     video.srcObject = window.URL.createObjectURL(stream);
-    //     // video.src = window.URL.createObjectURL(stream);
-    //     logger('Camara cargada correctamente [OK]');
-    // }
 
     function loadFail() {
         logger('Camara no conectada, pr favor revise su camara!');
@@ -157,10 +290,6 @@
 
     $(function () {
         navigator.getUserMedia == (navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msgGetUserMedia);
-
-        // if(navigator.getUserMedia){
-        //     navigator.getUserMedia({video:true},loadCam,loadFail)
-        // }
 
         if (navigator.mediaDevices.getUserMedia) {
             navigator.mediaDevices.getUserMedia({video: true})
@@ -175,7 +304,6 @@
         setInterval(function () {
             viewVideo(video, context)
         });
-
     });
 
     socket.on('selfData', function (obj) {
@@ -187,7 +315,6 @@
     });
 
 </script>
-
 
 </body>
 </html>
