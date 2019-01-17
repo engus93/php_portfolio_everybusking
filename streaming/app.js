@@ -58,8 +58,6 @@ var whoIsOn = [];
 
 io.on('connection', function (socket) {
 
-    check = false;
-
     var nickName = now_user_id;
     var user_name = now_user_name;
     whoIsOn.push(nickName);

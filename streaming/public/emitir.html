@@ -210,7 +210,7 @@
             for (person in nickNameArr) {
                 tempMsg += nickNameArr[person] + ', '
             }
-            tempMsg = tempMsg.substring(0, tempMsg.length - 2);
+            tempMsg = tempMsg.substring(0, tempMsg.length - 1);
             $('#m').attr('placeholder', tempMsg + typingNotice)
         });
 
