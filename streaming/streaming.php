@@ -69,7 +69,7 @@ session_start();
 
     </form>
 
-    <form method="post" action="community.php">
+    <form method="post" action="waiting_room.php">
         <input class="btn" type="submit" value="대기실 fdsafsdaf">
     </form>
 

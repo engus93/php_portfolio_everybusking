@@ -29,9 +29,10 @@ var connection = mysql.createConnection({
 // //mysql 종료
 // connection.end();
 
-//현재 아이디 접속
+//현재 접속 정보
 var now_user_id = "";
 var now_user_name = "";
+var now_room_idx = null;
 
 var port = process.env.PORT || 3000;
 
@@ -61,6 +62,7 @@ app.post('/waiting_room', function (req, res) {
 app.post('/stream', function (req, res) {
     now_user_id = req.body.user_id;
     now_user_name = req.body.user_name;
+    now_room_idx = req.body.room_idx;
 
     res.render(__dirname + '/chatting.html');
 
@@ -83,11 +85,13 @@ io.on('connection', function (socket) {
     var user_name = now_user_name;
     whoIsOn.push(nickName);
 
+    socket.join("room" + now_room_idx);
+
+    console.log("room" + now_room_idx);
+
     socket.emit('selfData', {nickName: nickName, user_name: user_name});
 
-    socket.join(now_user_id);
-
-    io.emit('login', whoIsOn);
+    io.to("room" + now_room_idx).emit('login', whoIsOn);
 
     if (whoIsTyping.length != 0) {
         io.emit('typing', whoIsTyping);

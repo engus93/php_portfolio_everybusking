@@ -189,8 +189,8 @@ if ($_SESSION != null) {
                                      style="position: absolute; transform: translate3d(-136px, 28px, 0px); top: 0px; left: 0px; will-change: transform;">
                                     <?php if ($_SESSION != null) {
                                         echo '
-                                    <a class="dropdown-item my_font_main" href="community_write.php?idx=' . $board['idx'] . '">수정</a>
-                                    <a class="dropdown-item my_font_main" href="community_delete_p.php?idx=' . $board['idx'] . '">삭제</a>';
+                                    <a class="dropdown-item my_font_main" href="community_write.php?idx=' . $board['idx'] . '&page='.$page.'">수정</a>
+                                    <a class="dropdown-item my_font_main" href="community_delete_p.php?idx=' . $board['idx'] . '&page='.$page.'">삭제</a>';
                                     } else {
                                         echo '<a class="dropdown-item my_font_main" href="/Sign/sign_in.php">로그인하기</a>';
                                     } ?>

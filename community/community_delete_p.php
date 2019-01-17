@@ -4,6 +4,7 @@ include "../db.php";
 session_start();
 
 $bno = $_GET['idx'];
+$page = $_GET['page'];
 
 // 쿼리 만들기
 $sql = "SELECT * FROM community_tb WHERE idx='$bno'";
@@ -21,7 +22,7 @@ if ($row['pw'] == $_SESSION['user_id'] || $_SESSION['user_id'] == "rhksflwk") {
 
     if(empty($_GET['manager_page'])){
         echo '<script type="text/javascript">alert("삭제 되었습니다.");
-           location.href = "/community/community.php";
+           location.href = "/community/community.php?page='.$page.'";
            </script>';
     }else{
         echo '<script type="text/javascript">alert("삭제 되었습니다.");
@@ -32,7 +33,7 @@ if ($row['pw'] == $_SESSION['user_id'] || $_SESSION['user_id'] == "rhksflwk") {
 } else {
 
     echo '<script type="text/javascript">alert("자신의 게시물만 삭제가 가능합니다.");
-           location.href = "/community/community_read.php?idx=' . $bno . '";
+           location.href = "/community/community_read.php?idx=' . $bno . '&page='.$page.'";
            </script>';
 }
 

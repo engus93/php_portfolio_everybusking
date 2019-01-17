@@ -57,8 +57,8 @@ session_start();
 
         }
 
-        function connection() {
-            form = document.node_js;
+        function connection(idx) {
+            form = document.getElementById("node_js" + idx);
             form.submit();
         }
 
@@ -93,66 +93,72 @@ session_start();
 
     <div class="row" style="margin-top: 30px">
 
-        <hr>
+        <?php
+        require_once "../db.php";
 
-        <article class="white-panel col-sm">
+        $sql = mq("select * from streaming_tb order by idx desc");
 
-            <form name="node_js" action="http://192.168.253.138:3000/stream" method="post">
+        if ($sql->fetch_row() == null) {
+            ?>
 
-                <a style="text-decoration: none" onclick="connection()">
-                    <img src="/img/no_image.gif" style="width: auto"/>
-                    <h4 class="my_font_start text-center" style="margin-top: 10px">방송하자 시발!</h4>
+            <div class="row my_font_main center" style="min-height: 500px; width: 100%">
+                <p class="text-center" style="width: 100%">현재 방송 중인 영상이 없습니다.</p>
+            </div>
 
-                    <p class="my_font_main"
-                       style=" color: black; font-size: 12px; margin-bottom: 10px; display: inline">스트리머 : 나</p>
-                    <p class="my_font_main"
-                       style="font-size: 12px; color: black; margin-bottom: 10px; position: absolute; right: 25px; display: inline">
-                        시청자 : 0</p>
-                    <p class="my_font_main right" style="color: black; font-size: 12px; margin-bottom: 10px">오늘</p>
-                </a>
+            <?php
+        }
 
-                <input type="hidden" name="user_id" value="<?= $_SESSION['user_id'] ?>">
-                <input type="hidden" name="user_name" value="<?= $_SESSION['name'] ?>">
+        $sql = mq("select * from streaming_tb order by idx desc");
 
-            </form>
+        while ($board = $sql->fetch_array()) {
 
-        </article>
+            ?>
 
-        <article class="white-panel col-sm">
+            <article class="white-panel col-sm-6" onclick="connection(<?= $board['idx']?>)">
 
-            <form name="node_js" action="http://192.168.253.138:3000/stream" method="post">
+                <form id="node_js<?= $board['idx']?>" name="node_js" action="http://192.168.253.138:3000/stream" method="post">
 
-                <a style="text-decoration: none" onclick="connection()">
-                    <img src="/img/no_image.gif" style="width: auto"/>
-                    <h4 class="my_font_start text-center" style="margin-top: 10px">방송하자 시발!</h4>
+                    <a style="text-decoration: none">
+                        <img src="/img/no_image.gif" style="width: 100%; height: 300px"/>
+                        <h4 class="my_font_start text-center" style="margin-top: 10px"><?=$board['streamer']?>의 버스킹 공연</h4>
 
-                    <p class="my_font_main"
-                       style=" color: black; font-size: 12px; margin-bottom: 10px; display: inline">스트리머 : 나</p>
-                    <p class="my_font_main"
-                       style="font-size: 12px; color: black; margin-bottom: 10px; position: absolute; right: 25px; display: inline">
-                        시청자 : 0</p>
-                    <p class="my_font_main right" style="color: black; font-size: 12px; margin-bottom: 10px">오늘</p>
-                </a>
+                        <p class="my_font_main"
+                           style=" color: black; font-size: 12px; margin-bottom: 10px; display: inline">스트리머 : <?=$board['streamer']?></p>
+                        <p class="my_font_main"
+                           style="font-size: 12px; color: black; margin-bottom: 10px; position: absolute; right: 15px; display: inline">
+                            시청자 : <?=$board['watch_people']?></p>
+                        <p class="my_font_main right" style="color: black; font-size: 12px; margin-bottom: 10px">방송 시작 : <?=$board['date']?></p>
+                    </a>
 
-                <input type="hidden" name="user_id" value="<?= $_SESSION['user_id'] ?>">
-                <input type="hidden" name="user_name" value="<?= $_SESSION['name'] ?>">
+                    <input type="hidden" name="user_id" value="<?= $_SESSION['user_id'] ?>">
+                    <input type="hidden" name="user_name" value="<?= $_SESSION['name'] ?>">
+                    <input type="hidden" name="room_idx" value="<?= $board['idx']?>">
 
-            </form>
+                </form>
 
-        </article>
+            </article>
 
+            <?php
+        }
+
+        ?>
 
     </div>
 
-</div>
+    <div class="right" style="margin-top: 100px; margin-bottom:50px">
+        <div id="write_btn">
 
-<div class="col-8 offset-2" style="position: relative">
-    <div id="write_btn" style="position:absolute; right: 0px; bottom: 0px; width: 70px;">
-        <a href="/community/community_write.php?page=<?= $page ?>" id="search_tag">
-            <button class="btn my_font_main" id="wright" style="background-color: #FBAA48; color: white;">방송하기
-            </button>
-        </a>
+            <form method="post" action="http://192.168.253.138:3000/streamer">
+
+                <input type="hidden" name="user_id" value="<?= $_SESSION['user_id'] ?>">
+                <input type="hidden" name="user_name" value="<?= $_SESSION['name'] ?>">
+                <input class="btn my_font_main hover_class" id="support_hover" type="submit" value="방송하기"
+                       style="width: 120px">
+
+            </form>
+        </div>
     </div>
+
 </div>
 
 
@@ -161,7 +167,7 @@ session_start();
 <!--<div id="page_num">-->
 <!--    <ul class="pagination justify-content-center" style="margin-top: 20px; margin-bottom: 20px">-->
 <!--        --><?php
-//
+
 //        //이전
 //        if ($page <= 1) {
 //            echo "<li class='page-item'>
@@ -292,6 +298,7 @@ session_start();
 //        }
 //
 //        ?>
+
 <!--    </ul>-->
 <!--</div>-->
 
