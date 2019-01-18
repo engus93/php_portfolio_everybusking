@@ -76,6 +76,7 @@ io.on('connection', function (socket) {
 
     var nickName = now_user_id;
     var user_name = now_user_name;
+    var idx = now_room_idx;
     whoIsOn.push(nickName);
 
     //방 구분하기
@@ -92,6 +93,10 @@ io.on('connection', function (socket) {
         io.emit('typing', whoIsTyping);
     }
 
+    if (whoIsTyping.length != 0) {
+        io.to("room" + now_room_idx).emit('typing', whoIsTyping);
+    }
+
     socket.on('setNickName', function (_nickName) {
         var pastNickName = nickName;	//past nickname
         nickName = _nickName;
@@ -99,14 +104,14 @@ io.on('connection', function (socket) {
             //if he was typing
             console.log('setNickName debug1');
             whoIsTyping.splice(whoIsTyping.indexOf(pastNickName), 1, nickName);
-            io.emit('typing', whoIsTyping);
+            io.to("room" + now_room_idx).emit('typing', whoIsTyping);
         }
 
         if (whoIsOn.indexOf(pastNickName) != -1) {
             console.log('setNickName debug2');
             whoIsOn.splice(whoIsOn.indexOf(pastNickName), 1, nickName);
         }
-        io.emit('setNickName', {past: pastNickName, current: nickName, whoIsOn: whoIsOn});
+        io.to("room" + now_room_idx).emit('setNickName', {past: pastNickName, current: nickName, whoIsOn: whoIsOn});
         console.log(socket.id + '  to  ' + nickName);
     });
 
@@ -114,8 +119,9 @@ io.on('connection', function (socket) {
         console.log('message: ' + msg);
         //chat message to the others
         //mySaying to the speaker
-        socket.broadcast.emit('chat message', nickName + '  :  ' + msg);
+        socket.broadcast.to("room" + idx).emit('chat message', nickName + '  :  ' + msg);
         socket.emit('mySaying', '나  :  ' + msg);
+        console.log(now_room_idx);
     });
 
 
@@ -124,7 +130,7 @@ io.on('connection', function (socket) {
             whoIsTyping.push(nickName);
             console.log('who is typing now');
             console.log(whoIsTyping);
-            io.emit('typing', whoIsTyping);
+            io.to("room" + now_room_idx).emit('typing', whoIsTyping);
         }
     });
 
@@ -162,7 +168,7 @@ io.on('connection', function (socket) {
 
         whoIsOn.splice(whoIsOn.indexOf(nickName), 1);
 
-        io.emit('logout', {nickNameArr: whoIsOn, disconnected: nickName});
+        io.to("room" + now_room_idx).emit('logout', {nickNameArr: whoIsOn, disconnected: nickName});
 
         if (whoIsTyping.length == 0) {
             //if it's empty
