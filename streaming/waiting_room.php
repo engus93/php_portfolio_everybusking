@@ -115,27 +115,49 @@ session_start();
 
             ?>
 
-            <article class="white-panel col-sm-6" onclick="connection(<?= $board['idx']?>)">
+            <article class="white-panel col-sm-6" onclick="connection(<?= $board['idx'] ?>)">
 
-                <form id="node_js<?= $board['idx']?>" name="node_js" action="http://192.168.253.138:3000/stream" method="post">
+                <?php
+                if ($board['streamer_id'] === $_SESSION['user_id']) {
+                ?>
 
-                    <a style="text-decoration: none">
-                        <img src="<?=$board['picture']?>" style="width: 100%; height: 300px"/>
-                        <h4 class="my_font_start text-center" style="margin-top: 10px"><?=$board['streamer']?>의 버스킹 공연</h4>
+                <form id="node_js<?= $board['idx'] ?>" name="node_js" action="http://192.168.253.138:3000/streamer"
+                      method="post">
 
-                        <p class="my_font_main"
-                           style=" color: black; font-size: 12px; margin-bottom: 10px; display: inline">스트리머 : <?=$board['streamer']?></p>
-                        <p class="my_font_main"
-                           style="font-size: 12px; color: black; margin-bottom: 10px; position: absolute; right: 15px; display: inline">
-                            시청자 : <?=$board['watch_people']?></p>
-                        <p class="my_font_main right" style="color: black; font-size: 12px; margin-bottom: 10px">방송 시작 : <?=$board['date']?></p>
-                    </a>
+                    <?php
+                    } else {
+                    ?>
 
-                    <input type="hidden" name="user_id" value="<?= $_SESSION['user_id'] ?>">
-                    <input type="hidden" name="user_name" value="<?= $_SESSION['name'] ?>">
-                    <input type="hidden" name="room_idx" value="<?= $board['idx']?>">
+                    <form id="node_js<?= $board['idx'] ?>" name="node_js" action="http://192.168.253.138:3000/stream"
+                          method="post">
 
-                </form>
+                        <?php
+                        }
+                        ?>
+
+
+                        <a style="text-decoration: none">
+                            <img src="<?= $board['picture'] ?>" style="width: 100%; height: 300px"/>
+                            <h4 class="my_font_start text-center" style="margin-top: 10px"><?= $board['streamer'] ?>의
+                                버스킹
+                                공연</h4>
+
+                            <p class="my_font_main"
+                               style=" color: black; font-size: 12px; margin-bottom: 10px; display: inline">스트리머
+                                : <?= $board['streamer'] ?></p>
+                            <p class="my_font_main"
+                               style="font-size: 12px; color: black; margin-bottom: 10px; position: absolute; right: 15px; display: inline">
+                                시청자 : <?= $board['watch_people'] ?></p>
+                            <p class="my_font_main right" style="color: black; font-size: 12px; margin-bottom: 10px">방송
+                                시작
+                                : <?= $board['date'] ?></p>
+                        </a>
+
+                        <input type="hidden" name="user_id" value="<?= $_SESSION['user_id'] ?>">
+                        <input type="hidden" name="user_name" value="<?= $_SESSION['name'] ?>">
+                        <input type="hidden" name="room_idx" value="<?= $board['idx'] ?>">
+
+                    </form>
 
             </article>
 
@@ -150,7 +172,9 @@ session_start();
 
 <div class="col-sm-10 right" style="margin-top: 100px; margin-bottom:50px">
     <div id="write_btn">
-        <a href="waiting_room_write.php"><button class="btn my_font_main hover_class" id="support_hover" style="width: 150px">방송하기</button></a>
+        <a href="waiting_room_write.php">
+            <button class="btn my_font_main hover_class" id="support_hover" style="width: 150px">방송하기</button>
+        </a>
     </div>
 </div>
 

@@ -314,6 +314,12 @@
         $('#user_id_id').text(user_name + " 님");
     });
 
+    //뒤로가기 충돌 방지
+    history.pushState(null, null, location.href);
+    window.onpopstate = function () {
+        document.location.href="http://192.168.253.138/streaming/waiting_room.php";
+    };
+
 </script>
 
 </body>

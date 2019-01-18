@@ -6,6 +6,8 @@ session_start();
 
 $title = $_POST['title'];
 
+$user_id = $_SESSION['user_id'];
+
 date_default_timezone_set("Asia/SEOUL");
 
 $date = date('Y-m-d H:i:s');
@@ -29,7 +31,7 @@ if (!empty($_FILES['c_file']['tmp_name'])) {
 
 }
 
-$sql = mq("insert into streaming_tb(streamer,date,picture) values('" . $title . "','" . $date . "','" . $path . "')");
+$sql = mq("insert into streaming_tb(streamer,streamer_id,date,picture) values('" . $title . "','" . $user_id . "','" . $date . "','" . $path . "')");
 
 $sql_re = mq("select * from streaming_tb where date = '" . $date . "'");
 
