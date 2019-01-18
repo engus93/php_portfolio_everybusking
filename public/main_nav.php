@@ -27,15 +27,10 @@ session_start();
                                 class="fas fa-cart-plus shortmenu animate"></i></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link menu_streaming" href="/streaming/streaming.php" title="Comment"><i
+                    <a class="nav-link menu_streaming" href="/streaming/waiting_room.php" title="Comment"><i
                                 class="fas fa-video side_bar_img"></i>Streaming<i
                                 class="fas fa-comment shortmenu animate"></i></a>
                 </li>
-<!--                <li class="nav-item">-->
-<!--                    <a class="nav-link menu_streaming" href="http://192.168.253.138:3000" title="Comment"><i-->
-<!--                                class="fas fa-video side_bar_img"></i>Streaming<i-->
-<!--                                class="fas fa-comment shortmenu animate"></i></a>-->
-<!--                </li>-->
                 <li class="nav-item">
                     <a class="nav-link menu_community" href="/community/community.php" title="Comment"><i
                                 class="fas fa-star side_bar_img"></i>Community<i
@@ -90,7 +85,7 @@ session_start();
                         <?php
 
                     }
-                }else{
+                } else {
                     ?>
 
                     <li class="nav-item">
@@ -98,7 +93,7 @@ session_start();
                                     class="fas fa-user"></i> My Page</a>
                     </li>
 
-                <?php
+                    <?php
                 }
 
                 ?>

@@ -110,7 +110,7 @@ if (isset($_COOKIE[session_name()])) {
                                 class="fas fa-cart-plus shortmenu animate"></i></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link menu_streaming" href="/streaming/streaming.php" title="Comment"><i
+                    <a class="nav-link menu_streaming" href="/streaming/waiting_room.php" title="Comment"><i
                                 class="fas fa-video side_bar_img"></i>Streaming<i
                                 class="fas fa-comment shortmenu animate"></i></a>
                 </li>

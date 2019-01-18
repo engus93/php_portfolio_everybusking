@@ -49,20 +49,10 @@ app.use(bodyParser.urlencoded({
 
 app.engine('html', ejs.renderFile);
 
-app.post('/waiting_room', function (req, res) {
-    now_user_id = req.body.user_id;
-    now_user_name = req.body.user_name;
-
-    res.render(__dirname + '/waiting_room.html');
-
-});
-
 app.post('/stream', function (req, res) {
     now_user_id = req.body.user_id;
     now_user_name = req.body.user_name;
     now_room_idx = req.body.room_idx;
-
-    console.log(now_room_idx);
 
     res.render(__dirname + '/chatting.html');
 
@@ -72,10 +62,6 @@ app.post('/streamer', function (req, res) {
     now_user_id = req.body.user_id;
     now_user_name = req.body.user_name;
     now_room_idx = req.body.room_idx;
-
-    console.log(now_room_idx);
-    console.log(now_user_id);
-    console.log(now_user_name);
 
     res.render(__dirname + '/public/emitir.html');
 
