@@ -184,8 +184,6 @@
         })
 
         socket.on('selfData', function (obj) {
-            console.log('getting initial data from server');
-            console.log(obj);
             nickName = obj.nickName;
             user_name = obj.user_name;
             $('#nickName').attr('placeholder', 'NickName : ' + nickName);
@@ -304,14 +302,6 @@
         setInterval(function () {
             viewVideo(video, context)
         });
-    });
-
-    socket.on('selfData', function (obj) {
-        nickName = obj.nickName;
-        user_name = obj.user_name;
-        $('#nickName').attr('placeholder', 'NickName : ' + nickName);
-        //set #nickNameForm placeholder
-        $('#user_id_id').text(user_name + " 님");
     });
 
     //뒤로가기 충돌 방지

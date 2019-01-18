@@ -38,26 +38,15 @@ var port = process.env.PORT || 3000;
 
 app.use(express.static(__dirname + "/public"));
 
-// app.get('/chat', function (req, res) {
-//     res.redirect('/chatting.html')
-// });
-
-//----------------------------------------------------------------------------------------------------------------------
 app.use(bodyParser.urlencoded({
     extended: true
 }));
 
 app.engine('html', ejs.renderFile);
 
-app.post('/stream', function (req, res) {
-    now_user_id = req.body.user_id;
-    now_user_name = req.body.user_name;
-    now_room_idx = req.body.room_idx;
+//----------------------------------------------------------------------------------------------------------------------
 
-    res.render(__dirname + '/chatting.html');
-
-});
-
+//방송 찍는 방
 app.post('/streamer', function (req, res) {
     now_user_id = req.body.user_id;
     now_user_name = req.body.user_name;
@@ -67,22 +56,37 @@ app.post('/streamer', function (req, res) {
 
 });
 
+//방송 보는 방
+app.post('/stream', function (req, res) {
+    now_user_id = req.body.user_id;
+    now_user_name = req.body.user_name;
+    now_room_idx = req.body.room_idx;
+
+    res.render(__dirname + '/public/chatting.html');
+
+});
+
+//채팅을 치는 사람 배열
 var whoIsTyping = [];
+//현재 접속 인원
 var whoIsOn = [];
 
+//커넥션
 io.on('connection', function (socket) {
 
     var nickName = now_user_id;
     var user_name = now_user_name;
     whoIsOn.push(nickName);
 
+    //방 구분하기
     socket.join("room" + now_room_idx);
 
-    console.log("room" + now_room_idx);
-
+    //각자 보내주기
     socket.emit('selfData', {nickName: nickName, user_name: user_name});
 
+    //로그인 보내기
     io.to("room" + now_room_idx).emit('login', whoIsOn);
+
 
     if (whoIsTyping.length != 0) {
         io.emit('typing', whoIsTyping);
@@ -194,6 +198,7 @@ io.on('connection', function (socket) {
 
 });
 
+//포트 접속 리스닝
 http.listen(3000, function () {
     console.log('listening on *:3000');
 });

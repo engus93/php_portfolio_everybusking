@@ -64,8 +64,6 @@
             })
 
             socket.on('selfData', function (obj) {
-                console.log('getting initial data from server');
-                console.log(obj);
                 nickName = obj.nickName;
                 user_name = obj.user_name;
                 $('#nickName').attr('placeholder', 'NickName : ' + nickName);
@@ -149,7 +147,7 @@
         //뒤로가기 충돌 방지
         history.pushState(null, null, location.href);
         window.onpopstate = function () {
-            document.location.href="http://192.168.253.138/streaming/waiting_room.php";
+            document.location.href="../waiting_room.php";
         };
 
     </script>
