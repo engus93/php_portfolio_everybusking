@@ -58,6 +58,7 @@ session_start();
         }
 
         function connection(idx) {
+
             form = document.getElementById("node_js" + idx);
             form.submit();
         }
@@ -145,12 +146,12 @@ session_start();
 
     </div>
 
-    <div class="right" style="margin-top: 100px; margin-bottom:50px">
-        <div id="write_btn">
-            <a href="waiting_room_write.php"><button class="btn my_font_main hover_class" id="support_hover" style="width: 120px">방송하기</button></a>
-        </div>
-    </div>
+</div>
 
+<div class="col-sm-10 right" style="margin-top: 100px; margin-bottom:50px">
+    <div id="write_btn">
+        <a href="waiting_room_write.php"><button class="btn my_font_main hover_class" id="support_hover" style="width: 150px">방송하기</button></a>
+    </div>
 </div>
 
 

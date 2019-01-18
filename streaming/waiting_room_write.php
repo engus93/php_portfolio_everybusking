@@ -76,6 +76,35 @@ session_start();
         }
 
 
+        $(document).ready(function () {
+
+            $('#re_bt').click(function () {
+
+                var params = $('#streamer_form').serialize();
+
+                $.ajax({
+                    type: 'post',
+                    url: 'waiting_room_write_p.php',
+                    data: params,
+                    dataType: 'html',
+                    async : false,
+                    success: function (data) {
+                        var input_put = document.getElementById('room_idx');
+
+                        input_put.value = data;
+
+                        alert(data);
+
+                        form = document.streamer_form;
+                        form.action='http://192.168.253.138:3000/streamer';
+                        form.submit();
+                    }
+                });
+
+            });
+
+        });
+
     </script>
 
 </head>
@@ -92,7 +121,7 @@ session_start();
 
     <h6 class="my_font_main">※ 깨끗한 인터넷 문화를 만들어갑시다. :)</h6>
 
-    <form action="/streaming/waiting_room_write_p.php" method="post" enctype="multipart/form-data">
+    <form id="streamer_form" name="streamer_form" method="post" action="">
 
         <div class="img_wrap center" style="width: 100%">
             <img id="img" style="height: 300px; width: 540px;" src="/img/no_image.gif"/>
@@ -108,11 +137,13 @@ session_start();
         </div>
 
         <div class="center my_font_main" style="margin-top: 50px">
-            <button class="btn" type="submit">등록하기</button>
+            <button id="re_bt" class="btn"">등록하기</button>
         </div>
 
         <input type="hidden" name="user_id" value="<?= $_SESSION['user_id'] ?>">
         <input type="hidden" name="user_name" value="<?= $_SESSION['name'] ?>">
+        <input type="hidden" name="room_idx" id="room_idx" value="">
+
     </form>
 
 </div>
@@ -127,7 +158,6 @@ session_start();
 
 <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js"></script>
 <script src="../public/side_bar.js"></script>
-<script src="community.js"></script>
 
 </body>
 
