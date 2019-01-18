@@ -170,6 +170,7 @@
         var user_name = '';
         var whoIsTyping = [];
         var newbie;
+        var in_room_user= [];
 
         $('#typeForm').submit(function () {
             //submit only if it's not empty
@@ -206,8 +207,16 @@
         //채팅방 입장 문구
         socket.on('login', function (nickNameArr) {
             newbie = nickNameArr[nickNameArr.length - 1];
-            editUsers(nickNameArr);
+            in_room_user.push(newbie);
+            editUsers(in_room_user);
             $('#messages').append($('<h6>').text(newbie + "님께서 입장하셨습니다."));
+        });
+
+        socket.on('logout', function (received) {
+            var nickNameArr = received.nickNameArr;
+            var disconnected = received.disconnected;
+            $('#messages').append($('<li>').text(`${disconnected} 님께서 나가셨습니다.`));
+            editUsers(nickNameArr);
         });
 
         socket.on('typing', function (nickNameArr) {
@@ -229,13 +238,6 @@
             console.log('endTyping');
             whoIsTyping = [];
             $('#m').attr('placeholder', "");
-        });
-
-        socket.on('logout', function (received) {
-            var nickNameArr = received.whoIsOn;
-            var disconnected = received.disconnected;
-            $('#messages').append($('<li>').text(`${disconnected} 님께서 나가셨습니다.`));
-            editUsers(nickNameArr);
         });
 
         socket.on('stream', function (image) {

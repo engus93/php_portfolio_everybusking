@@ -42,6 +42,7 @@
             var user_name = '';
             var whoIsTyping = [];
             var newbie;
+            var in_room_user= [];
 
             $('#typeForm').submit(function () {
                 //submit only if it's not empty
@@ -79,7 +80,8 @@
             socket.on('login', function (nickNameArr) {
                 console.log(nickNameArr);
                 newbie = nickNameArr[nickNameArr.length - 1];
-                editUsers(nickNameArr);
+                in_room_user.push(newbie);
+                editUsers(in_room_user);
                 $('#messages').append($('<h6>').text(newbie + "님께서 입장하셨습니다."));
             });
 
@@ -219,7 +221,7 @@
 </div>
 
 <div class="container my_font_main"
-     style="min-height: 800px; border: transparent 1px solid; padding-top: 10px;">
+     style="min-height: 800px; padding-top: 10px;">
 
     <h1 class="mt-4 mb-3 my_font_main" style="color: #FBAA48">누구누구의 방송</h1>
 

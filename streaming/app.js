@@ -149,6 +149,7 @@ io.on('connection', function (socket) {
 
                     console.log('emit endTyping');
                     io.emit('endTyping');
+
                 } else {
                     io.emit('typing', whoIsTyping);
                     console.log('emit quitTyping');
