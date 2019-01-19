@@ -142,13 +142,13 @@ session_start();
                                 버스킹
                                 공연</h4>
 
+<!--                            <p class="my_font_main right"-->
+<!--                               style="font-size: 12px; color: black; margin-bottom: 10px; display: none">-->
+<!--                                시청자 : --><?//= $board['watch_people'] ?><!--</p>-->
                             <p class="my_font_main"
-                               style=" color: black; font-size: 12px; margin-bottom: 10px; display: inline">스트리머
+                               style=" color: black; font-size: 12px; margin-bottom: 10px; position: absolute; display: inline">스트리머
                                 : <?= $board['streamer'] ?></p>
-                            <p class="my_font_main"
-                               style="font-size: 12px; color: black; margin-bottom: 10px; position: absolute; right: 15px; display: inline">
-                                시청자 : <?= $board['watch_people'] ?></p>
-                            <p class="my_font_main right" style="color: black; font-size: 12px; margin-bottom: 10px">방송
+                            <p class="my_font_main" style="color: black; font-size: 12px; margin-bottom: 10px; position: absolute; right: 15px; display: inline">방송
                                 시작
                                 : <?= $board['date'] ?></p>
                         </a>

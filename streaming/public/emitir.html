@@ -133,7 +133,7 @@
 
     <a href="http://192.168.253.138/streaming/waiting_room.php" style="margin-left: 480px;">
         <button class="col-sm-2 btn my_font_main hover_class" style="font-size: 18px; width: 180px; margin-top: 100px; margin-bottom: 70px;"
-                id="support_hover2">목록으로</button>
+                id="support_hover2" >목록으로</button>
     </a>
 
 </div>
@@ -207,9 +207,8 @@
         //채팅방 입장 문구
         socket.on('login', function (nickNameArr) {
             newbie = nickNameArr[nickNameArr.length - 1];
-            in_room_user.push(newbie);
-            editUsers(in_room_user);
             $('#messages').append($('<h6>').text(newbie + "님께서 입장하셨습니다."));
+            editUsers(nickNameArr);
         });
 
         socket.on('logout', function (received) {
@@ -219,8 +218,18 @@
             editUsers(nickNameArr);
         });
 
+        function editUsers(nickNameArr) {
+
+            $('#whoIsInBox div').children().each((index, item) => {
+                $(item).remove();
+            });
+            for (person in nickNameArr) {
+                $('#whoIsInBox div').append($('<h6>').text(nickNameArr[person]));
+            }
+        };
+
         socket.on('typing', function (nickNameArr) {
-            var tempMsg = "";
+            var tempMsg = null;
             whoIsTyping = nickNameArr;
             for (person in nickNameArr) {
                 tempMsg += nickNameArr[person] + ', '
@@ -244,16 +253,6 @@
             var img = document.getElementById("play");
             img.src = image;
         });
-
-        function editUsers(nickNameArr) {
-
-            $('#whoIsInBox div').children().each((index, item) => {
-                $(item).remove();
-            });
-            for (person in nickNameArr) {
-                $('#whoIsInBox div').append($('<h6>').text(nickNameArr[person]));
-            }
-        }
 
         $('#m').keyup(function (event) {
 

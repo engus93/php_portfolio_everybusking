@@ -8,26 +8,13 @@ var bodyParser = require('body-parser');
 
 //mysql 접속
 var mysql = require('mysql');
+
 var connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     password: 'Reg016260!!',
     database: 'everybusking_db'
 });
-
-// //mysql 접속
-// connection.connect();
-//
-// //mysql 구문
-// connection.query('SELECT * from user_info_tb', function (error, results, fields) {
-//     if (error) throw error;
-//
-//     console.log(results);
-//     console.log('The solution is: ', results[0].solution);
-// });
-//
-// //mysql 종료
-// connection.end();
 
 //현재 접속 정보
 var now_user_id = "";
@@ -70,6 +57,8 @@ app.post('/stream', function (req, res) {
 var whoIsTyping = [];
 //현재 접속 인원
 var whoIsOn = [];
+var tmp_nick = [];
+var room_in_user = [[]];
 
 //커넥션
 io.on('connection', function (socket) {
@@ -77,7 +66,50 @@ io.on('connection', function (socket) {
     var nickName = now_user_id;
     var user_name = now_user_name;
     var idx = now_room_idx;
-    whoIsOn.push(nickName);
+
+    console.log(now_room_idx);
+
+    console.log(room_in_user[idx]);
+
+    tmp_nick = [];
+
+    for (var key in room_in_user[now_room_idx]) {
+        tmp_nick.push(room_in_user[now_room_idx][key]);
+    }
+
+    tmp_nick.push(nickName);
+
+    room_in_user[now_room_idx] = tmp_nick;
+
+    whoIsOn = room_in_user[now_room_idx];
+
+    console.log(room_in_user[now_room_idx]);
+
+    // //mysql 접속
+    // connection.connect();
+
+    // //mysql 구문
+    // connection.query(`SELECT * from streaming_tb where idx = '${idx}'`, function (error, results, fields) {
+    //     if (error) throw error;
+    //
+    //     console.log(results[0].watch_people);
+    //
+    //     people = results[0].watch_people;
+    //
+    //     people = people + 1;
+    //
+    // });
+    //
+    // //mysql 구문
+    // connection.query(`UPDATE streaming_tb SET watch_people = ${people} where idx = '${idx}'`, function (error, results, fields) {
+    //     if (error) throw error;
+    //
+    //     console.log(people);
+    //
+    // });
+
+    //mysql 종료
+    // connection.end();
 
     //방 구분하기
     socket.join("room" + now_room_idx);
@@ -86,7 +118,7 @@ io.on('connection', function (socket) {
     socket.emit('selfData', {nickName: nickName, user_name: user_name});
 
     //로그인 보내기
-    io.to("room" + now_room_idx).emit('login', whoIsOn);
+    io.to("room" + now_room_idx).emit('login', room_in_user[now_room_idx]);
 
 
     if (whoIsTyping.length != 0) {
@@ -165,11 +197,28 @@ io.on('connection', function (socket) {
     //disconnect is in socket
     socket.on('disconnect', function () {
 
+        tmp_nick = [];
+
         console.log(nickName + ' : DISCONNECTED');
 
-        whoIsOn.splice(whoIsOn.indexOf(nickName), 1);
+        console.log(now_room_idx);
 
-        io.to("room" + now_room_idx).emit('logout', {nickNameArr: whoIsOn, disconnected: nickName});
+        console.log(room_in_user[now_room_idx] + " 변경 전");
+
+
+        for (var key in room_in_user[now_room_idx]) {
+            if (room_in_user[now_room_idx][key] != nickName) {
+                tmp_nick.push(room_in_user[now_room_idx][key]);
+            }
+        }
+
+        room_in_user[now_room_idx] = tmp_nick;
+
+        console.log(room_in_user[now_room_idx] + " 변경 후");
+
+        // whoIsOn.splice(whoIsOn.indexOf(nickName), 1);
+
+        io.to("room" + now_room_idx).emit('logout', {nickNameArr: room_in_user[now_room_idx], disconnected: nickName});
 
         if (whoIsTyping.length == 0) {
             //if it's empty

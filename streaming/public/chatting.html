@@ -80,8 +80,7 @@
             socket.on('login', function (nickNameArr) {
                 console.log(nickNameArr);
                 newbie = nickNameArr[nickNameArr.length - 1];
-                in_room_user.push(newbie);
-                editUsers(in_room_user);
+                editUsers(nickNameArr);
                 $('#messages').append($('<h6>').text(newbie + "님께서 입장하셨습니다."));
             });
 
@@ -109,7 +108,7 @@
                 var tempMsg = "";
                 whoIsTyping = nickNameArr;
                 for (person in nickNameArr) {
-                    tempMsg += nickNameArr[person] + ', '
+                    tempMsg += nickNameArr[person]
                 }
                 tempMsg = tempMsg.substring(0, tempMsg.length - 1);
                 $('#m').attr('placeholder', tempMsg + typingNotice)
