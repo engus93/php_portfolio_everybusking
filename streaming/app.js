@@ -248,7 +248,7 @@ io.on('connection', function (socket) {
 
     //스트리밍 socket.io -----------------------------------------------------------------------------------------------
     socket.on('stream', function (image) {
-        socket.broadcast.emit('stream', image);
+        socket.to("room" + now_room_idx).broadcast.emit('stream', image);
     });
 
 
