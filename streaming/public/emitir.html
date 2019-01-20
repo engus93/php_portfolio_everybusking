@@ -102,8 +102,7 @@
 
     <div class="row" style="height: 440px; margin-top: 70px">
         <div class="col-lg-8">
-            <video src="" id="video" style="height: 440px; width: 100%" autoplay controls>
-            </video>
+            <video src="" id="video" style="height: 440px; width: 100%" autoplay controls></video>
             <canvas id="preview" style="display: none"></canvas>
             <div id="logger"></div>
         </div>
@@ -132,8 +131,10 @@
     </div>
 
     <a href="http://192.168.253.138/streaming/waiting_room.php" style="margin-left: 480px;">
-        <button class="col-sm-2 btn my_font_main hover_class" style="font-size: 18px; width: 180px; margin-top: 100px; margin-bottom: 70px;"
-                id="support_hover2" >목록으로</button>
+        <button class="col-sm-2 btn my_font_main hover_class"
+                style="font-size: 18px; width: 180px; margin-top: 100px; margin-bottom: 70px;"
+                id="support_hover2">목록으로
+        </button>
     </a>
 
 </div>
@@ -278,7 +279,7 @@
 
     var socket = io();
 
-    var video = document.getElementById("video");
+    const video = document.getElementById("video");
 
     function logger(msg) {
         $("logger").text(msg);
@@ -288,33 +289,46 @@
         logger('Camara no conectada, pr favor revise su camara!');
     }
 
-    function viewVideo(video, context) {
-        context.drawImage(video, 0, 0, context.width, context.height);
-        socket.emit('stream', canvas.toDataURL('image/webp'));
+    function viewVideo(video) {
+        // context.drawImage(video, 0, 0, context.width, context.height);
+        // socket.emit('stream', canvas.toDataURL('image/webp'));
+
+        socket.emit('stream', video);
     }
 
     $(function () {
         navigator.getUserMedia == (navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msgGetUserMedia);
 
         if (navigator.mediaDevices.getUserMedia) {
-            navigator.mediaDevices.getUserMedia({video: true, audio:true})
+            navigator.mediaDevices.getUserMedia({video: true, audio: true})
                 .then(function (stream) {
                     video.srcObject = stream;
-                }, 100)
+                    media = stream;
+                }, 1000)
+
                 .catch(function (err0r) {
                     console.log("Something went wrong!");
-                }, 100);
+                }, 1000);
+
         }
 
         setInterval(function () {
-            viewVideo(video, context)
+
+            video.addEventListener('canplay', () => {
+                const stream = document.getElementById("video").mozCaptureStream();
+                socket.emit('stream', stream);
+                console.log(stream + "가즈아!")
+            });
+
+            // viewVideo(media);
+            // console.log(media)
         });
     });
 
     //뒤로가기 충돌 방지
     history.pushState(null, null, location.href);
     window.onpopstate = function () {
-        document.location.href="http://192.168.253.138/streaming/waiting_room.php";
+        document.location.href = "http://192.168.253.138/streaming/waiting_room.php";
     };
 
 </script>
