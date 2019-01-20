@@ -120,7 +120,6 @@ io.on('connection', function (socket) {
     //로그인 보내기
     io.to("room" + now_room_idx).emit('login', room_in_user[now_room_idx]);
 
-
     if (whoIsTyping.length != 0) {
         io.emit('typing', whoIsTyping);
     }
