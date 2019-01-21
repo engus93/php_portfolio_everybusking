@@ -115,7 +115,7 @@ io.on('connection', function (socket) {
     socket.join("room" + now_room_idx);
 
     //각자 보내주기
-    socket.emit('selfData', {nickName: nickName, user_name: user_name});
+    socket.emit('selfData', {nickName: nickName, user_name: user_name, room_idx : now_room_idx});
 
     //로그인 보내기
     io.to("room" + now_room_idx).emit('login', room_in_user[now_room_idx]);
@@ -244,13 +244,6 @@ io.on('connection', function (socket) {
 
         }
     });
-
-    //스트리밍 socket.io -----------------------------------------------------------------------------------------------
-    socket.on('stream', function (image) {
-        socket.to("room" + idx).broadcast.emit('stream', image);
-        console.log(image + "받즈아!");
-    });
-
 
 });
 

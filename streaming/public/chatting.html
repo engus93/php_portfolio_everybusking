@@ -27,134 +27,21 @@
 
     <script src="/socket.io/socket.io.js"></script>
     <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
-    <script>
 
-        //when the document is ready.
-        $(function () {
-            //about DOM
-            $('#m').focus();
+    <style>
+        .video-div video {
+            width: 100%;
+            height: 440px;
+        }
 
-            //socket io
-            var socket = io();
-            var typingNotice = ' 님께서 입력 중';
-            var nickName = '';
-            var user_name = '';
-            var whoIsTyping = [];
-            var newbie;
+        #videos-container {
+            text-align: center;
 
-
-            $('#typeForm').submit(function () {
-                //submit only if it's not empty
-                if ($('#m').val() != "") {
-                    socket.emit('say', $('#m').val());
-                    //say event means someone transmitted chat
-                    $('#m').val('');
-                    socket.emit('quitTyping')
-                }
-                return false;
-            });
-
-            $('#nickNameForm').submit(function () {
-                nickName = $('#nickName').val();
-                $('#nickName').attr('placeholder', 'NickName : ' + nickName);
-                socket.emit('setNickName', nickName)
-                $('#nickName').val("");
-                $('#m').focus();
-                return false;
-            })
-
-            socket.on('selfData', function (obj) {
-                nickName = obj.nickName;
-                user_name = obj.user_name;
-                $('#nickName').attr('placeholder', 'NickName : ' + nickName);
-                //set #nickNameForm placeholder
-                $('#user_id_id').text(user_name + " 님");
-            });
-
-            socket.on('chat message', function (msg) {
-                $('#messages').append($('<h6>').text(msg));
-            });
-
-            //채팅방 입장 문구
-            socket.on('login', function (nickNameArr) {
-                console.log(nickNameArr);
-                newbie = nickNameArr[nickNameArr.length - 1];
-                editUsers(nickNameArr);
-                $('#messages').append($('<h6>').text(newbie + "님께서 입장하셨습니다."));
-            });
-
-            function editUsers(nickNameArr) {
-                console.log(nickNameArr + "나감 1");
-
-                $('#whoIsInBox div').children().each((index, item) => {
-                    $(item).remove();
-                    console.log(nickNameArr + "나감 2");
-                });
-
-                for (person in nickNameArr) {
-                    $('#whoIsInBox div').append($('<h6>').text(nickNameArr[person]));
-                }
-            }
-
-            socket.on('logout', function (received) {
-                var nickNameArr = received.nickNameArr;
-                var disconnected = received.disconnected;
-                $('#messages').append($('<li>').text(`${disconnected} 님께서 나가셨습니다.`));
-                editUsers(nickNameArr);
-            });
-
-            socket.on('typing', function (nickNameArr) {
-                var tempMsg = "";
-                whoIsTyping = nickNameArr;
-                for (person in nickNameArr) {
-                    tempMsg += nickNameArr[person]
-                }
-                tempMsg = tempMsg.substring(0, tempMsg.length - 1);
-                $('#m').attr('placeholder', tempMsg + typingNotice)
-            });
-
-            socket.on('mySaying', function (msg) {
-
-                $('#messages').append($('<h6>').text(msg));
-            });
-
-            socket.on('endTyping', function () {
-                console.log('endTyping');
-                whoIsTyping = [];
-                $('#m').attr('placeholder', "");
-            });
-
-            socket.on('stream', function (image) {
-                console.log(image);
-
-                // var img = document.getElementById("play");
-                // img.srcObject = image;
-            });
-
-            $('#m').keyup(function (event) {
-
-                if ($('#m').val() != "" && !whoIsTyping.includes(nickName)) {
-                    socket.emit('typing');
-                    console.log('emit typing');
-                } else if ($('#m').val() == "" && whoIsTyping.includes(nickName)) {
-
-                    socket.emit('quitTyping');
-                    console.log('emit quitTyping');
-
-                }
-            });
-
-        });
-
-        //뒤로가기 충돌 방지
-        history.pushState(null, null, location.href);
-        window.onpopstate = function () {
-            document.location.href="../waiting_room.php";
-        };
-
-    </script>
+        }
+    </style>
 
 </head>
+
 <body>
 
 <!--사이드바-->
@@ -220,8 +107,7 @@
     </nav>
 </div>
 
-<div class="container my_font_main"
-     style="min-height: 800px; padding-top: 10px;">
+<div class="container my_font_main" style="min-height: 800px; padding-top: 10px;">
 
     <h1 class="mt-4 mb-3 my_font_main" style="color: #FBAA48">누구누구의 방송</h1>
 
@@ -229,8 +115,10 @@
 
     <div class="row" style="height: 440px; margin-top: 70px">
         <div class="col-lg-8">
-            <!--<img id="play" style="width: 100%; height: 440px" src="http://192.168.253.138/streaming/breaktime.jpg" >-->
-            <video id="play" style="width: 100%; height: 440px" src="" autoplay muted></video>
+            <div id="videos-container" style="height: 400px!important; width: 100%!important;" autoplay controls>
+
+            </div>
+            <!--<div id="logger"></div>-->
         </div>
 
         <div class="col-lg-4" style="height: 100%;">
@@ -257,12 +145,13 @@
     </div>
 
     <a href="http://192.168.253.138/streaming/waiting_room.php" style="margin-left: 480px;">
-        <button class="col-sm-2 btn my_font_main hover_class" style="font-size: 18px; width: 180px; margin-top: 100px; margin-bottom: 70px;"
-                id="support_hover2">목록으로</button>
+        <button class="col-sm-2 btn my_font_main hover_class"
+                style="font-size: 18px; width: 180px; margin-top: 100px; margin-bottom: 70px;"
+                id="support_hover2">목록으로
+        </button>
     </a>
 
 </div>
-
 
 <!-- Footer -->
 <div data-role="footer" data-position="fixed" class="m_footer">
@@ -277,6 +166,219 @@
 <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js"></script>
 <script src="http://192.168.253.138/public/side_bar.js"></script>
 
+<script>
+
+    var rooming;
+
+
+    //when the document is ready.
+    // $(function () {
+        //about DOM
+        $('#m').focus();
+
+        var socket = io();
+
+        //socket io
+        var typingNotice = ' 님께서 입력 중';
+        var nickName = '';
+        var user_name = '';
+        var whoIsTyping = [];
+        var newbie;
+
+        $('#typeForm').submit(function () {
+            //submit only if it's not empty
+            if ($('#m').val() != "") {
+                socket.emit('say', $('#m').val());
+                //say event means someone transmitted chat
+                $('#m').val('');
+                socket.emit('quitTyping')
+            }
+            return false;
+        });
+
+        $('#nickNameForm').submit(function () {
+            nickName = $('#nickName').val();
+            $('#nickName').attr('placeholder', 'NickName : ' + nickName);
+            socket.emit('setNickName', nickName)
+            $('#nickName').val("");
+            $('#m').focus();
+            return false;
+        })
+
+        socket.on('selfData', function (obj) {
+            nickName = obj.nickName;
+            user_name = obj.user_name;
+            rooming = obj.room_idx;
+            $('#nickName').attr('placeholder', 'NickName : ' + nickName);
+            //set #nickNameForm placeholder
+            $('#user_id_id').text(user_name + " 님");
+        });
+
+        socket.on('chat message', function (msg) {
+            $('#messages').append($('<h6>').text(msg));
+        });
+
+        //채팅방 입장 문구
+        socket.on('login', function (nickNameArr) {
+            newbie = nickNameArr[nickNameArr.length - 1];
+            $('#messages').append($('<h6>').text(newbie + "님께서 입장하셨습니다."));
+            editUsers(nickNameArr);
+        });
+
+        socket.on('logout', function (received) {
+            var nickNameArr = received.nickNameArr;
+            var disconnected = received.disconnected;
+            $('#messages').append($('<li>').text(`${disconnected} 님께서 나가셨습니다.`));
+            editUsers(nickNameArr);
+        });
+
+        function editUsers(nickNameArr) {
+
+            $('#whoIsInBox div').children().each((index, item) => {
+                $(item).remove();
+            });
+            for (person in nickNameArr) {
+                $('#whoIsInBox div').append($('<h6>').text(nickNameArr[person]));
+            }
+        };
+
+        socket.on('typing', function (nickNameArr) {
+            var tempMsg = null;
+            whoIsTyping = nickNameArr;
+            for (person in nickNameArr) {
+                tempMsg += nickNameArr[person] + ', '
+            }
+            tempMsg = tempMsg.substring(0, tempMsg.length - 1);
+            $('#m').attr('placeholder', tempMsg + typingNotice)
+        });
+
+        socket.on('mySaying', function (msg) {
+
+            $('#messages').append($('<h6>').text(msg));
+        });
+
+        socket.on('endTyping', function () {
+            console.log('endTyping');
+            whoIsTyping = [];
+            $('#m').attr('placeholder', "");
+        });
+
+        socket.on('stream', function (image) {
+            var img = document.getElementById("play");
+            img.src = image;
+        });
+
+        $('#m').keyup(function (event) {
+
+            if ($('#m').val() != "" && !whoIsTyping.includes(nickName)) {
+                socket.emit('typing');
+                console.log('emit typing');
+            } else if ($('#m').val() == "" && whoIsTyping.includes(nickName)) {
+
+                socket.emit('quitTyping');
+                console.log('emit quitTyping');
+
+            }
+        });
+
+    // });
+
+    //뒤로가기 충돌 방지
+    history.pushState(null, null, location.href);
+    window.onpopstate = function () {
+        document.location.href = "http://192.168.253.138/streaming/waiting_room.php";
+    };
+
+</script>
+
+
+<script src="https://rtcmulticonnection.herokuapp.com/dist/RTCMultiConnection.min.js"></script>
+<script src="https://rtcmulticonnection.herokuapp.com/socket.io/socket.io.js"></script>
+
+<script>
+    var connection = new RTCMultiConnection();
+
+    // this line is VERY_important
+    connection.socketURL = "http://192.168.253.138:3001/";
+
+    // connection.extra = {
+    //     divBGColor: prompt('Please enter DIV background color.')
+    // };
+
+    connection.session = {
+        audio: true,
+        video: true,
+        oneway: true
+    };
+
+    connection.sdpConstraints.mandatory = {
+        OfferToReceiveAudio: true,
+        OfferToReceiveVideo: true
+    };
+
+    var videosContainer = document.getElementById('videos-container');
+    connection.onstream = function (event) {
+        delete event.mediaElement.id; // make sure that below DIV has unique ID in the DOM
+
+        var div = document.createElement('div');
+        div.id = event.streamid;
+        div.className = 'video-div';
+        div.appendChild(event.mediaElement); // appending VIDOE to DIV
+
+        div.style.backgroundColor = event.extra.divBGColor;
+
+        videosContainer.appendChild(div);
+    };
+
+    connection.onstreamended = function (event) {
+        var div = document.getElementById(event.streamid);
+        if (div && div.parentNode) {
+            div.parentNode.removeChild(div); // remove it from the DOM
+        }
+    };
+
+    $(function () {
+        // consider the URL as UNIQUE-ROOM-ID
+        connection.channel = rooming;
+
+        connection.openOrJoin(connection.channel);
+
+        console.log(connetion.channel);
+    });
+</script>
+
+<script>
+
+    $(document).ready(function () {
+
+        $('#re_bt').click(function () {
+
+            var params = $('#streamer_form').serialize();
+
+            $.ajax({
+                type: 'post',
+                url: '../waiting_room_write_p.php',
+                data: params,
+                dataType: 'html',
+                async : false,
+                success: function (data) {
+                    var input_put = document.getElementById('room_idx');
+
+                    input_put.value = data;
+
+                    alert(data);
+
+                    var form = document.getElementById('streamer_form');
+                    form.action='http://192.168.253.138/streaming/waiting_room.php';
+                    form.submit();
+                }
+            });
+
+        });
+
+    });
+
+</script>
 
 </body>
 </html>
