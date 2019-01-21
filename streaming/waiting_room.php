@@ -61,10 +61,32 @@ if ($_SESSION == null) {
 
         }
 
+        // function connection(idx) {
+        //
+        //     form = document.getElementById("node_js" + idx);
+        //     form.submit();
+        // }
+
         function connection(idx) {
 
-            form = document.getElementById("node_js" + idx);
-            form.submit();
+            var zzz = $("#node_js" + idx);
+
+            var params = zzz.serialize();
+            $.ajax({
+                type: 'post',
+                url: 'waiting_room_join_p.php',
+                data: params,
+                dataType: 'html',
+                async : false,
+                success: function (data) {
+                    if(data != 0){
+                        var form = $("#node_js" + idx);
+                        form.submit();
+                    }else{
+                        alert("방송이 준비 중 입니다.")
+                    }
+                }
+            });
         }
 
     </script>
@@ -138,7 +160,6 @@ if ($_SESSION == null) {
                         <?php
                         }
                         ?>
-
 
                         <a style="text-decoration: none">
                             <img src="<?= $board['picture'] ?>" style="width: 100%; height: 300px"/>
