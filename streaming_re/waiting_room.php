@@ -2,10 +2,6 @@
 
 session_start();
 
-if($_SESSION == null){
-    echo '<script>alert("로그인 후 이용바랍니다."); document.location.href="/Sign/sign_in.php"</script>';
-}
-
 ?>
 
 <!DOCTYPE html>

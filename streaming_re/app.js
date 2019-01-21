@@ -120,6 +120,7 @@ io.on('connection', function (socket) {
     //로그인 보내기
     io.to("room" + now_room_idx).emit('login', room_in_user[now_room_idx]);
 
+
     if (whoIsTyping.length != 0) {
         io.emit('typing', whoIsTyping);
     }
@@ -247,14 +248,13 @@ io.on('connection', function (socket) {
 
     //스트리밍 socket.io -----------------------------------------------------------------------------------------------
     socket.on('stream', function (image) {
-        socket.to("room" + idx).broadcast.emit('stream', image);
-        console.log(image + "받즈아!");
+        socket.to("room" + now_room_idx).broadcast.emit('stream', image);
     });
 
 
 });
 
 //포트 접속 리스닝
-http.listen(port, function () {
-    console.log('listening on *:' + port);
+http.listen(3000, function () {
+    console.log('listening on *:3000');
 });

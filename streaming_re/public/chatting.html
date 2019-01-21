@@ -1,0 +1,278 @@
+<!doctype html>
+
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Let's Every Busking!</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="http://192.168.253.138/css/modern-business.css" rel="stylesheet">
+    <link href="http://192.168.253.138/css/public.css" rel="stylesheet">
+
+    <link href="http://192.168.253.138/public/side_bar.css" rel="stylesheet">
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"
+          id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+    <script>
+
+        //when the document is ready.
+        $(function () {
+            //about DOM
+            $('#m').focus();
+
+            //socket io
+            var socket = io();
+            var typingNotice = ' 님께서 입력 중';
+            var nickName = '';
+            var user_name = '';
+            var whoIsTyping = [];
+            var newbie;
+
+            $('#typeForm').submit(function () {
+                //submit only if it's not empty
+                if ($('#m').val() != "") {
+                    socket.emit('say', $('#m').val());
+                    //say event means someone transmitted chat
+                    $('#m').val('');
+                    socket.emit('quitTyping')
+                }
+                return false;
+            });
+
+            $('#nickNameForm').submit(function () {
+                nickName = $('#nickName').val();
+                $('#nickName').attr('placeholder', 'NickName : ' + nickName);
+                socket.emit('setNickName', nickName)
+                $('#nickName').val("");
+                $('#m').focus();
+                return false;
+            })
+
+            socket.on('selfData', function (obj) {
+                nickName = obj.nickName;
+                user_name = obj.user_name;
+                $('#nickName').attr('placeholder', 'NickName : ' + nickName);
+                //set #nickNameForm placeholder
+                $('#user_id_id').text(user_name + " 님");
+            });
+
+            socket.on('chat message', function (msg) {
+                $('#messages').append($('<h6>').text(msg));
+            });
+
+            //채팅방 입장 문구
+            socket.on('login', function (nickNameArr) {
+                console.log(nickNameArr);
+                newbie = nickNameArr[nickNameArr.length - 1];
+                editUsers(nickNameArr);
+                $('#messages').append($('<h6>').text(newbie + "님께서 입장하셨습니다."));
+            });
+
+            function editUsers(nickNameArr) {
+                console.log(nickNameArr + "나감 1");
+
+                $('#whoIsInBox div').children().each((index, item) => {
+                    $(item).remove();
+                    console.log(nickNameArr + "나감 2");
+                });
+
+                for (person in nickNameArr) {
+                    $('#whoIsInBox div').append($('<h6>').text(nickNameArr[person]));
+                }
+            }
+
+            socket.on('logout', function (received) {
+                var nickNameArr = received.nickNameArr;
+                var disconnected = received.disconnected;
+                $('#messages').append($('<li>').text(`${disconnected} 님께서 나가셨습니다.`));
+                editUsers(nickNameArr);
+            });
+
+            socket.on('typing', function (nickNameArr) {
+                var tempMsg = "";
+                whoIsTyping = nickNameArr;
+                for (person in nickNameArr) {
+                    tempMsg += nickNameArr[person]
+                }
+                tempMsg = tempMsg.substring(0, tempMsg.length - 1);
+                $('#m').attr('placeholder', tempMsg + typingNotice)
+            });
+
+            socket.on('mySaying', function (msg) {
+
+                $('#messages').append($('<h6>').text(msg));
+            });
+
+            socket.on('endTyping', function () {
+                console.log('endTyping');
+                whoIsTyping = [];
+                $('#m').attr('placeholder', "");
+            });
+
+            socket.on('stream', function (image) {
+                var img = document.getElementById("play");
+                img.src = image;
+            });
+
+            $('#m').keyup(function (event) {
+
+                if ($('#m').val() != "" && !whoIsTyping.includes(nickName)) {
+                    socket.emit('typing');
+                    console.log('emit typing');
+                } else if ($('#m').val() == "" && whoIsTyping.includes(nickName)) {
+
+                    socket.emit('quitTyping');
+                    console.log('emit quitTyping');
+
+                }
+            });
+
+        });
+
+        //뒤로가기 충돌 방지
+        history.pushState(null, null, location.href);
+        window.onpopstate = function () {
+            document.location.href="../waiting_room.php";
+        };
+
+    </script>
+
+</head>
+<body>
+
+<!--사이드바-->
+<div id="wrapper" class="animate">
+    <nav class="navbar header-top fixed-top navbar-expand-lg navbar-dark bg-dark">
+        <span class="navbar-toggler-icon leftmenutrigger"></span>
+        <a class="navbar-brand" href="http://192.168.253.138/main.php"
+           style="font-family: 'Monoton', cursive; margin-left: 10px; font-size: 20px;">Every
+            Busking</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+                aria-controls="navbarText"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav animate side-nav">
+                <li class="nav-item">
+                    <a class="nav-link menu_buskingteam" href="http://192.168.253.138//buskingteam/buskingteam.php"
+                       title="Dashboard"><i
+                            class="fas fa-users side_bar_img"></i>Busking Team<i
+                            class="fas fa-cube shortmenu animate"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link menu_busking_zone" href="http://192.168.253.138//busking_zone/busking_zone.php"
+                       title="Cart"><i
+                            class="fas fa-map-marker-alt side_bar_img"></i>Busking Zone<i
+                            class="fas fa-cart-plus shortmenu animate"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link menu_streaming" href="http://192.168.253.138//streaming/streaming.php"
+                       title="Comment"><i
+                            class="fas fa-video side_bar_img"></i>Streaming<i
+                            class="fas fa-comment shortmenu animate"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link menu_community" href="http://192.168.253.138//community/community.php"
+                       title="Comment"><i
+                            class="fas fa-star side_bar_img"></i>Community<i
+                            class="fas fa-comment shortmenu animate"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link menu_concert" href="http://192.168.253.138//concert/concert.php" title="Comment"><i
+                            class="fas fa-compact-disc side_bar_img"></i>Cloud Concert<i
+                            class="fas fa-comment shortmenu animate"></i></a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-md-auto d-md-flex">
+                <li class="nav-item">
+                    <a class="nav-link" id="user_id_id"></a>
+
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link main_nav_sign" href="/Sign/sign_out.php"><i class="fas fa-key"></i> Sign Out</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link menu_profile" href="http://192.168.253.138/my_page/my_page_modify.php"><i
+                            class="fas fa-user"></i> My Page</a>
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+</div>
+
+<div class="container my_font_main"
+     style="min-height: 800px; padding-top: 10px;">
+
+    <h1 class="mt-4 mb-3 my_font_main" style="color: #FBAA48">누구누구의 방송</h1>
+
+    <h6 class="my_font_main">※ 깨끗한 인터넷 문화를 만들어갑시다. :)</h6>
+
+    <div class="row" style="height: 440px; margin-top: 70px">
+        <div class="col-lg-8">
+            <img id="play" style="width: 100%; height: 440px" src="http://192.168.253.138/streaming/breaktime.jpg" >
+        </div>
+
+        <div class="col-lg-4" style="height: 100%;">
+            <div id="messages" style="height: 300px; border: transparent 1px solid; overflow: auto"></div>
+
+            <div id='whoIsInBox' style="min-height: 80px; height: 80px; border: transparent 1px solid;overflow: auto">
+
+                <h4>참여자</h4>
+
+                <div id='whoIsIn' style="border: transparent 1px solid;overflow: auto">
+                </div>
+
+            </div>
+
+            <div style="margin-top: 10px;">
+                <form id='typeForm' style="border: transparent 1px solid;">
+                    <input class="input-group-text" id="m" autocomplete="off"
+                           style="width: 270px; display: inline; background-color: white; text-align: left"/>
+                    <button class="btn hover_class" id="support_hover" style="width: 70px;">보내기</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+    <a href="http://192.168.253.138/streaming/waiting_room.php" style="margin-left: 480px;">
+        <button class="col-sm-2 btn my_font_main hover_class" style="font-size: 18px; width: 180px; margin-top: 100px; margin-bottom: 70px;"
+                id="support_hover2">목록으로</button>
+    </a>
+
+</div>
+
+
+<!-- Footer -->
+<div data-role="footer" data-position="fixed" class="m_footer">
+    <footer class="py-5 bg-dark">
+        <div class="container">
+            <p class="m-0 text-center text-white my_font_logo">Every Busking</p>
+        </div>
+        <!-- /.container -->
+    </footer>
+</div>
+
+<script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js"></script>
+<script src="http://192.168.253.138/public/side_bar.js"></script>
+
+
+</body>
+</html>
