@@ -2,7 +2,7 @@
 
 session_start();
 
-if($_SESSION == null){
+if ($_SESSION == null) {
     echo '<script>alert("로그인 후 이용바랍니다."); document.location.href="/Sign/sign_in.php"</script>';
 }
 
@@ -101,7 +101,7 @@ if($_SESSION == null){
         <?php
         require_once "../db.php";
 
-        $sql = mq("select * from streaming_tb order by idx desc");
+        $sql = mq("select * from streaming_tb where ing = 'true' order by idx desc");
 
         if ($sql->fetch_row() == null) {
             ?>
@@ -113,7 +113,7 @@ if($_SESSION == null){
             <?php
         }
 
-        $sql = mq("select * from streaming_tb order by idx desc");
+        $sql = mq("select * from streaming_tb where ing = 'true'  order by idx desc");
 
         while ($board = $sql->fetch_array()) {
 
@@ -146,13 +146,16 @@ if($_SESSION == null){
                                 버스킹
                                 공연</h4>
 
-<!--                            <p class="my_font_main right"-->
-<!--                               style="font-size: 12px; color: black; margin-bottom: 10px; display: none">-->
-<!--                                시청자 : --><?//= $board['watch_people'] ?><!--</p>-->
+                            <!--                            <p class="my_font_main right"-->
+                            <!--                               style="font-size: 12px; color: black; margin-bottom: 10px; display: none">-->
+                            <!--                                시청자 : --><?//= $board['watch_people'] ?><!--</p>-->
                             <p class="my_font_main"
-                               style=" color: black; font-size: 12px; margin-bottom: 10px; position: absolute; display: inline">스트리머
+                               style=" color: black; font-size: 12px; margin-bottom: 10px; position: absolute; display: inline">
+                                스트리머
                                 : <?= $board['streamer'] ?></p>
-                            <p class="my_font_main" style="color: black; font-size: 12px; margin-bottom: 10px; position: absolute; right: 15px; display: inline">방송
+                            <p class="my_font_main"
+                               style="color: black; font-size: 12px; margin-bottom: 10px; position: absolute; right: 15px; display: inline">
+                                방송
                                 시작
                                 : <?= $board['date'] ?></p>
                         </a>

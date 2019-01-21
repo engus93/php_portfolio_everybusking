@@ -6,8 +6,11 @@ session_start();
 
 $room = $_POST['now_room_idx'];
 
-echo $room;
-
-//$sql = mq("delete from streaming_tb where idx='$con_num';");
+$sql = mq("update streaming_tb set ing ='false' where idx='$room';");
 
 ?>
+
+<script>
+    alert("방송이 종료되었습니다.");
+    document.location.href="http://192.168.253.138/streaming/waiting_room.php"
+</script>

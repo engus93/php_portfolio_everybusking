@@ -44,6 +44,12 @@
     border: #FBAA48 1px solid !important;
 }
 
+#support_hover22:hover{
+    background-color: transparent !important;
+    color: #FBAA48 !important;
+    border: #FBAA48 1px solid !important;
+}
+
 #support_hover2:hover{
     background-color: transparent !important;
     color: #FBAA48 !important;

@@ -28,6 +28,12 @@
     <script src="/socket.io/socket.io.js"></script>
     <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
 
+    <!--새로고침방지-->
+    <script>
+
+
+    </script>
+
     <style>
         .video-div video {
             width: 100%;
@@ -39,6 +45,34 @@
 
         }
     </style>
+
+    <!--새로 고침 방지-->
+    <script>
+        document.onkeydown = function(e) {
+
+            key = (e) ? e.keyCode : event.keyCode;
+
+            if(key == 8 || key == 116) {
+
+                if(e) {
+
+                    e.preventDefault();
+
+                    alert("방송의 원활함을 위해 새로 고침이 방지되어 있습니다.");
+
+
+                } else {
+
+                    event.keyCode = 0;
+
+                    event.returnValue = false;
+
+                }
+
+            }
+
+        };
+    </script>
 
 </head>
 
@@ -173,113 +207,124 @@
 
     //when the document is ready.
     // $(function () {
-        //about DOM
+    //about DOM
+    $('#m').focus();
+
+    var socket = io();
+
+    //socket io
+    var typingNotice = ' 님께서 입력 중';
+    var nickName = '';
+    var user_name = '';
+    var whoIsTyping = [];
+    var newbie;
+
+    $('#typeForm').submit(function () {
+        //submit only if it's not empty
+        if ($('#m').val() != "") {
+            socket.emit('say', $('#m').val());
+            //say event means someone transmitted chat
+            $('#m').val('');
+            socket.emit('quitTyping')
+        }
+        return false;
+    });
+
+    $('#nickNameForm').submit(function () {
+        nickName = $('#nickName').val();
+        $('#nickName').attr('placeholder', 'NickName : ' + nickName);
+        socket.emit('setNickName', nickName)
+        $('#nickName').val("");
         $('#m').focus();
+        return false;
+    })
 
-        var socket = io();
+    socket.on('selfData', function (obj) {
+        nickName = obj.nickName;
+        user_name = obj.user_name;
+        rooming = obj.room_idx;
+        $('#nickName').attr('placeholder', 'NickName : ' + nickName);
+        //set #nickNameForm placeholder
+        $('#user_id_id').text(user_name + " 님");
+    });
 
-        //socket io
-        var typingNotice = ' 님께서 입력 중';
-        var nickName = '';
-        var user_name = '';
-        var whoIsTyping = [];
-        var newbie;
+    socket.on('room_boom', function () {
+        alert("방송이 종료 되었습니다.");
+        document.location.href = "http://192.168.253.138/streaming/waiting_room.php";
+    });
 
-        $('#typeForm').submit(function () {
-            //submit only if it's not empty
-            if ($('#m').val() != "") {
-                socket.emit('say', $('#m').val());
-                //say event means someone transmitted chat
-                $('#m').val('');
-                socket.emit('quitTyping')
-            }
-            return false;
+    socket.on('room_boom_re', function () {
+        alert("방송이 잠시 중단 되었습니다.");
+        document.location.href = "http://192.168.253.138/streaming/waiting_room.php";
+    });
+
+
+    socket.on('chat message', function (msg) {
+        $('#messages').append($('<h6>').text(msg));
+    });
+
+    //채팅방 입장 문구
+    socket.on('login', function (nickNameArr) {
+        newbie = nickNameArr[nickNameArr.length - 1];
+        $('#messages').append($('<h6>').text(newbie + "님께서 입장하셨습니다."));
+        editUsers(nickNameArr);
+    });
+
+    socket.on('logout', function (received) {
+        var nickNameArr = received.nickNameArr;
+        var disconnected = received.disconnected;
+        $('#messages').append($('<li>').text(`${disconnected} 님께서 나가셨습니다.`));
+        editUsers(nickNameArr);
+    });
+
+    function editUsers(nickNameArr) {
+
+        $('#whoIsInBox div').children().each((index, item) => {
+            $(item).remove();
         });
+        for (person in nickNameArr) {
+            $('#whoIsInBox div').append($('<h6>').text(nickNameArr[person]));
+        }
+    };
 
-        $('#nickNameForm').submit(function () {
-            nickName = $('#nickName').val();
-            $('#nickName').attr('placeholder', 'NickName : ' + nickName);
-            socket.emit('setNickName', nickName)
-            $('#nickName').val("");
-            $('#m').focus();
-            return false;
-        })
+    socket.on('typing', function (nickNameArr) {
+        var tempMsg = null;
+        whoIsTyping = nickNameArr;
+        for (person in nickNameArr) {
+            tempMsg += nickNameArr[person] + ', '
+        }
+        tempMsg = tempMsg.substring(0, tempMsg.length - 1);
+        $('#m').attr('placeholder', tempMsg + typingNotice)
+    });
 
-        socket.on('selfData', function (obj) {
-            nickName = obj.nickName;
-            user_name = obj.user_name;
-            rooming = obj.room_idx;
-            $('#nickName').attr('placeholder', 'NickName : ' + nickName);
-            //set #nickNameForm placeholder
-            $('#user_id_id').text(user_name + " 님");
-        });
+    socket.on('mySaying', function (msg) {
 
-        socket.on('chat message', function (msg) {
-            $('#messages').append($('<h6>').text(msg));
-        });
+        $('#messages').append($('<h6>').text(msg));
+    });
 
-        //채팅방 입장 문구
-        socket.on('login', function (nickNameArr) {
-            newbie = nickNameArr[nickNameArr.length - 1];
-            $('#messages').append($('<h6>').text(newbie + "님께서 입장하셨습니다."));
-            editUsers(nickNameArr);
-        });
+    socket.on('endTyping', function () {
+        console.log('endTyping');
+        whoIsTyping = [];
+        $('#m').attr('placeholder', "");
+    });
 
-        socket.on('logout', function (received) {
-            var nickNameArr = received.nickNameArr;
-            var disconnected = received.disconnected;
-            $('#messages').append($('<li>').text(`${disconnected} 님께서 나가셨습니다.`));
-            editUsers(nickNameArr);
-        });
+    socket.on('stream', function (image) {
+        var img = document.getElementById("play");
+        img.src = image;
+    });
 
-        function editUsers(nickNameArr) {
+    $('#m').keyup(function (event) {
 
-            $('#whoIsInBox div').children().each((index, item) => {
-                $(item).remove();
-            });
-            for (person in nickNameArr) {
-                $('#whoIsInBox div').append($('<h6>').text(nickNameArr[person]));
-            }
-        };
+        if ($('#m').val() != "" && !whoIsTyping.includes(nickName)) {
+            socket.emit('typing');
+            console.log('emit typing');
+        } else if ($('#m').val() == "" && whoIsTyping.includes(nickName)) {
 
-        socket.on('typing', function (nickNameArr) {
-            var tempMsg = null;
-            whoIsTyping = nickNameArr;
-            for (person in nickNameArr) {
-                tempMsg += nickNameArr[person] + ', '
-            }
-            tempMsg = tempMsg.substring(0, tempMsg.length - 1);
-            $('#m').attr('placeholder', tempMsg + typingNotice)
-        });
+            socket.emit('quitTyping');
+            console.log('emit quitTyping');
 
-        socket.on('mySaying', function (msg) {
-
-            $('#messages').append($('<h6>').text(msg));
-        });
-
-        socket.on('endTyping', function () {
-            console.log('endTyping');
-            whoIsTyping = [];
-            $('#m').attr('placeholder', "");
-        });
-
-        socket.on('stream', function (image) {
-            var img = document.getElementById("play");
-            img.src = image;
-        });
-
-        $('#m').keyup(function (event) {
-
-            if ($('#m').val() != "" && !whoIsTyping.includes(nickName)) {
-                socket.emit('typing');
-                console.log('emit typing');
-            } else if ($('#m').val() == "" && whoIsTyping.includes(nickName)) {
-
-                socket.emit('quitTyping');
-                console.log('emit quitTyping');
-
-            }
-        });
+        }
+    });
 
     // });
 
@@ -348,4 +393,5 @@
 </script>
 
 </body>
+
 </html>

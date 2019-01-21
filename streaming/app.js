@@ -20,6 +20,7 @@ var connection = mysql.createConnection({
 var now_user_id = "";
 var now_user_name = "";
 var now_room_idx = null;
+var master_nick = "";
 
 var port = process.env.PORT || 3000;
 
@@ -38,6 +39,7 @@ app.post('/streamer', function (req, res) {
     now_user_id = req.body.user_id;
     now_user_name = req.body.user_name;
     now_room_idx = req.body.room_idx;
+    master_nick = now_user_id;
 
     res.render(__dirname + '/public/emitir.html');
 
@@ -115,7 +117,7 @@ io.on('connection', function (socket) {
     socket.join("room" + now_room_idx);
 
     //각자 보내주기
-    socket.emit('selfData', {nickName: nickName, user_name: user_name, room_idx : now_room_idx});
+    socket.emit('selfData', {nickName: nickName, user_name: user_name, room_idx: now_room_idx});
 
     //로그인 보내기
     io.to("room" + now_room_idx).emit('login', room_in_user[now_room_idx]);
@@ -163,6 +165,10 @@ io.on('connection', function (socket) {
             console.log(whoIsTyping);
             io.to("room" + now_room_idx).emit('typing', whoIsTyping);
         }
+    });
+
+    socket.on('room_boom', function () {
+        socket.broadcast.to("room" + idx).emit('room_boom', "강퇴");
     });
 
     socket.on('quitTyping', function () {
@@ -216,6 +222,11 @@ io.on('connection', function (socket) {
         console.log(room_in_user[now_room_idx] + " 변경 후");
 
         // whoIsOn.splice(whoIsOn.indexOf(nickName), 1);
+
+        //방장이 방을 나갈시에
+        if (master_nick == nickName) {
+            socket.broadcast.to("room" + idx).emit('room_boom_re', "강퇴");
+        }
 
         io.to("room" + now_room_idx).emit('logout', {nickNameArr: room_in_user[now_room_idx], disconnected: nickName});
 

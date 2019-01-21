@@ -40,6 +40,34 @@
         }
     </style>
 
+    <!--새로 고침 방지-->
+    <script>
+        document.onkeydown = function(e) {
+
+            key = (e) ? e.keyCode : event.keyCode;
+
+            if(key == 8 || key == 116) {
+
+                if(e) {
+
+                    e.preventDefault();
+
+                    alert("방송의 원활함을 위해 새로 고침이 방지되어 있습니다.");
+
+
+                } else {
+
+                    event.keyCode = 0;
+
+                    event.returnValue = false;
+
+                }
+
+            }
+
+        };
+    </script>
+
 </head>
 <body>
 
@@ -143,16 +171,14 @@
 
     </div>
 
-    <!--<a href="http://192.168.253.138/streaming/waiting_room.php" style="margin-left: 480px;">-->
-        <button class="col-sm-2 btn my_font_main hover_class re_bt"
-                style="font-size: 18px; width: 180px; margin-top: 100px; margin-bottom: 70px;"
-                id="re_bt">방송 종료하기
+    <!--<form id="streamer_form" name="streamer_form" method="post"-->
+          <!--action="http://192.168.253.138/streaming/waiting_room_delete_p.php" style="margin-left: 480px">-->
+        <button class="btn my_font_main hover_class"
+                style="font-size: 18px; margin-top: 100px; margin-bottom: 70px;"
+                id="support_hover22">방송 종료하기
         </button>
-    <!--</a>-->
-
-    <form id="streamer_form" name="streamer_form">
         <input id="now_room_idx" type="hidden" name="now_room_idx" value="">
-    </form>
+    <!--</form>-->
 
 </div>
 
@@ -195,6 +221,11 @@
             $('#m').val('');
             socket.emit('quitTyping')
         }
+        return false;
+    });
+
+    $('#support_hover22').click(function () {
+        socket.emit('room_boom', "강퇴");
         return false;
     });
 
@@ -294,7 +325,6 @@
 
 </script>
 
-
 <script src="https://rtcmulticonnection.herokuapp.com/dist/RTCMultiConnection.min.js"></script>
 <script src="https://rtcmulticonnection.herokuapp.com/socket.io/socket.io.js"></script>
 
@@ -350,35 +380,6 @@
         console.log("룸 번호 : " + rooming);
         console.log(connetion.channel);
     });
-</script>
-
-<script>
-
-
-        alert("ddsadsasfsa");
-
-        $('#re_bt').click(function () {
-
-            var params = $('#streamer_form').serialize();
-
-            alert("dsfsa");
-
-            $.ajax({
-                type: 'post',
-                url: 'http://192.168.253.138:80/streaming/waiting_room_delete_p.php',
-                data: params,
-                dataType: 'html',
-                async : false,
-                success: function () {
-
-                    alert("dsfsa");
-
-                    document.location.href='http://192.168.253.138/streaming/waiting_room.php';
-                }
-            });
-
-        });
-
 
 </script>
 
