@@ -102,8 +102,7 @@
 
     <div class="row" style="height: 440px; margin-top: 70px">
         <div class="col-lg-8">
-            <video src="" id="video" style="height: 440px; width: 100%" autoplay controls></video>
-            <canvas id="preview" style="display: none"></canvas>
+            <div id="videos-container" style="height: 440px; width: 100%" autoplay controls></div>
             <div id="logger"></div>
         </div>
 
@@ -157,180 +156,229 @@
 
 </script>
 
+<!--<script>-->
+
+    <!--//when the document is ready.-->
+    <!--$(function () {-->
+        <!--//about DOM-->
+        <!--$('#m').focus();-->
+
+        <!--//socket io-->
+        <!--var typingNotice = ' 님께서 입력 중';-->
+        <!--var nickName = '';-->
+        <!--var user_name = '';-->
+        <!--var whoIsTyping = [];-->
+        <!--var newbie;-->
+
+        <!--$('#typeForm').submit(function () {-->
+            <!--//submit only if it's not empty-->
+            <!--if ($('#m').val() != "") {-->
+                <!--socket.emit('say', $('#m').val());-->
+                <!--//say event means someone transmitted chat-->
+                <!--$('#m').val('');-->
+                <!--socket.emit('quitTyping')-->
+            <!--}-->
+            <!--return false;-->
+        <!--});-->
+
+        <!--$('#nickNameForm').submit(function () {-->
+            <!--nickName = $('#nickName').val();-->
+            <!--$('#nickName').attr('placeholder', 'NickName : ' + nickName);-->
+            <!--socket.emit('setNickName', nickName)-->
+            <!--$('#nickName').val("");-->
+            <!--$('#m').focus();-->
+            <!--return false;-->
+        <!--})-->
+
+        <!--socket.on('selfData', function (obj) {-->
+            <!--nickName = obj.nickName;-->
+            <!--user_name = obj.user_name;-->
+            <!--$('#nickName').attr('placeholder', 'NickName : ' + nickName);-->
+            <!--//set #nickNameForm placeholder-->
+            <!--$('#user_id_id').text(user_name + " 님");-->
+        <!--});-->
+
+        <!--socket.on('chat message', function (msg) {-->
+            <!--$('#messages').append($('<h6>').text(msg));-->
+        <!--});-->
+
+        <!--//채팅방 입장 문구-->
+        <!--socket.on('login', function (nickNameArr) {-->
+            <!--newbie = nickNameArr[nickNameArr.length - 1];-->
+            <!--$('#messages').append($('<h6>').text(newbie + "님께서 입장하셨습니다."));-->
+            <!--editUsers(nickNameArr);-->
+        <!--});-->
+
+        <!--socket.on('logout', function (received) {-->
+            <!--var nickNameArr = received.nickNameArr;-->
+            <!--var disconnected = received.disconnected;-->
+            <!--$('#messages').append($('<li>').text(`${disconnected} 님께서 나가셨습니다.`));-->
+            <!--editUsers(nickNameArr);-->
+        <!--});-->
+
+        <!--function editUsers(nickNameArr) {-->
+
+            <!--$('#whoIsInBox div').children().each((index, item) => {-->
+                <!--$(item).remove();-->
+            <!--});-->
+            <!--for (person in nickNameArr) {-->
+                <!--$('#whoIsInBox div').append($('<h6>').text(nickNameArr[person]));-->
+            <!--}-->
+        <!--};-->
+
+        <!--socket.on('typing', function (nickNameArr) {-->
+            <!--var tempMsg = null;-->
+            <!--whoIsTyping = nickNameArr;-->
+            <!--for (person in nickNameArr) {-->
+                <!--tempMsg += nickNameArr[person] + ', '-->
+            <!--}-->
+            <!--tempMsg = tempMsg.substring(0, tempMsg.length - 1);-->
+            <!--$('#m').attr('placeholder', tempMsg + typingNotice)-->
+        <!--});-->
+
+        <!--socket.on('mySaying', function (msg) {-->
+
+            <!--$('#messages').append($('<h6>').text(msg));-->
+        <!--});-->
+
+        <!--socket.on('endTyping', function () {-->
+            <!--console.log('endTyping');-->
+            <!--whoIsTyping = [];-->
+            <!--$('#m').attr('placeholder', "");-->
+        <!--});-->
+
+        <!--socket.on('stream', function (image) {-->
+            <!--var img = document.getElementById("play");-->
+            <!--img.src = image;-->
+        <!--});-->
+
+        <!--$('#m').keyup(function (event) {-->
+
+            <!--if ($('#m').val() != "" && !whoIsTyping.includes(nickName)) {-->
+                <!--socket.emit('typing');-->
+                <!--console.log('emit typing');-->
+            <!--} else if ($('#m').val() == "" && whoIsTyping.includes(nickName)) {-->
+
+                <!--socket.emit('quitTyping');-->
+                <!--console.log('emit quitTyping');-->
+
+            <!--}-->
+        <!--});-->
+
+    <!--});-->
+
+    <!--// var canvas = document.getElementById("preview");-->
+    <!--// var context = canvas.getContext("2d");-->
+    <!--//-->
+    <!--// canvas.width = 800;-->
+    <!--// canvas.height = 600;-->
+    <!--//-->
+    <!--// context.width = canvas.width;-->
+    <!--// context.height = canvas.height;-->
+    <!--//-->
+    <!--// var socket = io();-->
+    <!--//-->
+    <!--// const video = document.getElementById("video");-->
+    <!--//-->
+    <!--// function logger(msg) {-->
+    <!--//     $("logger").text(msg);-->
+    <!--// }-->
+    <!--//-->
+    <!--// function loadFail() {-->
+    <!--//     logger('Camara no conectada, pr favor revise su camara!');-->
+    <!--// }-->
+    <!--//-->
+    <!--// function viewVideo(video) {-->
+    <!--//     // context.drawImage(video, 0, 0, context.width, context.height);-->
+    <!--//     // socket.emit('stream', canvas.toDataURL('image/webp'));-->
+    <!--//-->
+    <!--//     socket.emit('stream', video);-->
+    <!--// }-->
+    <!--//-->
+    <!--// $(function () {-->
+    <!--//     navigator.getUserMedia == (navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msgGetUserMedia);-->
+    <!--//-->
+    <!--//     if (navigator.mediaDevices.getUserMedia) {-->
+    <!--//         navigator.mediaDevices.getUserMedia({video: true, audio: true})-->
+    <!--//             .then(function (stream) {-->
+    <!--//                 video.srcObject = stream;-->
+    <!--//                 media = stream;-->
+    <!--//             }, 1000)-->
+    <!--//-->
+    <!--//             .catch(function (err0r) {-->
+    <!--//                 console.log("Something went wrong!");-->
+    <!--//             }, 1000);-->
+    <!--//-->
+    <!--//     }-->
+    <!--//-->
+    <!--//     setInterval(function () {-->
+    <!--//-->
+    <!--//         video.addEventListener('canplay', () => {-->
+    <!--//             const stream = document.getElementById("video").mozCaptureStream();-->
+    <!--//             socket.emit('stream', stream);-->
+    <!--//             console.log(stream + "가즈아!")-->
+    <!--//         });-->
+    <!--//-->
+    <!--//         // viewVideo(media);-->
+    <!--//         // console.log(media)-->
+    <!--//     });-->
+    <!--// });-->
+
+    <!--//뒤로가기 충돌 방지-->
+    <!--history.pushState(null, null, location.href);-->
+    <!--window.onpopstate = function () {-->
+        <!--document.location.href = "http://192.168.253.138/streaming/waiting_room.php";-->
+    <!--};-->
+
+<!--</script>-->
+
+<script src="https://rtcmulticonnection.herokuapp.com/dist/RTCMultiConnection.min.js"></script>
+<script src="https://rtcmulticonnection.herokuapp.com/socket.io/socket.io.js"></script>
+
 <script>
+    var connection = new RTCMultiConnection();
 
-    //when the document is ready.
-    $(function () {
-        //about DOM
-        $('#m').focus();
+    // this line is VERY_important
+    connection.socketURL = 'https://192.168.253.138:3001';
 
-        //socket io
-        var typingNotice = ' 님께서 입력 중';
-        var nickName = '';
-        var user_name = '';
-        var whoIsTyping = [];
-        var newbie;
-
-        $('#typeForm').submit(function () {
-            //submit only if it's not empty
-            if ($('#m').val() != "") {
-                socket.emit('say', $('#m').val());
-                //say event means someone transmitted chat
-                $('#m').val('');
-                socket.emit('quitTyping')
-            }
-            return false;
-        });
-
-        $('#nickNameForm').submit(function () {
-            nickName = $('#nickName').val();
-            $('#nickName').attr('placeholder', 'NickName : ' + nickName);
-            socket.emit('setNickName', nickName)
-            $('#nickName').val("");
-            $('#m').focus();
-            return false;
-        })
-
-        socket.on('selfData', function (obj) {
-            nickName = obj.nickName;
-            user_name = obj.user_name;
-            $('#nickName').attr('placeholder', 'NickName : ' + nickName);
-            //set #nickNameForm placeholder
-            $('#user_id_id').text(user_name + " 님");
-        });
-
-        socket.on('chat message', function (msg) {
-            $('#messages').append($('<h6>').text(msg));
-        });
-
-        //채팅방 입장 문구
-        socket.on('login', function (nickNameArr) {
-            newbie = nickNameArr[nickNameArr.length - 1];
-            $('#messages').append($('<h6>').text(newbie + "님께서 입장하셨습니다."));
-            editUsers(nickNameArr);
-        });
-
-        socket.on('logout', function (received) {
-            var nickNameArr = received.nickNameArr;
-            var disconnected = received.disconnected;
-            $('#messages').append($('<li>').text(`${disconnected} 님께서 나가셨습니다.`));
-            editUsers(nickNameArr);
-        });
-
-        function editUsers(nickNameArr) {
-
-            $('#whoIsInBox div').children().each((index, item) => {
-                $(item).remove();
-            });
-            for (person in nickNameArr) {
-                $('#whoIsInBox div').append($('<h6>').text(nickNameArr[person]));
-            }
-        };
-
-        socket.on('typing', function (nickNameArr) {
-            var tempMsg = null;
-            whoIsTyping = nickNameArr;
-            for (person in nickNameArr) {
-                tempMsg += nickNameArr[person] + ', '
-            }
-            tempMsg = tempMsg.substring(0, tempMsg.length - 1);
-            $('#m').attr('placeholder', tempMsg + typingNotice)
-        });
-
-        socket.on('mySaying', function (msg) {
-
-            $('#messages').append($('<h6>').text(msg));
-        });
-
-        socket.on('endTyping', function () {
-            console.log('endTyping');
-            whoIsTyping = [];
-            $('#m').attr('placeholder', "");
-        });
-
-        socket.on('stream', function (image) {
-            var img = document.getElementById("play");
-            img.src = image;
-        });
-
-        $('#m').keyup(function (event) {
-
-            if ($('#m').val() != "" && !whoIsTyping.includes(nickName)) {
-                socket.emit('typing');
-                console.log('emit typing');
-            } else if ($('#m').val() == "" && whoIsTyping.includes(nickName)) {
-
-                socket.emit('quitTyping');
-                console.log('emit quitTyping');
-
-            }
-        });
-
-    });
-
-    var canvas = document.getElementById("preview");
-    var context = canvas.getContext("2d");
-
-    canvas.width = 800;
-    canvas.height = 600;
-
-    context.width = canvas.width;
-    context.height = canvas.height;
-
-    var socket = io();
-
-    const video = document.getElementById("video");
-
-    function logger(msg) {
-        $("logger").text(msg);
-    }
-
-    function loadFail() {
-        logger('Camara no conectada, pr favor revise su camara!');
-    }
-
-    function viewVideo(video) {
-        // context.drawImage(video, 0, 0, context.width, context.height);
-        // socket.emit('stream', canvas.toDataURL('image/webp'));
-
-        socket.emit('stream', video);
-    }
-
-    $(function () {
-        navigator.getUserMedia == (navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msgGetUserMedia);
-
-        if (navigator.mediaDevices.getUserMedia) {
-            navigator.mediaDevices.getUserMedia({video: true, audio: true})
-                .then(function (stream) {
-                    video.srcObject = stream;
-                    media = stream;
-                }, 1000)
-
-                .catch(function (err0r) {
-                    console.log("Something went wrong!");
-                }, 1000);
-
-        }
-
-        setInterval(function () {
-
-            video.addEventListener('canplay', () => {
-                const stream = document.getElementById("video").mozCaptureStream();
-                socket.emit('stream', stream);
-                console.log(stream + "가즈아!")
-            });
-
-            // viewVideo(media);
-            // console.log(media)
-        });
-    });
-
-    //뒤로가기 충돌 방지
-    history.pushState(null, null, location.href);
-    window.onpopstate = function () {
-        document.location.href = "http://192.168.253.138/streaming/waiting_room.php";
+    connection.extra = {
+        divBGColor: prompt('Please enter DIV background color.')
     };
 
+    connection.session = {
+        audio: true,
+        video: true,
+        oneway:true
+    };
+
+    connection.sdpConstraints.mandatory = {
+        OfferToReceiveAudio: true,
+        OfferToReceiveVideo: true
+    };
+
+    var videosContainer = document.getElementById('videos-container');
+    connection.onstream = function(event) {
+        delete event.mediaElement.id; // make sure that below DIV has unique ID in the DOM
+
+        var div = document.createElement('div');
+        div.id = event.streamid;
+        div.className = 'video-div';
+        div.appendChild(event.mediaElement); // appending VIDOE to DIV
+
+        div.style.backgroundColor = event.extra.divBGColor;
+
+        videosContainer.appendChild(div);
+    };
+
+    connection.onstreamended = function(event) {
+        var div = document.getElementById(event.streamid);
+        if(div && div.parentNode) {
+            div.parentNode.removeChild( div ); // remove it from the DOM
+        }
+    };
+
+    // consider the URL as UNIQUE-ROOM-ID
+    connection.openOrJoin(connection.channel);
 </script>
 
 </body>

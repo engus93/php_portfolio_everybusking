@@ -5,11 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="315b7d6c-43dd-4b04-a2b3-17ad3cc59c77" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/streaming/123.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/streaming_re/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/streaming_re/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/streaming_re/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/streaming_re/config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/streaming_re/demos/video-broadcasting.html" beforeDir="false" afterPath="$PROJECT_DIR$/streaming_re/demos/video-broadcasting.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/streaming_re/demos/video-broadcasting_re.html" beforeDir="false" afterPath="$PROJECT_DIR$/streaming_re/demos/video-broadcasting_re.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/streaming/public/emitir.html" beforeDir="false" afterPath="$PROJECT_DIR$/streaming/public/emitir.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/streaming_re/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/streaming_re/server.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -34,11 +32,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/streaming_re/server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="359">
-              <caret line="354" column="59" lean-forward="true" selection-start-line="354" selection-start-column="59" selection-end-line="354" selection-end-column="59" />
+            <state relative-caret-position="720">
+              <caret line="291" column="3" lean-forward="true" selection-start-line="291" selection-start-column="3" selection-end-line="291" selection-end-column="3" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="e#7932#9099#0" />
@@ -54,35 +52,36 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/streaming_re/demos/video-broadcasting.html">
+        <entry file="file://$PROJECT_DIR$/streaming/public/emitir.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="207" column="59" lean-forward="true" selection-start-line="207" selection-start-column="59" selection-end-line="207" selection-end-column="59" />
+            <state relative-caret-position="226">
+              <caret line="342" lean-forward="true" selection-start-line="342" selection-end-line="342" />
               <folding>
                 <element signature="n#style#0;n#a#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#button#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/streaming_re/demos/video-broadcasting_re.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="168" selection-start-line="168" selection-end-line="168" />
-              <folding>
-                <element signature="n#style#0;n#a#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#h1#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#form#0;n#div#2;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#form#0;n#div#2;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#button#0;n#form#0;n#div#2;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#button#0;n#a#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/streaming_re/app.js">
+        <entry file="file://$PROJECT_DIR$/streaming/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="760">
-              <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
+            <state relative-caret-position="4656">
+              <caret line="247" column="87" lean-forward="true" selection-start-line="247" selection-start-column="87" selection-end-line="247" selection-end-column="87" />
             </state>
           </provider>
         </entry>
@@ -94,16 +93,14 @@
       <list>
         <option value="tsconfig.json" />
         <option value="package.json" />
-        <option value="HTML File" />
         <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>.html</find>
-      <find>404</find>
       <find>404`</find>
       <find>/demos/MultiRTC/</find>
       <find>404 Not Found:</find>
@@ -132,6 +129,8 @@
       <find>selfda</find>
       <find>io</find>
       <find>connection</find>
+      <find>videos-container</find>
+      <find>3001</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -141,7 +140,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/streaming/enter.html" />
         <option value="$PROJECT_DIR$/streaming/chat_real.html" />
         <option value="$PROJECT_DIR$/streaming/my_chat.js" />
         <option value="$PROJECT_DIR$/community/commu_re_reply_p.php" />
@@ -185,13 +183,14 @@
         <option value="$PROJECT_DIR$/streaming_re/demos/chatting.html" />
         <option value="$PROJECT_DIR$/streaming_re/demos/stylesheet.css" />
         <option value="$PROJECT_DIR$/streaming_re/config.json" />
-        <option value="$PROJECT_DIR$/streaming_re/server.js" />
         <option value="$PROJECT_DIR$/streaming_re/demos/video-broadcasting.html" />
-        <option value="$PROJECT_DIR$/streaming/public/emitir.html" />
         <option value="$PROJECT_DIR$/streaming/public/chatting.html" />
         <option value="$PROJECT_DIR$/streaming_re/app.js" />
         <option value="$PROJECT_DIR$/streaming_re/waiting_room.php" />
         <option value="$PROJECT_DIR$/streaming_re/demos/video-broadcasting_re.html" />
+        <option value="$PROJECT_DIR$/streaming/123.html" />
+        <option value="$PROJECT_DIR$/streaming/public/emitir.html" />
+        <option value="$PROJECT_DIR$/streaming_re/server.js" />
       </list>
     </option>
   </component>
@@ -217,13 +216,24 @@
             <path>
               <item name="everybusking" type="b2602c69:ProjectViewProjectNode" />
               <item name="everybusking" type="462c0819:PsiDirectoryNode" />
+              <item name="streaming" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="everybusking" type="b2602c69:ProjectViewProjectNode" />
+              <item name="everybusking" type="462c0819:PsiDirectoryNode" />
+              <item name="streaming" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="everybusking" type="b2602c69:ProjectViewProjectNode" />
+              <item name="everybusking" type="462c0819:PsiDirectoryNode" />
               <item name="streaming_re" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="everybusking" type="b2602c69:ProjectViewProjectNode" />
               <item name="everybusking" type="462c0819:PsiDirectoryNode" />
               <item name="streaming_re" type="462c0819:PsiDirectoryNode" />
-              <item name="demos" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -322,14 +332,7 @@
       <workItem from="1547990231799" duration="24000" />
       <workItem from="1547990322049" duration="1679000" />
       <workItem from="1547998436084" duration="5927000" />
-      <workItem from="1548048626344" duration="13515000" />
-    </task>
-    <task id="LOCAL-00101" summary="19.01.10&#10;       &#10;콘서트 시작">
-      <created>1547115287271</created>
-      <option name="number" value="00101" />
-      <option name="presentableId" value="LOCAL-00101" />
-      <option name="project" value="LOCAL" />
-      <updated>1547115287271</updated>
+      <workItem from="1548048626344" duration="14533000" />
     </task>
     <task id="LOCAL-00102" summary="19.01.10&#10;       &#10;콘서트 시작">
       <created>1547119480842</created>
@@ -667,11 +670,18 @@
       <option name="project" value="LOCAL" />
       <updated>1548056469610</updated>
     </task>
-    <option name="localTasksCounter" value="150" />
+    <task id="LOCAL-00150" summary="19.01.21&#10;&#10;스트리밍 3일차">
+      <created>1548065532546</created>
+      <option name="number" value="00150" />
+      <option name="presentableId" value="LOCAL-00150" />
+      <option name="project" value="LOCAL" />
+      <updated>1548065532546</updated>
+    </task>
+    <option name="localTasksCounter" value="151" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="627914000" />
+    <option name="totallyTimeSpent" value="628932000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -786,14 +796,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="19.01.21&#10;&#10;스트리밍 3일차" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/streaming/main.js" />
-    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="482">
-          <caret line="17576" column="17" selection-start-line="17576" selection-start-column="17" selection-end-line="17576" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/modern-business.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
@@ -1007,13 +1009,6 @@
     <entry file="file://$PROJECT_DIR$/streaming_re/demos/stylesheet.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/streaming/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/streaming_re/demos/emitir.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="350">
@@ -1050,23 +1045,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3192">
           <caret line="168" column="46" lean-forward="true" selection-start-line="168" selection-start-column="46" selection-end-line="168" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/streaming_re/server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="359">
-          <caret line="354" column="59" lean-forward="true" selection-start-line="354" selection-start-column="59" selection-end-line="354" selection-end-column="59" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#7932#9099#0" />
-            <element signature="e#8095#8158#0" />
-            <element signature="e#8222#8332#0" />
-            <element signature="e#8338#8451#0" />
-            <element signature="e#8493#8605#0" />
-            <element signature="e#8704#8947#0" />
-            <element signature="e#8991#9026#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1136,6 +1114,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/streaming_re/demos/video-broadcasting_re.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="194" column="61" lean-forward="true" selection-start-line="194" selection-start-column="61" selection-end-line="194" selection-end-column="61" />
+          <folding>
+            <element signature="n#style#0;n#a#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/streaming/123.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="454">
+          <caret line="34" selection-start-line="34" selection-end-line="87" selection-end-column="9" />
+          <folding>
+            <element signature="n#script#2;n#body#0;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/streaming_re/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="760">
@@ -1143,17 +1141,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/streaming_re/public/emitir.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2850" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/streaming/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4656">
+          <caret line="247" column="87" lean-forward="true" selection-start-line="247" selection-start-column="87" selection-end-line="247" selection-end-column="87" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/streaming/public/emitir.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="305" column="35" lean-forward="true" selection-end-line="336" selection-end-column="7" />
+        <state relative-caret-position="226">
+          <caret line="342" lean-forward="true" selection-start-line="342" selection-end-line="342" />
           <folding>
             <element signature="n#style#0;n#a#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#h1#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#video#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#canvas#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -1168,12 +1177,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/streaming_re/demos/video-broadcasting_re.html">
+    <entry file="file://$PROJECT_DIR$/streaming_re/server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="168" selection-start-line="168" selection-end-line="168" />
+        <state relative-caret-position="720">
+          <caret line="291" column="3" lean-forward="true" selection-start-line="291" selection-start-column="3" selection-end-line="291" selection-end-column="3" />
           <folding>
-            <element signature="n#style#0;n#a#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#7932#9099#0" />
+            <element signature="e#8095#8158#0" />
+            <element signature="e#8222#8332#0" />
+            <element signature="e#8338#8451#0" />
+            <element signature="e#8493#8605#0" />
+            <element signature="e#8704#8947#0" />
+            <element signature="e#8991#9026#0" />
           </folding>
         </state>
       </provider>
