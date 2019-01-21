@@ -77,13 +77,16 @@ if ($_SESSION == null) {
                 url: 'waiting_room_join_p.php',
                 data: params,
                 dataType: 'html',
-                async : false,
+                async: false,
                 success: function (data) {
-                    if(data != 0){
+                    var user_id = $("#user_id" + idx).val();
+                    var streamer_id = $("#streamer_id" + idx).val();
+                    
+                    if (data != 0 || user_id == streamer_id) {
                         var form = $("#node_js" + idx);
                         form.submit();
-                    }else{
-                        alert("방송이 준비 중 입니다.")
+                    } else {
+                        alert("잠시 방송 대기 중 입니다.");
                     }
                 }
             });
@@ -167,9 +170,9 @@ if ($_SESSION == null) {
                                 버스킹
                                 공연</h4>
 
-                            <!--                            <p class="my_font_main right"-->
-                            <!--                               style="font-size: 12px; color: black; margin-bottom: 10px; display: none">-->
-                            <!--                                시청자 : --><?//= $board['watch_people'] ?><!--</p>-->
+                            <p class="my_font_main right"
+                               style="font-size: 12px; color: black; margin-bottom: 10px; display: none">
+                                시청자 : <?= $board['watch_people'] ?></p>
                             <p class="my_font_main"
                                style=" color: black; font-size: 12px; margin-bottom: 10px; position: absolute; display: inline">
                                 스트리머
@@ -181,7 +184,8 @@ if ($_SESSION == null) {
                                 : <?= $board['date'] ?></p>
                         </a>
 
-                        <input type="hidden" name="user_id" value="<?= $_SESSION['user_id'] ?>">
+                        <input type="hidden" id="streamer_id<?= $board['idx'] ?>" value="<?= $board['streamer_id'] ?>">
+                        <input type="hidden" id="user_id<?= $board['idx'] ?>" name="user_id" value="<?= $_SESSION['user_id'] ?>">
                         <input type="hidden" name="user_name" value="<?= $_SESSION['name'] ?>">
                         <input type="hidden" name="room_idx" value="<?= $board['idx'] ?>">
 

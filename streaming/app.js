@@ -90,25 +90,24 @@ io.on('connection', function (socket) {
     // //mysql 접속
     // connection.connect();
 
-    // //mysql 구문
-    // connection.query(`SELECT * from streaming_tb where idx = '${idx}'`, function (error, results, fields) {
-    //     if (error) throw error;
-    //
-    //     console.log(results[0].watch_people);
-    //
-    //     people = results[0].watch_people;
-    //
-    //     people = people + 1;
-    //
-    // });
-    //
-    // //mysql 구문
-    // connection.query(`UPDATE streaming_tb SET watch_people = ${people} where idx = '${idx}'`, function (error, results, fields) {
-    //     if (error) throw error;
-    //
-    //     console.log(people);
-    //
-    // });
+    //mysql 구문
+    connection.query(`SELECT * from streaming_tb where idx = '${now_room_idx}'`, function (error, results, fields) {
+        if (error) throw error;
+
+        console.log("입장 전" + results[0].watch_people);
+
+        var people = results[0].watch_people;
+
+        //mysql 구문
+        connection.query(`UPDATE streaming_tb SET watch_people = ${people + 1} where idx = '${now_room_idx}'`, function (error, results, fields) {
+
+            if (error) throw error;
+
+            console.log(people + 1);
+
+        });
+
+    });
 
     //mysql 종료
     // connection.end();
@@ -221,7 +220,24 @@ io.on('connection', function (socket) {
 
         console.log(room_in_user[now_room_idx] + " 변경 후");
 
-        // whoIsOn.splice(whoIsOn.indexOf(nickName), 1);
+        //mysql 구문
+        connection.query(`SELECT * from streaming_tb where idx = '${now_room_idx}'`, function (error, results, fields) {
+            if (error) throw error;
+
+            console.log("나감 전" + results[0].watch_people);
+
+            var people = results[0].watch_people;
+
+            //mysql 구문
+            connection.query(`UPDATE streaming_tb SET watch_people = ${people - 1} where idx = '${now_room_idx}'`, function (error, results, fields) {
+
+                if (error) throw error;
+
+                console.log(people - 1);
+
+            });
+
+        });
 
         //방장이 방을 나갈시에
         if (master_nick == nickName) {
