@@ -347,38 +347,5 @@
     });
 </script>
 
-<script>
-
-    $(document).ready(function () {
-
-        $('#re_bt').click(function () {
-
-            var params = $('#streamer_form').serialize();
-
-            $.ajax({
-                type: 'post',
-                url: '../waiting_room_write_p.php',
-                data: params,
-                dataType: 'html',
-                async : false,
-                success: function (data) {
-                    var input_put = document.getElementById('room_idx');
-
-                    input_put.value = data;
-
-                    alert(data);
-
-                    var form = document.getElementById('streamer_form');
-                    form.action='http://192.168.253.138/streaming/waiting_room.php';
-                    form.submit();
-                }
-            });
-
-        });
-
-    });
-
-</script>
-
 </body>
 </html>

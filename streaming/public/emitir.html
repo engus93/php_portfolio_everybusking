@@ -143,12 +143,16 @@
 
     </div>
 
-    <a href="http://192.168.253.138/streaming/waiting_room.php" style="margin-left: 480px;">
-        <button class="col-sm-2 btn my_font_main hover_class"
+    <!--<a href="http://192.168.253.138/streaming/waiting_room.php" style="margin-left: 480px;">-->
+        <button class="col-sm-2 btn my_font_main hover_class re_bt"
                 style="font-size: 18px; width: 180px; margin-top: 100px; margin-bottom: 70px;"
-                id="support_hover2">방송 종료하기
+                id="re_bt">방송 종료하기
         </button>
-    </a>
+    <!--</a>-->
+
+    <form id="streamer_form" name="streamer_form">
+        <input id="now_room_idx" type="hidden" name="now_room_idx" value="">
+    </form>
 
 </div>
 
@@ -210,6 +214,7 @@
         $('#nickName').attr('placeholder', 'NickName : ' + nickName);
         //set #nickNameForm placeholder
         $('#user_id_id').text(user_name + " 님");
+        $("#now_room_idx").val(rooming);
     });
 
     socket.on('chat message', function (msg) {
@@ -345,6 +350,36 @@
         console.log("룸 번호 : " + rooming);
         console.log(connetion.channel);
     });
+</script>
+
+<script>
+
+
+        alert("ddsadsasfsa");
+
+        $('#re_bt').click(function () {
+
+            var params = $('#streamer_form').serialize();
+
+            alert("dsfsa");
+
+            $.ajax({
+                type: 'post',
+                url: 'http://192.168.253.138:80/streaming/waiting_room_delete_p.php',
+                data: params,
+                dataType: 'html',
+                async : false,
+                success: function () {
+
+                    alert("dsfsa");
+
+                    document.location.href='http://192.168.253.138/streaming/waiting_room.php';
+                }
+            });
+
+        });
+
+
 </script>
 
 </body>
