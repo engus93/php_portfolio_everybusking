@@ -96,6 +96,8 @@ session_start();
                         alert(data);
 
                         var form = document.getElementById('streamer_form');
+                        // form.action='http://192.168.253.138:3000/streamer';
+
                         form.action='http://192.168.253.138:3000/streamer';
                         form.submit();
                     }

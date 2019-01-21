@@ -148,9 +148,6 @@ function serverHandler(request, response) {
 
         try {
             if (fs.statSync(filename).isDirectory()) {
-                response.writeHead(404, {
-                    'Content-Type': 'text/html'
-                });
 
                 if (filename.indexOf(resolveURL('/demos/MultiRTC/')) !== -1) {
                     filename = filename.replace(resolveURL('/demos/MultiRTC/'), '');
@@ -164,11 +161,15 @@ function serverHandler(request, response) {
                 } else if (filename.indexOf(resolveURL('/demos/video-conference/')) !== -1) {
                     filename = filename.replace(resolveURL('/demos/video-conference/'), '');
                     filename += resolveURL('/demos/video-conference/index.html');
-                } else if (filename.indexOf(resolveURL('/demos')) !== -1) {
+                } else if (filename.indexOf(resolveURL('/')) !== -1) {
                     filename = filename.replace(resolveURL('/demos/'), '');
                     filename = filename.replace(resolveURL('/demos'), '');
-                    filename += resolveURL('/demos/index.html');
-                } else {
+                    filename += resolveURL('/demos/emitir.html');
+                } else if (filename.indexOf(resolveURL('/streamer')) !== -1) {
+                    filename = filename.replace(resolveURL('/streamer/'), '');
+                    filename = filename.replace(resolveURL('/streamer'), '');
+                    filename += resolveURL('/demos/emitir.html');
+                }else{
                     filename += resolveURL(config.homePage);
                 }
             }
@@ -213,6 +214,7 @@ function serverHandler(request, response) {
         response.writeHead(404, {
             'Content-Type': 'text/plain'
         });
+
         response.write('404 Not Found: Unexpected error.\n' + e.message + '\n\n' + e.stack);
         response.end();
     }
@@ -268,26 +270,6 @@ if (isUseHTTPs) {
 RTCMultiConnectionServer.beforeHttpListen(httpApp, config);
 httpApp = httpApp.listen(process.env.PORT || PORT, process.env.IP || "0.0.0.0", function() {
     RTCMultiConnectionServer.afterHttpListen(httpApp, config);
-});
-
-// --------------------------
-// socket.io codes goes below
-
-ioServer(httpApp).on('connection', function(socket) {
-    RTCMultiConnectionServer.addSocket(socket);
-
-    // ----------------------
-    // below code is optional
-
-    const params = socket.handshake.query;
-
-    if (!params.socketCustomEvent) {
-        params.socketCustomEvent = 'custom-message';
-    }
-
-    socket.on(params.socketCustomEvent, function(message) {
-        socket.broadcast.emit(params.socketCustomEvent, message);
-    });
 });
 
 //연결 해주기
@@ -351,6 +333,183 @@ var whoIsTyping = [];
 var whoIsOn = [];
 var tmp_nick = [];
 var room_in_user = [[]];
+
+// --------------------------
+// socket.io codes goes below
+
+ioServer(httpApp).on('connection', function(socket) {
+    RTCMultiConnectionServer.addSocket(socket);
+
+    // ----------------------
+    // below code is optional
+
+    const params = socket.handshake.query;
+
+    if (!params.socketCustomEvent) {
+        params.socketCustomEvent = 'custom-message';
+    }
+
+    socket.on(params.socketCustomEvent, function(message) {
+        socket.broadcast.emit(params.socketCustomEvent, message);
+    });
+
+    var nickName = now_user_id;
+    var user_name = now_user_name;
+    var idx = now_room_idx;
+
+    console.log(now_room_idx);
+
+    console.log(room_in_user[idx]);
+
+    tmp_nick = [];
+
+    for (var key in room_in_user[now_room_idx]) {
+        tmp_nick.push(room_in_user[now_room_idx][key]);
+    }
+
+    tmp_nick.push(nickName);
+
+    room_in_user[now_room_idx] = tmp_nick;
+
+    whoIsOn = room_in_user[now_room_idx];
+
+    console.log(room_in_user[now_room_idx]);
+
+    //방 구분하기
+    socket.join("room" + now_room_idx);
+
+    //각자 보내주기
+    socket.emit('selfData', {nickName: nickName, user_name: user_name});
+
+    //로그인 보내기
+    io.emit('login', room_in_user[now_room_idx]);
+
+    if (whoIsTyping.length != 0) {
+        io.emit('typing', whoIsTyping);
+    }
+
+    if (whoIsTyping.length != 0) {
+        io.to("room" + now_room_idx).emit('typing', whoIsTyping);
+    }
+
+    socket.on('setNickName', function (_nickName) {
+        var pastNickName = nickName;	//past nickname
+        nickName = _nickName;
+        if (whoIsTyping.indexOf(pastNickName) != -1) {
+            //if he was typing
+            console.log('setNickName debug1');
+            whoIsTyping.splice(whoIsTyping.indexOf(pastNickName), 1, nickName);
+            io.to("room" + now_room_idx).emit('typing', whoIsTyping);
+        }
+
+        if (whoIsOn.indexOf(pastNickName) != -1) {
+            console.log('setNickName debug2');
+            whoIsOn.splice(whoIsOn.indexOf(pastNickName), 1, nickName);
+        }
+        io.to("room" + now_room_idx).emit('setNickName', {past: pastNickName, current: nickName, whoIsOn: whoIsOn});
+        console.log(socket.id + '  to  ' + nickName);
+    });
+
+    socket.on('say', function (msg) {
+        console.log('message: ' + msg);
+        //chat message to the others
+        //mySaying to the speaker
+        socket.broadcast.emit('chat message', nickName + '  :  ' + msg);
+        socket.emit('mySaying', '나  :  ' + msg);
+        console.log(now_room_idx);
+    });
+
+
+    socket.on('typing', function () {
+        if (!whoIsTyping.includes(nickName)) {
+            whoIsTyping.push(nickName);
+            console.log('who is typing now');
+            console.log(whoIsTyping);
+            io.to("room" + now_room_idx).emit('typing', whoIsTyping);
+        }
+    });
+
+    socket.on('quitTyping', function () {
+        if (whoIsTyping.length == 0) {
+            //if it's empty
+            console.log('emit endTyping');
+            io.emit('endTyping');
+        } else {
+            //if someone else is typing
+            var index = whoIsTyping.indexOf(nickName);
+            console.log(index);
+            if (index != -1) {
+                whoIsTyping.splice(index, 1);
+                if (whoIsTyping.length == 0) {
+
+                    console.log('emit endTyping');
+                    io.emit('endTyping');
+
+                } else {
+                    io.emit('typing', whoIsTyping);
+                    console.log('emit quitTyping');
+                    console.log('whoIsTyping after quit');
+                    console.log(whoIsTyping);
+                }
+
+            }
+
+        }
+    });
+
+    //disconnect is in socket
+    socket.on('disconnect', function () {
+
+        tmp_nick = [];
+
+        console.log(nickName + ' : DISCONNECTED');
+
+        console.log(now_room_idx);
+
+        console.log(room_in_user[now_room_idx] + " 변경 전");
+
+
+        for (var key in room_in_user[now_room_idx]) {
+            if (room_in_user[now_room_idx][key] != nickName) {
+                tmp_nick.push(room_in_user[now_room_idx][key]);
+            }
+        }
+
+        room_in_user[now_room_idx] = tmp_nick;
+
+        console.log(room_in_user[now_room_idx] + " 변경 후");
+
+        // whoIsOn.splice(whoIsOn.indexOf(nickName), 1);
+
+        io.to("room" + now_room_idx).emit('logout', {nickNameArr: room_in_user[now_room_idx], disconnected: nickName});
+
+        if (whoIsTyping.length == 0) {
+            //if it's empty
+            io.emit('endTyping');
+        } else {
+            //if someone was typing
+            var index = whoIsTyping.indexOf(nickName);
+            if (index != -1) {
+                whoIsTyping.splice(index, 1);
+
+                //if no one is typing now
+                if (whoIsTyping.length == 0) {
+                    io.emit('endTyping');
+                }
+
+                //if someone else is still typing
+                else {
+                    io.emit('typing', whoIsTyping);
+                    console.log('emit popTyping');
+                    console.log(whoIsTyping);
+                }
+
+            }
+
+        }
+    });
+});
+
 
 //커넥션
 // ioServer(httpApp).on('connection', function (socket) {
