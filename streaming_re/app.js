@@ -39,7 +39,7 @@ app.post('/streamer', function (req, res) {
     now_user_name = req.body.user_name;
     now_room_idx = req.body.room_idx;
 
-    res.render(__dirname + '/public/emitir.html');
+    res.render(__dirname + '/demos/video-broadcasting.html');
 
 });
 
@@ -49,7 +49,7 @@ app.post('/stream', function (req, res) {
     now_user_name = req.body.user_name;
     now_room_idx = req.body.room_idx;
 
-    res.render(__dirname + '/public/chatting.html');
+    res.render(__dirname + '/demos/video-broadcasting_re.html');
 
 });
 

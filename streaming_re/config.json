@@ -4,7 +4,7 @@
   "homePage": "/demos/index.html",
   "socketMessageEvent": "RTCMultiConnection-Message",
   "socketCustomEvent": "RTCMultiConnection-Custom-Message",
-  "port": "3000",
+  "port": "3001",
   "enableLogs": "false",
   "autoRebootServerOnFailure": "false",
   "isUseHTTPs": "false",

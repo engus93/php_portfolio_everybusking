@@ -166,18 +166,12 @@
 
 <script>
 
-    // ......................................................
-    // .......................UI Code........................
-    // ......................................................
-    // document.getElementById('open-room').onclick = function() {
-    //     disableInputButtons();
-    //     connection.open(document.getElementById('room-id').value, function() {
-    //         showRoomURL(connection.sessionid);
-    //     });
-    // };
-
     window.onload = function () {
         disableInputButtons();
+
+        connection.open(document.getElementById('room-id').value, function() {
+            showRoomURL(connection.sessionid);
+        });
 
         connection.sdpConstraints.mandatory = {
             OfferToReceiveAudio: true,
@@ -374,7 +368,7 @@
         $('#m').focus();
 
         //socket io
-        var socket = io();
+        var socket = io.connect('http://192.168.253.138:3000');
         var typingNotice = ' 님께서 입력 중';
         var nickName = '';
         var user_name = '';
@@ -408,6 +402,7 @@
             $('#nickName').attr('placeholder', 'NickName : ' + nickName);
             //set #nickNameForm placeholder
             $('#user_id_id').text(user_name + " 님");
+            console.log("셀프데이터");
         });
 
         socket.on('chat message', function (msg) {
@@ -420,6 +415,7 @@
             newbie = nickNameArr[nickNameArr.length - 1];
             editUsers(nickNameArr);
             $('#messages').append($('<h6>').text(newbie + "님께서 입장하셨습니다."));
+
         });
 
         function editUsers(nickNameArr) {
@@ -433,6 +429,7 @@
             for (person in nickNameArr) {
                 $('#whoIsInBox div').append($('<h6>').text(nickNameArr[person]));
             }
+
         }
 
         socket.on('logout', function (received) {
