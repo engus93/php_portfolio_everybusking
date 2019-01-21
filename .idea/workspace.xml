@@ -4,12 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/concert/concert_ticket.js" line="262" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="315b7d6c-43dd-4b04-a2b3-17ad3cc59c77" name="Default Changelist" comment="19.01.21&#10;&#10;스트리밍 3일차">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/streaming/public/chatting.html" beforeDir="false" afterPath="$PROJECT_DIR$/streaming/public/chatting.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/streaming/public/emitir.html" beforeDir="false" afterPath="$PROJECT_DIR$/streaming/public/emitir.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/streaming/waiting_room_delete_p.php" beforeDir="false" afterPath="$PROJECT_DIR$/streaming/waiting_room_delete_p.php" afterDir="false" />
-    </list>
+    <list default="true" id="315b7d6c-43dd-4b04-a2b3-17ad3cc59c77" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,8 +30,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/streaming/public/emitir.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="278" column="72" lean-forward="true" selection-start-line="278" selection-start-column="72" selection-end-line="278" selection-end-column="72" />
+            <state relative-caret-position="-1816">
+              <caret line="196" column="9" lean-forward="true" selection-start-line="196" selection-start-column="9" selection-end-line="196" selection-end-column="9" />
               <folding>
                 <element signature="n#style#0;n#a#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -128,7 +123,6 @@
       <find>connection</find>
       <find>videos-container</find>
       <find>3001</find>
-      <find>connect</find>
       <find>socket</find>
       <find>self</find>
       <find>rooming</find>
@@ -136,6 +130,7 @@
       <find>local</find>
       <find>127</find>
       <find>3002</find>
+      <find>connect</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -321,14 +316,7 @@
       <workItem from="1547990231799" duration="24000" />
       <workItem from="1547990322049" duration="1679000" />
       <workItem from="1547998436084" duration="5927000" />
-      <workItem from="1548048626344" duration="21102000" />
-    </task>
-    <task id="LOCAL-00104" summary="19.01.10&#10;       &#10;콘서트 시작">
-      <created>1547129134304</created>
-      <option name="number" value="00104" />
-      <option name="presentableId" value="LOCAL-00104" />
-      <option name="project" value="LOCAL" />
-      <updated>1547129134304</updated>
+      <workItem from="1548048626344" duration="22006000" />
     </task>
     <task id="LOCAL-00105" summary="19.01.10&#10;       &#10;콘서트 정리">
       <created>1547183861370</created>
@@ -666,11 +654,18 @@
       <option name="project" value="LOCAL" />
       <updated>1548071664139</updated>
     </task>
-    <option name="localTasksCounter" value="153" />
+    <task id="LOCAL-00153" summary="19.01.21&#10;&#10;스트리밍 3일차">
+      <created>1548073061733</created>
+      <option name="number" value="00153" />
+      <option name="presentableId" value="LOCAL-00153" />
+      <option name="project" value="LOCAL" />
+      <updated>1548073061733</updated>
+    </task>
+    <option name="localTasksCounter" value="154" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="635501000" />
+    <option name="totallyTimeSpent" value="636405000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1188,8 +1183,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/streaming/public/emitir.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="278" column="72" lean-forward="true" selection-start-line="278" selection-start-column="72" selection-end-line="278" selection-end-column="72" />
+        <state relative-caret-position="-1816">
+          <caret line="196" column="9" lean-forward="true" selection-start-line="196" selection-start-column="9" selection-end-line="196" selection-end-column="9" />
           <folding>
             <element signature="n#style#0;n#a#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
