@@ -33,7 +33,9 @@ $date = date('Y-m-d H:i:s');
 
 $path = $_SESSION['profile'];
 
-$sql = mq("insert into streaming_tb(streamer,streamer_id,date,picture) values('" . $title . "','" . $user_id . "','" . $date . "','" . $path . "')");
+$streamer_name = $_SESSION['user_id'];
+
+$sql = mq("insert into streaming_tb(streamer,streamer_id,date,picture,title) values('" . $title . "','" . $user_id . "','" . $date . "','" . $path . "','" . $streamer_name . "')");
 
 $sql_re = mq("select * from streaming_tb where date = '" . $date . "'");
 

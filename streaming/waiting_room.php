@@ -166,9 +166,7 @@ if ($_SESSION == null) {
 
                         <a style="text-decoration: none">
                             <img src="<?= $board['picture'] ?>" style="width: 100%; height: 300px"/>
-                            <h4 class="my_font_start text-center" style="margin-top: 10px"><?= $board['streamer'] ?>의
-                                버스킹
-                                공연</h4>
+                            <h4 class="my_font_start text-center" style="margin-top: 10px"><?= $board['streamer'] ?></h4>
 
                             <p class="my_font_main right"
                                style="font-size: 12px; color: black; margin-bottom: 10px; display: none">
@@ -176,7 +174,7 @@ if ($_SESSION == null) {
                             <p class="my_font_main"
                                style=" color: black; font-size: 12px; margin-bottom: 10px; position: absolute; display: inline">
                                 스트리머
-                                : <?= $board['streamer'] ?></p>
+                                : <?= $board['streamer_id'] ?></p>
                             <p class="my_font_main"
                                style="color: black; font-size: 12px; margin-bottom: 10px; position: absolute; right: 15px; display: inline">
                                 방송
