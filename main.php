@@ -27,11 +27,9 @@ session_start();
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-
-
 </head>
 
-<body>
+<body oncontextmenu="return false">
 
 <!--footer 로드-->
 <div class="main_nav"></div>
@@ -89,7 +87,8 @@ session_start();
         <div class="col-lg-4 mb-4">
             <!-- <div class="card h-100"> -->
             <h4 class="card-header my_font_index color_main"
-                style="background: transparent; text-align: center; font-size: 2em"><strong>Provide a place</strong></h4>
+                style="background: transparent; text-align: center; font-size: 2em"><strong>Provide a place</strong>
+            </h4>
             <div class="card-body text-center my_font_main">
                 <p class="card-text">
                 <p>당신의 장소가 너무 조용한가요?</p>
@@ -144,37 +143,37 @@ session_start();
 
     <div class="row" style="margin-top: 30px">
 
-    <?php
-    require_once "db.php";
+        <?php
+        require_once "db.php";
 
-    $sql = mq("select * from songlist_tb order by rand() limit 6;");
+        $sql = mq("select * from songlist_tb order by rand() limit 6;");
 
-    //페이징 끝
+        //페이징 끝
 
-    while ($board = $sql->fetch_array()) {
+        while ($board = $sql->fetch_array()) {
 
-    ?>
+            ?>
 
-        <!-- 1번 -->
-        <div class="col-lg-4 col-sm-6 portfolio-item">
-            <div class="card h-100">
-                <video controls style="width: auto; height: 200px">
-                    <source src="<?= $board['video_path'] ?>" type="video/mp4">
-                </video>
-                <div class="card-body">
-                    <h4 class="card-title text-center my_font_start" style="font-size: 1.7em">
-<!--                        <a href="buskingteam/songlist.php" class="color_point">-->
+            <!-- 1번 -->
+            <div class="col-lg-4 col-sm-6 portfolio-item">
+                <div class="card h-100">
+                    <video controls style="width: auto; height: 200px">
+                        <source src="<?= $board['video_path'] ?>" type="video/mp4">
+                    </video>
+                    <div class="card-body">
+                        <h4 class="card-title text-center my_font_start" style="font-size: 1.7em">
+                            <!--                        <a href="buskingteam/songlist.php" class="color_point">-->
                             <?= $board['team_name'] ?> - <?= $board['title'] ?>
-<!--                        </a>-->
-                    </h4>
-                    <h6 class="card-text my_font_main" style="margin-top: 1.5em">
-                        <?= nl2br($board['content']); ?>
-                    </h6>
+                            <!--                        </a>-->
+                        </h4>
+                        <h6 class="card-text my_font_main" style="margin-top: 1.5em">
+                            <?= nl2br($board['content']); ?>
+                        </h6>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <?php
+            <?php
         }
         ?>
 

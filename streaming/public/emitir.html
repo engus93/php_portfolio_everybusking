@@ -40,34 +40,6 @@
         }
     </style>
 
-    <!--새로 고침 방지-->
-    <script>
-        document.onkeydown = function (e) {
-
-            key = (e) ? e.keyCode : event.keyCode;
-
-            if (key == 8 || key == 116) {
-
-                if (e) {
-
-                    e.preventDefault();
-
-                    alert("방송의 원활함을 위해 새로 고침이 방지되어 있습니다.");
-
-
-                } else {
-
-                    event.keyCode = 0;
-
-                    event.returnValue = false;
-
-                }
-
-            }
-
-        };
-    </script>
-
 </head>
 <body>
 
@@ -149,7 +121,9 @@
         </div>
 
         <div class="col-lg-4" style="height: 100%;">
-            <div id="messages" style="height: 300px; border: transparent 1px solid; overflow: auto"></div>
+            <div id="messages" style="height: 300px; border: transparent 1px solid; overflow: auto">
+
+            </div>
 
             <div id='whoIsInBox' style="min-height: 80px; height: 80px; border: transparent 1px solid;overflow: auto">
 
@@ -171,9 +145,10 @@
 
     </div>
 
-    <form  method="post" action="http://192.168.253.138/streaming/waiting_room_delete_p.php" style="margin-left: 480px">
+    <form method="post" action="http://192.168.253.138/streaming/waiting_room_delete_p.php" style="margin-left: 480px">
         <button type="submit" class="btn my_font_main hover_class support_hover22"
-                style="font-size: 18px; margin-top: 100px; margin-bottom: 70px;" id="support_hover22">방송 종료하기</button>
+                style="font-size: 18px; margin-top: 100px; margin-bottom: 70px;" id="support_hover22">방송 종료하기
+        </button>
         <input id="now_room_idx" type="hidden" name="now_room_idx" value="">
     </form>
 
@@ -229,7 +204,7 @@
     $('#nickNameForm').submit(function () {
         nickName = $('#nickName').val();
         $('#nickName').attr('placeholder', 'NickName : ' + nickName);
-        socket.emit('setNickName', nickName)
+        socket.emit('setNickName', nickName);
         $('#nickName').val("");
         $('#m').focus();
         return false;
@@ -245,10 +220,6 @@
         $("#now_room_idx").val(rooming);
     });
 
-    socket.on('chat message', function (msg) {
-        $('#messages').append($('<h6>').text(msg));
-    });
-
     //채팅방 입장 문구
     socket.on('login', function (nickNameArr) {
         newbie = nickNameArr[nickNameArr.length - 1];
@@ -261,6 +232,16 @@
         var disconnected = received.disconnected;
         $('#messages').append($('<li>').text(`${disconnected} 님께서 나가셨습니다.`));
         editUsers(nickNameArr);
+    });
+
+    socket.on('mySaying', function (msg) {
+        $('#messages').append($('<h6>').text(msg));
+        $('#messages').scrollTop($('#messages')[0].scrollHeight);
+    });
+
+    socket.on('chat message', function (msg) {
+        $('#messages').append($('<h6>').text(msg));
+        $('#messages').scrollTop($('#messages')[0].scrollHeight);
     });
 
     function editUsers(nickNameArr) {
@@ -281,11 +262,6 @@
         }
         tempMsg = tempMsg.substring(0, tempMsg.length - 1);
         $('#m').attr('placeholder', tempMsg + typingNotice)
-    });
-
-    socket.on('mySaying', function (msg) {
-
-        $('#messages').append($('<h6>').text(msg));
     });
 
     socket.on('endTyping', function () {
@@ -319,6 +295,26 @@
     window.onpopstate = function () {
         document.location.href = "http://192.168.253.138/streaming/waiting_room.php";
     };
+
+</script>
+
+<!--새로고침 방지-->
+<script language="javascript" type="text/javascript" src="../common/scripts/jquery-latest.js"></script>
+<script type="text/javascript">
+    $(document).keydown(function (e) {
+        key = (e) ? e.keyCode : event.keyCode;
+        // alert(key);
+        var t = document.activeElement;
+        if (key == 116) {
+            if (e) {
+                e.preventDefault();
+            } else {
+                event.keyCode = 0;
+                event.returnValue = false;
+            }
+            alert("원활한 방송을 위해 새로고침이 방지 되어 있습니다.");
+        }
+    });
 
 </script>
 

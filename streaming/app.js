@@ -13,7 +13,7 @@ var connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     password: 'Reg016260!!',
-    database: 'everybusking_db'
+    database: 'everybusking_db',
 });
 
 //현재 접속 정보
@@ -87,10 +87,8 @@ io.on('connection', function (socket) {
 
     console.log(room_in_user[now_room_idx]);
 
-    // //mysql 접속
-    // connection.connect();
-
     //mysql 구문
+
     connection.query(`SELECT * from streaming_tb where idx = '${now_room_idx}'`, function (error, results, fields) {
         if (error) throw error;
 
@@ -100,7 +98,6 @@ io.on('connection', function (socket) {
 
         //mysql 구문
         connection.query(`UPDATE streaming_tb SET watch_people = ${people + 1} where idx = '${now_room_idx}'`, function (error, results, fields) {
-
             if (error) throw error;
 
             console.log(people + 1);
@@ -108,9 +105,6 @@ io.on('connection', function (socket) {
         });
 
     });
-
-    //mysql 종료
-    // connection.end();
 
     //방 구분하기
     socket.join("room" + now_room_idx);
@@ -271,6 +265,8 @@ io.on('connection', function (socket) {
 
         }
     });
+
+    connection.on('error', function() {});
 
 });
 
