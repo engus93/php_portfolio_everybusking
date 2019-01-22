@@ -87,16 +87,14 @@ session_start();
                     url: 'waiting_room_write_p.php',
                     data: params,
                     dataType: 'html',
-                    async : false,
+                    async: false,
                     success: function (data) {
                         var input_put = document.getElementById('room_idx');
 
                         input_put.value = data;
 
-                        alert(data);
-
                         var form = document.getElementById('streamer_form');
-                        form.action='http://192.168.253.138:3000/streamer';
+                        form.action = 'http://192.168.253.138:3000/streamer';
                         form.submit();
                     }
                 });
@@ -124,11 +122,13 @@ session_start();
     <form id="streamer_form" name="streamer_form" method="post" action="">
 
         <div class="img_wrap center" style="width: 100%">
-            <img id="img" style="height: 300px; width: 540px;" src="/img/no_image.gif"/>
+            <!--            <img id="img" style="height: 300px; width: 540px;" src="/img/no_image.gif"/>-->
+            <img id="img" style="height: 300px; width: 540px;" src="<?=$_SESSION['profile']?>"/>
         </div>
 
         <div id="in_title" class="center my_font_main">
-            <textarea class="text-center" name="title" id="utitle" rows="1" cols="55" placeholder="방 제목" maxlength="30" required
+            <textarea class="text-center" name="title" id="utitle" rows="1" cols="55" placeholder="방 제목" maxlength="30"
+                      required
                       style="padding-top: 10px"></textarea>
         </div>
 
@@ -137,7 +137,8 @@ session_start();
         </div>
 
         <div class="center my_font_main" style="margin-top: 50px">
-            <button id="re_bt" class="btn"">등록하기</button>
+            <button id="re_bt" class="btn"
+            ">등록하기</button>
         </div>
 
         <input type="hidden" name="user_id" value="<?= $_SESSION['user_id'] ?>">

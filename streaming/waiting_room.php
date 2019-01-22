@@ -81,7 +81,7 @@ if ($_SESSION == null) {
                 success: function (data) {
                     var user_id = $("#user_id" + idx).val();
                     var streamer_id = $("#streamer_id" + idx).val();
-                    
+
                     if (data != 0 || user_id == streamer_id) {
                         var form = $("#node_js" + idx);
                         form.submit();
