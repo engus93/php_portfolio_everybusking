@@ -6,10 +6,75 @@
   <component name="ChangeListManager">
     <list default="true" id="315b7d6c-43dd-4b04-a2b3-17ad3cc59c77" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/main.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/streaming/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/streaming/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/streaming/public/chatting.html" beforeDir="false" afterPath="$PROJECT_DIR$/streaming/public/chatting.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/streaming/public/emitir.html" beforeDir="false" afterPath="$PROJECT_DIR$/streaming/public/emitir.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/streaming/waiting_room_write_p.php" beforeDir="false" afterPath="$PROJECT_DIR$/streaming/waiting_room_write_p.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/streaming_re/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/streaming_re/.jshintrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/streaming_re/.npmignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/streaming_re/.travis.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/streaming_re/Gruntfile.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/streaming_re/LICENSE.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/streaming_re/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/streaming_re/app.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/streaming_re/bower.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/streaming_re/breaktime.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/streaming_re/config.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/streaming_re/demos/chatting.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/streaming_re/demos/emitir.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/streaming_re/demos/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/streaming_re/demos/is-turn-server-still-running.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/streaming_re/demos/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/streaming_re/demos/menu-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/streaming_re/demos/menu.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/streaming_re/demos/video-broadcasting.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/streaming_re/demos/video-broadcasting_re.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/streaming_re/demos/video-conference/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/streaming_re/demos/video-conference/video-conference.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/streaming_re/dev/CodecsHandler.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/streaming_re/dev/FileProgressBarHandler.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/streaming_re/dev/FirebaseConnection.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/streaming_re/dev/IceServersHandler.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/streaming_re/dev/MultiPeersHandler.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/streaming_re/dev/MultiStreamsMixer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/streaming_re/dev/OnIceCandidateHandler.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/streaming_re/dev/PubNubConnection.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/streaming_re/dev/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/streaming_re/dev/RTCMultiConnection.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/streaming_re/dev/RTCPeerConnection.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/streaming_re/dev/RecordingHandler.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/streaming_re/dev/SSEConnection.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/streaming_re/dev/SignalRConnection.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/streaming_re/dev/SipConnection.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/streaming_re/dev/SocketConnection.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/streaming_re/dev/StreamHasData.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/streaming_re/dev/StreamsHandler.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/streaming_re/dev/TextSenderReceiver.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/streaming_re/dev/TranslationHandler.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/streaming_re/dev/WebSocketConnection.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/streaming_re/dev/WebSyncConnection.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/streaming_re/dev/XHRConnection.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/streaming_re/dev/amd.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/streaming_re/dev/getHTMLMediaElement.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/streaming_re/dev/getHTMLMediaElement.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/streaming_re/dev/getUserMedia.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/streaming_re/dev/globals.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/streaming_re/dev/head.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/streaming_re/dev/ios-hacks.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/streaming_re/dev/tail.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/streaming_re/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/streaming_re/logs.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/streaming_re/nohup.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/streaming_re/npm-test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/streaming_re/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/streaming_re/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/streaming_re/public/chatting.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/streaming_re/public/emitir.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/streaming_re/public/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/streaming_re/public/visualizar.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/streaming_re/server.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/streaming_re/waiting_room.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/streaming_re/waiting_room.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/streaming_re/waiting_room_write.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/streaming_re/waiting_room_write_p.php" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -56,11 +121,38 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/streaming/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="236" column="38" lean-forward="true" selection-start-line="236" selection-start-column="38" selection-end-line="236" selection-end-column="38" />
+            <state relative-caret-position="368">
+              <caret line="244" column="33" lean-forward="true" selection-start-line="244" selection-start-column="33" selection-end-line="244" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/streaming/waiting_room.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-703">
+              <caret line="85" column="55" lean-forward="true" selection-start-line="85" selection-start-column="55" selection-end-line="85" selection-end-column="55" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/streaming/waiting_room_write.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="373">
+              <caret line="135" column="68" selection-start-line="135" selection-start-column="62" selection-end-line="135" selection-end-column="68" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/streaming/waiting_room_write_p.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="517">
+              <caret line="33" column="29" selection-start-line="33" selection-start-column="29" selection-end-line="33" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -135,7 +227,6 @@
         <option value="$PROJECT_DIR$/streaming/waiting_room.css" />
         <option value="$PROJECT_DIR$/concert/concert_write.php" />
         <option value="$PROJECT_DIR$/streaming/waiting_room_write.php" />
-        <option value="$PROJECT_DIR$/streaming/waiting_room_write_p.php" />
         <option value="$PROJECT_DIR$/streaming/streaming.php" />
         <option value="$PROJECT_DIR$/public/main_nav.php" />
         <option value="$PROJECT_DIR$/Sign/sign_in.php" />
@@ -170,6 +261,7 @@
         <option value="$PROJECT_DIR$/streaming/app.js" />
         <option value="$PROJECT_DIR$/streaming/public/emitir.html" />
         <option value="$PROJECT_DIR$/streaming/public/chatting.html" />
+        <option value="$PROJECT_DIR$/streaming/waiting_room_write_p.php" />
       </list>
     </option>
   </component>
@@ -202,12 +294,6 @@
               <item name="everybusking" type="b2602c69:ProjectViewProjectNode" />
               <item name="everybusking" type="462c0819:PsiDirectoryNode" />
               <item name="streaming" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="everybusking" type="b2602c69:ProjectViewProjectNode" />
-              <item name="everybusking" type="462c0819:PsiDirectoryNode" />
-              <item name="streaming" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -308,14 +394,7 @@
       <workItem from="1547998436084" duration="5927000" />
       <workItem from="1548048626344" duration="23987000" />
       <workItem from="1548082903763" duration="12896000" />
-      <workItem from="1548117540115" duration="3395000" />
-    </task>
-    <task id="LOCAL-00109" summary="19.01.11&#10;       &#10;top으로 가는 버튼 완성">
-      <created>1547195157159</created>
-      <option name="number" value="00109" />
-      <option name="presentableId" value="LOCAL-00109" />
-      <option name="project" value="LOCAL" />
-      <updated>1547195157159</updated>
+      <workItem from="1548117540115" duration="3918000" />
     </task>
     <task id="LOCAL-00110" summary="19.01.11&#10;       &#10;결제 버튼 오나성">
       <created>1547203139247</created>
@@ -653,11 +732,18 @@
       <option name="project" value="LOCAL" />
       <updated>1548097825221</updated>
     </task>
-    <option name="localTasksCounter" value="158" />
+    <task id="LOCAL-00158" summary="19.01.22&#10;        &#10;발표날">
+      <created>1548121858714</created>
+      <option name="number" value="00158" />
+      <option name="presentableId" value="LOCAL-00158" />
+      <option name="project" value="LOCAL" />
+      <updated>1548121858714</updated>
+    </task>
+    <option name="localTasksCounter" value="159" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="654677000" />
+    <option name="totallyTimeSpent" value="655200000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -744,7 +830,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="19.01.10&#10;       &#10;관리자 페이지 버스킹 팀" />
     <MESSAGE value="19.01.10&#10;       &#10;관리자 페이지 게시판" />
     <MESSAGE value="19.01.10&#10;       &#10;콘서트 시작" />
     <MESSAGE value="19.01.10&#10;       &#10;콘서트 정리" />
@@ -769,16 +854,10 @@
     <MESSAGE value="19.01.20&#10;&#10;스트리밍 2일차" />
     <MESSAGE value="19.01.21&#10;&#10;스트리밍 3일차" />
     <MESSAGE value="19.01.22&#10;&#10;스트리밍 4일차" />
-    <option name="LAST_COMMIT_MESSAGE" value="19.01.22&#10;&#10;스트리밍 4일차" />
+    <MESSAGE value="19.01.22&#10;        &#10;발표날" />
+    <option name="LAST_COMMIT_MESSAGE" value="19.01.22&#10;        &#10;발표날" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/streaming_re/waiting_room_write_p.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="359">
-          <caret line="29" column="41" lean-forward="true" selection-start-line="29" selection-start-column="41" selection-end-line="29" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/streaming_re/waiting_room_write.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="342">
@@ -1102,43 +1181,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/streaming/waiting_room_write.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="99" column="38" lean-forward="true" selection-start-line="99" selection-start-column="38" selection-end-line="99" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/streaming/waiting_room_write_p.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="29" column="41" lean-forward="true" selection-start-line="29" selection-start-column="41" selection-end-line="29" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/streaming/waiting_room.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="86" column="38" lean-forward="true" selection-start-line="86" selection-start-column="38" selection-end-line="86" selection-end-column="38" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#form#0;n#form#0;n#article#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#a#0;n#form#0;n#form#0;n#article#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h4#0;n#a#0;n#form#0;n#form#0;n#article#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#a#0;n#form#0;n#form#0;n#article#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#1;n#a#0;n#form#0;n#form#0;n#article#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#2;n#a#0;n#form#0;n#form#0;n#article#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#a#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#7109#7123#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/streaming/waiting_room_join_p.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="228">
@@ -1214,8 +1256,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/streaming/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="236" column="38" lean-forward="true" selection-start-line="236" selection-start-column="38" selection-end-line="236" selection-end-column="38" />
+        <state relative-caret-position="368">
+          <caret line="244" column="33" lean-forward="true" selection-start-line="244" selection-start-column="33" selection-end-line="244" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/streaming/waiting_room.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-703">
+          <caret line="85" column="55" lean-forward="true" selection-start-line="85" selection-start-column="55" selection-end-line="85" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/streaming/waiting_room_write.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="373">
+          <caret line="135" column="68" selection-start-line="135" selection-start-column="62" selection-end-line="135" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/buskingteam/buskingteam_write_p.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/streaming/waiting_room_write_p.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="517">
+          <caret line="33" column="29" selection-start-line="33" selection-start-column="29" selection-end-line="33" selection-end-column="29" />
         </state>
       </provider>
     </entry>
