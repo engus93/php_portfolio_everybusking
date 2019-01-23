@@ -5,6 +5,7 @@ var http = require('http').createServer(app);
 var io = require("socket.io")(http);
 var ejs = require('ejs');
 var bodyParser = require('body-parser');
+require('date-utils');
 
 //mysql 접속
 var mysql = require('mysql');
@@ -17,7 +18,7 @@ var connection = mysql.createConnection({
 });
 
 var del = connection._protocol._delegateError;
-connection._protocol._delegateError = function(err, sequence){
+connection._protocol._delegateError = function (err, sequence) {
     if (err.fatal) {
         console.trace('fatal error: ' + err.message);
     }
@@ -180,11 +181,33 @@ io.on('connection', function (socket) {
     });
 
     socket.on('room_boom', function () {
+        var dt = new Date();
+
+        var now = dt.toFormat('YYYY-MM-DD HH24:MI:SS');
+
+        connection.query(`UPDATE streaming_tb SET date_re = '${now}' where idx = '${now_room_idx}'`, function (error, results, fields) {
+
+            if (error) throw error;
+
+        });
+
         socket.broadcast.to("room" + idx).emit('room_boom', "강퇴");
+
     });
 
     socket.on('room_boom_re', function () {
+        var dt = new Date();
+
+        var now = dt.toFormat('YYYY-MM-DD HH24:MI:SS');
+
+        connection.query(`UPDATE streaming_tb SET date_re = '${now}' where idx = '${now_room_idx}'`, function (error, results, fields) {
+
+            if (error) throw error;
+
+        });
+
         socket.broadcast.to("room" + idx).emit('room_room', "운영자 강퇴");
+
     });
 
     socket.on('quitTyping', function () {
@@ -247,7 +270,7 @@ io.on('connection', function (socket) {
             var people = results[0].watch_people;
 
             //mysql 구문
-            connection.query(`UPDATE streaming_tb SET watch_people = ${people - 1} where idx = '${now_room_idx}'`, function (error, results, fields) {
+            connection.query(`UPDATE streaming_tb SET watch_people = '${people - 1}' where idx = '${now_room_idx}'`, function (error, results, fields) {
 
                 if (error) throw error;
 
@@ -290,7 +313,8 @@ io.on('connection', function (socket) {
         }
     });
 
-    connection.on('error', function() {});
+    connection.on('error', function () {
+    });
 
 });
 
