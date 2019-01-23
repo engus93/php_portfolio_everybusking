@@ -201,6 +201,21 @@
         return true;
     });
 
+    socket.on('room_boom', function () {
+        alert("방송이 종료 되었습니다.");
+        document.location.href = "http://192.168.253.138/streaming/waiting_room.php";
+    });
+
+    socket.on('room_boom_re', function () {
+        alert("방송이 잠시 중단 되었습니다.");
+        document.location.href = "http://192.168.253.138/streaming/waiting_room.php";
+    });
+
+    socket.on('room_room', function () {
+        alert("운영자의 의해 방송이 종료 되었습니다.");
+        document.location.href = "http://192.168.253.138/streaming/waiting_room.php";
+    });
+
     $('#nickNameForm').submit(function () {
         nickName = $('#nickName').val();
         $('#nickName').attr('placeholder', 'NickName : ' + nickName);

@@ -53,6 +53,16 @@ app.post('/streamer', function (req, res) {
 
 });
 
+//매니저 방
+app.post('/manager', function (req, res) {
+    now_user_id = req.body.user_id;
+    now_user_name = req.body.user_name;
+    now_room_idx = req.body.room_idx;
+
+    res.render(__dirname + '/public/manager.html');
+
+});
+
 //방송 보는 방
 app.post('/stream', function (req, res) {
     now_user_id = req.body.user_id;
@@ -171,6 +181,10 @@ io.on('connection', function (socket) {
 
     socket.on('room_boom', function () {
         socket.broadcast.to("room" + idx).emit('room_boom', "강퇴");
+    });
+
+    socket.on('room_boom_re', function () {
+        socket.broadcast.to("room" + idx).emit('room_room', "운영자 강퇴");
     });
 
     socket.on('quitTyping', function () {

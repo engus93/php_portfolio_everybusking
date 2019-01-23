@@ -39,6 +39,12 @@ $sql_re = mq("select * from streaming_tb where date = '" . $date . "'");
 
 $board = $sql_re->fetch_array();
 
-echo $board[0];
+$num = $board[0];
+
+if($num < 1){
+    $num = 0;
+}
+
+echo $num;
 
 ?>

@@ -82,7 +82,7 @@ if ($_SESSION == null) {
                     var user_id = $("#user_id" + idx).val();
                     var streamer_id = $("#streamer_id" + idx).val();
 
-                    if (data != 0 || user_id == streamer_id) {
+                    if (data > 0 || user_id == streamer_id) {
                         var form = $("#node_js" + idx);
                         form.submit();
                     } else {
@@ -154,7 +154,14 @@ if ($_SESSION == null) {
                       method="post">
 
                     <?php
-                    } else {
+                    } else if ($_SESSION['user_id'] == "rhksflwk") {
+                    ?>
+                    <!--매니저방-->
+                    <form id="node_js<?= $board['idx'] ?>" name="node_js" action="http://192.168.253.138:3000/manager"
+                          method="post">
+
+                        <?php
+                        } else {
                     ?>
 
                     <form id="node_js<?= $board['idx'] ?>" name="node_js" action="http://192.168.253.138:3000/stream"

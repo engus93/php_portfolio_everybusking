@@ -125,15 +125,14 @@
 
                 <li class="nav-item">
                     <a class="nav-link menu_profile" href="http://192.168.253.138/my_page/my_page_modify.php"><i
-                            class="fas fa-user"></i>My Page</a>
+                            class="fas fa-crown"></i> Manager Page</a>
                 </li>
-
             </ul>
         </div>
     </nav>
 </div>
 
-<div class="container my_font_main" style="min-height: 800px; padding-top: 10px;">
+<div class="container my_font_main" style="min-height: 850px; padding-top: 10px;">
 
     <h1 class="mt-4 mb-3 my_font_main" style="color: #FBAA48">누구누구의 방송</h1>
 
@@ -170,12 +169,23 @@
 
     </div>
 
-    <a href="http://192.168.253.138/streaming/waiting_room.php" style="margin-left: 480px;">
-        <button class="col-sm-2 btn my_font_main hover_class"
-                style="font-size: 18px; width: 180px; margin-top: 100px; margin-bottom: 70px;"
-                id="support_hover2">목록으로
+    <div style="margin-top: 100px">
+        <!--<button class="btn my_font_main hover_class"-->
+                <!--style="font-size: 18px; width: 180px; margin-left: 360px"-->
+                <!--id="support_hover2" onclick="location.href='http://192.168.253.138/streaming/waiting_room.php'">방송 종료 시키기-->
+        <!--</button>-->
+
+        <form method="post" action="http://192.168.253.138/streaming/waiting_room_delete_p.php" style="width: 540px; display: inline">
+            <button type="submit" class="btn my_font_main hover_class support_hover22"
+                    style="font-size: 18px; width: 180px; margin-left: 370px" id="support_hover22">방송 종료 시키기
+            </button>
+            <input id="now_room_idx" type="hidden" name="now_room_idx" value="">
+        </form>
+
+        <button class="btn my_font_main hover_class" style="font-size: 18px; width: 180px; display: inline"
+                id="support_hover3" onclick="location.href='http://192.168.253.138/my_page/manager_streaming.php'">관리자 목록으로
         </button>
-    </a>
+    </div>
 
 </div>
 
@@ -238,11 +248,12 @@
         $('#nickName').attr('placeholder', 'NickName : ' + nickName);
         //set #nickNameForm placeholder
         $('#user_id_id').text(user_name + " 님");
-        // if(user_name == "관리자"){
-        //     $('#my_page').text("Manager Page");
-        // }else {
-        //     $('#my_page').text("My Page");
-        // }
+        $("#now_room_idx").val(rooming);
+    });
+
+    $('.support_hover22').click(function () {
+        socket.emit('room_boom_re', "강퇴");
+        return true;
     });
 
     socket.on('room_boom', function () {
