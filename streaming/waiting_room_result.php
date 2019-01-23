@@ -105,7 +105,7 @@ if ($_SESSION == null) {
 
     <div class="h-100">
         <div class="d-flex h-100 justify-content-xl-end">
-            <form action="/streaming/waiting_room_result.php" method="get" name="search_go">
+            <form action="/streaming/waiting_room.php" method="get" name="search_go">
                 <div class="searchbar">
                     <input class="search_input" type="text" id="search_check" name="search" style="font-weight: bold"
                            placeholder="스트리머">
@@ -126,7 +126,7 @@ if ($_SESSION == null) {
         } else {
             $page = 1;
         }
-        $sql = mq("select * from streaming_tb where ing = 'true'");
+        $sql = mq("select * from streaming_tb where ing = 'true' and streamer_id like '%" . $_GET["search"] . "%'");
         $row_num = mysqli_num_rows($sql); //게시판 총 레코드 수
         if($row_num == 0){
             $row_num += 1;
@@ -145,20 +145,20 @@ if ($_SESSION == null) {
 
         //페이징 끝
 
-        $sql_re = mq("select * from streaming_tb where ing = 'true' order by idx desc limit $start_num, $list");
+        $sql_re = mq("select * from streaming_tb where ing = 'true' and streamer_id like '%" . $_GET["search"] . "%' order by idx desc limit $start_num, $list");
 //        $sql = mq("select * from streaming_tb order by idx desc limit $start_num, $list");
 
         if ($sql_re->fetch_row() == null) {
             ?>
 
             <div class="row my_font_main center" style="min-height: 500px; width: 100%">
-                <p class="text-center" style="width: 100%">현재 방송 중인 영상이 없습니다.</p>
+                <p class="text-center" style="width: 100%">현재 검색하신 스트리머의 방송 중인 영상이 없습니다.</p>
             </div>
 
             <?php
         }
 
-        $sql_re_re = mq("select * from streaming_tb where ing = 'true'  order by idx desc limit $start_num, $list");
+        $sql_re_re = mq("select * from streaming_tb where ing = 'true' and streamer_id like '%" . $_GET["search"] . "%'  order by idx desc limit $start_num, $list");
         //        $sql = mq("select * from streaming_tb order by idx desc limit $start_num, $list");
 
         while ($board = $sql_re_re->fetch_array()) {
