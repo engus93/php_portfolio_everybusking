@@ -114,6 +114,7 @@ io.on('connection', function (socket) {
 
     });
 
+
     //방 구분하기
     socket.join("room" + now_room_idx);
 
@@ -223,6 +224,7 @@ io.on('connection', function (socket) {
         console.log(room_in_user[now_room_idx] + " 변경 후");
 
         //mysql 구문
+
         connection.query(`SELECT * from streaming_tb where idx = '${now_room_idx}'`, function (error, results, fields) {
             if (error) throw error;
 
