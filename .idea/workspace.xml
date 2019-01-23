@@ -6,9 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="315b7d6c-43dd-4b04-a2b3-17ad3cc59c77" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/streaming/waiting_room.php" beforeDir="false" afterPath="$PROJECT_DIR$/streaming/waiting_room.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/streaming/waiting_room_write.php" beforeDir="false" afterPath="$PROJECT_DIR$/streaming/waiting_room_write.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/streaming/waiting_room_write_p.php" beforeDir="false" afterPath="$PROJECT_DIR$/streaming/waiting_room_write_p.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/streaming/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/streaming/app.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -35,8 +33,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/streaming/waiting_room.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="83" lean-forward="true" selection-start-line="83" selection-end-line="83" />
+            <state relative-caret-position="281">
+              <caret line="79" column="29" lean-forward="true" selection-start-line="79" selection-start-column="29" selection-end-line="79" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/streaming/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="342">
+              <caret line="18" column="45" selection-start-line="18" selection-start-column="45" selection-end-line="18" selection-end-column="45" />
             </state>
           </provider>
         </entry>
@@ -44,17 +51,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/streaming/waiting_room_write.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="94" lean-forward="true" selection-start-line="94" selection-end-line="94" />
+            <state relative-caret-position="1786">
+              <caret line="94" selection-start-line="94" selection-end-line="94" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/streaming/waiting_room_write_p.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="474">
-              <caret line="37" column="42" selection-start-line="37" selection-start-column="42" selection-end-line="37" selection-end-column="42" />
+            <state relative-caret-position="365">
+              <caret line="31" column="29" lean-forward="true" selection-start-line="31" selection-start-column="29" selection-end-line="31" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -74,7 +81,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>님께서</find>
       <find>nick</find>
       <find>selfda</find>
       <find>io</find>
@@ -104,6 +110,7 @@
       <find>messages</find>
       <find>chat message</find>
       <find>스트리머</find>
+      <find>mysql</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -158,12 +165,12 @@
         <option value="$PROJECT_DIR$/streaming/waiting_room_join.php" />
         <option value="$PROJECT_DIR$/streaming/waiting_room_join_p.php" />
         <option value="$PROJECT_DIR$/main.php" />
-        <option value="$PROJECT_DIR$/streaming/app.js" />
         <option value="$PROJECT_DIR$/streaming/public/emitir.html" />
         <option value="$PROJECT_DIR$/streaming/public/chatting.html" />
         <option value="$PROJECT_DIR$/streaming/waiting_room.php" />
         <option value="$PROJECT_DIR$/streaming/waiting_room_write.php" />
         <option value="$PROJECT_DIR$/streaming/waiting_room_write_p.php" />
+        <option value="$PROJECT_DIR$/streaming/app.js" />
       </list>
     </option>
   </component>
@@ -292,14 +299,8 @@
       <workItem from="1548048626344" duration="23987000" />
       <workItem from="1548082903763" duration="12896000" />
       <workItem from="1548117540115" duration="4150000" />
-      <workItem from="1548130860275" duration="2468000" />
-    </task>
-    <task id="LOCAL-00112" summary="19.01.11&#10;       &#10;결제 시작">
-      <created>1547214412936</created>
-      <option name="number" value="00112" />
-      <option name="presentableId" value="LOCAL-00112" />
-      <option name="project" value="LOCAL" />
-      <updated>1547214412936</updated>
+      <workItem from="1548130860275" duration="3081000" />
+      <workItem from="1548218657727" duration="908000" />
     </task>
     <task id="LOCAL-00113" summary="19.01.11&#10;       &#10;결제 정리중">
       <created>1547277401472</created>
@@ -637,11 +638,18 @@
       <option name="project" value="LOCAL" />
       <updated>1548131958035</updated>
     </task>
-    <option name="localTasksCounter" value="161" />
+    <task id="LOCAL-00161" summary="19.01.22&#10;        &#10;발표날">
+      <created>1548133335198</created>
+      <option name="number" value="00161" />
+      <option name="presentableId" value="LOCAL-00161" />
+      <option name="project" value="LOCAL" />
+      <updated>1548133335198</updated>
+    </task>
+    <option name="localTasksCounter" value="162" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="657900000" />
+    <option name="totallyTimeSpent" value="659421000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -653,9 +661,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1487" height="878" extended-state="6" />
+    <frame x="-8" y="-8" width="1873" height="1096" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21723896" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21952565" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -667,7 +676,7 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32939914" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="9" sideWeight="0.4965035" visible="true" weight="0.19463088" />
+      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.4965035" visible="true" weight="0.19438669" />
       <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49713558" weight="0.22684564" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5034965" side_tool="true" weight="0.19438446" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.32937366" />
@@ -967,13 +976,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/streaming/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4636">
-          <caret line="244" column="33" selection-start-line="244" selection-start-column="33" selection-end-line="244" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/buskingteam/buskingteam.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
@@ -984,24 +986,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/streaming/waiting_room.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="83" lean-forward="true" selection-start-line="83" selection-end-line="83" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/streaming/waiting_room_write.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="94" lean-forward="true" selection-start-line="94" selection-end-line="94" />
+        <state relative-caret-position="1786">
+          <caret line="94" selection-start-line="94" selection-end-line="94" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/streaming/waiting_room_write_p.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="474">
-          <caret line="37" column="42" selection-start-line="37" selection-start-column="42" selection-end-line="37" selection-end-column="42" />
+        <state relative-caret-position="365">
+          <caret line="31" column="29" lean-forward="true" selection-start-line="31" selection-start-column="29" selection-end-line="31" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/streaming/waiting_room.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="281">
+          <caret line="79" column="29" lean-forward="true" selection-start-line="79" selection-start-column="29" selection-end-line="79" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/streaming/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="18" column="45" selection-start-line="18" selection-start-column="45" selection-end-line="18" selection-end-column="45" />
         </state>
       </provider>
     </entry>

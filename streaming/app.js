@@ -16,6 +16,14 @@ var connection = mysql.createConnection({
     database: 'everybusking_db',
 });
 
+var del = connection._protocol._delegateError;
+connection._protocol._delegateError = function(err, sequence){
+    if (err.fatal) {
+        console.trace('fatal error: ' + err.message);
+    }
+    return del.call(this, err, sequence);
+};
+
 //현재 접속 정보
 var now_user_id = "";
 var now_user_name = "";
