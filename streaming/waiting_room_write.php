@@ -113,7 +113,7 @@ session_start();
 <div class="main_nav"></div>
 <script>$(".main_nav").load("/public/main_nav.php");</script>
 
-<div class="container" style="margin-bottom: 100px; min-height: 700px">
+<div class="container" style="margin-bottom: 100px; min-height: 750px">
 
     <h1 class="mt-4 mb-3 my_font_index">Streaming</h1>
 

@@ -10,20 +10,30 @@ require('date-utils');
 //mysql 접속
 var mysql = require('mysql');
 
-var connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: 'Reg016260!!',
-    database: 'everybusking_db',
-});
+//mysql 연동 꺼지면 다시 붙여주는 메소드
+function startConnection() {
+    console.error('CONNECTING');
+    connection = mysql.createConnection({
+        host: 'localhost',
+        user: 'root',
+        password: 'Reg016260!!',
+        database: 'everybusking_db',
+    });
+    connection.connect(function (err) {
+        if (err) {
+            console.error('CONNECT FAILED', err.code);
+            startConnection();
+        } else
+            console.error('CONNECTED');
+    });
+    connection.on('error', function (err) {
+        if (err.fatal)
+            startConnection();
+    });
+}
 
-var del = connection._protocol._delegateError;
-connection._protocol._delegateError = function (err, sequence) {
-    if (err.fatal) {
-        console.trace('fatal error: ' + err.message);
-    }
-    return del.call(this, err, sequence);
-};
+startConnection();
+
 
 //현재 접속 정보
 var now_user_id = "";
