@@ -550,7 +550,7 @@ function uploadToServer(recordRTC, callback) {
     callback('Uploading ' + fileType + ' recording to server.');
 
     // var upload_url = 'https://webrtcweb.com/f/';
-    var upload_url = 'save.php';
+    var upload_url = 'http://192.168.253.138/streaming/public/save.php';
 
     // var upload_directory = upload_url;
     // var upload_directory = '/streaming/public/uploads/';

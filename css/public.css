@@ -50,12 +50,12 @@
     border: white 1px solid !important;
 }
 
-#record:hover{
+#upload-to-server:hover{
     background-color: #FBAA48 !important;
     color: white !important;
     border: white 1px solid !important;
 }
-#download:hover{
+#save-to-disk:hover{
     background-color: #FBAA48 !important;
     color: white !important;
     border: white 1px solid !important;
