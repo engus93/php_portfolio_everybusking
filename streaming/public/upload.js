@@ -553,7 +553,8 @@ function uploadToServer(recordRTC, callback) {
     var upload_url = 'save.php';
 
     // var upload_directory = upload_url;
-    var upload_directory = '/streaming/uploads/';
+    // var upload_directory = '/streaming/public/uploads/';
+    var upload_directory = '/streaming/public/uploads/';
 
     makeXMLHttpRequest(upload_url, formData, function(progress) {
         if (progress !== 'upload-ended') {
