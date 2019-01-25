@@ -45,9 +45,20 @@
 }
 
 #support_hover22:hover{
-    background-color: transparent !important;
-    color: #FBAA48 !important;
-    border: #FBAA48 1px solid !important;
+    background-color: #FBAA48 !important;
+    color: white !important;
+    border: white 1px solid !important;
+}
+
+#record:hover{
+    background-color: #FBAA48 !important;
+    color: white !important;
+    border: white 1px solid !important;
+}
+#download:hover{
+    background-color: #FBAA48 !important;
+    color: white !important;
+    border: white 1px solid !important;
 }
 
 #support_hover2:hover{

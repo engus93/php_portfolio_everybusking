@@ -146,16 +146,30 @@
     </div>
 
     <div style="margin-top: 100px">
-        <form method="post" action="http://192.168.253.138/streaming/waiting_room_delete_p.php" style="width: 540px; display: inline">
+        <form method="post" action="http://192.168.253.138/streaming/waiting_room_delete_p.php"
+              style="width: 540px; display: inline">
             <button type="submit" class="btn my_font_main hover_class support_hover22"
-                    style="font-size: 18px; width: 180px; margin-left: 370px" id="support_hover22">방송 종료하기
+                    style="font-size: 18px; width: 180px; margin-left: 470px" id="support_hover22">방송 종료하기
             </button>
             <input id="now_room_idx" type="hidden" name="now_room_idx" value="">
         </form>
 
-        <button class="btn my_font_main hover_class" style="font-size: 18px; width: 180px; display: inline"
-                id="support_hover3" onclick="">방송 녹화하기
-        </button>
+        <!--<button class="btn my_font_main hover_class" style="font-size: 18px; width: 180px; display: inline"-->
+        <!--id="support_hover3" onclick="">방송 녹화하기-->
+        <!--</button>-->
+
+        <video id="recorded" style="display: none"></video>
+
+    </div>
+
+    <div>
+
+        <button class=" btn re_hover_class" id="record" disabled>녹화 시작하기</button>
+
+        <button class="btn re_hover_class"  id="play" disabled style="display: none">Play</button>
+
+        <button class="btn re_hover_class"  id="download" disabled>영상 저장하기</button>
+
     </div>
 
 </div>
@@ -350,10 +364,6 @@
     // this line is VERY_important
     connection.socketURL = "http://192.168.253.138:3001/";
 
-    // connection.extra = {
-    //     divBGColor: prompt('Please enter DIV background color.')
-    // };
-
     connection.session = {
         audio: true,
         video: true,
@@ -395,6 +405,258 @@
         console.log("룸 번호 : " + rooming);
         console.log(connetion.channel);
     });
+
+</script>
+
+<script src="https://cdn.webrtc-experiment.com/RecordRTC.js"></script>
+<script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+
+<script>
+
+    $(window).load(function () {
+
+        var mediaSource = new MediaSource();
+
+        mediaSource.addEventListener('sourceopen', handleSourceOpen, false);
+
+        var mediaRecorder;
+
+        var recordedBlobs;
+
+        var sourceBuffer;
+
+        var gumVideo = document.querySelector('video#gum');
+
+        var recordedVideo = document.querySelector('video#recorded');
+
+        var recordButton = document.querySelector('button#record');
+
+        var playButton = document.querySelector('button#play');
+
+        var downloadButton = document.querySelector('button#download');
+
+        recordButton.onclick = toggleRecording;
+
+        playButton.onclick = play;
+
+        downloadButton.onclick = download;
+
+        var isSecureOrigin = location.protocol === 'https:' ||
+
+            location.hostname === '192.168.253.138';
+
+        if (!isSecureOrigin) {
+
+            alert('getUserMedia() must be run from a secure origin: HTTPS or localhost.' +
+
+                '\n\nChanging protocol to HTTPS');
+
+            location.protocol = 'HTTPS';
+
+        }
+
+        var constraints = {
+            audio: true,
+            video: true
+        };
+
+        function handleSuccess(stream) {
+            recordButton.disabled = false;
+
+            console.log('getUserMedia() got stream: ', stream);
+
+            window.stream = stream;
+
+            // if (window.URL) {
+            //
+            //     // gumVideo.src = window.URL.createObjectURL(stream);
+            //     gumVideo.srcObject = stream;
+            //
+            // } else {
+            //
+            //     gumVideo.src = stream;
+            //
+            // }
+
+        }
+
+        function handleError(error) {
+
+            console.log('navigator.getUserMedia error: ', error);
+
+        }
+
+        navigator.mediaDevices.getUserMedia(constraints).then(handleSuccess).catch(handleError);
+
+        function handleSourceOpen(event) {
+
+            console.log('MediaSource opened');
+
+            sourceBuffer = mediaSource.addSourceBuffer('video/webm; codecs="vp8"');
+
+            console.log('Source buffer: ', sourceBuffer);
+
+        }
+
+        recordedVideo.addEventListener('error', function (ev) {
+
+            console.error('MediaRecording.recordedMedia.error()');
+
+            alert('Your browser can not play\n\n' + recordedVideo.src
+
+                + '\n\n media clip. event: ' + JSON.stringify(ev));
+
+        }, true);
+
+        function handleDataAvailable(event) {
+
+            if (event.data && event.data.size > 0) {
+
+                recordedBlobs.push(event.data);
+
+            }
+
+        }
+
+        function handleStop(event) {
+
+            console.log('Recorder stopped: ', event);
+
+        }
+
+        function toggleRecording() {
+
+            if (recordButton.textContent === '녹화 시작하기') {
+
+                startRecording();
+
+            } else {
+
+                stopRecording();
+
+                recordButton.textContent = '녹화 시작하기';
+
+                playButton.disabled = false;
+
+                downloadButton.disabled = false;
+
+            }
+
+        }
+
+        function startRecording() {
+
+            recordedBlobs = [];
+
+            var options = {mimeType: 'video/mp4;codecs=vp9'};
+
+            if (!MediaRecorder.isTypeSupported(options.mimeType)) {
+
+                console.log(options.mimeType + ' is not Supported');
+
+                options = {mimeType: 'video/mp4;codecs=vp8'};
+
+                if (!MediaRecorder.isTypeSupported(options.mimeType)) {
+
+                    console.log(options.mimeType + ' is not Supported');
+
+                    options = {mimeType: 'video/mp4'};
+
+                    if (!MediaRecorder.isTypeSupported(options.mimeType)) {
+
+                        console.log(options.mimeType + ' is not Supported');
+
+                        options = {mimeType: ''};
+
+                    }
+
+                }
+
+            }
+
+            try {
+
+                mediaRecorder = new MediaRecorder(window.stream, options);
+
+            } catch (e) {
+
+                console.error('Exception while creating MediaRecorder: ' + e);
+
+                alert('Exception while creating MediaRecorder: '
+
+                    + e + '. mimeType: ' + options.mimeType);
+
+                return;
+
+            }
+
+            console.log('Created MediaRecorder', mediaRecorder, 'with options', options);
+
+            recordButton.textContent = '녹화 중지하기';
+
+            playButton.disabled = true;
+
+            downloadButton.disabled = true;
+
+            mediaRecorder.onstop = handleStop;
+
+            mediaRecorder.ondataavailable = handleDataAvailable;
+
+            mediaRecorder.start(10); // collect 10ms of data
+
+            console.log('MediaRecorder started', mediaRecorder);
+
+        }
+
+        function stopRecording() {
+
+            mediaRecorder.stop();
+
+            console.log('Recorded Blobs: ', recordedBlobs);
+
+            recordedVideo.controls = true;
+
+        }
+
+        function download() {
+
+            var blob = new Blob(recordedBlobs, {type: 'video/mp4'});
+
+            console.log(blob);
+
+            var url = window.URL.createObjectURL(blob);
+
+            var a = document.createElement('a');
+
+            a.style.display = 'none';
+
+            a.href = url;
+
+            var currentDate = new Date();
+
+            var msg = currentDate.getFullYear() + "년";
+            msg += (currentDate.getMonth() + 1) + "월";
+            msg += currentDate.getDate() + "일";
+
+            msg += currentDate.getHours() + "시";
+            msg += currentDate.getMinutes() + "분 방송";
+
+            a.download = msg + ".mp4";
+
+            document.body.appendChild(a);
+
+            a.click();
+
+            setTimeout(function () {
+
+                document.body.removeChild(a);
+
+                window.URL.revokeObjectURL(url);
+
+            }, 100);
+
+        }
+    })
 
 </script>
 

@@ -29,5 +29,3 @@ location.href="/buskingteam/songlist.php?idx='.$_POST['con_num'].'&team_name='.$
 </script>';
 
 ?>
-
-
