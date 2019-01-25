@@ -197,7 +197,7 @@ session_start();
         </div>
         <div class="col-lg-6">
             <video controls style="width: 600px; height: 300px">
-                <source src="/mp4/main/소개%20영상.mp4" type="video/mp4">
+                <source src="https://webrtcweb.com/f/RecordRTC-2019025-6yr3dnzx5tm.webm" type="video/mp4">
             </video>
         </div>
     </div>

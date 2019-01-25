@@ -5,10 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="315b7d6c-43dd-4b04-a2b3-17ad3cc59c77" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/buskingteam/songlist_update_p.php" beforeDir="false" afterPath="$PROJECT_DIR$/buskingteam/songlist_update_p.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/public.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/public.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/main.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/streaming/public/chatting.html" beforeDir="false" afterPath="$PROJECT_DIR$/streaming/public/chatting.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/streaming/public/emitir.html" beforeDir="false" afterPath="$PROJECT_DIR$/streaming/public/emitir.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/streaming/public/manager.html" beforeDir="false" afterPath="$PROJECT_DIR$/streaming/public/manager.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -35,8 +35,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/streaming/public/emitir.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="172" column="10" lean-forward="true" selection-start-line="172" selection-start-column="10" selection-end-line="172" selection-end-column="10" />
+            <state relative-caret-position="644">
+              <caret line="660" column="9" lean-forward="true" selection-start-line="660" selection-start-column="9" selection-end-line="660" selection-end-column="9" />
               <folding>
                 <element signature="n#style#0;n#a#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -59,15 +59,6 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/public.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="385">
-              <caret line="60" column="39" selection-start-line="60" selection-start-column="39" selection-end-line="60" selection-end-column="39" />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -83,7 +74,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>my</find>
       <find>my_page</find>
       <find>user_id_id</find>
       <find>node_js</find>
@@ -113,6 +103,7 @@
       <find>recorded</find>
       <find>370</find>
       <find>녹화 중기</find>
+      <find>누구누구</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -160,7 +151,6 @@
         <option value="$PROJECT_DIR$/streaming/waiting_room_delete_p.php" />
         <option value="$PROJECT_DIR$/streaming/waiting_room_join.php" />
         <option value="$PROJECT_DIR$/streaming/waiting_room_join_p.php" />
-        <option value="$PROJECT_DIR$/main.php" />
         <option value="$PROJECT_DIR$/streaming/waiting_room_write_p.php" />
         <option value="$PROJECT_DIR$/my_page/manager_community.php" />
         <option value="$PROJECT_DIR$/my_page/manager_streaming.php" />
@@ -168,19 +158,20 @@
         <option value="$PROJECT_DIR$/streaming/waiting_room_result.php" />
         <option value="$PROJECT_DIR$/streaming/app.js" />
         <option value="$PROJECT_DIR$/streaming/waiting_room_write.php" />
-        <option value="$PROJECT_DIR$/streaming/public/chatting.html" />
-        <option value="$PROJECT_DIR$/streaming/public/manager.html" />
         <option value="$PROJECT_DIR$/RecordRTC-master/index.html" />
-        <option value="$PROJECT_DIR$/streaming/public/emitir.html" />
         <option value="$PROJECT_DIR$/css/public.css" />
+        <option value="$PROJECT_DIR$/streaming/public/manager.html" />
+        <option value="$PROJECT_DIR$/streaming/public/chatting.html" />
+        <option value="$PROJECT_DIR$/main.php" />
+        <option value="$PROJECT_DIR$/streaming/public/emitir.html" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1634" />
-    <option name="height" value="1066" />
+    <option name="x" value="857" />
+    <option name="y" value="430" />
+    <option name="width" value="658" />
+    <option name="height" value="705" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -195,6 +186,17 @@
             <path>
               <item name="everybusking" type="b2602c69:ProjectViewProjectNode" />
               <item name="everybusking" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="everybusking" type="b2602c69:ProjectViewProjectNode" />
+              <item name="everybusking" type="462c0819:PsiDirectoryNode" />
+              <item name="streaming" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="everybusking" type="b2602c69:ProjectViewProjectNode" />
+              <item name="everybusking" type="462c0819:PsiDirectoryNode" />
+              <item name="streaming" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -302,14 +304,7 @@
       <workItem from="1548303996892" duration="2375000" />
       <workItem from="1548315166365" duration="53000" />
       <workItem from="1548393901270" duration="1638000" />
-      <workItem from="1548396115500" duration="5473000" />
-    </task>
-    <task id="LOCAL-00119" summary="19.01.13&#10;&#10;마무리&#10;       &#10;채팅중">
-      <created>1547443228180</created>
-      <option name="number" value="00119" />
-      <option name="presentableId" value="LOCAL-00119" />
-      <option name="project" value="LOCAL" />
-      <updated>1547443228181</updated>
+      <workItem from="1548396115500" duration="8586000" />
     </task>
     <task id="LOCAL-00120" summary="19.01.13&#10;&#10;마무리&#10;       &#10;채팅중">
       <created>1547473530154</created>
@@ -647,11 +642,18 @@
       <option name="project" value="LOCAL" />
       <updated>1548247525578</updated>
     </task>
-    <option name="localTasksCounter" value="168" />
+    <task id="LOCAL-00168" summary="19.01.25&#10;&#10;스트리밍 영상 저장 로컬에 됨">
+      <created>1548401617832</created>
+      <option name="number" value="00168" />
+      <option name="presentableId" value="LOCAL-00168" />
+      <option name="project" value="LOCAL" />
+      <updated>1548401617832</updated>
+    </task>
+    <option name="localTasksCounter" value="169" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="689221000" />
+    <option name="totallyTimeSpent" value="692334000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -666,7 +668,7 @@
     <frame x="-8" y="-8" width="1634" height="1066" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23379923" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23379923" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -678,7 +680,7 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32848233" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="9" sideWeight="0.4965035" visible="true" weight="0.19420601" />
+      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.4965035" visible="true" weight="0.19420601" />
       <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49713558" weight="0.22639485" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5034965" side_tool="true" weight="0.19438446" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.32937366" />
@@ -738,7 +740,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="19.01.10&#10;       &#10;콘서트 정리" />
     <MESSAGE value="19.01.11&#10;       &#10;top으로 가는 버튼 완성" />
     <MESSAGE value="19.01.11&#10;       &#10;결제 버튼 오나성" />
     <MESSAGE value="19.01.11&#10;       &#10;결제 창 만든느중" />
@@ -763,7 +764,8 @@
     <MESSAGE value="19.01.22&#10;        &#10;발표날" />
     <MESSAGE value="19.01.23&#10;&#10;검색 &amp; 페이징 완료&#10;&#10;스트리밍 영상 저장 하기" />
     <MESSAGE value="19.01.23&#10;&#10;스트리밍 영상 저장 하기" />
-    <option name="LAST_COMMIT_MESSAGE" value="19.01.23&#10;&#10;스트리밍 영상 저장 하기" />
+    <MESSAGE value="19.01.25&#10;&#10;스트리밍 영상 저장 로컬에 됨" />
+    <option name="LAST_COMMIT_MESSAGE" value="19.01.25&#10;&#10;스트리밍 영상 저장 로컬에 됨" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/streaming_re/dist/RTCMultiConnection.js" />
@@ -1012,46 +1014,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/streaming/public/chatting.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="99" column="107" selection-start-line="99" selection-start-column="107" selection-end-line="99" selection-end-column="107" />
-          <folding>
-            <element signature="n#style#0;n#a#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h1#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#form#0;n#div#2;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#form#0;n#div#2;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#form#0;n#div#2;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#a#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/streaming/public/manager.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="248" column="23" selection-start-line="248" selection-start-column="8" selection-end-line="248" selection-end-column="23" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#form#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#form#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/RecordRTC-master/RecordRTC-to-PHP/index.html" />
     <entry file="file://$PROJECT_DIR$/RecordRTC-master/index.html" />
     <entry file="file://$USER_HOME$/Downloads/RecordRTC-master/RecordRTC-over-Socketio/node_modules/recordrtc/RecordRTC.js">
@@ -1080,13 +1042,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/404.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-171">
@@ -1108,10 +1063,58 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/streaming/public/manager.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="137" selection-start-line="137" selection-end-line="137" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h1#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#form#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#form#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/streaming/public/chatting.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="241">
+          <caret line="138" lean-forward="true" selection-start-line="138" selection-end-line="138" />
+          <folding>
+            <element signature="n#style#0;n#a#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h1#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#form#0;n#div#2;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#form#0;n#div#2;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#form#0;n#div#2;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#a#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="199" column="87" selection-start-line="199" selection-start-column="87" selection-end-line="199" selection-end-column="87" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/streaming/public/emitir.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="172" column="10" lean-forward="true" selection-start-line="172" selection-start-column="10" selection-end-line="172" selection-end-column="10" />
+        <state relative-caret-position="644">
+          <caret line="660" column="9" lean-forward="true" selection-start-line="660" selection-start-column="9" selection-end-line="660" selection-end-column="9" />
           <folding>
             <element signature="n#style#0;n#a#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
