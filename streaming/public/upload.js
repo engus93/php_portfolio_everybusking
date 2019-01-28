@@ -613,10 +613,10 @@ window.onbeforeunload = function() {
     recordingMedia.disabled = false;
     mediaContainerFormat.disabled = false;
 
-    if(!listOfFilesUploaded.length) return;
+    // if(!listOfFilesUploaded.length) return;
 
-    var delete_url = 'https://webrtcweb.com/f/delete.php';
-    // var delete_url = 'RecordRTC-to-PHP/delete.php';
+    // var delete_url = 'https://webrtcweb.com/f/delete.php';
+    var delete_url = 'http://192.168.253.138/streaming/public//delete.php';
 
     listOfFilesUploaded.forEach(function(fileURL) {
         var request = new XMLHttpRequest();
