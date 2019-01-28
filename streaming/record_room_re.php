@@ -118,11 +118,11 @@ if ($_SESSION == null) {
     <ol class="breadcrumb my_font_main" style="background-color: transparent">
 
         <li class="breadcrumb-item">
-            <a href="waiting_room.php" style="color: #fc3c3c">진행 중 방송</a>
+            <a href="waiting_room.php" style="color: black">진행 중 방송</a>
         </li>
 
         <li class="breadcrumb-item">
-            <a href="record_room_re.php" style="color: black">녹화 영상 다시보기</a>
+            <a href="" style="color: #fc3c3c">녹화 영상 다시보기</a>
         </li>
 
     </ol>
@@ -138,9 +138,9 @@ if ($_SESSION == null) {
         } else {
             $page = 1;
         }
-        $sql = mq("select * from streaming_tb where ing = 'true'");
+        $sql = mq("select * from record_streaming_tb");
         $row_num = mysqli_num_rows($sql); //게시판 총 레코드 수
-        if($row_num == 0){
+        if ($row_num == 0) {
             $row_num += 1;
         }
         $list = 4; //한 페이지에 보여줄 개수
@@ -157,77 +157,38 @@ if ($_SESSION == null) {
 
         //페이징 끝
 
-        $sql_re = mq("select * from streaming_tb where ing = 'true' order by idx desc limit $start_num, $list");
-//        $sql = mq("select * from streaming_tb order by idx desc limit $start_num, $list");
+        $sql_re = mq("select * from record_streaming_tb order by idx desc limit $start_num, $list");
+        //        $sql = mq("select * from streaming_tb order by idx desc limit $start_num, $list");
 
         if ($sql_re->fetch_row() == null) {
             ?>
 
             <div class="row my_font_main center" style="min-height: 500px; width: 100%">
-                <p class="text-center" style="width: 100%">현재 방송 중인 영상이 없습니다.</p>
+                <p class="text-center" style="width: 100%">현재 녹화 된 영상이 없습니다.</p>
             </div>
 
             <?php
         }
 
-        $sql_re_re = mq("select * from streaming_tb where ing = 'true'  order by idx desc limit $start_num, $list");
+        $sql_re_re = mq("select * from record_streaming_tb order by idx desc limit $start_num, $list");
         //        $sql = mq("select * from streaming_tb order by idx desc limit $start_num, $list");
 
         while ($board = $sql_re_re->fetch_array()) {
 
             ?>
 
-            <article class="white-panel col-sm-6" onclick="connection(<?= $board['idx'] ?>)">
+            <article class="white-panel_re col-sm-6">
 
-                <?php
-                if ($board['streamer_id'] === $_SESSION['user_id']) {
-                ?>
+                <video src="<?= $board['video_path'] ?>" controls style="width: 100%; height: 300px"></video>
+                <h4 class="my_font_start text-center" style="margin-top: 10px"><?= $board['title'] ?></h4>
 
-                <form id="node_js<?= $board['idx'] ?>" name="node_js" action="http://192.168.253.138:3000/streamer"
-                      method="post">
+                <p class="my_font_main"
+                   style=" color: black; font-size: 12px; margin-bottom: 10px; position: absolute; display: inline">
+                    스트리머 : <?= $board['streamer'] ?></p>
 
-                    <?php
-                    } else if ($_SESSION['user_id'] == "rhksflwk") {
-                    ?>
-                    <!--매니저방-->
-                    <form id="node_js<?= $board['idx'] ?>" name="node_js" action="http://192.168.253.138:3000/manager"
-                          method="post">
-
-                        <?php
-                        } else {
-                    ?>
-
-                    <form id="node_js<?= $board['idx'] ?>" name="node_js" action="http://192.168.253.138:3000/stream"
-                          method="post">
-
-                        <?php
-                        }
-                        ?>
-
-                        <a style="text-decoration: none">
-                            <img src="<?= $board['picture'] ?>" style="width: 100%; height: 300px"/>
-                            <h4 class="my_font_start text-center" style="margin-top: 10px"><?= $board['streamer'] ?></h4>
-
-                            <p class="my_font_main right"
-                               style="font-size: 12px; color: black; margin-bottom: 10px; display: none">
-                                시청자 : <?= $board['watch_people'] ?></p>
-                            <p class="my_font_main"
-                               style=" color: black; font-size: 12px; margin-bottom: 10px; position: absolute; display: inline">
-                                스트리머
-                                : <?= $board['streamer_id'] ?></p>
-                            <p class="my_font_main"
-                               style="color: black; font-size: 12px; margin-bottom: 10px; position: absolute; right: 15px; display: inline">
-                                방송
-                                시작
-                                : <?= $board['date'] ?></p>
-                        </a>
-
-                        <input type="hidden" id="streamer_id<?= $board['idx'] ?>" value="<?= $board['streamer_id'] ?>">
-                        <input type="hidden" id="user_id<?= $board['idx'] ?>" name="user_id" value="<?= $_SESSION['user_id'] ?>">
-                        <input type="hidden" name="user_name" value="<?= $_SESSION['name'] ?>">
-                        <input type="hidden" name="room_idx" value="<?= $board['idx'] ?>">
-
-                    </form>
+                <p class="my_font_main"
+                   style="color: black; font-size: 12px; margin-bottom: 10px; position: absolute; right: 15px; display: inline">
+                    녹화 시간 : <?= $board['date'] ?></p>
 
             </article>
 
@@ -238,14 +199,6 @@ if ($_SESSION == null) {
 
     </div>
 
-</div>
-
-<div class="col-sm-10 right" style="margin-top: 100px; margin-bottom:50px">
-    <div id="write_btn">
-        <a href="waiting_room_write.php">
-            <button class="btn my_font_main hover_class" id="support_hover" style="width: 150px">방송하기</button>
-        </a>
-    </div>
 </div>
 
 <div id="page_num" style="padding-bottom: 10px;">

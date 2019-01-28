@@ -25,6 +25,17 @@ img {
 
 }
 
+.white-panel_re {
+    width: 100%;
+    background: white;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3);
+    padding: 10px;
+    height: 410px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+
+}
+
 .white-panel h1 {
     font-size: 1em;
 }

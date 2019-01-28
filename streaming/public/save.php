@@ -60,7 +60,13 @@ function selfInvoker(){
         return;
     }
 
-    $filePath = 'uploads/' . $fileName;
+    session_start();
+
+    $filePath = '/streaming/public/uploads/' . $fileName;
+
+    $user_id = $_POST['user_id'];
+
+    $sql = mq("insert into record_streaming_tb(title,streamer,video_path) values('" . $user_id . "의 방송','" . $user_id . "','" . $filePath . "')");
 
     // make sure that one can uploads only allowed audio/video files
     $allowed = array(
@@ -109,7 +115,5 @@ function selfInvoker(){
 }
 
 selfInvoker();
-
-//$sql = mq("insert into streaming_tb(streamer,streamer_id,date,picture) values('" . $title . "','" . $user_id . "','" . $date . "','" . $path . "')");
 
 ?>

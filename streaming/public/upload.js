@@ -546,6 +546,7 @@ function uploadToServer(recordRTC, callback) {
     var formData = new FormData();
     formData.append(fileType + '-filename', fileName);
     formData.append(fileType + '-blob', blob);
+    formData.append("user_id", user_name);
 
     callback('Uploading ' + fileType + ' recording to server.');
 
