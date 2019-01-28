@@ -1,7 +1,5 @@
 <?php
-// Muaz Khan     - www.MuazKhan.com
-// MIT License   - https://www.webrtc-experiment.com/licence/
-// Documentation - https://github.com/muaz-khan/RecordRTC
+include "../../db.php";
 
 header("Access-Control-Allow-Origin: *");
 error_reporting(E_ALL);
@@ -14,8 +12,7 @@ function someFunction($errno, $errstr) {
     echo '<p>'.$errstr.'</p>';
 }
 
-function selfInvoker()
-{
+function selfInvoker(){
     if (!isset($_POST['audio-filename']) && !isset($_POST['video-filename'])) {
         echo 'Empty file name.';
         return;
@@ -63,22 +60,6 @@ function selfInvoker()
         return;
     }
 
-    /*
-    $upload_max_filesize = return_bytes(ini_get('upload_max_filesize'));
-
-    if ($_FILES[$file_idx]['size'] > $upload_max_filesize)
-       echo 'upload_max_filesize exceeded.';
-       return;
-    }
-
-    $post_max_size = return_bytes(ini_get('post_max_size'));
-
-    if ($_FILES[$file_idx]['size'] > $post_max_size)
-       echo 'post_max_size exceeded.';
-       return;
-    }
-    */
-
     $filePath = 'uploads/' . $fileName;
 
     // make sure that one can uploads only allowed audio/video files
@@ -90,7 +71,9 @@ function selfInvoker()
         'mp3',
         'ogg'
     );
+
     $extension = pathinfo($filePath, PATHINFO_EXTENSION);
+
     if (!$extension || empty($extension) || !in_array($extension, $allowed)) {
         echo 'Invalid file extension: '.$extension;
         return;
@@ -125,7 +108,8 @@ function selfInvoker()
     echo 'success';
 }
 
-
-
 selfInvoker();
+
+//$sql = mq("insert into streaming_tb(streamer,streamer_id,date,picture) values('" . $title . "','" . $user_id . "','" . $date . "','" . $path . "')");
+
 ?>

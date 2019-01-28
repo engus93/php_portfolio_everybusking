@@ -5,11 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="315b7d6c-43dd-4b04-a2b3-17ad3cc59c77" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/streaming/public/uploads/15593576229241336.webm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/streaming/public/uploads/9131354838203325.webm" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/public.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/public.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/streaming/public/emitir.html" beforeDir="false" afterPath="$PROJECT_DIR$/streaming/public/emitir.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/streaming/public/upload.js" beforeDir="false" afterPath="$PROJECT_DIR$/streaming/public/upload.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/streaming/public/uploads/7845816601013825.webm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/streaming/public/save.php" beforeDir="false" afterPath="$PROJECT_DIR$/streaming/public/save.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/streaming/public/uploads/30972758746988416.webm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/streaming/public/uploads/5465757595518227.webm" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -36,8 +37,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/streaming/public/emitir.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="190" column="17" selection-start-line="190" selection-start-column="17" selection-end-line="190" selection-end-column="17" />
+            <state>
+              <caret line="170" lean-forward="true" selection-start-line="170" selection-end-line="170" />
               <folding>
                 <element signature="n#style#0;n#a#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -68,10 +69,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/streaming/public/upload.js">
+        <entry file="file://$PROJECT_DIR$/streaming/public/save.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="421">
-              <caret line="625" column="79" lean-forward="true" selection-start-line="625" selection-start-column="79" selection-end-line="625" selection-end-column="79" />
+            <state relative-caret-position="335">
+              <caret line="95" column="43" lean-forward="true" selection-start-line="95" selection-start-column="43" selection-end-line="95" selection-end-column="43" />
             </state>
           </provider>
         </entry>
@@ -91,9 +92,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>stop</find>
-      <find>click</find>
-      <find>mp4</find>
       <find>Mp4</find>
       <find>upload-to-server</find>
       <find>Click to download from server</find>
@@ -121,6 +119,9 @@
       <find>if(!</find>
       <find>php</find>
       <find>delet</find>
+      <find>d</find>
+      <find>if(!listOfFilesUploaded.length) return;</find>
+      <find>upload.js</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -175,11 +176,11 @@
         <option value="$PROJECT_DIR$/recorded_rtc/index.html" />
         <option value="$PROJECT_DIR$/streaming/index.html" />
         <option value="$PROJECT_DIR$/streaming/upload.js" />
-        <option value="$PROJECT_DIR$/streaming/public/save.php" />
         <option value="$PROJECT_DIR$/streaming/public/index.html" />
         <option value="$PROJECT_DIR$/streaming/public/upload.css" />
         <option value="$PROJECT_DIR$/css/public.css" />
         <option value="$PROJECT_DIR$/streaming/public/emitir.html" />
+        <option value="$PROJECT_DIR$/streaming/public/save.php" />
         <option value="$PROJECT_DIR$/streaming/public/upload.js" />
       </list>
     </option>
@@ -214,13 +215,6 @@
               <item name="everybusking" type="462c0819:PsiDirectoryNode" />
               <item name="streaming" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="everybusking" type="b2602c69:ProjectViewProjectNode" />
-              <item name="everybusking" type="462c0819:PsiDirectoryNode" />
-              <item name="streaming" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="uploads" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -332,14 +326,7 @@
       <workItem from="1548412239389" duration="460000" />
       <workItem from="1548415054144" duration="6048000" />
       <workItem from="1548578835648" duration="1090000" />
-      <workItem from="1548656701151" duration="1426000" />
-    </task>
-    <task id="LOCAL-00126" summary="19.01.16&#10; &#10;스트리밍 시작">
-      <created>1547620115268</created>
-      <option name="number" value="00126" />
-      <option name="presentableId" value="LOCAL-00126" />
-      <option name="project" value="LOCAL" />
-      <updated>1547620115269</updated>
+      <workItem from="1548656701151" duration="2599000" />
     </task>
     <task id="LOCAL-00127" summary="19.01.16&#10; &#10;스트리밍 시작">
       <created>1547628699144</created>
@@ -677,11 +664,18 @@
       <option name="project" value="LOCAL" />
       <updated>1548421097951</updated>
     </task>
-    <option name="localTasksCounter" value="175" />
+    <task id="LOCAL-00175" summary="19.01.25&#10;&#10;스트리밍 영상 서버 저장 가능 커스텀중">
+      <created>1548658142253</created>
+      <option name="number" value="00175" />
+      <option name="presentableId" value="LOCAL-00175" />
+      <option name="project" value="LOCAL" />
+      <updated>1548658142254</updated>
+    </task>
+    <option name="localTasksCounter" value="176" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="701396000" />
+    <option name="totallyTimeSpent" value="702569000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -694,13 +688,12 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1636" height="1068" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1956798" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1956798" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32403433" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32397407" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -708,8 +701,8 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32832617" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.4965035" visible="true" weight="0.14578834" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49713558" weight="0.22639485" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="9" sideWeight="0.4965035" visible="true" weight="0.14578834" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49713558" weight="0.22570194" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5034965" side_tool="true" weight="0.19438446" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.32937366" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -797,18 +790,8 @@
     <option name="LAST_COMMIT_MESSAGE" value="19.01.25&#10;&#10;스트리밍 영상 서버 저장 가능 커스텀중" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/buskingteam/buskingteam_write_p.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/streaming/breaktime.jpg">
       <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/streaming/waiting_room_write_p.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="421">
-          <caret line="35" column="149" lean-forward="true" selection-start-line="35" selection-start-column="149" selection-end-line="35" selection-end-column="149" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/my_page/manager_application_p.php">
       <provider selected="true" editor-type-id="text-editor" />
@@ -1065,27 +1048,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/streaming/public/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="50" selection-start-line="50" selection-end-line="53" />
-          <folding>
-            <element signature="n#style#0;n#select#0;n#h2#0;n#section#0;n#article#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#select#1;n#h2#0;n#section#0;n#article#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#section#0;n#article#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#1;n#div#0;n#section#0;n#article#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#video#0;n#section#0;n#article#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/streaming/public/save.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="101" column="90" selection-start-line="101" selection-start-column="87" selection-end-line="101" selection-end-column="90" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/streaming/123.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1106,10 +1068,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/db.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/streaming/public/emitir.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="190" column="17" selection-start-line="190" selection-start-column="17" selection-end-line="190" selection-end-column="17" />
+        <state>
+          <caret line="170" lean-forward="true" selection-start-line="170" selection-end-line="170" />
           <folding>
             <element signature="n#style#0;n#a#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -1138,10 +1103,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/streaming/waiting_room_write_p.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/streaming/public/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="722">
+          <caret line="50" column="35" selection-start-line="50" selection-start-column="35" selection-end-line="50" selection-end-column="35" />
+          <folding>
+            <element signature="n#style#0;n#select#0;n#h2#0;n#section#0;n#article#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#select#1;n#h2#0;n#section#0;n#article#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#section#0;n#article#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#1;n#div#0;n#section#0;n#article#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#video#0;n#section#0;n#article#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/streaming/public/upload.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="421">
-          <caret line="625" column="79" lean-forward="true" selection-start-line="625" selection-start-column="79" selection-end-line="625" selection-end-column="79" />
+        <state relative-caret-position="259">
+          <caret line="615" column="46" lean-forward="true" selection-start-line="615" selection-start-column="46" selection-end-line="615" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/streaming/public/save.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="335">
+          <caret line="95" column="43" lean-forward="true" selection-start-line="95" selection-start-column="43" selection-end-line="95" selection-end-column="43" />
         </state>
       </provider>
     </entry>
