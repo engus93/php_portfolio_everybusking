@@ -225,7 +225,7 @@ if ($_SESSION != null) {
                                data-image=<?php echo $board['picture']; ?>
                                data-target="#image-gallery">
                                 <img class="img-thumbnail" style="width: 100%; height: 100%;"
-                                     src=<?php echo $board['picture']; ?> alt="Another alt text">
+                                     src=<?php echo $board['picture']; ?>>
                             </a>
                         </div><!--/ cardbox-item -->
                         <div class="cardbox-item" style="padding-bottom: 20px">
