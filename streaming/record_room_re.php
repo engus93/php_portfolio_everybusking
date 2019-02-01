@@ -63,29 +63,15 @@ if ($_SESSION == null) {
 
         }
 
-        function connection(idx) {
+        function room_name_modify(idx) {
 
-            var id_value = $("#node_js" + idx);
+            var room_name = document.getElementById("room" + idx).value;
 
-            var params = id_value.serialize();
-            $.ajax({
-                type: 'post',
-                url: 'waiting_room_join_p.php',
-                data: params,
-                dataType: 'html',
-                async: false,
-                success: function (data) {
-                    var user_id = $("#user_id" + idx).val();
-                    var streamer_id = $("#streamer_id" + idx).val();
+            console.log(room_name);
 
-                    if (data > 0 || user_id == streamer_id) {
-                        var form = $("#node_js" + idx);
-                        form.submit();
-                    } else {
-                        alert("잠시 방송 대기 중 입니다.");
-                    }
-                }
-            });
+            var replay_name = prompt( '영상 제목을 수정해주세요', room_name);
+
+            //document.location.href ='?idx=<?//= $board["idx"] ?>//&page=<?//= $page ?>//';
         }
 
     </script>
@@ -182,7 +168,7 @@ if ($_SESSION == null) {
             <article class="white-panel_re col-sm-6">
 
                 <video src="<?= $board['video_path'] ?>" controls style="width: 100%; height: 300px"></video>
-                <h4 class="my_font_start text-center" style="margin-top: 10px"><?= $board['title'] ?></h4>
+                <h4 class="my_font_start text-center" id="room<?= $board['idx'] ?>" style="margin-top: 10px"><?= $board['title'] ?></h4>
 
                 <p class="my_font_main"
                    style=" color: black; font-size: 12px; margin-bottom: 10px; position: absolute; display: inline">
@@ -191,7 +177,25 @@ if ($_SESSION == null) {
                 <p class="my_font_main"
                    style="color: black; font-size: 12px; margin-bottom: 10px; position: absolute; right: 15px; display: inline">
                     녹화 시간 : <?= $board['date'] ?></p>
-
+                <?php
+                if ($_SESSION != null) {
+                    if ($_SESSION['user_id'] == "rhksflwk" || $board['user_id'] == $_SESSION['user_id']) {
+                        ?>
+                        <div style="position: absolute; top: 0px; right: 0px;">
+                            <button class="btn btn-flat btn-flat-icon" type="button" data-toggle="dropdown"
+                                    aria-expanded="false" style="background-color: transparent;">
+                                <em class="fa fa-plus color_point"></em>
+                            </button>
+                            <div class="dropdown-menu dropdown-scale dropdown-menu-right" role="menu"
+                                 style="position: absolute; transform: translate3d(-136px, 28px, 0px); top: 0px; left: 0px; will-change: transform;">
+                                <div class="dropdown-item" id="<?= $board['idx'] ?>" onclick="room_name_modify(<?= $board['idx'] ?>)">수정</div>
+                                <a class="dropdown-item" href="waiting_room_delete_p.php?idx=<?= $board["idx"] ?>&page=<?= $page ?>">삭제</a>
+                            </div>
+                        </div>
+                        <?php
+                    }
+                }
+                ?>
             </article>
 
             <?php

@@ -60,13 +60,15 @@ function selfInvoker(){
         return;
     }
 
-    $filePath = '/streaming/public/uploads/' . $fileName;
+    $filePath = 'uploads/' . $fileName;
+    $filePath_re = '/streaming/public/uploads/' . $fileName;
 
     $user_id = $_POST['user_id'];
-//    $replay_name = $_POST['replay_name'];
+    $replay_name = $_POST['replay_name'];
+    $user_id_id = $_POST['user_id_id'];
 
-//    $sql = mq("insert into record_streaming_tb(title,streamer,video_path) values('" . $replay_name . "','" . $user_id . "','" . $filePath . "')");
-    $sql = mq("insert into record_streaming_tb(title,streamer,video_path) values('" . $user_id . "','" . $user_id . "','" . $filePath . "')");
+    $sql = mq("insert into record_streaming_tb(title,streamer,video_path) values('" . $replay_name . "','" . $user_id . "','" . $filePath_re . "')");
+//    $sql = mq("insert into record_streaming_tb(title,streamer,video_path) values('" . $user_id . "','" . $user_id . "','" . $filePath_re . "')");
 
     // make sure that one can uploads only allowed audio/video files
     $allowed = array(

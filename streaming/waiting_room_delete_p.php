@@ -1,16 +1,16 @@
 <?php
-
 include "../db.php";
 
 session_start();
 
-$room = $_POST['now_room_idx'];
+$bno = $_GET['idx'];
+$page = $_GET['page'];
 
-$sql = mq("update streaming_tb set ing ='false' where idx='$room';");
+$sql = mq("delete from record_streaming_tb where idx='$bno';");
+
+echo '<script type="text/javascript">alert("삭제 되었습니다.");
+           location.href = "/streaming/record_room_re.php?page=' . $page . '";
+           </script>';
 
 ?>
 
-<script>
-    alert("방송이 종료되었습니다.");
-    document.location.href="http://192.168.253.138/streaming/waiting_room.php"
-</script>

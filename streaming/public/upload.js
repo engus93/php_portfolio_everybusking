@@ -542,14 +542,15 @@ function uploadToServer(recordRTC, callback) {
         fileName += '.webm';
     }
 
-    // var replay_name = prompt( '다시 보기 제목을 적어주세요.', '' );
+    var replay_name = prompt( '다시 보기 제목을 적어주세요.', '' );
 
     // create FormData
     var formData = new FormData();
     formData.append(fileType + '-filename', fileName);
     formData.append(fileType + '-blob', blob);
     formData.append("user_id", user_name);
-    // formData.append("replay_name", replay_name);
+    formData.append("replay_name", replay_name);
+    formData.append("user_id_id", nickName);
 
     callback('Uploading ' + fileType + ' recording to server.');
 
@@ -617,7 +618,7 @@ window.onbeforeunload = function() {
     recordingMedia.disabled = false;
     mediaContainerFormat.disabled = false;
 
-    // if(!listOfFilesUploaded.length) return;
+    if(!listOfFilesUploaded.length) return;
 
     // var delete_url = 'https://webrtcweb.com/f/delete.php';
     var delete_url = 'http://192.168.253.138/streaming/public//delete.php';
