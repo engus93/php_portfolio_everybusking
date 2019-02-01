@@ -63,6 +63,7 @@ if ($_SESSION != null) {
     </style>
 
     <script>
+        var closedialog;
 
         function re_reply(idx) {
             $(".dat_reply").dialog({
@@ -71,7 +72,7 @@ if ($_SESSION != null) {
             // $("#dat_reply_bt" + idx).on("click", function () {
             $("#dat_reply" + idx).dialog("open");
             // });
-        };
+        }
 
         function re_modify_reply(idx) {
             $(".dat_reply_edit").dialog({
@@ -80,16 +81,34 @@ if ($_SESSION != null) {
             // $("#reply_dat_edit_bt" + idx).on("click", function () {
             $("#dat_reply_edit" + idx).dialog("open");
             // });
-        };
+        }
 
         function re_delete_reply(idx) {
             $(".dat_reply_delete").dialog({
                 autoOpen: false,
             });
-            // $("#reply_dat_delete_bt" + idx).on("click", function () {
             $("#dat_reply_delete" + idx).dialog("open");
-            // });
-        };
+        }
+
+        function re_delete_reply_click(idx) {
+
+            $("#dat_reply_delete" + idx).dialog("close");
+
+            var re_delete_reply_click = $("#dat_reply_delete" + idx + "_form");
+            var params = re_delete_reply_click.serialize();
+
+            $.ajax({
+                type: 'post',
+                url: 'commu_re_reply_delete_p.php',
+                data: params,
+                dataType: 'html',
+                success: function () {
+                    alert("삭제되었습니다.");
+                    $("#re_div" + idx).remove();
+                }
+            });
+
+        }
 
         function modify_reply(idx) {
             $(".dat_edit").dialog({
@@ -98,49 +117,47 @@ if ($_SESSION != null) {
             // $("#dat_edit_bt" + idx).on("click", function () {
             $("#dat_edit" + idx).dialog("open");
             // });
-        };
+        }
 
         function delete_reply(idx) {
             $(".dat_delete").dialog({
                 autoOpen: false,
             });
-            // $("#dat_delete_bt" + idx).on("click", function () {
+
             $("#dat_delete" + idx).dialog("open");
-            // });
-        };
+        }
 
-        // $(document).ready(function () {
-        //
-        //     $(".re_bt").click(function () {
-        //         var index = document.getElementById("reply_bno").value;
-        //         var params = $("form").serialize() + "&idx=" + index;
-        //         $.ajax({
-        //             type: 'post',
-        //             url: 'commu_reply_p.php',
-        //             data: params,
-        //             dataType: 'html',
-        //             async: false,
-        //             success: function () {
-        //                 // $(".reply_view").html(data);
-        //                 // $(".reply_content").val('');
-        //             }
-        //         });
-        //
-        //     });
-        //
-        // });
+        function dat_delete_click(idx) {
 
+            $("#dat_delete" + idx).dialog("close");
+
+            var dat_delete_click = $("#dat_delete" + idx + "_form");
+            var params = dat_delete_click.serialize();
+
+            $.ajax({
+                type: 'post',
+                url: 'commu_reply_delete_p.php',
+                data: params,
+                dataType: 'html',
+                success: function () {
+                    alert("삭제되었습니다.");
+                    $("#div" + idx).remove();
+                }
+            });
+
+        }
 
         function not_reload_reply(idx) {
-            var params = $("#not_reload_reply" + idx);
+            var not_reload_reply = $("#not_reload_reply" + idx);
+            var params = not_reload_reply.serialize();
+
             $.ajax({
                 type: 'post',
                 url: 'commu_reply_p.php',
                 data: params,
                 dataType: 'html',
-                async: false,
-                success: function () {
-                    alert("ㅋㅋ");
+                success: function (data) {
+                    alert(data);
                 }
             });
 
@@ -289,203 +306,220 @@ if ($_SESSION != null) {
 
                             ?>
 
-                            <!--답글달기-->
-                            <div class="dat_reply" id="dat_reply<?php echo $reply['idx']; ?>" title="댓글달기">
-                                <form method="post"
-                                      action="commu_re_reply_p.php?idx=<?= $reply['idx']; ?>&now_idx=<?= $bno ?>">
-                                    <input type="hidden" name="page" value="<?= $page ?>">
-                                    <textarea name="re_reply_content" class="dap_edit_t form-control"
-                                              style="width: 100%"></textarea>
-                                    <input type="submit" id="support_hover" value="댓글달기"
-                                           class="re_mo_bt btn float-right"
-                                           style="background-color: #FBAA48; color: white; margin-top: 10px">
-                                </form>
-                            </div>
+                            <div id="div<?= $reply['idx'] ?>">
+                                <!--답글달기-->
+                                <div class="dat_reply" id="dat_reply<?php echo $reply['idx']; ?>" title="댓글달기">
+                                    <form method="post"
+                                          action="commu_re_reply_p.php?idx=<?= $reply['idx']; ?>&now_idx=<?= $bno ?>">
+                                        <input type="hidden" name="page" value="<?= $page ?>">
+                                        <textarea name="re_reply_content" class="dap_edit_t form-control"
+                                                  style="width: 100%"></textarea>
+                                        <input type="submit" id="support_hover" value="댓글달기"
+                                               class="re_mo_bt btn float-right"
+                                               style="background-color: #FBAA48; color: white; margin-top: 10px">
+                                    </form>
+                                </div>
 
-                            <!-- 댓글 수정 폼 dialog -->
-                            <div class="dat_edit" id="dat_edit<?php echo $reply['idx']; ?>" title="댓글 수정하기">
-                                <form method="post"
-                                      action="commu_reply_update_p.php?idx=<?php echo $reply['idx']; ?>&now_idx=<?php echo $bno; ?>">
-                                    <input type="hidden" name="page" value="<?= $page ?>">
-                                    <textarea name="content" class="dap_edit_t form-control"
-                                              style="width: 100%"><?php echo $reply['content']; ?></textarea>
-                                    <input type="submit" id="support_hover" value="수정하기"
-                                           class="re_mo_bt btn float-right"
-                                           style="background-color: #FBAA48; color: white; margin-top: 10px">
-                                </form>
-                            </div>
+                                <!-- 댓글 수정 폼 dialog -->
+                                <div class="dat_edit" id="dat_edit<?php echo $reply['idx']; ?>" title="댓글 수정하기">
+                                    <form method="post"
+                                          action="commu_reply_update_p.php?idx=<?php echo $reply['idx']; ?>&now_idx=<?php echo $bno; ?>">
+                                        <input type="hidden" name="page" value="<?= $page ?>">
+                                        <textarea name="content" class="dap_edit_t form-control"
+                                                  style="width: 100%"><?php echo $reply['content']; ?></textarea>
+                                        <input type="submit" id="support_hover" value="수정하기"
+                                               class="re_mo_bt btn float-right"
+                                               style="background-color: #FBAA48; color: white; margin-top: 10px">
+                                    </form>
+                                </div>
 
-                            <!-- 댓글 삭제 폼 dialog -->
-                            <div class="dat_delete" id="dat_delete<?php echo $reply['idx']; ?>" title="댓글 삭제하기">
-                                <form method="post" style="margin-top: 16px;"
-                                      action="commu_reply_delete_p.php?idx=<?php echo $reply['idx']; ?>&now_idx=<?php echo $bno; ?>">
-                                    <input type="hidden" name="page" value="<?= $page ?>">
-                                    <input type="submit" id="support_hover" value="삭제하기" class="re_mo_bt btn float-left"
-                                           style="background-color: #FBAA48; color: white; width: 100%">
-                                </form>
-                            </div>
+                                <!-- 댓글 삭제 폼 dialog -->
+                                <div class="dat_delete" id="dat_delete<?php echo $reply['idx']; ?>" title="댓글 삭제하기">
+                                    <form method="post" style="margin-top: 16px;"
+                                          id="dat_delete<?php echo $reply['idx']; ?>_form"
+                                          action="commu_reply_delete_p.php?idx=<?php echo $reply['idx']; ?>&now_idx=<?php echo $bno; ?>">
+                                        <input type="hidden" name="idx" value="<?= $reply['idx'] ?>">
+                                        <input type="hidden" name="now_idx" value="<?= $bno ?>">
+                                        <input type="hidden" name="page" value="<?= $page ?>">
+                                        <input type="button" id="support_hover" value="삭제하기"
+                                               class="re_mo_bt btn float-left"
+                                               style="background-color: #FBAA48; color: white; width: 100%"
+                                               onclick="dat_delete_click(<?= $reply['idx']; ?>)">
+                                    </form>
+                                </div>
 
-                            <!--댓글-->
-                            <div class="cardbox-comments_re reply_view"><span class="comment-avatar float-left">
+                                <!--댓글-->
+                                <div class="cardbox-comments_re reply_view"><span
+                                            class="comment-avatar float-left">
                                 <a href=""><img class="circle_image"
                                                 src=<?php echo $write_user['profile']; ?> alt="..."
                                                 style="margin-top: 5px; width: 30px; height: 30px"></a></span>
-                                <div class="input-group  my_font_main"
-                                     style="width: 90%; margin-top: 10px; left: 15px">
-                                    <span><?php echo $reply['name']; ?>　</span>
-                                    <span><?php echo nl2br("$reply[content]"); ?></span>
-                                    <span style="font-size: 10px; color: #4e555b; position: absolute; right: 0px; margin-top: 5px;">
+                                    <div class="input-group  my_font_main"
+                                         style="width: 90%; margin-top: 10px; left: 15px">
+                                        <span><?php echo $reply['name']; ?>　</span>
+                                        <span><?php echo nl2br("$reply[content]"); ?></span>
+                                        <span style="font-size: 10px; color: #4e555b; position: absolute; right: 0px; margin-top: 5px;">
                                     <?php echo $reply['date']; ?></span>
-                                </div>
-                                <?php
-                                if ($_SESSION != null) {
-                                    if ($_SESSION['user_id'] == $reply['pw'] || $_SESSION['user_id'] == "rhksflwk") {
+                                    </div>
+                                    <?php
+                                    if ($_SESSION != null) {
+                                        if ($_SESSION['user_id'] == $reply['pw'] || $_SESSION['user_id'] == "rhksflwk") {
 
-                                        ?>
-                                        <div class="rep_me rep_menu my_font_main" style="height: 15px">
-                                            <a class="dat_reply_bt color_main btn dat_reply_bt"
-                                               id="sc1<?php echo $reply['idx']; ?>"
-                                               style="font-size: 10px; margin-left: 10px; background-color: transparent"
-                                               onclick="st1(<?= $reply['idx']; ?>)">댓글달기</a>
+                                            ?>
+                                            <div class="rep_me rep_menu my_font_main" style="height: 15px">
+                                                <a class="dat_reply_bt color_main btn dat_reply_bt"
+                                                   id="sc1<?php echo $reply['idx']; ?>"
+                                                   style="font-size: 10px; margin-left: 10px; background-color: transparent"
+                                                   onclick="st1(<?= $reply['idx']; ?>)">댓글달기</a>
 
-                                            <a class="dat_edit_bt color_main btn dat_edit_bt"
-                                               id="dat_edit_bt<?php echo $reply['idx']; ?>"
-                                               style="font-size: 10px; background-color: transparent"
-                                               onclick="modify_reply(<?php echo $reply['idx']; ?>)">수정</a>
-                                            <a class="dat_delete_bt color_main btn dat_delete_bt"
-                                               id="dat_delete_bt<?php echo $reply['idx']; ?>"
-                                               style="font-size: 10px; background-color: transparent;"
-                                               onclick="delete_reply(<?= $reply['idx']; ?>)">삭제</a>
-                                        </div>
-                                        <?php
-                                    } else {
+                                                <a class="dat_edit_bt color_main btn dat_edit_bt"
+                                                   id="dat_edit_bt<?php echo $reply['idx']; ?>"
+                                                   style="font-size: 10px; background-color: transparent"
+                                                   onclick="modify_reply(<?php echo $reply['idx']; ?>)">수정</a>
+                                                <a class="dat_delete_bt color_main btn dat_delete_bt"
+                                                   id="dat_delete_bt<?php echo $reply['idx']; ?>"
+                                                   style="font-size: 10px; background-color: transparent;"
+                                                   onclick="delete_reply(<?= $reply['idx']; ?>)">삭제</a>
+                                            </div>
+                                            <?php
+                                        } else {
 
-                                        ?>
+                                            ?>
 
-                                        <div class="rep_me rep_menu my_font_main" style="height: 15px">
-                                            <a class="dat_reply_bt color_main btn dat_reply_bt"
-                                               id="dat_reply_bt<?php echo $reply['idx']; ?>"
-                                               style="font-size: 10px; margin-left: 10px; background-color: transparent"
-                                               onclick="re_reply(<?php echo $reply['idx']; ?>)">답글</a>
-                                        </div>
+                                            <div class="rep_me rep_menu my_font_main" style="height: 15px">
+                                                <a class="dat_reply_bt color_main btn dat_reply_bt"
+                                                   id="dat_reply_bt<?php echo $reply['idx']; ?>"
+                                                   style="font-size: 10px; margin-left: 10px; background-color: transparent"
+                                                   onclick="re_reply(<?php echo $reply['idx']; ?>)">답글</a>
+                                            </div>
 
-                                        <?php
+                                            <?php
 
+                                        }
                                     }
-                                }
-                                ?>
-                            </div>
+                                    ?>
+                                </div>
 
-                            <!--- 댓글 불러오기 -->
-                            <?php
-                            $sql4 = mq("select * from commu_re_reply_tb where con_num='" . $reply['idx'] . "' order by idx ASC");
+                                <!--- 댓글 불러오기 -->
+                                <?php
+                                $sql4 = mq("select * from commu_re_reply_tb where con_num='" . $reply['idx'] . "' order by idx ASC");
 
-                            while ($re_reply = $sql4->fetch_array()) {
+                                while ($re_reply = $sql4->fetch_array()) {
 
-                                // 프사 넣는 쿼리
-                                $sql = 'SELECT * FROM user_info_tb WHERE user_id=\'' . $re_reply['pw'] . '\'';
+                                    // 프사 넣는 쿼리
+                                    $sql = 'SELECT * FROM user_info_tb WHERE user_id=\'' . $re_reply['pw'] . '\'';
 
-                                // DB 에 쿼리 날리기
-                                $result = mysqli_query($conn, $sql);
+                                    // DB 에 쿼리 날리기
+                                    $result = mysqli_query($conn, $sql);
 
-                                // 쿼리 결과를 PHP 에서 사용할 수 있도록 변경
-                                $write_user = mysqli_fetch_assoc($result);
+                                    // 쿼리 결과를 PHP 에서 사용할 수 있도록 변경
+                                    $write_user = mysqli_fetch_assoc($result);
 
-                                ?>
+                                    ?>
 
-                                <div style="width: 93%; margin-left:6%; margin-top: 10px;">
-                                    <!-- 댓글 수정 폼 dialog -->
-                                    <div class="dat_reply_edit" id="dat_reply_edit<?php echo $re_reply['idx']; ?>"
-                                         title="댓글 수정하기">
-                                        <form method="post"
-                                              action="commu_re_reply_update_p.php?idx=<?php echo $re_reply['idx']; ?>&now_idx=<?php echo $bno; ?>">
+                                    <div id="re_div<?= $re_reply['idx'] ?>">
+
+                                        <div style="width: 93%; margin-left:6%; margin-top: 10px;">
+                                            <!-- 댓글 수정 폼 dialog -->
+                                            <div class="dat_reply_edit"
+                                                 id="dat_reply_edit<?php echo $re_reply['idx']; ?>"
+                                                 title="댓글 수정하기">
+                                                <form method="post"
+                                                      action="commu_re_reply_update_p.php?idx=<?php echo $re_reply['idx']; ?>&now_idx=<?php echo $bno; ?>">
                                         <textarea name="content" class="dap_edit_t form-control"
                                                   style="width: 100%"><?php echo $re_reply['content']; ?></textarea>
-                                            <input type="hidden" name="page" value="<?= $page ?>">
-                                            <input type="submit" id="support_hover" value="수정하기"
-                                                   class="re_mo_bt btn float-right"
-                                                   style="background-color: #FBAA48; color: white; margin-top: 10px">
-                                        </form>
-                                    </div>
+                                                    <input type="hidden" name="page" value="<?= $page ?>">
+                                                    <input type="submit" id="support_hover" value="수정하기"
+                                                           class="re_mo_bt btn float-right"
+                                                           style="background-color: #FBAA48; color: white; margin-top: 10px">
+                                                </form>
+                                            </div>
 
-                                    <!-- 댓글 삭제 폼 dialog -->
-                                    <div class="dat_reply_delete" id="dat_reply_delete<?php echo $re_reply['idx']; ?>"
-                                         title="댓글 삭제하기">
-                                        <form method="post" style="margin-top: 16px;"
-                                              action="commu_re_reply_delete_p.php?idx=<?php echo $re_reply['idx']; ?>&now_idx=<?php echo $bno; ?>">
-                                            <input type="hidden" name="page" value="<?= $page ?>">
-                                            <input type="submit" id="support_hover" value="삭제하기"
-                                                   class="re_mo_bt btn float-left"
-                                                   style="background-color: #FBAA48; color: white; width: 100%">
-                                        </form>
-                                    </div>
+                                            <!-- 댓글 삭제 폼 dialog -->
+                                            <div class="dat_reply_delete"
+                                                 id="dat_reply_delete<?php echo $re_reply['idx']?>"
+                                                 title="댓글 삭제하기">
+                                                <form method="post" style="margin-top: 16px;" id="dat_reply_delete<?php echo $re_reply['idx']?>_form"
+                                                      action="commu_re_reply_delete_p.php">
+                                                    <input type="hidden" name="idx" value="<?= $re_reply['idx'] ?>">
+                                                    <input type="hidden" name="now_idx" value="<?= $bno ?>">
+                                                    <input type="hidden" name="page" value="<?= $page ?>">
+                                                    <input type="button" id="support_hover" value="삭제하기"
+                                                           class="re_mo_bt btn float-left"
+                                                           style="background-color: #FBAA48; color: white; width: 100%" onclick="re_delete_reply_click(<?= $re_reply['idx']?>)">
+                                                </form>
+                                            </div>
 
-                                    <!--댓글-->
-                                    <div class="cardbox-comments_re reply_view"><span class="comment-avatar float-left">
+                                            <!--댓글-->
+                                            <div class="cardbox-comments_re reply_view"><span
+                                                        class="comment-avatar float-left">
                                 <a href=""><img class="circle_image"
                                                 src=<?php echo $write_user['profile']; ?> alt="..."
                                                 style="margin-top: 5px; width: 30px; height: 30px"></a></span>
-                                        <div class="input-group  my_font_main"
-                                             style="width: 90%; margin-top: 10px; left: 15px">
+                                                <div class="input-group  my_font_main"
+                                                     style="width: 90%; margin-top: 10px; left: 15px">
                                                             <span>
                             <?php echo $re_reply['name']; ?>　</span>
-                                            <span>
+                                                    <span>
                             <?php echo nl2br("$re_reply[content]"); ?></span>
-                                            <span style="font-size: 10px; color: #4e555b; position: absolute; right: 0px; margin-top: 5px; margin-right: -5px">
+                                                    <span style="font-size: 10px; color: #4e555b; position: absolute; right: 0px; margin-top: 5px; margin-right: -5px">
                                      <?php echo $re_reply['date']; ?></span>
-                                        </div>
-
-                                        <?php
-                                        if ($_SESSION != null) {
-                                            if ($_SESSION['user_id'] == $re_reply['pw'] || $_SESSION['user_id'] == "rhksflwk") {
-
-                                                ?>
-                                                <div class="rep_me rep_menu my_font_main" style="height: 15px">
-                                                    <a class="reply_dat_edit_bt color_main btn"
-                                                       id="reply_dat_edit_bt<?php echo $re_reply['idx']; ?>"
-                                                       style="font-size: 10px; background-color: transparent"
-                                                       onclick="re_modify_reply(<?php echo $re_reply['idx']; ?>)">수정</a>
-                                                    <a class="reply_dat_delete_bt color_main btn"
-                                                       id="reply_dat_delete_bt<?php echo $re_reply['idx']; ?>"
-                                                       style="font-size: 10px; background-color: transparent;"
-                                                       onclick="re_delete_reply(<?php echo $re_reply['idx']; ?>)">삭제</a>
                                                 </div>
+
                                                 <?php
-                                            }
-                                        }
-                                        ?>
+                                                if ($_SESSION != null) {
+                                                    if ($_SESSION['user_id'] == $re_reply['pw'] || $_SESSION['user_id'] == "rhksflwk") {
+
+                                                        ?>
+                                                        <div class="rep_me rep_menu my_font_main" style="height: 15px">
+                                                            <a class="reply_dat_edit_bt color_main btn"
+                                                               id="reply_dat_edit_bt<?php echo $re_reply['idx']; ?>"
+                                                               style="font-size: 10px; background-color: transparent"
+                                                               onclick="re_modify_reply(<?php echo $re_reply['idx']; ?>)">수정</a>
+                                                            <a class="reply_dat_delete_bt color_main btn"
+                                                               id="reply_dat_delete_bt<?php echo $re_reply['idx']; ?>"
+                                                               style="font-size: 10px; background-color: transparent;"
+                                                               onclick="re_delete_reply(<?php echo $re_reply['idx']; ?>)">삭제</a>
+                                                        </div>
+                                                        <?php
+                                                    }
+                                                }
+                                                ?>
+
+                                            </div>
+
+                                        </div>
 
                                     </div>
 
+                                    <?php
+                                }
 
-                                </div>
-
-                                <?php
-                            }
-
-                            ?>
-                            <div id="sb1<?php echo $reply['idx']; ?>"
-                                 style="display:none; width: 90%; margin-left: 52px!important;">
+                                ?>
+                                <div id="sb1<?php echo $reply['idx']; ?>"
+                                     style="display:none; width: 90%; margin-left: 52px!important;">
                                     <span class="comment-avatar float-left"><a href="">
                                             <img class="rounded-circle"
                                                  src="<?= $_SESSION['profile'] ?>"
                                                  style="margin-top: 5px; width: 30px; height: 30px"></a></span>
-                                <form method="post" class="re_reply_form"
-                                      action="commu_re_reply_p.php?idx=<?php echo $reply['idx']; ?>&now_idx=<?php echo $bno; ?>">
-                                    <div class="input-group input-group-sm my_font_main"
-                                         style="width: 90%;height: 40px; margin-top: 5px; left: 15px">
-                                        <input type="hidden" id="re_reply_bno" name="bno" value="' . $bno . '">
-                                        <input type="hidden" name="re_page" value="<?= $page ?>">
-                                        <input type="text" name="re_reply_content"
-                                               class="form-control col-sm-10 reply_content"
-                                               aria-label="Sizing example input"
-                                               aria-describedby="inputGroup-sizing-sm" placeholder="댓글을 작성해주세요 :)">
-                                        <button type="suid=" rep_bt class="col-sm-2 btn"
-                                                style="left: 10px; background-color: #FBAA48; color: white"
-                                                id="support_1">댓글 달기
-                                        </button>
-                                    </div>
-                                </form>
+                                    <form method="post" class="re_reply_form"
+                                          action="commu_re_reply_p.php?idx=<?php echo $reply['idx']; ?>&now_idx=<?php echo $bno; ?>">
+                                        <div class="input-group input-group-sm my_font_main"
+                                             style="width: 90%;height: 40px; margin-top: 5px; left: 15px">
+                                            <input type="hidden" id="re_reply_bno" name="bno" value="<?= $bno ?>">
+                                            <input type="hidden" name="re_page" value="<?= $page ?>">
+                                            <input type="text" name="re_reply_content"
+                                                   class="form-control col-sm-10 reply_content"
+                                                   aria-label="Sizing example input"
+                                                   aria-describedby="inputGroup-sizing-sm" placeholder="댓글을 작성해주세요 :)">
+                                            <button type="suid=" rep_bt class="col-sm-2 btn"
+                                                    style="left: 10px; background-color: #FBAA48; color: white"
+                                                    id="support_1">댓글 달기
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+
                             </div>
                             <?php
 
@@ -494,7 +528,6 @@ if ($_SESSION != null) {
 
                     </div>
 
-
                     <?php
                     } ?>
 
@@ -502,19 +535,19 @@ if ($_SESSION != null) {
                         ?>
                         <div class="cardbox-comments"><span class="comment-avatar float-left"><a href=""><img
                                             class="rounded-circle"
-                                            src='<?=$_SESSION['profile']?>'
-                               alt="..." style="margin-top: 5px"></a></span>
+                                            src='<?= $_SESSION['profile'] ?>'
+                                            alt="..." style="margin-top: 5px"></a></span>
 
-                            <form method="post" class="reply_form" id="not_reload_reply<?=$bno?>">
+                            <form method="post" class="reply_form" id="not_reload_reply<?= $bno ?>">
                                 <div class="input-group input-group-sm mb-3 my_font_main"
                                      style="width: 90%;height: 40px; margin-top: 5px; left: 15px">
-                                    <input type="hidden" id="reply_bno" name="bno" value="<?=$bno?>">
+                                    <input type="hidden" id="reply_bno" name="con_num" value="<?= $bno ?>">
                                     <input type="text" name="reply_content" class="form-control col-sm-10 reply_content"
                                            aria-label="Sizing example input"
                                            aria-describedby="inputGroup-sizing-sm" placeholder="댓글을 작성해주세요 :)">
                                     <button type="button" class="col-sm-2 btn re_bt"
                                             style="left: 10px; background-color: #FBAA48; color: white"
-                                            id="support_1<?=$bno?>" onclick="not_reload_reply(<?=$bno?>)">댓글 달기
+                                            id="support_1<?= $bno ?>" onclick="not_reload_reply(<?= $bno ?>)">댓글 달기
                                     </button>
                                 </div>
                             </form>
