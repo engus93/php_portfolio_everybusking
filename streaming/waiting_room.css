@@ -55,7 +55,7 @@ img {
 #wright:hover{
     background-color: transparent !important;
     color: #FBAA48 !important;
-    border: #FBAA48 2px solid;
+    border: #FBAA48 1px solid;
 }
 
 #a_tag{

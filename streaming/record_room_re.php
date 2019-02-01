@@ -63,15 +63,16 @@ if ($_SESSION == null) {
 
         }
 
-        function room_name_modify(idx) {
+        function room_name_modify(room_name, idx, page) {
 
-            var room_name = document.getElementById("room" + idx).value;
+            var replay_name = prompt('영상 제목을 수정해주세요', room_name);
 
-            console.log(room_name);
+            if (replay_name != null) {
 
-            var replay_name = prompt( '영상 제목을 수정해주세요', room_name);
+                document.location.href = 'record_room_re_update_p.php?idx=' + idx + '&page=' + page + '&title=' + replay_name + '';
 
-            //document.location.href ='?idx=<?//= $board["idx"] ?>//&page=<?//= $page ?>//';
+            }
+
         }
 
     </script>
@@ -168,7 +169,8 @@ if ($_SESSION == null) {
             <article class="white-panel_re col-sm-6">
 
                 <video src="<?= $board['video_path'] ?>" controls style="width: 100%; height: 300px"></video>
-                <h4 class="my_font_start text-center" id="room<?= $board['idx'] ?>" style="margin-top: 10px"><?= $board['title'] ?></h4>
+                <h4 class="my_font_start text-center"
+                    style="margin-top: 10px"><?= $board['title'] ?></h4>
 
                 <p class="my_font_main"
                    style=" color: black; font-size: 12px; margin-bottom: 10px; position: absolute; display: inline">
@@ -188,8 +190,11 @@ if ($_SESSION == null) {
                             </button>
                             <div class="dropdown-menu dropdown-scale dropdown-menu-right" role="menu"
                                  style="position: absolute; transform: translate3d(-136px, 28px, 0px); top: 0px; left: 0px; will-change: transform;">
-                                <div class="dropdown-item" id="<?= $board['idx'] ?>" onclick="room_name_modify(<?= $board['idx'] ?>)">수정</div>
-                                <a class="dropdown-item" href="waiting_room_delete_p.php?idx=<?= $board["idx"] ?>&page=<?= $page ?>">삭제</a>
+                                    <div class="dropdown-item" style="cursor:pointer"
+                                         onclick="room_name_modify('<?= $board['title'] ?>', <?= $board['idx'] ?>, <?= $page ?>)">
+                                        수정
+                                    </div>
+                                <a class="dropdown-item" href="record_room_re_delete_p.php?idx=">삭제</a>
                             </div>
                         </div>
                         <?php

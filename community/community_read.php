@@ -234,29 +234,6 @@ if ($_SESSION != null) {
 
                         </div>
 
-                        <!--                        좋아용-->
-                        <!--                        <ul class="cardbox-base">-->
-                        <!---->
-                        <!--                            <ul class="float-right">-->
-                        <!--                                <li><a><i class="far fa-comment"></i></a></li>-->
-                        <!--                                <li><a><em class="mr-5"> 12</em></a></li>-->
-                        <!--                                <li><a><i class="fa fa-share-alt"></i></a></li>-->
-                        <!--                                <li><a><em class="mr-3">03</em></a></li>-->
-                        <!--                            </ul>-->
-                        <!--                            <ul>-->
-                        <!--                                <li><a><i class="fa fa-thumbs-up"></i></a></li>-->
-                        <!--                                <li><a href="#"><img src="../img/main_cover_01.jpg" class="img-fluid rounded-circle"-->
-                        <!--                                                     alt="User"></a></li>-->
-                        <!--                                <li><a href="#"><img src="../img/main_cover_02.jpg" class="img-fluid rounded-circle"-->
-                        <!--                                                     alt="User"></a></li>-->
-                        <!--                                <li><a href="#"><img src="../img/main_cover_03.jpg" class="img-fluid rounded-circle"-->
-                        <!--                                                     alt="User"></a></li>-->
-                        <!--                                <li><a href="#"><img src="../img/login_background.jpg" class="img-fluid rounded-circle"-->
-                        <!--                                                     alt="User"></a></li>-->
-                        <!--                                <li><a><span>10 Likes</span></a></li>-->
-                        <!--                            </ul>-->
-                        <!--                        </ul>-->
-
                         <!-- 댓글 시작 -->
                         <hr>
 

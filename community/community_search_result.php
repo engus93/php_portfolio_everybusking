@@ -74,7 +74,8 @@
         <div class="d-flex h-100 justify-content-xl-end">
             <form action="/community/community_search_result.php" method="get" name="search_go">
                 <div class="searchbar">
-                    <input class="search_input" type="text" id="search_check" name="search" style="font-weight: bold" placeholder="제목 or 내용">
+                    <input class="search_input" type="text" id="search_check" name="search" style="font-weight: bold"
+                           placeholder="제목 or 내용">
                     <a type="submit" class="search_icon" onclick="search_search()"><i class="fas fa-search"></i></a>
                 </div>
             </form>
@@ -122,22 +123,31 @@
                 $content = $board["content"];
 
                 //한글이랑 영어랑 용량이 다름 일단 넘김
-                if (strlen($board["title"]) > 50) {
-                    $title = str_replace($board["title"], iconv_substr($board["title"], 0, 14, "utf-8") . "...", $board["title"]);
+                if (strlen($board["title"]) > 40) {
+                    $title = str_replace($board["title"], iconv_substr($board["title"], 0, 15, "utf-8") . "...", $board["title"]);
                 }
 
                 if (strlen($content) > 60) {
                     $content = str_replace($content, iconv_substr($board["content"], 0, 30, "utf-8") . "...", $board["content"]);
                 }
+                ?>
 
-                echo '<article class="white-panel">
-                   <a style="text-decoration: none" href="community_read.php?idx=' . $board["idx"] . '"><img src="' . $board["picture"] . '"/>';
-                echo '<h4 class="my_font_start" style="margin-top: 10px">' . $title . '</h4>';
-                echo '
-                    <p class=" my_font_main" style=" color: black; font-size: 10px; color: black;position: absolute; left: 10px; bottom: 0px">조회수 : ' . $board["hit"] . '</p>
-                    <p class="float-right my_font_main" style=" color: black; font-size: 10px; color: black">작성자 : ' . $board["name"] . '</p>
-                    <p class="my_font_main" style="color: black; font-size: 10px; position: absolute; margin-top: 20px; margin-left: 170px">' . $board["date"] . '</p>';
-                echo '</article>';
+                <article class="white-panel">
+                    <a style="text-decoration: none" href="community_read.php?idx=<?= $board["idx"] ?>&page=<?=$page?>"><img
+                                src="<?= $board["picture"] ?>"/>
+                        <h4 class="my_font_start" style="margin-top: 10px"><?= $title ?></h4>
+                        <p class=" my_font_main"
+                           style=" color: black; font-size: 10px; color: black;position: absolute; left: 10px; bottom: 0px">
+                            조회수 : <?= $board["hit"] ?></p>
+                        <p class="float-right my_font_main" style=" color: black; font-size: 10px; color: black">작성자
+                            : <?= $board["name"] ?></p>
+                        <p class="my_font_main"
+                           style="color: black; font-size: 10px; position: absolute; margin-top: 20px; margin-left: 170px"><?= $board["date"] ?></p>
+                    </a>
+                </article>
+
+                <?php
+
             }
 
             $sql = mq("select * from community_tb where title or content like '%" . $_GET["search"] . "%' order by idx desc");
@@ -198,7 +208,7 @@
                     </a>
                    </li>";
         } else {
-            $pre = floor(($page-1)/$block_ct)*$block_ct; //pre변수에 page-1을 해준다 만약 현재 페이지가 3인데 이전버튼을 누르면 2번페이지로 갈 수 있게 함
+            $pre = floor(($page - 1) / $block_ct) * $block_ct; //pre변수에 page-1을 해준다 만약 현재 페이지가 3인데 이전버튼을 누르면 2번페이지로 갈 수 있게 함
             echo "<li class='page-item'>
                     <a class='page-link' href='?search=$search&page=$pre' aria-label='Previous' style='color: black'>
                         <span aria-hidden='true'>&laquo;</span>

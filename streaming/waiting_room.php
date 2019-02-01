@@ -177,7 +177,7 @@ if ($_SESSION == null) {
 
             ?>
 
-            <article class="white-panel col-sm-6" onclick="connection(<?= $board['idx'] ?>)">
+            <article class="white-panel col-sm-6" style="cursor:pointer" onclick="connection(<?= $board['idx'] ?>)">
 
                 <?php
                 if ($board['streamer_id'] === $_SESSION['user_id']) {
