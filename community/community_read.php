@@ -69,7 +69,7 @@ if ($_SESSION != null) {
                 autoOpen: false,
             });
             // $("#dat_reply_bt" + idx).on("click", function () {
-                $("#dat_reply" + idx).dialog("open");
+            $("#dat_reply" + idx).dialog("open");
             // });
         };
 
@@ -78,7 +78,7 @@ if ($_SESSION != null) {
                 autoOpen: false,
             });
             // $("#reply_dat_edit_bt" + idx).on("click", function () {
-                $("#dat_reply_edit" + idx).dialog("open");
+            $("#dat_reply_edit" + idx).dialog("open");
             // });
         };
 
@@ -87,7 +87,7 @@ if ($_SESSION != null) {
                 autoOpen: false,
             });
             // $("#reply_dat_delete_bt" + idx).on("click", function () {
-                $("#dat_reply_delete" + idx).dialog("open");
+            $("#dat_reply_delete" + idx).dialog("open");
             // });
         };
 
@@ -96,7 +96,7 @@ if ($_SESSION != null) {
                 autoOpen: false,
             });
             // $("#dat_edit_bt" + idx).on("click", function () {
-                $("#dat_edit" + idx).dialog("open");
+            $("#dat_edit" + idx).dialog("open");
             // });
         };
 
@@ -105,29 +105,46 @@ if ($_SESSION != null) {
                 autoOpen: false,
             });
             // $("#dat_delete_bt" + idx).on("click", function () {
-                $("#dat_delete" + idx).dialog("open");
+            $("#dat_delete" + idx).dialog("open");
             // });
         };
 
-        $(document).ready(function () {
+        // $(document).ready(function () {
+        //
+        //     $(".re_bt").click(function () {
+        //         var index = document.getElementById("reply_bno").value;
+        //         var params = $("form").serialize() + "&idx=" + index;
+        //         $.ajax({
+        //             type: 'post',
+        //             url: 'commu_reply_p.php',
+        //             data: params,
+        //             dataType: 'html',
+        //             async: false,
+        //             success: function () {
+        //                 // $(".reply_view").html(data);
+        //                 // $(".reply_content").val('');
+        //             }
+        //         });
+        //
+        //     });
+        //
+        // });
 
-            $(".re_bt").click(function () {
-                var params = $("form").serialize();
-                var index = document.getElementById("reply_bno").value;
-                $.ajax({
-                    type: 'post',
-                    url: '/community/commu_reply_p.php?idx=' + index + '',
-                    data: params,
-                    dataType: 'html',
-                    success: function (data) {
-                        $(".reply_view").html(data);
-                        $(".reply_content").val('');
-                    }
-                });
 
+        function not_reload_reply(idx) {
+            var params = $("#not_reload_reply" + idx);
+            $.ajax({
+                type: 'post',
+                url: 'commu_reply_p.php',
+                data: params,
+                dataType: 'html',
+                async: false,
+                success: function () {
+                    alert("ㅋㅋ");
+                }
             });
 
-        });
+        }
 
         function st1(idx) {
 
@@ -165,7 +182,11 @@ if ($_SESSION != null) {
     <script>$(".main_nav").load("/public/main_nav.php");</script>
 
     <?php
-    $page = $_GET['page'];
+    if (!empty($_GET['page'])) {
+        $page = $_GET['page'];
+    } else {
+        $page = 1;
+    }
     $sql = mq("select * from community_tb where idx='" . $bno . "'"); /* 받아온 idx값을 선택 */
     $board = $sql->fetch_array();
     ?>
@@ -189,8 +210,8 @@ if ($_SESSION != null) {
                                      style="position: absolute; transform: translate3d(-136px, 28px, 0px); top: 0px; left: 0px; will-change: transform;">
                                     <?php if ($_SESSION != null) {
                                         echo '
-                                    <a class="dropdown-item my_font_main" href="community_write.php?idx=' . $board['idx'] . '&page='.$page.'">수정</a>
-                                    <a class="dropdown-item my_font_main" href="community_delete_p.php?idx=' . $board['idx'] . '&page='.$page.'">삭제</a>';
+                                    <a class="dropdown-item my_font_main" href="community_write.php?idx=' . $board['idx'] . '&page=' . $page . '">수정</a>
+                                    <a class="dropdown-item my_font_main" href="community_delete_p.php?idx=' . $board['idx'] . '&page=' . $page . '">삭제</a>';
                                     } else {
                                         echo '<a class="dropdown-item my_font_main" href="/Sign/sign_in.php">로그인하기</a>';
                                     } ?>
@@ -271,7 +292,7 @@ if ($_SESSION != null) {
                             <!--답글달기-->
                             <div class="dat_reply" id="dat_reply<?php echo $reply['idx']; ?>" title="댓글달기">
                                 <form method="post"
-                                      action="commu_re_reply_p.php?idx=<?=$reply['idx'];?>&now_idx=<?=$bno?>">
+                                      action="commu_re_reply_p.php?idx=<?= $reply['idx']; ?>&now_idx=<?= $bno ?>">
                                     <input type="hidden" name="page" value="<?= $page ?>">
                                     <textarea name="re_reply_content" class="dap_edit_t form-control"
                                               style="width: 100%"></textarea>
@@ -410,7 +431,7 @@ if ($_SESSION != null) {
                             <?php echo $re_reply['name']; ?>　</span>
                                             <span>
                             <?php echo nl2br("$re_reply[content]"); ?></span>
-                                            <span style="font-size: 10px; color: #4e555b; position: absolute; right: 0px; margin-top: 5px; margin-right: 5px">
+                                            <span style="font-size: 10px; color: #4e555b; position: absolute; right: 0px; margin-top: 5px; margin-right: -5px">
                                      <?php echo $re_reply['date']; ?></span>
                                         </div>
 
@@ -478,21 +499,27 @@ if ($_SESSION != null) {
                     } ?>
 
                     <?php if ($_SESSION != null) {
-                        echo ' <div class="cardbox-comments"><span class="comment-avatar float-left"><a href=""><img class="rounded-circle"
-                               src=' . $_SESSION['profile'] . '
+                        ?>
+                        <div class="cardbox-comments"><span class="comment-avatar float-left"><a href=""><img
+                                            class="rounded-circle"
+                                            src='<?=$_SESSION['profile']?>'
                                alt="..." style="margin-top: 5px"></a></span>
-                        
-                                        <form method="post" class="reply_form">
-                                            <div class="input-group input-group-sm mb-3 my_font_main"
-                                                 style="width: 90%;height: 40px; margin-top: 5px; left: 15px">
-                                    			<input type="hidden" id="reply_bno" name="bno" value="' . $bno . '">
-                                                <input type="text" name="reply_content" class="form-control col-sm-10 reply_content" aria-label="Sizing example input"
-                                                       aria-describedby="inputGroup-sizing-sm" placeholder="댓글을 작성해주세요 :)">
-                                                <button type="suid="rep_bt class="col-sm-2 btn re_bt"
-                                                       style="left: 10px; background-color: #FBAA48; color: white" id="support_1">댓글 달기</button>
-                                            </div>
-                                        </form>    
-                                 </div>';
+
+                            <form method="post" class="reply_form" id="not_reload_reply<?=$bno?>">
+                                <div class="input-group input-group-sm mb-3 my_font_main"
+                                     style="width: 90%;height: 40px; margin-top: 5px; left: 15px">
+                                    <input type="hidden" id="reply_bno" name="bno" value="<?=$bno?>">
+                                    <input type="text" name="reply_content" class="form-control col-sm-10 reply_content"
+                                           aria-label="Sizing example input"
+                                           aria-describedby="inputGroup-sizing-sm" placeholder="댓글을 작성해주세요 :)">
+                                    <button type="button" class="col-sm-2 btn re_bt"
+                                            style="left: 10px; background-color: #FBAA48; color: white"
+                                            id="support_1<?=$bno?>" onclick="not_reload_reply(<?=$bno?>)">댓글 달기
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                        <?php
                     } else {
 
                     } ?>
@@ -507,7 +534,8 @@ if ($_SESSION != null) {
 </div><!--/ row -->
 
 <a href="/community/community.php?page=<?= $page ?>" style="margin-left: 465px; ">
-    <button class="col-sm-2 btn my_font_main" style="font-size: 18px; margin-top: 30px; background-color: #FBAA48; color: white"
+    <button class="col-sm-2 btn my_font_main"
+            style="font-size: 18px; margin-top: 30px; background-color: #FBAA48; color: white"
             id="support_1">목록으로
     </button>
 </a>
