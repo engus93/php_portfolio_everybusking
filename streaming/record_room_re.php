@@ -8,6 +8,8 @@ if ($_SESSION == null) {
 
 ?>
 
+<!--다시보기 메뉴-->
+
 <!DOCTYPE html>
 <html>
 

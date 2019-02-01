@@ -60,13 +60,13 @@ function selfInvoker(){
         return;
     }
 
-    session_start();
-
     $filePath = '/streaming/public/uploads/' . $fileName;
 
     $user_id = $_POST['user_id'];
+//    $replay_name = $_POST['replay_name'];
 
-    $sql = mq("insert into record_streaming_tb(title,streamer,video_path) values('" . $user_id . "의 방송','" . $user_id . "','" . $filePath . "')");
+//    $sql = mq("insert into record_streaming_tb(title,streamer,video_path) values('" . $replay_name . "','" . $user_id . "','" . $filePath . "')");
+    $sql = mq("insert into record_streaming_tb(title,streamer,video_path) values('" . $user_id . "','" . $user_id . "','" . $filePath . "')");
 
     // make sure that one can uploads only allowed audio/video files
     $allowed = array(

@@ -542,11 +542,14 @@ function uploadToServer(recordRTC, callback) {
         fileName += '.webm';
     }
 
+    // var replay_name = prompt( '다시 보기 제목을 적어주세요.', '' );
+
     // create FormData
     var formData = new FormData();
     formData.append(fileType + '-filename', fileName);
     formData.append(fileType + '-blob', blob);
     formData.append("user_id", user_name);
+    // formData.append("replay_name", replay_name);
 
     callback('Uploading ' + fileType + ' recording to server.');
 
