@@ -235,9 +235,6 @@ if ($_SESSION != null) {
                                 </div>
                             </div><!--/ dropdown -->
                             <div class="media m-0">
-                                <!--<div class="d-flex mr-3">-->
-                                <!--<a href=""><img class="img-fluid rounded-circle" src="http://www.themashabrand.com/templates/bootsnipp/post/assets/img/users/4.jpg" alt="User"></a>-->
-                                <!--</div>-->
                                 <div class="media-body">
                                     <p class="m-0 color_point my_font_start"
                                        style="font-size: 24px"><?php echo $board['title']; ?></p>
@@ -326,7 +323,7 @@ if ($_SESSION != null) {
                                           action="commu_reply_update_p.php?idx=<?php echo $reply['idx']; ?>&now_idx=<?php echo $bno; ?>">
                                         <input type="hidden" name="page" value="<?= $page ?>">
                                         <textarea name="content" class="dap_edit_t form-control"
-                                                  style="width: 100%"><?php echo $reply['content']; ?></textarea>
+                                                  style="width: 100%"><?=$reply['content']; ?></textarea>
                                         <input type="submit" id="support_hover" value="수정하기"
                                                class="re_mo_bt btn float-right"
                                                style="background-color: #FBAA48; color: white; margin-top: 10px">
@@ -351,9 +348,9 @@ if ($_SESSION != null) {
                                 <!--댓글-->
                                 <div class="cardbox-comments_re reply_view"><span
                                             class="comment-avatar float-left">
-                                <a href=""><img class="circle_image"
+                                        <img class="circle_image"
                                                 src=<?php echo $write_user['profile']; ?> alt="..."
-                                                style="margin-top: 5px; width: 30px; height: 30px"></a></span>
+                                                style="margin-top: 5px; width: 30px; height: 30px"></span>
                                     <div class="input-group  my_font_main"
                                          style="width: 90%; margin-top: 10px; left: 15px">
                                         <span><?php echo $reply['name']; ?>　</span>
@@ -382,15 +379,16 @@ if ($_SESSION != null) {
                                                    onclick="delete_reply(<?= $reply['idx']; ?>)">삭제</a>
                                             </div>
                                             <?php
+
                                         } else {
 
                                             ?>
 
                                             <div class="rep_me rep_menu my_font_main" style="height: 15px">
                                                 <a class="dat_reply_bt color_main btn dat_reply_bt"
-                                                   id="dat_reply_bt<?php echo $reply['idx']; ?>"
+                                                   id="sc1<?php echo $reply['idx']; ?>"
                                                    style="font-size: 10px; margin-left: 10px; background-color: transparent"
-                                                   onclick="re_reply(<?php echo $reply['idx']; ?>)">답글</a>
+                                                   onclick="st1(<?= $reply['idx']; ?>)">댓글달기</a>
                                             </div>
 
                                             <?php
@@ -400,7 +398,7 @@ if ($_SESSION != null) {
                                     ?>
                                 </div>
 
-                                <!--- 댓글 불러오기 -->
+                                <!--- 대댓글 불러오기 -->
                                 <?php
                                 $sql4 = mq("select * from commu_re_reply_tb where con_num='" . $reply['idx'] . "' order by idx ASC");
 
@@ -437,33 +435,30 @@ if ($_SESSION != null) {
 
                                             <!-- 댓글 삭제 폼 dialog -->
                                             <div class="dat_reply_delete"
-                                                 id="dat_reply_delete<?php echo $re_reply['idx']?>"
+                                                 id="dat_reply_delete<?php echo $re_reply['idx'] ?>"
                                                  title="댓글 삭제하기">
-                                                <form method="post" style="margin-top: 16px;" id="dat_reply_delete<?php echo $re_reply['idx']?>_form"
+                                                <form method="post" style="margin-top: 16px;"
+                                                      id="dat_reply_delete<?php echo $re_reply['idx'] ?>_form"
                                                       action="commu_re_reply_delete_p.php">
                                                     <input type="hidden" name="idx" value="<?= $re_reply['idx'] ?>">
                                                     <input type="hidden" name="now_idx" value="<?= $bno ?>">
                                                     <input type="hidden" name="page" value="<?= $page ?>">
                                                     <input type="button" id="support_hover" value="삭제하기"
                                                            class="re_mo_bt btn float-left"
-                                                           style="background-color: #FBAA48; color: white; width: 100%" onclick="re_delete_reply_click(<?= $re_reply['idx']?>)">
+                                                           style="background-color: #FBAA48; color: white; width: 100%"
+                                                           onclick="re_delete_reply_click(<?= $re_reply['idx'] ?>)">
                                                 </form>
                                             </div>
 
                                             <!--댓글-->
                                             <div class="cardbox-comments_re reply_view"><span
                                                         class="comment-avatar float-left">
-                                <a href=""><img class="circle_image"
-                                                src=<?php echo $write_user['profile']; ?> alt="..."
-                                                style="margin-top: 5px; width: 30px; height: 30px"></a></span>
-                                                <div class="input-group  my_font_main"
-                                                     style="width: 90%; margin-top: 10px; left: 15px">
-                                                            <span>
-                            <?php echo $re_reply['name']; ?>　</span>
-                                                    <span>
-                            <?php echo nl2br("$re_reply[content]"); ?></span>
-                                                    <span style="font-size: 10px; color: #4e555b; position: absolute; right: 0px; margin-top: 5px; margin-right: -5px">
-                                     <?php echo $re_reply['date']; ?></span>
+                                                        <img class="circle_image" style="margin-top:5px; width:30px; height:30px"
+                                                             src=<?php echo $write_user['profile']; ?>></span>
+                                                <div class="input-group  my_font_main" style="width: 90%; margin-top: 10px; left: 15px">
+                                                    <span><?= $re_reply['name']; ?>　</span>
+                                                    <span><?= nl2br("$re_reply[content]"); ?></span>
+                                                    <span style="font-size: 10px; color: #4e555b; position: absolute; right: 0px; margin-top: 5px; margin-right: -5px"><?php echo $re_reply['date']; ?></span>
                                                 </div>
 
                                                 <?php
@@ -498,10 +493,10 @@ if ($_SESSION != null) {
                                 ?>
                                 <div id="sb1<?php echo $reply['idx']; ?>"
                                      style="display:none; width: 90%; margin-left: 52px!important;">
-                                    <span class="comment-avatar float-left"><a href="">
+                                    <span class="comment-avatar float-left">
                                             <img class="rounded-circle"
                                                  src="<?= $_SESSION['profile'] ?>"
-                                                 style="margin-top: 5px; width: 30px; height: 30px"></a></span>
+                                                 style="margin-top: 5px; width: 30px; height: 30px"></span>
                                     <form method="post" class="re_reply_form"
                                           action="commu_re_reply_p.php?idx=<?php echo $reply['idx']; ?>&now_idx=<?php echo $bno; ?>">
                                         <div class="input-group input-group-sm my_font_main"
@@ -533,10 +528,10 @@ if ($_SESSION != null) {
 
                     <?php if ($_SESSION != null) {
                         ?>
-                        <div class="cardbox-comments"><span class="comment-avatar float-left"><a href=""><img
+                        <div class="cardbox-comments"><span class="comment-avatar float-left"><img
                                             class="rounded-circle"
                                             src='<?= $_SESSION['profile'] ?>'
-                                            alt="..." style="margin-top: 5px"></a></span>
+                                            alt="..." style="margin-top: 5px"></span>
 
                             <form method="post" class="reply_form" id="not_reload_reply<?= $bno ?>">
                                 <div class="input-group input-group-sm mb-3 my_font_main"
