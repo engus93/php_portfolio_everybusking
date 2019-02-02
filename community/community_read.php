@@ -77,8 +77,8 @@ if ($_SESSION != null) {
                 url: 'commu_reply_p.php',
                 data: params,
                 dataType: 'html',
-                success: function (data) {
-                    alert(data);
+                success: function (content) {
+                    alert(content);
                 }
             });
 
@@ -143,7 +143,7 @@ if ($_SESSION != null) {
 
         }
 
-        //대댓글 작성
+        //대댓글 작성 다이얼로그
         function re_reply(idx) {
             $(".dat_reply").dialog({
                 autoOpen: false,
@@ -355,45 +355,17 @@ if ($_SESSION != null) {
 
                             <div id="div<?= $reply['idx'] ?>">
                                 <!--답글달기-->
-                                <div class="dat_reply" id="dat_reply<?php echo $reply['idx']; ?>" title="댓글달기">
-                                    <form method="post"
-                                          action="commu_re_reply_p.php?idx=<?= $reply['idx']; ?>&now_idx=<?= $bno ?>">
-                                        <input type="hidden" name="page" value="<?= $page ?>">
-                                        <textarea name="re_reply_content" class="dap_edit_t form-control"
-                                                  style="width: 100%"></textarea>
-                                        <input type="submit" id="support_hover" value="댓글달기"
-                                               class="re_mo_bt btn float-right"
-                                               style="background-color: #FBAA48; color: white; margin-top: 10px">
-                                    </form>
-                                </div>
-
-                                <!-- 댓글 수정 폼 dialog -->
-                                <div class="dat_edit" id="dat_edit<?= $reply['idx']; ?>" title="댓글 수정하기">
-                                    <form method="post" id="dat_edit<?= $reply['idx']; ?>_form">
-                                        <input type="hidden" name="idx" value="<?= $reply['idx']; ?>">
-                                        <input type="hidden" name="page" value="<?= $page ?>">
-                                        <textarea name="content" class="dap_edit_t form-control"
-                                                  style="width: 100%"><?= $reply['content']; ?></textarea>
-                                        <input type="button" id="support_hover" value="수정하기"
-                                               class="re_mo_bt btn float-right"
-                                               style="background-color: #FBAA48; color: white; margin-top: 10px" onclick="modify_reply_click(<?= $reply['idx']; ?>)">
-                                    </form>
-                                </div>
-
-                                <!-- 댓글 삭제 폼 dialog -->
-                                <div class="dat_delete" id="dat_delete<?php echo $reply['idx']; ?>" title="댓글 삭제하기">
-                                    <form method="post" style="margin-top: 16px;"
-                                          id="dat_delete<?php echo $reply['idx']; ?>_form"
-                                          action="commu_reply_delete_p.php?idx=<?php echo $reply['idx']; ?>&now_idx=<?php echo $bno; ?>">
-                                        <input type="hidden" name="idx" value="<?= $reply['idx'] ?>">
-                                        <input type="hidden" name="now_idx" value="<?= $bno ?>">
-                                        <input type="hidden" name="page" value="<?= $page ?>">
-                                        <input type="button" id="support_hover" value="삭제하기"
-                                               class="re_mo_bt btn float-left"
-                                               style="background-color: #FBAA48; color: white; width: 100%"
-                                               onclick="dat_delete_click(<?= $reply['idx']; ?>)">
-                                    </form>
-                                </div>
+<!--                                <div class="dat_reply" id="dat_reply--><?php //echo $reply['idx']; ?><!--" title="댓글달기">-->
+<!--                                    <form method="post"-->
+<!--                                          action="commu_re_reply_p.php?idx=--><?//= $reply['idx']; ?><!--&now_idx=--><?//= $bno ?><!--">-->
+<!--                                        <input type="hidden" name="page" value="--><?//= $page ?><!--">-->
+<!--                                        <textarea name="re_reply_content" class="dap_edit_t form-control"-->
+<!--                                                  style="width: 100%"></textarea>-->
+<!--                                        <input type="submit" id="support_hover" value="댓글달기"-->
+<!--                                               class="re_mo_bt btn float-right"-->
+<!--                                               style="background-color: #FBAA48; color: white; margin-top: 10px">-->
+<!--                                    </form>-->
+<!--                                </div>-->
 
                                 <!--댓글-->
                                 <div class="cardbox-comments_re reply_view"><span
@@ -447,6 +419,34 @@ if ($_SESSION != null) {
                                         }
                                     }
                                     ?>
+                                </div>
+
+                                <!-- 댓글 수정 폼 dialog -->
+                                <div class="dat_edit" id="dat_edit<?= $reply['idx']; ?>" title="댓글 수정하기">
+                                    <form method="post" id="dat_edit<?= $reply['idx']; ?>_form">
+                                        <input type="hidden" name="idx" value="<?= $reply['idx']; ?>">
+                                        <input type="hidden" name="page" value="<?= $page ?>">
+                                        <textarea name="content" class="dap_edit_t form-control"
+                                                  style="width: 100%"><?= $reply['content']; ?></textarea>
+                                        <input type="button" id="support_hover" value="수정하기"
+                                               class="re_mo_bt btn float-right"
+                                               style="background-color: #FBAA48; color: white; margin-top: 10px" onclick="modify_reply_click(<?= $reply['idx']; ?>)">
+                                    </form>
+                                </div>
+
+                                <!-- 댓글 삭제 폼 dialog -->
+                                <div class="dat_delete" id="dat_delete<?php echo $reply['idx']; ?>" title="댓글 삭제하기">
+                                    <form method="post" style="margin-top: 16px;"
+                                          id="dat_delete<?php echo $reply['idx']; ?>_form"
+                                          action="commu_reply_delete_p.php?idx=<?php echo $reply['idx']; ?>&now_idx=<?php echo $bno; ?>">
+                                        <input type="hidden" name="idx" value="<?= $reply['idx'] ?>">
+                                        <input type="hidden" name="now_idx" value="<?= $bno ?>">
+                                        <input type="hidden" name="page" value="<?= $page ?>">
+                                        <input type="button" id="support_hover" value="삭제하기"
+                                               class="re_mo_bt btn float-left"
+                                               style="background-color: #FBAA48; color: white; width: 100%"
+                                               onclick="dat_delete_click(<?= $reply['idx']; ?>)">
+                                    </form>
                                 </div>
 
                                 <!--- 대댓글 불러오기 -->

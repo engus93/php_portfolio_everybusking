@@ -6,8 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="315b7d6c-43dd-4b04-a2b3-17ad3cc59c77" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/community/commu_re_reply_update_p.php" beforeDir="false" afterPath="$PROJECT_DIR$/community/commu_re_reply_update_p.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/community/commu_reply_update_p.php" beforeDir="false" afterPath="$PROJECT_DIR$/community/commu_reply_update_p.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/community/commu_reply_p.php" beforeDir="false" afterPath="$PROJECT_DIR$/community/commu_reply_p.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/community/community_read.php" beforeDir="false" afterPath="$PROJECT_DIR$/community/community_read.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -35,8 +34,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/community/community_read.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="407">
-              <caret line="80" column="32" lean-forward="true" selection-start-line="80" selection-start-column="32" selection-end-line="80" selection-end-column="32" />
+            <state relative-caret-position="637">
+              <caret line="421" column="38" selection-start-line="421" selection-start-column="38" selection-end-line="421" selection-end-column="38" />
               <folding>
                 <element signature="e#2911#3056#0#HTML" />
                 <element signature="e#3137#3715#0#HTML" />
@@ -49,10 +48,18 @@
                 <element signature="e#5223#5634#0#HTML" />
                 <element signature="e#6267#6327#0#HTML" />
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#textarea#0;n#form#0;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#input#1;n#form#0;n#div#1;n#div#3;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#img#0;n#span#0;n#div#2;n#div#0;n#div#4;n#div#3;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/community/commu_reply_p.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="190">
+              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
             </state>
           </provider>
         </entry>
@@ -156,12 +163,12 @@
         <option value="$PROJECT_DIR$/community/community_search_result.php" />
         <option value="$PROJECT_DIR$/streaming/public/emitir.html" />
         <option value="$PROJECT_DIR$/streaming/waiting_room.php" />
-        <option value="$PROJECT_DIR$/community/commu_reply_p.php" />
         <option value="$PROJECT_DIR$/community/commu_re_reply_delete_p.php" />
         <option value="$PROJECT_DIR$/community/commu_reply_delete_p.php" />
         <option value="$PROJECT_DIR$/community/commu_reply_update_p.php" />
-        <option value="$PROJECT_DIR$/community/community_read.php" />
         <option value="$PROJECT_DIR$/community/commu_re_reply_update_p.php" />
+        <option value="$PROJECT_DIR$/community/commu_reply_p.php" />
+        <option value="$PROJECT_DIR$/community/community_read.php" />
       </list>
     </option>
   </component>
@@ -302,14 +309,7 @@
       <workItem from="1548578835648" duration="1090000" />
       <workItem from="1548656701151" duration="9667000" />
       <workItem from="1548986659196" duration="1993000" />
-      <workItem from="1549083025234" duration="5429000" />
-    </task>
-    <task id="LOCAL-00135" summary="19.01.16&#10; &#10;스트리밍 방 등록">
-      <created>1547745770523</created>
-      <option name="number" value="00135" />
-      <option name="presentableId" value="LOCAL-00135" />
-      <option name="project" value="LOCAL" />
-      <updated>1547745770523</updated>
+      <workItem from="1549083025234" duration="6705000" />
     </task>
     <task id="LOCAL-00136" summary="19.01.18&#10; &#10;스트리밍 socket 메소드 분류하기">
       <created>1547788412814</created>
@@ -647,11 +647,18 @@
       <option name="project" value="LOCAL" />
       <updated>1549085085412</updated>
     </task>
-    <option name="localTasksCounter" value="184" />
+    <task id="LOCAL-00184" summary="19.02.02&#10;&#10;게시판 댓글 추가 하기">
+      <created>1549089311961</created>
+      <option name="number" value="00184" />
+      <option name="presentableId" value="LOCAL-00184" />
+      <option name="project" value="LOCAL" />
+      <updated>1549089311961</updated>
+    </task>
+    <option name="localTasksCounter" value="185" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="738490000" />
+    <option name="totallyTimeSpent" value="739766000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -739,7 +746,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="19.01.11&#10;       &#10;결제 완료" />
     <MESSAGE value="19.01.11&#10;       &#10;스트리밍 시작" />
     <MESSAGE value="19.01.13&#10;&#10;마무리&#10;       &#10;스트리밍 시작" />
     <MESSAGE value="19.01.13&#10;&#10;마무리&#10;       &#10;채팅중" />
@@ -764,7 +770,8 @@
     <MESSAGE value="19.02.01&#10;&#10;스트리밍 다시보기 이름 수정 하는중" />
     <MESSAGE value="19.02.01&#10;&#10;게시판 댓글 수정 중" />
     <MESSAGE value="19.02.02&#10;&#10;게시판 댓글 수정 중" />
-    <option name="LAST_COMMIT_MESSAGE" value="19.02.02&#10;&#10;게시판 댓글 수정 중" />
+    <MESSAGE value="19.02.02&#10;&#10;게시판 댓글 추가 하기" />
+    <option name="LAST_COMMIT_MESSAGE" value="19.02.02&#10;&#10;게시판 댓글 추가 하기" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/index.html">
@@ -1054,9 +1061,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/community/commu_re_reply_p.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/streaming/waiting_room.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -1107,13 +1111,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/community/commu_reply_p.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/community/commu_re_reply_delete_p.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="152">
@@ -1149,10 +1146,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/community/commu_re_reply_p.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="16" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/community/commu_reply_p.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/community/community_read.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="407">
-          <caret line="80" column="32" lean-forward="true" selection-start-line="80" selection-start-column="32" selection-end-line="80" selection-end-column="32" />
+        <state relative-caret-position="637">
+          <caret line="421" column="38" selection-start-line="421" selection-start-column="38" selection-end-line="421" selection-end-column="38" />
           <folding>
             <element signature="e#2911#3056#0#HTML" />
             <element signature="e#3137#3715#0#HTML" />
@@ -1165,7 +1176,6 @@
             <element signature="e#5223#5634#0#HTML" />
             <element signature="e#6267#6327#0#HTML" />
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#textarea#0;n#form#0;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#input#1;n#form#0;n#div#1;n#div#3;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#span#0;n#div#2;n#div#0;n#div#4;n#div#3;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
