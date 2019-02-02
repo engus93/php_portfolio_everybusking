@@ -84,12 +84,33 @@ if ($_SESSION != null) {
 
         }
 
-        //댓글 수정
+        //댓글 수정 다이얼 로그
         function modify_reply(idx) {
             $(".dat_edit").dialog({
                 autoOpen: false,
             });
             $("#dat_edit" + idx).dialog("open");
+        }
+
+        //댓글 수정 실제 기능
+        function modify_reply_click(idx) {
+
+            $("#dat_edit" + idx).dialog("close");
+
+            var dat_delete_click = $("#dat_edit" + idx + "_form");
+            var params = dat_delete_click.serialize();
+
+            $.ajax({
+                type: 'post',
+                url: 'commu_reply_update_p.php',
+                data: params,
+                dataType: 'html',
+                success: function (content) {
+                    alert("수정되었습니다.");
+                    $("#real_reply_" + idx).text(content);
+                }
+            });
+
         }
 
         //댓글 삭제 다이얼로그
@@ -130,12 +151,33 @@ if ($_SESSION != null) {
             $("#dat_reply" + idx).dialog("open");
         }
 
-        //대댓글 수정
+        //대댓글 수정 다이얼로그
         function re_modify_reply(idx) {
             $(".dat_reply_edit").dialog({
                 autoOpen: false,
             });
             $("#dat_reply_edit" + idx).dialog("open");
+        }
+
+        //대댓글 수정 실제 기능
+        function re_modify_reply_click(idx) {
+
+            $("#dat_reply_edit" + idx).dialog("close");
+
+            var dat_delete_click = $("#dat_reply_edit" + idx + "_form");
+            var params = dat_delete_click.serialize();
+
+            $.ajax({
+                type: 'post',
+                url: 'commu_re_reply_update_p.php',
+                data: params,
+                dataType: 'html',
+                success: function (content) {
+                    alert("수정되었습니다.");
+                    $("#real_re_reply_" + idx).text(content);
+                }
+            });
+
         }
 
         //대댓글 삭제 다이얼로그
@@ -186,6 +228,11 @@ if ($_SESSION != null) {
 
             }
 
+        }
+
+        //문장 개행 시키기
+        function nl2br(str){
+            return str.replace(/\n/g, "&#10;");
         }
 
     </script>
@@ -321,15 +368,15 @@ if ($_SESSION != null) {
                                 </div>
 
                                 <!-- 댓글 수정 폼 dialog -->
-                                <div class="dat_edit" id="dat_edit<?php echo $reply['idx']; ?>" title="댓글 수정하기">
-                                    <form method="post"
-                                          action="commu_reply_update_p.php?idx=<?php echo $reply['idx']; ?>&now_idx=<?php echo $bno; ?>">
+                                <div class="dat_edit" id="dat_edit<?= $reply['idx']; ?>" title="댓글 수정하기">
+                                    <form method="post" id="dat_edit<?= $reply['idx']; ?>_form">
+                                        <input type="hidden" name="idx" value="<?= $reply['idx']; ?>">
                                         <input type="hidden" name="page" value="<?= $page ?>">
                                         <textarea name="content" class="dap_edit_t form-control"
                                                   style="width: 100%"><?= $reply['content']; ?></textarea>
-                                        <input type="submit" id="support_hover" value="수정하기"
+                                        <input type="button" id="support_hover" value="수정하기"
                                                class="re_mo_bt btn float-right"
-                                               style="background-color: #FBAA48; color: white; margin-top: 10px">
+                                               style="background-color: #FBAA48; color: white; margin-top: 10px" onclick="modify_reply_click(<?= $reply['idx']; ?>)">
                                     </form>
                                 </div>
 
@@ -357,7 +404,7 @@ if ($_SESSION != null) {
                                     <div class="input-group  my_font_main"
                                          style="width: 90%; margin-top: 10px; left: 15px">
                                         <span><?php echo $reply['name']; ?>　</span>
-                                        <span><?php echo nl2br("$reply[content]"); ?></span>
+                                        <span id="real_reply_<?= $reply['idx'] ?>"><?= nl2br("$reply[content]"); ?></span>
                                         <span style="font-size: 10px; color: #4e555b; position: absolute; right: 0px; margin-top: 5px;">
                                     <?php echo $reply['date']; ?></span>
                                     </div>
@@ -422,18 +469,14 @@ if ($_SESSION != null) {
                                     <div id="re_div<?= $re_reply['idx'] ?>">
 
                                         <div style="width: 93%; margin-left:6%; margin-top: 10px;">
-                                            <!-- 댓글 수정 폼 dialog -->
-                                            <div class="dat_reply_edit"
-                                                 id="dat_reply_edit<?php echo $re_reply['idx']; ?>"
-                                                 title="댓글 수정하기">
-                                                <form method="post"
-                                                      action="commu_re_reply_update_p.php?idx=<?php echo $re_reply['idx']; ?>&now_idx=<?php echo $bno; ?>">
-                                        <textarea name="content" class="dap_edit_t form-control"
-                                                  style="width: 100%"><?php echo $re_reply['content']; ?></textarea>
+                                            <!-- 대댓글 수정 폼 dialog -->
+                                            <div class="dat_reply_edit" id="dat_reply_edit<?= $re_reply['idx']; ?>" title="댓글 수정하기">
+                                                <form method="post" id="dat_reply_edit<?php echo $re_reply['idx']; ?>_form">
+                                                    <textarea name="content" class="dap_edit_t form-control" style="width: 100%"><?= $re_reply['content']; ?></textarea>
+                                                    <input type="hidden" name="idx" value="<?= $re_reply['idx']; ?>">
                                                     <input type="hidden" name="page" value="<?= $page ?>">
-                                                    <input type="submit" id="support_hover" value="수정하기"
-                                                           class="re_mo_bt btn float-right"
-                                                           style="background-color: #FBAA48; color: white; margin-top: 10px">
+                                                    <input type="button" id="support_hover" value="수정하기" class="re_mo_bt btn float-right"
+                                                           style="background-color: #FBAA48; color: white; margin-top: 10px" onclick="re_modify_reply_click(<?= $re_reply['idx']; ?>)">
                                                 </form>
                                             </div>
 
@@ -463,7 +506,7 @@ if ($_SESSION != null) {
                                                 <div class="input-group  my_font_main"
                                                      style="width: 90%; margin-top: 10px; left: 15px">
                                                     <span><?= $re_reply['name']; ?>　</span>
-                                                    <span><?= nl2br("$re_reply[content]"); ?></span>
+                                                    <span id="real_re_reply_<?= $re_reply['idx'] ?>"><?= nl2br("$re_reply[content]"); ?></span>
                                                     <span style="font-size: 10px; color: #4e555b; position: absolute; right: 0px; margin-top: 5px; margin-right: -5px"><?php echo $re_reply['date']; ?></span>
                                                 </div>
 
