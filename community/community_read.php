@@ -68,7 +68,7 @@ if ($_SESSION != null) {
     <script>
 
         //댓글 작성
-        function not_reload_reply(idx) {
+        function not_reload_reply(idx, idx_re) {
             var not_reload_reply = $("#not_reload_reply" + idx);
             var params = not_reload_reply.serialize();
 
@@ -78,7 +78,8 @@ if ($_SESSION != null) {
                 data: params,
                 dataType: 'html',
                 success: function (content) {
-                    alert(content);
+                    $(".tlqkf").append(content);
+                    console.log(content);
                 }
             });
 
@@ -354,32 +355,16 @@ if ($_SESSION != null) {
                             ?>
 
                             <div id="div<?= $reply['idx'] ?>">
-                                <!--답글달기-->
-<!--                                <div class="dat_reply" id="dat_reply--><?php //echo $reply['idx']; ?><!--" title="댓글달기">-->
-<!--                                    <form method="post"-->
-<!--                                          action="commu_re_reply_p.php?idx=--><?//= $reply['idx']; ?><!--&now_idx=--><?//= $bno ?><!--">-->
-<!--                                        <input type="hidden" name="page" value="--><?//= $page ?><!--">-->
-<!--                                        <textarea name="re_reply_content" class="dap_edit_t form-control"-->
-<!--                                                  style="width: 100%"></textarea>-->
-<!--                                        <input type="submit" id="support_hover" value="댓글달기"-->
-<!--                                               class="re_mo_bt btn float-right"-->
-<!--                                               style="background-color: #FBAA48; color: white; margin-top: 10px">-->
-<!--                                    </form>-->
-<!--                                </div>-->
 
                                 <!--댓글-->
-                                <div class="cardbox-comments_re reply_view"><span
-                                            class="comment-avatar float-left">
-                                        <img class="circle_image"
-                                             src=<?php echo $write_user['profile']; ?> alt="..."
-                                             style="margin-top: 5px; width: 30px; height: 30px"></span>
-                                    <div class="input-group  my_font_main"
-                                         style="width: 90%; margin-top: 10px; left: 15px">
-                                        <span><?php echo $reply['name']; ?>　</span>
-                                        <span id="real_reply_<?= $reply['idx'] ?>"><?= nl2br("$reply[content]"); ?></span>
-                                        <span style="font-size: 10px; color: #4e555b; position: absolute; right: 0px; margin-top: 5px;">
-                                    <?php echo $reply['date']; ?></span>
-                                    </div>
+                                <div class="cardbox-comments_re reply_view">
+                                    <span class="comment-avatar float-left">
+                                        <img class="circle_image" style="margin-top: 5px; width: 30px; height: 30px" src=<?= $write_user['profile']; ?>></span>
+                                            <div class="input-group  my_font_main" style="width: 90%; margin-top: 10px; left: 15px">
+                                                <span><?php echo $reply['name']; ?>　</span>
+                                                <span id="real_reply_<?= $reply['idx'] ?>"><?= nl2br("$reply[content]"); ?></span>
+                                                <span style="font-size: 10px; color: #4e555b; position: absolute; right: 0px; margin-top: 5px;"><?= $reply['date']; ?></span>
+                                            </div>
                                     <?php
                                     if ($_SESSION != null) {
                                         if ($_SESSION['user_id'] == $reply['pw'] || $_SESSION['user_id'] == "rhksflwk") {
@@ -591,7 +576,7 @@ if ($_SESSION != null) {
                                            aria-describedby="inputGroup-sizing-sm" placeholder="댓글을 작성해주세요 :)">
                                     <button type="button" class="col-sm-2 btn re_bt"
                                             style="left: 10px; background-color: #FBAA48; color: white"
-                                            id="support_1<?= $bno ?>" onclick="not_reload_reply(<?= $bno ?>)">댓글 달기
+                                            id="support_1<?= $bno ?>" onclick="not_reload_reply(<?= $bno ?>,<?= $reply['idx'] ?>)">댓글 달기
                                     </button>
                                 </div>
                             </form>
