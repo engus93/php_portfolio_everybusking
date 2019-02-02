@@ -2,6 +2,8 @@
 include "../db.php"; /* db load */
 session_start();
 
+//조회수 체크 (아이디 & 비로그인 회원 브라우저 체크)
+
 $bno = $_GET['idx']; /* bno함수에 idx값을 받아와 넣음*/
 if ($_SESSION != null) {
     if (empty($_COOKIE['community' . $_SESSION['user_id'] . $bno])) {
@@ -22,6 +24,7 @@ if ($_SESSION != null) {
 }
 
 ?>
+
 <!DOCTYPE html>
 <html>
 
@@ -63,62 +66,33 @@ if ($_SESSION != null) {
     </style>
 
     <script>
-        var closedialog;
 
-        function re_reply(idx) {
-            $(".dat_reply").dialog({
-                autoOpen: false,
-            });
-            // $("#dat_reply_bt" + idx).on("click", function () {
-            $("#dat_reply" + idx).dialog("open");
-            // });
-        }
-
-        function re_modify_reply(idx) {
-            $(".dat_reply_edit").dialog({
-                autoOpen: false,
-            });
-            // $("#reply_dat_edit_bt" + idx).on("click", function () {
-            $("#dat_reply_edit" + idx).dialog("open");
-            // });
-        }
-
-        function re_delete_reply(idx) {
-            $(".dat_reply_delete").dialog({
-                autoOpen: false,
-            });
-            $("#dat_reply_delete" + idx).dialog("open");
-        }
-
-        function re_delete_reply_click(idx) {
-
-            $("#dat_reply_delete" + idx).dialog("close");
-
-            var re_delete_reply_click = $("#dat_reply_delete" + idx + "_form");
-            var params = re_delete_reply_click.serialize();
+        //댓글 작성
+        function not_reload_reply(idx) {
+            var not_reload_reply = $("#not_reload_reply" + idx);
+            var params = not_reload_reply.serialize();
 
             $.ajax({
                 type: 'post',
-                url: 'commu_re_reply_delete_p.php',
+                url: 'commu_reply_p.php',
                 data: params,
                 dataType: 'html',
-                success: function () {
-                    alert("삭제되었습니다.");
-                    $("#re_div" + idx).remove();
+                success: function (data) {
+                    alert(data);
                 }
             });
 
         }
 
+        //댓글 수정
         function modify_reply(idx) {
             $(".dat_edit").dialog({
                 autoOpen: false,
             });
-            // $("#dat_edit_bt" + idx).on("click", function () {
             $("#dat_edit" + idx).dialog("open");
-            // });
         }
 
+        //댓글 삭제 다이얼로그
         function delete_reply(idx) {
             $(".dat_delete").dialog({
                 autoOpen: false,
@@ -127,6 +101,7 @@ if ($_SESSION != null) {
             $("#dat_delete" + idx).dialog("open");
         }
 
+        //댓글 삭제 실제 기능
         function dat_delete_click(idx) {
 
             $("#dat_delete" + idx).dialog("close");
@@ -147,23 +122,53 @@ if ($_SESSION != null) {
 
         }
 
-        function not_reload_reply(idx) {
-            var not_reload_reply = $("#not_reload_reply" + idx);
-            var params = not_reload_reply.serialize();
+        //대댓글 작성
+        function re_reply(idx) {
+            $(".dat_reply").dialog({
+                autoOpen: false,
+            });
+            $("#dat_reply" + idx).dialog("open");
+        }
+
+        //대댓글 수정
+        function re_modify_reply(idx) {
+            $(".dat_reply_edit").dialog({
+                autoOpen: false,
+            });
+            $("#dat_reply_edit" + idx).dialog("open");
+        }
+
+        //대댓글 삭제 다이얼로그
+        function re_delete_reply(idx) {
+            $(".dat_reply_delete").dialog({
+                autoOpen: false,
+            });
+            $("#dat_reply_delete" + idx).dialog("open");
+        }
+
+        //대댓글 삭제 실제 기능
+        function re_delete_reply_click(idx) {
+
+            $("#dat_reply_delete" + idx).dialog("close");
+
+            var re_delete_reply_click = $("#dat_reply_delete" + idx + "_form");
+            var params = re_delete_reply_click.serialize();
 
             $.ajax({
                 type: 'post',
-                url: 'commu_reply_p.php',
+                url: 'commu_re_reply_delete_p.php',
                 data: params,
                 dataType: 'html',
-                success: function (data) {
-                    alert(data);
+                success: function () {
+                    alert("삭제되었습니다.");
+                    $("#re_div" + idx).remove();
                 }
             });
 
         }
 
-        function st1(idx) {
+        //대댓글 클릭시 버튼 글씨 변경 (댓글 달기 <=> 취소하기)
+        function modify_button(idx) {
 
             var name = "#sb1" + idx;
 
@@ -252,9 +257,6 @@ if ($_SESSION != null) {
                         </div><!--/ cardbox-heading -->
 
                         <div class="cardbox-item" style=" padding: 5px 5px 5px 5px">
-                            <!--<img class="img-fluid"-->
-                            <!--src="http://www.themashabrand.com/templates/bootsnipp/post/assets/img/1.jpg"-->
-                            <!--alt="Image">-->
 
                             <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
                                data-image=<?php echo $board['picture']; ?>
@@ -268,6 +270,7 @@ if ($_SESSION != null) {
                                style="margin-top: 10px; margin-left: 10px; margin-right: 10px;"><?php echo nl2br("$board[content]"); ?></p>
 
                         </div>
+
 
                         <!-- 댓글 시작 -->
                         <hr>
@@ -323,7 +326,7 @@ if ($_SESSION != null) {
                                           action="commu_reply_update_p.php?idx=<?php echo $reply['idx']; ?>&now_idx=<?php echo $bno; ?>">
                                         <input type="hidden" name="page" value="<?= $page ?>">
                                         <textarea name="content" class="dap_edit_t form-control"
-                                                  style="width: 100%"><?=$reply['content']; ?></textarea>
+                                                  style="width: 100%"><?= $reply['content']; ?></textarea>
                                         <input type="submit" id="support_hover" value="수정하기"
                                                class="re_mo_bt btn float-right"
                                                style="background-color: #FBAA48; color: white; margin-top: 10px">
@@ -349,8 +352,8 @@ if ($_SESSION != null) {
                                 <div class="cardbox-comments_re reply_view"><span
                                             class="comment-avatar float-left">
                                         <img class="circle_image"
-                                                src=<?php echo $write_user['profile']; ?> alt="..."
-                                                style="margin-top: 5px; width: 30px; height: 30px"></span>
+                                             src=<?php echo $write_user['profile']; ?> alt="..."
+                                             style="margin-top: 5px; width: 30px; height: 30px"></span>
                                     <div class="input-group  my_font_main"
                                          style="width: 90%; margin-top: 10px; left: 15px">
                                         <span><?php echo $reply['name']; ?>　</span>
@@ -367,7 +370,7 @@ if ($_SESSION != null) {
                                                 <a class="dat_reply_bt color_main btn dat_reply_bt"
                                                    id="sc1<?php echo $reply['idx']; ?>"
                                                    style="font-size: 10px; margin-left: 10px; background-color: transparent"
-                                                   onclick="st1(<?= $reply['idx']; ?>)">댓글달기</a>
+                                                   onclick="modify_button(<?= $reply['idx']; ?>)">댓글달기</a>
 
                                                 <a class="dat_edit_bt color_main btn dat_edit_bt"
                                                    id="dat_edit_bt<?php echo $reply['idx']; ?>"
@@ -378,6 +381,7 @@ if ($_SESSION != null) {
                                                    style="font-size: 10px; background-color: transparent;"
                                                    onclick="delete_reply(<?= $reply['idx']; ?>)">삭제</a>
                                             </div>
+
                                             <?php
 
                                         } else {
@@ -388,7 +392,7 @@ if ($_SESSION != null) {
                                                 <a class="dat_reply_bt color_main btn dat_reply_bt"
                                                    id="sc1<?php echo $reply['idx']; ?>"
                                                    style="font-size: 10px; margin-left: 10px; background-color: transparent"
-                                                   onclick="st1(<?= $reply['idx']; ?>)">댓글달기</a>
+                                                   onclick="modify_button(<?= $reply['idx']; ?>)">댓글달기</a>
                                             </div>
 
                                             <?php
@@ -453,9 +457,11 @@ if ($_SESSION != null) {
                                             <!--댓글-->
                                             <div class="cardbox-comments_re reply_view"><span
                                                         class="comment-avatar float-left">
-                                                        <img class="circle_image" style="margin-top:5px; width:30px; height:30px"
+                                                        <img class="circle_image"
+                                                             style="margin-top:5px; width:30px; height:30px"
                                                              src=<?php echo $write_user['profile']; ?>></span>
-                                                <div class="input-group  my_font_main" style="width: 90%; margin-top: 10px; left: 15px">
+                                                <div class="input-group  my_font_main"
+                                                     style="width: 90%; margin-top: 10px; left: 15px">
                                                     <span><?= $re_reply['name']; ?>　</span>
                                                     <span><?= nl2br("$re_reply[content]"); ?></span>
                                                     <span style="font-size: 10px; color: #4e555b; position: absolute; right: 0px; margin-top: 5px; margin-right: -5px"><?php echo $re_reply['date']; ?></span>
@@ -529,9 +535,9 @@ if ($_SESSION != null) {
                     <?php if ($_SESSION != null) {
                         ?>
                         <div class="cardbox-comments"><span class="comment-avatar float-left"><img
-                                            class="rounded-circle"
-                                            src='<?= $_SESSION['profile'] ?>'
-                                            alt="..." style="margin-top: 5px"></span>
+                                        class="rounded-circle"
+                                        src='<?= $_SESSION['profile'] ?>'
+                                        alt="..." style="margin-top: 5px"></span>
 
                             <form method="post" class="reply_form" id="not_reload_reply<?= $bno ?>">
                                 <div class="input-group input-group-sm mb-3 my_font_main"
@@ -552,24 +558,20 @@ if ($_SESSION != null) {
 
                     } ?>
 
-
-                </div><!--/ cardbox-like -->
+                </div>
 
             </div>
 
-        </div><!--/ col-lg-6 -->
+        </div>
 
-</div><!--/ row -->
+        <a href="/community/community.php?page=<?= $page ?>" style="margin-left: 465px; ">
+            <button class="col-sm-2 btn my_font_main"
+                    style="font-size: 18px; margin-top: 30px; background-color: #FBAA48; color: white" id="support_1">목록으로
+            </button>
+        </a>
 
-<a href="/community/community.php?page=<?= $page ?>" style="margin-left: 465px; ">
-    <button class="col-sm-2 btn my_font_main"
-            style="font-size: 18px; margin-top: 30px; background-color: #FBAA48; color: white"
-            id="support_1">목록으로
-    </button>
-</a>
+    </section>
 
-</div><!--/ container -->
-</section>
 </div>
 
 <div class="modal fade" id="image-gallery" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"

@@ -5,9 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="315b7d6c-43dd-4b04-a2b3-17ad3cc59c77" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/community/commu_re_reply_delete_p.php" beforeDir="false" afterPath="$PROJECT_DIR$/community/commu_re_reply_delete_p.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/community/commu_reply_delete_p.php" beforeDir="false" afterPath="$PROJECT_DIR$/community/commu_reply_delete_p.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/community/community_read.php" beforeDir="false" afterPath="$PROJECT_DIR$/community/community_read.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -35,9 +32,14 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/community/community_read.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="355" column="83" lean-forward="true" selection-start-line="355" selection-start-column="83" selection-end-line="355" selection-end-column="83" />
+            <state relative-caret-position="371">
+              <caret line="453" column="55" lean-forward="true" selection-start-line="453" selection-start-column="55" selection-end-line="453" selection-end-column="55" />
               <folding>
+                <element signature="e#3086#3236#0#HTML" />
+                <element signature="e#3277#3790#0#HTML" />
+                <element signature="e#2999#3160#0#HTML" />
+                <element signature="e#3206#3747#0#HTML" />
+                <element signature="e#5223#5634#0#HTML" />
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#img#0;n#span#0;n#div#2;n#div#0;n#div#4;n#div#3;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -299,14 +301,7 @@
       <workItem from="1548578835648" duration="1090000" />
       <workItem from="1548656701151" duration="9667000" />
       <workItem from="1548986659196" duration="1993000" />
-      <workItem from="1549083025234" duration="1159000" />
-    </task>
-    <task id="LOCAL-00133" summary="19.01.16&#10; &#10;스트리밍 채널 구조 잡기">
-      <created>1547722389684</created>
-      <option name="number" value="00133" />
-      <option name="presentableId" value="LOCAL-00133" />
-      <option name="project" value="LOCAL" />
-      <updated>1547722389684</updated>
+      <workItem from="1549083025234" duration="2016000" />
     </task>
     <task id="LOCAL-00134" summary="19.01.16&#10; &#10;스트리밍 채널 구조 잡기">
       <created>1547731884624</created>
@@ -644,11 +639,18 @@
       <option name="project" value="LOCAL" />
       <updated>1549013762819</updated>
     </task>
-    <option name="localTasksCounter" value="182" />
+    <task id="LOCAL-00182" summary="19.02.02&#10;&#10;게시판 댓글 수정 중">
+      <created>1549084198442</created>
+      <option name="number" value="00182" />
+      <option name="presentableId" value="LOCAL-00182" />
+      <option name="project" value="LOCAL" />
+      <updated>1549084198442</updated>
+    </task>
+    <option name="localTasksCounter" value="183" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="734220000" />
+    <option name="totallyTimeSpent" value="735077000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -663,7 +665,7 @@
     <frame x="-8" y="-8" width="1634" height="1066" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20330368" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20330368" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -675,7 +677,7 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32832617" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.4965035" visible="true" weight="0.222103" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="9" sideWeight="0.4965035" visible="true" weight="0.222103" />
       <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49713558" weight="0.22532189" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5034965" side_tool="true" weight="0.19438446" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.32937366" />
@@ -736,7 +738,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="19.01.11&#10;       &#10;결제 정리중" />
     <MESSAGE value="19.01.11&#10;       &#10;결제 완료" />
     <MESSAGE value="19.01.11&#10;       &#10;스트리밍 시작" />
     <MESSAGE value="19.01.13&#10;&#10;마무리&#10;       &#10;스트리밍 시작" />
@@ -761,7 +762,8 @@
     <MESSAGE value="19.01.28&#10;&#10;스트리밍 다시보기 커스텀중" />
     <MESSAGE value="19.02.01&#10;&#10;스트리밍 다시보기 이름 수정 하는중" />
     <MESSAGE value="19.02.01&#10;&#10;게시판 댓글 수정 중" />
-    <option name="LAST_COMMIT_MESSAGE" value="19.02.01&#10;&#10;게시판 댓글 수정 중" />
+    <MESSAGE value="19.02.02&#10;&#10;게시판 댓글 수정 중" />
+    <option name="LAST_COMMIT_MESSAGE" value="19.02.02&#10;&#10;게시판 댓글 수정 중" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/index.html">
@@ -1148,9 +1150,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/community/community_read.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="355" column="83" lean-forward="true" selection-start-line="355" selection-start-column="83" selection-end-line="355" selection-end-column="83" />
+        <state relative-caret-position="371">
+          <caret line="453" column="55" lean-forward="true" selection-start-line="453" selection-start-column="55" selection-end-line="453" selection-end-column="55" />
           <folding>
+            <element signature="e#3086#3236#0#HTML" />
+            <element signature="e#3277#3790#0#HTML" />
+            <element signature="e#2999#3160#0#HTML" />
+            <element signature="e#3206#3747#0#HTML" />
+            <element signature="e#5223#5634#0#HTML" />
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#span#0;n#div#2;n#div#0;n#div#4;n#div#3;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
