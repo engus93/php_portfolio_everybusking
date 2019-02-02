@@ -79,7 +79,6 @@ if ($_SESSION != null) {
                 dataType: 'html',
                 success: function (content) {
                     $(".tlqkf").append(content);
-                    console.log(content);
                 }
             });
 
