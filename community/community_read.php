@@ -144,12 +144,22 @@ if ($_SESSION != null) {
 
         }
 
-        //대댓글 작성 다이얼로그
-        function re_reply(idx) {
-            $(".dat_reply").dialog({
-                autoOpen: false,
+        //대댓글 작성
+        function not_re_reload_reply(idx) {
+            var not_re_reload_reply = $("#sb1" + idx + "_form");
+            var params = not_re_reload_reply.serialize();
+
+            $.ajax({
+                type: 'post',
+                url: 'commu_re_reply_p.php',
+                data: params,
+                dataType: 'html',
+                success: function (re_content) {
+                    $("#sb1" + idx).before(re_content);
+                    $("#re_reply_input" + idx).val("");
+                }
             });
-            $("#dat_reply" + idx).dialog("open");
+
         }
 
         //대댓글 수정 다이얼로그
@@ -420,7 +430,7 @@ if ($_SESSION != null) {
                                 </div>
 
                                 <!-- 댓글 삭제 폼 dialog -->
-                                <div class="dat_delete" id="dat_delete<?php echo $reply['idx']; ?>" title="댓글 삭제하기">
+                                <div class="dat_delete" id="dat_delete<?= $reply['idx']; ?>" title="댓글 삭제하기">
                                     <form method="post" style="margin-top: 16px;"
                                           id="dat_delete<?php echo $reply['idx']; ?>_form"
                                           action="commu_reply_delete_p.php?idx=<?php echo $reply['idx']; ?>&now_idx=<?php echo $bno; ?>">
@@ -526,30 +536,27 @@ if ($_SESSION != null) {
 
                                 ?>
                                 <div id="sb1<?php echo $reply['idx']; ?>"
-                                     style="display:none; width: 90%; margin-left: 52px!important;">
-                                    <span class="comment-avatar float-left">
-                                            <img class="rounded-circle"
-                                                 src="<?= $_SESSION['profile'] ?>"
-                                                 style="margin-top: 5px; width: 30px; height: 30px"></span>
-                                    <form method="post" class="re_reply_form"
-                                          action="commu_re_reply_p.php?idx=<?php echo $reply['idx']; ?>&now_idx=<?php echo $bno; ?>">
-                                        <div class="input-group input-group-sm my_font_main"
-                                             style="width: 90%;height: 40px; margin-top: 5px; left: 15px">
+                                     style="display:none; width: 90%; margin-left: 52px!important; margin-top: 15px">
+                                    <span class="comment-avatar float-left"><img class="rounded-circle" src="<?= $_SESSION['profile'] ?>" style="margin-top: 5px; width: 30px; height: 30px"></span>
+                                    <form method="post" class="re_reply_form" id="sb1<?php echo $reply['idx']; ?>_form">
+                                        <div class="input-group input-group-sm my_font_main" style="width: 90%;height: 40px; margin-top: 5px; left: 15px">
+                                            <input type="hidden" name="idx" value="<?php echo $reply['idx']; ?>">
+                                            <input type="hidden" name="now_idx" value="<?php echo $bno; ?>">
                                             <input type="hidden" id="re_reply_bno" name="bno" value="<?= $bno ?>">
                                             <input type="hidden" name="re_page" value="<?= $page ?>">
                                             <input type="text" name="re_reply_content"
                                                    class="form-control col-sm-10 reply_content"
-                                                   aria-label="Sizing example input"
+                                                   aria-label="Sizing example input" id="re_reply_input<?php echo $reply['idx']; ?>"
                                                    aria-describedby="inputGroup-sizing-sm" placeholder="댓글을 작성해주세요 :)">
-                                            <button type="suid=" rep_bt class="col-sm-2 btn"
-                                                    style="left: 10px; background-color: #FBAA48; color: white"
-                                                    id="support_1">댓글 달기
+                                            <button type="button" class="col-sm-2 btn" style="left: 10px; background-color: #FBAA48; color: white"
+                                                    id="support_1" onclick="not_re_reload_reply(<?= $reply['idx']; ?>)">댓글 달기
                                             </button>
                                         </div>
                                     </form>
                                 </div>
 
                             </div>
+
                             <?php
 
                         } ?>
