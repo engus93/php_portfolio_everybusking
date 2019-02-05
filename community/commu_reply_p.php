@@ -17,7 +17,7 @@ $sql_re_re = mq("select * from commu_reply_tb where idx = '" . $insert_idx[0] . 
 
 $reply = $sql_re_re->fetch_array();
 
-echo '<div id="div' . $insert_idx . '">
+echo '<div id="div'.$insert_idx[0].'">
             <div class="cardbox-comments_re reply_view">
                     <span class="comment-avatar float-left">
                         <img class="circle_image" style="margin-top: 5px; width: 30px; height: 30px" src=' . $_SESSION['profile'] . '>

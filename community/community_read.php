@@ -79,6 +79,7 @@ if ($_SESSION != null) {
                 dataType: 'html',
                 success: function (content) {
                     $(".tlqkf").append(content);
+                    $("#reply_input").val("");
                 }
             });
 
@@ -571,7 +572,7 @@ if ($_SESSION != null) {
                                      style="width: 90%;height: 40px; margin-top: 5px; left: 15px">
                                     <input type="hidden" id="reply_bno" name="con_num" value="<?= $bno ?>">
                                     <input type="text" name="reply_content" class="form-control col-sm-10 reply_content"
-                                           aria-label="Sizing example input"
+                                           aria-label="Sizing example input" id="reply_input"
                                            aria-describedby="inputGroup-sizing-sm" placeholder="댓글을 작성해주세요 :)">
                                     <button type="button" class="col-sm-2 btn re_bt"
                                             style="left: 10px; background-color: #FBAA48; color: white"
