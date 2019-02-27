@@ -6,13 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="315b7d6c-43dd-4b04-a2b3-17ad3cc59c77" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/community/commu_re_reply_delete_p.php" beforeDir="false" afterPath="$PROJECT_DIR$/community/commu_re_reply_delete_p.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/community/commu_re_reply_p.php" beforeDir="false" afterPath="$PROJECT_DIR$/community/commu_re_reply_p.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/community/commu_re_reply_update_p.php" beforeDir="false" afterPath="$PROJECT_DIR$/community/commu_re_reply_update_p.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/community/commu_reply_delete_p.php" beforeDir="false" afterPath="$PROJECT_DIR$/community/commu_reply_delete_p.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/community/commu_reply_p.php" beforeDir="false" afterPath="$PROJECT_DIR$/community/commu_reply_p.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/community/commu_reply_update_p.php" beforeDir="false" afterPath="$PROJECT_DIR$/community/commu_reply_update_p.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/community/community_read.php" beforeDir="false" afterPath="$PROJECT_DIR$/community/community_read.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concert/concert.php" beforeDir="false" afterPath="$PROJECT_DIR$/concert/concert.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -36,25 +31,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/community/community_read.php">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/concert/concert.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="342">
-              <caret line="123" column="9" lean-forward="true" selection-start-line="123" selection-start-column="9" selection-end-line="123" selection-end-column="9" />
+              <caret line="75" lean-forward="true" selection-start-line="75" selection-end-line="75" />
               <folding>
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#4;n#div#3;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#button#0;n#div#0;n#form#0;n#div#4;n#div#3;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#li#0;n#!!top" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/community/commu_reply_p.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="319">
-              <caret line="75" column="93" lean-forward="true" selection-start-line="75" selection-start-column="93" selection-end-line="75" selection-end-column="93" />
             </state>
           </provider>
         </entry>
@@ -74,7 +58,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>dat_reply_delete</find>
       <find>답글</find>
       <find>remove</find>
       <find>img</find>
@@ -88,7 +71,6 @@
       <find>\'</find>
       <find>div</find>
       <find>id=&quot;div</find>
-      <find>tlqkf</find>
       <find>댓글다</find>
       <find>댓글 작성</find>
       <find>댓글 달기</find>
@@ -104,6 +86,8 @@
       <find>수정</find>
       <find>dat_edit</find>
       <find>dat_delete</find>
+      <find>tlqkf</find>
+      <find>댓글달기</find>
     </findStrings>
     <replaceStrings>
       <replace>'</replace>
@@ -118,7 +102,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/streaming_re/server.js" />
         <option value="$PROJECT_DIR$/streaming/demo/asdasd.js" />
         <option value="$PROJECT_DIR$/streaming_re/demos/video-broadcasting.html" />
         <option value="$PROJECT_DIR$/streaming/demo/config.json" />
@@ -167,8 +150,9 @@
         <option value="$PROJECT_DIR$/community/commu_re_reply_update_p.php" />
         <option value="$PROJECT_DIR$/community/commu_re_reply_delete_p.php" />
         <option value="$PROJECT_DIR$/community/commu_reply_update_p.php" />
-        <option value="$PROJECT_DIR$/community/community_read.php" />
         <option value="$PROJECT_DIR$/community/commu_reply_p.php" />
+        <option value="$PROJECT_DIR$/community/community_read.php" />
+        <option value="$PROJECT_DIR$/concert/concert.php" />
       </list>
     </option>
   </component>
@@ -194,12 +178,7 @@
             <path>
               <item name="everybusking" type="b2602c69:ProjectViewProjectNode" />
               <item name="everybusking" type="462c0819:PsiDirectoryNode" />
-              <item name="community" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="everybusking" type="b2602c69:ProjectViewProjectNode" />
-              <item name="everybusking" type="462c0819:PsiDirectoryNode" />
-              <item name="streaming" type="462c0819:PsiDirectoryNode" />
+              <item name="concert" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -315,14 +294,8 @@
       <workItem from="1548656701151" duration="9667000" />
       <workItem from="1548986659196" duration="1993000" />
       <workItem from="1549083025234" duration="13104000" />
-      <workItem from="1549343616997" duration="9854000" />
-    </task>
-    <task id="LOCAL-00140" summary="19.01.18&#10; &#10;스트리밍 socket 메소드 분류하기">
-      <created>1547802779453</created>
-      <option name="number" value="00140" />
-      <option name="presentableId" value="LOCAL-00140" />
-      <option name="project" value="LOCAL" />
-      <updated>1547802779453</updated>
+      <workItem from="1549343616997" duration="11756000" />
+      <workItem from="1551256214277" duration="470000" />
     </task>
     <task id="LOCAL-00141" summary="19.01.18&#10; &#10;스트리밍 socket mysql 연동하기">
       <created>1547807961688</created>
@@ -660,11 +633,18 @@
       <option name="project" value="LOCAL" />
       <updated>1549346380215</updated>
     </task>
-    <option name="localTasksCounter" value="189" />
+    <task id="LOCAL-00189" summary="19.02.05&#10;&#10;게시판 댓글 Auto Paging 해야 함">
+      <created>1549384929889</created>
+      <option name="number" value="00189" />
+      <option name="presentableId" value="LOCAL-00189" />
+      <option name="project" value="LOCAL" />
+      <updated>1549384929889</updated>
+    </task>
+    <option name="localTasksCounter" value="190" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="756019000" />
+    <option name="totallyTimeSpent" value="758391000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -676,10 +656,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1634" height="1066" extended-state="6" />
+    <frame x="-8" y="-8" width="1874" height="1096" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20584498" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.207828" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -691,7 +671,7 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32832617" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.4965035" visible="true" weight="0.222103" />
+      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.4965035" visible="true" weight="0.15904365" />
       <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49713558" weight="0.22532189" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5034965" side_tool="true" weight="0.19438446" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.32937366" />
@@ -752,7 +732,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="19.01.13&#10;&#10;마무리&#10;       &#10;채팅중" />
     <MESSAGE value="19.01.13&#10; &#10;채팅중" />
     <MESSAGE value="19.01.16&#10; &#10;스트리밍 시작" />
     <MESSAGE value="19.01.16&#10; &#10;스트리밍 디자인 시작" />
@@ -777,10 +756,10 @@
     <MESSAGE value="19.02.02&#10;&#10;게시판 댓글 추가 하기" />
     <MESSAGE value="19.02.02&#10;&#10;게시판 댓글 추가 됨" />
     <MESSAGE value="19.02.05&#10;&#10;게시판 댓글 실시간 추가 됨" />
-    <option name="LAST_COMMIT_MESSAGE" value="19.02.05&#10;&#10;게시판 댓글 실시간 추가 됨" />
+    <MESSAGE value="19.02.05&#10;&#10;게시판 댓글 Auto Paging 해야 함" />
+    <option name="LAST_COMMIT_MESSAGE" value="19.02.05&#10;&#10;게시판 댓글 Auto Paging 해야 함" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/recorded_rtc/upload.js" />
     <entry file="file://$PROJECT_DIR$/recorded_rtc/upload.css" />
     <entry file="file://$PROJECT_DIR$/streaming/upload.js" />
     <entry file="file://$PROJECT_DIR$/streaming/index.html" />
@@ -1160,18 +1139,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/community/community_read.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="123" column="9" lean-forward="true" selection-start-line="123" selection-start-column="9" selection-end-line="123" selection-end-column="9" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#4;n#div#3;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#div#0;n#form#0;n#div#4;n#div#3;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/community/commu_re_reply_p.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="361">
@@ -1181,8 +1148,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/community/commu_reply_p.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="75" column="93" lean-forward="true" selection-start-line="75" selection-start-column="93" selection-end-line="75" selection-end-column="93" />
+        <state relative-caret-position="431">
+          <caret line="77" column="86" lean-forward="true" selection-start-line="77" selection-start-column="86" selection-end-line="77" selection-end-column="86" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/community/community_read.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="608">
+          <caret line="282" column="53" lean-forward="true" selection-start-line="282" selection-start-column="53" selection-end-line="282" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/concert/concert.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="75" lean-forward="true" selection-start-line="75" selection-end-line="75" />
+          <folding>
+            <element signature="n#style#0;n#a#0;n#li#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

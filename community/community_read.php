@@ -68,7 +68,7 @@ if ($_SESSION != null) {
     <script>
 
         //댓글 작성
-        function not_reload_reply(idx, idx_re) {
+        function not_reload_reply(idx) {
             var not_reload_reply = $("#not_reload_reply" + idx);
             var params = not_reload_reply.serialize();
 
@@ -157,6 +157,7 @@ if ($_SESSION != null) {
                 success: function (re_content) {
                     $("#sb1" + idx).before(re_content);
                     $("#re_reply_input" + idx).val("");
+                    modify_button(idx);
                 }
             });
 
@@ -242,7 +243,7 @@ if ($_SESSION != null) {
         }
 
         //문장 개행 시키기
-        function nl2br(str){
+        function nl2br(str) {
             return str.replace(/\n/g, "&#10;");
         }
 
@@ -335,14 +336,45 @@ if ($_SESSION != null) {
 
                         <?php
                         $sql3 = mq("select * from commu_reply_tb where con_num='" . $bno . "' order by idx ASC");
-                        if ($reply = $sql3->fetch_array()){ ?>
+                        ?>
 
                         <h6 class="my_font_main" style="margin-left: 10px">댓글</h6>
+
+                        <?php if ($_SESSION != null) {
+                            ?>
+                            <div class="cardbox-comments"><span class="comment-avatar float-left"><img
+                                            class="rounded-circle"
+                                            src='<?= $_SESSION['profile'] ?>'
+                                            alt="..." style="margin-top: 5px"></span>
+
+                                <form method="post" class="reply_form" id="not_reload_reply<?= $bno ?>">
+                                    <div class="input-group input-group-sm mb-3 my_font_main"
+                                         style="width: 90%;height: 40px; margin-top: 5px; left: 15px">
+                                        <input type="hidden" id="reply_bno" name="con_num" value="<?= $bno ?>">
+                                        <input type="text" name="reply_content"
+                                               class="form-control col-sm-10 reply_content"
+                                               aria-label="Sizing example input" id="reply_input"
+                                               aria-describedby="inputGroup-sizing-sm" placeholder="댓글을 작성해주세요 :)">
+                                        <button type="button" class="col-sm-2 btn re_bt"
+                                                style="left: 10px; background-color: #FBAA48; color: white"
+                                                id="support_1<?= $bno ?>" onclick="not_reload_reply(<?= $bno ?>)">댓글 달기
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                            <?php
+                        } else {
+
+                        } ?>
+
+                        <?php
+                        if ($reply = $sql3->fetch_array()){ ?>
+
 
                         <?php
 
                         if ($_SESSION != null) {
-                            echo '<div class="tlqkf">';
+                            echo '<div class="tlqkf" style="padding-bottom: 20px">';
                         } else {
                             echo '<div class="tlqkf" style="padding-bottom: 20px">';
                         }
@@ -369,12 +401,14 @@ if ($_SESSION != null) {
                                 <!--댓글-->
                                 <div class="cardbox-comments_re reply_view">
                                     <span class="comment-avatar float-left">
-                                        <img class="circle_image" style="margin-top: 5px; width: 30px; height: 30px" src=<?= $write_user['profile']; ?>></span>
-                                            <div class="input-group  my_font_main" style="width: 90%; margin-top: 10px; left: 15px">
-                                                <span><?php echo $reply['name']; ?>　</span>
-                                                <span id="real_reply_<?= $reply['idx'] ?>"><?= nl2br("$reply[content]"); ?></span>
-                                                <span style="font-size: 10px; color: #4e555b; position: absolute; right: 0px; margin-top: 5px;"><?= $reply['date']; ?></span>
-                                            </div>
+                                        <img class="circle_image" style="margin-top: 5px; width: 30px; height: 30px"
+                                             src=<?= $write_user['profile']; ?>></span>
+                                    <div class="input-group  my_font_main"
+                                         style="width: 90%; margin-top: 10px; left: 15px">
+                                        <span><?php echo $reply['name']; ?>　</span>
+                                        <span id="real_reply_<?= $reply['idx'] ?>"><?= nl2br("$reply[content]"); ?></span>
+                                        <span style="font-size: 10px; color: #4e555b; position: absolute; right: 0px; margin-top: 5px;"><?= $reply['date']; ?></span>
+                                    </div>
                                     <?php
                                     if ($_SESSION != null) {
                                         if ($_SESSION['user_id'] == $reply['pw'] || $_SESSION['user_id'] == "rhksflwk") {
@@ -425,7 +459,8 @@ if ($_SESSION != null) {
                                                   style="width: 100%"><?= $reply['content']; ?></textarea>
                                         <input type="button" id="support_hover" value="수정하기"
                                                class="re_mo_bt btn float-right"
-                                               style="background-color: #FBAA48; color: white; margin-top: 10px" onclick="modify_reply_click(<?= $reply['idx']; ?>)">
+                                               style="background-color: #FBAA48; color: white; margin-top: 10px"
+                                               onclick="modify_reply_click(<?= $reply['idx']; ?>)">
                                     </form>
                                 </div>
 
@@ -465,13 +500,18 @@ if ($_SESSION != null) {
 
                                         <div style="width: 93%; margin-left:6%; margin-top: 10px;">
                                             <!-- 대댓글 수정 폼 dialog -->
-                                            <div class="dat_reply_edit" id="dat_reply_edit<?= $re_reply['idx']; ?>" title="댓글 수정하기">
-                                                <form method="post" id="dat_reply_edit<?php echo $re_reply['idx']; ?>_form">
-                                                    <textarea name="content" class="dap_edit_t form-control" style="width: 100%"><?= $re_reply['content']; ?></textarea>
+                                            <div class="dat_reply_edit" id="dat_reply_edit<?= $re_reply['idx']; ?>"
+                                                 title="댓글 수정하기">
+                                                <form method="post"
+                                                      id="dat_reply_edit<?php echo $re_reply['idx']; ?>_form">
+                                                    <textarea name="content" class="dap_edit_t form-control"
+                                                              style="width: 100%"><?= $re_reply['content']; ?></textarea>
                                                     <input type="hidden" name="idx" value="<?= $re_reply['idx']; ?>">
                                                     <input type="hidden" name="page" value="<?= $page ?>">
-                                                    <input type="button" id="support_hover" value="수정하기" class="re_mo_bt btn float-right"
-                                                           style="background-color: #FBAA48; color: white; margin-top: 10px" onclick="re_modify_reply_click(<?= $re_reply['idx']; ?>)">
+                                                    <input type="button" id="support_hover" value="수정하기"
+                                                           class="re_mo_bt btn float-right"
+                                                           style="background-color: #FBAA48; color: white; margin-top: 10px"
+                                                           onclick="re_modify_reply_click(<?= $re_reply['idx']; ?>)">
                                                 </form>
                                             </div>
 
@@ -537,19 +577,25 @@ if ($_SESSION != null) {
                                 ?>
                                 <div id="sb1<?php echo $reply['idx']; ?>"
                                      style="display:none; width: 90%; margin-left: 52px!important; margin-top: 15px">
-                                    <span class="comment-avatar float-left"><img class="rounded-circle" src="<?= $_SESSION['profile'] ?>" style="margin-top: 5px; width: 30px; height: 30px"></span>
+                                    <span class="comment-avatar float-left"><img class="rounded-circle"
+                                                                                 src="<?= $_SESSION['profile'] ?>"
+                                                                                 style="margin-top: 5px; width: 30px; height: 30px"></span>
                                     <form method="post" class="re_reply_form" id="sb1<?php echo $reply['idx']; ?>_form">
-                                        <div class="input-group input-group-sm my_font_main" style="width: 90%;height: 40px; margin-top: 5px; left: 15px">
+                                        <div class="input-group input-group-sm my_font_main"
+                                             style="width: 90%;height: 40px; margin-top: 5px; left: 15px">
                                             <input type="hidden" name="idx" value="<?php echo $reply['idx']; ?>">
                                             <input type="hidden" name="now_idx" value="<?php echo $bno; ?>">
                                             <input type="hidden" id="re_reply_bno" name="bno" value="<?= $bno ?>">
                                             <input type="hidden" name="re_page" value="<?= $page ?>">
                                             <input type="text" name="re_reply_content"
                                                    class="form-control col-sm-10 reply_content"
-                                                   aria-label="Sizing example input" id="re_reply_input<?php echo $reply['idx']; ?>"
+                                                   aria-label="Sizing example input"
+                                                   id="re_reply_input<?php echo $reply['idx']; ?>"
                                                    aria-describedby="inputGroup-sizing-sm" placeholder="댓글을 작성해주세요 :)">
-                                            <button type="button" class="col-sm-2 btn" style="left: 10px; background-color: #FBAA48; color: white"
-                                                    id="support_1" onclick="not_re_reload_reply(<?= $reply['idx']; ?>)">댓글 달기
+                                            <button type="button" class="col-sm-2 btn"
+                                                    style="left: 10px; background-color: #FBAA48; color: white"
+                                                    id="support_1" onclick="not_re_reload_reply(<?= $reply['idx']; ?>)">
+                                                댓글 달기
                                             </button>
                                         </div>
                                     </form>
@@ -567,32 +613,6 @@ if ($_SESSION != null) {
                     <?php
                     } ?>
 
-                    <?php if ($_SESSION != null) {
-                        ?>
-                        <div class="cardbox-comments"><span class="comment-avatar float-left"><img
-                                        class="rounded-circle"
-                                        src='<?= $_SESSION['profile'] ?>'
-                                        alt="..." style="margin-top: 5px"></span>
-
-                            <form method="post" class="reply_form" id="not_reload_reply<?= $bno ?>">
-                                <div class="input-group input-group-sm mb-3 my_font_main"
-                                     style="width: 90%;height: 40px; margin-top: 5px; left: 15px">
-                                    <input type="hidden" id="reply_bno" name="con_num" value="<?= $bno ?>">
-                                    <input type="text" name="reply_content" class="form-control col-sm-10 reply_content"
-                                           aria-label="Sizing example input" id="reply_input"
-                                           aria-describedby="inputGroup-sizing-sm" placeholder="댓글을 작성해주세요 :)">
-                                    <button type="button" class="col-sm-2 btn re_bt"
-                                            style="left: 10px; background-color: #FBAA48; color: white"
-                                            id="support_1<?= $bno ?>" onclick="not_reload_reply(<?= $bno ?>,<?= $reply['idx'] ?>)">댓글 달기
-                                    </button>
-                                </div>
-                            </form>
-                        </div>
-                        <?php
-                    } else {
-
-                    } ?>
-
                 </div>
 
             </div>
@@ -601,7 +621,8 @@ if ($_SESSION != null) {
 
         <a href="/community/community.php?page=<?= $page ?>" style="margin-left: 465px; ">
             <button class="col-sm-2 btn my_font_main"
-                    style="font-size: 18px; margin-top: 30px; background-color: #FBAA48; color: white" id="support_1">목록으로
+                    style="font-size: 18px; margin-top: 30px; background-color: #FBAA48; color: white" id="support_1">
+                목록으로
             </button>
         </a>
 
